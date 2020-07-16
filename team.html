@@ -1,0 +1,67 @@
+---
+title: Team Members
+
+organizations:
+ - name: Argonne National Laboratory
+   members:
+   - name: Pavan Balaji
+     link: https://www.mcs.anl.gov/~balaji/
+   - name: Shintaro Iwasaki
+     link: https://www.mcs.anl.gov/~iwasaki/
+   - name: Philip Carns
+     link: http://wastedcycles.org/pcarns/
+   - name: Marc Snir
+     link: http://snir.cs.illinois.edu/
+   - name: Pete Beckman
+     link: https://www.mcs.anl.gov/~beckman/
+ - name: University of Illinois at Urbana-Champaign
+   members:
+   - name: Laxmikant Kale
+     link: https://charm.cs.illinois.edu/~kale/
+   - name: Nitin Kundapur Bhat
+ - name: The University of Tennessee, Knoxville
+   members:
+   - name: George Bosilca
+     link: http://icl.cs.utk.edu/~bosilca/
+   - name: Thomas Herault
+   - name: Damien Genet
+ - name: Pacific Northwest National Laboratory
+   members:
+   - name: Sriram Krishnamoorthy
+     link: http://hpc.pnl.gov/people/sriram/
+ - name: Past Team Members
+   members:
+   - name: Abdelhalim Amer (ANL)
+     link: http://www.mcs.anl.gov/~aamer/
+   - name: Cyril Bordage (UIUC)
+   - name: Prateek Jindal (UIUC)
+   - name: Jonathan Lifflander (UIUC)
+   - name: Huiwei Lu (ANL)
+   - name: Esteban Meneses-Rojas (University of Pittsburgh)
+   - name: Poornima Nookala (Illinois Institute of Technology)
+   - name: Sangmin Seo (ANL)
+     link: http://www.mcs.anl.gov/~sseo/
+   - name: Shumpei Shiina (UTokyo)
+   - name: Yanhua Sun (UIUC)
+---
+
+<p>
+Argobots is maintained and developed by the Argobots team.
+</p>
+
+{% for organization in page.organizations %}
+<h3>{{ organization.name }}</h3>
+<div class="team_members">
+  <ul>
+  {% for member in organization.members %}
+    <li>
+    {% if member.link != none %}
+      <div class="team_name"><a href="{{ member.link }}">{{ member.name }}</a></div>
+    {% else %}
+      <div class="team_name">{{ member.name }}</div>
+    {% endif %}
+   </li>
+  {% endfor %}
+  </ul>
+</div>
+{% endfor %}

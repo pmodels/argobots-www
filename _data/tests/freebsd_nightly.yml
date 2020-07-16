@@ -1,0 +1,15 @@
+- cpu: x86/64
+  host: Jenkins FreeBSD
+  os: FreeBSD 12.0
+  compiler: clang6.0.1
+  pass: yes
+  commit_id: 5bd4a628c880beaa3201f05b815dab9424f393b0
+  date: Sat Jul 18 02:24:11 2020 -0500
+- cpu: x86/64
+  host: Jenkins FreeBSD
+  os: FreeBSD 12.0
+  compiler: gnu9.2.0
+  pass: yes
+  commit_id: 5bd4a628c880beaa3201f05b815dab9424f393b0
+  date: Sat Jul 18 02:24:11 2020 -0500
+

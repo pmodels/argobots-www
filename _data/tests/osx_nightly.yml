@@ -1,0 +1,22 @@
+- cpu: x86/64
+  host: Jenkins macOS
+  os: macOS 10.13
+  compiler: clang9.0.0
+  pass: yes
+  commit_id: 5bd4a628c880beaa3201f05b815dab9424f393b0
+  date: Sat Jul 18 02:24:11 2020 -0500
+- cpu: x86/64
+  host: Jenkins macOS
+  os: macOS 10.13
+  compiler: gnu7.2.0
+  pass: yes
+  commit_id: 5bd4a628c880beaa3201f05b815dab9424f393b0
+  date: Sat Jul 18 02:24:11 2020 -0500
+- cpu: x86/64
+  host: Jenkins macOS
+  os: macOS 10.13
+  compiler: intel19.0.4
+  pass: yes
+  commit_id: 5bd4a628c880beaa3201f05b815dab9424f393b0
+  date: Sat Jul 18 02:24:11 2020 -0500
+

@@ -1,0 +1,15 @@
+- cpu: x86/64
+  host: JLSE it (Singularity)
+  os: Ubuntu 20.04
+  compiler: clang10.0.0
+  pass: yes
+  commit_id: 5bd4a628c880beaa3201f05b815dab9424f393b0
+  date: Sat Jul 18 02:24:11 2020 -0500
+- cpu: x86/64
+  host: JLSE it (Singularity)
+  os: Ubuntu 20.04
+  compiler: gnu9.3.0
+  pass: yes
+  commit_id: 5bd4a628c880beaa3201f05b815dab9424f393b0
+  date: Sat Jul 18 02:24:11 2020 -0500
+

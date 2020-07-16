@@ -3,14 +3,13 @@
 @import "mixins/flexbox";
 @import "mixins/columns";
 @import "variables";
+@import "code";
 @import "elements";
-@import "landing-page";
-@import "layout";
-@import "pricing";
-@import "staff";
-@import "contact";
-@import "blog";
-@import "forms";
+@import "footer";
 @import "navigation";
 @import "footer";
-@import "cloudcannon";
+
+@import "index";
+@import "publications";
+@import "support";
+@import "team";

@@ -1,0 +1,102 @@
+---
+title: Publications
+categories:
+  - name: Argobots and Lightweight Threads
+    papers:
+      - authors: Sangmin Seo, Abdelhalim Amer, Pavan Balaji, Cyril Bordage, George Bosilca, Alex Brooks, Philip Carns, Adrian Castello, Damien Genet, Thomas Herault, Shintaro Iwasaki, Prateek Jindal, Laxmikant V. Kale, Sriram Krishnamoorthy, Jonathan Lifflander, Huiwei Lu, Esteban Meneses, Marc Snir, Yanhua Sun, Kenjiro Taura, and Pete Beckman
+        title: Argobots&#58; A Lightweight Low-Level Threading and Tasking Framework
+        info: IEEE Transactions on Parallel and Distributed Systems (TPDS), Oct. 2017
+        description: This article explains the overall design and implementation of the Argobots runtime system.
+        highlight: yes
+        link: https://ieeexplore.ieee.org/document/8082139
+        paper_link: http://www.mcs.anl.gov/~balaji/pubs/2018/tpds/tpds18.argobots.pdf
+      - authors: Shintaro Iwasaki, Abdelhalim Amer, Kenjiro Taura, and Pavan Balaji
+        title: Analyzing the Performance Trade-Off in Implementing User-Level Threads
+        info: IEEE Transactions on Parallel and Distributed Systems (TPDS), Feb. 2020
+        description: This article explains the implementation of lightweight threads in Argobots.  This is an extended paper of the following SC '18 paper.
+        highlight: yes
+        link: https://ieeexplore.ieee.org/document/9018074
+        paper_link: https://www.mcs.anl.gov/~iwasaki/pdfs/papers/TPDS2020_paper.pdf
+      - authors: Shintaro Iwasaki, Abdelhalim Amer, Kenjiro Taura, and Pavan Balaji
+        title: Lessons Learned from Analyzing Dynamic Promotion for User-Level Threading
+        info: IEEE/ACM International Conference on High Performance Computing, Networking, Storage and Analysis (SC '18), Nov. 2018
+        description: This conference paper explains the implementation of lightweight threads in Argobots.
+        highlight: no
+        link: https://dl.acm.org/doi/10.5555/3291656.3291687
+        paper_link: https://www.mcs.anl.gov/~iwasaki/pdfs/papers/SC2018_paper.pdf
+        slides_link: https://www.mcs.anl.gov/~iwasaki/pdfs/papers/SC2018_slides.pdf
+  - name: OpenMP over Argobots
+    papers:
+      - authors: Shintaro Iwasaki, Abdelhalim Amer, Kenjiro Taura, Sangmin Seo, and Pavan Balaji
+        title: BOLT&#58; Optimizing OpenMP Parallel Regions with User-Level Threads
+        info: The 28th International Conference on Parallel Architectures and Compilation Techniques (PACT '19), Sept. 2019 (Best Paper Award)
+        description: This paper explains design and implementation of a lightweight OpenMP library over Argobots, <a href="https://www.bolt-omp.org/">BOLT</a>.
+        highlight: yes
+        link: https://ieeexplore.ieee.org/document/8891628
+        paper_link: https://www.mcs.anl.gov/~iwasaki/pdfs/papers/PACT2019_paper.pdf
+        slides_link: https://www.mcs.anl.gov/~iwasaki/pdfs/papers/PACT2019_slides.pdf
+  - name: MPI + Argobots
+    papers:
+      - authors: Huiwei Lu, Sangmin Seo, and Pavan Balaji
+        title: MPI+ULT&#58; Overlapping Communication and Computation with User-Level Threads
+        info: The IEEE 17th International Conference on High Performance Computing and Communications (HPCC '15), Aug. 2015
+        description: This paper describes the integration of MPICH and Argobots and its optimizations (<a href="https://wiki.mpich.org/mpich/index.php/MPI+Argobots">MPICH + Argobots</a>).
+        highlight: yes
+        link: https://ieeexplore.ieee.org/document/7336201
+        paper_link: http://www.mcs.anl.gov/~balaji/pubs/2015/hpcc/hpcc15.mpi_ult.pdf
+        slides_link: http://www.mcs.anl.gov/~balaji/pubs/2015/hpcc/hpcc15.mpi_ult.slides.pptx
+  - name: Others
+    papers:
+      - authors: Daniel Ellsworth, Tapasya Patki, Swann Perarnau, Sangmin Seo, Abdelhalim Amer, Judicael Zounmevo, Rinku Gupta, Kazutomo Yoshii, Henry Hoffman, Allen Malony, Martin Schulz, and Pete Beckman
+        title: Systemwide Power Management with Argo
+        info: The Twelfth Workshop on High-Performance, Power-Aware Computing (HPPAC ’16), May 2016
+        description:
+        highlight: no
+        link: https://ieeexplore.ieee.org/document/7529994
+        paper_link: http://www.mcs.anl.gov/papers/P5576-0316.pdf
+      - authors: Adrian Castello, Antonio J. Pena, Sangmin Seo, Rafael Mayo, Pavan Balaji, and Enrique S. Quintana-Orti
+        title: A Review of Lightweight Thread Approaches for High Performance Computing
+        info: The 2016 IEEE International Conference on Cluster Computing (CLUSTER '16), Sept. 2016
+        description:
+        highlight: no
+        link: https://ieeexplore.ieee.org/document/7776544
+        paper_link: http://www.mcs.anl.gov/papers/P6006-0516.pdf
+        slides_link: http://www.mcs.anl.gov/~balaji/pubs/2016/cluster/cluster16.lwt.slides.pptx
+      - authors: Sangmin Seo, Abdelhalim Amer, Pavan Balaji, Cyril Bordage, George Bosilca, Alex Brooks, Adrian Castello, Damien Genet, Thomas Herault, Prateek Jindal, Laxmikant V. Kale, Sriram Krishnamoorthy, Jonathan Lifflander, Huiwei Lu, Esteban Meneses, Marc Snir, Yanhua Sun, and Pete Beckman
+        title: Argobots&#58; A Lightweight, Low-Level Threading and Tasking Framework
+        info: Technical Report, Argonne National Laboratory, ANL/MCS-P5515-0116, 2016
+        description: The first technical report on Argobots.
+        highlight: no
+        paper_link: https://www.mcs.anl.gov/papers/P5515-0116.pdf
+---
+
+{% for category in page.categories %}
+<h3>{{ category.name }}</h3>
+  <div class="publications">
+    <ul>
+      {% for paper in category.papers %}
+      <li>
+        <div class="main_box">
+          <div>
+            {{ paper.authors }}. <b>{{ paper.title }}</b>, {{ paper.info }}
+            <div class="links">
+              {% if paper.link != none %}
+                <a href="{{ paper.link }}">[link]</a>
+              {% endif %}
+              {% if paper.paper_link != none %}
+                <a href="{{ paper.paper_link }}">[pdf]</a>
+              {% endif %}
+              {% if paper.slides_link != none %}
+                <a href="{{ paper.slides_link }}">[slides]</a>
+              {% endif %}
+            </div>
+          </div>
+          {% if paper.description != none %}
+            <div class="desc"> {{ paper.description }} </div>
+          {% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+  </div>
+{% endfor %}

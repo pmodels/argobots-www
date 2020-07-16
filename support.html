@@ -1,0 +1,38 @@
+---
+title: Support
+
+mails:
+  - address: discuss@argobots.org
+    archive: https://lists.argobots.org/pipermail/discuss/
+    description: This is an open discussion list for all Argobots users and developers.  If you have any installation or usage issues, this is the place to ask for help.  We also welcome questions about how to design and parallelize your programs with Argobots.  In order to avoid spam, we request you to subscribe to this list before sending an email.  You can also report bugs to the Argobots team by sending emails to this mailing list, but we might ask you to create a GitHub Issue to keep track of it.
+  - address: announce@argobots.org
+    archive: https://lists.argobots.org/pipermail/announce/
+    description: This is an announcement list for Argobots releases. The traffic on this list is limited to about one email every Argobots release. If you wish to receive these announcements, please subscribe to this list. You cannot send any emails to this list; this is only for receiving announcements.
+
+---
+
+<p>
+Argobots is tested on several UNIX-based platforms (see <a href="{{ site.baseurl }}/tests">test results</a> for details).
+If you encounter any issues or have any questions, please let us know.
+</p>
+
+<h3>Mailing List</h3>
+
+<p>
+There are two mailing lists that are used for different support purposes.
+</p>
+
+<div class="mailinglists">
+  <dl>
+    {% for mail in page.mails %}
+      <dt class="div1"><a href="mailto:{{ mail.address }}">{{ mail.address }}</a> (<a href="{{ mail.archive }}">archive</a>) </dt>
+      <dd class="div1">{{ mail.description }}</dd>
+    {% endfor %}
+  </dl>
+</div>
+
+<h3>GitHub Issues</h3>
+
+<p>
+When you find a bug or need a new feature, feel free to create a GitHub issue <a href="https://github.com/pmodels/argobots/issues">here</a>.  When you report a bug, please be specific as much as possible so that the Argobots team can reproduce the bug.  We appreciate any pull request to improve Argobots (see <a href="https://github.com/pmodels/argobots/pulls">GitHub PRs</a>).
+</p>

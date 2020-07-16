@@ -1,0 +1,11 @@
+
+div.team_members ul, ol {
+  padding: 0.5em 0.5em 0.5em 2em;
+  border: solid 3px $dark-sub-color;
+  background: $sub-color;
+}
+
+div.team_members ul li, ol li {
+  line-height: 1.0;
+  padding: 0.5em 0;
+}

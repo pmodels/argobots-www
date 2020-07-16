@@ -1,0 +1,41 @@
+
+.subtitle {
+	margin-top: 0px;
+	text-align: center;
+	text-justify: none;
+	font-size: 1.3rem;
+}
+
+.hero {
+	color: #ffffff;
+	text-align: center;
+	background: $main-color;
+	padding: 20px;
+
+	h1 {
+    	padding: 20px 0 20px 0;
+    	margin-left: auto;
+	    margin-right: auto;
+	}
+	p {
+		color: #fff;
+	}
+}
+
+@media #{$desktop} {
+	.flex {
+		@include flexbox;
+		align-items: center;
+		flex-direction: row;
+
+		.text, .image {
+			-webkit-flex: 1;
+			flex: 1;
+			padding: 0 20px;
+		}
+	}
+
+	.content section:nth-child(even) .flex {
+		flex-direction: row-reverse;
+	}
+}

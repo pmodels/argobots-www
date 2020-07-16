@@ -1,0 +1,41 @@
+
+div.publications ul, ol {
+  padding: 0.5em 0.5em 0.5em 2em;
+  list-style-type: none;
+}
+
+div.publications ul li, ol li {
+  line-height: 1.5;
+  padding: 0.5em 0;
+}
+
+div.publications .main_box {
+    padding: 1em 1.5em;
+    margin: 0.1em 0;
+    background: $sub-color;
+    border: solid 3px $dark-sub-color;
+    border-radius: 5px;
+}
+
+div.publications .main_box p {
+    margin: 0;
+    padding: 0;
+}
+
+div.publications .desc{
+    padding: 8px 19px;
+    margin: 0.2em 0;
+    background: #fff;
+    border: solid 3px $dark-sub-color
+}
+
+div.publications .desc p {
+    margin: 0;
+    padding: 0;
+}
+
+div.publications .links {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}

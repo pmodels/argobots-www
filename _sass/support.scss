@@ -1,0 +1,25 @@
+
+div.mailinglists dl {
+	margin: 0;
+	padding: .5em;
+}
+
+div.mailinglists dt {
+	margin: 0;
+	padding:.5em;
+	font-weight: bold;
+	background-color: $sub-color;
+	border-left: 6px solid $dark-sub-color;
+}
+
+div.mailinglists dd {
+	margin: 0;
+	padding: 0;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-left: 3.0em;
+	clear: both;
+	margin-top: .5em;
+	margin-bottom: .5em;
+	clear: both;
+}

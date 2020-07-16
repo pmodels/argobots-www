@@ -1,8 +1,8 @@
 # ----
 # Site
 
-title: Hydra Template
-url: "https://proud-alligator.cloudvent.net"
+title: Argobots
+url: "https://argobots.org"
 baseurl:
 google_analytics_key:
 google_maps_javascript_api_key:
@@ -10,20 +10,19 @@ disqus_shortname:
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
-description: Product marketing template for Jekyll.
+description: Argobots, A Lightweight Low-level Threading/Tasking Framework
 author:
-  name:
+  name: Argonne National Laboratory
   email:
-  twitter: # twitter username without the @ symbol
 social:
-  name: Hydra Template
+  name: Argobots
   links:
-    - https://github.com/CloudCannon/hydra-jekyll-template
+    - https://github.com/pmodels/argobots
 
 # -----
 # Build
 
-timezone: Etc/UTC
+timezone: Cst/UTC
 
 collections:
   staff_members:
@@ -37,25 +36,6 @@ defaults:
   -
     scope:
       path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      _options:
-        content:
-          width: 1500
-          height: 2500
-  -
-    scope:
-      path: ""
-      type: "staff_members"
-    values:
-      _options:
-        image_path:
-          width: 600
-          height: 600
-  -
-    scope:
-      path: ""
     values:
       layout: "page"
   -
@@ -63,11 +43,6 @@ defaults:
       path: "index.html"
     values:
       layout: "default"
-  -
-    scope:
-      path: "contact.html"
-    values:
-      full_width: true
 
 jekyll-archives:
   enabled:
@@ -86,19 +61,8 @@ exclude:
   - README.md
   - LICENCE
 
-# -----------
-# CloudCannon
-
 social_icons:
-  - Facebook
-  - Google Plus
-  - Instagram
-  - LinkedIn
-  - Pinterest
-  - Tumblr
-  - Twitter
-  - YouTube
-  - RSS
+  - GitHub
 
 _comments:
   map: Update the map location and display settings.
@@ -109,3 +73,5 @@ _comments:
   highlight: Emphasis the text
   color: The background colour used in the plan name and call to action.
   new_window: Open link in new window
+  deploy_local: "bundle exec jekyll serve"
+

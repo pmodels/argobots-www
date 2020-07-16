@@ -1,0 +1,32 @@
+---
+title: Test Results
+---
+
+<p>
+The following shows the test status of <a href="https://github.com/pmodels/argobots">the main branch</a>.  Note that it may take time to reflect the latest results.
+</p>
+
+{% assign all_items = site.data.tests.centos_nightly | concat: site.data.tests.osx_nightly | concat: site.data.tests.solaris_nightly | concat: site.data.tests.freebsd_nightly | concat: site.data.tests.skylake_manual | concat: site.data.tests.it_ubuntu_manual | concat: site.data.tests.comanche_manual | concat: site.data.tests.witherspoon_manual %}
+
+{% assign all_cpus = all_items | map: "cpu" | uniq %}
+{% for cpu in all_cpus %}
+  <h3>{{ cpu }}</h3>
+  {% assign cpu_items = all_items | where: "cpu", cpu %}
+  {% assign all_oss = cpu_items | map: "os" | uniq %}
+  {% for os in all_oss %}
+    <h4>{{ os }}</h4>
+    {% assign os_items = cpu_items | where: "os", os %}
+    <ul>
+      {% for item in os_items %}
+        <li style="list-style-type:none;">
+          {% if item.pass == true %}
+            <div class="checkmark"></div>
+          {% else %}
+            <div class="crossmark"></div>
+          {% endif %}
+          &nbsp; &nbsp; {{ item.compiler | replace: "clang", "Clang (clang) " | replace: "xlc", "IBM XL C Compiler (xlc) " | replace: "gnu", "GNU C Compiler (gcc) " | replace: "intel", "Intel C Compiler (icc) " | replace: "pgi", "PGI C Compiler (pgcc) " | replace: "solstudio", "Oracle Solaris Studio (suncc) " | replace: "arm", "Arm C Compiler (armclang) " | replace: "-32bit", "" }}
+          (<a href="https://github.com/pmodels/argobots/commit/{{ item.commit_id }}">{{ item.commit_id | truncate: 7, "" }}</a>, {{ item.date | date_to_rfc822 }}) </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+{% endfor %}

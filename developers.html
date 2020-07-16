@@ -1,0 +1,37 @@
+---
+title: Developers Documents
+
+contributor_docs:
+  - name: Corporate Contributor License Agreement (2016-12-06)
+    pdf_link: files/cla/argobots-cla-corporate-2016-12-06.pdf
+    docx_link: files/cla/argobots-cla-corporate-2016-12-06.docx
+  - name: Individual Contributor License Agreement (2016-12-06)
+    pdf_link: files/cla/argobots-cla-individual-2016-12-06.pdf
+    docx_link: files/cla/argobots-cla-individual-2016-12-06.docx
+---
+
+<p>
+This page summarizes documents for Argobots developers and advanced users.
+</p>
+
+<h3>Contributor License Agreement</h3>
+
+<div class="contributor_docs">
+  <ul>
+  {% for contributor_doc in page.contributor_docs %}
+    <li>
+      {{ contributor_doc.name }} <a href="{{ site.baseurl }}/{{ contributor_doc.pdf_link }}">[pdf]</a> <a href="{{ site.baseurl }}/{{ contributor_doc.docx_link }}">[docx]</a>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+
+<h3>Code Documents for Developers</h3>
+
+<div class="dev_doxygens">
+  <ul>
+    <li>
+      <a href="{{ site.baseurl }}/doxygen/latest_dev/index.html">Doxygen for developers</a> (<a href="https://github.com/pmodels/argobots/commit/{{ site.data.doxygens.latest[0].commit_id }}">{{ site.data.doxygens.latest[0].commit_id | truncate: 7, "" }}</a>, {{ site.data.doxygens.latest[0].commit_date }})
+    </li>
+  </ul>
+</div>

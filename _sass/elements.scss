@@ -1,5 +1,12 @@
+
 html {
-	background: #2b2b40;
+	background: $brand-color;
+	font-size: 100%;
+}
+@media #{$large-desktop} {
+	html {
+		font-size: 120%;
+	}
 }
 
 html, body {
@@ -8,12 +15,12 @@ html, body {
 }
 
 body {
-	font-family: "San Francisco", "Helvetica Neue", "Helvetica", "Arial";
+	font-family: "Helvetica Neue", "Helvetica", "Arial";
 }
 
 a {
-	color: #00a4ca;
-	text-decoration: none;
+	color: $accent-color;
+	text-decoration: underline;
 }
 
 a:hover {
@@ -26,29 +33,303 @@ img {
 
 h1 strong, h2 strong {
 	font-weight: 700;
+	position: relative;
+	padding: .25em 0 .5em .75em;
+	border-left: 6px solid $main-color;
 }
 
 h1 {
 	font-weight: 300;
-	font-size: 2.3em;
+	font-size: 1.8rem;
 	margin: 0;
+	position: relative;
+	padding: .25rem 0 .5rem .75rem;
+	border-left: 6px solid $main-color;
 }
 
 h2 {
-	font-weight: 300;
-	font-size: 2.2em;
+	font-weight: 700;
+	font-size: 1.5rem;
 	margin: 0 0 30px 0;
+	position: relative;
+	padding: .15rem 0 .25rem .75rem;
+	color: $brand-color;
+	border-left: 12px solid $main-color;
+}
+
+h2::after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	content: '';
+	width: 100%;
+	height: 0;
+	border-bottom: 3px solid #ccc;
 }
 
 h3 {
-	margin: 20px 0 10px 0;
+	font-weight: 700;
+	font-size: 1.3rem;
+	margin: 0 0 30px 0;
+	position: relative;
+	padding: .15rem 0 .25rem .75rem;
+	color: $brand-color;
+	border-left: 10px solid $accent-color;
 }
 
+h3::after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	content: '';
+	width: 100%;
+	height: 0;
+	border-bottom: 3px solid #ccc;
+}
+
+h4 {
+	font-weight: 400;
+	font-size: 1.2rem;
+	margin: 0 0 30px 0;
+	position: relative;
+	padding: .15rem 0 .25rem .75rem;
+	color: $brand-color;
+	border-left: 8px solid $dark-sub-color;
+}
+
+h4::after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	content: '';
+	width: 80%;
+	height: 0;
+	border-bottom: 3px solid #ccc;
+}
 
 p, address {
-	font-size: 1.38em;
-	color: #666;
+	font-size: 1.0rem;
+	color: #000000;
 	margin-bottom: 20px;
 	font-weight: 300;
-	line-height: 1.4em;
+	line-height: 1.4rem;
+	text-align: justify;
+    text-justify: inter-word;
 }
+
+li {
+	font-size: 0.95rem;
+}
+
+.container, .text-container {
+	margin: 0 auto;
+	position: relative;
+	padding: 0 20px;
+}
+
+.text-container {
+	max-width: 750px;
+}
+
+.container {
+	max-width: 1140px;
+	&.max-container {
+		max-width: 100%;
+		padding: 0;
+	}
+}
+
+header {
+	color: #fff;
+	padding: 20px 0;
+	background: $brand-color; /* Old browsers */
+	background: $brand-color 0%;
+
+	a {
+		color: #fff;
+		text-decoration: none;
+		z-index: 1;
+		position: relative;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	.company-name {
+		font-size: 1.7em;
+		line-height: 0;
+		a {
+			display: inline-block;
+		}
+
+		img {
+			display: block;
+			width: auto;
+		}
+	}
+}
+
+.content {
+	background: $base-color;
+	padding: 1px 0 0 0;
+	position: relative;
+}
+
+section {
+	padding: 100px 0;
+}
+
+section + section {
+	padding-top: 0;
+}
+
+.subtext {
+	margin-top: 10px;
+}
+
+.cta {
+    width: 200px;
+	margin: 10px auto;
+}
+
+@media screen and (max-width:799px) {
+	div.rimage, div.limage {
+		position: relative;
+		width: 100%;
+		img {
+			width: 70%;
+			display: block;
+			margin: auto;
+		}
+
+	}
+}
+
+@media screen and (min-width:800px) {
+	div.rimage, div.limage {
+		width: 50%;
+		height: 400px;
+		img {
+			height: 500px;
+			object-fit: contain;
+		}
+	}
+	div.rimage {
+		float: right;
+	}
+	div.limage {
+		float: left;
+	}
+}
+
+div.wideimage {
+	position: relative;
+	width: 100%;
+	padding-bottom: 60%;
+	float: center;
+	height: 0;
+	img {
+		position: absolute;
+		display: block;
+		margin: auto;
+		width: auto;
+		height: 100%;
+		text-align: center;
+		left: 0;
+		right: 0;
+	}
+}
+
+.page {
+	margin-bottom: 0;
+	padding-bottom: 80px;
+}
+
+.center-text {
+	text-align: center;
+}
+
+div.checkmark {
+  position:relative;
+  display:inline-block;
+  &:after{
+    content: '';
+    display: block;
+    width: 0.4rem;
+    height: 0.8rem;
+    border: solid #090;
+    border-width: 0 0.25rem 0.25rem 0;
+    transform: rotate(45deg);
+  }
+}
+
+.crossmark {
+  position: relative;
+  display:inline-block;
+  right: 0.5rem;
+  top: -0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.crossmark:before, .crossmark:after {
+  position: absolute;
+  left: 0.6rem;
+  content: ' ';
+  height: 1.3rem;
+  width: 0.25rem;
+  background-color: #f00;
+}
+
+.crossmark:before {
+  transform: rotate(45deg);
+}
+
+.crossmark:after {
+  transform: rotate(-45deg);
+}
+div.button {
+	a {
+		color: #fff;
+		text-decoration: none;
+		background: $brand-color;
+		border-radius: 3px;
+		border: 1px solid rgba(255,255,255,.5);
+		transition: .2s ease-in-out;
+		svg {
+			fill: #fff;
+			margin-right: -5px;
+			transition: fill 0.2s ease;
+			vertical-align: middle;
+			position: relative;
+			top: -2px;
+			left: -10px;
+			width: 22px;
+			height: 22px;
+		}
+		&:hover svg {
+			fill: $brand-color;
+		}
+	}
+	a:hover {
+		border: 1px solid #fff;
+		background: $base-color;
+		cursor: pointer;
+	}
+}
+
+div.button.alt a {
+	background: rgba(255,255,255,0.15);
+	border-radius: 3px;
+	padding: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	display: block
+}
+
+div.button.alt a:hover {
+	background: #fff;
+	color: $brand-color;
+}
+
+button { font-family: inherit; font-size: inherit; }
