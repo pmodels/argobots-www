@@ -1,7 +1,21 @@
 - cpu: POWER 9
   host: JLSE witherspoon
   os: Red Hat Enterprise Linux Server 7.6
+  compiler: clang10.0.0
+  pass: yes
+  commit_id: f995e25a2ec54a3d29e34026889ccd437bcd2ea9
+  date: Mon Jul 27 17:32:25 2020 -0500
+- cpu: POWER 9
+  host: JLSE witherspoon
+  os: Red Hat Enterprise Linux Server 7.6
   compiler: clang3.9.1
+  pass: yes
+  commit_id: f995e25a2ec54a3d29e34026889ccd437bcd2ea9
+  date: Mon Jul 27 17:32:25 2020 -0500
+- cpu: POWER 9
+  host: JLSE witherspoon
+  os: Red Hat Enterprise Linux Server 7.6
+  compiler: clang7.0.1
   pass: yes
   commit_id: f995e25a2ec54a3d29e34026889ccd437bcd2ea9
   date: Mon Jul 27 17:32:25 2020 -0500
@@ -16,6 +30,13 @@
   host: JLSE witherspoon
   os: Red Hat Enterprise Linux Server 7.6
   compiler: gnu9.2.0
+  pass: yes
+  commit_id: f995e25a2ec54a3d29e34026889ccd437bcd2ea9
+  date: Mon Jul 27 17:32:25 2020 -0500
+- cpu: POWER 9
+  host: JLSE witherspoon
+  os: Red Hat Enterprise Linux Server 7.6
+  compiler: xlc16.1.1
   pass: yes
   commit_id: f995e25a2ec54a3d29e34026889ccd437bcd2ea9
   date: Mon Jul 27 17:32:25 2020 -0500
