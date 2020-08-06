@@ -133,6 +133,7 @@ var searchData=
   ['abtu_5flp_5fuse_5fhugepage',['ABTU_LP_USE_HUGEPAGE',['../da/de7/largepage_8c.html#a348e3206c19ae230d5999a40778e8c6d',1,'largepage.c']]],
   ['abtu_5flp_5fuse_5fmmap',['ABTU_LP_USE_MMAP',['../da/de7/largepage_8c.html#a7a139f148d7bf4b5a1ffafb7a54c90f0',1,'largepage.c']]],
   ['abtu_5fmax_5falignment',['ABTU_MAX_ALIGNMENT',['../d5/d09/abtu_8h.html#af4893f86341de970c3b4488eee7df44d',1,'abtu.h']]],
+  ['abtu_5fno_5fsanitize_5faddress',['ABTU_no_sanitize_address',['../d5/d09/abtu_8h.html#ad0e66f3acb110df07f959befc4ec748c',1,'abtu.h']]],
   ['abtu_5fstrcpy',['ABTU_strcpy',['../d5/d09/abtu_8h.html#aa3fde2e04f5b5188c17f99601180bb58',1,'abtu.h']]],
   ['abtu_5fstrncpy',['ABTU_strncpy',['../d5/d09/abtu_8h.html#a2abcb685e960ef521d370350c9423e69',1,'abtu.h']]],
   ['abtu_5funlikely',['ABTU_unlikely',['../d5/d09/abtu_8h.html#a15ad120401333b5a41e84b95681a76f9',1,'abtu.h']]]

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">7f4058b8636aa5f6a620b9ca2521cee0eeed49be</span>
+   &#160;<span id="projectnumber">c9af1c0f8a475d8442195299d1716d4e78ff74e7</span>
    </div>
   </td>
  </tr>
@@ -157,8 +157,8 @@ Functions</h2></td></tr>
 <tr class="separator:a1baabbc307d8728075d9cc04efba6cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ba87bbff32a1a3df799e07a987e02d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/sched_8c.html#a3ba87bbff32a1a3df799e07a987e02d7">ABTI_sched_create_basic</a> (<a class="el" href="../../d5/d7d/abt_8h.html#a4e2d8d06b58e27532adc4db03b45d1e7">ABT_sched_predef</a> predef, int num_pools, <a class="el" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> *pools, <a class="el" href="../../d5/d7d/abt_8h.html#a9be459e63da2c9e318b6b9d446aa4c4b">ABT_sched_config</a> config, <a class="el" href="../../d0/dd5/structABTI__sched.html">ABTI_sched</a> **pp_newsched)</td></tr>
 <tr class="separator:a3ba87bbff32a1a3df799e07a987e02d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af29a42627f6280e0a6e4af599aaf6980"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/sched_8c.html#af29a42627f6280e0a6e4af599aaf6980">ABTI_sched_free</a> (<a class="el" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream, <a class="el" href="../../d0/dd5/structABTI__sched.html">ABTI_sched</a> *p_sched)</td></tr>
-<tr class="separator:af29a42627f6280e0a6e4af599aaf6980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d2f5c41627cd07c61af55a8e7ca005f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/sched_8c.html#a4d2f5c41627cd07c61af55a8e7ca005f">ABTI_sched_free</a> (<a class="el" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream, <a class="el" href="../../d0/dd5/structABTI__sched.html">ABTI_sched</a> *p_sched, <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> force_free)</td></tr>
+<tr class="separator:a4d2f5c41627cd07c61af55a8e7ca005f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae70c528ca97b2702abeb31159b459db4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/sched_8c.html#ae70c528ca97b2702abeb31159b459db4">ABTI_sched_get_migration_pool</a> (<a class="el" href="../../d0/dd5/structABTI__sched.html">ABTI_sched</a> *p_sched, <a class="el" href="../../df/d65/structABTI__pool.html">ABTI_pool</a> *source_pool, <a class="el" href="../../df/d65/structABTI__pool.html">ABTI_pool</a> **pp_pool)</td></tr>
 <tr class="separator:ae70c528ca97b2702abeb31159b459db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f16bdf253f82483495398bdc0f783fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d03/abti_8h.html#a1df4e86d396a48cdb62d265cdee28cee">ABTI_sched_kind</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/sched_8c.html#a2f16bdf253f82483495398bdc0f783fb">ABTI_sched_get_kind</a> (<a class="el" href="../../de/d65/structABT__sched__def.html">ABT_sched_def</a> *def)</td></tr>
@@ -316,7 +316,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af29a42627f6280e0a6e4af599aaf6980"></a>
+<a class="anchor" id="a4d2f5c41627cd07c61af55a8e7ca005f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -330,7 +330,13 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="../../d0/dd5/structABTI__sched.html">ABTI_sched</a> *&#160;</td>
-          <td class="paramname"><em>p_sched</em>&#160;</td>
+          <td class="paramname"><em>p_sched</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a>&#160;</td>
+          <td class="paramname"><em>force_free</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -372,7 +378,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../db/dbe/sched_8c_source.html#l00502">502</a> of file <a class="el" href="../../db/dbe/sched_8c_source.html">sched.c</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d8/d4d/stream_8c_source.html#l00685">ABT_xstream_set_main_sched()</a>, <a class="el" href="../../db/dbe/sched_8c_source.html#l00311">ABTI_sched_has_to_stop()</a>, and <a class="el" href="../../d8/d4d/stream_8c_source.html#l01361">ABTI_xstream_schedule()</a>.</p>
+<p>Referenced by <a class="el" href="../../d8/d4d/stream_8c_source.html#l00685">ABT_xstream_set_main_sched()</a>, <a class="el" href="../../db/dbe/sched_8c_source.html#l00311">ABTI_sched_has_to_stop()</a>, and <a class="el" href="../../d8/d4d/stream_8c_source.html#l01363">ABTI_xstream_schedule()</a>.</p>
 
 </div>
 </div>
@@ -390,9 +396,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../db/dbe/sched_8c_source.html#l00868">868</a> of file <a class="el" href="../../db/dbe/sched_8c_source.html">sched.c</a>.</p>
+<p>Definition at line <a class="el" href="../../db/dbe/sched_8c_source.html#l00869">869</a> of file <a class="el" href="../../db/dbe/sched_8c_source.html">sched.c</a>.</p>
 
-<p>Referenced by <a class="el" href="../../db/dbe/sched_8c_source.html#l00562">ABTI_sched_create()</a>, and <a class="el" href="../../db/dbe/sched_8c_source.html#l00873">ABTI_sched_print()</a>.</p>
+<p>Referenced by <a class="el" href="../../db/dbe/sched_8c_source.html#l00562">ABTI_sched_create()</a>, and <a class="el" href="../../db/dbe/sched_8c_source.html#l00874">ABTI_sched_print()</a>.</p>
 
 </div>
 </div>
@@ -426,9 +432,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../db/dbe/sched_8c_source.html#l00836">836</a> of file <a class="el" href="../../db/dbe/sched_8c_source.html">sched.c</a>.</p>
+<p>Definition at line <a class="el" href="../../db/dbe/sched_8c_source.html#l00837">837</a> of file <a class="el" href="../../db/dbe/sched_8c_source.html">sched.c</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d3/de7/thread_8c_source.html#l00959">ABT_thread_migrate_to_sched()</a>, and <a class="el" href="../../d3/de7/thread_8c_source.html#l02452">ABTI_thread_migrate_to_xstream()</a>.</p>
+<p>Referenced by <a class="el" href="../../d3/de7/thread_8c_source.html#l00959">ABT_thread_migrate_to_sched()</a>, and <a class="el" href="../../d3/de7/thread_8c_source.html#l02453">ABTI_thread_migrate_to_xstream()</a>.</p>
 
 </div>
 </div>
@@ -448,7 +454,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../db/dbe/sched_8c_source.html#l00441">441</a> of file <a class="el" href="../../db/dbe/sched_8c_source.html">sched.c</a>.</p>
 
-<p>Referenced by <a class="el" href="../../db/dbe/sched_8c_source.html#l00422">ABT_sched_get_size()</a>, and <a class="el" href="../../db/dbe/sched_8c_source.html#l00873">ABTI_sched_print()</a>.</p>
+<p>Referenced by <a class="el" href="../../db/dbe/sched_8c_source.html#l00422">ABT_sched_get_size()</a>, and <a class="el" href="../../db/dbe/sched_8c_source.html#l00874">ABTI_sched_print()</a>.</p>
 
 </div>
 </div>
@@ -468,7 +474,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../db/dbe/sched_8c_source.html#l00484">484</a> of file <a class="el" href="../../db/dbe/sched_8c_source.html">sched.c</a>.</p>
 
-<p>Referenced by <a class="el" href="../../db/dbe/sched_8c_source.html#l00465">ABT_sched_get_total_size()</a>, and <a class="el" href="../../db/dbe/sched_8c_source.html#l00873">ABTI_sched_print()</a>.</p>
+<p>Referenced by <a class="el" href="../../db/dbe/sched_8c_source.html#l00465">ABT_sched_get_total_size()</a>, and <a class="el" href="../../db/dbe/sched_8c_source.html#l00874">ABTI_sched_print()</a>.</p>
 
 </div>
 </div>
@@ -538,9 +544,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../db/dbe/sched_8c_source.html#l00873">873</a> of file <a class="el" href="../../db/dbe/sched_8c_source.html">sched.c</a>.</p>
+<p>Definition at line <a class="el" href="../../db/dbe/sched_8c_source.html#l00874">874</a> of file <a class="el" href="../../db/dbe/sched_8c_source.html">sched.c</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d5/d35/info_8c_source.html#l00348">ABT_info_print_sched()</a>, and <a class="el" href="../../d8/d4d/stream_8c_source.html#l01783">ABTI_xstream_print()</a>.</p>
+<p>Referenced by <a class="el" href="../../d5/d35/info_8c_source.html#l00348">ABT_info_print_sched()</a>, and <a class="el" href="../../d8/d4d/stream_8c_source.html#l01785">ABTI_xstream_print()</a>.</p>
 
 </div>
 </div>
@@ -558,7 +564,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../db/dbe/sched_8c_source.html#l00978">978</a> of file <a class="el" href="../../db/dbe/sched_8c_source.html">sched.c</a>.</p>
+<p>Definition at line <a class="el" href="../../db/dbe/sched_8c_source.html#l00979">979</a> of file <a class="el" href="../../db/dbe/sched_8c_source.html">sched.c</a>.</p>
 
 <p>Referenced by <a class="el" href="../../dc/d57/global_8c_source.html#l00040">ABT_init()</a>.</p>
 
@@ -583,14 +589,14 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../db/dbe/sched_8c_source.html#l00977">977</a> of file <a class="el" href="../../db/dbe/sched_8c_source.html">sched.c</a>.</p>
+<p>Definition at line <a class="el" href="../../db/dbe/sched_8c_source.html#l00978">978</a> of file <a class="el" href="../../db/dbe/sched_8c_source.html">sched.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 29 2020 03:09:45 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 6 2020 03:09:51 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
