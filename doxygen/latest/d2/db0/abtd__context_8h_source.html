@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">c9af1c0f8a475d8442195299d1716d4e78ff74e7</span>
+   &#160;<span id="projectnumber">8d969f7eb112ff8423f40396a0f1fbcb3b0a032c</span>
    </div>
   </td>
  </tr>
@@ -149,31 +149,33 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                     <span class="keywordtype">size_t</span> size, <span class="keywordtype">void</span> (*thread_func)(<span class="keywordtype">void</span> *));</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> ABTD_thread_context_jump(ABTD_thread_context *p_old,</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                     ABTD_thread_context *p_new, <span class="keywordtype">void</span> *arg);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> ABTD_thread_context_take(ABTD_thread_context *p_old,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                     ABTD_thread_context *p_new, <span class="keywordtype">void</span> *arg);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#if ABT_CONFIG_THREAD_TYPE == ABT_THREAD_TYPE_DYNAMIC_PROMOTION</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor"></span><span class="keyword">static</span> <span class="keywordtype">void</span> ABTD_thread_context_init_and_call(ABTD_thread_context *p_ctx,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                              <span class="keywordtype">void</span> *sp,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                              <span class="keywordtype">void</span> (*thread_func)(<span class="keywordtype">void</span> *),</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                              <span class="keywordtype">void</span> *arg);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordtype">void</span> ABTD_thread_print_context(ABTI_thread *p_thread, FILE *p_os, <span class="keywordtype">int</span> indent);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_USE_FCONTEXT</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="../../d4/d27/abtd__fcontext_8h.html">abtd_fcontext.h</a>&quot;</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="../../d6/de0/abtd__ucontext_8h.html">abtd_ucontext.h</a>&quot;</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTD_CONTEXT_H_INCLUDED */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a64c0a07a6bc37d45de89623a281c5b18">ABTU_noreturn</a> <span class="keyword">static</span> <span class="keywordtype">void</span> ABTD_thread_context_take(ABTD_thread_context *p_old,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                                   ABTD_thread_context *p_new,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                                   <span class="keywordtype">void</span> *arg);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#if ABT_CONFIG_THREAD_TYPE == ABT_THREAD_TYPE_DYNAMIC_PROMOTION</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor"></span><span class="keyword">static</span> <span class="keywordtype">void</span> ABTD_thread_context_init_and_call(ABTD_thread_context *p_ctx,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                              <span class="keywordtype">void</span> *sp,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                              <span class="keywordtype">void</span> (*thread_func)(<span class="keywordtype">void</span> *),</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                              <span class="keywordtype">void</span> *arg);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">void</span> ABTD_thread_print_context(ABTI_thread *p_thread, FILE *p_os, <span class="keywordtype">int</span> indent);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_USE_FCONTEXT</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="../../d4/d27/abtd__fcontext_8h.html">abtd_fcontext.h</a>&quot;</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="../../d6/de0/abtd__ucontext_8h.html">abtd_ucontext.h</a>&quot;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTD_CONTEXT_H_INCLUDED */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="abtd__fcontext_8h_html"><div class="ttname"><a href="../../d4/d27/abtd__fcontext_8h.html">abtd_fcontext.h</a></div></div>
 <div class="ttc" id="abt__config_8h_html"><div class="ttname"><a href="../../dd/d6e/abt__config_8h.html">abt_config.h</a></div></div>
+<div class="ttc" id="abtu_8h_html_a64c0a07a6bc37d45de89623a281c5b18"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a64c0a07a6bc37d45de89623a281c5b18">ABTU_noreturn</a></div><div class="ttdeci">#define ABTU_noreturn</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00031">abtu.h:31</a></div></div>
 <div class="ttc" id="abtd__ucontext_8h_html"><div class="ttname"><a href="../../d6/de0/abtd__ucontext_8h.html">abtd_ucontext.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 6 2020 11:14:12 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 11 2020 03:09:49 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

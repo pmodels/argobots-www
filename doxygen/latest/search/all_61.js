@@ -23,7 +23,6 @@ var searchData=
   ['abt_5fcond_5fwait',['ABT_cond_wait',['../d9/d37/group__COND.html#ga5259b9161829998a5bef644b17635210',1,'ABT_cond_wait(ABT_cond cond, ABT_mutex mutex) ABT_API_PUBLIC:&#160;cond.c'],['../d9/d37/group__COND.html#ga5259b9161829998a5bef644b17635210',1,'ABT_cond_wait(ABT_cond cond, ABT_mutex mutex):&#160;cond.c']]],
   ['abt_5fconfig_2eh',['abt_config.h',['../dd/d6e/abt__config_8h.html',1,'']]],
   ['abt_5fconfig_5fdisable_5ftool_5finterface',['ABT_CONFIG_DISABLE_TOOL_INTERFACE',['../dd/d6e/abt__config_8h.html#a50cbedb855cf58d8b37c8393e3ae87f4',1,'abt_config.h']]],
-  ['abt_5fconfig_5fhave_5f_5f_5fbuiltin_5fexpect',['ABT_CONFIG_HAVE___BUILTIN_EXPECT',['../dd/d6e/abt__config_8h.html#aeb7f8f5af8ee35235156a6ec8aa99415',1,'abt_config.h']]],
   ['abt_5fconfig_5fhave_5falignof_5fgcc',['ABT_CONFIG_HAVE_ALIGNOF_GCC',['../dd/d6e/abt__config_8h.html#a318fa4d0b7be91927f46d0346dabd223',1,'abt_config.h']]],
   ['abt_5fconfig_5fhave_5fatomic_5fbuiltin',['ABT_CONFIG_HAVE_ATOMIC_BUILTIN',['../dd/d6e/abt__config_8h.html#ace3e570b855d58052537598a7e4b7696',1,'abt_config.h']]],
   ['abt_5fconfig_5fhave_5fatomic_5fint128',['ABT_CONFIG_HAVE_ATOMIC_INT128',['../dd/d6e/abt__config_8h.html#a8e9119b8848f7bf30e749995eaa2e229',1,'abt_config.h']]],
@@ -565,9 +564,11 @@ var searchData=
   ['abtu_5fmmap_5fregular',['ABTU_mmap_regular',['../da/de7/largepage_8c.html#a6a438cc8e354dd70268fe188c019a9bd',1,'largepage.c']]],
   ['abtu_5fmunmap',['ABTU_munmap',['../da/de7/largepage_8c.html#a872358ff8d11ea0ed62a08a1cd3195c2',1,'largepage.c']]],
   ['abtu_5fno_5fsanitize_5faddress',['ABTU_no_sanitize_address',['../d5/d09/abtu_8h.html#ad0e66f3acb110df07f959befc4ec748c',1,'abtu.h']]],
+  ['abtu_5fnoreturn',['ABTU_noreturn',['../d5/d09/abtu_8h.html#a64c0a07a6bc37d45de89623a281c5b18',1,'abtu.h']]],
   ['abtu_5frealloc',['ABTU_realloc',['../d5/d09/abtu_8h.html#af30902a46c75f9488726c7121fb6c4f6',1,'abtu.h']]],
   ['abtu_5fstrcpy',['ABTU_strcpy',['../d5/d09/abtu_8h.html#aa3fde2e04f5b5188c17f99601180bb58',1,'abtu.h']]],
   ['abtu_5fstrncpy',['ABTU_strncpy',['../d5/d09/abtu_8h.html#a2abcb685e960ef521d370350c9423e69',1,'abtu.h']]],
   ['abtu_5funlikely',['ABTU_unlikely',['../d5/d09/abtu_8h.html#a15ad120401333b5a41e84b95681a76f9',1,'abtu.h']]],
+  ['abtu_5funreachable',['ABTU_unreachable',['../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b',1,'abtu.h']]],
   ['access',['access',['../d4/dfc/structABT__pool__def.html#a9652caf35cbf3cfb4c20c78542fb429b',1,'ABT_pool_def']]]
 ];

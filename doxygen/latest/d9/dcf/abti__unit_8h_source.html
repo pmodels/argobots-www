@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">c9af1c0f8a475d8442195299d1716d4e78ff74e7</span>
+   &#160;<span id="projectnumber">8d969f7eb112ff8423f40396a0f1fbcb3b0a032c</span>
    </div>
   </td>
  </tr>
@@ -122,7 +122,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089ade61dddc74434ee2705c536698d07149">ABT_THREAD_STATE_TERMINATED</a>;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">default</span>:</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            ABTI_ASSERT(0);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089">ABT_thread_state</a>)-1;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="../../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">ABTU_unreachable</a>();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
@@ -139,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">case</span> ABTI_UNIT_STATE_BLOCKED:</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">default</span>:</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            ABTI_ASSERT(0);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="../../d5/d7d/abt_8h.html#a4aafbed4aa9fe5d6e7697bc10ea748c5">ABT_task_state</a>)-1;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="../../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">ABTU_unreachable</a>();</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
@@ -197,6 +197,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_UNIT_H_INCLUDED */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="abt_8h_html_a80bdf9da42da2ec917df5bdb66e0981ca4a88df161804496652e74229ee601433"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981ca4a88df161804496652e74229ee601433">ABT_UNIT_TYPE_THREAD</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00172">abt.h:172</a></div></div>
+<div class="ttc" id="abtu_8h_html_ae3782cfe8ab5b4b64d7da16a6fd6c84b"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">ABTU_unreachable</a></div><div class="ttdeci">#define ABTU_unreachable()</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00025">abtu.h:25</a></div></div>
 <div class="ttc" id="abt_8h_html_a4aafbed4aa9fe5d6e7697bc10ea748c5ab4617f4d59effbe22802abfb6d7a36ad"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a4aafbed4aa9fe5d6e7697bc10ea748c5ab4617f4d59effbe22802abfb6d7a36ad">ABT_TASK_STATE_TERMINATED</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00135">abt.h:135</a></div></div>
 <div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00375">abt.h:375</a></div></div>
 <div class="ttc" id="abt_8h_html_aa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00126">abt.h:126</a></div></div>
@@ -215,7 +216,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 6 2020 11:14:12 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 11 2020 03:09:49 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

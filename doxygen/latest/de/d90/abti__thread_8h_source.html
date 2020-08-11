@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">c9af1c0f8a475d8442195299d1716d4e78ff74e7</span>
+   &#160;<span id="projectnumber">8d969f7eb112ff8423f40396a0f1fbcb3b0a032c</span>
    </div>
   </td>
  </tr>
@@ -251,7 +251,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        ABTI_tool_event_thread_finish(*pp_local_xstream, p_old,</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                      p_old-&gt;unit_def.p_parent);</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        ABTD_thread_finish_context(&amp;p_old-&gt;ctx, &amp;p_new-&gt;ctx);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">return</span> NULL; <span class="comment">/* Unreachable. */</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <a class="code" href="../../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">ABTU_unreachable</a>();</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        ABTD_thread_context_switch(&amp;p_old-&gt;ctx, &amp;p_new-&gt;ctx);</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        ABTI_xstream *p_local_xstream = ABTI_local_get_xstream_uninlined();</div>
@@ -280,7 +280,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        ABTI_tool_event_thread_finish(*pp_local_xstream, p_old,</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                                      p_old-&gt;unit_def.p_parent);</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        ABTD_thread_finish_context(&amp;p_old-&gt;ctx, &amp;p_new-&gt;ctx);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">return</span> NULL; <span class="comment">/* Unreachable. */</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <a class="code" href="../../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">ABTU_unreachable</a>();</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        ABTI_tool_event_thread_yield(*pp_local_xstream, p_old,</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                                     p_old-&gt;unit_def.p_parent, sync_event_type,</div>
@@ -412,85 +412,89 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                                                        p_new);</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;}</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a64c0a07a6bc37d45de89623a281c5b18">ABTU_noreturn</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;ABTI_thread_finish_context_to_sibling(ABTI_xstream *p_local_xstream,</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                                      ABTI_thread *p_old, ABTI_thread *p_new)</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;{</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    ABTI_thread_context_switch_to_sibling_internal(&amp;p_local_xstream, p_old,</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                                                   p_new, <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;}</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;ABTI_thread_finish_context_to_parent(ABTI_xstream *p_local_xstream,</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                                     ABTI_thread *p_old)</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;{</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    ABTI_thread_context_switch_to_parent_internal(&amp;p_local_xstream, p_old,</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                                                  <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>,</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                                                  <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fa2801f298fea113717986e18eae45b7ab">ABT_SYNC_EVENT_TYPE_UNKNOWN</a>,</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                                                  NULL);</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;}</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;ABTI_thread_finish_context_sched_to_main_thread(ABTI_sched *p_main_sched)</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;{</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="comment">/* The main thread is stored in p_link. */</span></div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    ABTI_thread *p_sched_thread = p_main_sched-&gt;p_thread;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    ABTI_ASSERT(p_sched_thread-&gt;unit_def.type ==</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                ABTI_UNIT_TYPE_THREAD_MAIN_SCHED);</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    ABTD_thread_context *p_ctx = &amp;p_sched_thread-&gt;ctx;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    ABTI_thread *p_main_thread = ABTI_thread_context_get_thread(</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        ABTD_atomic_acquire_load_thread_context_ptr(&amp;p_ctx-&gt;p_link));</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    ABTI_ASSERT(p_main_thread &amp;&amp;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                p_main_thread-&gt;unit_def.type == ABTI_UNIT_TYPE_THREAD_MAIN);</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    ABTD_thread_finish_context(&amp;p_sched_thread-&gt;ctx, &amp;p_main_thread-&gt;ctx);</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;}</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_thread_set_request(ABTI_thread *p_thread, uint32_t req)</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;{</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    ABTD_atomic_fetch_or_uint32(&amp;p_thread-&gt;unit_def.request, req);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;}</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_thread_unset_request(ABTI_thread *p_thread,</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                                             uint32_t req)</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;{</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    ABTD_atomic_fetch_and_uint32(&amp;p_thread-&gt;unit_def.request, ~req);</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;}</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_thread_yield(ABTI_xstream **pp_local_xstream,</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                                     ABTI_thread *p_thread,</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                                     <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602f">ABT_sync_event_type</a> sync_event_type,</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                                     <span class="keywordtype">void</span> *p_sync)</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;{</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[U%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] yield\n&quot;</span>, ABTI_thread_get_id(p_thread),</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;              p_thread-&gt;unit_def.p_last_xstream-&gt;rank);</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="comment">/* Change the state of current running thread */</span></div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    ABTD_atomic_release_store_int(&amp;p_thread-&gt;unit_def.state,</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                                  ABTI_UNIT_STATE_READY);</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="comment">/* Switch to the top scheduler */</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    ABTI_thread_context_switch_to_parent(pp_local_xstream, p_thread,</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                                         sync_event_type, p_sync);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="comment">/* Back to the original thread */</span></div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[U%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] resume after yield\n&quot;</span>,</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;              ABTI_thread_get_id(p_thread),</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;              p_thread-&gt;unit_def.p_last_xstream-&gt;rank);</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;}</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_THREAD_H_INCLUDED */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">ABTU_unreachable</a>();</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;}</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a64c0a07a6bc37d45de89623a281c5b18">ABTU_noreturn</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;ABTI_thread_finish_context_to_parent(ABTI_xstream *p_local_xstream,</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                                     ABTI_thread *p_old)</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;{</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    ABTI_thread_context_switch_to_parent_internal(&amp;p_local_xstream, p_old,</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                                                  <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>,</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                                                  <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fa2801f298fea113717986e18eae45b7ab">ABT_SYNC_EVENT_TYPE_UNKNOWN</a>,</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                                                  NULL);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">ABTU_unreachable</a>();</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;}</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a64c0a07a6bc37d45de89623a281c5b18">ABTU_noreturn</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;ABTI_thread_finish_context_sched_to_main_thread(ABTI_sched *p_main_sched)</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;{</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="comment">/* The main thread is stored in p_link. */</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    ABTI_thread *p_sched_thread = p_main_sched-&gt;p_thread;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    ABTI_ASSERT(p_sched_thread-&gt;unit_def.type ==</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                ABTI_UNIT_TYPE_THREAD_MAIN_SCHED);</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    ABTD_thread_context *p_ctx = &amp;p_sched_thread-&gt;ctx;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    ABTI_thread *p_main_thread = ABTI_thread_context_get_thread(</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        ABTD_atomic_acquire_load_thread_context_ptr(&amp;p_ctx-&gt;p_link));</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    ABTI_ASSERT(p_main_thread &amp;&amp;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                p_main_thread-&gt;unit_def.type == ABTI_UNIT_TYPE_THREAD_MAIN);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    ABTD_thread_finish_context(&amp;p_sched_thread-&gt;ctx, &amp;p_main_thread-&gt;ctx);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;}</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_thread_set_request(ABTI_thread *p_thread, uint32_t req)</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;{</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    ABTD_atomic_fetch_or_uint32(&amp;p_thread-&gt;unit_def.request, req);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;}</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_thread_unset_request(ABTI_thread *p_thread,</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                                             uint32_t req)</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;{</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    ABTD_atomic_fetch_and_uint32(&amp;p_thread-&gt;unit_def.request, ~req);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;}</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_thread_yield(ABTI_xstream **pp_local_xstream,</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                                     ABTI_thread *p_thread,</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                                     <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602f">ABT_sync_event_type</a> sync_event_type,</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                                     <span class="keywordtype">void</span> *p_sync)</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;{</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[U%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] yield\n&quot;</span>, ABTI_thread_get_id(p_thread),</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;              p_thread-&gt;unit_def.p_last_xstream-&gt;rank);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="comment">/* Change the state of current running thread */</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    ABTD_atomic_release_store_int(&amp;p_thread-&gt;unit_def.state,</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                                  ABTI_UNIT_STATE_READY);</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="comment">/* Switch to the top scheduler */</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    ABTI_thread_context_switch_to_parent(pp_local_xstream, p_thread,</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                                         sync_event_type, p_sync);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="comment">/* Back to the original thread */</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[U%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] resume after yield\n&quot;</span>,</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;              ABTI_thread_get_id(p_thread),</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;              p_thread-&gt;unit_def.p_last_xstream-&gt;rank);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;}</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_THREAD_H_INCLUDED */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="abtu_8h_html_ae3782cfe8ab5b4b64d7da16a6fd6c84b"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">ABTU_unreachable</a></div><div class="ttdeci">#define ABTU_unreachable()</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00025">abtu.h:25</a></div></div>
 <div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00375">abt.h:375</a></div></div>
 <div class="ttc" id="abt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00287">abt.h:287</a></div></div>
 <div class="ttc" id="abt_8h_html_a186008e05c04170eed9ac74808619717"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a></div><div class="ttdeci">struct ABT_thread_opaque * ABT_thread</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00345">abt.h:345</a></div></div>
 <div class="ttc" id="abt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00286">abt.h:286</a></div></div>
 <div class="ttc" id="abt_8h_html_aabf134f2165a5d15ea5bd063b982d8a6"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aabf134f2165a5d15ea5bd063b982d8a6">ABT_THREAD_NULL</a></div><div class="ttdeci">#define ABT_THREAD_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00419">abt.h:419</a></div></div>
+<div class="ttc" id="abtu_8h_html_a64c0a07a6bc37d45de89623a281c5b18"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a64c0a07a6bc37d45de89623a281c5b18">ABTU_noreturn</a></div><div class="ttdeci">#define ABTU_noreturn</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00031">abtu.h:31</a></div></div>
 <div class="ttc" id="abti__log_8h_html_ac06cfc686322558f590c50eab8622ebd"><div class="ttname"><a href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></div><div class="ttdeci">#define LOG_DEBUG(fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5e/abti__log_8h_source.html#l00030">abti_log.h:30</a></div></div>
 <div class="ttc" id="abt_8h_html_ac601a9db309d1a30954d43fc82d9602f"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602f">ABT_sync_event_type</a></div><div class="ttdeci">ABT_sync_event_type</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00246">abt.h:246</a></div></div>
 <div class="ttc" id="abt_8h_html_ac601a9db309d1a30954d43fc82d9602fa2801f298fea113717986e18eae45b7ab"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fa2801f298fea113717986e18eae45b7ab">ABT_SYNC_EVENT_TYPE_UNKNOWN</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00247">abt.h:247</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 6 2020 11:14:12 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 11 2020 03:09:49 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
