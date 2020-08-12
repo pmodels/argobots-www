@@ -3,13 +3,13 @@
   os: Ubuntu 20.04
   compiler: clang10.0.0
   pass: yes
-  commit_id: 8d969f7eb112ff8423f40396a0f1fbcb3b0a032c
-  date: Mon Aug 10 12:43:15 2020 -0500
+  commit_id: 1844b3c74ccf2d69e537e00295cd54e96e6e003b
+  date: Wed Aug 12 08:04:30 2020 -0500
 - cpu: x86/64
   host: JLSE it (Singularity)
   os: Ubuntu 20.04
   compiler: gnu9.3.0
   pass: yes
-  commit_id: 8d969f7eb112ff8423f40396a0f1fbcb3b0a032c
-  date: Mon Aug 10 12:43:15 2020 -0500
+  commit_id: 1844b3c74ccf2d69e537e00295cd54e96e6e003b
+  date: Wed Aug 12 08:04:30 2020 -0500
 
