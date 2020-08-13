@@ -1,22 +1,4 @@
 var searchData=
 [
-  ['native_5fthread',['native_thread',['../df/dec/structABTD__xstream__context.html#a231609e0f1759e168fd028beff577842',1,'ABTD_xstream_context']]],
-  ['nbytes',['nbytes',['../de/db1/structABTI__eventual.html#a429f50d6e3304fb439b9ddf9fd69e86e',1,'ABTI_eventual']]],
-  ['nesting_5fcnt',['nesting_cnt',['../df/de7/structABTI__mutex__attr.html#a576e00bb9e0d76f8df7a5b6b6466edf0',1,'ABTI_mutex_attr']]],
-  ['num',['num',['../d9/d78/structABTI__info__pool__set__t.html#ad08c8c94022f952c80a4410e21def8f9',1,'ABTI_info_pool_set_t']]],
-  ['num_5fblocked',['num_blocked',['../df/d65/structABTI__pool.html#a0fd1b0b5ef5c29d28fab24f86c97d839',1,'ABTI_pool']]],
-  ['num_5fcores',['num_cores',['../da/de9/structABTI__global.html#a2fac521035c8d3fca9135cd7b3b0d961',1,'ABTI_global']]],
-  ['num_5felems',['num_elems',['../db/de5/structABTI__thread__htable.html#a6f4260411bfddbd8501e812ecaa78b11',1,'ABTI_thread_htable']]],
-  ['num_5fhandovers',['num_handovers',['../d4/deb/structABTI__thread__queue.html#a6cba4a436b71dd147509cb54c40560d3',1,'ABTI_thread_queue']]],
-  ['num_5fheaders',['num_headers',['../d5/d6c/unionABTI__mem__pool__header__bucket__info.html#aef38b3d12af3bc2e490922a3aa4c902e',1,'ABTI_mem_pool_header_bucket_info']]],
-  ['num_5fheaders_5fper_5fbucket',['num_headers_per_bucket',['../d7/de4/structABTI__mem__pool__global__pool.html#a22d2d3161e2e4581d0510cef36d1103f',1,'ABTI_mem_pool_global_pool::num_headers_per_bucket()'],['../d6/d69/structABTI__mem__pool__local__pool.html#ab46544d5aef7767d34b06ad212230ea7',1,'ABTI_mem_pool_local_pool::num_headers_per_bucket()']]],
-  ['num_5flp_5ftype_5frequests',['num_lp_type_requests',['../d7/de4/structABTI__mem__pool__global__pool.html#ab047fc4a20bab36aed3bada6b6a4ee24',1,'ABTI_mem_pool_global_pool']]],
-  ['num_5fmigrations',['num_migrations',['../df/d65/structABTI__pool.html#afdb84281cd8d4cd8f91cdeca65a904c0',1,'ABTI_pool']]],
-  ['num_5fpools',['num_pools',['../d0/dd5/structABTI__sched.html#acbbcb4c7e999fe5b752a54d427166d75',1,'ABTI_sched::num_pools()'],['../df/d3b/structsched__data.html#a7dedc2d1370e0d3202976ca89f9bd711',1,'sched_data::num_pools()']]],
-  ['num_5frows',['num_rows',['../db/de5/structABTI__thread__htable.html#aca7d689425ceb490d8c5bdde7f178426',1,'ABTI_thread_htable']]],
-  ['num_5fscheds',['num_scheds',['../df/d65/structABTI__pool.html#ab6931b8f2795af61d60de5c784d50b50',1,'ABTI_pool']]],
-  ['num_5fthreads',['num_threads',['../d4/deb/structABTI__thread__queue.html#a63a13a42526cd613c06b29425152aeae',1,'ABTI_thread_queue']]],
-  ['num_5funits',['num_units',['../df/dea/structdata.html#aa40bd091c6aeb61e6d082f4f86289375',1,'data']]],
-  ['num_5fwaiters',['num_waiters',['../d6/d10/structABTI__cond.html#a0ea83a8426c6e560359e3e9b67b6b6d0',1,'ABTI_cond::num_waiters()'],['../d9/d20/structABTI__barrier.html#a2485bc8fdf13524295f04f4c75d9e028',1,'ABTI_barrier::num_waiters()'],['../d8/d7e/structABTI__xstream__barrier.html#abe03df0a856469e2007e08b6a676c471',1,'ABTI_xstream_barrier::num_waiters()']]],
-  ['num_5fxstreams',['num_xstreams',['../da/de9/structABTI__global.html#abbc40abb3b0392c79dcff51d04ce8868',1,'ABTI_global']]]
+  ['num_5fcpusets',['num_cpusets',['../d6/dcd/structglobal__affinity.html#aa60d91287795e43bcdfe22485d47a8db',1,'global_affinity']]]
 ];

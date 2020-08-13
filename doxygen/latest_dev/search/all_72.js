@@ -2,6 +2,7 @@ var searchData=
 [
   ['randws_2ec',['randws.c',['../da/d51/randws_8c.html',1,'']]],
   ['rank',['rank',['../dc/d3f/structABTI__xstream.html#a598b03f9684af47b1d84ff00ed2f4419',1,'ABTI_xstream']]],
+  ['read_5fcpuset',['read_cpuset',['../d2/d45/abtd__affinity_8c.html#af09450e0fe38bf76e5178434c9c1505d',1,'abtd_affinity.c']]],
   ['reader_5fcount',['reader_count',['../da/dcc/structABTI__rwlock.html#ac07b2e1e29a8df25e83a5ad533c3ae98',1,'ABTI_rwlock']]],
   ['ready',['ready',['../de/db1/structABTI__eventual.html#ac3e0370aee305aba03d498f10e455702',1,'ABTI_eventual']]],
   ['refcount',['refcount',['../dc/d58/structABTI__unit.html#afd525b75ac0ddbdb046a58a98caaf61a',1,'ABTI_unit']]],

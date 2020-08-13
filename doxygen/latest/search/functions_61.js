@@ -236,5 +236,6 @@ var searchData=
   ['abtu_5fmmap_5fhugepage',['ABTU_mmap_hugepage',['../da/de7/largepage_8c.html#a90d2f778b4564b4384ed2b9934742481',1,'largepage.c']]],
   ['abtu_5fmmap_5fregular',['ABTU_mmap_regular',['../da/de7/largepage_8c.html#a6a438cc8e354dd70268fe188c019a9bd',1,'largepage.c']]],
   ['abtu_5fmunmap',['ABTU_munmap',['../da/de7/largepage_8c.html#a872358ff8d11ea0ed62a08a1cd3195c2',1,'largepage.c']]],
-  ['abtu_5frealloc',['ABTU_realloc',['../d5/d09/abtu_8h.html#af30902a46c75f9488726c7121fb6c4f6',1,'abtu.h']]]
+  ['abtu_5frealloc',['ABTU_realloc',['../d5/d09/abtu_8h.html#af30902a46c75f9488726c7121fb6c4f6',1,'abtu.h']]],
+  ['apply_5fcpuset',['apply_cpuset',['../d2/d45/abtd__affinity_8c.html#a88a7e8825ef36999c09a85261e487acd',1,'abtd_affinity.c']]]
 ];

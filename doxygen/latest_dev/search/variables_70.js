@@ -15,6 +15,7 @@ var searchData=
   ['p_5fhandover',['p_handover',['../d5/d57/structABTI__mutex.html#a97a83e79257465d8fb29e840d2840649',1,'ABTI_mutex']]],
   ['p_5fhead',['p_head',['../d6/d10/structABTI__cond.html#ad69b0a98982bab2834b53fd2a8be6806',1,'ABTI_cond::p_head()'],['../de/db1/structABTI__eventual.html#ab116f9556384327721590a73da7b0ff1',1,'ABTI_eventual::p_head()'],['../d1/db2/structABTI__future.html#a6c1196862b867bc3672d9bb023a9565b',1,'ABTI_future::p_head()'],['../df/dea/structdata.html#acdbfe39805c8657be189f8bb84a9bb9e',1,'data::p_head()']]],
   ['p_5fhtable',['p_htable',['../d5/d57/structABTI__mutex.html#ab065641570a7ddd8c3f23770892b05c2',1,'ABTI_mutex']]],
+  ['p_5fid_5flists',['p_id_lists',['../df/dd1/structABTD__affinity__parser__list.html#aff1aadfd7c70952ac4fbeb10ee99163c',1,'ABTD_affinity_parser_list']]],
   ['p_5finit',['p_init',['../d4/dfc/structABT__pool__def.html#a1936da6be5861805e3db5113cc54c4db',1,'ABT_pool_def::p_init()'],['../df/d65/structABTI__pool.html#af4752e842b2731caabd0509c9669e733',1,'ABTI_pool::p_init()']]],
   ['p_5fkeytable',['p_keytable',['../dc/d58/structABTI__unit.html#a7aa322c56dbc0916a0668d06b94bbb7b',1,'ABTI_unit']]],
   ['p_5fl_5fnext',['p_l_next',['../d4/deb/structABTI__thread__queue.html#a70a1a45df27eea834072bff122bda88e',1,'ABTI_thread_queue']]],

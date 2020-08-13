@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">8d969f7eb112ff8423f40396a0f1fbcb3b0a032c</span>
+   &#160;<span id="projectnumber">1844b3c74ccf2d69e537e00295cd54e96e6e003b</span>
    </div>
   </td>
  </tr>
@@ -86,7 +86,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">abtd_affinity.c File Reference</div>  </div>
 </div><!--header-->
@@ -103,46 +105,46 @@ Include dependency graph for abtd_affinity.c:</div>
 </div>
 <p><a href="../../d2/d45/abtd__affinity_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dcd/structglobal__affinity.html">global_affinity</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae24aa33b2a7835f5cd7f533f16b9c254"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#ae24aa33b2a7835f5cd7f533f16b9c254">ABTD_affinity_init</a> (void)</td></tr>
-<tr class="separator:ae24aa33b2a7835f5cd7f533f16b9c254"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4caa8796c4d7938443dbe263cfb2e44c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#a4caa8796c4d7938443dbe263cfb2e44c">int_rem</a> (int a, unsigned int b)</td></tr>
+<tr class="separator:a4caa8796c4d7938443dbe263cfb2e44c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8d7d82c38a59342d514c7aa21e09d4d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#ab8d7d82c38a59342d514c7aa21e09d4d">get_num_cores</a> (pthread_t native_thread, int *p_num_cores)</td></tr>
+<tr class="separator:ab8d7d82c38a59342d514c7aa21e09d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af09450e0fe38bf76e5178434c9c1505d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#af09450e0fe38bf76e5178434c9c1505d">read_cpuset</a> (pthread_t native_thread, <a class="el" href="../../d6/d62/structABTD__affinity__cpuset.html">ABTD_affinity_cpuset</a> *p_cpuset)</td></tr>
+<tr class="separator:af09450e0fe38bf76e5178434c9c1505d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88a7e8825ef36999c09a85261e487acd"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#a88a7e8825ef36999c09a85261e487acd">apply_cpuset</a> (pthread_t native_thread, const <a class="el" href="../../d6/d62/structABTD__affinity__cpuset.html">ABTD_affinity_cpuset</a> *p_cpuset)</td></tr>
+<tr class="separator:a88a7e8825ef36999c09a85261e487acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acea2d6dd9ff5f395702fd8819357e9d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#acea2d6dd9ff5f395702fd8819357e9d4">ABTD_affinity_init</a> (const char *affinity_str)</td></tr>
+<tr class="separator:acea2d6dd9ff5f395702fd8819357e9d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2434470aa9e571ddd934869a794ab0f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#a2434470aa9e571ddd934869a794ab0f4">ABTD_affinity_finalize</a> (void)</td></tr>
 <tr class="separator:a2434470aa9e571ddd934869a794ab0f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23fb01e5473cfb6832df2d53971a6aad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#a23fb01e5473cfb6832df2d53971a6aad">ABTD_affinity_set</a> (<a class="el" href="../../df/dec/structABTD__xstream__context.html">ABTD_xstream_context</a> *p_ctx, int rank)</td></tr>
-<tr class="separator:a23fb01e5473cfb6832df2d53971a6aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6f3f26638a08765e0fac84355c1f2af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#af6f3f26638a08765e0fac84355c1f2af">ABTD_affinity_set_cpuset</a> (<a class="el" href="../../df/dec/structABTD__xstream__context.html">ABTD_xstream_context</a> *p_ctx, int cpuset_size, int *p_cpuset)</td></tr>
-<tr class="separator:af6f3f26638a08765e0fac84355c1f2af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a18c1073cea383e2154c44129fa6aee"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#a2a18c1073cea383e2154c44129fa6aee">ABTD_affinity_get_cpuset</a> (<a class="el" href="../../df/dec/structABTD__xstream__context.html">ABTD_xstream_context</a> *p_ctx, int cpuset_size, int *p_cpuset, int *p_num_cpus)</td></tr>
-<tr class="separator:a2a18c1073cea383e2154c44129fa6aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae85ee5d2a4452db41769216522b138e7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#ae85ee5d2a4452db41769216522b138e7">ABTD_affinity_cpuset_read</a> (<a class="el" href="../../df/dec/structABTD__xstream__context.html">ABTD_xstream_context</a> *p_ctx, <a class="el" href="../../d6/d62/structABTD__affinity__cpuset.html">ABTD_affinity_cpuset</a> *p_cpuset)</td></tr>
+<tr class="separator:ae85ee5d2a4452db41769216522b138e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24f2914a1da8c4eb8cd048379b6200f5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#a24f2914a1da8c4eb8cd048379b6200f5">ABTD_affinity_cpuset_apply</a> (<a class="el" href="../../df/dec/structABTD__xstream__context.html">ABTD_xstream_context</a> *p_ctx, const <a class="el" href="../../d6/d62/structABTD__affinity__cpuset.html">ABTD_affinity_cpuset</a> *p_cpuset)</td></tr>
+<tr class="separator:a24f2914a1da8c4eb8cd048379b6200f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae41b867bd1062896dfcaa49d7f15a4ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#ae41b867bd1062896dfcaa49d7f15a4ef">ABTD_affinity_cpuset_apply_default</a> (<a class="el" href="../../df/dec/structABTD__xstream__context.html">ABTD_xstream_context</a> *p_ctx, int rank)</td></tr>
+<tr class="separator:ae41b867bd1062896dfcaa49d7f15a4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bd7075b35f8ee53063ef9c466ec0dc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#a1bd7075b35f8ee53063ef9c466ec0dc1">ABTD_affinity_cpuset_destroy</a> (<a class="el" href="../../d6/d62/structABTD__affinity__cpuset.html">ABTD_affinity_cpuset</a> *p_cpuset)</td></tr>
+<tr class="separator:a1bd7075b35f8ee53063ef9c466ec0dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aeb666f8897329bb993f8ef0c8ce791a8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d6/dcd/structglobal__affinity.html">global_affinity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#aeb666f8897329bb993f8ef0c8ce791a8">g_affinity</a></td></tr>
+<tr class="separator:aeb666f8897329bb993f8ef0c8ce791a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a2434470aa9e571ddd934869a794ab0f4"></a>
+<a class="anchor" id="a24f2914a1da8c4eb8cd048379b6200f5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ABTD_affinity_finalize </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00127">127</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
-
-<p>Referenced by <a class="el" href="../../dc/d57/global_8c_source.html#l00148">ABT_finalize()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2a18c1073cea383e2154c44129fa6aee"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int ABTD_affinity_get_cpuset </td>
+          <td class="memname">int ABTD_affinity_cpuset_apply </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../df/dec/structABTD__xstream__context.html">ABTD_xstream_context</a> *&#160;</td>
           <td class="paramname"><em>p_ctx</em>, </td>
@@ -150,20 +152,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cpuset_size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>p_cpuset</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>p_num_cpus</em>&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../d6/d62/structABTD__affinity__cpuset.html">ABTD_affinity_cpuset</a> *&#160;</td>
+          <td class="paramname"><em>p_cpuset</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -173,38 +163,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00189">189</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00376">376</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d8/d4d/stream_8c_source.html#l01203">ABT_xstream_get_affinity()</a>, and <a class="el" href="../../d8/d4d/stream_8c_source.html#l01135">ABT_xstream_get_cpubind()</a>.</p>
+<p>Referenced by <a class="el" href="../../d8/d4d/stream_8c_source.html#l01181">ABT_xstream_set_affinity()</a>, and <a class="el" href="../../d8/d4d/stream_8c_source.html#l01105">ABT_xstream_set_cpubind()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae24aa33b2a7835f5cd7f533f16b9c254"></a>
+<a class="anchor" id="ae41b867bd1062896dfcaa49d7f15a4ef"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ABTD_affinity_init </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00084">84</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
-
-<p>Referenced by <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00024">ABTD_env_init()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a23fb01e5473cfb6832df2d53971a6aad"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int ABTD_affinity_set </td>
+          <td class="memname">int ABTD_affinity_cpuset_apply_default </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../df/dec/structABTD__xstream__context.html">ABTD_xstream_context</a> *&#160;</td>
           <td class="paramname"><em>p_ctx</em>, </td>
@@ -223,18 +193,38 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00135">135</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00382">382</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
 
 <p>Referenced by <a class="el" href="../../d8/d4d/stream_8c_source.html#l00611">ABT_xstream_set_rank()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l00245">ABTI_xstream_start()</a>, and <a class="el" href="../../d8/d4d/stream_8c_source.html#l00319">ABTI_xstream_start_primary()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="af6f3f26638a08765e0fac84355c1f2af"></a>
+<a class="anchor" id="a1bd7075b35f8ee53063ef9c466ec0dc1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int ABTD_affinity_set_cpuset </td>
+          <td class="memname">void ABTD_affinity_cpuset_destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/d62/structABTD__affinity__cpuset.html">ABTD_affinity_cpuset</a> *&#160;</td>
+          <td class="paramname"><em>p_cpuset</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00392">392</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d8/d4d/stream_8c_source.html#l01222">ABT_xstream_get_affinity()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01139">ABT_xstream_get_cpubind()</a>, <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00352">ABTD_affinity_finalize()</a>, and <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00263">ABTD_affinity_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae85ee5d2a4452db41769216522b138e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ABTD_affinity_cpuset_read </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../df/dec/structABTD__xstream__context.html">ABTD_xstream_context</a> *&#160;</td>
           <td class="paramname"><em>p_ctx</em>, </td>
@@ -242,13 +232,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cpuset_size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d6/d62/structABTD__affinity__cpuset.html">ABTD_affinity_cpuset</a> *&#160;</td>
           <td class="paramname"><em>p_cpuset</em>&#160;</td>
         </tr>
         <tr>
@@ -259,16 +243,231 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00160">160</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00370">370</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d8/d4d/stream_8c_source.html#l01166">ABT_xstream_set_affinity()</a>, and <a class="el" href="../../d8/d4d/stream_8c_source.html#l01105">ABT_xstream_set_cpubind()</a>.</p>
+<p>Referenced by <a class="el" href="../../d8/d4d/stream_8c_source.html#l01222">ABT_xstream_get_affinity()</a>, and <a class="el" href="../../d8/d4d/stream_8c_source.html#l01139">ABT_xstream_get_cpubind()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2434470aa9e571ddd934869a794ab0f4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ABTD_affinity_finalize </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00352">352</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../dc/d57/global_8c_source.html#l00148">ABT_finalize()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acea2d6dd9ff5f395702fd8819357e9d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ABTD_affinity_init </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>affinity_str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00263">263</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00024">ABTD_env_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a88a7e8825ef36999c09a85261e487acd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int apply_cpuset </td>
+          <td>(</td>
+          <td class="paramtype">pthread_t&#160;</td>
+          <td class="paramname"><em>native_thread</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d6/d62/structABTD__affinity__cpuset.html">ABTD_affinity_cpuset</a> *&#160;</td>
+          <td class="paramname"><em>p_cpuset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00246">246</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00376">ABTD_affinity_cpuset_apply()</a>, <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00382">ABTD_affinity_cpuset_apply_default()</a>, and <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00352">ABTD_affinity_finalize()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab8d7d82c38a59342d514c7aa21e09d4d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int get_num_cores </td>
+          <td>(</td>
+          <td class="paramtype">pthread_t&#160;</td>
+          <td class="paramname"><em>native_thread</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>p_num_cores</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00201">201</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00263">ABTD_affinity_init()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4caa8796c4d7938443dbe263cfb2e44c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int int_rem </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00192">192</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00263">ABTD_affinity_init()</a>, and <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00246">apply_cpuset()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af09450e0fe38bf76e5178434c9c1505d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int read_cpuset </td>
+          <td>(</td>
+          <td class="paramtype">pthread_t&#160;</td>
+          <td class="paramname"><em>native_thread</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d6/d62/structABTD__affinity__cpuset.html">ABTD_affinity_cpuset</a> *&#160;</td>
+          <td class="paramname"><em>p_cpuset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00222">222</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00370">ABTD_affinity_cpuset_read()</a>, and <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00263">ABTD_affinity_init()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="aeb666f8897329bb993f8ef0c8ce791a8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/dcd/structglobal__affinity.html">global_affinity</a> g_affinity</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00190">190</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 11 2020 03:09:47 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 13 2020 03:09:49 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

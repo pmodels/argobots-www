@@ -3,6 +3,7 @@ var searchData=
   ['g_5fabti_5finit_5flock',['g_ABTI_init_lock',['../dc/d57/global_8c.html#a70197db29e96068d7c37c345652f9803',1,'global.c']]],
   ['g_5fabti_5finitialized',['g_ABTI_initialized',['../dc/d57/global_8c.html#aa8f87a77cc849e3173fc911bc4c44142',1,'global.c']]],
   ['g_5fabti_5fnum_5finits',['g_ABTI_num_inits',['../dc/d57/global_8c.html#a2d4f395636136067f6ccd6880f8adb4e',1,'global.c']]],
+  ['g_5faffinity',['g_affinity',['../d2/d45/abtd__affinity_8c.html#aeb666f8897329bb993f8ef0c8ce791a8',1,'abtd_affinity.c']]],
   ['g_5fkey_5fid',['g_key_id',['../db/dfd/key_8c.html#a5f1df9575b072454399b5305290e1510',1,'key.c']]],
   ['g_5fpool_5fid',['g_pool_id',['../d4/de5/pool_8c.html#a981321f7189da9a8d0d6c52d7889fe46',1,'pool.c']]],
   ['g_5fsched_5fid',['g_sched_id',['../db/dbe/sched_8c.html#a00a319caec88baaca37e2fcdfc4ce518',1,'sched.c']]],
