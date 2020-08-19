@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">c01b4b0d2c2f8e9f1bd9900d23485ba971fc1a21</span>
+   &#160;<span id="projectnumber">23067fa015f4b179569e2d52278c1072e674eb1e</span>
    </div>
   </td>
  </tr>
@@ -168,7 +168,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    ABTI_unit_type type = ABTI_self_get_type(p_local_xstream);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (ABTI_unit_type_is_thread(type)) {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;%p: lock - try\n&quot;</span>, p_mutex);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">while</span> (!ABTD_atomic_bool_cas_weak_uint32(&amp;p_mutex-&gt;val, 0, 1)) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">while</span> (!ABTD_atomic_bool_cas_strong_uint32(&amp;p_mutex-&gt;val, 0, 1)) {</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            ABTI_thread_yield(pp_local_xstream,</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                              ABTI_unit_get_thread(p_local_xstream-&gt;p_unit),</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                              <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fae643a10c5fdf9ad56c901f16375ba959">ABT_SYNC_EVENT_TYPE_MUTEX</a>, (<span class="keywordtype">void</span> *)p_mutex);</div>
@@ -280,7 +280,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 14 2020 03:09:48 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Aug 19 2020 03:09:46 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">c01b4b0d2c2f8e9f1bd9900d23485ba971fc1a21</span>
+   &#160;<span id="projectnumber">23067fa015f4b179569e2d52278c1072e674eb1e</span>
    </div>
   </td>
  </tr>
@@ -440,7 +440,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;{</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> h_task;</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    unit_t *p_unit = (unit_t *)unit;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">if</span> (p_unit-&gt;type == ABTI_UNIT_TYPE_TASK) {</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">if</span> (ABTI_unit_type_is_task(p_unit-&gt;type)) {</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        h_task = ABTI_task_get_handle(ABTI_unit_get_task(p_unit));</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        h_task = <a class="code" href="../../d5/d7d/abt_8h.html#acedaaeb67b83967cc9129e0906f38e93">ABT_TASK_NULL</a>;</div>
@@ -474,7 +474,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    p_unit-&gt;p_prev = NULL;</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    p_unit-&gt;p_next = NULL;</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    ABTD_atomic_relaxed_store_int(&amp;p_unit-&gt;is_in_pool, 0);</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    ABTI_ASSERT(p_unit-&gt;type == ABTI_UNIT_TYPE_TASK);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    ABTI_ASSERT(ABTI_unit_type_is_task(p_unit-&gt;type));</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../d5/d7d/abt_8h.html#a2766d98ace73a538d42ff64a8b999baf">ABT_unit</a>)p_unit;</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;}</div>
@@ -542,7 +542,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 14 2020 03:09:48 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Aug 19 2020 03:09:46 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

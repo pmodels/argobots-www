@@ -17,7 +17,7 @@ var searchData=
   ['mem_5fpool_5fstack_5fext',['mem_pool_stack_ext',['../da/de9/structABTI__global.html#a53f095444e0e050e6a26e649813b3075',1,'ABTI_global']]],
   ['mem_5fpool_5fstack_5flock',['mem_pool_stack_lock',['../da/de9/structABTI__global.html#a0debd815abe13b083e1b40f97bbaf3a4',1,'ABTI_global']]],
   ['mem_5fsp_5fsize',['mem_sp_size',['../da/de9/structABTI__global.html#a96f14d56fde80773bafda7b9517bb849',1,'ABTI_global']]],
-  ['migratable',['migratable',['../dc/d58/structABTI__unit.html#a13d30d6678c8c1f463c448af6e70121e',1,'ABTI_unit::migratable()'],['../dc/dd3/structABTI__thread__attr.html#a6c27605d116e30b3eef4bf374b8cc3a4',1,'ABTI_thread_attr::migratable()']]],
+  ['migratable',['migratable',['../dc/dd3/structABTI__thread__attr.html#a6c27605d116e30b3eef4bf374b8cc3a4',1,'ABTI_thread_attr']]],
   ['mutex',['mutex',['../da/dcc/structABTI__rwlock.html#aa812aa60ed9a5099480f4560b2b3a70a',1,'ABTI_rwlock::mutex()'],['../d4/deb/structABTI__thread__queue.html#a45af537e5c1b402fe40512a193826114',1,'ABTI_thread_queue::mutex()'],['../db/de5/structABTI__thread__htable.html#aec11afa8691d873968532ab0e700ba0c',1,'ABTI_thread_htable::mutex()'],['../df/dea/structdata.html#aed537d2fabbc9805853225bb667a2ad2',1,'data::mutex()'],['../df/dea/structdata.html#ad207fe97b3e2013aefd99e8b773fcc21',1,'data::mutex()']]],
   ['mutex_5fmax_5fhandovers',['mutex_max_handovers',['../da/de9/structABTI__global.html#a3739c26725baa542d81875b5c0b31219',1,'ABTI_global']]],
   ['mutex_5fmax_5fwakeups',['mutex_max_wakeups',['../da/de9/structABTI__global.html#aa67e92cbd7760d1fc1f6033aaedb9bb6',1,'ABTI_global']]]

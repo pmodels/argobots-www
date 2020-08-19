@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">c01b4b0d2c2f8e9f1bd9900d23485ba971fc1a21</span>
+   &#160;<span id="projectnumber">23067fa015f4b179569e2d52278c1072e674eb1e</span>
    </div>
   </td>
  </tr>
@@ -301,7 +301,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    ABTI_unit *p_unit = p_local_xstream-&gt;p_unit;</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keywordflow">if</span> (p_unit-&gt;type == ABTI_UNIT_TYPE_TASK) {</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keywordflow">if</span> (ABTI_unit_type_is_task(p_unit-&gt;type)) {</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        *task = ABTI_task_get_handle(ABTI_unit_get_task(p_unit));</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#af25298b722a9b85561f4f389a9984b82">ABT_ERR_INV_TASK</a>;</div>
@@ -331,7 +331,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    ABTI_unit *p_unit = p_local_xstream-&gt;p_unit;</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keywordflow">if</span> (p_unit-&gt;type == ABTI_UNIT_TYPE_TASK) {</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keywordflow">if</span> (ABTI_unit_type_is_task(p_unit-&gt;type)) {</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        *<span class="keywordtype">id</span> = ABTI_task_get_id(ABTI_unit_get_task(p_unit));</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#af25298b722a9b85561f4f389a9984b82">ABT_ERR_INV_TASK</a>;</div>
@@ -418,361 +418,360 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    ABTI_task *p_task = ABTI_task_get_ptr(task);</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    ABTI_CHECK_NULL_TASK_PTR(p_task);</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    p_task-&gt;unit_def.migratable = flag;</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;</div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#ab21a7b77e7885a83c11fbd43c6a95e82">ABT_ERR_MIGRATION_NA</a>;</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;</div>
-<div class="line"><a name="l00557"></a><span class="lineno"><a class="line" href="../../d7/d4b/group__TASK.html#gadbeb840bef402c9d0fe29728ac89a484">  557</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d7/d4b/group__TASK.html#gadbeb840bef402c9d0fe29728ac89a484">ABT_task_is_migratable</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> task, <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *flag)</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;{</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_MIGRATION</span></div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    ABTI_task *p_task = ABTI_task_get_ptr(task);</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    ABTI_CHECK_NULL_TASK_PTR(p_task);</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    *flag = p_task-&gt;unit_def.migratable;</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#ab21a7b77e7885a83c11fbd43c6a95e82">ABT_ERR_MIGRATION_NA</a>;</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;</div>
-<div class="line"><a name="l00591"></a><span class="lineno"><a class="line" href="../../d7/d4b/group__TASK.html#ga899e2eb7e4514870df74b1551ac7b308">  591</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d7/d4b/group__TASK.html#ga899e2eb7e4514870df74b1551ac7b308">ABT_task_is_unnamed</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> task, <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *flag)</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;{</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    ABTI_task *p_task = ABTI_task_get_ptr(task);</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    ABTI_CHECK_NULL_TASK_PTR(p_task);</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    *flag = (p_task-&gt;unit_def.refcount == 0) ? <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a> : <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="keywordflow">if</span> (flag) {</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        p_task-&gt;unit_def.type |= ABTI_UNIT_TYPE_MIGRATABLE;</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;        p_task-&gt;unit_def.type &amp;= ~ABTI_UNIT_TYPE_MIGRATABLE;</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    }</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#ab21a7b77e7885a83c11fbd43c6a95e82">ABT_ERR_MIGRATION_NA</a>;</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;</div>
+<div class="line"><a name="l00561"></a><span class="lineno"><a class="line" href="../../d7/d4b/group__TASK.html#gadbeb840bef402c9d0fe29728ac89a484">  561</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d7/d4b/group__TASK.html#gadbeb840bef402c9d0fe29728ac89a484">ABT_task_is_migratable</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> task, <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *flag)</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;{</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_MIGRATION</span></div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    ABTI_task *p_task = ABTI_task_get_ptr(task);</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    ABTI_CHECK_NULL_TASK_PTR(p_task);</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    *flag = (p_task-&gt;unit_def.type &amp; ABTI_UNIT_TYPE_MIGRATABLE) ? <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                                                                : <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#ab21a7b77e7885a83c11fbd43c6a95e82">ABT_ERR_MIGRATION_NA</a>;</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;</div>
+<div class="line"><a name="l00596"></a><span class="lineno"><a class="line" href="../../d7/d4b/group__TASK.html#ga899e2eb7e4514870df74b1551ac7b308">  596</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d7/d4b/group__TASK.html#ga899e2eb7e4514870df74b1551ac7b308">ABT_task_is_unnamed</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> task, <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *flag)</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;{</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    ABTI_task *p_task = ABTI_task_get_ptr(task);</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    ABTI_CHECK_NULL_TASK_PTR(p_task);</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;}</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;</div>
-<div class="line"><a name="l00622"></a><span class="lineno"><a class="line" href="../../d7/d4b/group__TASK.html#ga24002cf412bccef3ae76e5198d9a4e38">  622</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d7/d4b/group__TASK.html#ga24002cf412bccef3ae76e5198d9a4e38">ABT_task_equal</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> task1, <a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> task2, <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *result)</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;{</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    ABTI_task *p_task1 = ABTI_task_get_ptr(task1);</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    ABTI_task *p_task2 = ABTI_task_get_ptr(task2);</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    *result = (p_task1 == p_task2) ? <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a> : <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;}</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;</div>
-<div class="line"><a name="l00641"></a><span class="lineno"><a class="line" href="../../d7/d4b/group__TASK.html#gaa56475c7382a771a8b861e03b0341365">  641</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d7/d4b/group__TASK.html#gaa56475c7382a771a8b861e03b0341365">ABT_task_get_id</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> task, <a class="code" href="../../d5/d7d/abt_8h.html#a8f4ca28fbf35ddd6a922e65f49723bee">ABT_unit_id</a> *task_id)</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;{</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    ABTI_task *p_task = ABTI_task_get_ptr(task);</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    ABTI_CHECK_NULL_TASK_PTR(p_task);</div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;    *task_id = ABTI_task_get_id(p_task);</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;}</div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;</div>
-<div class="line"><a name="l00670"></a><span class="lineno"><a class="line" href="../../d7/d4b/group__TASK.html#ga79a4926f8ad1ae7fbee8038cce7c5ca9">  670</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d7/d4b/group__TASK.html#ga79a4926f8ad1ae7fbee8038cce7c5ca9">ABT_task_get_arg</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> task, <span class="keywordtype">void</span> **arg)</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;{</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    ABTI_task *p_task = ABTI_task_get_ptr(task);</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    ABTI_CHECK_NULL_TASK_PTR(p_task);</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    *arg = p_task-&gt;unit_def.p_arg;</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;}</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;</div>
-<div class="line"><a name="l00700"></a><span class="lineno"><a class="line" href="../../d7/d4b/group__TASK.html#ga0008848646bdc4ce82ee996abcb38f23">  700</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d7/d4b/group__TASK.html#ga0008848646bdc4ce82ee996abcb38f23">ABT_task_set_specific</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> task, <a class="code" href="../../d5/d7d/abt_8h.html#a3b2706b0ac83a0eed1409988a42d811c">ABT_key</a> key, <span class="keywordtype">void</span> *value)</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;{</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    ABTI_xstream *p_local_xstream = ABTI_local_get_xstream();</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    ABTI_task *p_task = ABTI_task_get_ptr(task);</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    ABTI_CHECK_NULL_TASK_PTR(p_task);</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    ABTI_key *p_key = ABTI_key_get_ptr(key);</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    ABTI_CHECK_NULL_KEY_PTR(p_key);</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    *flag =</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;        (p_task-&gt;unit_def.type &amp; ABTI_UNIT_TYPE_NAMED) ? <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a> : <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>;</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;}</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;</div>
+<div class="line"><a name="l00628"></a><span class="lineno"><a class="line" href="../../d7/d4b/group__TASK.html#ga24002cf412bccef3ae76e5198d9a4e38">  628</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d7/d4b/group__TASK.html#ga24002cf412bccef3ae76e5198d9a4e38">ABT_task_equal</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> task1, <a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> task2, <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *result)</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;{</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    ABTI_task *p_task1 = ABTI_task_get_ptr(task1);</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    ABTI_task *p_task2 = ABTI_task_get_ptr(task2);</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    *result = (p_task1 == p_task2) ? <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a> : <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;}</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;</div>
+<div class="line"><a name="l00647"></a><span class="lineno"><a class="line" href="../../d7/d4b/group__TASK.html#gaa56475c7382a771a8b861e03b0341365">  647</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d7/d4b/group__TASK.html#gaa56475c7382a771a8b861e03b0341365">ABT_task_get_id</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> task, <a class="code" href="../../d5/d7d/abt_8h.html#a8f4ca28fbf35ddd6a922e65f49723bee">ABT_unit_id</a> *task_id)</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;{</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    ABTI_task *p_task = ABTI_task_get_ptr(task);</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;    ABTI_CHECK_NULL_TASK_PTR(p_task);</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    *task_id = ABTI_task_get_id(p_task);</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;}</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;</div>
+<div class="line"><a name="l00676"></a><span class="lineno"><a class="line" href="../../d7/d4b/group__TASK.html#ga79a4926f8ad1ae7fbee8038cce7c5ca9">  676</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d7/d4b/group__TASK.html#ga79a4926f8ad1ae7fbee8038cce7c5ca9">ABT_task_get_arg</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> task, <span class="keywordtype">void</span> **arg)</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;{</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    ABTI_task *p_task = ABTI_task_get_ptr(task);</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    ABTI_CHECK_NULL_TASK_PTR(p_task);</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    *arg = p_task-&gt;unit_def.p_arg;</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;}</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;</div>
+<div class="line"><a name="l00706"></a><span class="lineno"><a class="line" href="../../d7/d4b/group__TASK.html#ga0008848646bdc4ce82ee996abcb38f23">  706</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d7/d4b/group__TASK.html#ga0008848646bdc4ce82ee996abcb38f23">ABT_task_set_specific</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> task, <a class="code" href="../../d5/d7d/abt_8h.html#a3b2706b0ac83a0eed1409988a42d811c">ABT_key</a> key, <span class="keywordtype">void</span> *value)</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;{</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    ABTI_xstream *p_local_xstream = ABTI_local_get_xstream();</div>
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    <span class="comment">/* Set the value. */</span></div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    ABTI_unit_set_specific(p_local_xstream, &amp;p_task-&gt;unit_def, p_key, value);</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;}</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;</div>
-<div class="line"><a name="l00736"></a><span class="lineno"><a class="line" href="../../d7/d4b/group__TASK.html#gae9563a19d4fdad6e5c73bb268cfda9cf">  736</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d7/d4b/group__TASK.html#gae9563a19d4fdad6e5c73bb268cfda9cf">ABT_task_get_specific</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> task, <a class="code" href="../../d5/d7d/abt_8h.html#a3b2706b0ac83a0eed1409988a42d811c">ABT_key</a> key, <span class="keywordtype">void</span> **value)</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;{</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;    ABTI_task *p_task = ABTI_task_get_ptr(task);</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;    ABTI_CHECK_NULL_TASK_PTR(p_task);</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    ABTI_key *p_key = ABTI_key_get_ptr(key);</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    ABTI_CHECK_NULL_KEY_PTR(p_key);</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    <span class="comment">/* Get the value. */</span></div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;    *value = ABTI_unit_get_specific(&amp;p_task-&gt;unit_def, p_key);</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;}</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;<span class="comment">/* Private APIs                                                              */</span></div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> ABTI_task_create(ABTI_xstream *p_local_xstream, ABTI_pool *p_pool,</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                            <span class="keywordtype">void</span> (*task_func)(<span class="keywordtype">void</span> *), <span class="keywordtype">void</span> *arg,</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                            ABTI_sched *p_sched, <span class="keywordtype">int</span> refcount,</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                            ABTI_task **pp_newtask)</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;{</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    ABTI_task *p_newtask;</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> h_newtask;</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    ABTI_CHECK_NULL_POOL_PTR(p_pool);</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    <span class="comment">/* Allocate a task object */</span></div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    p_newtask = ABTI_mem_alloc_task(p_local_xstream);</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    p_newtask-&gt;unit_def.p_last_xstream = NULL;</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;    p_newtask-&gt;unit_def.p_parent = NULL;</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    ABTD_atomic_relaxed_store_int(&amp;p_newtask-&gt;unit_def.state,</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                                  ABTI_UNIT_STATE_READY);</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;    ABTD_atomic_relaxed_store_uint32(&amp;p_newtask-&gt;unit_def.request, 0);</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;    p_newtask-&gt;unit_def.f_unit = task_func;</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;    p_newtask-&gt;unit_def.p_arg = arg;</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;    p_newtask-&gt;unit_def.p_pool = p_pool;</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    p_newtask-&gt;unit_def.refcount = refcount;</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    ABTD_atomic_relaxed_store_ptr(&amp;p_newtask-&gt;unit_def.p_keytable, NULL);</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_MIGRATION</span></div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;<span class="preprocessor"></span>    p_newtask-&gt;unit_def.migratable = <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>;</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;<span class="preprocessor"></span>    p_newtask-&gt;unit_def.id = ABTI_TASK_INIT_ID;</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    <span class="comment">/* Create a wrapper work unit */</span></div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;    h_newtask = ABTI_task_get_handle(p_newtask);</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    p_newtask-&gt;unit_def.type = ABTI_UNIT_TYPE_TASK;</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;    p_newtask-&gt;unit_def.unit = p_pool-&gt;u_create_from_task(h_newtask);</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;    ABTI_tool_event_task_create(p_local_xstream, p_newtask,</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;                                p_local_xstream ? p_local_xstream-&gt;p_unit</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;                                                : NULL,</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                                p_pool);</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[T%&quot;</span> PRIu64 <span class="stringliteral">&quot;] created\n&quot;</span>, ABTI_task_get_id(p_newtask));</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    <span class="comment">/* Add this task to the scheduler&#39;s pool */</span></div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_DISABLE_POOL_PRODUCER_CHECK</span></div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;<span class="preprocessor"></span>    ABTI_pool_push(p_pool, p_newtask-&gt;unit_def.unit);</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;<span class="preprocessor"></span>    abt_errno = ABTI_pool_push(p_pool, p_newtask-&gt;unit_def.unit,</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                               ABTI_self_get_native_thread_id(p_local_xstream));</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    <span class="keywordflow">if</span> (abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;        ABTI_task_free(p_local_xstream, p_newtask);</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;        <span class="keywordflow">goto</span> fn_fail;</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    }</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;    <span class="comment">/* Return value */</span></div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;    *pp_newtask = p_newtask;</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;}</div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;</div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> ABTI_task_revive(ABTI_xstream *p_local_xstream, ABTI_pool *p_pool,</div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;                            <span class="keywordtype">void</span> (*task_func)(<span class="keywordtype">void</span> *), <span class="keywordtype">void</span> *arg,</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                            ABTI_task *p_task)</div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;{</div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;</div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;    ABTI_CHECK_TRUE(ABTD_atomic_relaxed_load_int(&amp;p_task-&gt;unit_def.state) ==</div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;                        ABTI_UNIT_STATE_TERMINATED,</div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;                    <a class="code" href="../../d5/d7d/abt_8h.html#af25298b722a9b85561f4f389a9984b82">ABT_ERR_INV_TASK</a>);</div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;    p_task-&gt;unit_def.p_last_xstream = NULL;</div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    p_task-&gt;unit_def.p_parent = NULL;</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    ABTD_atomic_relaxed_store_int(&amp;p_task-&gt;unit_def.state,</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;                                  ABTI_UNIT_STATE_READY);</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;    ABTD_atomic_relaxed_store_uint32(&amp;p_task-&gt;unit_def.request, 0);</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;    p_task-&gt;unit_def.f_unit = task_func;</div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;    p_task-&gt;unit_def.p_arg = arg;</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;    p_task-&gt;unit_def.refcount = 1;</div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;    ABTD_atomic_relaxed_store_ptr(&amp;p_task-&gt;unit_def.p_keytable, NULL);</div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;</div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;    <span class="keywordflow">if</span> (p_task-&gt;unit_def.p_pool != p_pool) {</div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;        <span class="comment">/* Free the unit for the old pool */</span></div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;        p_task-&gt;unit_def.p_pool-&gt;u_free(&amp;p_task-&gt;unit_def.unit);</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;</div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;        <span class="comment">/* Set the new pool */</span></div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;        p_task-&gt;unit_def.p_pool = p_pool;</div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;</div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;        <span class="comment">/* Create a wrapper work unit */</span></div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;        <a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> task = ABTI_task_get_handle(p_task);</div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;        p_task-&gt;unit_def.unit = p_pool-&gt;u_create_from_task(task);</div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;    }</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    ABTI_task *p_task = ABTI_task_get_ptr(task);</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    ABTI_CHECK_NULL_TASK_PTR(p_task);</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    ABTI_key *p_key = ABTI_key_get_ptr(key);</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    ABTI_CHECK_NULL_KEY_PTR(p_key);</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    <span class="comment">/* Set the value. */</span></div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    ABTI_ktable_set(p_local_xstream, &amp;p_task-&gt;unit_def.p_keytable, p_key,</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;                    value);</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;}</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;</div>
+<div class="line"><a name="l00743"></a><span class="lineno"><a class="line" href="../../d7/d4b/group__TASK.html#gae9563a19d4fdad6e5c73bb268cfda9cf">  743</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d7/d4b/group__TASK.html#gae9563a19d4fdad6e5c73bb268cfda9cf">ABT_task_get_specific</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> task, <a class="code" href="../../d5/d7d/abt_8h.html#a3b2706b0ac83a0eed1409988a42d811c">ABT_key</a> key, <span class="keywordtype">void</span> **value)</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;{</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;    ABTI_task *p_task = ABTI_task_get_ptr(task);</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    ABTI_CHECK_NULL_TASK_PTR(p_task);</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    ABTI_key *p_key = ABTI_key_get_ptr(key);</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    ABTI_CHECK_NULL_KEY_PTR(p_key);</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    <span class="comment">/* Get the value. */</span></div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    *value = ABTI_ktable_get(&amp;p_task-&gt;unit_def.p_keytable, p_key);</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;}</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;<span class="comment">/* Private APIs                                                              */</span></div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> ABTI_task_create(ABTI_xstream *p_local_xstream, ABTI_pool *p_pool,</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                            <span class="keywordtype">void</span> (*task_func)(<span class="keywordtype">void</span> *), <span class="keywordtype">void</span> *arg,</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                            ABTI_sched *p_sched, <span class="keywordtype">int</span> refcount,</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                            ABTI_task **pp_newtask)</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;{</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    ABTI_task *p_newtask;</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> h_newtask;</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    ABTI_CHECK_NULL_POOL_PTR(p_pool);</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;    <span class="comment">/* Allocate a task object */</span></div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;    p_newtask = ABTI_mem_alloc_task(p_local_xstream);</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;    p_newtask-&gt;unit_def.p_last_xstream = NULL;</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    p_newtask-&gt;unit_def.p_parent = NULL;</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    ABTD_atomic_relaxed_store_int(&amp;p_newtask-&gt;unit_def.state,</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                                  ABTI_UNIT_STATE_READY);</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;    ABTD_atomic_relaxed_store_uint32(&amp;p_newtask-&gt;unit_def.request, 0);</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    p_newtask-&gt;unit_def.f_unit = task_func;</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;    p_newtask-&gt;unit_def.p_arg = arg;</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    p_newtask-&gt;unit_def.p_pool = p_pool;</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    ABTD_atomic_relaxed_store_ptr(&amp;p_newtask-&gt;unit_def.p_keytable, NULL);</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;    p_newtask-&gt;unit_def.id = ABTI_TASK_INIT_ID;</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;    <span class="comment">/* Create a wrapper work unit */</span></div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    h_newtask = ABTI_task_get_handle(p_newtask);</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;    ABTI_unit_type unit_type =</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        refcount ? (ABTI_UNIT_TYPE_TASK | ABTI_UNIT_TYPE_NAMED)</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;                 : ABTI_UNIT_TYPE_TASK;</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_MIGRATION</span></div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;<span class="preprocessor"></span>    unit_type |= ABTI_UNIT_TYPE_MIGRATABLE;</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;<span class="preprocessor"></span>    p_newtask-&gt;unit_def.type = unit_type;</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    p_newtask-&gt;unit_def.unit = p_pool-&gt;u_create_from_task(h_newtask);</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    ABTI_tool_event_task_create(p_local_xstream, p_newtask,</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                                p_local_xstream ? p_local_xstream-&gt;p_unit</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                                                : NULL,</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                                p_pool);</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[T%&quot;</span> PRIu64 <span class="stringliteral">&quot;] created\n&quot;</span>, ABTI_task_get_id(p_newtask));</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    <span class="comment">/* Add this task to the scheduler&#39;s pool */</span></div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_DISABLE_POOL_PRODUCER_CHECK</span></div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;<span class="preprocessor"></span>    ABTI_pool_push(p_pool, p_newtask-&gt;unit_def.unit);</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;<span class="preprocessor"></span>    abt_errno = ABTI_pool_push(p_pool, p_newtask-&gt;unit_def.unit,</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;                               ABTI_self_get_native_thread_id(p_local_xstream));</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    <span class="keywordflow">if</span> (abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;        ABTI_task_free(p_local_xstream, p_newtask);</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;        <span class="keywordflow">goto</span> fn_fail;</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;    }</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;    <span class="comment">/* Return value */</span></div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;    *pp_newtask = p_newtask;</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;}</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;</div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> ABTI_task_revive(ABTI_xstream *p_local_xstream, ABTI_pool *p_pool,</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;                            <span class="keywordtype">void</span> (*task_func)(<span class="keywordtype">void</span> *), <span class="keywordtype">void</span> *arg,</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;                            ABTI_task *p_task)</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;{</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;    ABTI_CHECK_TRUE(ABTD_atomic_relaxed_load_int(&amp;p_task-&gt;unit_def.state) ==</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;                        ABTI_UNIT_STATE_TERMINATED,</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;                    <a class="code" href="../../d5/d7d/abt_8h.html#af25298b722a9b85561f4f389a9984b82">ABT_ERR_INV_TASK</a>);</div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;</div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;    p_task-&gt;unit_def.p_last_xstream = NULL;</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;    p_task-&gt;unit_def.p_parent = NULL;</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;    ABTD_atomic_relaxed_store_int(&amp;p_task-&gt;unit_def.state,</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;                                  ABTI_UNIT_STATE_READY);</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;    ABTD_atomic_relaxed_store_uint32(&amp;p_task-&gt;unit_def.request, 0);</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;    p_task-&gt;unit_def.f_unit = task_func;</div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;    p_task-&gt;unit_def.p_arg = arg;</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;    ABTD_atomic_relaxed_store_ptr(&amp;p_task-&gt;unit_def.p_keytable, NULL);</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;    <span class="keywordflow">if</span> (p_task-&gt;unit_def.p_pool != p_pool) {</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;        <span class="comment">/* Free the unit for the old pool */</span></div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;        p_task-&gt;unit_def.p_pool-&gt;u_free(&amp;p_task-&gt;unit_def.unit);</div>
 <div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;</div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;    ABTI_tool_event_task_revive(p_local_xstream, p_task,</div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;                                p_local_xstream ? p_local_xstream-&gt;p_unit</div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;                                                : NULL,</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;                                p_pool);</div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[T%&quot;</span> PRIu64 <span class="stringliteral">&quot;] revived\n&quot;</span>, ABTI_task_get_id(p_task));</div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;</div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;    <span class="comment">/* Add this task to the scheduler&#39;s pool */</span></div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_DISABLE_POOL_PRODUCER_CHECK</span></div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;<span class="preprocessor"></span>    ABTI_pool_push(p_pool, p_task-&gt;unit_def.unit);</div>
-<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;<span class="preprocessor"></span>    abt_errno = ABTI_pool_push(p_pool, p_task-&gt;unit_def.unit,</div>
-<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;                               ABTI_self_get_native_thread_id(p_local_xstream));</div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
-<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;</div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;}</div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;</div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;<span class="keywordtype">void</span> ABTI_task_free(ABTI_xstream *p_local_xstream, ABTI_task *p_task)</div>
-<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;{</div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;    ABTI_tool_event_task_free(p_local_xstream, p_task,</div>
-<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;                              p_local_xstream ? p_local_xstream-&gt;p_unit : NULL);</div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[T%&quot;</span> PRIu64 <span class="stringliteral">&quot;] freed\n&quot;</span>, ABTI_task_get_id(p_task));</div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;</div>
-<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;    <span class="comment">/* Free the unit */</span></div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;    p_task-&gt;unit_def.p_pool-&gt;u_free(&amp;p_task-&gt;unit_def.unit);</div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;</div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;    <span class="comment">/* Free the key-value table */</span></div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;    ABTI_ktable *p_ktable =</div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;        ABTD_atomic_acquire_load_ptr(&amp;p_task-&gt;unit_def.p_keytable);</div>
-<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;    <span class="comment">/* No parallel access to TLS is allowed. */</span></div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;    ABTI_ASSERT(p_ktable != ABTI_KTABLE_LOCKED);</div>
-<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;    <span class="keywordflow">if</span> (p_ktable) {</div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;        ABTI_ktable_free(p_local_xstream, p_ktable);</div>
-<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;    }</div>
-<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;</div>
-<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;    ABTI_mem_free_task(p_local_xstream, p_task);</div>
-<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;}</div>
-<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;</div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;<span class="keywordtype">void</span> ABTI_task_print(ABTI_task *p_task, FILE *p_os, <span class="keywordtype">int</span> indent)</div>
-<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;{</div>
-<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;    <span class="keywordtype">char</span> *prefix = <a class="code" href="../../d5/d09/abtu_8h.html#a0c0a37db0324fb30071454b9bf67b0bc">ABTU_get_indent_str</a>(indent);</div>
-<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;</div>
-<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;    <span class="keywordflow">if</span> (p_task == NULL) {</div>
-<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;        fprintf(p_os, <span class="stringliteral">&quot;%s== NULL TASKLET ==\n&quot;</span>, prefix);</div>
-<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;        <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;    }</div>
-<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;</div>
-<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;    ABTI_xstream *p_xstream = p_task-&gt;unit_def.p_last_xstream;</div>
-<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;    <span class="keywordtype">int</span> xstream_rank = p_xstream ? p_xstream-&gt;rank : 0;</div>
-<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;    <span class="keywordtype">char</span> *state;</div>
-<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;    <span class="keywordflow">switch</span> (ABTD_atomic_acquire_load_int(&amp;p_task-&gt;unit_def.state)) {</div>
-<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;        <span class="keywordflow">case</span> ABTI_UNIT_STATE_READY:</div>
-<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;            state = <span class="stringliteral">&quot;READY&quot;</span>;</div>
-<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;        <span class="keywordflow">case</span> ABTI_UNIT_STATE_RUNNING:</div>
-<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;            state = <span class="stringliteral">&quot;RUNNING&quot;</span>;</div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;        <span class="keywordflow">case</span> ABTI_UNIT_STATE_TERMINATED:</div>
-<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;            state = <span class="stringliteral">&quot;TERMINATED&quot;</span>;</div>
-<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;            state = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
-<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;    }</div>
-<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;</div>
-<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;    fprintf(p_os,</div>
-<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;            <span class="stringliteral">&quot;%s== TASKLET (%p) ==\n&quot;</span></div>
-<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;            <span class="stringliteral">&quot;%sid        : %&quot;</span> PRIu64 <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;            <span class="stringliteral">&quot;%sstate     : %s\n&quot;</span></div>
-<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;            <span class="stringliteral">&quot;%sES        : %p (%d)\n&quot;</span></div>
-<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;            <span class="stringliteral">&quot;%spool      : %p\n&quot;</span></div>
-<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;#ifndef ABT_CONFIG_DISABLE_MIGRATION</div>
-<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;            <span class="stringliteral">&quot;%smigratable: %s\n&quot;</span></div>
-<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;#endif</div>
-<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;            <span class="stringliteral">&quot;%srefcount  : %u\n&quot;</span></div>
-<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;            <span class="stringliteral">&quot;%srequest   : 0x%x\n&quot;</span></div>
-<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;            <span class="stringliteral">&quot;%sp_arg     : %p\n&quot;</span></div>
-<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;            <span class="stringliteral">&quot;%skeytable  : %p\n&quot;</span>,</div>
-<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;            prefix, (<span class="keywordtype">void</span> *)p_task, prefix, ABTI_task_get_id(p_task), prefix,</div>
-<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;            state, prefix, (<span class="keywordtype">void</span> *)p_task-&gt;unit_def.p_last_xstream,</div>
-<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;            xstream_rank, prefix, (<span class="keywordtype">void</span> *)p_task-&gt;unit_def.p_pool,</div>
-<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;#ifndef ABT_CONFIG_DISABLE_MIGRATION</div>
-<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;            prefix,</div>
-<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;            (p_task-&gt;unit_def.migratable == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>) ? <span class="stringliteral">&quot;TRUE&quot;</span> : <span class="stringliteral">&quot;FALSE&quot;</span>,</div>
-<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;#endif</div>
-<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;            prefix, p_task-&gt;unit_def.refcount, prefix,</div>
-<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;            ABTD_atomic_acquire_load_uint32(&amp;p_task-&gt;unit_def.request), prefix,</div>
-<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;            p_task-&gt;unit_def.p_arg, prefix,</div>
-<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;            ABTD_atomic_acquire_load_ptr(&amp;p_task-&gt;unit_def.p_keytable));</div>
-<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;</div>
-<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;    fflush(p_os);</div>
-<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(prefix);</div>
-<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;}</div>
-<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;</div>
-<div class="line"><a name="l00954"></a><span class="lineno"><a class="line" href="../../d3/d3f/task_8c.html#a08cf6115b5f448eadd6964e25ef6e436">  954</a></span>&#160;<span class="keyword">static</span> ABTD_atomic_uint64 <a class="code" href="../../d3/d3f/task_8c.html#a08cf6115b5f448eadd6964e25ef6e436">g_task_id</a> = ABTD_ATOMIC_UINT64_STATIC_INITIALIZER(0);</div>
-<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;<span class="keywordtype">void</span> ABTI_task_reset_id(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;{</div>
-<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;    ABTD_atomic_release_store_uint64(&amp;g_task_id, 0);</div>
-<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;}</div>
-<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;</div>
-<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;uint64_t ABTI_task_get_id(ABTI_task *p_task)</div>
-<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;{</div>
-<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;    <span class="keywordflow">if</span> (p_task-&gt;unit_def.id == ABTI_TASK_INIT_ID) {</div>
-<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;        p_task-&gt;unit_def.id = ABTI_task_get_new_id();</div>
-<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;    }</div>
-<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;    <span class="keywordflow">return</span> p_task-&gt;unit_def.id;</div>
-<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;}</div>
-<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;</div>
-<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;<span class="comment">/* Internal static functions                                                 */</span></div>
-<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;</div>
-<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d5/d7d/abt_8h.html#a8f4ca28fbf35ddd6a922e65f49723bee">ABT_unit_id</a> ABTI_task_get_new_id(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;{</div>
-<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;    <span class="keywordflow">return</span> ABTD_atomic_fetch_add_uint64(&amp;g_task_id, 1);</div>
-<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;}</div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;        <span class="comment">/* Set the new pool */</span></div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;        p_task-&gt;unit_def.p_pool = p_pool;</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;        <span class="comment">/* Create a wrapper work unit */</span></div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;        <a class="code" href="../../d5/d7d/abt_8h.html#a1db745434aa4dfc081f4265b8ea077cd">ABT_task</a> task = ABTI_task_get_handle(p_task);</div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;        p_task-&gt;unit_def.unit = p_pool-&gt;u_create_from_task(task);</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;    }</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;    ABTI_tool_event_task_revive(p_local_xstream, p_task,</div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;                                p_local_xstream ? p_local_xstream-&gt;p_unit</div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;                                                : NULL,</div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;                                p_pool);</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[T%&quot;</span> PRIu64 <span class="stringliteral">&quot;] revived\n&quot;</span>, ABTI_task_get_id(p_task));</div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;    <span class="comment">/* Add this task to the scheduler&#39;s pool */</span></div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_DISABLE_POOL_PRODUCER_CHECK</span></div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;<span class="preprocessor"></span>    ABTI_pool_push(p_pool, p_task-&gt;unit_def.unit);</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;<span class="preprocessor"></span>    abt_errno = ABTI_pool_push(p_pool, p_task-&gt;unit_def.unit,</div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;                               ABTI_self_get_native_thread_id(p_local_xstream));</div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;</div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;}</div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;</div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;<span class="keywordtype">void</span> ABTI_task_free(ABTI_xstream *p_local_xstream, ABTI_task *p_task)</div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;{</div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;    ABTI_tool_event_task_free(p_local_xstream, p_task,</div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;                              p_local_xstream ? p_local_xstream-&gt;p_unit : NULL);</div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[T%&quot;</span> PRIu64 <span class="stringliteral">&quot;] freed\n&quot;</span>, ABTI_task_get_id(p_task));</div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;</div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;    <span class="comment">/* Free the unit */</span></div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;    p_task-&gt;unit_def.p_pool-&gt;u_free(&amp;p_task-&gt;unit_def.unit);</div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;</div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;    <span class="comment">/* Free the key-value table */</span></div>
+<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;    ABTI_ktable *p_ktable =</div>
+<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;        ABTD_atomic_acquire_load_ptr(&amp;p_task-&gt;unit_def.p_keytable);</div>
+<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;    <span class="comment">/* No parallel access to TLS is allowed. */</span></div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;    ABTI_ASSERT(p_ktable != ABTI_KTABLE_LOCKED);</div>
+<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;    <span class="keywordflow">if</span> (p_ktable) {</div>
+<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;        ABTI_ktable_free(p_local_xstream, p_ktable);</div>
+<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;    }</div>
+<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;</div>
+<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;    ABTI_mem_free_task(p_local_xstream, p_task);</div>
+<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;}</div>
+<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;</div>
+<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;<span class="keywordtype">void</span> ABTI_task_print(ABTI_task *p_task, FILE *p_os, <span class="keywordtype">int</span> indent)</div>
+<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;{</div>
+<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;    <span class="keywordtype">char</span> *prefix = <a class="code" href="../../d5/d09/abtu_8h.html#a0c0a37db0324fb30071454b9bf67b0bc">ABTU_get_indent_str</a>(indent);</div>
+<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;</div>
+<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;    <span class="keywordflow">if</span> (p_task == NULL) {</div>
+<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;        fprintf(p_os, <span class="stringliteral">&quot;%s== NULL TASKLET ==\n&quot;</span>, prefix);</div>
+<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;        <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;    }</div>
+<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;</div>
+<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;    ABTI_xstream *p_xstream = p_task-&gt;unit_def.p_last_xstream;</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;    <span class="keywordtype">int</span> xstream_rank = p_xstream ? p_xstream-&gt;rank : 0;</div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;    <span class="keywordtype">char</span> *state;</div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;    <span class="keywordflow">switch</span> (ABTD_atomic_acquire_load_int(&amp;p_task-&gt;unit_def.state)) {</div>
+<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;        <span class="keywordflow">case</span> ABTI_UNIT_STATE_READY:</div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;            state = <span class="stringliteral">&quot;READY&quot;</span>;</div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;        <span class="keywordflow">case</span> ABTI_UNIT_STATE_RUNNING:</div>
+<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;            state = <span class="stringliteral">&quot;RUNNING&quot;</span>;</div>
+<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;        <span class="keywordflow">case</span> ABTI_UNIT_STATE_TERMINATED:</div>
+<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;            state = <span class="stringliteral">&quot;TERMINATED&quot;</span>;</div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;            state = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;    }</div>
+<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;</div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;    fprintf(p_os,</div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;            <span class="stringliteral">&quot;%s== TASKLET (%p) ==\n&quot;</span></div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;            <span class="stringliteral">&quot;%sid        : %&quot;</span> PRIu64 <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;            <span class="stringliteral">&quot;%sstate     : %s\n&quot;</span></div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;            <span class="stringliteral">&quot;%sES        : %p (%d)\n&quot;</span></div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;            <span class="stringliteral">&quot;%spool      : %p\n&quot;</span></div>
+<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;            <span class="stringliteral">&quot;%srequest   : 0x%x\n&quot;</span></div>
+<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;            <span class="stringliteral">&quot;%sp_arg     : %p\n&quot;</span></div>
+<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;            <span class="stringliteral">&quot;%skeytable  : %p\n&quot;</span>,</div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;            prefix, (<span class="keywordtype">void</span> *)p_task, prefix, ABTI_task_get_id(p_task), prefix,</div>
+<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;            state, prefix, (<span class="keywordtype">void</span> *)p_task-&gt;unit_def.p_last_xstream,</div>
+<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;            xstream_rank, prefix, (<span class="keywordtype">void</span> *)p_task-&gt;unit_def.p_pool, prefix,</div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;            ABTD_atomic_acquire_load_uint32(&amp;p_task-&gt;unit_def.request), prefix,</div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;            p_task-&gt;unit_def.p_arg, prefix,</div>
+<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;            ABTD_atomic_acquire_load_ptr(&amp;p_task-&gt;unit_def.p_keytable));</div>
+<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;</div>
+<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;    fflush(p_os);</div>
+<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(prefix);</div>
+<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;}</div>
+<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;</div>
+<div class="line"><a name="l00953"></a><span class="lineno"><a class="line" href="../../d3/d3f/task_8c.html#a08cf6115b5f448eadd6964e25ef6e436">  953</a></span>&#160;<span class="keyword">static</span> ABTD_atomic_uint64 <a class="code" href="../../d3/d3f/task_8c.html#a08cf6115b5f448eadd6964e25ef6e436">g_task_id</a> = ABTD_ATOMIC_UINT64_STATIC_INITIALIZER(0);</div>
+<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;<span class="keywordtype">void</span> ABTI_task_reset_id(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;{</div>
+<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;    ABTD_atomic_release_store_uint64(&amp;g_task_id, 0);</div>
+<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;}</div>
+<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;</div>
+<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;uint64_t ABTI_task_get_id(ABTI_task *p_task)</div>
+<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;{</div>
+<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;    <span class="keywordflow">if</span> (p_task-&gt;unit_def.id == ABTI_TASK_INIT_ID) {</div>
+<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;        p_task-&gt;unit_def.id = ABTI_task_get_new_id();</div>
+<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;    }</div>
+<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;    <span class="keywordflow">return</span> p_task-&gt;unit_def.id;</div>
+<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;}</div>
+<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;</div>
+<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;<span class="comment">/* Internal static functions                                                 */</span></div>
+<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;</div>
+<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d5/d7d/abt_8h.html#a8f4ca28fbf35ddd6a922e65f49723bee">ABT_unit_id</a> ABTI_task_get_new_id(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;{</div>
+<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;    <span class="keywordflow">return</span> ABTD_atomic_fetch_add_uint64(&amp;g_task_id, 1);</div>
+<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;}</div>
 <div class="ttc" id="abt_8h_html_a8f4ca28fbf35ddd6a922e65f49723bee"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a8f4ca28fbf35ddd6a922e65f49723bee">ABT_unit_id</a></div><div class="ttdeci">uint64_t ABT_unit_id</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00343">abt.h:343</a></div></div>
 <div class="ttc" id="abt_8h_html_ad79a2fa8571915e3cfcd1383fcebf6f3"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ad79a2fa8571915e3cfcd1383fcebf6f3">ABT_xstream</a></div><div class="ttdeci">struct ABT_xstream_opaque * ABT_xstream</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00315">abt.h:315</a></div></div>
-<div class="ttc" id="group__TASK_html_ga0008848646bdc4ce82ee996abcb38f23"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#ga0008848646bdc4ce82ee996abcb38f23">ABT_task_set_specific</a></div><div class="ttdeci">int ABT_task_set_specific(ABT_task task, ABT_key key, void *value) ABT_API_PUBLIC</div><div class="ttdoc">Set the tasklet-specific value associated with the key. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00700">task.c:700</a></div></div>
+<div class="ttc" id="group__TASK_html_ga0008848646bdc4ce82ee996abcb38f23"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#ga0008848646bdc4ce82ee996abcb38f23">ABT_task_set_specific</a></div><div class="ttdeci">int ABT_task_set_specific(ABT_task task, ABT_key key, void *value) ABT_API_PUBLIC</div><div class="ttdoc">Set the tasklet-specific value associated with the key. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00706">task.c:706</a></div></div>
 <div class="ttc" id="abtu_8h_html_a0c0a37db0324fb30071454b9bf67b0bc"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a0c0a37db0324fb30071454b9bf67b0bc">ABTU_get_indent_str</a></div><div class="ttdeci">char * ABTU_get_indent_str(int indent)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/df1/util_8c_source.html#l00012">util.c:12</a></div></div>
 <div class="ttc" id="abt_8h_html_ac601a9db309d1a30954d43fc82d9602fad542f79f98f1df6dfce51d745561b4b8"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fad542f79f98f1df6dfce51d745561b4b8">ABT_SYNC_EVENT_TYPE_TASK_JOIN</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00252">abt.h:252</a></div></div>
 <div class="ttc" id="group__TASK_html_ga142c3fb288ef8f6e6d475b497511d8cd"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#ga142c3fb288ef8f6e6d475b497511d8cd">ABT_task_cancel</a></div><div class="ttdeci">int ABT_task_cancel(ABT_task task) ABT_API_PUBLIC</div><div class="ttdoc">Request the cancellation of the target task. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00279">task.c:279</a></div></div>
@@ -780,7 +779,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="group__TASK_html_gaeb110f4570cc8aea137fd8a7a29be455"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#gaeb110f4570cc8aea137fd8a7a29be455">ABT_task_create</a></div><div class="ttdeci">int ABT_task_create(ABT_pool pool, void(*task_func)(void *), void *arg, ABT_task *newtask) ABT_API_PUBLIC</div><div class="ttdoc">Create a new task and return its handle through newtask. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00044">task.c:44</a></div></div>
 <div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00375">abt.h:375</a></div></div>
 <div class="ttc" id="group__TASK_html_ga124b2fc67af1f17d05510c27343a2f05"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#ga124b2fc67af1f17d05510c27343a2f05">ABT_task_join</a></div><div class="ttdeci">int ABT_task_join(ABT_task task) ABT_API_PUBLIC</div><div class="ttdoc">Wait for the tasklet to terminate. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00239">task.c:239</a></div></div>
-<div class="ttc" id="group__TASK_html_gae9563a19d4fdad6e5c73bb268cfda9cf"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#gae9563a19d4fdad6e5c73bb268cfda9cf">ABT_task_get_specific</a></div><div class="ttdeci">int ABT_task_get_specific(ABT_task task, ABT_key key, void **value) ABT_API_PUBLIC</div><div class="ttdoc">Get the tasklet-specific value associated with the key. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00736">task.c:736</a></div></div>
+<div class="ttc" id="group__TASK_html_gae9563a19d4fdad6e5c73bb268cfda9cf"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#gae9563a19d4fdad6e5c73bb268cfda9cf">ABT_task_get_specific</a></div><div class="ttdeci">int ABT_task_get_specific(ABT_task task, ABT_key key, void **value) ABT_API_PUBLIC</div><div class="ttdoc">Get the tasklet-specific value associated with the key. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00743">task.c:743</a></div></div>
 <div class="ttc" id="abt_8h_html_af25298b722a9b85561f4f389a9984b82"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#af25298b722a9b85561f4f389a9984b82">ABT_ERR_INV_TASK</a></div><div class="ttdeci">#define ABT_ERR_INV_TASK</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00082">abt.h:82</a></div></div>
 <div class="ttc" id="group__TASK_html_ga56767798998efc377ea68d7919292f6f"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#ga56767798998efc377ea68d7919292f6f">ABT_task_self</a></div><div class="ttdeci">int ABT_task_self(ABT_task *task) ABT_API_PUBLIC</div><div class="ttdoc">Return the handle of the calling tasklet. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00314">task.c:314</a></div></div>
 <div class="ttc" id="abt_8h_html_a6bbc8a95dbe08348262228f3355652b2"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a></div><div class="ttdeci">struct ABT_pool_opaque * ABT_pool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00331">abt.h:331</a></div></div>
@@ -788,7 +787,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="group__TASK_html_gae7c48eb7af72aac7f14f41d3c305527f"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#gae7c48eb7af72aac7f14f41d3c305527f">ABT_task_create_on_xstream</a></div><div class="ttdeci">int ABT_task_create_on_xstream(ABT_xstream xstream, void(*task_func)(void *), void *arg, ABT_task *newtask) ABT_API_PUBLIC</div><div class="ttdoc">Create a new tasklet associated with the target ES (xstream). </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00104">task.c:104</a></div></div>
 <div class="ttc" id="abt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00287">abt.h:287</a></div></div>
 <div class="ttc" id="abt_8h_html_a4aafbed4aa9fe5d6e7697bc10ea748c5"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a4aafbed4aa9fe5d6e7697bc10ea748c5">ABT_task_state</a></div><div class="ttdeci">ABT_task_state</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00132">abt.h:132</a></div></div>
-<div class="ttc" id="group__TASK_html_ga24002cf412bccef3ae76e5198d9a4e38"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#ga24002cf412bccef3ae76e5198d9a4e38">ABT_task_equal</a></div><div class="ttdeci">int ABT_task_equal(ABT_task task1, ABT_task task2, ABT_bool *result) ABT_API_PUBLIC</div><div class="ttdoc">Compare two tasklet handles for equality. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00622">task.c:622</a></div></div>
+<div class="ttc" id="group__TASK_html_ga24002cf412bccef3ae76e5198d9a4e38"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#ga24002cf412bccef3ae76e5198d9a4e38">ABT_task_equal</a></div><div class="ttdeci">int ABT_task_equal(ABT_task task1, ABT_task task2, ABT_bool *result) ABT_API_PUBLIC</div><div class="ttdoc">Compare two tasklet handles for equality. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00628">task.c:628</a></div></div>
 <div class="ttc" id="abti__error_8h_html_aad3b3ce8a92436b8b7efdebd32eeb52e"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a></div><div class="ttdeci">#define HANDLE_ERROR_FUNC_WITH_CODE(n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00249">abti_error.h:249</a></div></div>
 <div class="ttc" id="abti_8h_html_a5e2e52e4bfa1e19e121d939135e4300c"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a></div><div class="ttdeci">ABTI_global * gp_ABTI_global</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d57/global_8c_source.html#l00014">global.c:14</a></div></div>
 <div class="ttc" id="abt_8h_html_acf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00064">abt.h:64</a></div></div>
@@ -797,9 +796,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="abt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00286">abt.h:286</a></div></div>
 <div class="ttc" id="group__TASK_html_gade08789812f991f5843e34e5d0324470"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#gade08789812f991f5843e34e5d0324470">ABT_task_self_id</a></div><div class="ttdeci">int ABT_task_self_id(ABT_unit_id *id) ABT_API_PUBLIC</div><div class="ttdoc">Return the ID of the calling tasklet. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00359">task.c:359</a></div></div>
 <div class="ttc" id="abt_8h_html_a3aa6925b15fb22c91dc75cdfd95e5d72"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a3aa6925b15fb22c91dc75cdfd95e5d72">ABT_ERR_UNINITIALIZED</a></div><div class="ttdeci">#define ABT_ERR_UNINITIALIZED</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00065">abt.h:65</a></div></div>
-<div class="ttc" id="group__TASK_html_ga79a4926f8ad1ae7fbee8038cce7c5ca9"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#ga79a4926f8ad1ae7fbee8038cce7c5ca9">ABT_task_get_arg</a></div><div class="ttdeci">int ABT_task_get_arg(ABT_task task, void **arg) ABT_API_PUBLIC</div><div class="ttdoc">Retrieve the argument for the tasklet function. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00670">task.c:670</a></div></div>
-<div class="ttc" id="group__TASK_html_gaa56475c7382a771a8b861e03b0341365"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#gaa56475c7382a771a8b861e03b0341365">ABT_task_get_id</a></div><div class="ttdeci">int ABT_task_get_id(ABT_task task, ABT_unit_id *task_id) ABT_API_PUBLIC</div><div class="ttdoc">Get the tasklet&amp;#39;s id. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00641">task.c:641</a></div></div>
-<div class="ttc" id="task_8c_html_a08cf6115b5f448eadd6964e25ef6e436"><div class="ttname"><a href="../../d3/d3f/task_8c.html#a08cf6115b5f448eadd6964e25ef6e436">g_task_id</a></div><div class="ttdeci">static ABTD_atomic_uint64 g_task_id</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00954">task.c:954</a></div></div>
+<div class="ttc" id="group__TASK_html_ga79a4926f8ad1ae7fbee8038cce7c5ca9"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#ga79a4926f8ad1ae7fbee8038cce7c5ca9">ABT_task_get_arg</a></div><div class="ttdeci">int ABT_task_get_arg(ABT_task task, void **arg) ABT_API_PUBLIC</div><div class="ttdoc">Retrieve the argument for the tasklet function. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00676">task.c:676</a></div></div>
+<div class="ttc" id="group__TASK_html_gaa56475c7382a771a8b861e03b0341365"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#gaa56475c7382a771a8b861e03b0341365">ABT_task_get_id</a></div><div class="ttdeci">int ABT_task_get_id(ABT_task task, ABT_unit_id *task_id) ABT_API_PUBLIC</div><div class="ttdoc">Get the tasklet&amp;#39;s id. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00647">task.c:647</a></div></div>
+<div class="ttc" id="task_8c_html_a08cf6115b5f448eadd6964e25ef6e436"><div class="ttname"><a href="../../d3/d3f/task_8c.html#a08cf6115b5f448eadd6964e25ef6e436">g_task_id</a></div><div class="ttdeci">static ABTD_atomic_uint64 g_task_id</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00953">task.c:953</a></div></div>
 <div class="ttc" id="abt_8h_html_a5ed830632895c95a4be6692d66c1941b"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a5ed830632895c95a4be6692d66c1941b">ABT_ERR_FEATURE_NA</a></div><div class="ttdeci">#define ABT_ERR_FEATURE_NA</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00116">abt.h:116</a></div></div>
 <div class="ttc" id="group__TASK_html_ga96a36794740194cfe2fa31438c11be03"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#ga96a36794740194cfe2fa31438c11be03">ABT_task_get_state</a></div><div class="ttdeci">int ABT_task_get_state(ABT_task task, ABT_task_state *state) ABT_API_PUBLIC</div><div class="ttdoc">Return the state of task. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00426">task.c:426</a></div></div>
 <div class="ttc" id="abt_8h_html_ab21a7b77e7885a83c11fbd43c6a95e82"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ab21a7b77e7885a83c11fbd43c6a95e82">ABT_ERR_MIGRATION_NA</a></div><div class="ttdeci">#define ABT_ERR_MIGRATION_NA</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00114">abt.h:114</a></div></div>
@@ -808,16 +807,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="abti_8h_html"><div class="ttname"><a href="../../d5/d03/abti_8h.html">abti.h</a></div></div>
 <div class="ttc" id="group__TASK_html_ga37f981dc41bce5fc3644e76a601a0acf"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#ga37f981dc41bce5fc3644e76a601a0acf">ABT_task_free</a></div><div class="ttdeci">int ABT_task_free(ABT_task *task) ABT_API_PUBLIC</div><div class="ttdoc">Release the task object associated with task handle. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00190">task.c:190</a></div></div>
 <div class="ttc" id="abt_8h_html_a8fc7b93960578efca32539002caec236"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a8fc7b93960578efca32539002caec236">ABT_ERR_INV_XSTREAM</a></div><div class="ttdeci">#define ABT_ERR_INV_XSTREAM</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00068">abt.h:68</a></div></div>
-<div class="ttc" id="group__TASK_html_ga899e2eb7e4514870df74b1551ac7b308"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#ga899e2eb7e4514870df74b1551ac7b308">ABT_task_is_unnamed</a></div><div class="ttdeci">int ABT_task_is_unnamed(ABT_task task, ABT_bool *flag) ABT_API_PUBLIC</div><div class="ttdoc">Check if the target task is unnamed. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00591">task.c:591</a></div></div>
+<div class="ttc" id="group__TASK_html_ga899e2eb7e4514870df74b1551ac7b308"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#ga899e2eb7e4514870df74b1551ac7b308">ABT_task_is_unnamed</a></div><div class="ttdeci">int ABT_task_is_unnamed(ABT_task task, ABT_bool *flag) ABT_API_PUBLIC</div><div class="ttdoc">Check if the target task is unnamed. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00596">task.c:596</a></div></div>
 <div class="ttc" id="abt_8h_html_acedaaeb67b83967cc9129e0906f38e93"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#acedaaeb67b83967cc9129e0906f38e93">ABT_TASK_NULL</a></div><div class="ttdeci">#define ABT_TASK_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00421">abt.h:421</a></div></div>
 <div class="ttc" id="abtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00111">abtu.h:111</a></div></div>
-<div class="ttc" id="group__TASK_html_gadbeb840bef402c9d0fe29728ac89a484"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#gadbeb840bef402c9d0fe29728ac89a484">ABT_task_is_migratable</a></div><div class="ttdeci">int ABT_task_is_migratable(ABT_task task, ABT_bool *flag) ABT_API_PUBLIC</div><div class="ttdoc">Get the tasklet&amp;#39;s migratability. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00557">task.c:557</a></div></div>
+<div class="ttc" id="group__TASK_html_gadbeb840bef402c9d0fe29728ac89a484"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#gadbeb840bef402c9d0fe29728ac89a484">ABT_task_is_migratable</a></div><div class="ttdeci">int ABT_task_is_migratable(ABT_task task, ABT_bool *flag) ABT_API_PUBLIC</div><div class="ttdoc">Get the tasklet&amp;#39;s migratability. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00561">task.c:561</a></div></div>
 <div class="ttc" id="group__TASK_html_ga8da5ad84470e5ffcb49256613b7b59b1"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#ga8da5ad84470e5ffcb49256613b7b59b1">ABT_task_get_xstream</a></div><div class="ttdeci">int ABT_task_get_xstream(ABT_task task, ABT_xstream *xstream) ABT_API_PUBLIC</div><div class="ttdoc">Get the ES associated with the target tasklet. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00400">task.c:400</a></div></div>
 <div class="ttc" id="group__TASK_html_ga192f5cddf84a7c8d51ed887a3b1b900e"><div class="ttname"><a href="../../d7/d4b/group__TASK.html#ga192f5cddf84a7c8d51ed887a3b1b900e">ABT_task_revive</a></div><div class="ttdeci">int ABT_task_revive(ABT_pool pool, void(*task_func)(void *), void *arg, ABT_task *task) ABT_API_PUBLIC</div><div class="ttdoc">Revive the tasklet. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3f/task_8c_source.html#l00153">task.c:153</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 14 2020 03:09:48 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Aug 19 2020 03:09:46 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

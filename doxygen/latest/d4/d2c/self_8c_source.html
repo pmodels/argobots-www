@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">c01b4b0d2c2f8e9f1bd9900d23485ba971fc1a21</span>
+   &#160;<span id="projectnumber">23067fa015f4b179569e2d52278c1072e674eb1e</span>
    </div>
   </td>
  </tr>
@@ -143,7 +143,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    ABTI_unit *p_unit = p_local_xstream-&gt;p_unit;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span> (p_unit-&gt;type == ABTI_UNIT_TYPE_THREAD_MAIN) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span> (ABTI_unit_type_is_thread_main(p_unit-&gt;type)) {</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        *flag = <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">if</span> (!ABTI_unit_type_is_thread(p_unit-&gt;type))</div>
@@ -308,13 +308,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    }</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    *flag = (p_local_xstream-&gt;p_unit-&gt;refcount == 0) ? <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a> : <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_EXT_THREAD</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="preprocessor"></span>fn_exit:</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;}</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    *flag = (p_local_xstream-&gt;p_unit-&gt;type &amp; ABTI_UNIT_TYPE_NAMED) ? <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                                                                   : <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_EXT_THREAD</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="preprocessor"></span>fn_exit:</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;}</div>
 <div class="ttc" id="group__SELF_html_gaa2af3a58c127272320aeea153c921dfd"><div class="ttname"><a href="../../d9/d23/group__SELF.html#gaa2af3a58c127272320aeea153c921dfd">ABT_self_set_arg</a></div><div class="ttdeci">int ABT_self_set_arg(void *arg) ABT_API_PUBLIC</div><div class="ttdoc">Set the argument for the work unit function. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2c/self_8c_source.html#l00257">self.c:257</a></div></div>
 <div class="ttc" id="abt_8h_html_a2b54886c7ce2ed912e6a477815c3ac66"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a2b54886c7ce2ed912e6a477815c3ac66">ABT_ERR_INV_THREAD</a></div><div class="ttdeci">#define ABT_ERR_INV_THREAD</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00080">abt.h:80</a></div></div>
 <div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00375">abt.h:375</a></div></div>
@@ -339,7 +340,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 14 2020 03:09:48 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Aug 19 2020 03:09:46 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

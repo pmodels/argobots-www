@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">c01b4b0d2c2f8e9f1bd9900d23485ba971fc1a21</span>
+   &#160;<span id="projectnumber">23067fa015f4b179569e2d52278c1072e674eb1e</span>
    </div>
   </td>
  </tr>
@@ -141,96 +141,67 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    ABTD_atomic_fetch_and_uint32(&amp;p_xstream-&gt;request, ~req);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">/* Get the top scheduler from the sched list */</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_sched *ABTI_xstream_get_top_sched(ABTI_xstream *p_xstream)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">/* Get the first pool of the main scheduler. */</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_pool *ABTI_xstream_get_main_pool(ABTI_xstream *p_xstream)</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_STACKABLE_SCHED</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor"></span>    ABTI_unit *p_unit = p_xstream-&gt;p_unit;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">while</span> (p_unit) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (ABTI_unit_type_is_thread(p_unit-&gt;type)) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            ABTI_sched *p_sched = ABTI_unit_get_thread(p_unit)-&gt;p_sched;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">if</span> (p_sched)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordflow">return</span> p_sched;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        p_unit = p_unit-&gt;p_parent;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> p_xstream-&gt;p_main_sched;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">/* Get the first pool of the main scheduler. */</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_pool *ABTI_xstream_get_main_pool(ABTI_xstream *p_xstream)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> pool = p_xstream-&gt;p_main_sched-&gt;pools[0];</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> ABTI_pool_get_ptr(pool);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_xstream_terminate_thread(ABTI_xstream *p_local_xstream,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                                 ABTI_thread *p_thread)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[U%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] terminated\n&quot;</span>, ABTI_thread_get_id(p_thread),</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;              p_thread-&gt;unit_def.p_last_xstream-&gt;rank);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (p_thread-&gt;unit_def.refcount == 0) {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_STACKABLE_SCHED</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor"></span>        <span class="keywordflow">if</span> (p_thread-&gt;p_sched) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="comment">/* NOTE: p_thread itself will be freed in ABTI_sched_free. */</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            ABTD_atomic_release_store_int(&amp;p_thread-&gt;unit_def.state,</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                          ABTI_UNIT_STATE_TERMINATED);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            ABTI_sched_discard_and_free(p_local_xstream, p_thread-&gt;p_sched,</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                        <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        } <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor"></span>        {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            ABTD_atomic_release_store_int(&amp;p_thread-&gt;unit_def.state,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                          ABTI_UNIT_STATE_TERMINATED);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            ABTI_thread_free(p_local_xstream, p_thread);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="comment">/* NOTE: We set the ULT&#39;s state as TERMINATED after checking refcount</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">         * because the ULT can be freed on a different ES.  In other words, we</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">         * must not access any field of p_thead after changing the state to</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">         * TERMINATED. */</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        ABTD_atomic_release_store_int(&amp;p_thread-&gt;unit_def.state,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                      ABTI_UNIT_STATE_TERMINATED);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_xstream_terminate_task(ABTI_xstream *p_local_xstream,</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                               ABTI_task *p_task)</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[T%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] terminated\n&quot;</span>, ABTI_task_get_id(p_task),</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;              p_task-&gt;unit_def.p_last_xstream-&gt;rank);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span> (p_task-&gt;unit_def.refcount == 0) {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        ABTD_atomic_release_store_int(&amp;p_task-&gt;unit_def.state,</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                                      ABTI_UNIT_STATE_TERMINATED);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        ABTI_task_free(p_local_xstream, p_task);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="comment">/* NOTE: We set the task&#39;s state as TERMINATED after checking refcount</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">         * because the task can be freed on a different ES.  In other words, we</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">         * must not access any field of p_task after changing the state to</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">         * TERMINATED. */</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        ABTD_atomic_release_store_int(&amp;p_task-&gt;unit_def.state,</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                                      ABTI_UNIT_STATE_TERMINATED);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">/* Get the native thread id associated with the target xstream. */</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_native_thread_id</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;ABTI_xstream_get_native_thread_id(ABTI_xstream *p_xstream)</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;{</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">return</span> (ABTI_native_thread_id)p_xstream;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_XSTREAM_H_INCLUDED */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> pool = p_xstream-&gt;p_main_sched-&gt;pools[0];</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> ABTI_pool_get_ptr(pool);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_xstream_terminate_thread(ABTI_xstream *p_local_xstream,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                                 ABTI_thread *p_thread)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[U%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] terminated\n&quot;</span>, ABTI_thread_get_id(p_thread),</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;              p_thread-&gt;unit_def.p_last_xstream-&gt;rank);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span> (!(p_thread-&gt;unit_def.type &amp; ABTI_UNIT_TYPE_NAMED)) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        ABTD_atomic_release_store_int(&amp;p_thread-&gt;unit_def.state,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                      ABTI_UNIT_STATE_TERMINATED);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        ABTI_thread_free(p_local_xstream, p_thread);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">/* NOTE: We set the ULT&#39;s state as TERMINATED after checking refcount</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">         * because the ULT can be freed on a different ES.  In other words, we</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">         * must not access any field of p_thead after changing the state to</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">         * TERMINATED. */</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        ABTD_atomic_release_store_int(&amp;p_thread-&gt;unit_def.state,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                      ABTI_UNIT_STATE_TERMINATED);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_xstream_terminate_task(ABTI_xstream *p_local_xstream,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                               ABTI_task *p_task)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[T%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] terminated\n&quot;</span>, ABTI_task_get_id(p_task),</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;              p_task-&gt;unit_def.p_last_xstream-&gt;rank);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span> (!(p_task-&gt;unit_def.type &amp; ABTI_UNIT_TYPE_NAMED)) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        ABTD_atomic_release_store_int(&amp;p_task-&gt;unit_def.state,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                      ABTI_UNIT_STATE_TERMINATED);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        ABTI_task_free(p_local_xstream, p_task);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">/* NOTE: We set the task&#39;s state as TERMINATED after checking refcount</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">         * because the task can be freed on a different ES.  In other words, we</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">         * must not access any field of p_task after changing the state to</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">         * TERMINATED. */</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        ABTD_atomic_release_store_int(&amp;p_task-&gt;unit_def.state,</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                      ABTI_UNIT_STATE_TERMINATED);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">/* Get the native thread id associated with the target xstream. */</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_native_thread_id</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;ABTI_xstream_get_native_thread_id(ABTI_xstream *p_xstream)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> (ABTI_native_thread_id)p_xstream;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_XSTREAM_H_INCLUDED */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="abt_8h_html_ad79a2fa8571915e3cfcd1383fcebf6f3"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ad79a2fa8571915e3cfcd1383fcebf6f3">ABT_xstream</a></div><div class="ttdeci">struct ABT_xstream_opaque * ABT_xstream</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00315">abt.h:315</a></div></div>
 <div class="ttc" id="abt_8h_html_a92b98832a6be5ff96718e303ed478935"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a92b98832a6be5ff96718e303ed478935">ABT_XSTREAM_NULL</a></div><div class="ttdeci">#define ABT_XSTREAM_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00412">abt.h:412</a></div></div>
 <div class="ttc" id="abt_8h_html_a6bbc8a95dbe08348262228f3355652b2"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a></div><div class="ttdeci">struct ABT_pool_opaque * ABT_pool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00331">abt.h:331</a></div></div>
-<div class="ttc" id="abt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00287">abt.h:287</a></div></div>
 <div class="ttc" id="abti__log_8h_html_ac06cfc686322558f590c50eab8622ebd"><div class="ttname"><a href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></div><div class="ttdeci">#define LOG_DEBUG(fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5e/abti__log_8h_source.html#l00030">abti_log.h:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 14 2020 03:09:48 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Aug 19 2020 03:09:46 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

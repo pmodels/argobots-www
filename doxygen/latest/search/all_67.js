@@ -9,6 +9,8 @@ var searchData=
   ['g_5fsched_5fid',['g_sched_id',['../db/dbe/sched_8c.html#a00a319caec88baaca37e2fcdfc4ce518',1,'sched.c']]],
   ['g_5ftask_5fid',['g_task_id',['../d3/d3f/task_8c.html#a08cf6115b5f448eadd6964e25ef6e436',1,'task.c']]],
   ['g_5fthread_5fid',['g_thread_id',['../d3/de7/thread_8c.html#a10381f38fd2b3f58b4ecae996e7135cc',1,'thread.c']]],
+  ['g_5fthread_5fmig_5fdata_5fkey',['g_thread_mig_data_key',['../d3/de7/thread_8c.html#aa446b03fd7208a3c4370682c197d6991',1,'thread.c']]],
+  ['g_5fthread_5fsched_5fkey',['g_thread_sched_key',['../d3/de7/thread_8c.html#a7e32f4a47f75c7380e7fd3fb0be97fcb',1,'thread.c']]],
   ['get_5fmigr_5fpool',['get_migr_pool',['../de/d65/structABT__sched__def.html#a1fab43c9ebac0bd894c975dc73085e47',1,'ABT_sched_def']]],
   ['get_5fnum_5fcores',['get_num_cores',['../d2/d45/abtd__affinity_8c.html#ab8d7d82c38a59342d514c7aa21e09d4d',1,'abtd_affinity.c']]],
   ['global_2ec',['global.c',['../dc/d57/global_8c.html',1,'']]],
