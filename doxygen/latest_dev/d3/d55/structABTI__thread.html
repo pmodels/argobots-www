@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">23067fa015f4b179569e2d52278c1072e674eb1e</span>
+   &#160;<span id="projectnumber">89764e78b8153c15af4e986cdd3327e39b63d646</span>
    </div>
   </td>
  </tr>
@@ -100,98 +100,260 @@ Collaboration diagram for ABTI_thread:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a9b8f987daad8552d79f11e0060af29c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/de4/structABTD__thread__context.html">ABTD_thread_context</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d55/structABTI__thread.html#a9b8f987daad8552d79f11e0060af29c8">ctx</a></td></tr>
-<tr class="separator:a9b8f987daad8552d79f11e0060af29c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d366c93774abc3a7d0431724ce456b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d58/structABTI__unit.html">ABTI_unit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d55/structABTI__thread.html#a8d366c93774abc3a7d0431724ce456b2">unit_def</a></td></tr>
-<tr class="separator:a8d366c93774abc3a7d0431724ce456b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37d05c365058aea2e50c2ee32e4fe45a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d55/structABTI__thread.html#a37d05c365058aea2e50c2ee32e4fe45a">p_stack</a></td></tr>
-<tr class="separator:a37d05c365058aea2e50c2ee32e4fe45a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa54211f1983725d90fd84e5e6165e324"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d55/structABTI__thread.html#aa54211f1983725d90fd84e5e6165e324">stacksize</a></td></tr>
-<tr class="separator:aa54211f1983725d90fd84e5e6165e324"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb1e23a7be653647a34f33971c2f8ae1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d03/abti_8h.html#aa4eb7b43ac9bf4561583dc77f79219ff">ABTI_stack_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d55/structABTI__thread.html#adb1e23a7be653647a34f33971c2f8ae1">stacktype</a></td></tr>
-<tr class="separator:adb1e23a7be653647a34f33971c2f8ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ab75f6321f2c43256ef5e44e89d7b93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d55/structABTI__thread.html">ABTI_thread</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d55/structABTI__thread.html#a7ab75f6321f2c43256ef5e44e89d7b93">p_prev</a></td></tr>
+<tr class="separator:a7ab75f6321f2c43256ef5e44e89d7b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe296ed8df2dc4bbe911b76125a431c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d55/structABTI__thread.html">ABTI_thread</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d55/structABTI__thread.html#abe296ed8df2dc4bbe911b76125a431c5">p_next</a></td></tr>
+<tr class="separator:abe296ed8df2dc4bbe911b76125a431c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a519d77e3bb0780d437efd2713185dbe3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/df5/structABTD__atomic__int.html">ABTD_atomic_int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d55/structABTI__thread.html#a519d77e3bb0780d437efd2713185dbe3">is_in_pool</a></td></tr>
+<tr class="separator:a519d77e3bb0780d437efd2713185dbe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a031815f8510c1bc87c1549f3137d2538"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d03/abti_8h.html#a1ca438571bc5cbc5687789d622e7eadc">ABTI_thread_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d55/structABTI__thread.html#a031815f8510c1bc87c1549f3137d2538">type</a></td></tr>
+<tr class="separator:a031815f8510c1bc87c1549f3137d2538"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1e810da505f079679018cf258a55e6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d7d/abt_8h.html#a2766d98ace73a538d42ff64a8b999baf">ABT_unit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d55/structABTI__thread.html#ab1e810da505f079679018cf258a55e6e">unit</a></td></tr>
+<tr class="separator:ab1e810da505f079679018cf258a55e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a203fbcd63fefedc349bcd6b68a7dbebc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d55/structABTI__thread.html#a203fbcd63fefedc349bcd6b68a7dbebc">p_last_xstream</a></td></tr>
+<tr class="separator:a203fbcd63fefedc349bcd6b68a7dbebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2acf72b76f97e401d7202af41d30a526"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d55/structABTI__thread.html">ABTI_thread</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d55/structABTI__thread.html#a2acf72b76f97e401d7202af41d30a526">p_parent</a></td></tr>
+<tr class="separator:a2acf72b76f97e401d7202af41d30a526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a436421da60bd760faf11822043e0f303"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d55/structABTI__thread.html#a436421da60bd760faf11822043e0f303">f_thread</a> )(void *)</td></tr>
+<tr class="separator:a436421da60bd760faf11822043e0f303"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae89b027ecb25555ba7ff03a048b977ba"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d55/structABTI__thread.html#ae89b027ecb25555ba7ff03a048b977ba">p_arg</a></td></tr>
+<tr class="separator:ae89b027ecb25555ba7ff03a048b977ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fa27b799f9eeaa5dbc0839c3ef1c946"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/df5/structABTD__atomic__int.html">ABTD_atomic_int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d55/structABTI__thread.html#a6fa27b799f9eeaa5dbc0839c3ef1c946">state</a></td></tr>
+<tr class="separator:a6fa27b799f9eeaa5dbc0839c3ef1c946"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60ee69c0820ac5c31aa8edad4f45d9bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/df7/structABTD__atomic__uint32.html">ABTD_atomic_uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d55/structABTI__thread.html#a60ee69c0820ac5c31aa8edad4f45d9bd">request</a></td></tr>
+<tr class="separator:a60ee69c0820ac5c31aa8edad4f45d9bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e02268c166e5e2645f5db5c8cc1a725"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/d65/structABTI__pool.html">ABTI_pool</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d55/structABTI__thread.html#a7e02268c166e5e2645f5db5c8cc1a725">p_pool</a></td></tr>
+<tr class="separator:a7e02268c166e5e2645f5db5c8cc1a725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a426f0938dd6d4de504a576de30aa1e80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/d5b/structABTD__atomic__ptr.html">ABTD_atomic_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d55/structABTI__thread.html#a426f0938dd6d4de504a576de30aa1e80">p_keytable</a></td></tr>
+<tr class="separator:a426f0938dd6d4de504a576de30aa1e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaacf64905761213359c50990ccf8bb0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d7d/abt_8h.html#a8f4ca28fbf35ddd6a922e65f49723bee">ABT_unit_id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d55/structABTI__thread.html#acaacf64905761213359c50990ccf8bb0">id</a></td></tr>
+<tr class="separator:acaacf64905761213359c50990ccf8bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00359">359</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00310">310</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a class="anchor" id="a9b8f987daad8552d79f11e0060af29c8"></a>
+<a class="anchor" id="a436421da60bd760faf11822043e0f303"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d5/de4/structABTD__thread__context.html">ABTD_thread_context</a> ABTI_thread::ctx</td>
+          <td class="memname">void(* ABTI_thread::f_thread)(void *)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00360">360</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00318">318</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d2/d25/abtd__thread_8c_source.html#l00105">ABTD_thread_cancel()</a>, <a class="el" href="../../d2/d25/abtd__thread_8c_source.html#l00137">ABTD_thread_print_context()</a>, <a class="el" href="../../d2/d25/abtd__thread_8c_source.html#l00035">ABTD_thread_terminate()</a>, <a class="el" href="../../d5/d35/info_8c_source.html#l00506">ABTI_info_print_unit()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00210">ABTI_thread_context_switch_to_child_internal()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00175">ABTI_thread_context_switch_to_parent_internal()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00143">ABTI_thread_context_switch_to_sibling_internal()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01571">ABTI_thread_create_internal()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01841">ABTI_thread_create_main_sched()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00345">ABTI_thread_finish_context_sched_to_main_thread()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01919">ABTI_thread_free_internal()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01977">ABTI_thread_free_main_sched()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00048">ABTI_thread_is_dynamic_promoted()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02354">ABTI_thread_join()</a>, and <a class="el" href="../../d3/de7/thread_8c_source.html#l02291">ABTI_thread_revive()</a>.</p>
+<p>Referenced by <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html#l00011">ABTD_ythread_func_wrapper()</a>, <a class="el" href="../../d3/d3f/task_8c_source.html#l00496">ABTI_task_create()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02123">ABTI_thread_revive()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01566">ABTI_xstream_schedule_task()</a>, <a class="el" href="../../d1/de2/abti__ythread_8h_source.html#l00209">ABTI_ythread_context_switch_to_child_internal()</a>, and <a class="el" href="../../d3/de7/thread_8c_source.html#l01570">ABTI_ythread_create_internal()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a37d05c365058aea2e50c2ee32e4fe45a"></a>
+<a class="anchor" id="acaacf64905761213359c50990ccf8bb0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* ABTI_thread::p_stack</td>
+          <td class="memname"><a class="el" href="../../d5/d7d/abt_8h.html#a8f4ca28fbf35ddd6a922e65f49723bee">ABT_unit_id</a> ABTI_thread::id</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00362">362</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00324">324</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d3/de7/thread_8c_source.html#l01528">ABT_thread_get_attr()</a>, <a class="el" href="../../d5/d35/info_8c_source.html#l00506">ABTI_info_print_unit()</a>, <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00062">ABTI_mem_alloc_thread_default()</a>, <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00146">ABTI_mem_alloc_thread_main()</a>, <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00120">ABTI_mem_alloc_thread_malloc()</a>, <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00134">ABTI_mem_alloc_thread_user()</a>, <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00157">ABTI_mem_free_thread()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00210">ABTI_thread_context_switch_to_child_internal()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00143">ABTI_thread_context_switch_to_sibling_internal()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01571">ABTI_thread_create_internal()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00132">ABTI_thread_dynamic_promote_thread()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02176">ABTI_thread_print_stack()</a>, and <a class="el" href="../../d3/de7/thread_8c_source.html#l02291">ABTI_thread_revive()</a>.</p>
+<p>Referenced by <a class="el" href="../../d3/d3f/task_8c_source.html#l00496">ABTI_task_create()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02090">ABTI_thread_get_id()</a>, and <a class="el" href="../../d3/de7/thread_8c_source.html#l01570">ABTI_ythread_create_internal()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aa54211f1983725d90fd84e5e6165e324"></a>
+<a class="anchor" id="a519d77e3bb0780d437efd2713185dbe3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t ABTI_thread::stacksize</td>
+          <td class="memname"><a class="el" href="../../d5/df5/structABTD__atomic__int.html">ABTD_atomic_int</a> ABTI_thread::is_in_pool</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00363">363</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00313">313</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d3/de7/thread_8c_source.html#l01528">ABT_thread_get_attr()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01338">ABT_thread_get_stacksize()</a>, <a class="el" href="../../d5/d35/info_8c_source.html#l00506">ABTI_info_print_unit()</a>, <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00062">ABTI_mem_alloc_thread_default()</a>, <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00146">ABTI_mem_alloc_thread_main()</a>, <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00120">ABTI_mem_alloc_thread_malloc()</a>, <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00134">ABTI_mem_alloc_thread_user()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00210">ABTI_thread_context_switch_to_child_internal()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00143">ABTI_thread_context_switch_to_sibling_internal()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01571">ABTI_thread_create_internal()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00132">ABTI_thread_dynamic_promote_thread()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02176">ABTI_thread_print_stack()</a>, and <a class="el" href="../../d3/de7/thread_8c_source.html#l02291">ABTI_thread_revive()</a>.</p>
+<p>Referenced by <a class="el" href="../../d2/dc8/fifo__wait_8c_source.html#l00239">pool_pop()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00315">pool_pop_private()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00284">pool_pop_shared()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00242">pool_pop_timedwait()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00194">pool_pop_wait()</a>, <a class="el" href="../../d2/dc8/fifo__wait_8c_source.html#l00107">pool_push()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00169">pool_push_private()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00142">pool_push_shared()</a>, <a class="el" href="../../d2/dc8/fifo__wait_8c_source.html#l00270">pool_remove()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00379">pool_remove_private()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00344">pool_remove_shared()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00491">unit_create_from_task()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00479">unit_create_from_thread()</a>, and <a class="el" href="../../da/d6b/fifo_8c_source.html#l00472">unit_is_in_pool()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="adb1e23a7be653647a34f33971c2f8ae1"></a>
+<a class="anchor" id="ae89b027ecb25555ba7ff03a048b977ba"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d5/d03/abti_8h.html#aa4eb7b43ac9bf4561583dc77f79219ff">ABTI_stack_type</a> ABTI_thread::stacktype</td>
+          <td class="memname">void* ABTI_thread::p_arg</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00364">364</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00319">319</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d3/de7/thread_8c_source.html#l01528">ABT_thread_get_attr()</a>, <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00062">ABTI_mem_alloc_thread_default()</a>, <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00146">ABTI_mem_alloc_thread_main()</a>, <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00120">ABTI_mem_alloc_thread_malloc()</a>, <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00134">ABTI_mem_alloc_thread_user()</a>, and <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00157">ABTI_mem_free_thread()</a>.</p>
+<p>Referenced by <a class="el" href="../../d4/d2c/self_8c_source.html#l00297">ABT_self_get_arg()</a>, <a class="el" href="../../d4/d2c/self_8c_source.html#l00258">ABT_self_set_arg()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01419">ABT_thread_get_arg()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01389">ABT_thread_set_arg()</a>, <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html#l00011">ABTD_ythread_func_wrapper()</a>, <a class="el" href="../../d3/d3f/task_8c_source.html#l00496">ABTI_task_create()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02017">ABTI_thread_print()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02123">ABTI_thread_revive()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01566">ABTI_xstream_schedule_task()</a>, <a class="el" href="../../d1/de2/abti__ythread_8h_source.html#l00209">ABTI_ythread_context_switch_to_child_internal()</a>, and <a class="el" href="../../d3/de7/thread_8c_source.html#l01570">ABTI_ythread_create_internal()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a8d366c93774abc3a7d0431724ce456b2"></a>
+<a class="anchor" id="a426f0938dd6d4de504a576de30aa1e80"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../dc/d58/structABTI__unit.html">ABTI_unit</a> ABTI_thread::unit_def</td>
+          <td class="memname"><a class="el" href="../../df/d5b/structABTD__atomic__ptr.html">ABTD_atomic_ptr</a> ABTI_thread::p_keytable</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00361">361</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00323">323</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../dc/d57/global_8c_source.html#l00148">ABT_finalize()</a>, <a class="el" href="../../dc/d57/global_8c_source.html#l00040">ABT_init()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00487">ABT_thread_cancel()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00313">ABT_thread_free()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01425">ABT_thread_get_arg()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01528">ABT_thread_get_attr()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00643">ABT_thread_get_last_pool()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00675">ABT_thread_get_last_pool_id()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01493">ABT_thread_get_specific()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00611">ABT_thread_get_state()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01217">ABT_thread_is_migratable()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01254">ABT_thread_is_primary()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01287">ABT_thread_is_unnamed()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01072">ABT_thread_migrate()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00968">ABT_thread_migrate_to_sched()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01395">ABT_thread_set_arg()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00710">ABT_thread_set_associated_pool()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01177">ABT_thread_set_migratable()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01455">ABT_thread_set_specific()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00741">ABT_thread_yield_to()</a>, <a class="el" href="../../d2/d25/abtd__thread_8c_source.html#l00105">ABTD_thread_cancel()</a>, <a class="el" href="../../d2/d25/abtd__thread_8c_source.html#l00011">ABTD_thread_func_wrapper()</a>, <a class="el" href="../../d2/d25/abtd__thread_8c_source.html#l00035">ABTD_thread_terminate()</a>, <a class="el" href="../../d5/df4/abti__cond_8h_source.html#l00060">ABTI_cond_wait()</a>, <a class="el" href="../../d7/d89/abti__mutex_8h_source.html#l00072">ABTI_mutex_lock()</a>, <a class="el" href="../../d8/d62/mutex_8c_source.html#l00176">ABTI_mutex_lock_low()</a>, <a class="el" href="../../d8/d62/mutex_8c_source.html#l00474">ABTI_mutex_unlock_se()</a>, <a class="el" href="../../d0/d4e/abti__pool_8h_source.html#l00116">ABTI_pool_add_thread()</a>, <a class="el" href="../../db/dbe/sched_8c_source.html#l00774">ABTI_sched_free()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00210">ABTI_thread_context_switch_to_child_internal()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00175">ABTI_thread_context_switch_to_parent_internal()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00143">ABTI_thread_context_switch_to_sibling_internal()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01571">ABTI_thread_create_internal()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00345">ABTI_thread_finish_context_sched_to_main_thread()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01938">ABTI_thread_free()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01919">ABTI_thread_free_internal()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01954">ABTI_thread_free_main()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01977">ABTI_thread_free_main_sched()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02235">ABTI_thread_get_id()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01786">ABTI_thread_get_mig_data()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02251">ABTI_thread_get_xstream_rank()</a>, <a class="el" href="../../de/dac/thread__htable_8c_source.html#l00094">ABTI_thread_htable_add()</a>, <a class="el" href="../../de/dac/thread__htable_8c_source.html#l00158">ABTI_thread_htable_add_low()</a>, <a class="el" href="../../de/dac/thread__htable_8c_source.html#l00183">ABTI_thread_htable_pop()</a>, <a class="el" href="../../de/dac/thread__htable_8c_source.html#l00206">ABTI_thread_htable_pop_low()</a>, <a class="el" href="../../de/dac/thread__htable_8c_source.html#l00055">ABTI_thread_htable_push()</a>, <a class="el" href="../../de/dac/thread__htable_8c_source.html#l00119">ABTI_thread_htable_push_low()</a>, <a class="el" href="../../de/dac/thread__htable_8c_source.html#l00229">ABTI_thread_htable_switch_low()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02097">ABTI_thread_is_ready()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02354">ABTI_thread_join()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01733">ABTI_thread_migrate_to_pool()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02524">ABTI_thread_migrate_to_xstream()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02113">ABTI_thread_print()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02291">ABTI_thread_revive()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02004">ABTI_thread_set_blocked()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02054">ABTI_thread_set_ready()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00359">ABTI_thread_set_request()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02036">ABTI_thread_suspend()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00364">ABTI_thread_unset_request()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00370">ABTI_thread_yield()</a>, <a class="el" href="../../d2/deb/abti__tool_8h_source.html#l00298">ABTI_tool_event_thread_resume_impl()</a>, <a class="el" href="../../d2/deb/abti__tool_8h_source.html#l00288">ABTI_tool_event_thread_suspend_impl()</a>, <a class="el" href="../../d2/deb/abti__tool_8h_source.html#l00269">ABTI_tool_event_thread_yield_impl()</a>, <a class="el" href="../../da/d1d/unit_8c_source.html#l00048">ABTI_unit_set_associated_pool()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01257">ABTI_xstream_join()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01868">ABTI_xstream_launch_main_sched()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01603">ABTI_xstream_migrate_thread()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01390">ABTI_xstream_schedule()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01448">ABTI_xstream_schedule_thread()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l00245">ABTI_xstream_start()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l00319">ABTI_xstream_start_primary()</a>, <a class="el" href="../../d4/dbc/abti__stream_8h_source.html#l00060">ABTI_xstream_terminate_thread()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01694">ABTI_xstream_update_main_sched()</a>, and <a class="el" href="../../da/d6b/fifo_8c_source.html#l00477">unit_create_from_thread()</a>.</p>
+<p>Referenced by <a class="el" href="../../db/dfd/key_8c_source.html#l00138">ABT_key_get()</a>, <a class="el" href="../../db/dfd/key_8c_source.html#l00100">ABT_key_set()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01521">ABT_thread_get_attr()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01486">ABT_thread_get_specific()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01449">ABT_thread_set_specific()</a>, <a class="el" href="../../d3/d3f/task_8c_source.html#l00496">ABTI_task_create()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01923">ABTI_thread_free()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01787">ABTI_thread_get_mig_data()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02017">ABTI_thread_print()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01570">ABTI_ythread_create_internal()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01953">ABTI_ythread_free_main()</a>, and <a class="el" href="../../d3/de7/thread_8c_source.html#l01977">ABTI_ythread_free_main_sched()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a203fbcd63fefedc349bcd6b68a7dbebc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a>* ABTI_thread::p_last_xstream</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00316">316</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../dc/d57/global_8c_source.html#l00144">ABT_finalize()</a>, <a class="el" href="../../dc/d57/global_8c_source.html#l00040">ABT_init()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01068">ABT_thread_migrate()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00744">ABT_thread_yield_to()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l00683">ABT_xstream_set_main_sched()</a>, <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html#l00011">ABTD_ythread_func_wrapper()</a>, <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html#l00035">ABTD_ythread_terminate()</a>, <a class="el" href="../../d8/d62/mutex_8c_source.html#l00762">ABTI_mutex_wake_de()</a>, <a class="el" href="../../d3/d3f/task_8c_source.html#l00496">ABTI_task_create()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01923">ABTI_thread_free()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02193">ABTI_thread_join()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02017">ABTI_thread_print()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02123">ABTI_thread_revive()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01876">ABTI_xstream_launch_main_sched()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01609">ABTI_xstream_migrate_thread()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01566">ABTI_xstream_schedule_task()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01445">ABTI_xstream_schedule_ythread()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l00245">ABTI_xstream_start()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l00316">ABTI_xstream_start_primary()</a>, <a class="el" href="../../d4/dbc/abti__stream_8h_source.html#l00060">ABTI_xstream_terminate_thread()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01570">ABTI_ythread_create_internal()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01953">ABTI_ythread_free_main()</a>, <a class="el" href="../../d4/d0d/ythread_8c_source.html#l00008">ABTI_ythread_set_blocked()</a>, <a class="el" href="../../d4/d0d/ythread_8c_source.html#l00060">ABTI_ythread_set_ready()</a>, <a class="el" href="../../d4/d0d/ythread_8c_source.html#l00040">ABTI_ythread_suspend()</a>, and <a class="el" href="../../d1/de2/abti__ythread_8h_source.html#l00358">ABTI_ythread_yield()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abe296ed8df2dc4bbe911b76125a431c5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d55/structABTI__thread.html">ABTI_thread</a>* ABTI_thread::p_next</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00312">312</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../df/d4b/cond_8c_source.html#l00270">ABT_cond_signal()</a>, <a class="el" href="../../df/d4b/cond_8c_source.html#l00176">ABT_cond_timedwait()</a>, <a class="el" href="../../d0/da9/eventual_8c_source.html#l00228">ABT_eventual_set()</a>, <a class="el" href="../../d0/da9/eventual_8c_source.html#l00104">ABT_eventual_wait()</a>, <a class="el" href="../../dc/df6/futures_8c_source.html#l00245">ABT_future_set()</a>, <a class="el" href="../../dc/df6/futures_8c_source.html#l00127">ABT_future_wait()</a>, <a class="el" href="../../d5/df4/abti__cond_8h_source.html#l00148">ABTI_cond_broadcast()</a>, <a class="el" href="../../d5/df4/abti__cond_8h_source.html#l00060">ABTI_cond_wait()</a>, <a class="el" href="../../de/d20/ythread__htable_8c_source.html#l00094">ABTI_ythread_htable_add()</a>, <a class="el" href="../../de/d20/ythread__htable_8c_source.html#l00158">ABTI_ythread_htable_add_low()</a>, <a class="el" href="../../de/d20/ythread__htable_8c_source.html#l00183">ABTI_ythread_htable_pop()</a>, <a class="el" href="../../de/d20/ythread__htable_8c_source.html#l00206">ABTI_ythread_htable_pop_low()</a>, <a class="el" href="../../de/d20/ythread__htable_8c_source.html#l00055">ABTI_ythread_htable_push()</a>, <a class="el" href="../../de/d20/ythread__htable_8c_source.html#l00119">ABTI_ythread_htable_push_low()</a>, <a class="el" href="../../de/d20/ythread__htable_8c_source.html#l00230">ABTI_ythread_htable_switch_low()</a>, <a class="el" href="../../d2/dc8/fifo__wait_8c_source.html#l00239">pool_pop()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00315">pool_pop_private()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00284">pool_pop_shared()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00242">pool_pop_timedwait()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00194">pool_pop_wait()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00411">pool_print_all()</a>, <a class="el" href="../../d2/dc8/fifo__wait_8c_source.html#l00107">pool_push()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00169">pool_push_private()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00142">pool_push_shared()</a>, <a class="el" href="../../d2/dc8/fifo__wait_8c_source.html#l00270">pool_remove()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00379">pool_remove_private()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00344">pool_remove_shared()</a>, <a class="el" href="../../df/d4b/cond_8c_source.html#l00120">remove_thread()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00491">unit_create_from_task()</a>, and <a class="el" href="../../da/d6b/fifo_8c_source.html#l00479">unit_create_from_thread()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2acf72b76f97e401d7202af41d30a526"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d55/structABTI__thread.html">ABTI_thread</a>* ABTI_thread::p_parent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00317">317</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d3/de7/thread_8c_source.html#l00744">ABT_thread_yield_to()</a>, <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html#l00011">ABTD_ythread_func_wrapper()</a>, <a class="el" href="../../d8/d62/mutex_8c_source.html#l00476">ABTI_mutex_unlock_se()</a>, <a class="el" href="../../d3/d3f/task_8c_source.html#l00496">ABTI_task_create()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02193">ABTI_thread_join()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02123">ABTI_thread_revive()</a>, <a class="el" href="../../df/db9/tool_8c_source.html#l00254">ABTI_tool_query()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01566">ABTI_xstream_schedule_task()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l00316">ABTI_xstream_start_primary()</a>, <a class="el" href="../../d1/de2/abti__ythread_8h_source.html#l00209">ABTI_ythread_context_switch_to_child_internal()</a>, <a class="el" href="../../d1/de2/abti__ythread_8h_source.html#l00175">ABTI_ythread_context_switch_to_parent_internal()</a>, <a class="el" href="../../d1/de2/abti__ythread_8h_source.html#l00143">ABTI_ythread_context_switch_to_sibling_internal()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01570">ABTI_ythread_create_internal()</a>, and <a class="el" href="../../de/d20/ythread__htable_8c_source.html#l00230">ABTI_ythread_htable_switch_low()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7e02268c166e5e2645f5db5c8cc1a725"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/d65/structABTI__pool.html">ABTI_pool</a>* ABTI_thread::p_pool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00322">322</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d4/d2c/self_8c_source.html#l00172">ABT_self_get_last_pool_id()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00646">ABT_thread_get_last_pool()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00678">ABT_thread_get_last_pool_id()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00963">ABT_thread_migrate_to_sched()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00713">ABT_thread_set_associated_pool()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00744">ABT_thread_yield_to()</a>, <a class="el" href="../../d7/d89/abti__mutex_8h_source.html#l00073">ABTI_mutex_lock()</a>, <a class="el" href="../../d8/d62/mutex_8c_source.html#l00176">ABTI_mutex_lock_low()</a>, <a class="el" href="../../d8/d62/mutex_8c_source.html#l00476">ABTI_mutex_unlock_se()</a>, <a class="el" href="../../d0/d4e/abti__pool_8h_source.html#l00115">ABTI_pool_add_thread()</a>, <a class="el" href="../../d3/d3f/task_8c_source.html#l00496">ABTI_task_create()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01923">ABTI_thread_free()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02193">ABTI_thread_join()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01733">ABTI_thread_migrate_to_pool()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02379">ABTI_thread_migrate_to_xstream()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02017">ABTI_thread_print()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02123">ABTI_thread_revive()</a>, <a class="el" href="../../d2/deb/abti__tool_8h_source.html#l00285">ABTI_tool_event_ythread_resume_impl()</a>, <a class="el" href="../../d2/deb/abti__tool_8h_source.html#l00274">ABTI_tool_event_ythread_suspend_impl()</a>, <a class="el" href="../../d2/deb/abti__tool_8h_source.html#l00253">ABTI_tool_event_ythread_yield_impl()</a>, <a class="el" href="../../da/d1d/unit_8c_source.html#l00048">ABTI_unit_set_associated_pool()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01256">ABTI_xstream_join()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01609">ABTI_xstream_migrate_thread()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01445">ABTI_xstream_schedule_ythread()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01702">ABTI_xstream_update_main_sched()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01570">ABTI_ythread_create_internal()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02001">ABTI_ythread_is_ready()</a>, <a class="el" href="../../d4/d0d/ythread_8c_source.html#l00008">ABTI_ythread_set_blocked()</a>, and <a class="el" href="../../d4/d0d/ythread_8c_source.html#l00060">ABTI_ythread_set_ready()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7ab75f6321f2c43256ef5e44e89d7b93"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d55/structABTI__thread.html">ABTI_thread</a>* ABTI_thread::p_prev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00311">311</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../df/d4b/cond_8c_source.html#l00270">ABT_cond_signal()</a>, <a class="el" href="../../df/d4b/cond_8c_source.html#l00176">ABT_cond_timedwait()</a>, <a class="el" href="../../d5/df4/abti__cond_8h_source.html#l00148">ABTI_cond_broadcast()</a>, <a class="el" href="../../d5/df4/abti__cond_8h_source.html#l00060">ABTI_cond_wait()</a>, <a class="el" href="../../d2/dc8/fifo__wait_8c_source.html#l00239">pool_pop()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00315">pool_pop_private()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00284">pool_pop_shared()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00242">pool_pop_timedwait()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00194">pool_pop_wait()</a>, <a class="el" href="../../d2/dc8/fifo__wait_8c_source.html#l00107">pool_push()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00169">pool_push_private()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00142">pool_push_shared()</a>, <a class="el" href="../../d2/dc8/fifo__wait_8c_source.html#l00270">pool_remove()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00379">pool_remove_private()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00344">pool_remove_shared()</a>, <a class="el" href="../../df/d4b/cond_8c_source.html#l00120">remove_thread()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00491">unit_create_from_task()</a>, and <a class="el" href="../../da/d6b/fifo_8c_source.html#l00479">unit_create_from_thread()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a60ee69c0820ac5c31aa8edad4f45d9bd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/df7/structABTD__atomic__uint32.html">ABTD_atomic_uint32</a> ABTI_thread::request</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00321">321</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html#l00107">ABTD_ythread_cancel()</a>, <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html#l00035">ABTD_ythread_terminate()</a>, <a class="el" href="../../d8/d62/mutex_8c_source.html#l00476">ABTI_mutex_unlock_se()</a>, <a class="el" href="../../d3/d3f/task_8c_source.html#l00496">ABTI_task_create()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02193">ABTI_thread_join()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02017">ABTI_thread_print()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02123">ABTI_thread_revive()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00086">ABTI_thread_set_request()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00091">ABTI_thread_unset_request()</a>, <a class="el" href="../../d2/deb/abti__tool_8h_source.html#l00253">ABTI_tool_event_ythread_yield_impl()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01609">ABTI_xstream_migrate_thread()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01566">ABTI_xstream_schedule_task()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01445">ABTI_xstream_schedule_ythread()</a>, <a class="el" href="../../d1/de2/abti__ythread_8h_source.html#l00209">ABTI_ythread_context_switch_to_child_internal()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01570">ABTI_ythread_create_internal()</a>, and <a class="el" href="../../d4/d0d/ythread_8c_source.html#l00060">ABTI_ythread_set_ready()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6fa27b799f9eeaa5dbc0839c3ef1c946"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/df5/structABTD__atomic__int.html">ABTD_atomic_int</a> ABTI_thread::state</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00320">320</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../df/d4b/cond_8c_source.html#l00270">ABT_cond_signal()</a>, <a class="el" href="../../df/d4b/cond_8c_source.html#l00176">ABT_cond_timedwait()</a>, <a class="el" href="../../d0/da9/eventual_8c_source.html#l00228">ABT_eventual_set()</a>, <a class="el" href="../../d0/da9/eventual_8c_source.html#l00104">ABT_eventual_wait()</a>, <a class="el" href="../../dc/df6/futures_8c_source.html#l00245">ABT_future_set()</a>, <a class="el" href="../../dc/df6/futures_8c_source.html#l00127">ABT_future_wait()</a>, <a class="el" href="../../dc/d57/global_8c_source.html#l00040">ABT_init()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00615">ABT_thread_get_state()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00963">ABT_thread_migrate_to_sched()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00744">ABT_thread_yield_to()</a>, <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html#l00035">ABTD_ythread_terminate()</a>, <a class="el" href="../../d5/df4/abti__cond_8h_source.html#l00148">ABTI_cond_broadcast()</a>, <a class="el" href="../../d5/df4/abti__cond_8h_source.html#l00060">ABTI_cond_wait()</a>, <a class="el" href="../../d7/d89/abti__mutex_8h_source.html#l00073">ABTI_mutex_lock()</a>, <a class="el" href="../../d8/d62/mutex_8c_source.html#l00176">ABTI_mutex_lock_low()</a>, <a class="el" href="../../d8/d62/mutex_8c_source.html#l00476">ABTI_mutex_unlock_se()</a>, <a class="el" href="../../d0/d4e/abti__pool_8h_source.html#l00115">ABTI_pool_add_thread()</a>, <a class="el" href="../../d3/d3f/task_8c_source.html#l00496">ABTI_task_create()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02193">ABTI_thread_join()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01733">ABTI_thread_migrate_to_pool()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02379">ABTI_thread_migrate_to_xstream()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02017">ABTI_thread_print()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02123">ABTI_thread_revive()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01566">ABTI_xstream_schedule_task()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01445">ABTI_xstream_schedule_ythread()</a>, <a class="el" href="../../d4/dbc/abti__stream_8h_source.html#l00060">ABTI_xstream_terminate_thread()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01570">ABTI_ythread_create_internal()</a>, <a class="el" href="../../de/d20/ythread__htable_8c_source.html#l00230">ABTI_ythread_htable_switch_low()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02001">ABTI_ythread_is_ready()</a>, <a class="el" href="../../d4/d0d/ythread_8c_source.html#l00008">ABTI_ythread_set_blocked()</a>, <a class="el" href="../../d4/d0d/ythread_8c_source.html#l00060">ABTI_ythread_set_ready()</a>, and <a class="el" href="../../d1/de2/abti__ythread_8h_source.html#l00358">ABTI_ythread_yield()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a031815f8510c1bc87c1549f3137d2538"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d03/abti_8h.html#a1ca438571bc5cbc5687789d622e7eadc">ABTI_thread_type</a> ABTI_thread::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00314">314</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../df/d4b/cond_8c_source.html#l00176">ABT_cond_timedwait()</a>, <a class="el" href="../../d0/da9/eventual_8c_source.html#l00104">ABT_eventual_wait()</a>, <a class="el" href="../../dc/d57/global_8c_source.html#l00144">ABT_finalize()</a>, <a class="el" href="../../dc/df6/futures_8c_source.html#l00127">ABT_future_wait()</a>, <a class="el" href="../../d4/d2c/self_8c_source.html#l00076">ABT_self_is_primary()</a>, <a class="el" href="../../d4/d2c/self_8c_source.html#l00337">ABT_self_is_unnamed()</a>, <a class="el" href="../../d3/d3f/task_8c_source.html#l00213">ABT_task_self()</a>, <a class="el" href="../../d3/d3f/task_8c_source.html#l00258">ABT_task_self_id()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00489">ABT_thread_cancel()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00315">ABT_thread_free()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01521">ABT_thread_get_attr()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01213">ABT_thread_is_migratable()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01250">ABT_thread_is_primary()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01280">ABT_thread_is_unnamed()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00963">ABT_thread_migrate_to_sched()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00577">ABT_thread_self_id()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01172">ABT_thread_set_migratable()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l00683">ABT_xstream_set_main_sched()</a>, <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html#l00095">ABTD_ythread_terminate_no_arg()</a>, <a class="el" href="../../d5/df4/abti__cond_8h_source.html#l00060">ABTI_cond_wait()</a>, <a class="el" href="../../db/dbe/sched_8c_source.html#l00774">ABTI_sched_free()</a>, <a class="el" href="../../d0/dfe/abti__self_8h_source.html#l00037">ABTI_self_get_type()</a>, <a class="el" href="../../d3/d3f/task_8c_source.html#l00496">ABTI_task_create()</a>, <a class="el" href="../../de/d90/abti__thread_8h_source.html#l00077">ABTI_thread_get_ythread_or_null()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02193">ABTI_thread_join()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01733">ABTI_thread_migrate_to_pool()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02379">ABTI_thread_migrate_to_xstream()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02017">ABTI_thread_print()</a>, <a class="el" href="../../d4/dbc/abti__stream_8h_source.html#l00060">ABTI_xstream_terminate_thread()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01702">ABTI_xstream_update_main_sched()</a>, <a class="el" href="../../d1/de2/abti__ythread_8h_source.html#l00209">ABTI_ythread_context_switch_to_child_internal()</a>, <a class="el" href="../../d1/de2/abti__ythread_8h_source.html#l00175">ABTI_ythread_context_switch_to_parent_internal()</a>, <a class="el" href="../../d1/de2/abti__ythread_8h_source.html#l00143">ABTI_ythread_context_switch_to_sibling_internal()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01570">ABTI_ythread_create_internal()</a>, <a class="el" href="../../d1/de2/abti__ythread_8h_source.html#l00345">ABTI_ythread_finish_context_sched_to_main_thread()</a>, <a class="el" href="../../d4/d0d/ythread_8c_source.html#l00008">ABTI_ythread_set_blocked()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00491">unit_create_from_task()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00479">unit_create_from_thread()</a>, <a class="el" href="../../da/d6b/fifo_8c_source.html#l00460">unit_get_task()</a>, and <a class="el" href="../../da/d6b/fifo_8c_source.html#l00441">unit_get_type()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab1e810da505f079679018cf258a55e6e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d7d/abt_8h.html#a2766d98ace73a538d42ff64a8b999baf">ABT_unit</a> ABTI_thread::unit</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00315">315</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d3/de7/thread_8c_source.html#l00744">ABT_thread_yield_to()</a>, <a class="el" href="../../d7/d89/abti__mutex_8h_source.html#l00073">ABTI_mutex_lock()</a>, <a class="el" href="../../d8/d62/mutex_8c_source.html#l00176">ABTI_mutex_lock_low()</a>, <a class="el" href="../../d0/d4e/abti__pool_8h_source.html#l00115">ABTI_pool_add_thread()</a>, <a class="el" href="../../d3/d3f/task_8c_source.html#l00496">ABTI_task_create()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01923">ABTI_thread_free()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02193">ABTI_thread_join()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l02123">ABTI_thread_revive()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01609">ABTI_xstream_migrate_thread()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01445">ABTI_xstream_schedule_ythread()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l01702">ABTI_xstream_update_main_sched()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l01570">ABTI_ythread_create_internal()</a>, and <a class="el" href="../../d3/de7/thread_8c_source.html#l02001">ABTI_ythread_is_ready()</a>.</p>
 
 </div>
 </div>
@@ -201,7 +363,7 @@ Data Fields</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 19 2020 03:09:45 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 21 2020 03:09:46 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

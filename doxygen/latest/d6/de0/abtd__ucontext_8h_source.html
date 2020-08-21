@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">23067fa015f4b179569e2d52278c1072e674eb1e</span>
+   &#160;<span id="projectnumber">89764e78b8153c15af4e986cdd3327e39b63d646</span>
    </div>
   </td>
  </tr>
@@ -99,25 +99,25 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> ABTD_ucontext_wrapper(<span class="keywordtype">int</span> arg1, <span class="keywordtype">int</span> arg2)</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    ABTD_thread_context *p_self;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    ABTD_ythread_context *p_self;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#if SIZEOF_VOID_P == 8</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span>    p_self = (ABTD_thread_context *)(((uintptr_t)((uint32_t)arg1) &lt;&lt; 32) |</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                     ((uintptr_t)((uint32_t)arg2)));</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span>    p_self = (ABTD_ythread_context *)(((uintptr_t)((uint32_t)arg1) &lt;&lt; 32) |</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                      ((uintptr_t)((uint32_t)arg2)));</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#elif SIZEOF_VOID_P == 4</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span>    p_self = (ABTD_thread_context *)((uintptr_t)arg1);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span>    p_self = (ABTD_ythread_context *)((uintptr_t)arg1);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#error &quot;Unknown pointer size.&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span>    p_self-&gt;f_uctx_thread(p_self-&gt;p_uctx_arg);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">/* ABTD_thread_context_jump or take must be called at the end of</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">/* ABTD_ythread_context_jump or take must be called at the end of</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">     * f_uctx_thread, */</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    ABTI_ASSERT(0);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">ABTU_unreachable</a>();</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTD_thread_context_make(ABTD_thread_context *p_ctx,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                            <span class="keywordtype">void</span> *sp, <span class="keywordtype">size_t</span> size,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                            <span class="keywordtype">void</span> (*thread_func)(<span class="keywordtype">void</span> *))</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTD_ythread_context_make(ABTD_ythread_context *p_ctx,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                             <span class="keywordtype">void</span> *sp, <span class="keywordtype">size_t</span> size,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                             <span class="keywordtype">void</span> (*thread_func)(<span class="keywordtype">void</span> *))</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    getcontext(&amp;p_ctx-&gt;uctx);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    p_ctx-&gt;p_ctx = &amp;p_ctx-&gt;uctx;</div>
@@ -141,17 +141,17 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTD_thread_context_jump(ABTD_thread_context *p_old,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                            ABTD_thread_context *p_new,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                            <span class="keywordtype">void</span> *arg)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTD_ythread_context_jump(ABTD_ythread_context *p_old,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                             ABTD_ythread_context *p_new,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                             <span class="keywordtype">void</span> *arg)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    p_new-&gt;p_uctx_arg = arg;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    swapcontext(&amp;p_old-&gt;uctx, &amp;p_new-&gt;uctx);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a64c0a07a6bc37d45de89623a281c5b18">ABTU_noreturn</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;ABTD_thread_context_take(ABTD_thread_context *p_old, ABTD_thread_context *p_new,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                         <span class="keywordtype">void</span> *arg)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;ABTD_ythread_context_take(ABTD_ythread_context *p_old,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                          ABTD_ythread_context *p_new, <span class="keywordtype">void</span> *arg)</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    p_new-&gt;p_uctx_arg = arg;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    setcontext(&amp;p_new-&gt;uctx);</div>
@@ -159,7 +159,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#if ABT_CONFIG_THREAD_TYPE == ABT_THREAD_TYPE_DYNAMIC_PROMOTION</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#error &quot;ABTD_thread_context_make_and_call is not implemented.&quot;</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#error &quot;ABTD_ythread_context_make_and_call is not implemented.&quot;</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTD_UCONTEXT_H_INCLUDED */</span><span class="preprocessor"></span></div>
@@ -168,7 +168,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 19 2020 03:09:46 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 21 2020 03:09:47 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
