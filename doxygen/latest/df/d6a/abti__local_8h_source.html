@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">89764e78b8153c15af4e986cdd3327e39b63d646</span>
+   &#160;<span id="projectnumber">495266ad05b7a981d5099e147b8ffff35f4174af</span>
    </div>
   </td>
  </tr>
@@ -129,9 +129,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> * If you don&#39;t understand this problem well and it is not in the critical path,</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> * use the uninlined version for correctness.</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_xstream *ABTI_local_get_xstream(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_local *ABTI_local_get_local(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d03/abti_8h.html#af362fee90a29bb7f4659adbdf1e15c06">lp_ABTI_xstream</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d03/abti_8h.html#a5f2b1c18075510bc149fa8545101de1c">lp_ABTI_local</a>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">/*</span></div>
@@ -139,9 +139,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> * the thread local value without referring to the cached TLS.  This is slower</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> * than ABTI_local_get_xstream(), so use ABTI_local_get_xstream() if possible.</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_xstream *ABTI_local_get_xstream_uninlined(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_local *ABTI_local_get_local_uninlined(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d03/abti_8h.html#a0ccfccfe7fba2861b06932141a8a1793">gp_ABTI_local_func</a>.get_local_xstream_f();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d03/abti_8h.html#a0ccfccfe7fba2861b06932141a8a1793">gp_ABTI_local_func</a>.get_local_f();</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">/*</span></div>
@@ -162,13 +162,30 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d03/abti_8h.html#a0ccfccfe7fba2861b06932141a8a1793">gp_ABTI_local_func</a>.get_local_ptr_f();</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_LOCAL_H_INCLUDED */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="abti_8h_html_af362fee90a29bb7f4659adbdf1e15c06"><div class="ttname"><a href="../../d5/d03/abti_8h.html#af362fee90a29bb7f4659adbdf1e15c06">lp_ABTI_xstream</a></div><div class="ttdeci">ABTD_XSTREAM_LOCAL ABTI_xstream * lp_ABTI_xstream</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dac/local_8c_source.html#l00033">local.c:33</a></div></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"> * A developer must be aware that p_local can be NULL.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_xstream *ABTI_local_get_xstream_or_null(ABTI_local *p_local)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span> (ABTI_xstream *)p_local;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"> * This function assumes that the given p_local is not NULL (=running on an</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"> * execution stream).</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_xstream *ABTI_local_get_xstream(ABTI_local *p_local)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> (ABTI_xstream *)p_local;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_LOCAL_H_INCLUDED */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="abti_8h_html_a0ccfccfe7fba2861b06932141a8a1793"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a0ccfccfe7fba2861b06932141a8a1793">gp_ABTI_local_func</a></div><div class="ttdeci">ABTI_local_func gp_ABTI_local_func</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dac/local_8c_source.html#l00027">local.c:27</a></div></div>
+<div class="ttc" id="abti_8h_html_a5f2b1c18075510bc149fa8545101de1c"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a5f2b1c18075510bc149fa8545101de1c">lp_ABTI_local</a></div><div class="ttdeci">ABTD_XSTREAM_LOCAL ABTI_local * lp_ABTI_local</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dac/local_8c_source.html#l00033">local.c:33</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 21 2020 03:09:47 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Aug 22 2020 03:09:51 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

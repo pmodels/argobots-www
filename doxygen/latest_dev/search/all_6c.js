@@ -18,7 +18,7 @@ var searchData=
   ['low_5fmutex',['low_mutex',['../dd/dcd/structABTI__ythread__queue.html#a74bb1b2445fda25b26c44e812f195027',1,'ABTI_ythread_queue']]],
   ['low_5fnum_5fthreads',['low_num_threads',['../dd/dcd/structABTI__ythread__queue.html#a6bf631da6f97cf56439745d690b83389',1,'ABTI_ythread_queue']]],
   ['low_5ftail',['low_tail',['../dd/dcd/structABTI__ythread__queue.html#ab26d50a313543c302c29a1a9eca33f9f',1,'ABTI_ythread_queue']]],
-  ['lp_5fabti_5fxstream',['lp_ABTI_xstream',['../d5/d03/abti_8h.html#af362fee90a29bb7f4659adbdf1e15c06',1,'lp_ABTI_xstream():&#160;local.c'],['../d2/dac/local_8c.html#af362fee90a29bb7f4659adbdf1e15c06',1,'lp_ABTI_xstream():&#160;local.c']]],
+  ['lp_5fabti_5flocal',['lp_ABTI_local',['../d5/d03/abti_8h.html#a5f2b1c18075510bc149fa8545101de1c',1,'lp_ABTI_local():&#160;local.c'],['../d2/dac/local_8c.html#a5f2b1c18075510bc149fa8545101de1c',1,'lp_ABTI_local():&#160;local.c']]],
   ['lp_5ftype',['lp_type',['../d7/d5b/structABTI__mem__pool__page.html#a55be3ec312bb2117d84dd722a94cf638',1,'ABTI_mem_pool_page']]],
   ['lp_5ftype_5frequests',['lp_type_requests',['../d7/de4/structABTI__mem__pool__global__pool.html#a30f5380c5b7a7ccc6fccd723957b5353',1,'ABTI_mem_pool_global_pool']]],
   ['lt_5fobjdir',['LT_OBJDIR',['../dd/d6e/abt__config_8h.html#ac2d5925d76379847dd9fc4747b061659',1,'abt_config.h']]]

@@ -83,6 +83,7 @@ var searchData=
   ['abti_5fktable',['ABTI_ktable',['../d5/d03/abti_8h.html#a92393b5d3a90f711b2b686823de879ff',1,'abti.h']]],
   ['abti_5fktable_5fmem_5fheader',['ABTI_ktable_mem_header',['../db/d9d/abti__key_8h.html#a4c82696f03a832ccd85c405db5119b43',1,'abti_key.h']]],
   ['abti_5fktelem',['ABTI_ktelem',['../d5/d03/abti_8h.html#a950faa8847c6cce1d0106e45b161b1ff',1,'abti.h']]],
+  ['abti_5flocal',['ABTI_local',['../d5/d03/abti_8h.html#ae475ec8b11def7b6fdf92a1e852f592f',1,'abti.h']]],
   ['abti_5flocal_5ffunc',['ABTI_local_func',['../d5/d03/abti_8h.html#a635c363f04137e0ab4711e7458c9afc2',1,'abti.h']]],
   ['abti_5fmem_5fpool_5fglobal_5fpool',['ABTI_mem_pool_global_pool',['../d9/d33/abti__mem__pool_8h.html#a0a5e0b9224539157ae95fa60a2722e79',1,'abti_mem_pool.h']]],
   ['abti_5fmem_5fpool_5fheader',['ABTI_mem_pool_header',['../d9/d33/abti__mem__pool_8h.html#abf86c431f46e3d22da60bea6030ec095',1,'abti_mem_pool.h']]],

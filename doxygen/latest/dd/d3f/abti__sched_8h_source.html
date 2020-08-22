@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">89764e78b8153c15af4e986cdd3327e39b63d646</span>
+   &#160;<span id="projectnumber">495266ad05b7a981d5099e147b8ffff35f4174af</span>
    </div>
   </td>
  </tr>
@@ -131,14 +131,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/* Set `used` of p_sched to NOT_USED and free p_sched if its `automatic` is</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> * ABT_TRUE, which means it is safe to free p_sched inside the runtime. */</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> ABTI_sched_discard_and_free(ABTI_xstream *p_local_xstream,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> ABTI_sched_discard_and_free(ABTI_local *p_local,</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                              ABTI_sched *p_sched,</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                              <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> force_free)</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    p_sched-&gt;used = ABTI_SCHED_NOT_USED;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (p_sched-&gt;automatic == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a> || force_free) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        abt_errno = ABTI_sched_free(p_local_xstream, p_sched, force_free);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        abt_errno = ABTI_sched_free(p_local, p_sched, force_free);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
@@ -194,7 +194,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 21 2020 03:09:47 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Aug 22 2020 03:09:51 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

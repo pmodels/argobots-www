@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">89764e78b8153c15af4e986cdd3327e39b63d646</span>
+   &#160;<span id="projectnumber">495266ad05b7a981d5099e147b8ffff35f4174af</span>
    </div>
   </td>
  </tr>
@@ -146,65 +146,63 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    ABTI_cond_fini(&amp;p_rwlock-&gt;cond);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> ABTI_rwlock_rdlock(ABTI_xstream **pp_local_xstream,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> ABTI_rwlock_rdlock(ABTI_local **pp_local,</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                     ABTI_rwlock *p_rwlock)</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    ABTI_mutex_lock(pp_local_xstream, &amp;p_rwlock-&gt;mutex);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    ABTI_mutex_lock(pp_local, &amp;p_rwlock-&gt;mutex);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">while</span> (p_rwlock-&gt;write_flag &amp;&amp; abt_errno == <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        abt_errno =</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            ABTI_cond_wait(pp_local_xstream, &amp;p_rwlock-&gt;cond, &amp;p_rwlock-&gt;mutex);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (abt_errno == <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        p_rwlock-&gt;reader_count++;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    ABTI_mutex_unlock(*pp_local_xstream, &amp;p_rwlock-&gt;mutex);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> ABTI_rwlock_wrlock(ABTI_xstream **pp_local_xstream,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                     ABTI_rwlock *p_rwlock)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    ABTI_mutex_lock(pp_local_xstream, &amp;p_rwlock-&gt;mutex);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">while</span> ((p_rwlock-&gt;write_flag || p_rwlock-&gt;reader_count) &amp;&amp;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;           abt_errno == <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        abt_errno =</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            ABTI_cond_wait(pp_local_xstream, &amp;p_rwlock-&gt;cond, &amp;p_rwlock-&gt;mutex);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">if</span> (abt_errno == <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        p_rwlock-&gt;write_flag = 1;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    ABTI_mutex_unlock(*pp_local_xstream, &amp;p_rwlock-&gt;mutex);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_rwlock_unlock(ABTI_xstream **pp_local_xstream,</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                      ABTI_rwlock *p_rwlock)</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;{</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    ABTI_mutex_lock(pp_local_xstream, &amp;p_rwlock-&gt;mutex);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">if</span> (p_rwlock-&gt;write_flag) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        p_rwlock-&gt;write_flag = 0;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        p_rwlock-&gt;reader_count--;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">/* TODO: elision */</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    ABTI_xstream *p_local_xstream = *pp_local_xstream;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    ABTI_cond_broadcast(p_local_xstream, &amp;p_rwlock-&gt;cond);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    ABTI_mutex_unlock(p_local_xstream, &amp;p_rwlock-&gt;mutex);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_RWLOCK_H_INCLUDED */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        abt_errno = ABTI_cond_wait(pp_local, &amp;p_rwlock-&gt;cond, &amp;p_rwlock-&gt;mutex);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span> (abt_errno == <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        p_rwlock-&gt;reader_count++;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    ABTI_mutex_unlock(*pp_local, &amp;p_rwlock-&gt;mutex);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> ABTI_rwlock_wrlock(ABTI_local **pp_local,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                     ABTI_rwlock *p_rwlock)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    ABTI_mutex_lock(pp_local, &amp;p_rwlock-&gt;mutex);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">while</span> ((p_rwlock-&gt;write_flag || p_rwlock-&gt;reader_count) &amp;&amp;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;           abt_errno == <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        abt_errno = ABTI_cond_wait(pp_local, &amp;p_rwlock-&gt;cond, &amp;p_rwlock-&gt;mutex);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (abt_errno == <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        p_rwlock-&gt;write_flag = 1;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    ABTI_mutex_unlock(*pp_local, &amp;p_rwlock-&gt;mutex);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_rwlock_unlock(ABTI_local **pp_local,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                      ABTI_rwlock *p_rwlock)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    ABTI_mutex_lock(pp_local, &amp;p_rwlock-&gt;mutex);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (p_rwlock-&gt;write_flag) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        p_rwlock-&gt;write_flag = 0;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        p_rwlock-&gt;reader_count--;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">/* TODO: elision */</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    ABTI_local *p_local = *pp_local;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    ABTI_cond_broadcast(p_local, &amp;p_rwlock-&gt;cond);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    ABTI_mutex_unlock(p_local, &amp;p_rwlock-&gt;mutex);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_RWLOCK_H_INCLUDED */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="abt_8h_html_a36e9efdb079eb5d02a0217c3191c08ba"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a></div><div class="ttdeci">struct ABT_rwlock_opaque * ABT_rwlock</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00363">abt.h:363</a></div></div>
 <div class="ttc" id="abt_8h_html_acf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00064">abt.h:64</a></div></div>
 <div class="ttc" id="abti__cond_8h_html"><div class="ttname"><a href="../../d5/df4/abti__cond_8h.html">abti_cond.h</a></div></div>
@@ -213,7 +211,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 21 2020 03:09:47 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Aug 22 2020 03:09:51 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
