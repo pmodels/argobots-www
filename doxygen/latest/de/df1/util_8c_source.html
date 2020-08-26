@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">495266ad05b7a981d5099e147b8ffff35f4174af</span>
+   &#160;<span id="projectnumber">49e659a377bb5f19c60a64377ed410e7291037c6</span>
    </div>
   </td>
  </tr>
@@ -95,34 +95,25 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/d09/abtu_8h.html">abtu.h</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;ctype.h&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/* \c ABTU_get_indent_str() returns a white-space string with the length of</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * \c indent.  The caller should free the memory returned. */</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../de/df1/util_8c.html#a0c0a37db0324fb30071454b9bf67b0bc">   12</a></span>&#160;<span class="keywordtype">char</span> *<a class="code" href="../../d5/d09/abtu_8h.html#a0c0a37db0324fb30071454b9bf67b0bc">ABTU_get_indent_str</a>(<span class="keywordtype">int</span> indent)</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">char</span> *space;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    space = (<span class="keywordtype">char</span> *)<a class="code" href="../../d5/d09/abtu_8h.html#a158db3996ecde73f043ce7c89251c409">ABTU_malloc</a>(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * (indent + 1));</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">if</span> (indent &gt; 0)</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        memset(space, <span class="charliteral">&#39; &#39;</span>, indent);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    space[indent] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> space;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/* \c ABTU_get_int_len() returns the string length of the integer \c num. */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../de/df1/util_8c.html#ae20f4e81d0af69a913670cbfcbda00e9">   23</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d5/d09/abtu_8h.html#ae20f4e81d0af69a913670cbfcbda00e9">ABTU_get_int_len</a>(<span class="keywordtype">size_t</span> num)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> (num == 0) ? 1 : (int)(log10(num) + 1);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="ttc" id="abtu_8h_html_ae20f4e81d0af69a913670cbfcbda00e9"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#ae20f4e81d0af69a913670cbfcbda00e9">ABTU_get_int_len</a></div><div class="ttdeci">int ABTU_get_int_len(size_t num)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/df1/util_8c_source.html#l00023">util.c:23</a></div></div>
-<div class="ttc" id="abtu_8h_html_a0c0a37db0324fb30071454b9bf67b0bc"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a0c0a37db0324fb30071454b9bf67b0bc">ABTU_get_indent_str</a></div><div class="ttdeci">char * ABTU_get_indent_str(int indent)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/df1/util_8c_source.html#l00012">util.c:12</a></div></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/* \c ABTU_get_indent_str() returns a white-space string with the length of</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * \c indent.  The caller should free the memory returned. */</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="../../de/df1/util_8c.html#a0c0a37db0324fb30071454b9bf67b0bc">   10</a></span>&#160;<span class="keywordtype">char</span> *<a class="code" href="../../d5/d09/abtu_8h.html#a0c0a37db0324fb30071454b9bf67b0bc">ABTU_get_indent_str</a>(<span class="keywordtype">int</span> indent)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">char</span> *space;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    space = (<span class="keywordtype">char</span> *)<a class="code" href="../../d5/d09/abtu_8h.html#a158db3996ecde73f043ce7c89251c409">ABTU_malloc</a>(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * (indent + 1));</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">if</span> (indent &gt; 0)</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        memset(space, <span class="charliteral">&#39; &#39;</span>, indent);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    space[indent] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">return</span> space;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="ttc" id="abtu_8h_html_a0c0a37db0324fb30071454b9bf67b0bc"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a0c0a37db0324fb30071454b9bf67b0bc">ABTU_get_indent_str</a></div><div class="ttdeci">char * ABTU_get_indent_str(int indent)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/df1/util_8c_source.html#l00010">util.c:10</a></div></div>
 <div class="ttc" id="abtu_8h_html_a158db3996ecde73f043ce7c89251c409"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a158db3996ecde73f043ce7c89251c409">ABTU_malloc</a></div><div class="ttdeci">static void * ABTU_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00118">abtu.h:118</a></div></div>
 <div class="ttc" id="abtu_8h_html"><div class="ttname"><a href="../../d5/d09/abtu_8h.html">abtu.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 22 2020 03:09:51 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Aug 26 2020 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -13,7 +13,6 @@ var searchData=
   ['have_5ffunc_5fattribute_5fnoreturn',['HAVE_FUNC_ATTRIBUTE_NORETURN',['../dd/d6e/abt__config_8h.html#af41bf81f6a97e6710aaf477a9a0b6972',1,'abt_config.h']]],
   ['have_5fgettimeofday',['HAVE_GETTIMEOFDAY',['../dd/d6e/abt__config_8h.html#a32e7ff1da5763e68f44097cb23826415',1,'abt_config.h']]],
   ['have_5finttypes_5fh',['HAVE_INTTYPES_H',['../dd/d6e/abt__config_8h.html#ab90a030ff2790ebdc176660a6dd2a478',1,'abt_config.h']]],
-  ['have_5flibm',['HAVE_LIBM',['../dd/d6e/abt__config_8h.html#a822fccccd955b712f62f5ade934e86fc',1,'abt_config.h']]],
   ['have_5flibpthread',['HAVE_LIBPTHREAD',['../dd/d6e/abt__config_8h.html#a1e55aaa6b69400645b6b23359e860751',1,'abt_config.h']]],
   ['have_5fmap_5fanonymous',['HAVE_MAP_ANONYMOUS',['../dd/d6e/abt__config_8h.html#aad9b447d527e16baeaa9ac2c6e301be8',1,'abt_config.h']]],
   ['have_5fmap_5fhugetlb',['HAVE_MAP_HUGETLB',['../dd/d6e/abt__config_8h.html#ac4b14bbcc7ae8fce65b6e4c173020bbf',1,'abt_config.h']]],
