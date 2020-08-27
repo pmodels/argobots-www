@@ -9,6 +9,8 @@ var searchData=
   ['p_5fprint_5fall',['p_print_all',['../d4/dfc/structABT__pool__def.html#ab8b53a0d2428b532bf0389e7b260b24a',1,'ABT_pool_def']]],
   ['p_5fpush',['p_push',['../d4/dfc/structABT__pool__def.html#a49be8ef5a07b277a91e62ba911b476f5',1,'ABT_pool_def']]],
   ['p_5fremove',['p_remove',['../d4/dfc/structABT__pool__def.html#a7b9eb203b41c2b21a107c93a8043345e',1,'ABT_pool_def']]],
+  ['pool',['pool',['../db/d64/structinfo__print__unit__arg__t.html#afcda6fc8d52d0a251db8766c90ac830c',1,'info_print_unit_arg_t']]],
+  ['pools',['pools',['../d2/d94/structinfo__pool__set__t.html#aeb6c727a38dbddfa4f86829e8683b0e2',1,'info_pool_set_t']]],
   ['print_5farg',['print_arg',['../d5/d35/info_8c.html#ae53fd9d71d25256742aac6d829b546a8',1,'info.c']]],
   ['print_5fcb_5ffunc',['print_cb_func',['../d5/d35/info_8c.html#a2b7f851c39d4121aebe0c699dad96b6a',1,'info.c']]],
   ['print_5fstack_5fbarrier',['print_stack_barrier',['../d5/d35/info_8c.html#a1fbbec1de7c816815f99682c34ce3999',1,'info.c']]],

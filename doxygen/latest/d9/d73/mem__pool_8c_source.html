@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">49e659a377bb5f19c60a64377ed410e7291037c6</span>
+   &#160;<span id="projectnumber">ac35a6f4577e5c489e8b4152eaab31c2b33ef22f</span>
    </div>
   </td>
  </tr>
@@ -98,14 +98,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_mem_pool_page *</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;ABTI_mem_pool_lifo_elem_to_page(ABTI_sync_lifo_element *lifo_elem)</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="../../d9/d73/mem__pool_8c.html#a5c67afbd642a7c1f9e9e41bb04b7b6fb">   10</a></span>&#160;<a class="code" href="../../d9/d73/mem__pool_8c.html#a5c67afbd642a7c1f9e9e41bb04b7b6fb">mem_pool_lifo_elem_to_page</a>(ABTI_sync_lifo_element *lifo_elem)</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">return</span> (ABTI_mem_pool_page *)(((<span class="keywordtype">char</span> *)lifo_elem) -</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                  offsetof(ABTI_mem_pool_page, lifo_elem));</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_mem_pool_header *</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;ABTI_mem_pool_lifo_elem_to_header(ABTI_sync_lifo_element *lifo_elem)</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d9/d73/mem__pool_8c.html#a5d8df49ef27482dd276d9b7a653e48d9">   17</a></span>&#160;<a class="code" href="../../d9/d73/mem__pool_8c.html#a5d8df49ef27482dd276d9b7a653e48d9">mem_pool_lifo_elem_to_header</a>(ABTI_sync_lifo_element *lifo_elem)</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> (</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        ABTI_mem_pool_header *)(((<span class="keywordtype">char</span> *)lifo_elem) -</div>
@@ -151,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    ABTI_sync_lifo_element *p_page_lifo_elem;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">while</span> ((p_page_lifo_elem =</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                ABTI_sync_lifo_pop_unsafe(&amp;p_global_pool-&gt;mem_page_lifo))) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        p_page = ABTI_mem_pool_lifo_elem_to_page(p_page_lifo_elem);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        p_page = <a class="code" href="../../d9/d73/mem__pool_8c.html#a5c67afbd642a7c1f9e9e41bb04b7b6fb">mem_pool_lifo_elem_to_page</a>(p_page_lifo_elem);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="../../d5/d09/abtu_8h.html#aa315ba860d29923548e980a7d2c4b623">ABTU_free_largepage</a>(p_page-&gt;mem, p_page-&gt;page_size, p_page-&gt;lp_type);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    p_page = (ABTI_mem_pool_page *)ABTD_atomic_relaxed_load_ptr(</div>
@@ -252,7 +252,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d09/abtu_8h.html#a7e428ab19a648b9fcd6491a10551e27e">ABTU_likely</a>(p_popped_bucket_lifo_elem)) {</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="comment">/* Use this bucket. */</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        ABTI_mem_pool_header *popped_bucket =</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            ABTI_mem_pool_lifo_elem_to_header(p_popped_bucket_lifo_elem);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <a class="code" href="../../d9/d73/mem__pool_8c.html#a5d8df49ef27482dd276d9b7a653e48d9">mem_pool_lifo_elem_to_header</a>(p_popped_bucket_lifo_elem);</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        popped_bucket-&gt;bucket_info.num_headers = num_headers_per_bucket;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">return</span> popped_bucket;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    } <span class="keywordflow">else</span> {</div>
@@ -268,7 +268,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <span class="keywordflow">if</span> ((p_page_lifo_elem =</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                     ABTI_sync_lifo_pop(&amp;p_global_pool-&gt;mem_page_lifo))) {</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                <span class="comment">/* Use a page popped from mem_page_lifo */</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                p_page = ABTI_mem_pool_lifo_elem_to_page(p_page_lifo_elem);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                p_page = <a class="code" href="../../d9/d73/mem__pool_8c.html#a5c67afbd642a7c1f9e9e41bb04b7b6fb">mem_pool_lifo_elem_to_page</a>(p_page_lifo_elem);</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                <span class="comment">/* Let&#39;s allocate memory by myself */</span></div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">size_t</span> page_size = p_global_pool-&gt;page_size;</div>
@@ -353,14 +353,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                        &amp;bucket-&gt;bucket_info.lifo_elem);</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;}</div>
 <div class="ttc" id="abtu_8h_html_a7e428ab19a648b9fcd6491a10551e27e"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a7e428ab19a648b9fcd6491a10551e27e">ABTU_likely</a></div><div class="ttdeci">#define ABTU_likely(cond)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00017">abtu.h:17</a></div></div>
+<div class="ttc" id="mem__pool_8c_html_a5c67afbd642a7c1f9e9e41bb04b7b6fb"><div class="ttname"><a href="../../d9/d73/mem__pool_8c.html#a5c67afbd642a7c1f9e9e41bb04b7b6fb">mem_pool_lifo_elem_to_page</a></div><div class="ttdeci">static ABTI_mem_pool_page * mem_pool_lifo_elem_to_page(ABTI_sync_lifo_element *lifo_elem)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d73/mem__pool_8c_source.html#l00010">mem_pool.c:10</a></div></div>
 <div class="ttc" id="abtu_8h_html_aa315ba860d29923548e980a7d2c4b623"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aa315ba860d29923548e980a7d2c4b623">ABTU_free_largepage</a></div><div class="ttdeci">void ABTU_free_largepage(void *ptr, size_t size, ABTU_MEM_LARGEPAGE_TYPE type)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de7/largepage_8c_source.html#l00121">largepage.c:121</a></div></div>
 <div class="ttc" id="abtu_8h_html_aef487b4e86c4c28804e18e95edd082ac"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082ac">ABTU_MEM_LARGEPAGE_TYPE</a></div><div class="ttdeci">ABTU_MEM_LARGEPAGE_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00163">abtu.h:163</a></div></div>
+<div class="ttc" id="mem__pool_8c_html_a5d8df49ef27482dd276d9b7a653e48d9"><div class="ttname"><a href="../../d9/d73/mem__pool_8c.html#a5d8df49ef27482dd276d9b7a653e48d9">mem_pool_lifo_elem_to_header</a></div><div class="ttdeci">static ABTI_mem_pool_header * mem_pool_lifo_elem_to_header(ABTI_sync_lifo_element *lifo_elem)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d73/mem__pool_8c_source.html#l00017">mem_pool.c:17</a></div></div>
 <div class="ttc" id="abtu_8h_html_aa5a3c3c202ec0abd799f3dd80339fcdf"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aa5a3c3c202ec0abd799f3dd80339fcdf">ABTU_alloc_largepage</a></div><div class="ttdeci">void * ABTU_alloc_largepage(size_t size, size_t alignment_hint, const ABTU_MEM_LARGEPAGE_TYPE *requested_types, int num_requested_types, ABTU_MEM_LARGEPAGE_TYPE *p_actual)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de7/largepage_8c_source.html#l00087">largepage.c:87</a></div></div>
 <div class="ttc" id="abti_8h_html"><div class="ttname"><a href="../../d5/d03/abti_8h.html">abti.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 26 2020 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 27 2020 03:09:52 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

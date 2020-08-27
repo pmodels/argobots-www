@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">49e659a377bb5f19c60a64377ed410e7291037c6</span>
+   &#160;<span id="projectnumber">ac35a6f4577e5c489e8b4152eaab31c2b33ef22f</span>
    </div>
   </td>
  </tr>
@@ -105,10 +105,10 @@ Include dependency graph for mem_pool.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2da16bb353b2c5495cd82451b077b13a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d7/d5b/structABTI__mem__pool__page.html">ABTI_mem_pool_page</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d73/mem__pool_8c.html#a2da16bb353b2c5495cd82451b077b13a">ABTI_mem_pool_lifo_elem_to_page</a> (<a class="el" href="../../de/d30/structABTI__sync__lifo__element.html">ABTI_sync_lifo_element</a> *lifo_elem)</td></tr>
-<tr class="separator:a2da16bb353b2c5495cd82451b077b13a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cf1a68380a60861930ce0208418cba9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../de/d24/structABTI__mem__pool__header.html">ABTI_mem_pool_header</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d73/mem__pool_8c.html#a0cf1a68380a60861930ce0208418cba9">ABTI_mem_pool_lifo_elem_to_header</a> (<a class="el" href="../../de/d30/structABTI__sync__lifo__element.html">ABTI_sync_lifo_element</a> *lifo_elem)</td></tr>
-<tr class="separator:a0cf1a68380a60861930ce0208418cba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c67afbd642a7c1f9e9e41bb04b7b6fb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d7/d5b/structABTI__mem__pool__page.html">ABTI_mem_pool_page</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d73/mem__pool_8c.html#a5c67afbd642a7c1f9e9e41bb04b7b6fb">mem_pool_lifo_elem_to_page</a> (<a class="el" href="../../de/d30/structABTI__sync__lifo__element.html">ABTI_sync_lifo_element</a> *lifo_elem)</td></tr>
+<tr class="separator:a5c67afbd642a7c1f9e9e41bb04b7b6fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d8df49ef27482dd276d9b7a653e48d9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../de/d24/structABTI__mem__pool__header.html">ABTI_mem_pool_header</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d73/mem__pool_8c.html#a5d8df49ef27482dd276d9b7a653e48d9">mem_pool_lifo_elem_to_header</a> (<a class="el" href="../../de/d30/structABTI__sync__lifo__element.html">ABTI_sync_lifo_element</a> *lifo_elem)</td></tr>
+<tr class="separator:a5d8df49ef27482dd276d9b7a653e48d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5ab2ccfa81ea9e43637e1815ce0605d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d73/mem__pool_8c.html#ad5ab2ccfa81ea9e43637e1815ce0605d">ABTI_mem_pool_init_global_pool</a> (<a class="el" href="../../d7/de4/structABTI__mem__pool__global__pool.html">ABTI_mem_pool_global_pool</a> *p_global_pool, int num_headers_per_bucket, size_t header_size, size_t header_offset, size_t page_size, const <a class="el" href="../../d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082ac">ABTU_MEM_LARGEPAGE_TYPE</a> *lp_type_requests, int num_lp_type_requests, size_t alignment_hint)</td></tr>
 <tr class="separator:ad5ab2ccfa81ea9e43637e1815ce0605d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d69f1eb7905a224a89f327522a29fda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d73/mem__pool_8c.html#a6d69f1eb7905a224a89f327522a29fda">ABTI_mem_pool_destroy_global_pool</a> (<a class="el" href="../../d7/de4/structABTI__mem__pool__global__pool.html">ABTI_mem_pool_global_pool</a> *p_global_pool)</td></tr>
@@ -251,62 +251,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a0cf1a68380a60861930ce0208418cba9"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="../../de/d24/structABTI__mem__pool__header.html">ABTI_mem_pool_header</a>* ABTI_mem_pool_lifo_elem_to_header </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../de/d30/structABTI__sync__lifo__element.html">ABTI_sync_lifo_element</a> *&#160;</td>
-          <td class="paramname"><em>lifo_elem</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d9/d73/mem__pool_8c_source.html#l00017">17</a> of file <a class="el" href="../../d9/d73/mem__pool_8c_source.html">mem_pool.c</a>.</p>
-
-<p>Referenced by <a class="el" href="../../d9/d73/mem__pool_8c_source.html#l00155">ABTI_mem_pool_take_bucket()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2da16bb353b2c5495cd82451b077b13a"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="../../d7/d5b/structABTI__mem__pool__page.html">ABTI_mem_pool_page</a>* ABTI_mem_pool_lifo_elem_to_page </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../de/d30/structABTI__sync__lifo__element.html">ABTI_sync_lifo_element</a> *&#160;</td>
-          <td class="paramname"><em>lifo_elem</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d9/d73/mem__pool_8c_source.html#l00010">10</a> of file <a class="el" href="../../d9/d73/mem__pool_8c_source.html">mem_pool.c</a>.</p>
-
-<p>Referenced by <a class="el" href="../../d9/d73/mem__pool_8c_source.html#l00054">ABTI_mem_pool_destroy_global_pool()</a>, and <a class="el" href="../../d9/d73/mem__pool_8c_source.html#l00155">ABTI_mem_pool_take_bucket()</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="ab9a7ee976a68e9b14b8a17a4c6c095e0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -357,10 +301,66 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5d8df49ef27482dd276d9b7a653e48d9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../de/d24/structABTI__mem__pool__header.html">ABTI_mem_pool_header</a>* mem_pool_lifo_elem_to_header </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d30/structABTI__sync__lifo__element.html">ABTI_sync_lifo_element</a> *&#160;</td>
+          <td class="paramname"><em>lifo_elem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d73/mem__pool_8c_source.html#l00017">17</a> of file <a class="el" href="../../d9/d73/mem__pool_8c_source.html">mem_pool.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d9/d73/mem__pool_8c_source.html#l00155">ABTI_mem_pool_take_bucket()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5c67afbd642a7c1f9e9e41bb04b7b6fb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d7/d5b/structABTI__mem__pool__page.html">ABTI_mem_pool_page</a>* mem_pool_lifo_elem_to_page </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d30/structABTI__sync__lifo__element.html">ABTI_sync_lifo_element</a> *&#160;</td>
+          <td class="paramname"><em>lifo_elem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/d73/mem__pool_8c_source.html#l00010">10</a> of file <a class="el" href="../../d9/d73/mem__pool_8c_source.html">mem_pool.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d9/d73/mem__pool_8c_source.html#l00054">ABTI_mem_pool_destroy_global_pool()</a>, and <a class="el" href="../../d9/d73/mem__pool_8c_source.html#l00155">ABTI_mem_pool_take_bucket()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 26 2020 03:09:54 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 27 2020 03:09:51 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

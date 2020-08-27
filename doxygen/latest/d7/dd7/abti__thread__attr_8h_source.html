@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">49e659a377bb5f19c60a64377ed410e7291037c6</span>
+   &#160;<span id="projectnumber">ac35a6f4577e5c489e8b4152eaab31c2b33ef22f</span>
    </div>
   </td>
  </tr>
@@ -130,43 +130,29 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_MIGRATION</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_thread_attr_init_migration(ABTI_thread_attr *p_attr,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                                   <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> migratable)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    p_attr-&gt;migratable = migratable;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    p_attr-&gt;f_cb = NULL;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    p_attr-&gt;p_cb_arg = NULL;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_thread_attr_init(ABTI_thread_attr *p_attr,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                         <span class="keywordtype">void</span> *p_stack, <span class="keywordtype">size_t</span> stacksize,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                         ABTI_stack_type stacktype,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                         <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> migratable)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    p_attr-&gt;p_stack = p_stack;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    p_attr-&gt;stacksize = stacksize;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    p_attr-&gt;stacktype = stacktype;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_MIGRATION</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor"></span>    ABTI_thread_attr_init_migration(p_attr, migratable);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_thread_attr_copy(ABTI_thread_attr *p_dest,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                         ABTI_thread_attr *p_src)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    memcpy(p_dest, p_src, <span class="keyword">sizeof</span>(ABTI_thread_attr));</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_THREAD_ATTR_H_INCLUDED */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_thread_attr_init(ABTI_thread_attr *p_attr,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                         <span class="keywordtype">void</span> *p_stack, <span class="keywordtype">size_t</span> stacksize,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                         ABTI_thread_type thread_type,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                         <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> migratable)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    p_attr-&gt;p_stack = p_stack;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    p_attr-&gt;stacksize = stacksize;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    p_attr-&gt;thread_type = thread_type;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_MIGRATION</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor"></span>    p_attr-&gt;migratable = migratable;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    p_attr-&gt;f_cb = NULL;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    p_attr-&gt;p_cb_arg = NULL;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_THREAD_ATTR_H_INCLUDED */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="abt_8h_html_a49abe49beb3075b18fa79cf943f49219"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a></div><div class="ttdeci">struct ABT_thread_attr_opaque * ABT_thread_attr</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00345">abt.h:345</a></div></div>
 <div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00373">abt.h:373</a></div></div>
 <div class="ttc" id="abt_8h_html_ab6493016fce7f8140d89699ecf83c456"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ab6493016fce7f8140d89699ecf83c456">ABT_THREAD_ATTR_NULL</a></div><div class="ttdeci">#define ABT_THREAD_ATTR_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00417">abt.h:417</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 26 2020 03:09:55 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 27 2020 03:09:52 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

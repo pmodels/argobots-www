@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">49e659a377bb5f19c60a64377ed410e7291037c6</span>
+   &#160;<span id="projectnumber">ac35a6f4577e5c489e8b4152eaab31c2b33ef22f</span>
    </div>
   </td>
  </tr>
@@ -102,269 +102,274 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    ABTI_thread_attr *p_newattr;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    p_newattr = (ABTI_thread_attr *)<a class="code" href="../../d5/d09/abtu_8h.html#a158db3996ecde73f043ce7c89251c409">ABTU_malloc</a>(<span class="keyword">sizeof</span>(ABTI_thread_attr));</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">/* Default values */</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    ABTI_thread_attr_init(p_newattr, NULL, ABTI_global_get_thread_stacksize(),</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                          ABTI_STACK_TYPE_MEMPOOL, <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">/* Return value */</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    *newattr = ABTI_thread_attr_get_handle(p_newattr);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../d2/df6/group__ULT__ATTR.html#ga19b271b779c2c43941e8881d1115d86a">   55</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/df6/group__ULT__ATTR.html#ga19b271b779c2c43941e8881d1115d86a">ABT_thread_attr_free</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a> *attr)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a> h_attr = *attr;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    ABTI_thread_attr *p_attr = ABTI_thread_attr_get_ptr(h_attr);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    ABTI_CHECK_NULL_THREAD_ATTR_PTR(p_attr);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">/* Free the memory */</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(p_attr);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">/* Return value */</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    *attr = <a class="code" href="../../d5/d7d/abt_8h.html#ab6493016fce7f8140d89699ecf83c456">ABT_THREAD_ATTR_NULL</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    ABTI_CHECK_TRUE(p_newattr, <a class="code" href="../../d5/d7d/abt_8h.html#aa87727caeba9ca9bb7251eed09c00d0f">ABT_ERR_MEM</a>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">/* Default values */</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    ABTI_thread_attr_init(p_newattr, NULL, <a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;thread_stacksize,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                          ABTI_THREAD_TYPE_MEM_MEMPOOL_DESC_STACK, <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">/* Return value */</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    *newattr = ABTI_thread_attr_get_handle(p_newattr);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../d2/df6/group__ULT__ATTR.html#ga19b271b779c2c43941e8881d1115d86a">   61</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/df6/group__ULT__ATTR.html#ga19b271b779c2c43941e8881d1115d86a">ABT_thread_attr_free</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a> *attr)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a> h_attr = *attr;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    ABTI_thread_attr *p_attr = ABTI_thread_attr_get_ptr(h_attr);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    ABTI_CHECK_NULL_THREAD_ATTR_PTR(p_attr);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">/* Free the memory */</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(p_attr);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="../../d2/df6/group__ULT__ATTR.html#gac8f39be20d677898c45293c5ce31eea0">   97</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/df6/group__ULT__ATTR.html#gac8f39be20d677898c45293c5ce31eea0">ABT_thread_attr_set_stack</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a> attr, <span class="keywordtype">void</span> *stackaddr,</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                              <span class="keywordtype">size_t</span> stacksize)</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    ABTI_thread_attr *p_attr = ABTI_thread_attr_get_ptr(attr);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    ABTI_CHECK_NULL_THREAD_ATTR_PTR(p_attr);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    p_attr-&gt;p_stack = stackaddr;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">if</span> (stackaddr != NULL) {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span> (((uintptr_t)stackaddr &amp; 0x7) != 0) {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#a68176af1976c588a00f80767ca1c2835">ABT_ERR_OTHER</a>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">goto</span> fn_fail;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        p_attr-&gt;stacktype = ABTI_STACK_TYPE_USER;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">if</span> (stacksize == ABTI_global_get_thread_stacksize()) {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            p_attr-&gt;stacktype = ABTI_STACK_TYPE_MEMPOOL;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            p_attr-&gt;stacktype = ABTI_STACK_TYPE_MALLOC;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    p_attr-&gt;stacksize = stacksize;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">/* Return value */</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    *attr = <a class="code" href="../../d5/d7d/abt_8h.html#ab6493016fce7f8140d89699ecf83c456">ABT_THREAD_ATTR_NULL</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="../../d2/df6/group__ULT__ATTR.html#gac8f39be20d677898c45293c5ce31eea0">  103</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/df6/group__ULT__ATTR.html#gac8f39be20d677898c45293c5ce31eea0">ABT_thread_attr_set_stack</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a> attr, <span class="keywordtype">void</span> *stackaddr,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                              <span class="keywordtype">size_t</span> stacksize)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    ABTI_thread_attr *p_attr = ABTI_thread_attr_get_ptr(attr);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    ABTI_CHECK_NULL_THREAD_ATTR_PTR(p_attr);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    ABTI_thread_type new_thread_type;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">if</span> (stackaddr != NULL) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">if</span> (((uintptr_t)stackaddr &amp; 0x7) != 0) {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#a68176af1976c588a00f80767ca1c2835">ABT_ERR_OTHER</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keywordflow">goto</span> fn_fail;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        new_thread_type = ABTI_THREAD_TYPE_MEM_MEMPOOL_DESC;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">if</span> (stacksize == <a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;thread_stacksize) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            new_thread_type = ABTI_THREAD_TYPE_MEM_MEMPOOL_DESC_STACK;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            new_thread_type = ABTI_THREAD_TYPE_MEM_MALLOC_DESC_STACK;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">/* Unset the stack type and set new_thread_type. */</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    p_attr-&gt;thread_type &amp;= ~ABTI_THREAD_TYPES_MEM;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    p_attr-&gt;thread_type |= new_thread_type;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
-<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="../../d2/df6/group__ULT__ATTR.html#ga26434b78a53e76c95668abf82bf149a3">  144</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/df6/group__ULT__ATTR.html#ga26434b78a53e76c95668abf82bf149a3">ABT_thread_attr_get_stack</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a> attr, <span class="keywordtype">void</span> **stackaddr,</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                              <span class="keywordtype">size_t</span> *stacksize)</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    ABTI_thread_attr *p_attr = ABTI_thread_attr_get_ptr(attr);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    ABTI_CHECK_NULL_THREAD_ATTR_PTR(p_attr);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    *stackaddr = p_attr-&gt;p_stack;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    *stacksize = p_attr-&gt;stacksize;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    p_attr-&gt;p_stack = stackaddr;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    p_attr-&gt;stacksize = stacksize;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="../../d2/df6/group__ULT__ATTR.html#ga26434b78a53e76c95668abf82bf149a3">  155</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/df6/group__ULT__ATTR.html#ga26434b78a53e76c95668abf82bf149a3">ABT_thread_attr_get_stack</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a> attr, <span class="keywordtype">void</span> **stackaddr,</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                              <span class="keywordtype">size_t</span> *stacksize)</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    ABTI_thread_attr *p_attr = ABTI_thread_attr_get_ptr(attr);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    ABTI_CHECK_NULL_THREAD_ATTR_PTR(p_attr);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
-<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="../../d2/df6/group__ULT__ATTR.html#gadcd5ae1d9dc92637c15b3b1e3d4c8234">  174</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/df6/group__ULT__ATTR.html#gadcd5ae1d9dc92637c15b3b1e3d4c8234">ABT_thread_attr_set_stacksize</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a> attr, <span class="keywordtype">size_t</span> stacksize)</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;{</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    ABTI_thread_attr *p_attr = ABTI_thread_attr_get_ptr(attr);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    ABTI_CHECK_NULL_THREAD_ATTR_PTR(p_attr);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">/* Set the value */</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    p_attr-&gt;stacksize = stacksize;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">if</span> (stacksize == ABTI_global_get_thread_stacksize()) {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        p_attr-&gt;stacktype = ABTI_STACK_TYPE_MEMPOOL;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        p_attr-&gt;stacktype = ABTI_STACK_TYPE_MALLOC;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    *stackaddr = p_attr-&gt;p_stack;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    *stacksize = p_attr-&gt;stacksize;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="../../d2/df6/group__ULT__ATTR.html#gadcd5ae1d9dc92637c15b3b1e3d4c8234">  185</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/df6/group__ULT__ATTR.html#gadcd5ae1d9dc92637c15b3b1e3d4c8234">ABT_thread_attr_set_stacksize</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a> attr, <span class="keywordtype">size_t</span> stacksize)</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;{</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    ABTI_thread_attr *p_attr = ABTI_thread_attr_get_ptr(attr);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    ABTI_CHECK_NULL_THREAD_ATTR_PTR(p_attr);</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
-<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="../../d2/df6/group__ULT__ATTR.html#ga0673ced4a5eef913add20fcc0d032d21">  208</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/df6/group__ULT__ATTR.html#ga0673ced4a5eef913add20fcc0d032d21">ABT_thread_attr_get_stacksize</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a> attr, <span class="keywordtype">size_t</span> *stacksize)</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;{</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    ABTI_thread_attr *p_attr = ABTI_thread_attr_get_ptr(attr);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    ABTI_CHECK_NULL_THREAD_ATTR_PTR(p_attr);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    *stacksize = p_attr-&gt;stacksize;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;}</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
-<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="../../d2/df6/group__ULT__ATTR.html#gaae7fa09430b9be1e9168f8cc45c311cd">  237</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/df6/group__ULT__ATTR.html#gaae7fa09430b9be1e9168f8cc45c311cd">ABT_thread_attr_set_callback</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a> attr,</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                                 <span class="keywordtype">void</span> (*cb_func)(<a class="code" href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a> thread,</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                                                 <span class="keywordtype">void</span> *cb_arg),</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                                 <span class="keywordtype">void</span> *cb_arg)</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;{</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_MIGRATION</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    ABTI_thread_attr *p_attr = ABTI_thread_attr_get_ptr(attr);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    ABTI_CHECK_NULL_THREAD_ATTR_PTR(p_attr);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="comment">/* Set the value */</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    p_attr-&gt;f_cb = cb_func;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    p_attr-&gt;p_cb_arg = cb_arg;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#a5ed830632895c95a4be6692d66c1941b">ABT_ERR_FEATURE_NA</a>;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">/* Set the value */</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    p_attr-&gt;stacksize = stacksize;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    ABTI_thread_type new_thread_type;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">if</span> (stacksize == <a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;thread_stacksize) {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        new_thread_type = ABTI_THREAD_TYPE_MEM_MEMPOOL_DESC_STACK;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        new_thread_type = ABTI_THREAD_TYPE_MEM_MEMPOOL_DESC_STACK;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment">/* Unset the stack type and set new_thread_type. */</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    p_attr-&gt;thread_type &amp;= ~ABTI_THREAD_TYPES_MEM;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    p_attr-&gt;thread_type |= new_thread_type;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;}</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
+<div class="line"><a name="l00223"></a><span class="lineno"><a class="line" href="../../d2/df6/group__ULT__ATTR.html#ga0673ced4a5eef913add20fcc0d032d21">  223</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/df6/group__ULT__ATTR.html#ga0673ced4a5eef913add20fcc0d032d21">ABT_thread_attr_get_stacksize</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a> attr, <span class="keywordtype">size_t</span> *stacksize)</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;{</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    ABTI_thread_attr *p_attr = ABTI_thread_attr_get_ptr(attr);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    ABTI_CHECK_NULL_THREAD_ATTR_PTR(p_attr);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    *stacksize = p_attr-&gt;stacksize;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;}</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;</div>
+<div class="line"><a name="l00252"></a><span class="lineno"><a class="line" href="../../d2/df6/group__ULT__ATTR.html#gaae7fa09430b9be1e9168f8cc45c311cd">  252</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/df6/group__ULT__ATTR.html#gaae7fa09430b9be1e9168f8cc45c311cd">ABT_thread_attr_set_callback</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a> attr,</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                                 <span class="keywordtype">void</span> (*cb_func)(<a class="code" href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a> thread,</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                                                 <span class="keywordtype">void</span> *cb_arg),</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                                 <span class="keywordtype">void</span> *cb_arg)</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;{</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_MIGRATION</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    ABTI_thread_attr *p_attr = ABTI_thread_attr_get_ptr(attr);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    ABTI_CHECK_NULL_THREAD_ATTR_PTR(p_attr);</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
-<div class="line"><a name="l00278"></a><span class="lineno"><a class="line" href="../../d2/df6/group__ULT__ATTR.html#ga1b6f0cb16fbf7d6b0f041449175e8fb3">  278</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/df6/group__ULT__ATTR.html#ga1b6f0cb16fbf7d6b0f041449175e8fb3">ABT_thread_attr_set_migratable</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a> attr, <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> flag)</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;{</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_MIGRATION</span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    ABTI_thread_attr *p_attr = ABTI_thread_attr_get_ptr(attr);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    ABTI_CHECK_NULL_THREAD_ATTR_PTR(p_attr);</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="comment">/* Set the value */</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    p_attr-&gt;migratable = flag;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#a5ed830632895c95a4be6692d66c1941b">ABT_ERR_FEATURE_NA</a>;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="comment">/* Private APIs                                                              */</span></div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="comment">/* Set the value */</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    p_attr-&gt;f_cb = cb_func;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    p_attr-&gt;p_cb_arg = cb_arg;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d6/d11/abti__error_8h.html#a9f103ec42ea638ec7f10dcf7bd4f7999">HANDLE_ERROR_FUNC_WITH_CODE_RET</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a5ed830632895c95a4be6692d66c1941b">ABT_ERR_FEATURE_NA</a>);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div>
+<div class="line"><a name="l00293"></a><span class="lineno"><a class="line" href="../../d2/df6/group__ULT__ATTR.html#ga1b6f0cb16fbf7d6b0f041449175e8fb3">  293</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/df6/group__ULT__ATTR.html#ga1b6f0cb16fbf7d6b0f041449175e8fb3">ABT_thread_attr_set_migratable</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a> attr, <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> flag)</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;{</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_MIGRATION</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    ABTI_thread_attr *p_attr = ABTI_thread_attr_get_ptr(attr);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    ABTI_CHECK_NULL_THREAD_ATTR_PTR(p_attr);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="comment">/* Set the value */</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    p_attr-&gt;migratable = flag;</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="keywordtype">void</span> ABTI_thread_attr_print(ABTI_thread_attr *p_attr, FILE *p_os, <span class="keywordtype">int</span> indent)</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;{</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordtype">char</span> *prefix = <a class="code" href="../../d5/d09/abtu_8h.html#a0c0a37db0324fb30071454b9bf67b0bc">ABTU_get_indent_str</a>(indent);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="keywordtype">char</span> attr[100];</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    ABTI_thread_attr_get_str(p_attr, attr);</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    fprintf(p_os, <span class="stringliteral">&quot;%sULT attr: %s\n&quot;</span>, prefix, attr);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    fflush(p_os);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(prefix);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d6/d11/abti__error_8h.html#a9f103ec42ea638ec7f10dcf7bd4f7999">HANDLE_ERROR_FUNC_WITH_CODE_RET</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a5ed830632895c95a4be6692d66c1941b">ABT_ERR_FEATURE_NA</a>);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="keywordtype">void</span> ABTI_thread_attr_get_str(ABTI_thread_attr *p_attr, <span class="keywordtype">char</span> *p_buf)</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;{</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordflow">if</span> (p_attr == NULL) {</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        sprintf(p_buf, <span class="stringliteral">&quot;[NULL ATTR]&quot;</span>);</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    }</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordtype">char</span> *stacktype;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">switch</span> (p_attr-&gt;stacktype) {</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="keywordflow">case</span> ABTI_STACK_TYPE_MEMPOOL:</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            stacktype = <span class="stringliteral">&quot;MEMPOOL&quot;</span>;</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordflow">case</span> ABTI_STACK_TYPE_MALLOC:</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            stacktype = <span class="stringliteral">&quot;MALLOC&quot;</span>;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">case</span> ABTI_STACK_TYPE_USER:</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            stacktype = <span class="stringliteral">&quot;USER&quot;</span>;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="keywordflow">case</span> ABTI_STACK_TYPE_MAIN:</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            stacktype = <span class="stringliteral">&quot;MAIN&quot;</span>;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            stacktype = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    }</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_MIGRATION</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="preprocessor"></span>    sprintf(p_buf,</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            <span class="stringliteral">&quot;[&quot;</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            <span class="stringliteral">&quot;stack:%p &quot;</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            <span class="stringliteral">&quot;stacksize:%zu &quot;</span></div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            <span class="stringliteral">&quot;stacktype:%s &quot;</span></div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            <span class="stringliteral">&quot;migratable:%s &quot;</span></div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            <span class="stringliteral">&quot;cb_arg:%p&quot;</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            <span class="stringliteral">&quot;]&quot;</span>,</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            p_attr-&gt;p_stack, p_attr-&gt;stacksize, stacktype,</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            (p_attr-&gt;migratable == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a> ? <span class="stringliteral">&quot;TRUE&quot;</span> : <span class="stringliteral">&quot;FALSE&quot;</span>),</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            p_attr-&gt;p_cb_arg);</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="preprocessor"></span>    sprintf(p_buf,</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            <span class="stringliteral">&quot;[&quot;</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            <span class="stringliteral">&quot;stack:%p &quot;</span></div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            <span class="stringliteral">&quot;stacksize:%zu &quot;</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            <span class="stringliteral">&quot;stacktype:%s &quot;</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            <span class="stringliteral">&quot;]&quot;</span>,</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            p_attr-&gt;p_stack, p_attr-&gt;stacksize, stacktype);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;ABTI_thread_attr *ABTI_thread_attr_dup(ABTI_thread_attr *p_attr)</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;{</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    ABTI_thread_attr *p_dupattr;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    p_dupattr = (ABTI_thread_attr *)<a class="code" href="../../d5/d09/abtu_8h.html#a158db3996ecde73f043ce7c89251c409">ABTU_malloc</a>(<span class="keyword">sizeof</span>(ABTI_thread_attr));</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    ABTI_thread_attr_copy(p_dupattr, p_attr);</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordflow">return</span> p_dupattr;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;}</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="comment">/* Private APIs                                                              */</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="keywordtype">void</span> ABTI_thread_attr_print(ABTI_thread_attr *p_attr, FILE *p_os, <span class="keywordtype">int</span> indent)</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;{</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keywordtype">char</span> *prefix = <a class="code" href="../../d5/d09/abtu_8h.html#a0c0a37db0324fb30071454b9bf67b0bc">ABTU_get_indent_str</a>(indent);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">if</span> (p_attr == NULL) {</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        fprintf(p_os, <span class="stringliteral">&quot;%sULT attr: [NULL ATTR]\n&quot;</span>, prefix);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordtype">char</span> *stacktype;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordflow">if</span> (p_attr-&gt;thread_type &amp; ABTI_THREAD_TYPE_MEM_MEMPOOL_DESC) {</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            stacktype = <span class="stringliteral">&quot;MEMPOOL_DESC&quot;</span>;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p_attr-&gt;thread_type &amp; ABTI_THREAD_TYPE_MEM_MALLOC_DESC) {</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            stacktype = <span class="stringliteral">&quot;MALLOC_DESC&quot;</span>;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p_attr-&gt;thread_type &amp;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                   ABTI_THREAD_TYPE_MEM_MEMPOOL_DESC_STACK) {</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            stacktype = <span class="stringliteral">&quot;MEMPOOL_DESC_STACK&quot;</span>;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p_attr-&gt;thread_type &amp;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                   ABTI_THREAD_TYPE_MEM_MALLOC_DESC_STACK) {</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            stacktype = <span class="stringliteral">&quot;MALLOC_DESC_STACK&quot;</span>;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            stacktype = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        }</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_MIGRATION</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="preprocessor"></span>        fprintf(p_os,</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                <span class="stringliteral">&quot;%sULT attr: [&quot;</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                <span class="stringliteral">&quot;stack:%p &quot;</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                <span class="stringliteral">&quot;stacksize:%zu &quot;</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                <span class="stringliteral">&quot;stacktype:%s &quot;</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                <span class="stringliteral">&quot;migratable:%s &quot;</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                <span class="stringliteral">&quot;cb_arg:%p&quot;</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                <span class="stringliteral">&quot;]\n&quot;</span>,</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                prefix, p_attr-&gt;p_stack, p_attr-&gt;stacksize, stacktype,</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                (p_attr-&gt;migratable == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a> ? <span class="stringliteral">&quot;TRUE&quot;</span> : <span class="stringliteral">&quot;FALSE&quot;</span>),</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                p_attr-&gt;p_cb_arg);</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="preprocessor"></span>        fprintf(p_os,</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                <span class="stringliteral">&quot;%sULT attr: [&quot;</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                <span class="stringliteral">&quot;stack:%p &quot;</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                <span class="stringliteral">&quot;stacksize:%zu &quot;</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                <span class="stringliteral">&quot;stacktype:%s &quot;</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                <span class="stringliteral">&quot;]\n&quot;</span>,</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                prefix, p_attr-&gt;p_stack, p_attr-&gt;stacksize, stacktype);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="preprocessor"></span>    }</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    fflush(p_os);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(prefix);</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;}</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;ABTI_thread_attr *ABTI_thread_attr_dup(ABTI_thread_attr *p_attr)</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;{</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    ABTI_thread_attr *p_dupattr;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    p_dupattr = (ABTI_thread_attr *)<a class="code" href="../../d5/d09/abtu_8h.html#a158db3996ecde73f043ce7c89251c409">ABTU_malloc</a>(<span class="keyword">sizeof</span>(ABTI_thread_attr));</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    memcpy(p_dupattr, p_attr, <span class="keyword">sizeof</span>(ABTI_thread_attr));</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keywordflow">return</span> p_dupattr;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;}</div>
 <div class="ttc" id="abt_8h_html_a49abe49beb3075b18fa79cf943f49219"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a></div><div class="ttdeci">struct ABT_thread_attr_opaque * ABT_thread_attr</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00345">abt.h:345</a></div></div>
 <div class="ttc" id="abtu_8h_html_a0c0a37db0324fb30071454b9bf67b0bc"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a0c0a37db0324fb30071454b9bf67b0bc">ABTU_get_indent_str</a></div><div class="ttdeci">char * ABTU_get_indent_str(int indent)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/df1/util_8c_source.html#l00010">util.c:10</a></div></div>
-<div class="ttc" id="group__ULT__ATTR_html_gadcd5ae1d9dc92637c15b3b1e3d4c8234"><div class="ttname"><a href="../../d2/df6/group__ULT__ATTR.html#gadcd5ae1d9dc92637c15b3b1e3d4c8234">ABT_thread_attr_set_stacksize</a></div><div class="ttdeci">int ABT_thread_attr_set_stacksize(ABT_thread_attr attr, size_t stacksize) ABT_API_PUBLIC</div><div class="ttdoc">Set the stack size in the attribute object. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de6/thread__attr_8c_source.html#l00174">thread_attr.c:174</a></div></div>
-<div class="ttc" id="group__ULT__ATTR_html_gac8f39be20d677898c45293c5ce31eea0"><div class="ttname"><a href="../../d2/df6/group__ULT__ATTR.html#gac8f39be20d677898c45293c5ce31eea0">ABT_thread_attr_set_stack</a></div><div class="ttdeci">int ABT_thread_attr_set_stack(ABT_thread_attr attr, void *stackaddr, size_t stacksize) ABT_API_PUBLIC</div><div class="ttdoc">Set stack attributes. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de6/thread__attr_8c_source.html#l00097">thread_attr.c:97</a></div></div>
-<div class="ttc" id="group__ULT__ATTR_html_ga1b6f0cb16fbf7d6b0f041449175e8fb3"><div class="ttname"><a href="../../d2/df6/group__ULT__ATTR.html#ga1b6f0cb16fbf7d6b0f041449175e8fb3">ABT_thread_attr_set_migratable</a></div><div class="ttdeci">int ABT_thread_attr_set_migratable(ABT_thread_attr attr, ABT_bool flag) ABT_API_PUBLIC</div><div class="ttdoc">Set the ULT&amp;#39;s migratability in the attribute object. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de6/thread__attr_8c_source.html#l00278">thread_attr.c:278</a></div></div>
-<div class="ttc" id="group__ULT__ATTR_html_ga0673ced4a5eef913add20fcc0d032d21"><div class="ttname"><a href="../../d2/df6/group__ULT__ATTR.html#ga0673ced4a5eef913add20fcc0d032d21">ABT_thread_attr_get_stacksize</a></div><div class="ttdeci">int ABT_thread_attr_get_stacksize(ABT_thread_attr attr, size_t *stacksize) ABT_API_PUBLIC</div><div class="ttdoc">Get the stack size from the attribute object. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de6/thread__attr_8c_source.html#l00208">thread_attr.c:208</a></div></div>
-<div class="ttc" id="group__ULT__ATTR_html_gaae7fa09430b9be1e9168f8cc45c311cd"><div class="ttname"><a href="../../d2/df6/group__ULT__ATTR.html#gaae7fa09430b9be1e9168f8cc45c311cd">ABT_thread_attr_set_callback</a></div><div class="ttdeci">int ABT_thread_attr_set_callback(ABT_thread_attr attr, void(*cb_func)(ABT_thread thread, void *cb_arg), void *cb_arg) ABT_API_PUBLIC</div><div class="ttdoc">Set callback function and its argument in the attribute object. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de6/thread__attr_8c_source.html#l00237">thread_attr.c:237</a></div></div>
+<div class="ttc" id="group__ULT__ATTR_html_gadcd5ae1d9dc92637c15b3b1e3d4c8234"><div class="ttname"><a href="../../d2/df6/group__ULT__ATTR.html#gadcd5ae1d9dc92637c15b3b1e3d4c8234">ABT_thread_attr_set_stacksize</a></div><div class="ttdeci">int ABT_thread_attr_set_stacksize(ABT_thread_attr attr, size_t stacksize) ABT_API_PUBLIC</div><div class="ttdoc">Set the stack size in the attribute object. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de6/thread__attr_8c_source.html#l00185">thread_attr.c:185</a></div></div>
+<div class="ttc" id="group__ULT__ATTR_html_gac8f39be20d677898c45293c5ce31eea0"><div class="ttname"><a href="../../d2/df6/group__ULT__ATTR.html#gac8f39be20d677898c45293c5ce31eea0">ABT_thread_attr_set_stack</a></div><div class="ttdeci">int ABT_thread_attr_set_stack(ABT_thread_attr attr, void *stackaddr, size_t stacksize) ABT_API_PUBLIC</div><div class="ttdoc">Set stack attributes. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de6/thread__attr_8c_source.html#l00103">thread_attr.c:103</a></div></div>
+<div class="ttc" id="group__ULT__ATTR_html_ga1b6f0cb16fbf7d6b0f041449175e8fb3"><div class="ttname"><a href="../../d2/df6/group__ULT__ATTR.html#ga1b6f0cb16fbf7d6b0f041449175e8fb3">ABT_thread_attr_set_migratable</a></div><div class="ttdeci">int ABT_thread_attr_set_migratable(ABT_thread_attr attr, ABT_bool flag) ABT_API_PUBLIC</div><div class="ttdoc">Set the ULT&amp;#39;s migratability in the attribute object. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de6/thread__attr_8c_source.html#l00293">thread_attr.c:293</a></div></div>
+<div class="ttc" id="group__ULT__ATTR_html_ga0673ced4a5eef913add20fcc0d032d21"><div class="ttname"><a href="../../d2/df6/group__ULT__ATTR.html#ga0673ced4a5eef913add20fcc0d032d21">ABT_thread_attr_get_stacksize</a></div><div class="ttdeci">int ABT_thread_attr_get_stacksize(ABT_thread_attr attr, size_t *stacksize) ABT_API_PUBLIC</div><div class="ttdoc">Get the stack size from the attribute object. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de6/thread__attr_8c_source.html#l00223">thread_attr.c:223</a></div></div>
+<div class="ttc" id="group__ULT__ATTR_html_gaae7fa09430b9be1e9168f8cc45c311cd"><div class="ttname"><a href="../../d2/df6/group__ULT__ATTR.html#gaae7fa09430b9be1e9168f8cc45c311cd">ABT_thread_attr_set_callback</a></div><div class="ttdeci">int ABT_thread_attr_set_callback(ABT_thread_attr attr, void(*cb_func)(ABT_thread thread, void *cb_arg), void *cb_arg) ABT_API_PUBLIC</div><div class="ttdoc">Set callback function and its argument in the attribute object. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de6/thread__attr_8c_source.html#l00252">thread_attr.c:252</a></div></div>
 <div class="ttc" id="abtu_8h_html_a158db3996ecde73f043ce7c89251c409"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a158db3996ecde73f043ce7c89251c409">ABTU_malloc</a></div><div class="ttdeci">static void * ABTU_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00118">abtu.h:118</a></div></div>
 <div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00373">abt.h:373</a></div></div>
 <div class="ttc" id="abt_8h_html_a68176af1976c588a00f80767ca1c2835"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a68176af1976c588a00f80767ca1c2835">ABT_ERR_OTHER</a></div><div class="ttdeci">#define ABT_ERR_OTHER</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00067">abt.h:67</a></div></div>
 <div class="ttc" id="group__ULT__ATTR_html_ga4b1677eb8e2a300a2e94201914471776"><div class="ttname"><a href="../../d2/df6/group__ULT__ATTR.html#ga4b1677eb8e2a300a2e94201914471776">ABT_thread_attr_create</a></div><div class="ttdeci">int ABT_thread_attr_create(ABT_thread_attr *newattr) ABT_API_PUBLIC</div><div class="ttdoc">Create a new ULT attribute object. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de6/thread__attr_8c_source.html#l00026">thread_attr.c:26</a></div></div>
 <div class="ttc" id="abt_8h_html_a186008e05c04170eed9ac74808619717"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a></div><div class="ttdeci">struct ABT_thread_opaque * ABT_thread</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00343">abt.h:343</a></div></div>
-<div class="ttc" id="abti__error_8h_html_aad3b3ce8a92436b8b7efdebd32eeb52e"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a></div><div class="ttdeci">#define HANDLE_ERROR_FUNC_WITH_CODE(n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00319">abti_error.h:319</a></div></div>
+<div class="ttc" id="abti__error_8h_html_aad3b3ce8a92436b8b7efdebd32eeb52e"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a></div><div class="ttdeci">#define HANDLE_ERROR_FUNC_WITH_CODE(n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00359">abti_error.h:359</a></div></div>
+<div class="ttc" id="abt_8h_html_aa87727caeba9ca9bb7251eed09c00d0f"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aa87727caeba9ca9bb7251eed09c00d0f">ABT_ERR_MEM</a></div><div class="ttdeci">#define ABT_ERR_MEM</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00066">abt.h:66</a></div></div>
+<div class="ttc" id="abti_8h_html_a5e2e52e4bfa1e19e121d939135e4300c"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a></div><div class="ttdeci">ABTI_global * gp_ABTI_global</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d57/global_8c_source.html#l00014">global.c:14</a></div></div>
 <div class="ttc" id="abt_8h_html_acf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00064">abt.h:64</a></div></div>
 <div class="ttc" id="abt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00284">abt.h:284</a></div></div>
 <div class="ttc" id="abt_8h_html_ab6493016fce7f8140d89699ecf83c456"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ab6493016fce7f8140d89699ecf83c456">ABT_THREAD_ATTR_NULL</a></div><div class="ttdeci">#define ABT_THREAD_ATTR_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00417">abt.h:417</a></div></div>
-<div class="ttc" id="group__ULT__ATTR_html_ga26434b78a53e76c95668abf82bf149a3"><div class="ttname"><a href="../../d2/df6/group__ULT__ATTR.html#ga26434b78a53e76c95668abf82bf149a3">ABT_thread_attr_get_stack</a></div><div class="ttdeci">int ABT_thread_attr_get_stack(ABT_thread_attr attr, void **stackaddr, size_t *stacksize) ABT_API_PUBLIC</div><div class="ttdoc">Get stack attributes. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de6/thread__attr_8c_source.html#l00144">thread_attr.c:144</a></div></div>
-<div class="ttc" id="group__ULT__ATTR_html_ga19b271b779c2c43941e8881d1115d86a"><div class="ttname"><a href="../../d2/df6/group__ULT__ATTR.html#ga19b271b779c2c43941e8881d1115d86a">ABT_thread_attr_free</a></div><div class="ttdeci">int ABT_thread_attr_free(ABT_thread_attr *attr) ABT_API_PUBLIC</div><div class="ttdoc">Free the ULT attribute object. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de6/thread__attr_8c_source.html#l00055">thread_attr.c:55</a></div></div>
+<div class="ttc" id="group__ULT__ATTR_html_ga26434b78a53e76c95668abf82bf149a3"><div class="ttname"><a href="../../d2/df6/group__ULT__ATTR.html#ga26434b78a53e76c95668abf82bf149a3">ABT_thread_attr_get_stack</a></div><div class="ttdeci">int ABT_thread_attr_get_stack(ABT_thread_attr attr, void **stackaddr, size_t *stacksize) ABT_API_PUBLIC</div><div class="ttdoc">Get stack attributes. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de6/thread__attr_8c_source.html#l00155">thread_attr.c:155</a></div></div>
+<div class="ttc" id="group__ULT__ATTR_html_ga19b271b779c2c43941e8881d1115d86a"><div class="ttname"><a href="../../d2/df6/group__ULT__ATTR.html#ga19b271b779c2c43941e8881d1115d86a">ABT_thread_attr_free</a></div><div class="ttdeci">int ABT_thread_attr_free(ABT_thread_attr *attr) ABT_API_PUBLIC</div><div class="ttdoc">Free the ULT attribute object. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de6/thread__attr_8c_source.html#l00061">thread_attr.c:61</a></div></div>
+<div class="ttc" id="abti__error_8h_html_a9f103ec42ea638ec7f10dcf7bd4f7999"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#a9f103ec42ea638ec7f10dcf7bd4f7999">HANDLE_ERROR_FUNC_WITH_CODE_RET</a></div><div class="ttdeci">#define HANDLE_ERROR_FUNC_WITH_CODE_RET(n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00367">abti_error.h:367</a></div></div>
 <div class="ttc" id="abt_8h_html_a5ed830632895c95a4be6692d66c1941b"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a5ed830632895c95a4be6692d66c1941b">ABT_ERR_FEATURE_NA</a></div><div class="ttdeci">#define ABT_ERR_FEATURE_NA</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00116">abt.h:116</a></div></div>
 <div class="ttc" id="abti_8h_html"><div class="ttname"><a href="../../d5/d03/abti_8h.html">abti.h</a></div></div>
 <div class="ttc" id="abtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00111">abtu.h:111</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 26 2020 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 27 2020 03:09:52 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

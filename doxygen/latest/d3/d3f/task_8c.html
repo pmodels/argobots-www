@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">49e659a377bb5f19c60a64377ed410e7291037c6</span>
+   &#160;<span id="projectnumber">ac35a6f4577e5c489e8b4152eaab31c2b33ef22f</span>
    </div>
   </td>
  </tr>
@@ -104,6 +104,8 @@ Include dependency graph for task.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a55b7bb2425b69149c816040186779ff0"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d3f/task_8c.html#a55b7bb2425b69149c816040186779ff0">task_create</a> (ABTI_local *p_local, ABTI_pool *p_pool, void(*task_func)(void *), void *arg, ABTI_sched *p_sched, int refcount, ABTI_thread **pp_newtask)</td></tr>
+<tr class="separator:a55b7bb2425b69149c816040186779ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaeb110f4570cc8aea137fd8a7a29be455"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4b/group__TASK.html#gaeb110f4570cc8aea137fd8a7a29be455">ABT_task_create</a> (<a class="el" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> pool, void(*task_func)(void *), void *arg, <a class="el" href="../../d5/d7d/abt_8h.html#a02200eeeef0025ba33f08fce1a5fde30">ABT_task</a> *newtask)</td></tr>
 <tr class="memdesc:gaeb110f4570cc8aea137fd8a7a29be455"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new task and return its handle through newtask.  <a href="../../d7/d4b/group__TASK.html#gaeb110f4570cc8aea137fd8a7a29be455">More...</a><br/></td></tr>
 <tr class="separator:gaeb110f4570cc8aea137fd8a7a29be455"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,10 +167,79 @@ Functions</h2></td></tr>
 <tr class="memdesc:gae9563a19d4fdad6e5c73bb268cfda9cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the tasklet-specific value associated with the key.  <a href="../../d7/d4b/group__TASK.html#gae9563a19d4fdad6e5c73bb268cfda9cf">More...</a><br/></td></tr>
 <tr class="separator:gae9563a19d4fdad6e5c73bb268cfda9cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a55b7bb2425b69149c816040186779ff0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int task_create </td>
+          <td>(</td>
+          <td class="paramtype">ABTI_local *&#160;</td>
+          <td class="paramname"><em>p_local</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_pool *&#160;</td>
+          <td class="paramname"><em>p_pool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(void *)&#160;</td>
+          <td class="paramname"><em>task_func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_sched *&#160;</td>
+          <td class="paramname"><em>p_sched</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>refcount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_thread **&#160;</td>
+          <td class="paramname"><em>pp_newtask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/d3f/task_8c_source.html#l00478">478</a> of file <a class="el" href="../../d3/d3f/task_8c_source.html">task.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d3/d3f/task_8c_source.html#l00040">ABT_task_create()</a>, and <a class="el" href="../../d3/d3f/task_8c_source.html#l00100">ABT_task_create_on_xstream()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 26 2020 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 27 2020 03:09:53 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -21,8 +21,6 @@ var searchData=
   ['abti_5feventual',['ABTI_eventual',['../de/db1/structABTI__eventual.html',1,'']]],
   ['abti_5ffuture',['ABTI_future',['../d1/db2/structABTI__future.html',1,'']]],
   ['abti_5fglobal',['ABTI_global',['../da/de9/structABTI__global.html',1,'']]],
-  ['abti_5finfo_5fpool_5fset_5ft',['ABTI_info_pool_set_t',['../d9/d78/structABTI__info__pool__set__t.html',1,'']]],
-  ['abti_5finfo_5fprint_5funit_5farg_5ft',['ABTI_info_print_unit_arg_t',['../da/d60/structABTI__info__print__unit__arg__t.html',1,'']]],
   ['abti_5fkey',['ABTI_key',['../d2/d02/structABTI__key.html',1,'']]],
   ['abti_5fktable',['ABTI_ktable',['../d1/d29/structABTI__ktable.html',1,'']]],
   ['abti_5fktable_5fmem_5fheader',['ABTI_ktable_mem_header',['../da/d3e/structABTI__ktable__mem__header.html',1,'']]],

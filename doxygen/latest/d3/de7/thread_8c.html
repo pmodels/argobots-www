@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">49e659a377bb5f19c60a64377ed410e7291037c6</span>
+   &#160;<span id="projectnumber">ac35a6f4577e5c489e8b4152eaab31c2b33ef22f</span>
    </div>
   </td>
  </tr>
@@ -105,10 +105,24 @@ Include dependency graph for thread.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af2ae06bb192c332597e49daf64e1daa2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de7/thread_8c.html#af2ae06bb192c332597e49daf64e1daa2">key_destructor_stackable_sched</a> (void *p_value)</td></tr>
-<tr class="separator:af2ae06bb192c332597e49daf64e1daa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae44cf1ef3704b7d7ecc245d650a7200b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de7/thread_8c.html#ae44cf1ef3704b7d7ecc245d650a7200b">key_destructor_migration</a> (void *p_value)</td></tr>
-<tr class="separator:ae44cf1ef3704b7d7ecc245d650a7200b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a361c789f4cce6f6e102397c7b8bba7bd"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de7/thread_8c.html#a361c789f4cce6f6e102397c7b8bba7bd">ythread_create</a> (ABTI_local *p_local, ABTI_pool *p_pool, void(*thread_func)(void *), void *arg, ABTI_thread_attr *p_attr, ABTI_thread_type thread_type, ABTI_sched *p_sched, ABTI_xstream *p_parent_xstream, <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> push_pool, ABTI_ythread **pp_newthread)</td></tr>
+<tr class="separator:a361c789f4cce6f6e102397c7b8bba7bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9ba00d0057d6c73ee05766a08a84ee2"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de7/thread_8c.html#ac9ba00d0057d6c73ee05766a08a84ee2">thread_revive</a> (ABTI_local *p_local, ABTI_pool *p_pool, void(*thread_func)(void *), void *arg, ABTI_thread *p_thread)</td></tr>
+<tr class="separator:ac9ba00d0057d6c73ee05766a08a84ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac98c02fe77f465166204b23baab83a2c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de7/thread_8c.html#ac98c02fe77f465166204b23baab83a2c">thread_join</a> (ABTI_local **pp_local, ABTI_thread *p_thread)</td></tr>
+<tr class="separator:ac98c02fe77f465166204b23baab83a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac69f5c99c8a3398eec1873182abd94ac"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de7/thread_8c.html#ac69f5c99c8a3398eec1873182abd94ac">thread_free</a> (ABTI_local *p_local, ABTI_thread *p_thread, <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> free_unit)</td></tr>
+<tr class="separator:ac69f5c99c8a3398eec1873182abd94ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a836e745b79016d46bf8c12030f876454"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de7/thread_8c.html#a836e745b79016d46bf8c12030f876454">thread_migrate_to_xstream</a> (ABTI_local **pp_local, ABTI_thread *p_thread, ABTI_xstream *p_xstream)</td></tr>
+<tr class="separator:a836e745b79016d46bf8c12030f876454"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca70bfa84cd8e80e918f1aa051c302d9"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de7/thread_8c.html#aca70bfa84cd8e80e918f1aa051c302d9">thread_migrate_to_pool</a> (ABTI_local **p_local, ABTI_thread *p_thread, ABTI_pool *p_pool)</td></tr>
+<tr class="separator:aca70bfa84cd8e80e918f1aa051c302d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade9fa54421ef7744879a7a0b36572471"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d7d/abt_8h.html#a8f4ca28fbf35ddd6a922e65f49723bee">ABT_unit_id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de7/thread_8c.html#ade9fa54421ef7744879a7a0b36572471">thread_get_new_id</a> (void)</td></tr>
+<tr class="separator:ade9fa54421ef7744879a7a0b36572471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade614c071175b1baa5107dcb0e86b2f4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de7/thread_8c.html#ade614c071175b1baa5107dcb0e86b2f4">thread_key_destructor_stackable_sched</a> (void *p_value)</td></tr>
+<tr class="separator:ade614c071175b1baa5107dcb0e86b2f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af74e2b5f3cbb8bc7c7400a58c20c8c77"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de7/thread_8c.html#af74e2b5f3cbb8bc7c7400a58c20c8c77">thread_key_destructor_migration</a> (void *p_value)</td></tr>
+<tr class="separator:af74e2b5f3cbb8bc7c7400a58c20c8c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga73bd1f04ce57def336cb20cdec9b14bd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6d/group__ULT.html#ga73bd1f04ce57def336cb20cdec9b14bd">ABT_thread_create</a> (<a class="el" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> pool, void(*thread_func)(void *), void *arg, <a class="el" href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a> attr, <a class="el" href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a> *newthread)</td></tr>
 <tr class="memdesc:ga73bd1f04ce57def336cb20cdec9b14bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new thread and return its handle through newthread.  <a href="../../d0/d6d/group__ULT.html#ga73bd1f04ce57def336cb20cdec9b14bd">More...</a><br/></td></tr>
 <tr class="separator:ga73bd1f04ce57def336cb20cdec9b14bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -231,7 +245,7 @@ Variables</h2></td></tr>
 <tr class="separator:a10381f38fd2b3f58b4ecae996e7135cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ae44cf1ef3704b7d7ecc245d650a7200b"></a>
+<a class="anchor" id="ac69f5c99c8a3398eec1873182abd94ac"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -239,7 +253,113 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void key_destructor_migration </td>
+          <td class="memname">static void thread_free </td>
+          <td>(</td>
+          <td class="paramtype">ABTI_local *&#160;</td>
+          <td class="paramname"><em>p_local</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_thread *&#160;</td>
+          <td class="paramname"><em>p_thread</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a>&#160;</td>
+          <td class="paramname"><em>free_unit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01966">1966</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ade9fa54421ef7744879a7a0b36572471"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d5/d7d/abt_8h.html#a8f4ca28fbf35ddd6a922e65f49723bee">ABT_unit_id</a> thread_get_new_id </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l02292">2292</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac98c02fe77f465166204b23baab83a2c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int thread_join </td>
+          <td>(</td>
+          <td class="paramtype">ABTI_local **&#160;</td>
+          <td class="paramname"><em>pp_local</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_thread *&#160;</td>
+          <td class="paramname"><em>p_thread</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l02067">2067</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d3/de7/thread_8c_source.html#l00312">ABT_thread_free()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00363">ABT_thread_free_many()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00393">ABT_thread_join()</a>, and <a class="el" href="../../d3/de7/thread_8c_source.html#l00422">ABT_thread_join_many()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af74e2b5f3cbb8bc7c7400a58c20c8c77"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void thread_key_destructor_migration </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>p_value</em></td><td>)</td>
@@ -253,11 +373,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l02099">2099</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l02004">2004</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="af2ae06bb192c332597e49daf64e1daa2"></a>
+<a class="anchor" id="ade614c071175b1baa5107dcb0e86b2f4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -265,7 +385,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void key_destructor_stackable_sched </td>
+          <td class="memname">static void thread_key_destructor_stackable_sched </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>p_value</em></td><td>)</td>
@@ -279,7 +399,237 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l02087">2087</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01992">1992</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aca70bfa84cd8e80e918f1aa051c302d9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int thread_migrate_to_pool </td>
+          <td>(</td>
+          <td class="paramtype">ABTI_local **&#160;</td>
+          <td class="paramname"><em>p_local</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_thread *&#160;</td>
+          <td class="paramname"><em>p_thread</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_pool *&#160;</td>
+          <td class="paramname"><em>p_pool</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01922">1922</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d3/de7/thread_8c_source.html#l01021">ABT_thread_migrate_to_pool()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00963">ABT_thread_migrate_to_sched()</a>, and <a class="el" href="../../d3/de7/thread_8c_source.html#l02246">thread_migrate_to_xstream()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a836e745b79016d46bf8c12030f876454"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int thread_migrate_to_xstream </td>
+          <td>(</td>
+          <td class="paramtype">ABTI_local **&#160;</td>
+          <td class="paramname"><em>pp_local</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_thread *&#160;</td>
+          <td class="paramname"><em>p_thread</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_xstream *&#160;</td>
+          <td class="paramname"><em>p_xstream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l02246">2246</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d3/de7/thread_8c_source.html#l01068">ABT_thread_migrate()</a>, and <a class="el" href="../../d3/de7/thread_8c_source.html#l00917">ABT_thread_migrate_to_xstream()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac9ba00d0057d6c73ee05766a08a84ee2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int thread_revive </td>
+          <td>(</td>
+          <td class="paramtype">ABTI_local *&#160;</td>
+          <td class="paramname"><em>p_local</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_pool *&#160;</td>
+          <td class="paramname"><em>p_pool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(void *)&#160;</td>
+          <td class="paramname"><em>thread_func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_thread *&#160;</td>
+          <td class="paramname"><em>p_thread</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l02010">2010</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d3/de7/thread_8c_source.html#l00276">ABT_thread_revive()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a361c789f4cce6f6e102397c7b8bba7bd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int ythread_create </td>
+          <td>(</td>
+          <td class="paramtype">ABTI_local *&#160;</td>
+          <td class="paramname"><em>p_local</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_pool *&#160;</td>
+          <td class="paramname"><em>p_pool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(void *)&#160;</td>
+          <td class="paramname"><em>thread_func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_thread_attr *&#160;</td>
+          <td class="paramname"><em>p_attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_thread_type&#160;</td>
+          <td class="paramname"><em>thread_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_sched *&#160;</td>
+          <td class="paramname"><em>p_sched</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_xstream *&#160;</td>
+          <td class="paramname"><em>p_parent_xstream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a>&#160;</td>
+          <td class="paramname"><em>push_pool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_ythread **&#160;</td>
+          <td class="paramname"><em>pp_newthread</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01784">1784</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d3/de7/thread_8c_source.html#l00064">ABT_thread_create()</a>, <a class="el" href="../../d3/de7/thread_8c_source.html#l00195">ABT_thread_create_many()</a>, and <a class="el" href="../../d3/de7/thread_8c_source.html#l00136">ABT_thread_create_on_xstream()</a>.</p>
 
 </div>
 </div>
@@ -304,7 +654,7 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
 <div class="line">    ABTD_ATOMIC_UINT64_STATIC_INITIALIZER(0)</div>
 </div><!-- fragment -->
-<p>Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l02065">2065</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01761">1761</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -326,11 +676,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
-<div class="line">    ABTI_KEY_STATIC_INITIALIZER(<a class="code" href="../../d3/de7/thread_8c.html#ae44cf1ef3704b7d7ecc245d650a7200b">key_destructor_migration</a>,</div>
+<div class="line">    ABTI_KEY_STATIC_INITIALIZER(<a class="code" href="../../d3/de7/thread_8c.html#af74e2b5f3cbb8bc7c7400a58c20c8c77">thread_key_destructor_migration</a>,</div>
 <div class="line">                                ABTI_KEY_ID_MIGRATION)</div>
-<div class="ttc" id="thread_8c_html_ae44cf1ef3704b7d7ecc245d650a7200b"><div class="ttname"><a href="../../d3/de7/thread_8c.html#ae44cf1ef3704b7d7ecc245d650a7200b">key_destructor_migration</a></div><div class="ttdeci">static void key_destructor_migration(void *p_value)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02099">thread.c:2099</a></div></div>
+<div class="ttc" id="thread_8c_html_af74e2b5f3cbb8bc7c7400a58c20c8c77"><div class="ttname"><a href="../../d3/de7/thread_8c.html#af74e2b5f3cbb8bc7c7400a58c20c8c77">thread_key_destructor_migration</a></div><div class="ttdeci">static void thread_key_destructor_migration(void *p_value)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02004">thread.c:2004</a></div></div>
 </div><!-- fragment -->
-<p>Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00031">31</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00034">34</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -352,18 +702,18 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
-<div class="line">    ABTI_KEY_STATIC_INITIALIZER(<a class="code" href="../../d3/de7/thread_8c.html#af2ae06bb192c332597e49daf64e1daa2">key_destructor_stackable_sched</a>,</div>
+<div class="line">    ABTI_KEY_STATIC_INITIALIZER(<a class="code" href="../../d3/de7/thread_8c.html#ade614c071175b1baa5107dcb0e86b2f4">thread_key_destructor_stackable_sched</a>,</div>
 <div class="line">                                ABTI_KEY_ID_STACKABLE_SCHED)</div>
-<div class="ttc" id="thread_8c_html_af2ae06bb192c332597e49daf64e1daa2"><div class="ttname"><a href="../../d3/de7/thread_8c.html#af2ae06bb192c332597e49daf64e1daa2">key_destructor_stackable_sched</a></div><div class="ttdeci">static void key_destructor_stackable_sched(void *p_value)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02087">thread.c:2087</a></div></div>
+<div class="ttc" id="thread_8c_html_ade614c071175b1baa5107dcb0e86b2f4"><div class="ttname"><a href="../../d3/de7/thread_8c.html#ade614c071175b1baa5107dcb0e86b2f4">thread_key_destructor_stackable_sched</a></div><div class="ttdeci">static void thread_key_destructor_stackable_sched(void *p_value)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l01992">thread.c:1992</a></div></div>
 </div><!-- fragment -->
-<p>Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00027">27</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00030">30</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 26 2020 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 27 2020 03:09:53 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

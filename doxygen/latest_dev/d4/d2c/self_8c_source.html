@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">49e659a377bb5f19c60a64377ed410e7291037c6</span>
+   &#160;<span id="projectnumber">ac35a6f4577e5c489e8b4152eaab31c2b33ef22f</span>
    </div>
   </td>
  </tr>
@@ -102,211 +102,198 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981c">ABT_unit_type</a> ret = <a class="code" href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981caece98bb6bb9b7c9a050c055126058342">ABT_UNIT_TYPE_EXT</a>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">/* If Argobots has not been initialized, set type to ABT_UNIT_TYPE_EXT. */</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a7ac9b373006f7a894a803e6bd9c9884f">ABTI_SETUP_WITH_INIT_CHECK</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="../../d5/d03/abti_8h.html#ae475ec8b11def7b6fdf92a1e852f592f">ABTI_local</a> *p_local = <a class="code" href="../../df/d6a/abti__local_8h.html#a8d6596f5c2420139a99ad7b2ed732c2d">ABTI_local_get_local</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="../../d5/d03/abti_8h.html#a1ca438571bc5cbc5687789d622e7eadc">ABTI_thread_type</a> raw_type = <a class="code" href="../../d0/dfe/abti__self_8h.html#a7d24cfd1a2d30ac68b5c1049557d5d1a">ABTI_self_get_type</a>(p_local);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    ret = <a class="code" href="../../de/d90/abti__thread_8h.html#a71892a3839eeaa52a81286a4a0eed1f0">ABTI_thread_type_get_type</a>(raw_type);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">/* This is when an external thread called this routine. */</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d03/abti_8h.html#a01734864feeaa5ddd6eeebd04a046c49">ABTI_IS_EXT_THREAD_ENABLED</a> &amp;&amp; ret == <a class="code" href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981caece98bb6bb9b7c9a050c055126058342">ABT_UNIT_TYPE_EXT</a>) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#a8fc7b93960578efca32539002caec236">ABT_ERR_INV_XSTREAM</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    *type = ret;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../d9/d23/group__SELF.html#ga0dc0be7defa700db75bf733c3e30c363">   76</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d23/group__SELF.html#ga0dc0be7defa700db75bf733c3e30c363">ABT_self_is_primary</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *flag)</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> ret = <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a072a9aa79d219ee1021ff5d6023a9462">ABTI_SETUP_LOCAL_XSTREAM_WITH_INIT_CHECK</a>(&amp;p_local_xstream);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="../../d3/d55/structABTI__thread.html">ABTI_thread</a> *p_thread = p_local_xstream-&gt;<a class="code" href="../../dc/d3f/structABTI__xstream.html#a30cc7d73f66579799a3b0dd44954504e">p_thread</a>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> (p_thread-&gt;<a class="code" href="../../d3/d55/structABTI__thread.html#a031815f8510c1bc87c1549f3137d2538">type</a> &amp; <a class="code" href="../../d5/d03/abti_8h.html#a15cb41cd7733ed6fb93143cee1690982">ABTI_THREAD_TYPE_MAIN</a>)</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        ret = <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    *flag = ret;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="../../d9/d23/group__SELF.html#ga0d536d0018788de70947254955f3f3ca">  112</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d23/group__SELF.html#ga0d536d0018788de70947254955f3f3ca">ABT_self_on_primary_xstream</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *flag)</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> ret = <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a072a9aa79d219ee1021ff5d6023a9462">ABTI_SETUP_LOCAL_XSTREAM_WITH_INIT_CHECK</a>(&amp;p_local_xstream);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">/* Return value */</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    ret = (p_local_xstream-&gt;<a class="code" href="../../dc/d3f/structABTI__xstream.html#a3b79e20070c81dd5d9ae6baaeac9cc28">type</a> == <a class="code" href="../../d5/d03/abti_8h.html#a34cf395f944b9a8430b44bc36217e12eae1fd80cc0abfcdf02a99fec6931d4747">ABTI_XSTREAM_TYPE_PRIMARY</a>) ? <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                                                               : <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    *flag = ret;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
-<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="../../d9/d23/group__SELF.html#ga5a15e98a191591dd09f1aaee6e1e0d42">  150</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d23/group__SELF.html#ga5a15e98a191591dd09f1aaee6e1e0d42">ABT_self_get_last_pool_id</a>(<span class="keywordtype">int</span> *pool_id)</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;{</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">int</span> ret = -1;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a072a9aa79d219ee1021ff5d6023a9462">ABTI_SETUP_LOCAL_XSTREAM_WITH_INIT_CHECK</a>(&amp;p_local_xstream);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="../../d3/d55/structABTI__thread.html">ABTI_thread</a> *p_self = p_local_xstream-&gt;<a class="code" href="../../dc/d3f/structABTI__xstream.html#a30cc7d73f66579799a3b0dd44954504e">p_thread</a>;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a81b70b0c4ee2d2993fbc05c32447695a">ABTI_ASSERT</a>(p_self-&gt;<a class="code" href="../../d3/d55/structABTI__thread.html#a7e02268c166e5e2645f5db5c8cc1a725">p_pool</a>);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    ret = p_self-&gt;<a class="code" href="../../d3/d55/structABTI__thread.html#a7e02268c166e5e2645f5db5c8cc1a725">p_pool</a>-&gt;<a class="code" href="../../df/d65/structABTI__pool.html#ab02afb33045bef9118e5077114a6c597">id</a>;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    *pool_id = ret;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
-<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="../../d9/d23/group__SELF.html#ga1ea426efb033abeea6876ee0609079d4">  189</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d23/group__SELF.html#ga1ea426efb033abeea6876ee0609079d4">ABT_self_suspend</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="../../d5/d5f/structABTI__ythread.html">ABTI_ythread</a> *p_self;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a59253b19035a2d61a36d860754e196e8">ABTI_SETUP_LOCAL_YTHREAD_WITH_INIT_CHECK</a>(&amp;p_local_xstream, &amp;p_self);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a072a9aa79d219ee1021ff5d6023a9462">ABTI_SETUP_LOCAL_XSTREAM_WITH_INIT_CHECK</a>(&amp;p_local_xstream);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">/* This is when an external thread called this routine. */</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    ret = <a class="code" href="../../de/d90/abti__thread_8h.html#a71892a3839eeaa52a81286a4a0eed1f0">ABTI_thread_type_get_type</a>(p_local_xstream-&gt;<a class="code" href="../../dc/d3f/structABTI__xstream.html#a30cc7d73f66579799a3b0dd44954504e">p_thread</a>-&gt;<a class="code" href="../../d3/d55/structABTI__thread.html#a031815f8510c1bc87c1549f3137d2538">type</a>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    *type = ret;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../d9/d23/group__SELF.html#ga0dc0be7defa700db75bf733c3e30c363">   70</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d23/group__SELF.html#ga0dc0be7defa700db75bf733c3e30c363">ABT_self_is_primary</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *flag)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> ret = <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a072a9aa79d219ee1021ff5d6023a9462">ABTI_SETUP_LOCAL_XSTREAM_WITH_INIT_CHECK</a>(&amp;p_local_xstream);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="../../d3/d55/structABTI__thread.html">ABTI_thread</a> *p_thread = p_local_xstream-&gt;<a class="code" href="../../dc/d3f/structABTI__xstream.html#a30cc7d73f66579799a3b0dd44954504e">p_thread</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span> (p_thread-&gt;<a class="code" href="../../d3/d55/structABTI__thread.html#a031815f8510c1bc87c1549f3137d2538">type</a> &amp; <a class="code" href="../../d5/d03/abti_8h.html#a15cb41cd7733ed6fb93143cee1690982">ABTI_THREAD_TYPE_MAIN</a>)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        ret = <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    *flag = ret;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="../../d9/d23/group__SELF.html#ga0d536d0018788de70947254955f3f3ca">  106</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d23/group__SELF.html#ga0d536d0018788de70947254955f3f3ca">ABT_self_on_primary_xstream</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *flag)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> ret = <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a072a9aa79d219ee1021ff5d6023a9462">ABTI_SETUP_LOCAL_XSTREAM_WITH_INIT_CHECK</a>(&amp;p_local_xstream);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">/* Return value */</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    ret = (p_local_xstream-&gt;<a class="code" href="../../dc/d3f/structABTI__xstream.html#a3b79e20070c81dd5d9ae6baaeac9cc28">type</a> == <a class="code" href="../../d5/d03/abti_8h.html#a34cf395f944b9a8430b44bc36217e12eae1fd80cc0abfcdf02a99fec6931d4747">ABTI_XSTREAM_TYPE_PRIMARY</a>) ? <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                                               : <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    *flag = ret;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="../../d9/d23/group__SELF.html#ga5a15e98a191591dd09f1aaee6e1e0d42">  144</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d23/group__SELF.html#ga5a15e98a191591dd09f1aaee6e1e0d42">ABT_self_get_last_pool_id</a>(<span class="keywordtype">int</span> *pool_id)</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">int</span> ret = -1;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a072a9aa79d219ee1021ff5d6023a9462">ABTI_SETUP_LOCAL_XSTREAM_WITH_INIT_CHECK</a>(&amp;p_local_xstream);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="../../d3/d55/structABTI__thread.html">ABTI_thread</a> *p_self = p_local_xstream-&gt;<a class="code" href="../../dc/d3f/structABTI__xstream.html#a30cc7d73f66579799a3b0dd44954504e">p_thread</a>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a81b70b0c4ee2d2993fbc05c32447695a">ABTI_ASSERT</a>(p_self-&gt;<a class="code" href="../../d3/d55/structABTI__thread.html#a7e02268c166e5e2645f5db5c8cc1a725">p_pool</a>);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    ret = p_self-&gt;<a class="code" href="../../d3/d55/structABTI__thread.html#a7e02268c166e5e2645f5db5c8cc1a725">p_pool</a>-&gt;<a class="code" href="../../df/d65/structABTI__pool.html#ab02afb33045bef9118e5077114a6c597">id</a>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    *pool_id = ret;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="../../d9/d23/group__SELF.html#ga1ea426efb033abeea6876ee0609079d4">  183</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d23/group__SELF.html#ga1ea426efb033abeea6876ee0609079d4">ABT_self_suspend</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;{</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <a class="code" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <a class="code" href="../../d5/d5f/structABTI__ythread.html">ABTI_ythread</a> *p_self;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a59253b19035a2d61a36d860754e196e8">ABTI_SETUP_LOCAL_YTHREAD_WITH_INIT_CHECK</a>(&amp;p_local_xstream, &amp;p_self);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    abt_errno = <a class="code" href="../../d5/d03/abti_8h.html#a583a96f9cd8cdb2c6622af38bf563fb7">ABTI_ythread_set_blocked</a>(p_self);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a8bcf885e66c769e235f313e4ab615b0a">ABTI_CHECK_ERROR</a>(abt_errno);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="../../d5/d03/abti_8h.html#a88dbb3440b80e39a730f1410b754b5b8">ABTI_ythread_suspend</a>(&amp;p_local_xstream, p_self, <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fa9c413af0c199abb4a3d2a8bf4b672fa4">ABT_SYNC_EVENT_TYPE_USER</a>,</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                         NULL);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    abt_errno = <a class="code" href="../../d5/d03/abti_8h.html#a583a96f9cd8cdb2c6622af38bf563fb7">ABTI_ythread_set_blocked</a>(p_self);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a8bcf885e66c769e235f313e4ab615b0a">ABTI_CHECK_ERROR</a>(abt_errno);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <a class="code" href="../../d5/d03/abti_8h.html#a88dbb3440b80e39a730f1410b754b5b8">ABTI_ythread_suspend</a>(&amp;p_local_xstream, p_self, <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fa9c413af0c199abb4a3d2a8bf4b672fa4">ABT_SYNC_EVENT_TYPE_USER</a>,</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                         NULL);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;}</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
-<div class="line"><a name="l00224"></a><span class="lineno"><a class="line" href="../../d9/d23/group__SELF.html#gaa2af3a58c127272320aeea153c921dfd">  224</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d23/group__SELF.html#gaa2af3a58c127272320aeea153c921dfd">ABT_self_set_arg</a>(<span class="keywordtype">void</span> *arg)</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;{</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <a class="code" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a072a9aa79d219ee1021ff5d6023a9462">ABTI_SETUP_LOCAL_XSTREAM_WITH_INIT_CHECK</a>(&amp;p_local_xstream);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    p_local_xstream-&gt;<a class="code" href="../../dc/d3f/structABTI__xstream.html#a30cc7d73f66579799a3b0dd44954504e">p_thread</a>-&gt;<a class="code" href="../../d3/d55/structABTI__thread.html#ae89b027ecb25555ba7ff03a048b977ba">p_arg</a> = arg;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;}</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
-<div class="line"><a name="l00257"></a><span class="lineno"><a class="line" href="../../d9/d23/group__SELF.html#ga1bbf95aa981d3a6789293aee60b7e39b">  257</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d23/group__SELF.html#ga1bbf95aa981d3a6789293aee60b7e39b">ABT_self_get_arg</a>(<span class="keywordtype">void</span> **arg)</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;{</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordtype">void</span> *ret = NULL;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <a class="code" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a072a9aa79d219ee1021ff5d6023a9462">ABTI_SETUP_LOCAL_XSTREAM_WITH_INIT_CHECK</a>(&amp;p_local_xstream);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00218"></a><span class="lineno"><a class="line" href="../../d9/d23/group__SELF.html#gaa2af3a58c127272320aeea153c921dfd">  218</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d23/group__SELF.html#gaa2af3a58c127272320aeea153c921dfd">ABT_self_set_arg</a>(<span class="keywordtype">void</span> *arg)</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;{</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <a class="code" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a072a9aa79d219ee1021ff5d6023a9462">ABTI_SETUP_LOCAL_XSTREAM_WITH_INIT_CHECK</a>(&amp;p_local_xstream);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    p_local_xstream-&gt;<a class="code" href="../../dc/d3f/structABTI__xstream.html#a30cc7d73f66579799a3b0dd44954504e">p_thread</a>-&gt;<a class="code" href="../../d3/d55/structABTI__thread.html#ae89b027ecb25555ba7ff03a048b977ba">p_arg</a> = arg;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
+<div class="line"><a name="l00251"></a><span class="lineno"><a class="line" href="../../d9/d23/group__SELF.html#ga1bbf95aa981d3a6789293aee60b7e39b">  251</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d23/group__SELF.html#ga1bbf95aa981d3a6789293aee60b7e39b">ABT_self_get_arg</a>(<span class="keywordtype">void</span> **arg)</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;{</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordtype">void</span> *ret = NULL;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <a class="code" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a072a9aa79d219ee1021ff5d6023a9462">ABTI_SETUP_LOCAL_XSTREAM_WITH_INIT_CHECK</a>(&amp;p_local_xstream);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    ret = p_local_xstream-&gt;<a class="code" href="../../dc/d3f/structABTI__xstream.html#a30cc7d73f66579799a3b0dd44954504e">p_thread</a>-&gt;<a class="code" href="../../d3/d55/structABTI__thread.html#ae89b027ecb25555ba7ff03a048b977ba">p_arg</a>;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    *arg = ret;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    ret = p_local_xstream-&gt;<a class="code" href="../../dc/d3f/structABTI__xstream.html#a30cc7d73f66579799a3b0dd44954504e">p_thread</a>-&gt;<a class="code" href="../../d3/d55/structABTI__thread.html#ae89b027ecb25555ba7ff03a048b977ba">p_arg</a>;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    *arg = ret;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;}</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;</div>
-<div class="line"><a name="l00291"></a><span class="lineno"><a class="line" href="../../d9/d23/group__SELF.html#gaf99a6589b3c98658fca85bffe29acbb3">  291</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d23/group__SELF.html#gaf99a6589b3c98658fca85bffe29acbb3">ABT_self_is_unnamed</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *flag)</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;{</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <a class="code" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a072a9aa79d219ee1021ff5d6023a9462">ABTI_SETUP_LOCAL_XSTREAM_WITH_INIT_CHECK</a>(&amp;p_local_xstream);</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    *flag = (p_local_xstream-&gt;<a class="code" href="../../dc/d3f/structABTI__xstream.html#a30cc7d73f66579799a3b0dd44954504e">p_thread</a>-&gt;<a class="code" href="../../d3/d55/structABTI__thread.html#a031815f8510c1bc87c1549f3137d2538">type</a> &amp; <a class="code" href="../../d5/d03/abti_8h.html#ad00ca367723dea982120ebe3ec0c9a41">ABTI_THREAD_TYPE_NAMED</a>)</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                ? <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                : <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;}</div>
-<div class="ttc" id="structABTI__thread_html_a7e02268c166e5e2645f5db5c8cc1a725"><div class="ttname"><a href="../../d3/d55/structABTI__thread.html#a7e02268c166e5e2645f5db5c8cc1a725">ABTI_thread::p_pool</a></div><div class="ttdeci">ABTI_pool * p_pool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00331">abti.h:331</a></div></div>
-<div class="ttc" id="group__SELF_html_gaa2af3a58c127272320aeea153c921dfd"><div class="ttname"><a href="../../d9/d23/group__SELF.html#gaa2af3a58c127272320aeea153c921dfd">ABT_self_set_arg</a></div><div class="ttdeci">int ABT_self_set_arg(void *arg) ABT_API_PUBLIC</div><div class="ttdoc">Set the argument for the work unit function. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2c/self_8c_source.html#l00224">self.c:224</a></div></div>
-<div class="ttc" id="abti_8h_html_ae475ec8b11def7b6fdf92a1e852f592f"><div class="ttname"><a href="../../d5/d03/abti_8h.html#ae475ec8b11def7b6fdf92a1e852f592f">ABTI_local</a></div><div class="ttdeci">struct ABTI_local ABTI_local</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00104">abti.h:104</a></div></div>
-<div class="ttc" id="abti__error_8h_html_a7ac9b373006f7a894a803e6bd9c9884f"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#a7ac9b373006f7a894a803e6bd9c9884f">ABTI_SETUP_WITH_INIT_CHECK</a></div><div class="ttdeci">#define ABTI_SETUP_WITH_INIT_CHECK()</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00030">abti_error.h:30</a></div></div>
-<div class="ttc" id="structABTI__thread_html_a031815f8510c1bc87c1549f3137d2538"><div class="ttname"><a href="../../d3/d55/structABTI__thread.html#a031815f8510c1bc87c1549f3137d2538">ABTI_thread::type</a></div><div class="ttdeci">ABTI_thread_type type</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00323">abti.h:323</a></div></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;}</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
+<div class="line"><a name="l00285"></a><span class="lineno"><a class="line" href="../../d9/d23/group__SELF.html#gaf99a6589b3c98658fca85bffe29acbb3">  285</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d23/group__SELF.html#gaf99a6589b3c98658fca85bffe29acbb3">ABT_self_is_unnamed</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *flag)</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;{</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <a class="code" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a072a9aa79d219ee1021ff5d6023a9462">ABTI_SETUP_LOCAL_XSTREAM_WITH_INIT_CHECK</a>(&amp;p_local_xstream);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    *flag = (p_local_xstream-&gt;<a class="code" href="../../dc/d3f/structABTI__xstream.html#a30cc7d73f66579799a3b0dd44954504e">p_thread</a>-&gt;<a class="code" href="../../d3/d55/structABTI__thread.html#a031815f8510c1bc87c1549f3137d2538">type</a> &amp; <a class="code" href="../../d5/d03/abti_8h.html#ad00ca367723dea982120ebe3ec0c9a41">ABTI_THREAD_TYPE_NAMED</a>)</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                ? <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                : <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;}</div>
+<div class="ttc" id="structABTI__thread_html_a7e02268c166e5e2645f5db5c8cc1a725"><div class="ttname"><a href="../../d3/d55/structABTI__thread.html#a7e02268c166e5e2645f5db5c8cc1a725">ABTI_thread::p_pool</a></div><div class="ttdeci">ABTI_pool * p_pool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00326">abti.h:326</a></div></div>
+<div class="ttc" id="group__SELF_html_gaa2af3a58c127272320aeea153c921dfd"><div class="ttname"><a href="../../d9/d23/group__SELF.html#gaa2af3a58c127272320aeea153c921dfd">ABT_self_set_arg</a></div><div class="ttdeci">int ABT_self_set_arg(void *arg) ABT_API_PUBLIC</div><div class="ttdoc">Set the argument for the work unit function. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2c/self_8c_source.html#l00218">self.c:218</a></div></div>
+<div class="ttc" id="structABTI__thread_html_a031815f8510c1bc87c1549f3137d2538"><div class="ttname"><a href="../../d3/d55/structABTI__thread.html#a031815f8510c1bc87c1549f3137d2538">ABTI_thread::type</a></div><div class="ttdeci">ABTI_thread_type type</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00318">abti.h:318</a></div></div>
 <div class="ttc" id="abti_8h_html_a34cf395f944b9a8430b44bc36217e12eae1fd80cc0abfcdf02a99fec6931d4747"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a34cf395f944b9a8430b44bc36217e12eae1fd80cc0abfcdf02a99fec6931d4747">ABTI_XSTREAM_TYPE_PRIMARY</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00062">abti.h:62</a></div></div>
-<div class="ttc" id="structABTI__thread_html"><div class="ttname"><a href="../../d3/d55/structABTI__thread.html">ABTI_thread</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00319">abti.h:319</a></div></div>
-<div class="ttc" id="structABTI__xstream_html_a30cc7d73f66579799a3b0dd44954504e"><div class="ttname"><a href="../../dc/d3f/structABTI__xstream.html#a30cc7d73f66579799a3b0dd44954504e">ABTI_xstream::p_thread</a></div><div class="ttdeci">ABTI_thread * p_thread</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00252">abti.h:252</a></div></div>
+<div class="ttc" id="structABTI__thread_html"><div class="ttname"><a href="../../d3/d55/structABTI__thread.html">ABTI_thread</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00314">abti.h:314</a></div></div>
+<div class="ttc" id="structABTI__xstream_html_a30cc7d73f66579799a3b0dd44954504e"><div class="ttname"><a href="../../dc/d3f/structABTI__xstream.html#a30cc7d73f66579799a3b0dd44954504e">ABTI_xstream::p_thread</a></div><div class="ttdeci">ABTI_thread * p_thread</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00247">abti.h:247</a></div></div>
 <div class="ttc" id="abti_8h_html_ad00ca367723dea982120ebe3ec0c9a41"><div class="ttname"><a href="../../d5/d03/abti_8h.html#ad00ca367723dea982120ebe3ec0c9a41">ABTI_THREAD_TYPE_NAMED</a></div><div class="ttdeci">#define ABTI_THREAD_TYPE_NAMED</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00077">abti.h:77</a></div></div>
-<div class="ttc" id="abti__error_8h_html_a59253b19035a2d61a36d860754e196e8"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#a59253b19035a2d61a36d860754e196e8">ABTI_SETUP_LOCAL_YTHREAD_WITH_INIT_CHECK</a></div><div class="ttdeci">#define ABTI_SETUP_LOCAL_YTHREAD_WITH_INIT_CHECK(pp_local_xstream, pp_ythread)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00083">abti_error.h:83</a></div></div>
+<div class="ttc" id="abti__error_8h_html_a59253b19035a2d61a36d860754e196e8"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#a59253b19035a2d61a36d860754e196e8">ABTI_SETUP_LOCAL_YTHREAD_WITH_INIT_CHECK</a></div><div class="ttdeci">#define ABTI_SETUP_LOCAL_YTHREAD_WITH_INIT_CHECK(pp_local_xstream, pp_ythread)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00086">abti_error.h:86</a></div></div>
 <div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00373">abt.h:373</a></div></div>
-<div class="ttc" id="structABTI__xstream_html_a3b79e20070c81dd5d9ae6baaeac9cc28"><div class="ttname"><a href="../../dc/d3f/structABTI__xstream.html#a3b79e20070c81dd5d9ae6baaeac9cc28">ABTI_xstream::type</a></div><div class="ttdeci">ABTI_xstream_type type</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00240">abti.h:240</a></div></div>
+<div class="ttc" id="structABTI__xstream_html_a3b79e20070c81dd5d9ae6baaeac9cc28"><div class="ttname"><a href="../../dc/d3f/structABTI__xstream.html#a3b79e20070c81dd5d9ae6baaeac9cc28">ABTI_xstream::type</a></div><div class="ttdeci">ABTI_xstream_type type</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00235">abti.h:235</a></div></div>
 <div class="ttc" id="group__SELF_html_gaffa3171691b3de87323e2fa0d344986c"><div class="ttname"><a href="../../d9/d23/group__SELF.html#gaffa3171691b3de87323e2fa0d344986c">ABT_self_get_type</a></div><div class="ttdeci">int ABT_self_get_type(ABT_unit_type *type) ABT_API_PUBLIC</div><div class="ttdoc">Return the type of calling work unit. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2c/self_8c_source.html#l00034">self.c:34</a></div></div>
 <div class="ttc" id="abt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00285">abt.h:285</a></div></div>
-<div class="ttc" id="structABTI__xstream_html"><div class="ttname"><a href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00238">abti.h:238</a></div></div>
+<div class="ttc" id="structABTI__xstream_html"><div class="ttname"><a href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00233">abti.h:233</a></div></div>
 <div class="ttc" id="abti_8h_html_a15cb41cd7733ed6fb93143cee1690982"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a15cb41cd7733ed6fb93143cee1690982">ABTI_THREAD_TYPE_MAIN</a></div><div class="ttdeci">#define ABTI_THREAD_TYPE_MAIN</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00074">abti.h:74</a></div></div>
-<div class="ttc" id="abti_8h_html_a1ca438571bc5cbc5687789d622e7eadc"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a1ca438571bc5cbc5687789d622e7eadc">ABTI_thread_type</a></div><div class="ttdeci">uint32_t ABTI_thread_type</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00119">abti.h:119</a></div></div>
-<div class="ttc" id="abti__error_8h_html_aad3b3ce8a92436b8b7efdebd32eeb52e"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a></div><div class="ttdeci">#define HANDLE_ERROR_FUNC_WITH_CODE(n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00319">abti_error.h:319</a></div></div>
-<div class="ttc" id="abti_8h_html_a01734864feeaa5ddd6eeebd04a046c49"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a01734864feeaa5ddd6eeebd04a046c49">ABTI_IS_EXT_THREAD_ENABLED</a></div><div class="ttdeci">#define ABTI_IS_EXT_THREAD_ENABLED</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00025">abti.h:25</a></div></div>
-<div class="ttc" id="structABTI__thread_html_ae89b027ecb25555ba7ff03a048b977ba"><div class="ttname"><a href="../../d3/d55/structABTI__thread.html#ae89b027ecb25555ba7ff03a048b977ba">ABTI_thread::p_arg</a></div><div class="ttdeci">void * p_arg</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00328">abti.h:328</a></div></div>
+<div class="ttc" id="abti__error_8h_html_aad3b3ce8a92436b8b7efdebd32eeb52e"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a></div><div class="ttdeci">#define HANDLE_ERROR_FUNC_WITH_CODE(n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00359">abti_error.h:359</a></div></div>
+<div class="ttc" id="structABTI__thread_html_ae89b027ecb25555ba7ff03a048b977ba"><div class="ttname"><a href="../../d3/d55/structABTI__thread.html#ae89b027ecb25555ba7ff03a048b977ba">ABTI_thread::p_arg</a></div><div class="ttdeci">void * p_arg</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00323">abti.h:323</a></div></div>
 <div class="ttc" id="abt_8h_html_acf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00064">abt.h:64</a></div></div>
 <div class="ttc" id="abt_8h_html_a80bdf9da42da2ec917df5bdb66e0981caece98bb6bb9b7c9a050c055126058342"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981caece98bb6bb9b7c9a050c055126058342">ABT_UNIT_TYPE_EXT</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00173">abt.h:173</a></div></div>
 <div class="ttc" id="abt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00284">abt.h:284</a></div></div>
 <div class="ttc" id="abt_8h_html_a80bdf9da42da2ec917df5bdb66e0981c"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981c">ABT_unit_type</a></div><div class="ttdeci">ABT_unit_type</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00169">abt.h:169</a></div></div>
-<div class="ttc" id="group__SELF_html_ga1ea426efb033abeea6876ee0609079d4"><div class="ttname"><a href="../../d9/d23/group__SELF.html#ga1ea426efb033abeea6876ee0609079d4">ABT_self_suspend</a></div><div class="ttdeci">int ABT_self_suspend(void) ABT_API_PUBLIC</div><div class="ttdoc">Suspend the current ULT. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2c/self_8c_source.html#l00189">self.c:189</a></div></div>
-<div class="ttc" id="group__SELF_html_ga1bbf95aa981d3a6789293aee60b7e39b"><div class="ttname"><a href="../../d9/d23/group__SELF.html#ga1bbf95aa981d3a6789293aee60b7e39b">ABT_self_get_arg</a></div><div class="ttdeci">int ABT_self_get_arg(void **arg) ABT_API_PUBLIC</div><div class="ttdoc">Retrieve the argument for the work unit function. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2c/self_8c_source.html#l00257">self.c:257</a></div></div>
-<div class="ttc" id="abti__thread_8h_html_a71892a3839eeaa52a81286a4a0eed1f0"><div class="ttname"><a href="../../de/d90/abti__thread_8h.html#a71892a3839eeaa52a81286a4a0eed1f0">ABTI_thread_type_get_type</a></div><div class="ttdeci">static ABT_unit_type ABTI_thread_type_get_type(ABTI_thread_type type)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d90/abti__thread_8h_source.html#l00059">abti_thread.h:59</a></div></div>
+<div class="ttc" id="group__SELF_html_ga1ea426efb033abeea6876ee0609079d4"><div class="ttname"><a href="../../d9/d23/group__SELF.html#ga1ea426efb033abeea6876ee0609079d4">ABT_self_suspend</a></div><div class="ttdeci">int ABT_self_suspend(void) ABT_API_PUBLIC</div><div class="ttdoc">Suspend the current ULT. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2c/self_8c_source.html#l00183">self.c:183</a></div></div>
+<div class="ttc" id="group__SELF_html_ga1bbf95aa981d3a6789293aee60b7e39b"><div class="ttname"><a href="../../d9/d23/group__SELF.html#ga1bbf95aa981d3a6789293aee60b7e39b">ABT_self_get_arg</a></div><div class="ttdeci">int ABT_self_get_arg(void **arg) ABT_API_PUBLIC</div><div class="ttdoc">Retrieve the argument for the work unit function. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2c/self_8c_source.html#l00251">self.c:251</a></div></div>
+<div class="ttc" id="abti__thread_8h_html_a71892a3839eeaa52a81286a4a0eed1f0"><div class="ttname"><a href="../../de/d90/abti__thread_8h.html#a71892a3839eeaa52a81286a4a0eed1f0">ABTI_thread_type_get_type</a></div><div class="ttdeci">static ABT_unit_type ABTI_thread_type_get_type(ABTI_thread_type type)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d90/abti__thread_8h_source.html#l00041">abti_thread.h:41</a></div></div>
 <div class="ttc" id="abti_8h_html_a583a96f9cd8cdb2c6622af38bf563fb7"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a583a96f9cd8cdb2c6622af38bf563fb7">ABTI_ythread_set_blocked</a></div><div class="ttdeci">int ABTI_ythread_set_blocked(ABTI_ythread *p_ythread)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d0d/ythread_8c_source.html#l00008">ythread.c:8</a></div></div>
-<div class="ttc" id="group__SELF_html_gaf99a6589b3c98658fca85bffe29acbb3"><div class="ttname"><a href="../../d9/d23/group__SELF.html#gaf99a6589b3c98658fca85bffe29acbb3">ABT_self_is_unnamed</a></div><div class="ttdeci">int ABT_self_is_unnamed(ABT_bool *flag) ABT_API_PUBLIC</div><div class="ttdoc">Check if the running work unit is unnamed. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2c/self_8c_source.html#l00291">self.c:291</a></div></div>
+<div class="ttc" id="group__SELF_html_gaf99a6589b3c98658fca85bffe29acbb3"><div class="ttname"><a href="../../d9/d23/group__SELF.html#gaf99a6589b3c98658fca85bffe29acbb3">ABT_self_is_unnamed</a></div><div class="ttdeci">int ABT_self_is_unnamed(ABT_bool *flag) ABT_API_PUBLIC</div><div class="ttdoc">Check if the running work unit is unnamed. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2c/self_8c_source.html#l00285">self.c:285</a></div></div>
 <div class="ttc" id="abt_8h_html_ac601a9db309d1a30954d43fc82d9602fa9c413af0c199abb4a3d2a8bf4b672fa4"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fa9c413af0c199abb4a3d2a8bf4b672fa4">ABT_SYNC_EVENT_TYPE_USER</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00246">abt.h:246</a></div></div>
-<div class="ttc" id="group__SELF_html_ga5a15e98a191591dd09f1aaee6e1e0d42"><div class="ttname"><a href="../../d9/d23/group__SELF.html#ga5a15e98a191591dd09f1aaee6e1e0d42">ABT_self_get_last_pool_id</a></div><div class="ttdeci">int ABT_self_get_last_pool_id(int *pool_id) ABT_API_PUBLIC</div><div class="ttdoc">Get the last pool&amp;#39;s ID of calling work unit. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2c/self_8c_source.html#l00150">self.c:150</a></div></div>
+<div class="ttc" id="group__SELF_html_ga5a15e98a191591dd09f1aaee6e1e0d42"><div class="ttname"><a href="../../d9/d23/group__SELF.html#ga5a15e98a191591dd09f1aaee6e1e0d42">ABT_self_get_last_pool_id</a></div><div class="ttdeci">int ABT_self_get_last_pool_id(int *pool_id) ABT_API_PUBLIC</div><div class="ttdoc">Get the last pool&amp;#39;s ID of calling work unit. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2c/self_8c_source.html#l00144">self.c:144</a></div></div>
 <div class="ttc" id="abti__error_8h_html_a81b70b0c4ee2d2993fbc05c32447695a"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#a81b70b0c4ee2d2993fbc05c32447695a">ABTI_ASSERT</a></div><div class="ttdeci">#define ABTI_ASSERT(cond)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00018">abti_error.h:18</a></div></div>
-<div class="ttc" id="group__SELF_html_ga0dc0be7defa700db75bf733c3e30c363"><div class="ttname"><a href="../../d9/d23/group__SELF.html#ga0dc0be7defa700db75bf733c3e30c363">ABT_self_is_primary</a></div><div class="ttdeci">int ABT_self_is_primary(ABT_bool *flag) ABT_API_PUBLIC</div><div class="ttdoc">Check if the caller is the primary ULT. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2c/self_8c_source.html#l00076">self.c:76</a></div></div>
-<div class="ttc" id="abti__error_8h_html_a8bcf885e66c769e235f313e4ab615b0a"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#a8bcf885e66c769e235f313e4ab615b0a">ABTI_CHECK_ERROR</a></div><div class="ttdeci">#define ABTI_CHECK_ERROR(abt_errno)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00089">abti_error.h:89</a></div></div>
-<div class="ttc" id="structABTI__pool_html_ab02afb33045bef9118e5077114a6c597"><div class="ttname"><a href="../../df/d65/structABTI__pool.html#ab02afb33045bef9118e5077114a6c597">ABTI_pool::id</a></div><div class="ttdeci">uint64_t id</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00296">abti.h:296</a></div></div>
+<div class="ttc" id="group__SELF_html_ga0dc0be7defa700db75bf733c3e30c363"><div class="ttname"><a href="../../d9/d23/group__SELF.html#ga0dc0be7defa700db75bf733c3e30c363">ABT_self_is_primary</a></div><div class="ttdeci">int ABT_self_is_primary(ABT_bool *flag) ABT_API_PUBLIC</div><div class="ttdoc">Check if the caller is the primary ULT. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2c/self_8c_source.html#l00070">self.c:70</a></div></div>
+<div class="ttc" id="abti__error_8h_html_a8bcf885e66c769e235f313e4ab615b0a"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#a8bcf885e66c769e235f313e4ab615b0a">ABTI_CHECK_ERROR</a></div><div class="ttdeci">#define ABTI_CHECK_ERROR(abt_errno)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00092">abti_error.h:92</a></div></div>
+<div class="ttc" id="structABTI__pool_html_ab02afb33045bef9118e5077114a6c597"><div class="ttname"><a href="../../df/d65/structABTI__pool.html#ab02afb33045bef9118e5077114a6c597">ABTI_pool::id</a></div><div class="ttdeci">uint64_t id</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00291">abti.h:291</a></div></div>
 <div class="ttc" id="abti_8h_html"><div class="ttname"><a href="../../d5/d03/abti_8h.html">abti.h</a></div></div>
-<div class="ttc" id="structABTI__ythread_html"><div class="ttname"><a href="../../d5/d5f/structABTI__ythread.html">ABTI_ythread</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00354">abti.h:354</a></div></div>
-<div class="ttc" id="abti__error_8h_html_a072a9aa79d219ee1021ff5d6023a9462"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#a072a9aa79d219ee1021ff5d6023a9462">ABTI_SETUP_LOCAL_XSTREAM_WITH_INIT_CHECK</a></div><div class="ttdeci">#define ABTI_SETUP_LOCAL_XSTREAM_WITH_INIT_CHECK(pp_local_xstream)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00077">abti_error.h:77</a></div></div>
-<div class="ttc" id="abt_8h_html_a8fc7b93960578efca32539002caec236"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a8fc7b93960578efca32539002caec236">ABT_ERR_INV_XSTREAM</a></div><div class="ttdeci">#define ABT_ERR_INV_XSTREAM</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00068">abt.h:68</a></div></div>
-<div class="ttc" id="abti__local_8h_html_a8d6596f5c2420139a99ad7b2ed732c2d"><div class="ttname"><a href="../../df/d6a/abti__local_8h.html#a8d6596f5c2420139a99ad7b2ed732c2d">ABTI_local_get_local</a></div><div class="ttdeci">static ABTI_local * ABTI_local_get_local(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6a/abti__local_8h_source.html#l00041">abti_local.h:41</a></div></div>
-<div class="ttc" id="abti__self_8h_html_a7d24cfd1a2d30ac68b5c1049557d5d1a"><div class="ttname"><a href="../../d0/dfe/abti__self_8h.html#a7d24cfd1a2d30ac68b5c1049557d5d1a">ABTI_self_get_type</a></div><div class="ttdeci">static ABTI_thread_type ABTI_self_get_type(ABTI_local *p_local)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dfe/abti__self_8h_source.html#l00034">abti_self.h:34</a></div></div>
-<div class="ttc" id="abti_8h_html_a88dbb3440b80e39a730f1410b754b5b8"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a88dbb3440b80e39a730f1410b754b5b8">ABTI_ythread_suspend</a></div><div class="ttdeci">void ABTI_ythread_suspend(ABTI_xstream **pp_local_xstream, ABTI_ythread *p_ythread, ABT_sync_event_type sync_event_type, void *p_sync)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d0d/ythread_8c_source.html#l00040">ythread.c:40</a></div></div>
-<div class="ttc" id="group__SELF_html_ga0d536d0018788de70947254955f3f3ca"><div class="ttname"><a href="../../d9/d23/group__SELF.html#ga0d536d0018788de70947254955f3f3ca">ABT_self_on_primary_xstream</a></div><div class="ttdeci">int ABT_self_on_primary_xstream(ABT_bool *flag) ABT_API_PUBLIC</div><div class="ttdoc">Check if the caller&amp;#39;s ES is the primary ES. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2c/self_8c_source.html#l00112">self.c:112</a></div></div>
+<div class="ttc" id="structABTI__ythread_html"><div class="ttname"><a href="../../d5/d5f/structABTI__ythread.html">ABTI_ythread</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00349">abti.h:349</a></div></div>
+<div class="ttc" id="abti__error_8h_html_a072a9aa79d219ee1021ff5d6023a9462"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#a072a9aa79d219ee1021ff5d6023a9462">ABTI_SETUP_LOCAL_XSTREAM_WITH_INIT_CHECK</a></div><div class="ttdeci">#define ABTI_SETUP_LOCAL_XSTREAM_WITH_INIT_CHECK(pp_local_xstream)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00080">abti_error.h:80</a></div></div>
+<div class="ttc" id="abti_8h_html_a88dbb3440b80e39a730f1410b754b5b8"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a88dbb3440b80e39a730f1410b754b5b8">ABTI_ythread_suspend</a></div><div class="ttdeci">void ABTI_ythread_suspend(ABTI_xstream **pp_local_xstream, ABTI_ythread *p_ythread, ABT_sync_event_type sync_event_type, void *p_sync)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d0d/ythread_8c_source.html#l00032">ythread.c:32</a></div></div>
+<div class="ttc" id="group__SELF_html_ga0d536d0018788de70947254955f3f3ca"><div class="ttname"><a href="../../d9/d23/group__SELF.html#ga0d536d0018788de70947254955f3f3ca">ABT_self_on_primary_xstream</a></div><div class="ttdeci">int ABT_self_on_primary_xstream(ABT_bool *flag) ABT_API_PUBLIC</div><div class="ttdoc">Check if the caller&amp;#39;s ES is the primary ES. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2c/self_8c_source.html#l00106">self.c:106</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 26 2020 03:09:53 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 27 2020 03:09:50 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

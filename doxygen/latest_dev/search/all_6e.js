@@ -3,7 +3,7 @@ var searchData=
   ['native_5fthread',['native_thread',['../df/dec/structABTD__xstream__context.html#a231609e0f1759e168fd028beff577842',1,'ABTD_xstream_context']]],
   ['nbytes',['nbytes',['../de/db1/structABTI__eventual.html#a429f50d6e3304fb439b9ddf9fd69e86e',1,'ABTI_eventual']]],
   ['nesting_5fcnt',['nesting_cnt',['../df/de7/structABTI__mutex__attr.html#a576e00bb9e0d76f8df7a5b6b6466edf0',1,'ABTI_mutex_attr']]],
-  ['num',['num',['../dd/d5a/structABTD__affinity__id__list.html#a70d4a92daba13b83df5181151098ab82',1,'ABTD_affinity_id_list::num()'],['../df/dd1/structABTD__affinity__parser__list.html#ab999013bae6e3325ea2ed682cba96bee',1,'ABTD_affinity_parser_list::num()'],['../d9/d78/structABTI__info__pool__set__t.html#ad08c8c94022f952c80a4410e21def8f9',1,'ABTI_info_pool_set_t::num()']]],
+  ['num',['num',['../dd/d5a/structABTD__affinity__id__list.html#a70d4a92daba13b83df5181151098ab82',1,'ABTD_affinity_id_list::num()'],['../df/dd1/structABTD__affinity__parser__list.html#ab999013bae6e3325ea2ed682cba96bee',1,'ABTD_affinity_parser_list::num()'],['../d2/d94/structinfo__pool__set__t.html#ac63466bb29f4470e4a73c4ed87a758c0',1,'info_pool_set_t::num()']]],
   ['num_5fblocked',['num_blocked',['../df/d65/structABTI__pool.html#a0fd1b0b5ef5c29d28fab24f86c97d839',1,'ABTI_pool']]],
   ['num_5fcores',['num_cores',['../da/de9/structABTI__global.html#a2fac521035c8d3fca9135cd7b3b0d961',1,'ABTI_global']]],
   ['num_5fcpuids',['num_cpuids',['../d6/d62/structABTD__affinity__cpuset.html#afcdcdd5dc2b9a2fc94f829068f094145',1,'ABTD_affinity_cpuset']]],

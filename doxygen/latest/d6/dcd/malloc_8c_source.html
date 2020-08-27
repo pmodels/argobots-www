@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">49e659a377bb5f19c60a64377ed410e7291037c6</span>
+   &#160;<span id="projectnumber">ac35a6f4577e5c489e8b4152eaab31c2b33ef22f</span>
    </div>
   </td>
  </tr>
@@ -154,12 +154,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                   num_requested_types,</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                   <a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;mem_page_size);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">/* The last four bytes will be used to store a mempool flag */</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    ABTI_STATIC_ASSERT(((ABTI_MEM_POOL_DESC_SIZE + 4) &amp;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    ABTI_STATIC_ASSERT((ABTI_MEM_POOL_DESC_ELEM_SIZE &amp;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        (<a class="code" href="../../dd/d6e/abt__config_8h.html#a9be181de89306780f2f3d7c575c52b8e">ABT_CONFIG_STATIC_CACHELINE_SIZE</a> - 1)) == 0);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    ABTI_mem_pool_init_global_pool(&amp;p_global-&gt;mem_pool_desc,</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                   p_global-&gt;mem_max_descs /</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                       <a class="code" href="../../d9/d33/abti__mem__pool_8h.html#ab387493406615143fece7be8fead42db">ABT_MEM_POOL_MAX_LOCAL_BUCKETS</a>,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                   ABTI_MEM_POOL_DESC_SIZE + 4, 0,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                   ABTI_MEM_POOL_DESC_ELEM_SIZE, 0,</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                   p_global-&gt;mem_page_size, requested_types,</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                   num_requested_types,</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                   <a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;mem_page_size);</div>
@@ -278,7 +278,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 26 2020 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 27 2020 03:09:52 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

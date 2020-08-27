@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">49e659a377bb5f19c60a64377ed410e7291037c6</span>
+   &#160;<span id="projectnumber">ac35a6f4577e5c489e8b4152eaab31c2b33ef22f</span>
    </div>
   </td>
  </tr>
@@ -162,14 +162,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(newfmt);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> ABTI_log_pool_push(ABTI_pool *p_pool, <a class="code" href="../../d5/d7d/abt_8h.html#a2766d98ace73a538d42ff64a8b999baf">ABT_unit</a> unit,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        ABTI_native_thread_id producer_id)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;use_logging == <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    ABTI_ythread *p_ythread = NULL;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    ABTI_thread *p_task = NULL;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> ABTI_log_pool_push(ABTI_local *p_local, ABTI_pool *p_pool, <a class="code" href="../../d5/d7d/abt_8h.html#a2766d98ace73a538d42ff64a8b999baf">ABT_unit</a> unit)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;use_logging == <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    ABTI_ythread *p_ythread = NULL;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    ABTI_thread *p_task = NULL;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    ABTI_native_thread_id producer_id = ABTI_self_get_native_thread_id(p_local);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">switch</span> (p_pool-&gt;u_get_type(unit)) {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981ca4a88df161804496652e74229ee601433">ABT_UNIT_TYPE_THREAD</a>:</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            p_ythread = ABTI_ythread_get_ptr(p_pool-&gt;u_get_thread(unit));</div>
@@ -209,14 +209,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keywordtype">void</span> ABTI_log_pool_remove(ABTI_pool *p_pool, <a class="code" href="../../d5/d7d/abt_8h.html#a2766d98ace73a538d42ff64a8b999baf">ABT_unit</a> unit,</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                          ABTI_native_thread_id consumer_id)</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;use_logging == <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>)</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    ABTI_ythread *p_ythread = NULL;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    ABTI_thread *p_task = NULL;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keywordtype">void</span> ABTI_log_pool_remove(ABTI_local *p_local, ABTI_pool *p_pool, <a class="code" href="../../d5/d7d/abt_8h.html#a2766d98ace73a538d42ff64a8b999baf">ABT_unit</a> unit)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;use_logging == <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>)</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    ABTI_ythread *p_ythread = NULL;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    ABTI_thread *p_task = NULL;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    ABTI_native_thread_id consumer_id = ABTI_self_get_native_thread_id(p_local);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">switch</span> (p_pool-&gt;u_get_type(unit)) {</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981ca4a88df161804496652e74229ee601433">ABT_UNIT_TYPE_THREAD</a>:</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            p_ythread = ABTI_ythread_get_ptr(p_pool-&gt;u_get_thread(unit));</div>
@@ -307,13 +307,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="abt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00285">abt.h:285</a></div></div>
 <div class="ttc" id="abti_8h_html_a5e2e52e4bfa1e19e121d939135e4300c"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a></div><div class="ttdeci">ABTI_global * gp_ABTI_global</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d57/global_8c_source.html#l00014">global.c:14</a></div></div>
 <div class="ttc" id="abt_8h_html_a80bdf9da42da2ec917df5bdb66e0981ca9dbf5adc43ca319df065f36fedcd9af3"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981ca9dbf5adc43ca319df065f36fedcd9af3">ABT_UNIT_TYPE_TASK</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00171">abt.h:171</a></div></div>
-<div class="ttc" id="abti__log_8h_html_ac06cfc686322558f590c50eab8622ebd"><div class="ttname"><a href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></div><div class="ttdeci">#define LOG_DEBUG(fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5e/abti__log_8h_source.html#l00030">abti_log.h:30</a></div></div>
+<div class="ttc" id="abti__log_8h_html_ac06cfc686322558f590c50eab8622ebd"><div class="ttname"><a href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></div><div class="ttdeci">#define LOG_DEBUG(fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5e/abti__log_8h_source.html#l00029">abti_log.h:29</a></div></div>
 <div class="ttc" id="abti_8h_html"><div class="ttname"><a href="../../d5/d03/abti_8h.html">abti.h</a></div></div>
 <div class="ttc" id="abtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00111">abtu.h:111</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 26 2020 03:09:55 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 27 2020 03:09:52 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

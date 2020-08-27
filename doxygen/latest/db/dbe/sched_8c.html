@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">49e659a377bb5f19c60a64377ed410e7291037c6</span>
+   &#160;<span id="projectnumber">ac35a6f4577e5c489e8b4152eaab31c2b33ef22f</span>
    </div>
   </td>
  </tr>
@@ -105,6 +105,10 @@ Include dependency graph for sched.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a5a0fd181b98685a8c9c240b7325f9c8e"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/sched_8c.html#a5a0fd181b98685a8c9c240b7325f9c8e">sched_create</a> (<a class="el" href="../../de/d65/structABT__sched__def.html">ABT_sched_def</a> *def, int num_pools, <a class="el" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> *pools, <a class="el" href="../../d5/d7d/abt_8h.html#a9be459e63da2c9e318b6b9d446aa4c4b">ABT_sched_config</a> config, <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> automatic, ABTI_sched **pp_newsched)</td></tr>
+<tr class="separator:a5a0fd181b98685a8c9c240b7325f9c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa664f1c92fc5bf24fb51ab6f444b113c"><td class="memItemLeft" align="right" valign="top">static ABTI_sched_kind&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/sched_8c.html#aa664f1c92fc5bf24fb51ab6f444b113c">sched_get_kind</a> (<a class="el" href="../../de/d65/structABT__sched__def.html">ABT_sched_def</a> *def)</td></tr>
+<tr class="separator:aa664f1c92fc5bf24fb51ab6f444b113c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf6e505eaab2fe977bbaddb5b19c6b413"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d83/group__SCHED.html#gaf6e505eaab2fe977bbaddb5b19c6b413">ABT_sched_create</a> (<a class="el" href="../../de/d65/structABT__sched__def.html">ABT_sched_def</a> *def, int num_pools, <a class="el" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> *pools, <a class="el" href="../../d5/d7d/abt_8h.html#a9be459e63da2c9e318b6b9d446aa4c4b">ABT_sched_config</a> config, <a class="el" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> *newsched)</td></tr>
 <tr class="memdesc:gaf6e505eaab2fe977bbaddb5b19c6b413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new user-defined scheduler and return its handle through newsched.  <a href="../../d0/d83/group__SCHED.html#gaf6e505eaab2fe977bbaddb5b19c6b413">More...</a><br/></td></tr>
 <tr class="separator:gaf6e505eaab2fe977bbaddb5b19c6b413"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,6 +151,97 @@ Variables</h2></td></tr>
 <tr class="memitem:a00a319caec88baaca37e2fcdfc4ce518"><td class="memItemLeft" align="right" valign="top">static ABTD_atomic_uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/sched_8c.html#a00a319caec88baaca37e2fcdfc4ce518">g_sched_id</a> = ABTD_ATOMIC_UINT64_STATIC_INITIALIZER(0)</td></tr>
 <tr class="separator:a00a319caec88baaca37e2fcdfc4ce518"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a5a0fd181b98685a8c9c240b7325f9c8e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int sched_create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d65/structABT__sched__def.html">ABT_sched_def</a> *&#160;</td>
+          <td class="paramname"><em>def</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_pools</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> *&#160;</td>
+          <td class="paramname"><em>pools</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d7d/abt_8h.html#a9be459e63da2c9e318b6b9d446aa4c4b">ABT_sched_config</a>&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a>&#160;</td>
+          <td class="paramname"><em>automatic</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_sched **&#160;</td>
+          <td class="paramname"><em>pp_newsched</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dbe/sched_8c_source.html#l00879">879</a> of file <a class="el" href="../../db/dbe/sched_8c_source.html">sched.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../db/dbe/sched_8c_source.html#l00040">ABT_sched_create()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa664f1c92fc5bf24fb51ab6f444b113c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static ABTI_sched_kind sched_get_kind </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d65/structABT__sched__def.html">ABT_sched_def</a> *&#160;</td>
+          <td class="paramname"><em>def</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dbe/sched_8c_source.html#l00874">874</a> of file <a class="el" href="../../db/dbe/sched_8c_source.html">sched.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../db/dbe/sched_8c_source.html#l00879">sched_create()</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a class="anchor" id="a00a319caec88baaca37e2fcdfc4ce518"></a>
 <div class="memitem">
@@ -166,14 +261,14 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../db/dbe/sched_8c_source.html#l00959">959</a> of file <a class="el" href="../../db/dbe/sched_8c_source.html">sched.c</a>.</p>
+<p>Definition at line <a class="el" href="../../db/dbe/sched_8c_source.html#l00864">864</a> of file <a class="el" href="../../db/dbe/sched_8c_source.html">sched.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 26 2020 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 27 2020 03:09:52 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

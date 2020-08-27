@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">49e659a377bb5f19c60a64377ed410e7291037c6</span>
+   &#160;<span id="projectnumber">ac35a6f4577e5c489e8b4152eaab31c2b33ef22f</span>
    </div>
   </td>
  </tr>
@@ -105,6 +105,10 @@ Include dependency graph for mutex.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ae26194a7ca93c7c674b38026632b170e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d62/mutex_8c.html#ae26194a7ca93c7c674b38026632b170e">mutex_lock_low</a> (ABTI_local **pp_local, ABTI_mutex *p_mutex)</td></tr>
+<tr class="separator:ae26194a7ca93c7c674b38026632b170e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb1dfeb71a44592d8dd2d1990765a12"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d62/mutex_8c.html#a2eb1dfeb71a44592d8dd2d1990765a12">mutex_unlock_se</a> (ABTI_local **pp_local, ABTI_mutex *p_mutex)</td></tr>
+<tr class="separator:a2eb1dfeb71a44592d8dd2d1990765a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0c314d8b29a890ad4774ba13c0377d3d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d09/group__MUTEX.html#ga0c314d8b29a890ad4774ba13c0377d3d">ABT_mutex_create</a> (<a class="el" href="../../d5/d7d/abt_8h.html#a47f82eaefe654cad03090b6e9c818533">ABT_mutex</a> *newmutex)</td></tr>
 <tr class="memdesc:ga0c314d8b29a890ad4774ba13c0377d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new mutex.  <a href="../../d2/d09/group__MUTEX.html#ga0c314d8b29a890ad4774ba13c0377d3d">More...</a><br/></td></tr>
 <tr class="separator:ga0c314d8b29a890ad4774ba13c0377d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,7 +159,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00315">315</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00233">233</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
 
 </div>
 </div>
@@ -173,14 +177,90 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00656">656</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00443">443</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae26194a7ca93c7c674b38026632b170e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void mutex_lock_low </td>
+          <td>(</td>
+          <td class="paramtype">ABTI_local **&#160;</td>
+          <td class="paramname"><em>pp_local</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_mutex *&#160;</td>
+          <td class="paramname"><em>p_mutex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00632">632</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d8/d62/mutex_8c_source.html#l00198">ABT_mutex_lock_low()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2eb1dfeb71a44592d8dd2d1990765a12"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int mutex_unlock_se </td>
+          <td>(</td>
+          <td class="paramtype">ABTI_local **&#160;</td>
+          <td class="paramname"><em>pp_local</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTI_mutex *&#160;</td>
+          <td class="paramname"><em>p_mutex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00715">715</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d8/d62/mutex_8c_source.html#l00407">ABT_mutex_unlock_se()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 26 2020 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 27 2020 03:09:52 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

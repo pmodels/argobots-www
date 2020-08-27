@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">49e659a377bb5f19c60a64377ed410e7291037c6</span>
+   &#160;<span id="projectnumber">ac35a6f4577e5c489e8b4152eaab31c2b33ef22f</span>
    </div>
   </td>
  </tr>
@@ -116,12 +116,12 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6a438cc8e354dd70268fe188c019a9bd"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/de7/largepage_8c.html#a6a438cc8e354dd70268fe188c019a9bd">ABTU_mmap_regular</a> (size_t size)</td></tr>
-<tr class="separator:a6a438cc8e354dd70268fe188c019a9bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90d2f778b4564b4384ed2b9934742481"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/de7/largepage_8c.html#a90d2f778b4564b4384ed2b9934742481">ABTU_mmap_hugepage</a> (size_t size)</td></tr>
-<tr class="separator:a90d2f778b4564b4384ed2b9934742481"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a872358ff8d11ea0ed62a08a1cd3195c2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/de7/largepage_8c.html#a872358ff8d11ea0ed62a08a1cd3195c2">ABTU_munmap</a> (void *p_page, size_t size)</td></tr>
-<tr class="separator:a872358ff8d11ea0ed62a08a1cd3195c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53e7b53359a7e46461ae6a1a8ac6ca31"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/de7/largepage_8c.html#a53e7b53359a7e46461ae6a1a8ac6ca31">mmap_regular</a> (size_t size)</td></tr>
+<tr class="separator:a53e7b53359a7e46461ae6a1a8ac6ca31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace1928ae1590396d1d34dda07e99b6a5"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/de7/largepage_8c.html#ace1928ae1590396d1d34dda07e99b6a5">mmap_hugepage</a> (size_t size)</td></tr>
+<tr class="separator:ace1928ae1590396d1d34dda07e99b6a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a981e0d8d2e36cf9dc688099d0ce0e097"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/de7/largepage_8c.html#a981e0d8d2e36cf9dc688099d0ce0e097">mmap_free</a> (void *p_page, size_t size)</td></tr>
+<tr class="separator:a981e0d8d2e36cf9dc688099d0ce0e097"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab42d9968c80e245045f3f4d1c2c24039"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/de7/largepage_8c.html#ab42d9968c80e245045f3f4d1c2c24039">ABTU_is_supported_largepage_type</a> (size_t size, size_t alignment_hint, <a class="el" href="../../d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082ac">ABTU_MEM_LARGEPAGE_TYPE</a> requested)</td></tr>
 <tr class="separator:ab42d9968c80e245045f3f4d1c2c24039"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5a3c3c202ec0abd799f3dd80339fcdf"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/de7/largepage_8c.html#aa5a3c3c202ec0abd799f3dd80339fcdf">ABTU_alloc_largepage</a> (size_t size, size_t alignment_hint, const <a class="el" href="../../d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082ac">ABTU_MEM_LARGEPAGE_TYPE</a> *requested_types, int num_requested_types, <a class="el" href="../../d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082ac">ABTU_MEM_LARGEPAGE_TYPE</a> *p_actual)</td></tr>
@@ -142,7 +142,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../da/de7/largepage_8c_source.html#l00010">10</a> of file <a class="el" href="../../da/de7/largepage_8c_source.html">largepage.c</a>.</p>
 
-<p>Referenced by <a class="el" href="../../da/de7/largepage_8c_source.html#l00042">ABTU_mmap_hugepage()</a>, and <a class="el" href="../../da/de7/largepage_8c_source.html#l00032">ABTU_mmap_regular()</a>.</p>
+<p>Referenced by <a class="el" href="../../da/de7/largepage_8c_source.html#l00042">mmap_hugepage()</a>, and <a class="el" href="../../da/de7/largepage_8c_source.html#l00032">mmap_regular()</a>.</p>
 
 </div>
 </div>
@@ -289,7 +289,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a90d2f778b4564b4384ed2b9934742481"></a>
+<a class="anchor" id="a981e0d8d2e36cf9dc688099d0ce0e097"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -297,63 +297,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void* ABTU_mmap_hugepage </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>size</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../da/de7/largepage_8c_source.html#l00042">42</a> of file <a class="el" href="../../da/de7/largepage_8c_source.html">largepage.c</a>.</p>
-
-<p>Referenced by <a class="el" href="../../da/de7/largepage_8c_source.html#l00087">ABTU_alloc_largepage()</a>, and <a class="el" href="../../da/de7/largepage_8c_source.html#l00058">ABTU_is_supported_largepage_type()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6a438cc8e354dd70268fe188c019a9bd"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void* ABTU_mmap_regular </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>size</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../da/de7/largepage_8c_source.html#l00032">32</a> of file <a class="el" href="../../da/de7/largepage_8c_source.html">largepage.c</a>.</p>
-
-<p>Referenced by <a class="el" href="../../da/de7/largepage_8c_source.html#l00087">ABTU_alloc_largepage()</a>, and <a class="el" href="../../da/de7/largepage_8c_source.html#l00058">ABTU_is_supported_largepage_type()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a872358ff8d11ea0ed62a08a1cd3195c2"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void ABTU_munmap </td>
+          <td class="memname">static void mmap_free </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>p_page</em>, </td>
@@ -383,10 +327,66 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ace1928ae1590396d1d34dda07e99b6a5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void* mmap_hugepage </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/de7/largepage_8c_source.html#l00042">42</a> of file <a class="el" href="../../da/de7/largepage_8c_source.html">largepage.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../da/de7/largepage_8c_source.html#l00087">ABTU_alloc_largepage()</a>, and <a class="el" href="../../da/de7/largepage_8c_source.html#l00058">ABTU_is_supported_largepage_type()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a53e7b53359a7e46461ae6a1a8ac6ca31"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void* mmap_regular </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/de7/largepage_8c_source.html#l00032">32</a> of file <a class="el" href="../../da/de7/largepage_8c_source.html">largepage.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../da/de7/largepage_8c_source.html#l00087">ABTU_alloc_largepage()</a>, and <a class="el" href="../../da/de7/largepage_8c_source.html#l00058">ABTU_is_supported_largepage_type()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 26 2020 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 27 2020 03:09:53 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

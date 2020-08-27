@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">49e659a377bb5f19c60a64377ed410e7291037c6</span>
+   &#160;<span id="projectnumber">ac35a6f4577e5c489e8b4152eaab31c2b33ef22f</span>
    </div>
   </td>
  </tr>
@@ -96,8 +96,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/d03/abti_8h.html">abti.h</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTD_ythread_terminate(ABTI_xstream *p_local_xstream,</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                                          ABTI_ythread *p_ythread);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../de/d1a/abtd__ythread_8c.html#a0a9dd7eedbdfd617c3400aeb44ac369e">ythread_terminate</a>(ABTI_xstream *p_local_xstream,</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                                     ABTI_ythread *p_ythread);</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">void</span> ABTD_ythread_func_wrapper(<span class="keywordtype">void</span> *p_arg)</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
@@ -115,16 +115,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">     * the context-switchable function (i.e., thread_func()).  We assume that</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">     * the compiler does not load TLS offset etc before thread_func(). */</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    p_local_xstream = ABTI_local_get_xstream(ABTI_local_get_local());</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    ABTD_ythread_terminate(p_local_xstream, p_ythread);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="../../de/d1a/abtd__ythread_8c.html#a0a9dd7eedbdfd617c3400aeb44ac369e">ythread_terminate</a>(p_local_xstream, p_ythread);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> ABTD_ythread_exit(ABTI_xstream *p_local_xstream, ABTI_ythread *p_ythread)</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    ABTD_ythread_terminate(p_local_xstream, p_ythread);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="../../de/d1a/abtd__ythread_8c.html#a0a9dd7eedbdfd617c3400aeb44ac369e">ythread_terminate</a>(p_local_xstream, p_ythread);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTD_ythread_terminate(ABTI_xstream *p_local_xstream,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                          ABTI_ythread *p_ythread)</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../de/d1a/abtd__ythread_8c.html#a0a9dd7eedbdfd617c3400aeb44ac369e">   35</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../de/d1a/abtd__ythread_8c.html#a0a9dd7eedbdfd617c3400aeb44ac369e">ythread_terminate</a>(ABTI_xstream *p_local_xstream,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                     ABTI_ythread *p_ythread)</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    ABTD_ythread_context *p_ctx = &amp;p_ythread-&gt;ctx;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    ABTD_ythread_context *p_link =</div>
@@ -137,7 +137,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="comment">/* Only when the current ULT is on the same ES as p_joiner&#39;s,</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">             * we can jump to the joiner ULT. */</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            ABTD_atomic_release_store_int(&amp;p_ythread-&gt;thread.state,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                          ABTI_THREAD_STATE_TERMINATED);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                          <a class="code" href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089ade61dddc74434ee2705c536698d07149">ABT_THREAD_STATE_TERMINATED</a>);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[U%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] terminated\n&quot;</span>,</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                      ABTI_thread_get_id(&amp;p_ythread-&gt;thread),</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                      p_ythread-&gt;thread.p_last_xstream-&gt;rank);</div>
@@ -194,7 +194,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">     * get the thread descriptor from TLS. */</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    ABTI_thread *p_thread = p_local_xstream-&gt;p_thread;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    ABTI_ASSERT(p_thread-&gt;type &amp; ABTI_THREAD_TYPE_YIELDABLE);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    ABTD_ythread_terminate(p_local_xstream, ABTI_thread_get_ythread(p_thread));</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="../../de/d1a/abtd__ythread_8c.html#a0a9dd7eedbdfd617c3400aeb44ac369e">ythread_terminate</a>(p_local_xstream, ABTI_thread_get_ythread(p_thread));</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor"></span></div>
@@ -202,7 +202,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">/* When we cancel a ULT, if other ULT is blocked to join the canceled ULT,</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">     * we have to wake up the joiner ULT.  However, unlike the case when the</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">     * ULT has finished its execution and calls ABTD_ythread_terminate/exit,</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">     * ULT has finished its execution and calls ythread_terminate/exit,</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">     * this function is called by the scheduler.  Therefore, we should not</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">     * context switch to the joiner ULT and need to always wake it up. */</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    ABTD_ythread_context *p_ctx = &amp;p_ythread-&gt;ctx;</div>
@@ -245,13 +245,15 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(prefix);</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
 <div class="ttc" id="abtu_8h_html_a0c0a37db0324fb30071454b9bf67b0bc"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a0c0a37db0324fb30071454b9bf67b0bc">ABTU_get_indent_str</a></div><div class="ttdeci">char * ABTU_get_indent_str(int indent)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/df1/util_8c_source.html#l00010">util.c:10</a></div></div>
-<div class="ttc" id="abti__log_8h_html_ac06cfc686322558f590c50eab8622ebd"><div class="ttname"><a href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></div><div class="ttdeci">#define LOG_DEBUG(fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5e/abti__log_8h_source.html#l00030">abti_log.h:30</a></div></div>
+<div class="ttc" id="abtd__ythread_8c_html_a0a9dd7eedbdfd617c3400aeb44ac369e"><div class="ttname"><a href="../../de/d1a/abtd__ythread_8c.html#a0a9dd7eedbdfd617c3400aeb44ac369e">ythread_terminate</a></div><div class="ttdeci">static void ythread_terminate(ABTI_xstream *p_local_xstream, ABTI_ythread *p_ythread)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d1a/abtd__ythread_8c_source.html#l00035">abtd_ythread.c:35</a></div></div>
+<div class="ttc" id="abt_8h_html_aa8e839d537fd79d677108d42d4176089ade61dddc74434ee2705c536698d07149"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089ade61dddc74434ee2705c536698d07149">ABT_THREAD_STATE_TERMINATED</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00129">abt.h:129</a></div></div>
+<div class="ttc" id="abti__log_8h_html_ac06cfc686322558f590c50eab8622ebd"><div class="ttname"><a href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></div><div class="ttdeci">#define LOG_DEBUG(fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5e/abti__log_8h_source.html#l00029">abti_log.h:29</a></div></div>
 <div class="ttc" id="abti_8h_html"><div class="ttname"><a href="../../d5/d03/abti_8h.html">abti.h</a></div></div>
 <div class="ttc" id="abtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00111">abtu.h:111</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 26 2020 03:09:55 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 27 2020 03:09:52 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

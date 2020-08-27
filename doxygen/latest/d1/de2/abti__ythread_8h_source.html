@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">49e659a377bb5f19c60a64377ed410e7291037c6</span>
+   &#160;<span id="projectnumber">ac35a6f4577e5c489e8b4152eaab31c2b33ef22f</span>
    </div>
   </td>
  </tr>
@@ -463,7 +463,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="comment">/* Change the state of current running thread */</span></div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    ABTD_atomic_release_store_int(&amp;p_ythread-&gt;thread.state,</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                                  ABTI_THREAD_STATE_READY);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                                  <a class="code" href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a>);</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="comment">/* Switch to the top scheduler */</span></div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    ABTI_ythread_context_switch_to_parent(pp_local_xstream, p_ythread,</div>
@@ -478,18 +478,19 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_YTHREAD_H_INCLUDED */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="abtu_8h_html_ae3782cfe8ab5b4b64d7da16a6fd6c84b"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">ABTU_unreachable</a></div><div class="ttdeci">#define ABTU_unreachable()</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00025">abtu.h:25</a></div></div>
 <div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00373">abt.h:373</a></div></div>
+<div class="ttc" id="abt_8h_html_aa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00126">abt.h:126</a></div></div>
 <div class="ttc" id="abt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00285">abt.h:285</a></div></div>
 <div class="ttc" id="abt_8h_html_a186008e05c04170eed9ac74808619717"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a></div><div class="ttdeci">struct ABT_thread_opaque * ABT_thread</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00343">abt.h:343</a></div></div>
 <div class="ttc" id="abt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00284">abt.h:284</a></div></div>
 <div class="ttc" id="abt_8h_html_aabf134f2165a5d15ea5bd063b982d8a6"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aabf134f2165a5d15ea5bd063b982d8a6">ABT_THREAD_NULL</a></div><div class="ttdeci">#define ABT_THREAD_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00416">abt.h:416</a></div></div>
 <div class="ttc" id="abtu_8h_html_a64c0a07a6bc37d45de89623a281c5b18"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a64c0a07a6bc37d45de89623a281c5b18">ABTU_noreturn</a></div><div class="ttdeci">#define ABTU_noreturn</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00031">abtu.h:31</a></div></div>
-<div class="ttc" id="abti__log_8h_html_ac06cfc686322558f590c50eab8622ebd"><div class="ttname"><a href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></div><div class="ttdeci">#define LOG_DEBUG(fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5e/abti__log_8h_source.html#l00030">abti_log.h:30</a></div></div>
+<div class="ttc" id="abti__log_8h_html_ac06cfc686322558f590c50eab8622ebd"><div class="ttname"><a href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></div><div class="ttdeci">#define LOG_DEBUG(fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5e/abti__log_8h_source.html#l00029">abti_log.h:29</a></div></div>
 <div class="ttc" id="abt_8h_html_ac601a9db309d1a30954d43fc82d9602f"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602f">ABT_sync_event_type</a></div><div class="ttdeci">ABT_sync_event_type</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00244">abt.h:244</a></div></div>
 <div class="ttc" id="abt_8h_html_ac601a9db309d1a30954d43fc82d9602fa2801f298fea113717986e18eae45b7ab"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fa2801f298fea113717986e18eae45b7ab">ABT_SYNC_EVENT_TYPE_UNKNOWN</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00245">abt.h:245</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 26 2020 03:09:55 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 27 2020 03:09:52 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

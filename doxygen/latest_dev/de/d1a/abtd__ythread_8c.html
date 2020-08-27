@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">49e659a377bb5f19c60a64377ed410e7291037c6</span>
+   &#160;<span id="projectnumber">ac35a6f4577e5c489e8b4152eaab31c2b33ef22f</span>
    </div>
   </td>
  </tr>
@@ -104,8 +104,8 @@ Include dependency graph for abtd_ythread.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abcaeff57065a18de209fc00e6241f34f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d1a/abtd__ythread_8c.html#abcaeff57065a18de209fc00e6241f34f">ABTD_ythread_terminate</a> (<a class="el" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream, <a class="el" href="../../d5/d5f/structABTI__ythread.html">ABTI_ythread</a> *p_ythread)</td></tr>
-<tr class="separator:abcaeff57065a18de209fc00e6241f34f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a9dd7eedbdfd617c3400aeb44ac369e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d1a/abtd__ythread_8c.html#a0a9dd7eedbdfd617c3400aeb44ac369e">ythread_terminate</a> (<a class="el" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream, <a class="el" href="../../d5/d5f/structABTI__ythread.html">ABTI_ythread</a> *p_ythread)</td></tr>
+<tr class="separator:a0a9dd7eedbdfd617c3400aeb44ac369e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5614ad2aa09e9e9028c14b9a66518c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d1a/abtd__ythread_8c.html#af5614ad2aa09e9e9028c14b9a66518c3">ABTD_ythread_func_wrapper</a> (void *p_arg)</td></tr>
 <tr class="separator:af5614ad2aa09e9e9028c14b9a66518c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a447f15c9156813d86497ffe03c9686e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d1a/abtd__ythread_8c.html#a447f15c9156813d86497ffe03c9686e0">ABTD_ythread_exit</a> (<a class="el" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *p_local_xstream, <a class="el" href="../../d5/d5f/structABTI__ythread.html">ABTI_ythread</a> *p_ythread)</td></tr>
@@ -144,7 +144,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html#l00110">110</a> of file <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html">abtd_ythread.c</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d8/d4d/stream_8c_source.html#l01422">ABTI_xstream_schedule_ythread()</a>.</p>
+<p>Referenced by <a class="el" href="../../d8/d4d/stream_8c_source.html#l01483">xstream_schedule_ythread()</a>.</p>
 
 </div>
 </div>
@@ -174,7 +174,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html#l00030">30</a> of file <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html">abtd_ythread.c</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d3/de7/thread_8c_source.html#l00444">ABT_thread_exit()</a>.</p>
+<p>Referenced by <a class="el" href="../../d3/de7/thread_8c_source.html#l00452">ABT_thread_exit()</a>.</p>
 
 </div>
 </div>
@@ -194,7 +194,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html#l00011">11</a> of file <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html">abtd_ythread.c</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d8/daf/abtd__ythread_8h_source.html#l00064">ABTD_ythread_context_arm_ythread()</a>, and <a class="el" href="../../d8/daf/abtd__ythread_8h_source.html#l00020">ABTD_ythread_context_create()</a>.</p>
+<p>Referenced by <a class="el" href="../../d8/daf/abtd__ythread_8h_source.html#l00055">ABTD_ythread_context_arm_ythread()</a>, and <a class="el" href="../../d8/daf/abtd__ythread_8h_source.html#l00020">ABTD_ythread_context_create()</a>.</p>
 
 </div>
 </div>
@@ -230,11 +230,30 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html#l00145">145</a> of file <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html">abtd_ythread.c</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d5/d35/info_8c_source.html#l00506">ABTI_info_print_unit()</a>.</p>
+<p>Referenced by <a class="el" href="../../d5/d35/info_8c_source.html#l00774">info_print_unit()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="abcaeff57065a18de209fc00e6241f34f"></a>
+<a class="anchor" id="a2bd451884303f81cc7c3e5aac0611344"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ABTD_ythread_terminate_no_arg </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html#l00097">97</a> of file <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html">abtd_ythread.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d8/daf/abtd__ythread_8h_source.html#l00114">ABTD_ythread_context_dynamic_promote_ythread()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0a9dd7eedbdfd617c3400aeb44ac369e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -242,7 +261,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void ABTD_ythread_terminate </td>
+          <td class="memname">static void ythread_terminate </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../dc/d3f/structABTI__xstream.html">ABTI_xstream</a> *&#160;</td>
           <td class="paramname"><em>p_local_xstream</em>, </td>
@@ -272,29 +291,10 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2bd451884303f81cc7c3e5aac0611344"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ABTD_ythread_terminate_no_arg </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html#l00097">97</a> of file <a class="el" href="../../de/d1a/abtd__ythread_8c_source.html">abtd_ythread.c</a>.</p>
-
-<p>Referenced by <a class="el" href="../../d8/daf/abtd__ythread_8h_source.html#l00122">ABTD_ythread_context_dynamic_promote_ythread()</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 26 2020 03:09:54 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 27 2020 03:09:50 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
