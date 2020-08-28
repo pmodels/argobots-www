@@ -18,6 +18,7 @@ var searchData=
   ['mem_5fpool_5fdesc_5flock',['mem_pool_desc_lock',['../da/de9/structABTI__global.html#a606e8e2ebf92a53f3ac7d4fc8a4d4200',1,'ABTI_global']]],
   ['mem_5fpool_5flifo_5felem_5fto_5fheader',['mem_pool_lifo_elem_to_header',['../d9/d73/mem__pool_8c.html#a5d8df49ef27482dd276d9b7a653e48d9',1,'mem_pool.c']]],
   ['mem_5fpool_5flifo_5felem_5fto_5fpage',['mem_pool_lifo_elem_to_page',['../d9/d73/mem__pool_8c.html#a5c67afbd642a7c1f9e9e41bb04b7b6fb',1,'mem_pool.c']]],
+  ['mem_5fpool_5freturn_5fpartial_5fbucket',['mem_pool_return_partial_bucket',['../d9/d73/mem__pool_8c.html#af836c6efedc1f2cd7e8bcc7769120f19',1,'mem_pool.c']]],
   ['mem_5fpool_5fstack',['mem_pool_stack',['../da/de9/structABTI__global.html#abb1d04bc59dd799f0e51ffbff2d739da',1,'ABTI_global::mem_pool_stack()'],['../dc/d3f/structABTI__xstream.html#ac73bcfea318923b72ff275257649ab4f',1,'ABTI_xstream::mem_pool_stack()']]],
   ['mem_5fpool_5fstack_5fext',['mem_pool_stack_ext',['../da/de9/structABTI__global.html#a53f095444e0e050e6a26e649813b3075',1,'ABTI_global']]],
   ['mem_5fpool_5fstack_5flock',['mem_pool_stack_lock',['../da/de9/structABTI__global.html#a0debd815abe13b083e1b40f97bbaf3a4',1,'ABTI_global']]],

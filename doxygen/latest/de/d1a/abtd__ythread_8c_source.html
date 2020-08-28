@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">ac35a6f4577e5c489e8b4152eaab31c2b33ef22f</span>
+   &#160;<span id="projectnumber">34277af0ee505f85019a7b7d09fbcc93eb2cab24</span>
    </div>
   </td>
  </tr>
@@ -235,25 +235,21 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="keywordtype">void</span> ABTD_ythread_print_context(ABTI_ythread *p_ythread, FILE *p_os, <span class="keywordtype">int</span> indent)</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">char</span> *prefix = <a class="code" href="../../d5/d09/abtu_8h.html#a0c0a37db0324fb30071454b9bf67b0bc">ABTU_get_indent_str</a>(indent);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    ABTD_ythread_context *p_ctx = &amp;p_ythread-&gt;ctx;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    fprintf(p_os, <span class="stringliteral">&quot;%sp_ctx    : %p\n&quot;</span>, prefix, p_ctx-&gt;p_ctx);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    fprintf(p_os, <span class="stringliteral">&quot;%sp_link   : %p\n&quot;</span>, prefix,</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            (<span class="keywordtype">void</span> *)ABTD_atomic_acquire_load_ythread_context_ptr(</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                &amp;p_ctx-&gt;p_link));</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    fflush(p_os);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(prefix);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
-<div class="ttc" id="abtu_8h_html_a0c0a37db0324fb30071454b9bf67b0bc"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a0c0a37db0324fb30071454b9bf67b0bc">ABTU_get_indent_str</a></div><div class="ttdeci">char * ABTU_get_indent_str(int indent)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/df1/util_8c_source.html#l00010">util.c:10</a></div></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    ABTD_ythread_context *p_ctx = &amp;p_ythread-&gt;ctx;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    fprintf(p_os, <span class="stringliteral">&quot;%*sp_ctx    : %p\n&quot;</span>, indent, <span class="stringliteral">&quot;&quot;</span>, p_ctx-&gt;p_ctx);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    fprintf(p_os, <span class="stringliteral">&quot;%*sp_link   : %p\n&quot;</span>, indent, <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            (<span class="keywordtype">void</span> *)ABTD_atomic_acquire_load_ythread_context_ptr(</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                &amp;p_ctx-&gt;p_link));</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    fflush(p_os);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
 <div class="ttc" id="abtd__ythread_8c_html_a0a9dd7eedbdfd617c3400aeb44ac369e"><div class="ttname"><a href="../../de/d1a/abtd__ythread_8c.html#a0a9dd7eedbdfd617c3400aeb44ac369e">ythread_terminate</a></div><div class="ttdeci">static void ythread_terminate(ABTI_xstream *p_local_xstream, ABTI_ythread *p_ythread)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d1a/abtd__ythread_8c_source.html#l00035">abtd_ythread.c:35</a></div></div>
 <div class="ttc" id="abt_8h_html_aa8e839d537fd79d677108d42d4176089ade61dddc74434ee2705c536698d07149"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089ade61dddc74434ee2705c536698d07149">ABT_THREAD_STATE_TERMINATED</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00129">abt.h:129</a></div></div>
 <div class="ttc" id="abti__log_8h_html_ac06cfc686322558f590c50eab8622ebd"><div class="ttname"><a href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></div><div class="ttdeci">#define LOG_DEBUG(fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5e/abti__log_8h_source.html#l00029">abti_log.h:29</a></div></div>
 <div class="ttc" id="abti_8h_html"><div class="ttname"><a href="../../d5/d03/abti_8h.html">abti.h</a></div></div>
-<div class="ttc" id="abtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00111">abtu.h:111</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 27 2020 03:09:52 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 28 2020 03:09:49 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
