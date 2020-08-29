@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">34277af0ee505f85019a7b7d09fbcc93eb2cab24</span>
+   &#160;<span id="projectnumber">91abbae050a01baf896038f6e26b0968b304d6d7</span>
    </div>
   </td>
  </tr>
@@ -630,7 +630,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                        ABTI_ythread *p_giver = p_mutex-&gt;p_giver;</div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;                        ABTD_atomic_release_store_int(&amp;p_giver-&gt;thread.state,</div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;                                                      <a class="code" href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a>);</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                        ABTI_pool_push(*pp_local, p_giver-&gt;thread.p_pool,</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                        ABTI_pool_push(p_giver-&gt;thread.p_pool,</div>
 <div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                                       p_giver-&gt;thread.unit);</div>
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;                        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                    }</div>
@@ -800,7 +800,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="group__MUTEX_html_gabc66c7eaf803a56536bb2ca301d8b95d"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#gabc66c7eaf803a56536bb2ca301d8b95d">ABT_mutex_equal</a></div><div class="ttdeci">int ABT_mutex_equal(ABT_mutex mutex1, ABT_mutex mutex2, ABT_bool *result) ABT_API_PUBLIC</div><div class="ttdoc">Compare two mutex handles for equality. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00484">mutex.c:484</a></div></div>
 <div class="ttc" id="abtu_8h_html_a150c51f42fe510b0b521d41d900859bc"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a150c51f42fe510b0b521d41d900859bc">ABTU_calloc</a></div><div class="ttdeci">static int ABTU_calloc(size_t num, size_t size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00132">abtu.h:132</a></div></div>
 <div class="ttc" id="mutex_8c_html_ae26194a7ca93c7c674b38026632b170e"><div class="ttname"><a href="../../d8/d62/mutex_8c.html#ae26194a7ca93c7c674b38026632b170e">mutex_lock_low</a></div><div class="ttdeci">static void mutex_lock_low(ABTI_local **pp_local, ABTI_mutex *p_mutex)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00641">mutex.c:641</a></div></div>
-<div class="ttc" id="abti__log_8h_html_ac06cfc686322558f590c50eab8622ebd"><div class="ttname"><a href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></div><div class="ttdeci">#define LOG_DEBUG(fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5e/abti__log_8h_source.html#l00029">abti_log.h:29</a></div></div>
+<div class="ttc" id="abti__log_8h_html_ac06cfc686322558f590c50eab8622ebd"><div class="ttname"><a href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></div><div class="ttdeci">#define LOG_DEBUG(fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5e/abti__log_8h_source.html#l00026">abti_log.h:26</a></div></div>
 <div class="ttc" id="abt_8h_html_aa8e839d537fd79d677108d42d4176089ae0a7acd9ed47699f063ee2128f9f7ef6"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089ae0a7acd9ed47699f063ee2128f9f7ef6">ABT_THREAD_STATE_RUNNING</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00127">abt.h:127</a></div></div>
 <div class="ttc" id="group__MUTEX_html_ga6047a388bffa841fc0924bdb7f8c7670"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga6047a388bffa841fc0924bdb7f8c7670">ABT_mutex_unlock</a></div><div class="ttdeci">int ABT_mutex_unlock(ABT_mutex mutex) ABT_API_PUBLIC</div><div class="ttdoc">Unlock the mutex. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00363">mutex.c:363</a></div></div>
 <div class="ttc" id="abti_8h_html"><div class="ttname"><a href="../../d5/d03/abti_8h.html">abti.h</a></div></div>
@@ -812,7 +812,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 28 2020 03:09:49 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Aug 29 2020 03:09:44 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

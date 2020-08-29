@@ -32,10 +32,8 @@ digraph "ABTI_pool"
   Node14 [label="ABT_task(*)(ABT_unit)",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node15 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" u_create_from_task" ,fontname="Helvetica"];
   Node15 [label="ABT_unit(*)(ABT_task)",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node16 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" producer_id\nconsumer_id" ,fontname="Helvetica"];
-  Node16 [label="struct ABTI_native\l_thread_id_opaque *",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node17 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_pop" ,fontname="Helvetica"];
-  Node17 [label="ABT_unit(*)(ABT_pool)",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node18 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" data" ,fontname="Helvetica"];
-  Node18 [label="void *",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node16 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_pop" ,fontname="Helvetica"];
+  Node16 [label="ABT_unit(*)(ABT_pool)",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node17 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" data" ,fontname="Helvetica"];
+  Node17 [label="void *",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
 }
