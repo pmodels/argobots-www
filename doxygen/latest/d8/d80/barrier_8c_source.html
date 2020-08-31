@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">91abbae050a01baf896038f6e26b0968b304d6d7</span>
+   &#160;<span id="projectnumber">0f54072af6167fdb517ffdc4d2ae393cf4e8b076</span>
    </div>
   </td>
  </tr>
@@ -155,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#a19f56f133e28b8481312676b83dc23b2">ABTU_malloc</a>(num_waiters * <span class="keyword">sizeof</span>(<a class="code" href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981c">ABT_unit_type</a>),</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                (<span class="keywordtype">void</span> **)&amp;new_waiter_types);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(new_waiter_types);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(new_waiters);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">goto</span> fn_fail;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        p_barrier-&gt;num_waiters = num_waiters;</div>
@@ -325,7 +325,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 29 2020 03:09:44 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 31 2020 03:09:51 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
