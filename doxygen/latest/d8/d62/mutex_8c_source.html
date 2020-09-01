@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">0f54072af6167fdb517ffdc4d2ae393cf4e8b076</span>
+   &#160;<span id="projectnumber">7ee1cb37947b0512554ee8d7ae2ff94baddcfa98</span>
    </div>
   </td>
  </tr>
@@ -98,14 +98,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../db/d45/abti__ythread__htable_8h.html">abti_ythread_htable.h</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/d62/mutex_8c.html#ae26194a7ca93c7c674b38026632b170e">mutex_lock_low</a>(ABTI_local **pp_local, ABTI_mutex *p_mutex);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="../../d8/d62/mutex_8c.html#a2eb1dfeb71a44592d8dd2d1990765a12">mutex_unlock_se</a>(ABTI_local **pp_local, ABTI_mutex *p_mutex);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/d62/mutex_8c.html#a2b5c28a878541225e1c3719d7ec7985b">mutex_unlock_se</a>(ABTI_local **pp_local, ABTI_mutex *p_mutex);</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d2/d09/group__MUTEX.html#ga0c314d8b29a890ad4774ba13c0377d3d">   38</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/d09/group__MUTEX.html#ga0c314d8b29a890ad4774ba13c0377d3d">ABT_mutex_create</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a47f82eaefe654cad03090b6e9c818533">ABT_mutex</a> *newmutex)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    ABTI_mutex *p_newmutex;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#a150c51f42fe510b0b521d41d900859bc">ABTU_calloc</a>(1, <span class="keyword">sizeof</span>(ABTI_mutex), (<span class="keywordtype">void</span> **)&amp;p_newmutex);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#a88220b7f81a0f629a08915843f37bedd">ABTU_calloc</a>(1, <span class="keyword">sizeof</span>(ABTI_mutex), (<span class="keywordtype">void</span> **)&amp;p_newmutex);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    abt_errno = ABTI_mutex_init(p_newmutex);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
@@ -131,7 +131,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    ABTI_CHECK_NULL_MUTEX_ATTR_PTR(p_attr);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    ABTI_mutex *p_newmutex;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#a19f56f133e28b8481312676b83dc23b2">ABTU_malloc</a>(<span class="keyword">sizeof</span>(ABTI_mutex), (<span class="keywordtype">void</span> **)&amp;p_newmutex);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a>(<span class="keyword">sizeof</span>(ABTI_mutex), (<span class="keywordtype">void</span> **)&amp;p_newmutex);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    abt_errno = ABTI_mutex_init(p_newmutex);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
@@ -365,7 +365,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="keywordflow">if</span> (p_mutex-&gt;attr.attrs == ABTI_MUTEX_ATTR_NONE) {</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="comment">/* default attributes */</span></div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <a class="code" href="../../d8/d62/mutex_8c.html#a2eb1dfeb71a44592d8dd2d1990765a12">mutex_unlock_se</a>(&amp;p_local, p_mutex);</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <a class="code" href="../../d8/d62/mutex_8c.html#a2b5c28a878541225e1c3719d7ec7985b">mutex_unlock_se</a>(&amp;p_local, p_mutex);</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p_mutex-&gt;attr.attrs &amp; ABTI_MUTEX_ATTR_RECURSIVE) {</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        <span class="comment">/* recursive mutex */</span></div>
@@ -374,14 +374,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                        <a class="code" href="../../d5/d7d/abt_8h.html#a2b54886c7ce2ed912e6a477815c3ac66">ABT_ERR_INV_THREAD</a>);</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        <span class="keywordflow">if</span> (p_mutex-&gt;attr.nesting_cnt == 0) {</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            p_mutex-&gt;attr.owner_id = 0;</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;            <a class="code" href="../../d8/d62/mutex_8c.html#a2eb1dfeb71a44592d8dd2d1990765a12">mutex_unlock_se</a>(&amp;p_local, p_mutex);</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;            <a class="code" href="../../d8/d62/mutex_8c.html#a2b5c28a878541225e1c3719d7ec7985b">mutex_unlock_se</a>(&amp;p_local, p_mutex);</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            p_mutex-&gt;attr.nesting_cnt--;</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        }</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        <span class="comment">/* unknown attributes */</span></div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <a class="code" href="../../d8/d62/mutex_8c.html#a2eb1dfeb71a44592d8dd2d1990765a12">mutex_unlock_se</a>(&amp;p_local, p_mutex);</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <a class="code" href="../../d8/d62/mutex_8c.html#a2b5c28a878541225e1c3719d7ec7985b">mutex_unlock_se</a>(&amp;p_local, p_mutex);</div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    }</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;fn_exit:</div>
@@ -649,134 +649,130 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;<span class="comment">/* Hand over the mutex to other ULT on the same ES */</span></div>
-<div class="line"><a name="l00724"></a><span class="lineno"><a class="line" href="../../d8/d62/mutex_8c.html#a2eb1dfeb71a44592d8dd2d1990765a12">  724</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="../../d8/d62/mutex_8c.html#a2eb1dfeb71a44592d8dd2d1990765a12">mutex_unlock_se</a>(ABTI_local **pp_local, ABTI_mutex *p_mutex)</div>
+<div class="line"><a name="l00724"></a><span class="lineno"><a class="line" href="../../d8/d62/mutex_8c.html#a2b5c28a878541225e1c3719d7ec7985b">  724</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/d62/mutex_8c.html#a2b5c28a878541225e1c3719d7ec7985b">mutex_unlock_se</a>(ABTI_local **pp_local, ABTI_mutex *p_mutex)</div>
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;{</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    ABTI_ythread *p_ythread = NULL;</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    ABTI_xstream *p_local_xstream = ABTI_local_get_xstream_or_null(*pp_local);</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <span class="keywordflow">if</span> (!ABTI_IS_EXT_THREAD_ENABLED || p_local_xstream) {</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        p_ythread = ABTI_thread_get_ythread_or_null(p_local_xstream-&gt;p_thread);</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    }</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_USE_SIMPLE_MUTEX</span></div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;<span class="preprocessor"></span>    ABTD_atomic_release_store_uint32(&amp;p_mutex-&gt;val, 0);</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;%p: unlock_se\n&quot;</span>, p_mutex);</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    <span class="keywordflow">if</span> (p_ythread) {</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        ABTI_ythread_yield(&amp;p_local_xstream, p_ythread,</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                           <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fae643a10c5fdf9ad56c901f16375ba959">ABT_SYNC_EVENT_TYPE_MUTEX</a>, (<span class="keywordtype">void</span> *)p_mutex);</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;    }</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;<span class="preprocessor"></span>    <span class="comment">/* If it is run on a non-yieldable thread. just unlock it. */</span></div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    <span class="keywordflow">if</span> (!p_ythread) {</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        ABTD_atomic_release_store_uint32(&amp;p_mutex-&gt;val, 0); <span class="comment">/* Unlock */</span></div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;%p: unlock_se\n&quot;</span>, p_mutex);</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        ABTI_mutex_wake_de(*pp_local, p_mutex);</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;        <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    }</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    <span class="comment">/* Unlock the mutex */</span></div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    <span class="comment">/* If p_mutex-&gt;val is 1 before decreasing it, it means there is no any</span></div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;<span class="comment">     * waiter in the mutex queue.  We can just return. */</span></div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    <span class="keywordflow">if</span> (ABTD_atomic_fetch_sub_uint32(&amp;p_mutex-&gt;val, 1) == 1) {</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;        <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;%p: unlock_se\n&quot;</span>, p_mutex);</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;        <span class="keywordflow">if</span> (p_ythread) {</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;            ABTI_ythread_yield(&amp;p_local_xstream, p_ythread,</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                               <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fae643a10c5fdf9ad56c901f16375ba959">ABT_SYNC_EVENT_TYPE_MUTEX</a>, (<span class="keywordtype">void</span> *)p_mutex);</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;            *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;        }</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;        <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    }</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    <span class="comment">/* There are ULTs waiting in the mutex queue */</span></div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    ABTI_ythread_htable *p_htable = p_mutex-&gt;p_htable;</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    ABTI_ythread *p_next = NULL;</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    ABTI_ythread_queue *p_queue = &amp;p_htable-&gt;queue[(int)p_local_xstream-&gt;rank];</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;check_cond:</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;    <span class="comment">/* Check whether the mutex handover is possible */</span></div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    if (p_queue-&gt;num_handovers &gt;= p_mutex-&gt;attr.max_handovers) {</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;        ABTD_atomic_release_store_uint32(&amp;p_mutex-&gt;val, 0); <span class="comment">/* Unlock */</span></div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;%p: unlock_se\n&quot;</span>, p_mutex);</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;        ABTI_mutex_wake_de(*pp_local, p_mutex);</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        p_queue-&gt;num_handovers = 0;</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;        ABTI_ythread_yield(&amp;p_local_xstream, p_ythread,</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                           <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fae643a10c5fdf9ad56c901f16375ba959">ABT_SYNC_EVENT_TYPE_MUTEX</a>, (<span class="keywordtype">void</span> *)p_mutex);</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;        *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;        <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;    }</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    <span class="comment">/* Hand over the mutex to high-priority ULTs */</span></div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    <span class="keywordflow">if</span> (p_queue-&gt;num_threads &lt;= 1) {</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        <span class="keywordflow">if</span> (p_htable-&gt;h_list != NULL) {</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;            ABTD_atomic_release_store_uint32(&amp;p_mutex-&gt;val, 0); <span class="comment">/* Unlock */</span></div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;            <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;%p: unlock_se\n&quot;</span>, p_mutex);</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;            ABTI_mutex_wake_de(*pp_local, p_mutex);</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;            ABTI_ythread_yield(&amp;p_local_xstream, p_ythread,</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                               <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fae643a10c5fdf9ad56c901f16375ba959">ABT_SYNC_EVENT_TYPE_MUTEX</a>, (<span class="keywordtype">void</span> *)p_mutex);</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;            *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;            <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;        }</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;        p_next = ABTI_ythread_htable_pop(p_htable, p_queue);</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        <span class="keywordflow">if</span> (p_next == NULL)</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;            <span class="keywordflow">goto</span> check_cond;</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;            <span class="keywordflow">goto</span> handover;</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;    }</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    <span class="comment">/* When we don&#39;t have high-priority ULTs and other ESs don&#39;t either,</span></div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;<span class="comment">     * we hand over the mutex to low-priority ULTs. */</span></div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    <span class="keywordflow">if</span> (p_queue-&gt;low_num_threads &lt;= 1) {</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;        ABTD_atomic_release_store_uint32(&amp;p_mutex-&gt;val, 0); <span class="comment">/* Unlock */</span></div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;        <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;%p: unlock_se\n&quot;</span>, p_mutex);</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;        ABTI_mutex_wake_de(*pp_local, p_mutex);</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;        ABTI_ythread_yield(&amp;p_local_xstream, p_ythread,</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                           <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fae643a10c5fdf9ad56c901f16375ba959">ABT_SYNC_EVENT_TYPE_MUTEX</a>, (<span class="keywordtype">void</span> *)p_mutex);</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;        p_next = ABTI_ythread_htable_pop_low(p_htable, p_queue);</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;        <span class="keywordflow">if</span> (p_next == NULL)</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;            <span class="keywordflow">goto</span> check_cond;</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    }</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;handover:</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;    <span class="comment">/* We don&#39;t push p_ythread to the pool. Instead, we will yield_to p_ythread</span></div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;<span class="comment">     * directly at the end of this function. */</span></div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    p_queue-&gt;num_handovers++;</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;</div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;    <span class="comment">/* We are handing over the mutex */</span></div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;    p_mutex-&gt;p_handover = p_next;</div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;    p_mutex-&gt;p_giver = p_ythread;</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;</div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;%p: handover -&gt; U%&quot;</span> PRIu64 <span class="stringliteral">&quot;\n&quot;</span>, p_mutex,</div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;              ABTI_thread_get_id(&amp;p_next-&gt;thread));</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;</div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;    <span class="comment">/* yield_to the next ULT */</span></div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;    <span class="keywordflow">while</span> (ABTD_atomic_acquire_load_uint32(&amp;p_next-&gt;thread.request) &amp;</div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;           ABTI_THREAD_REQ_BLOCK)</div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;        ;</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;    ABTI_pool_dec_num_blocked(p_next-&gt;thread.p_pool);</div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    ABTD_atomic_release_store_int(&amp;p_next-&gt;thread.state,</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;                                  <a class="code" href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089ae0a7acd9ed47699f063ee2128f9f7ef6">ABT_THREAD_STATE_RUNNING</a>);</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;    ABTI_tool_event_ythread_resume(ABTI_xstream_get_local(p_local_xstream),</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;                                   p_next, &amp;p_ythread-&gt;thread);</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;    <span class="comment">/* This works as a &quot;yield&quot; for this thread. */</span></div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;    ABTI_tool_event_ythread_yield(p_local_xstream, p_ythread,</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;                                  p_ythread-&gt;thread.p_parent,</div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;                                  <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fae643a10c5fdf9ad56c901f16375ba959">ABT_SYNC_EVENT_TYPE_MUTEX</a>, (<span class="keywordtype">void</span> *)p_mutex);</div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;    ABTI_ythread *p_prev =</div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;        ABTI_ythread_context_switch_to_sibling(&amp;p_local_xstream, p_ythread,</div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;                                               p_next);</div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;    <span class="comment">/* Invoke an event of thread resume and run. */</span></div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;    *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;    ABTI_tool_event_thread_run(p_local_xstream, &amp;p_ythread-&gt;thread,</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;                               &amp;p_prev-&gt;thread, p_ythread-&gt;thread.p_parent);</div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;}</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    ABTI_ythread *p_ythread = NULL;</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    ABTI_xstream *p_local_xstream = ABTI_local_get_xstream_or_null(*pp_local);</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    <span class="keywordflow">if</span> (!ABTI_IS_EXT_THREAD_ENABLED || p_local_xstream) {</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;        p_ythread = ABTI_thread_get_ythread_or_null(p_local_xstream-&gt;p_thread);</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    }</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_USE_SIMPLE_MUTEX</span></div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;<span class="preprocessor"></span>    ABTD_atomic_release_store_uint32(&amp;p_mutex-&gt;val, 0);</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;%p: unlock_se\n&quot;</span>, p_mutex);</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;    <span class="keywordflow">if</span> (p_ythread) {</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        ABTI_ythread_yield(&amp;p_local_xstream, p_ythread,</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                           <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fae643a10c5fdf9ad56c901f16375ba959">ABT_SYNC_EVENT_TYPE_MUTEX</a>, (<span class="keywordtype">void</span> *)p_mutex);</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    }</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;<span class="preprocessor"></span>    <span class="comment">/* If it is run on a non-yieldable thread. just unlock it. */</span></div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;    <span class="keywordflow">if</span> (!p_ythread) {</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        ABTD_atomic_release_store_uint32(&amp;p_mutex-&gt;val, 0); <span class="comment">/* Unlock */</span></div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;        <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;%p: unlock_se\n&quot;</span>, p_mutex);</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        ABTI_mutex_wake_de(*pp_local, p_mutex);</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    }</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    <span class="comment">/* Unlock the mutex */</span></div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    <span class="comment">/* If p_mutex-&gt;val is 1 before decreasing it, it means there is no any</span></div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;<span class="comment">     * waiter in the mutex queue.  We can just return. */</span></div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    <span class="keywordflow">if</span> (ABTD_atomic_fetch_sub_uint32(&amp;p_mutex-&gt;val, 1) == 1) {</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;        <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;%p: unlock_se\n&quot;</span>, p_mutex);</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;        <span class="keywordflow">if</span> (p_ythread) {</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;            ABTI_ythread_yield(&amp;p_local_xstream, p_ythread,</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                               <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fae643a10c5fdf9ad56c901f16375ba959">ABT_SYNC_EVENT_TYPE_MUTEX</a>, (<span class="keywordtype">void</span> *)p_mutex);</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;            *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;        }</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    }</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    <span class="comment">/* There are ULTs waiting in the mutex queue */</span></div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    ABTI_ythread_htable *p_htable = p_mutex-&gt;p_htable;</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    ABTI_ythread *p_next = NULL;</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    ABTI_ythread_queue *p_queue = &amp;p_htable-&gt;queue[(int)p_local_xstream-&gt;rank];</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;check_cond:</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    <span class="comment">/* Check whether the mutex handover is possible */</span></div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    if (p_queue-&gt;num_handovers &gt;= p_mutex-&gt;attr.max_handovers) {</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;        ABTD_atomic_release_store_uint32(&amp;p_mutex-&gt;val, 0); <span class="comment">/* Unlock */</span></div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;        <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;%p: unlock_se\n&quot;</span>, p_mutex);</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;        ABTI_mutex_wake_de(*pp_local, p_mutex);</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        p_queue-&gt;num_handovers = 0;</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;        ABTI_ythread_yield(&amp;p_local_xstream, p_ythread,</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                           <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fae643a10c5fdf9ad56c901f16375ba959">ABT_SYNC_EVENT_TYPE_MUTEX</a>, (<span class="keywordtype">void</span> *)p_mutex);</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;        *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;    }</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;    <span class="comment">/* Hand over the mutex to high-priority ULTs */</span></div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;    <span class="keywordflow">if</span> (p_queue-&gt;num_threads &lt;= 1) {</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;        <span class="keywordflow">if</span> (p_htable-&gt;h_list != NULL) {</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;            ABTD_atomic_release_store_uint32(&amp;p_mutex-&gt;val, 0); <span class="comment">/* Unlock */</span></div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;            <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;%p: unlock_se\n&quot;</span>, p_mutex);</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;            ABTI_mutex_wake_de(*pp_local, p_mutex);</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;            ABTI_ythread_yield(&amp;p_local_xstream, p_ythread,</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                               <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fae643a10c5fdf9ad56c901f16375ba959">ABT_SYNC_EVENT_TYPE_MUTEX</a>, (<span class="keywordtype">void</span> *)p_mutex);</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;            *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;        }</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;        p_next = ABTI_ythread_htable_pop(p_htable, p_queue);</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;        <span class="keywordflow">if</span> (p_next == NULL)</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;            <span class="keywordflow">goto</span> check_cond;</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;            <span class="keywordflow">goto</span> handover;</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;    }</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;    <span class="comment">/* When we don&#39;t have high-priority ULTs and other ESs don&#39;t either,</span></div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;<span class="comment">     * we hand over the mutex to low-priority ULTs. */</span></div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    <span class="keywordflow">if</span> (p_queue-&gt;low_num_threads &lt;= 1) {</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;        ABTD_atomic_release_store_uint32(&amp;p_mutex-&gt;val, 0); <span class="comment">/* Unlock */</span></div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;        <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;%p: unlock_se\n&quot;</span>, p_mutex);</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;        ABTI_mutex_wake_de(*pp_local, p_mutex);</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;        ABTI_ythread_yield(&amp;p_local_xstream, p_ythread,</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                           <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fae643a10c5fdf9ad56c901f16375ba959">ABT_SYNC_EVENT_TYPE_MUTEX</a>, (<span class="keywordtype">void</span> *)p_mutex);</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;        *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        p_next = ABTI_ythread_htable_pop_low(p_htable, p_queue);</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        <span class="keywordflow">if</span> (p_next == NULL)</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;            <span class="keywordflow">goto</span> check_cond;</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;    }</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;handover:</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;    <span class="comment">/* We don&#39;t push p_ythread to the pool. Instead, we will yield_to p_ythread</span></div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;<span class="comment">     * directly at the end of this function. */</span></div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;    p_queue-&gt;num_handovers++;</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    <span class="comment">/* We are handing over the mutex */</span></div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;    p_mutex-&gt;p_handover = p_next;</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;    p_mutex-&gt;p_giver = p_ythread;</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;%p: handover -&gt; U%&quot;</span> PRIu64 <span class="stringliteral">&quot;\n&quot;</span>, p_mutex,</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;              ABTI_thread_get_id(&amp;p_next-&gt;thread));</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;    <span class="comment">/* yield_to the next ULT */</span></div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;    <span class="keywordflow">while</span> (ABTD_atomic_acquire_load_uint32(&amp;p_next-&gt;thread.request) &amp;</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;           ABTI_THREAD_REQ_BLOCK)</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;        ;</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;    ABTI_pool_dec_num_blocked(p_next-&gt;thread.p_pool);</div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    ABTD_atomic_release_store_int(&amp;p_next-&gt;thread.state,</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;                                  <a class="code" href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089ae0a7acd9ed47699f063ee2128f9f7ef6">ABT_THREAD_STATE_RUNNING</a>);</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    ABTI_tool_event_ythread_resume(ABTI_xstream_get_local(p_local_xstream),</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;                                   p_next, &amp;p_ythread-&gt;thread);</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;    <span class="comment">/* This works as a &quot;yield&quot; for this thread. */</span></div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;    ABTI_tool_event_ythread_yield(p_local_xstream, p_ythread,</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;                                  p_ythread-&gt;thread.p_parent,</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;                                  <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fae643a10c5fdf9ad56c901f16375ba959">ABT_SYNC_EVENT_TYPE_MUTEX</a>, (<span class="keywordtype">void</span> *)p_mutex);</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;    ABTI_ythread *p_prev =</div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;        ABTI_ythread_context_switch_to_sibling(&amp;p_local_xstream, p_ythread,</div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;                                               p_next);</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;    <span class="comment">/* Invoke an event of thread resume and run. */</span></div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;    *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;    ABTI_tool_event_thread_run(p_local_xstream, &amp;p_ythread-&gt;thread,</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;                               &amp;p_prev-&gt;thread, p_ythread-&gt;thread.p_parent);</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="ttc" id="group__MUTEX_html_ga0a62f0d74ae7e799d37d0517b5254321"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga0a62f0d74ae7e799d37d0517b5254321">ABT_mutex_unlock_se</a></div><div class="ttdeci">int ABT_mutex_unlock_se(ABT_mutex mutex) ABT_API_PUBLIC</div><div class="ttdoc">Hand over the mutex within the ES. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00416">mutex.c:416</a></div></div>
 <div class="ttc" id="abt_8h_html_aac5794c17511377fbc02410a5ba2e6fb"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aac5794c17511377fbc02410a5ba2e6fb">ABT_mutex_attr</a></div><div class="ttdeci">struct ABT_mutex_attr_opaque * ABT_mutex_attr</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00359">abt.h:359</a></div></div>
 <div class="ttc" id="abt_8h_html_ad132f39429b6c3d8436055e99a7f1a96"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ad132f39429b6c3d8436055e99a7f1a96">ABT_mutex_lock_high</a></div><div class="ttdeci">int ABT_mutex_lock_high(ABT_mutex mutex) ABT_API_PUBLIC</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00242">mutex.c:242</a></div></div>
@@ -785,8 +781,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="group__MUTEX_html_gaab64a7ac90af4f8840c4f33bd23b34ce"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#gaab64a7ac90af4f8840c4f33bd23b34ce">ABT_mutex_lock_low</a></div><div class="ttdeci">int ABT_mutex_lock_low(ABT_mutex mutex) ABT_API_PUBLIC</div><div class="ttdoc">Lock the mutex with low priority. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00207">mutex.c:207</a></div></div>
 <div class="ttc" id="group__MUTEX_html_ga148c09e5d11e5c6c5ecabb30042caeab"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga148c09e5d11e5c6c5ecabb30042caeab">ABT_mutex_create_with_attr</a></div><div class="ttdeci">int ABT_mutex_create_with_attr(ABT_mutex_attr attr, ABT_mutex *newmutex) ABT_API_PUBLIC</div><div class="ttdoc">Create a new mutex with attributes. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00078">mutex.c:78</a></div></div>
 <div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00373">abt.h:373</a></div></div>
+<div class="ttc" id="mutex_8c_html_a2b5c28a878541225e1c3719d7ec7985b"><div class="ttname"><a href="../../d8/d62/mutex_8c.html#a2b5c28a878541225e1c3719d7ec7985b">mutex_unlock_se</a></div><div class="ttdeci">static void mutex_unlock_se(ABTI_local **pp_local, ABTI_mutex *p_mutex)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00724">mutex.c:724</a></div></div>
 <div class="ttc" id="abt_8h_html_a47f82eaefe654cad03090b6e9c818533"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a47f82eaefe654cad03090b6e9c818533">ABT_mutex</a></div><div class="ttdeci">struct ABT_mutex_opaque * ABT_mutex</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00357">abt.h:357</a></div></div>
 <div class="ttc" id="abt_8h_html_aa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00126">abt.h:126</a></div></div>
+<div class="ttc" id="abtu_8h_html_aa2d633baee4486fb78890916840282af"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a></div><div class="ttdeci">static ABTU_ret_err int ABTU_malloc(size_t size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00142">abtu.h:142</a></div></div>
 <div class="ttc" id="abt_8h_html_a7594edaabaa9bd04e3ee9e9c2b842bea"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a7594edaabaa9bd04e3ee9e9c2b842bea">ABT_mutex_unlock_de</a></div><div class="ttdeci">int ABT_mutex_unlock_de(ABT_mutex mutex) ABT_API_PUBLIC</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00452">mutex.c:452</a></div></div>
 <div class="ttc" id="group__MUTEX_html_ga0c314d8b29a890ad4774ba13c0377d3d"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga0c314d8b29a890ad4774ba13c0377d3d">ABT_mutex_create</a></div><div class="ttdeci">int ABT_mutex_create(ABT_mutex *newmutex) ABT_API_PUBLIC</div><div class="ttdoc">Create a new mutex. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00038">mutex.c:38</a></div></div>
 <div class="ttc" id="abt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00285">abt.h:285</a></div></div>
@@ -794,11 +792,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="abt_8h_html_acf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00064">abt.h:64</a></div></div>
 <div class="ttc" id="abt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00284">abt.h:284</a></div></div>
 <div class="ttc" id="group__MUTEX_html_gaa04ef5552b54a247dd9aad207918d0f1"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#gaa04ef5552b54a247dd9aad207918d0f1">ABT_mutex_lock</a></div><div class="ttdeci">int ABT_mutex_lock(ABT_mutex mutex) ABT_API_PUBLIC</div><div class="ttdoc">Lock the mutex. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00159">mutex.c:159</a></div></div>
-<div class="ttc" id="mutex_8c_html_a2eb1dfeb71a44592d8dd2d1990765a12"><div class="ttname"><a href="../../d8/d62/mutex_8c.html#a2eb1dfeb71a44592d8dd2d1990765a12">mutex_unlock_se</a></div><div class="ttdeci">static int mutex_unlock_se(ABTI_local **pp_local, ABTI_mutex *p_mutex)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00724">mutex.c:724</a></div></div>
 <div class="ttc" id="abt_8h_html_a7f0cedd38f1395f91cfebda769947bd5"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a7f0cedd38f1395f91cfebda769947bd5">ABT_MUTEX_NULL</a></div><div class="ttdeci">#define ABT_MUTEX_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00419">abt.h:419</a></div></div>
-<div class="ttc" id="abtu_8h_html_a19f56f133e28b8481312676b83dc23b2"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a19f56f133e28b8481312676b83dc23b2">ABTU_malloc</a></div><div class="ttdeci">static int ABTU_malloc(size_t size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00122">abtu.h:122</a></div></div>
 <div class="ttc" id="group__MUTEX_html_gabc66c7eaf803a56536bb2ca301d8b95d"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#gabc66c7eaf803a56536bb2ca301d8b95d">ABT_mutex_equal</a></div><div class="ttdeci">int ABT_mutex_equal(ABT_mutex mutex1, ABT_mutex mutex2, ABT_bool *result) ABT_API_PUBLIC</div><div class="ttdoc">Compare two mutex handles for equality. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00484">mutex.c:484</a></div></div>
-<div class="ttc" id="abtu_8h_html_a150c51f42fe510b0b521d41d900859bc"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a150c51f42fe510b0b521d41d900859bc">ABTU_calloc</a></div><div class="ttdeci">static int ABTU_calloc(size_t num, size_t size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00132">abtu.h:132</a></div></div>
 <div class="ttc" id="mutex_8c_html_ae26194a7ca93c7c674b38026632b170e"><div class="ttname"><a href="../../d8/d62/mutex_8c.html#ae26194a7ca93c7c674b38026632b170e">mutex_lock_low</a></div><div class="ttdeci">static void mutex_lock_low(ABTI_local **pp_local, ABTI_mutex *p_mutex)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00641">mutex.c:641</a></div></div>
 <div class="ttc" id="abti__log_8h_html_ac06cfc686322558f590c50eab8622ebd"><div class="ttname"><a href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></div><div class="ttdeci">#define LOG_DEBUG(fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5e/abti__log_8h_source.html#l00026">abti_log.h:26</a></div></div>
 <div class="ttc" id="abt_8h_html_aa8e839d537fd79d677108d42d4176089ae0a7acd9ed47699f063ee2128f9f7ef6"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089ae0a7acd9ed47699f063ee2128f9f7ef6">ABT_THREAD_STATE_RUNNING</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00127">abt.h:127</a></div></div>
@@ -807,12 +802,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="group__MUTEX_html_gacfe5902c0db94e2b7f92bb6efb2f8ed7"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#gacfe5902c0db94e2b7f92bb6efb2f8ed7">ABT_mutex_trylock</a></div><div class="ttdeci">int ABT_mutex_trylock(ABT_mutex mutex) ABT_API_PUBLIC</div><div class="ttdoc">Attempt to lock a mutex without blocking. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00264">mutex.c:264</a></div></div>
 <div class="ttc" id="group__MUTEX_html_ga830bd1397ef36c83c4b33a8480adee1b"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga830bd1397ef36c83c4b33a8480adee1b">ABT_mutex_spinlock</a></div><div class="ttdeci">int ABT_mutex_spinlock(ABT_mutex mutex) ABT_API_PUBLIC</div><div class="ttdoc">Lock the mutex without context switch. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00316">mutex.c:316</a></div></div>
 <div class="ttc" id="abt_8h_html_ac601a9db309d1a30954d43fc82d9602fae643a10c5fdf9ad56c901f16375ba959"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fae643a10c5fdf9ad56c901f16375ba959">ABT_SYNC_EVENT_TYPE_MUTEX</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00251">abt.h:251</a></div></div>
-<div class="ttc" id="abtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00115">abtu.h:115</a></div></div>
+<div class="ttc" id="abtu_8h_html_a88220b7f81a0f629a08915843f37bedd"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a88220b7f81a0f629a08915843f37bedd">ABTU_calloc</a></div><div class="ttdeci">static ABTU_ret_err int ABTU_calloc(size_t num, size_t size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00152">abtu.h:152</a></div></div>
+<div class="ttc" id="abtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00135">abtu.h:135</a></div></div>
 <div class="ttc" id="abti__ythread__htable_8h_html"><div class="ttname"><a href="../../db/d45/abti__ythread__htable_8h.html">abti_ythread_htable.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 31 2020 03:09:51 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Sep 1 2020 03:09:52 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

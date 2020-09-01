@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">0f54072af6167fdb517ffdc4d2ae393cf4e8b076</span>
+   &#160;<span id="projectnumber">7ee1cb37947b0512554ee8d7ae2ff94baddcfa98</span>
    </div>
   </td>
  </tr>
@@ -136,75 +136,69 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">int</span> ABTD_xstream_context_create(<span class="keywordtype">void</span> *(*f_xstream)(<span class="keywordtype">void</span> *), <span class="keywordtype">void</span> *p_arg,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                ABTD_xstream_context *p_ctx)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    p_ctx-&gt;thread_f = f_xstream;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    p_ctx-&gt;p_arg = p_arg;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    p_ctx-&gt;state = ABTD_XSTREAM_CONTEXT_STATE_RUNNING;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    pthread_mutex_init(&amp;p_ctx-&gt;state_lock, NULL);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    pthread_cond_init(&amp;p_ctx-&gt;state_cond, NULL);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">int</span> ret = pthread_create(&amp;p_ctx-&gt;native_thread, NULL,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                             <a class="code" href="../../d2/d12/abtd__stream_8c.html#a90ffa610256e47952ae70ca6c5df63c5">xstream_context_thread_func</a>, p_ctx);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (ret != 0) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="../../d6/d11/abti__error_8h.html#a7ae9713e5bdb204b1554308906fcc55d">HANDLE_ERROR</a>(<span class="stringliteral">&quot;pthread_create&quot;</span>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#a22304733bcfc177b24c2db3a6a90ba12">ABT_ERR_XSTREAM</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">int</span> ABTD_xstream_context_free(ABTD_xstream_context *p_ctx)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">/* Request termination */</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    pthread_mutex_lock(&amp;p_ctx-&gt;state_lock);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    ABTI_ASSERT(p_ctx-&gt;state == ABTD_XSTREAM_CONTEXT_STATE_WAITING);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    p_ctx-&gt;state = ABTD_XSTREAM_CONTEXT_STATE_REQ_TERMINATE;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    pthread_cond_signal(&amp;p_ctx-&gt;state_cond);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    pthread_mutex_unlock(&amp;p_ctx-&gt;state_lock);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">/* Join the target thread. */</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">int</span> ret = pthread_join(p_ctx-&gt;native_thread, NULL);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span> (ret != 0) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">/* This is fatal. */</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#a22304733bcfc177b24c2db3a6a90ba12">ABT_ERR_XSTREAM</a>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    pthread_cond_destroy(&amp;p_ctx-&gt;state_cond);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    pthread_mutex_destroy(&amp;p_ctx-&gt;state_lock);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keywordtype">int</span> ABTD_xstream_context_join(ABTD_xstream_context *p_ctx)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">/* If not finished, sleep this thread. */</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    pthread_mutex_lock(&amp;p_ctx-&gt;state_lock);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (p_ctx-&gt;state != ABTD_XSTREAM_CONTEXT_STATE_WAITING) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        ABTI_ASSERT(p_ctx-&gt;state == ABTD_XSTREAM_CONTEXT_STATE_RUNNING);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        p_ctx-&gt;state = ABTD_XSTREAM_CONTEXT_STATE_REQ_JOIN;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">/* The following loop is to deal with spurious wakeup. */</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            pthread_cond_wait(&amp;p_ctx-&gt;state_cond, &amp;p_ctx-&gt;state_lock);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        } <span class="keywordflow">while</span> (p_ctx-&gt;state == ABTD_XSTREAM_CONTEXT_STATE_REQ_JOIN);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    ABTI_ASSERT(p_ctx-&gt;state == ABTD_XSTREAM_CONTEXT_STATE_WAITING);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    pthread_mutex_unlock(&amp;p_ctx-&gt;state_lock);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keywordtype">int</span> ABTD_xstream_context_revive(ABTD_xstream_context *p_ctx)</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">/* Request restart */</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    pthread_mutex_lock(&amp;p_ctx-&gt;state_lock);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    ABTI_ASSERT(p_ctx-&gt;state == ABTD_XSTREAM_CONTEXT_STATE_WAITING);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    p_ctx-&gt;state = ABTD_XSTREAM_CONTEXT_STATE_RUNNING;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    pthread_cond_signal(&amp;p_ctx-&gt;state_cond);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    pthread_mutex_unlock(&amp;p_ctx-&gt;state_lock);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keywordtype">int</span> ABTD_xstream_context_create(<span class="keywordtype">void</span> *(*f_xstream)(<span class="keywordtype">void</span> *),</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                             <span class="keywordtype">void</span> *p_arg,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                             ABTD_xstream_context *p_ctx)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    p_ctx-&gt;thread_f = f_xstream;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    p_ctx-&gt;p_arg = p_arg;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    p_ctx-&gt;state = ABTD_XSTREAM_CONTEXT_STATE_RUNNING;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    pthread_mutex_init(&amp;p_ctx-&gt;state_lock, NULL);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    pthread_cond_init(&amp;p_ctx-&gt;state_cond, NULL);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">int</span> ret = pthread_create(&amp;p_ctx-&gt;native_thread, NULL,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                             <a class="code" href="../../d2/d12/abtd__stream_8c.html#a90ffa610256e47952ae70ca6c5df63c5">xstream_context_thread_func</a>, p_ctx);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> (ret != 0) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="../../d6/d11/abti__error_8h.html#a7ae9713e5bdb204b1554308906fcc55d">HANDLE_ERROR</a>(<span class="stringliteral">&quot;pthread_create&quot;</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#a22304733bcfc177b24c2db3a6a90ba12">ABT_ERR_XSTREAM</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">void</span> ABTD_xstream_context_free(ABTD_xstream_context *p_ctx)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">/* Request termination */</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    pthread_mutex_lock(&amp;p_ctx-&gt;state_lock);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    ABTI_ASSERT(p_ctx-&gt;state == ABTD_XSTREAM_CONTEXT_STATE_WAITING);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    p_ctx-&gt;state = ABTD_XSTREAM_CONTEXT_STATE_REQ_TERMINATE;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    pthread_cond_signal(&amp;p_ctx-&gt;state_cond);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    pthread_mutex_unlock(&amp;p_ctx-&gt;state_lock);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">/* Join the target thread. */</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">int</span> ret = pthread_join(p_ctx-&gt;native_thread, NULL);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    ABTI_ASSERT(ret == 0);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    pthread_cond_destroy(&amp;p_ctx-&gt;state_cond);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    pthread_mutex_destroy(&amp;p_ctx-&gt;state_lock);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">void</span> ABTD_xstream_context_join(ABTD_xstream_context *p_ctx)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">/* If not finished, sleep this thread. */</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    pthread_mutex_lock(&amp;p_ctx-&gt;state_lock);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> (p_ctx-&gt;state != ABTD_XSTREAM_CONTEXT_STATE_WAITING) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        ABTI_ASSERT(p_ctx-&gt;state == ABTD_XSTREAM_CONTEXT_STATE_RUNNING);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        p_ctx-&gt;state = ABTD_XSTREAM_CONTEXT_STATE_REQ_JOIN;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">/* The following loop is to deal with spurious wakeup. */</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            pthread_cond_wait(&amp;p_ctx-&gt;state_cond, &amp;p_ctx-&gt;state_lock);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        } <span class="keywordflow">while</span> (p_ctx-&gt;state == ABTD_XSTREAM_CONTEXT_STATE_REQ_JOIN);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    ABTI_ASSERT(p_ctx-&gt;state == ABTD_XSTREAM_CONTEXT_STATE_WAITING);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    pthread_mutex_unlock(&amp;p_ctx-&gt;state_lock);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keywordtype">void</span> ABTD_xstream_context_revive(ABTD_xstream_context *p_ctx)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">/* Request restart */</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    pthread_mutex_lock(&amp;p_ctx-&gt;state_lock);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    ABTI_ASSERT(p_ctx-&gt;state == ABTD_XSTREAM_CONTEXT_STATE_WAITING);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    p_ctx-&gt;state = ABTD_XSTREAM_CONTEXT_STATE_RUNNING;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    pthread_cond_signal(&amp;p_ctx-&gt;state_cond);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    pthread_mutex_unlock(&amp;p_ctx-&gt;state_lock);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keywordtype">void</span> ABTD_xstream_context_set_self(ABTD_xstream_context *p_ctx)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    p_ctx-&gt;native_thread = pthread_self();</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keywordtype">int</span> ABTD_xstream_context_set_self(ABTD_xstream_context *p_ctx)</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    p_ctx-&gt;native_thread = pthread_self();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
 <div class="ttc" id="abti__error_8h_html_a7ae9713e5bdb204b1554308906fcc55d"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#a7ae9713e5bdb204b1554308906fcc55d">HANDLE_ERROR</a></div><div class="ttdeci">#define HANDLE_ERROR(msg)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00339">abti_error.h:339</a></div></div>
 <div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00373">abt.h:373</a></div></div>
 <div class="ttc" id="abt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00285">abt.h:285</a></div></div>
@@ -213,10 +207,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="abtd__stream_8c_html_a90ffa610256e47952ae70ca6c5df63c5"><div class="ttname"><a href="../../d2/d12/abtd__stream_8c.html#a90ffa610256e47952ae70ca6c5df63c5">xstream_context_thread_func</a></div><div class="ttdeci">static void * xstream_context_thread_func(void *arg)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d12/abtd__stream_8c_source.html#l00008">abtd_stream.c:8</a></div></div>
 <div class="ttc" id="abt_8h_html_a22304733bcfc177b24c2db3a6a90ba12"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a22304733bcfc177b24c2db3a6a90ba12">ABT_ERR_XSTREAM</a></div><div class="ttdeci">#define ABT_ERR_XSTREAM</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00094">abt.h:94</a></div></div>
 <div class="ttc" id="abti_8h_html"><div class="ttname"><a href="../../d5/d03/abti_8h.html">abti.h</a></div></div>
+<div class="ttc" id="abtu_8h_html_a071d8986b72b8f5d099cdd47979b5e81"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a></div><div class="ttdeci">#define ABTU_ret_err</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00049">abtu.h:49</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 31 2020 03:09:51 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Sep 1 2020 03:09:52 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

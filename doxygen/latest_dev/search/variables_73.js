@@ -7,7 +7,6 @@ var searchData=
   ['sched_5frandws_5fdef',['sched_randws_def',['../da/d51/randws_8c.html#a83202c6e97e9f1c57563e8743e82280c',1,'randws.c']]],
   ['sched_5fsleep_5fnsec',['sched_sleep_nsec',['../da/de9/structABTI__global.html#afe84d490aac2c9a75c1ae40565a3deeb',1,'ABTI_global']]],
   ['sched_5fstacksize',['sched_stacksize',['../da/de9/structABTI__global.html#a33ef30e43d5ee3a50aa3c2233d77f0de',1,'ABTI_global']]],
-  ['scheds',['scheds',['../dc/d3f/structABTI__xstream.html#aacf2ee8aaf7eed2ad7f9403d4783267b',1,'ABTI_xstream']]],
   ['set_5faffinity',['set_affinity',['../da/de9/structABTI__global.html#a6ea85999f21c5deaa96e2d223aa94f35',1,'ABTI_global']]],
   ['set_5flocal_5fxstream_5ff',['set_local_xstream_f',['../dd/dc6/structABTI__local__func.html#aaacddd7a8885928d8b16de26232d92da',1,'ABTI_local_func']]],
   ['size',['size',['../d1/d29/structABTI__ktable.html#ada6cd1cec50d4899da088a4f114eb5db',1,'ABTI_ktable']]],

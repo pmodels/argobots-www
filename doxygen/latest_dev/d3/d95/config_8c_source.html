@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">0f54072af6167fdb517ffdc4d2ae393cf4e8b076</span>
+   &#160;<span id="projectnumber">7ee1cb37947b0512554ee8d7ae2ff94baddcfa98</span>
    </div>
   </td>
  </tr>
@@ -126,7 +126,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">size_t</span> offset = <span class="keyword">sizeof</span>(num_params);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">size_t</span> buffer_size = alloc_size;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#a19f56f133e28b8481312676b83dc23b2">ABTU_malloc</a>(buffer_size, (<span class="keywordtype">void</span> **)&amp;buffer);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a>(buffer_size, (<span class="keywordtype">void</span> **)&amp;buffer);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a8bcf885e66c769e235f313e4ab615b0a">ABTI_CHECK_ERROR</a>(abt_errno);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    va_list varg_list;</div>
@@ -148,7 +148,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordtype">size_t</span> cur_buffer_size = buffer_size;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            buffer_size += alloc_size;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            abt_errno =</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <a class="code" href="../../d5/d09/abtu_8h.html#a6c8f48db17643979963ff345d874b030">ABTU_realloc</a>(cur_buffer_size, buffer_size, (<span class="keywordtype">void</span> **)&amp;buffer);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <a class="code" href="../../d5/d09/abtu_8h.html#a40521ff89b1044d613bebd52c0aaebde">ABTU_realloc</a>(cur_buffer_size, buffer_size, (<span class="keywordtype">void</span> **)&amp;buffer);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="../../d5/d03/abti_8h.html#a286f86ff122d8b3a6e244e277078f745">ABTI_IS_ERROR_CHECK_ENABLED</a> &amp;&amp; abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(buffer);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="keywordflow">goto</span> fn_fail;</div>
@@ -215,7 +215,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="comment">/* We read all the variables and save the addresses */</span></div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordtype">void</span> **variables;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#a19f56f133e28b8481312676b83dc23b2">ABTU_malloc</a>(num_vars * <span class="keyword">sizeof</span>(<span class="keywordtype">void</span> *), (<span class="keywordtype">void</span> **)&amp;variables);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a>(num_vars * <span class="keyword">sizeof</span>(<span class="keywordtype">void</span> *), (<span class="keywordtype">void</span> **)&amp;variables);</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a8bcf885e66c769e235f313e4ab615b0a">ABTI_CHECK_ERROR</a>(abt_errno);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    va_list varg_list;</div>
@@ -225,7 +225,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    va_end(varg_list);</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    abt_errno = <a class="code" href="../../d5/d03/abti_8h.html#a08c1e25cc2588e9798d98d15a8db1f24">ABTI_sched_config_read</a>(config, 1, num_vars, variables);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    abt_errno = <a class="code" href="../../d5/d03/abti_8h.html#a5b4dca053e53036b40871c9ec2641d17">ABTI_sched_config_read</a>(config, 1, num_vars, variables);</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#a8bcf885e66c769e235f313e4ab615b0a">ABTI_CHECK_ERROR</a>(abt_errno);</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(variables);</div>
@@ -252,147 +252,149 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">/* Private APIs                                                              */</span></div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
-<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="../../d3/d95/config_8c.html#ae76f15823d2607c1612d84730c1e54e7">  222</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d5/d03/abti_8h.html#ae76f15823d2607c1612d84730c1e54e7">ABTI_sched_config_read_global</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a9be459e63da2c9e318b6b9d446aa4c4b">ABT_sched_config</a> config,</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                                  <a class="code" href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecf">ABT_pool_access</a> *access, <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *automatic)</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;{</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordtype">int</span> abt_errno;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordtype">int</span> num_vars = 2;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="comment">/* We use XXX_i variables because va_list converts these types into int */</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordtype">int</span> access_i = -1;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordtype">int</span> automatic_i = -1;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordtype">void</span> **variables;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#a19f56f133e28b8481312676b83dc23b2">ABTU_malloc</a>(num_vars * <span class="keyword">sizeof</span>(<span class="keywordtype">void</span> *), (<span class="keywordtype">void</span> **)&amp;variables);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#abb1a3e6fb41f517bdbaafdd8160b8e94">ABTI_CHECK_ERROR_RET</a>(abt_errno);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    variables[(ABT_sched_config_access.<a class="code" href="../../d1/da5/structABT__sched__config__var.html#af0e16f91a1ca13eda40a5dfca5a0087f">idx</a> + 2) * (-1)] = &amp;access_i;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    variables[(ABT_sched_config_automatic.<a class="code" href="../../d1/da5/structABT__sched__config__var.html#af0e16f91a1ca13eda40a5dfca5a0087f">idx</a> + 2) * (-1)] = &amp;automatic_i;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    abt_errno = <a class="code" href="../../d5/d03/abti_8h.html#a08c1e25cc2588e9798d98d15a8db1f24">ABTI_sched_config_read</a>(config, 0, num_vars, variables);</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(variables);</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#abb1a3e6fb41f517bdbaafdd8160b8e94">ABTI_CHECK_ERROR_RET</a>(abt_errno);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">if</span> (access_i != -1)</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        *access = (<a class="code" href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecf">ABT_pool_access</a>)access_i;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordflow">if</span> (automatic_i != -1)</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        *automatic = (<a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a>)automatic_i;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;}</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="comment">/* type is 0 if we read the private parameters, else 1 */</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno"><a class="line" href="../../d3/d95/config_8c.html#a08c1e25cc2588e9798d98d15a8db1f24">  251</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d5/d03/abti_8h.html#a08c1e25cc2588e9798d98d15a8db1f24">ABTI_sched_config_read</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a9be459e63da2c9e318b6b9d446aa4c4b">ABT_sched_config</a> config, <span class="keywordtype">int</span> type, <span class="keywordtype">int</span> num_vars,</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                           <span class="keywordtype">void</span> **variables)</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;{</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordtype">size_t</span> offset = 0;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordtype">int</span> num_params;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">if</span> (config == <a class="code" href="../../d5/d7d/abt_8h.html#a6a6ecfc1f874488af85684f7bf61f237">ABT_SCHED_CONFIG_NULL</a>) {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    }</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <a class="code" href="../../d5/d03/abti_8h.html#aee215ec4b2ca4f863c9dab0d267322ed">ABTI_sched_config</a> *p_config = <a class="code" href="../../d0/d54/abti__config_8h.html#a48b611b8ecdbcdc9cdb200f4f52ff50d">ABTI_sched_config_get_ptr</a>(config);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordtype">char</span> *buffer = (<span class="keywordtype">char</span> *)p_config;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="comment">/* Number of parameters in buffer */</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    memcpy(&amp;num_params, buffer, <span class="keyword">sizeof</span>(num_params));</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    offset += <span class="keyword">sizeof</span>(num_params);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="comment">/* Copy the data from buffer to the right variables */</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordtype">int</span> p;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordflow">for</span> (p = 0; p &lt; num_params; p++) {</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="keywordtype">int</span> var_idx;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="keywordtype">size_t</span> size;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="comment">/* Get the variable index of the next parameter */</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        memcpy(&amp;var_idx, buffer + offset, <span class="keyword">sizeof</span>(var_idx));</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        offset += <span class="keyword">sizeof</span>(var_idx);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="comment">/* Get the size of the next parameter */</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        memcpy(&amp;size, buffer + offset, <span class="keyword">sizeof</span>(size));</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        offset += <span class="keyword">sizeof</span>(size);</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="comment">/* Get the next argument */</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="comment">/* We save it only if</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="comment">         *   - the index is &lt; 0  when type == 0</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="comment">         *   - the index is &gt;= 0 when type == 1</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="keywordflow">if</span> (type == 0) {</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            <span class="keywordflow">if</span> (var_idx &lt; 0) {</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                var_idx = (var_idx + 2) * -1;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                <span class="keywordflow">if</span> (var_idx &gt;= num_vars)</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#a48789e97c178b74c49ef48f74d97ecd2">ABT_ERR_INV_SCHED_CONFIG</a>;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                memcpy(variables[var_idx], buffer + offset, size);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            }</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <span class="keywordflow">if</span> (var_idx &gt;= 0) {</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                <span class="keywordflow">if</span> (var_idx &gt;= num_vars)</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#a48789e97c178b74c49ef48f74d97ecd2">ABT_ERR_INV_SCHED_CONFIG</a>;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                memcpy(variables[var_idx], buffer + offset, size);</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            }</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        }</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        offset += size;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    }</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;}</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="comment">/* Internal static functions                                                 */</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;</div>
-<div class="line"><a name="l00309"></a><span class="lineno"><a class="line" href="../../d3/d95/config_8c.html#a156328aa57d5617d59be3f46ff1e3e9c">  309</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">size_t</span> <a class="code" href="../../d3/d95/config_8c.html#a156328aa57d5617d59be3f46ff1e3e9c">sched_config_type_size</a>(<a class="code" href="../../d5/d7d/abt_8h.html#aa7fb4c4d65dc699f39cece1cdf4fad18">ABT_sched_config_type</a> type)</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;{</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordflow">switch</span> (type) {</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#aa7fb4c4d65dc699f39cece1cdf4fad18afb777ab6247be6031240a39e53dbc137">ABT_SCHED_CONFIG_INT</a>:</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">sizeof</span>(int);</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#aa7fb4c4d65dc699f39cece1cdf4fad18af01b6e332719646d1d0e8f1174776c8f">ABT_SCHED_CONFIG_DOUBLE</a>:</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">sizeof</span>(double);</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#aa7fb4c4d65dc699f39cece1cdf4fad18a96c0ffe38f56b9e53864661f163b24e8">ABT_SCHED_CONFIG_PTR</a>:</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">sizeof</span>(<span class="keywordtype">void</span> *);</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            <a class="code" href="../../d6/d11/abti__error_8h.html#a81b70b0c4ee2d2993fbc05c32447695a">ABTI_ASSERT</a>(0);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            <a class="code" href="../../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">ABTU_unreachable</a>();</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    }</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;}</div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="../../d3/d95/config_8c.html#a1073e29ea64bc090b058cf162c457bb6">  222</a></span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keywordtype">int</span> <a class="code" href="../../d5/d03/abti_8h.html#a1073e29ea64bc090b058cf162c457bb6">ABTI_sched_config_read_global</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a9be459e63da2c9e318b6b9d446aa4c4b">ABT_sched_config</a> config,</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                                               <a class="code" href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecf">ABT_pool_access</a> *access,</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                                               <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *automatic)</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;{</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordtype">int</span> abt_errno;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordtype">int</span> num_vars = 2;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="comment">/* We use XXX_i variables because va_list converts these types into int */</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordtype">int</span> access_i = -1;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordtype">int</span> automatic_i = -1;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordtype">void</span> **variables;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a>(num_vars * <span class="keyword">sizeof</span>(<span class="keywordtype">void</span> *), (<span class="keywordtype">void</span> **)&amp;variables);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#abb1a3e6fb41f517bdbaafdd8160b8e94">ABTI_CHECK_ERROR_RET</a>(abt_errno);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    variables[(ABT_sched_config_access.<a class="code" href="../../d1/da5/structABT__sched__config__var.html#af0e16f91a1ca13eda40a5dfca5a0087f">idx</a> + 2) * (-1)] = &amp;access_i;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    variables[(ABT_sched_config_automatic.<a class="code" href="../../d1/da5/structABT__sched__config__var.html#af0e16f91a1ca13eda40a5dfca5a0087f">idx</a> + 2) * (-1)] = &amp;automatic_i;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    abt_errno = <a class="code" href="../../d5/d03/abti_8h.html#a5b4dca053e53036b40871c9ec2641d17">ABTI_sched_config_read</a>(config, 0, num_vars, variables);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(variables);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#abb1a3e6fb41f517bdbaafdd8160b8e94">ABTI_CHECK_ERROR_RET</a>(abt_errno);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">if</span> (access_i != -1)</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        *access = (<a class="code" href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecf">ABT_pool_access</a>)access_i;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">if</span> (automatic_i != -1)</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        *automatic = (<a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a>)automatic_i;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment">/* type is 0 if we read the private parameters, else 1 */</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno"><a class="line" href="../../d3/d95/config_8c.html#a5b4dca053e53036b40871c9ec2641d17">  252</a></span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keywordtype">int</span> <a class="code" href="../../d5/d03/abti_8h.html#a5b4dca053e53036b40871c9ec2641d17">ABTI_sched_config_read</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a9be459e63da2c9e318b6b9d446aa4c4b">ABT_sched_config</a> config, <span class="keywordtype">int</span> type,</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                                        <span class="keywordtype">int</span> num_vars, <span class="keywordtype">void</span> **variables)</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;{</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordtype">size_t</span> offset = 0;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordtype">int</span> num_params;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">if</span> (config == <a class="code" href="../../d5/d7d/abt_8h.html#a6a6ecfc1f874488af85684f7bf61f237">ABT_SCHED_CONFIG_NULL</a>) {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    }</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <a class="code" href="../../d5/d03/abti_8h.html#aee215ec4b2ca4f863c9dab0d267322ed">ABTI_sched_config</a> *p_config = <a class="code" href="../../d0/d54/abti__config_8h.html#a48b611b8ecdbcdc9cdb200f4f52ff50d">ABTI_sched_config_get_ptr</a>(config);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordtype">char</span> *buffer = (<span class="keywordtype">char</span> *)p_config;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="comment">/* Number of parameters in buffer */</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    memcpy(&amp;num_params, buffer, <span class="keyword">sizeof</span>(num_params));</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    offset += <span class="keyword">sizeof</span>(num_params);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="comment">/* Copy the data from buffer to the right variables */</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordtype">int</span> p;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordflow">for</span> (p = 0; p &lt; num_params; p++) {</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="keywordtype">int</span> var_idx;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keywordtype">size_t</span> size;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="comment">/* Get the variable index of the next parameter */</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        memcpy(&amp;var_idx, buffer + offset, <span class="keyword">sizeof</span>(var_idx));</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        offset += <span class="keyword">sizeof</span>(var_idx);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="comment">/* Get the size of the next parameter */</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        memcpy(&amp;size, buffer + offset, <span class="keyword">sizeof</span>(size));</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        offset += <span class="keyword">sizeof</span>(size);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="comment">/* Get the next argument */</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="comment">/* We save it only if</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="comment">         *   - the index is &lt; 0  when type == 0</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="comment">         *   - the index is &gt;= 0 when type == 1</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="keywordflow">if</span> (type == 0) {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            <span class="keywordflow">if</span> (var_idx &lt; 0) {</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                var_idx = (var_idx + 2) * -1;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                <span class="keywordflow">if</span> (var_idx &gt;= num_vars)</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#a48789e97c178b74c49ef48f74d97ecd2">ABT_ERR_INV_SCHED_CONFIG</a>;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                memcpy(variables[var_idx], buffer + offset, size);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            }</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <span class="keywordflow">if</span> (var_idx &gt;= 0) {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                <span class="keywordflow">if</span> (var_idx &gt;= num_vars)</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#a48789e97c178b74c49ef48f74d97ecd2">ABT_ERR_INV_SCHED_CONFIG</a>;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                memcpy(variables[var_idx], buffer + offset, size);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            }</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        }</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        offset += size;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    }</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;}</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment">/* Internal static functions                                                 */</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;</div>
+<div class="line"><a name="l00310"></a><span class="lineno"><a class="line" href="../../d3/d95/config_8c.html#a156328aa57d5617d59be3f46ff1e3e9c">  310</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">size_t</span> <a class="code" href="../../d3/d95/config_8c.html#a156328aa57d5617d59be3f46ff1e3e9c">sched_config_type_size</a>(<a class="code" href="../../d5/d7d/abt_8h.html#aa7fb4c4d65dc699f39cece1cdf4fad18">ABT_sched_config_type</a> type)</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;{</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">switch</span> (type) {</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#aa7fb4c4d65dc699f39cece1cdf4fad18afb777ab6247be6031240a39e53dbc137">ABT_SCHED_CONFIG_INT</a>:</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">sizeof</span>(int);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#aa7fb4c4d65dc699f39cece1cdf4fad18af01b6e332719646d1d0e8f1174776c8f">ABT_SCHED_CONFIG_DOUBLE</a>:</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">sizeof</span>(double);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#aa7fb4c4d65dc699f39cece1cdf4fad18a96c0ffe38f56b9e53864661f163b24e8">ABT_SCHED_CONFIG_PTR</a>:</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">sizeof</span>(<span class="keywordtype">void</span> *);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            <a class="code" href="../../d6/d11/abti__error_8h.html#a81b70b0c4ee2d2993fbc05c32447695a">ABTI_ASSERT</a>(0);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            <a class="code" href="../../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">ABTU_unreachable</a>();</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    }</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;}</div>
 <div class="ttc" id="structABT__sched__config__var_html"><div class="ttname"><a href="../../d1/da5/structABT__sched__config__var.html">ABT_sched_config_var</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00438">abt.h:438</a></div></div>
+<div class="ttc" id="abti_8h_html_a1073e29ea64bc090b058cf162c457bb6"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a1073e29ea64bc090b058cf162c457bb6">ABTI_sched_config_read_global</a></div><div class="ttdeci">ABTU_ret_err int ABTI_sched_config_read_global(ABT_sched_config config, ABT_pool_access *access, ABT_bool *automatic)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d95/config_8c_source.html#l00222">config.c:222</a></div></div>
 <div class="ttc" id="abtu_8h_html_ae3782cfe8ab5b4b64d7da16a6fd6c84b"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">ABTU_unreachable</a></div><div class="ttdeci">#define ABTU_unreachable()</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00025">abtu.h:25</a></div></div>
 <div class="ttc" id="abt_8h_html_a48789e97c178b74c49ef48f74d97ecd2"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a48789e97c178b74c49ef48f74d97ecd2">ABT_ERR_INV_SCHED_CONFIG</a></div><div class="ttdeci">#define ABT_ERR_INV_SCHED_CONFIG</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00075">abt.h:75</a></div></div>
 <div class="ttc" id="abt_8h_html_aa7fb4c4d65dc699f39cece1cdf4fad18a96c0ffe38f56b9e53864661f163b24e8"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aa7fb4c4d65dc699f39cece1cdf4fad18a96c0ffe38f56b9e53864661f163b24e8">ABT_SCHED_CONFIG_PTR</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00435">abt.h:435</a></div></div>
 <div class="ttc" id="config_8c_html_aab3ac6aa9d02801c09f10a30792de1eb"><div class="ttname"><a href="../../d3/d95/config_8c.html#aab3ac6aa9d02801c09f10a30792de1eb">ABT_sched_config_automatic</a></div><div class="ttdeci">ABT_sched_config_var ABT_sched_config_automatic</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d95/config_8c_source.html#l00026">config.c:26</a></div></div>
-<div class="ttc" id="abti_8h_html_aee215ec4b2ca4f863c9dab0d267322ed"><div class="ttname"><a href="../../d5/d03/abti_8h.html#aee215ec4b2ca4f863c9dab0d267322ed">ABTI_sched_config</a></div><div class="ttdeci">char * ABTI_sched_config</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00109">abti.h:109</a></div></div>
+<div class="ttc" id="abti_8h_html_a5b4dca053e53036b40871c9ec2641d17"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a5b4dca053e53036b40871c9ec2641d17">ABTI_sched_config_read</a></div><div class="ttdeci">ABTU_ret_err int ABTI_sched_config_read(ABT_sched_config config, int type, int num_vars, void **variables)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d95/config_8c_source.html#l00252">config.c:252</a></div></div>
+<div class="ttc" id="abti_8h_html_aee215ec4b2ca4f863c9dab0d267322ed"><div class="ttname"><a href="../../d5/d03/abti_8h.html#aee215ec4b2ca4f863c9dab0d267322ed">ABTI_sched_config</a></div><div class="ttdeci">char * ABTI_sched_config</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00106">abti.h:106</a></div></div>
 <div class="ttc" id="config_8c_html_a5f56607cbe47e8c46cbe3acefa864c2b"><div class="ttname"><a href="../../d3/d95/config_8c.html#a5f56607cbe47e8c46cbe3acefa864c2b">ABT_sched_config_access</a></div><div class="ttdeci">ABT_sched_config_var ABT_sched_config_access</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d95/config_8c_source.html#l00023">config.c:23</a></div></div>
 <div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00373">abt.h:373</a></div></div>
 <div class="ttc" id="structABT__sched__config__var_html_af0e16f91a1ca13eda40a5dfca5a0087f"><div class="ttname"><a href="../../d1/da5/structABT__sched__config__var.html#af0e16f91a1ca13eda40a5dfca5a0087f">ABT_sched_config_var::idx</a></div><div class="ttdeci">int idx</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00439">abt.h:439</a></div></div>
 <div class="ttc" id="group__SCHED__CONFIG_html_gab9c7d102100e0b86cdb170126020d851"><div class="ttname"><a href="../../dc/d23/group__SCHED__CONFIG.html#gab9c7d102100e0b86cdb170126020d851">ABT_sched_config_read</a></div><div class="ttdeci">int ABT_sched_config_read(ABT_sched_config config, int num_vars,...) ABT_API_PUBLIC</div><div class="ttdoc">Copy the set values from config into the variables passed in the dynamic list of arguments. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d95/config_8c_source.html#l00170">config.c:170</a></div></div>
+<div class="ttc" id="abtu_8h_html_aa2d633baee4486fb78890916840282af"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a></div><div class="ttdeci">static ABTU_ret_err int ABTU_malloc(size_t size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00142">abtu.h:142</a></div></div>
 <div class="ttc" id="structABT__sched__config__var_html_a32f40b996f1b534802e45ea964fa779f"><div class="ttname"><a href="../../d1/da5/structABT__sched__config__var.html#a32f40b996f1b534802e45ea964fa779f">ABT_sched_config_var::type</a></div><div class="ttdeci">ABT_sched_config_type type</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00440">abt.h:440</a></div></div>
+<div class="ttc" id="abtu_8h_html_a40521ff89b1044d613bebd52c0aaebde"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a40521ff89b1044d613bebd52c0aaebde">ABTU_realloc</a></div><div class="ttdeci">static ABTU_ret_err int ABTU_realloc(size_t old_size, size_t new_size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00165">abtu.h:165</a></div></div>
 <div class="ttc" id="abt_8h_html_aa7fb4c4d65dc699f39cece1cdf4fad18af01b6e332719646d1d0e8f1174776c8f"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aa7fb4c4d65dc699f39cece1cdf4fad18af01b6e332719646d1d0e8f1174776c8f">ABT_SCHED_CONFIG_DOUBLE</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00434">abt.h:434</a></div></div>
 <div class="ttc" id="abti__error_8h_html_aad3b3ce8a92436b8b7efdebd32eeb52e"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a></div><div class="ttdeci">#define HANDLE_ERROR_FUNC_WITH_CODE(n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00353">abti_error.h:353</a></div></div>
 <div class="ttc" id="abt_8h_html_aa7fb4c4d65dc699f39cece1cdf4fad18"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aa7fb4c4d65dc699f39cece1cdf4fad18">ABT_sched_config_type</a></div><div class="ttdeci">ABT_sched_config_type</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00432">abt.h:432</a></div></div>
 <div class="ttc" id="abt_8h_html_acf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00064">abt.h:64</a></div></div>
-<div class="ttc" id="abti_8h_html_a08c1e25cc2588e9798d98d15a8db1f24"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a08c1e25cc2588e9798d98d15a8db1f24">ABTI_sched_config_read</a></div><div class="ttdeci">int ABTI_sched_config_read(ABT_sched_config config, int type, int num_vars, void **variables)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d95/config_8c_source.html#l00251">config.c:251</a></div></div>
 <div class="ttc" id="abt_8h_html_ad33f04702fb8618eed4f6ece04041ecf"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecf">ABT_pool_access</a></div><div class="ttdeci">ABT_pool_access</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00161">abt.h:161</a></div></div>
 <div class="ttc" id="group__SCHED__CONFIG_html_ga564a99ab5d01fcd04a648474eaf322f2"><div class="ttname"><a href="../../dc/d23/group__SCHED__CONFIG.html#ga564a99ab5d01fcd04a648474eaf322f2">ABT_sched_config_free</a></div><div class="ttdeci">int ABT_sched_config_free(ABT_sched_config *config) ABT_API_PUBLIC</div><div class="ttdoc">Free the configuration. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d95/config_8c_source.html#l00208">config.c:208</a></div></div>
-<div class="ttc" id="abtu_8h_html_a19f56f133e28b8481312676b83dc23b2"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a19f56f133e28b8481312676b83dc23b2">ABTU_malloc</a></div><div class="ttdeci">static int ABTU_malloc(size_t size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00122">abtu.h:122</a></div></div>
 <div class="ttc" id="abt_8h_html_ad1b1bcf52eae8deebb8e55c414e59cbe"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ad1b1bcf52eae8deebb8e55c414e59cbe">ABT_ERR_SCHED_CONFIG</a></div><div class="ttdeci">#define ABT_ERR_SCHED_CONFIG</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00098">abt.h:98</a></div></div>
 <div class="ttc" id="abti__config_8h_html_a74cde6132b765b5ba8b063bfd199a8d4"><div class="ttname"><a href="../../d0/d54/abti__config_8h.html#a74cde6132b765b5ba8b063bfd199a8d4">ABTI_sched_config_get_handle</a></div><div class="ttdeci">static ABT_sched_config ABTI_sched_config_get_handle(ABTI_sched_config *p_config)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d54/abti__config_8h_source.html#l00028">abti_config.h:28</a></div></div>
-<div class="ttc" id="config_8c_html_a156328aa57d5617d59be3f46ff1e3e9c"><div class="ttname"><a href="../../d3/d95/config_8c.html#a156328aa57d5617d59be3f46ff1e3e9c">sched_config_type_size</a></div><div class="ttdeci">static size_t sched_config_type_size(ABT_sched_config_type type)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d95/config_8c_source.html#l00309">config.c:309</a></div></div>
+<div class="ttc" id="config_8c_html_a156328aa57d5617d59be3f46ff1e3e9c"><div class="ttname"><a href="../../d3/d95/config_8c.html#a156328aa57d5617d59be3f46ff1e3e9c">sched_config_type_size</a></div><div class="ttdeci">static size_t sched_config_type_size(ABT_sched_config_type type)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d95/config_8c_source.html#l00310">config.c:310</a></div></div>
 <div class="ttc" id="abti__error_8h_html_a81b70b0c4ee2d2993fbc05c32447695a"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#a81b70b0c4ee2d2993fbc05c32447695a">ABTI_ASSERT</a></div><div class="ttdeci">#define ABTI_ASSERT(cond)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00012">abti_error.h:12</a></div></div>
 <div class="ttc" id="abt_8h_html_a9be459e63da2c9e318b6b9d446aa4c4b"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a9be459e63da2c9e318b6b9d446aa4c4b">ABT_sched_config</a></div><div class="ttdeci">struct ABT_sched_config_opaque * ABT_sched_config</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00321">abt.h:321</a></div></div>
 <div class="ttc" id="abti__error_8h_html_a8bcf885e66c769e235f313e4ab615b0a"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#a8bcf885e66c769e235f313e4ab615b0a">ABTI_CHECK_ERROR</a></div><div class="ttdeci">#define ABTI_CHECK_ERROR(abt_errno)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00086">abti_error.h:86</a></div></div>
 <div class="ttc" id="abti_8h_html"><div class="ttname"><a href="../../d5/d03/abti_8h.html">abti.h</a></div></div>
 <div class="ttc" id="group__SCHED__CONFIG_html_gaf99722523587197d1d71b180457584de"><div class="ttname"><a href="../../dc/d23/group__SCHED__CONFIG.html#gaf99722523587197d1d71b180457584de">ABT_sched_config_create</a></div><div class="ttdeci">int ABT_sched_config_create(ABT_sched_config *config,...) ABT_API_PUBLIC</div><div class="ttdoc">Create a scheduler configuration. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d95/config_8c_source.html#l00061">config.c:61</a></div></div>
 <div class="ttc" id="abt_8h_html_aa7fb4c4d65dc699f39cece1cdf4fad18afb777ab6247be6031240a39e53dbc137"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aa7fb4c4d65dc699f39cece1cdf4fad18afb777ab6247be6031240a39e53dbc137">ABT_SCHED_CONFIG_INT</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00433">abt.h:433</a></div></div>
-<div class="ttc" id="abti_8h_html_ae76f15823d2607c1612d84730c1e54e7"><div class="ttname"><a href="../../d5/d03/abti_8h.html#ae76f15823d2607c1612d84730c1e54e7">ABTI_sched_config_read_global</a></div><div class="ttdeci">int ABTI_sched_config_read_global(ABT_sched_config config, ABT_pool_access *access, ABT_bool *automatic)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d95/config_8c_source.html#l00222">config.c:222</a></div></div>
 <div class="ttc" id="abt_8h_html_a6a6ecfc1f874488af85684f7bf61f237"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a6a6ecfc1f874488af85684f7bf61f237">ABT_SCHED_CONFIG_NULL</a></div><div class="ttdeci">#define ABT_SCHED_CONFIG_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00412">abt.h:412</a></div></div>
 <div class="ttc" id="abti__config_8h_html_a48b611b8ecdbcdc9cdb200f4f52ff50d"><div class="ttname"><a href="../../d0/d54/abti__config_8h.html#a48b611b8ecdbcdc9cdb200f4f52ff50d">ABTI_sched_config_get_ptr</a></div><div class="ttdeci">static ABTI_sched_config * ABTI_sched_config_get_ptr(ABT_sched_config config)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d54/abti__config_8h_source.html#l00012">abti_config.h:12</a></div></div>
 <div class="ttc" id="config_8c_html_a6bc7b4ba1c41b160648428f6eec22c36"><div class="ttname"><a href="../../d3/d95/config_8c.html#a6bc7b4ba1c41b160648428f6eec22c36">ABT_sched_config_var_end</a></div><div class="ttdeci">ABT_sched_config_var ABT_sched_config_var_end</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d95/config_8c_source.html#l00019">config.c:19</a></div></div>
 <div class="ttc" id="abti_8h_html_a286f86ff122d8b3a6e244e277078f745"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a286f86ff122d8b3a6e244e277078f745">ABTI_IS_ERROR_CHECK_ENABLED</a></div><div class="ttdeci">#define ABTI_IS_ERROR_CHECK_ENABLED</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00020">abti.h:20</a></div></div>
-<div class="ttc" id="abtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00115">abtu.h:115</a></div></div>
+<div class="ttc" id="abtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00135">abtu.h:135</a></div></div>
 <div class="ttc" id="abti__error_8h_html_abb1a3e6fb41f517bdbaafdd8160b8e94"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#abb1a3e6fb41f517bdbaafdd8160b8e94">ABTI_CHECK_ERROR_RET</a></div><div class="ttdeci">#define ABTI_CHECK_ERROR_RET(abt_errno)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00103">abti_error.h:103</a></div></div>
-<div class="ttc" id="abtu_8h_html_a6c8f48db17643979963ff345d874b030"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a6c8f48db17643979963ff345d874b030">ABTU_realloc</a></div><div class="ttdeci">static int ABTU_realloc(size_t old_size, size_t new_size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00144">abtu.h:144</a></div></div>
+<div class="ttc" id="abtu_8h_html_a071d8986b72b8f5d099cdd47979b5e81"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a></div><div class="ttdeci">#define ABTU_ret_err</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00049">abtu.h:49</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 31 2020 03:09:50 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Sep 1 2020 03:09:50 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

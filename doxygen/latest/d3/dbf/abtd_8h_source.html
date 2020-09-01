@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">0f54072af6167fdb517ffdc4d2ae393cf4e8b076</span>
+   &#160;<span id="projectnumber">7ee1cb37947b0512554ee8d7ae2ff94baddcfa98</span>
    </div>
   </td>
  </tr>
@@ -135,70 +135,73 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> ABTD_env_init(ABTI_global *p_global);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">/* ES Context */</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">int</span> ABTD_xstream_context_create(<span class="keywordtype">void</span> *(*f_xstream)(<span class="keywordtype">void</span> *), <span class="keywordtype">void</span> *p_arg,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                ABTD_xstream_context *p_ctx);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">int</span> ABTD_xstream_context_free(ABTD_xstream_context *p_ctx);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">int</span> ABTD_xstream_context_join(ABTD_xstream_context *p_ctx);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">int</span> ABTD_xstream_context_revive(ABTD_xstream_context *p_ctx);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">int</span> ABTD_xstream_context_set_self(ABTD_xstream_context *p_ctx);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">/* ES Affinity */</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">void</span> ABTD_affinity_init(<span class="keyword">const</span> <span class="keywordtype">char</span> *affinity_str);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> ABTD_affinity_finalize(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">int</span> ABTD_affinity_cpuset_read(ABTD_xstream_context *p_ctx,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                              ABTD_affinity_cpuset *p_cpuset);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordtype">int</span> ABTD_affinity_cpuset_apply(ABTD_xstream_context *p_ctx,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                               <span class="keyword">const</span> ABTD_affinity_cpuset *p_cpuset);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">int</span> ABTD_affinity_cpuset_apply_default(ABTD_xstream_context *p_ctx, <span class="keywordtype">int</span> rank);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">void</span> ABTD_affinity_cpuset_destroy(ABTD_affinity_cpuset *p_cpuset);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">/* ES Affinity Parser */</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>ABTD_affinity_id_list {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">int</span> num;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">int</span> *ids; <span class="comment">/* id here can be negative. */</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;} ABTD_affinity_id_list;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>ABTD_affinity_parser_list {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">int</span> num;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    ABTD_affinity_id_list **p_id_lists;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;} ABTD_affinity_list;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;ABTD_affinity_list *ABTD_affinity_list_create(<span class="keyword">const</span> <span class="keywordtype">char</span> *affinity_str);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> ABTD_affinity_list_free(ABTD_affinity_list *p_list);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/d7d/abtd__stream_8h.html">abtd_stream.h</a>&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keywordtype">int</span> ABTD_xstream_context_create(<span class="keywordtype">void</span> *(*f_xstream)(<span class="keywordtype">void</span> *),</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                             <span class="keywordtype">void</span> *p_arg,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                             ABTD_xstream_context *p_ctx);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span> ABTD_xstream_context_free(ABTD_xstream_context *p_ctx);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">void</span> ABTD_xstream_context_join(ABTD_xstream_context *p_ctx);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">void</span> ABTD_xstream_context_revive(ABTD_xstream_context *p_ctx);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> ABTD_xstream_context_set_self(ABTD_xstream_context *p_ctx);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/* ES Affinity */</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> ABTD_affinity_init(<span class="keyword">const</span> <span class="keywordtype">char</span> *affinity_str);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">void</span> ABTD_affinity_finalize(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keywordtype">int</span> ABTD_affinity_cpuset_read(ABTD_xstream_context *p_ctx,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                           ABTD_affinity_cpuset *p_cpuset);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keywordtype">int</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;ABTD_affinity_cpuset_apply(ABTD_xstream_context *p_ctx,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                           <span class="keyword">const</span> ABTD_affinity_cpuset *p_cpuset);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keywordtype">int</span> ABTD_affinity_cpuset_apply_default(ABTD_xstream_context *p_ctx, <span class="keywordtype">int</span> rank);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> ABTD_affinity_cpuset_destroy(ABTD_affinity_cpuset *p_cpuset);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/* ES Affinity Parser */</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>ABTD_affinity_id_list {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">int</span> num;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">int</span> *ids; <span class="comment">/* id here can be negative. */</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;} ABTD_affinity_id_list;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>ABTD_affinity_parser_list {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">int</span> num;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    ABTD_affinity_id_list **p_id_lists;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;} ABTD_affinity_list;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;ABTD_affinity_list *ABTD_affinity_list_create(<span class="keyword">const</span> <span class="keywordtype">char</span> *affinity_str);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keywordtype">void</span> ABTD_affinity_list_free(ABTD_affinity_list *p_list);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">/* ULT Context */</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/daf/abtd__ythread_8h.html">abtd_ythread.h</a>&quot;</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">void</span> ABTD_ythread_exit(ABTI_xstream *p_local_xstream, ABTI_ythread *p_ythread);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">void</span> ABTD_ythread_cancel(ABTI_xstream *p_local_xstream,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                         ABTI_ythread *p_ythread);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#if defined(ABT_CONFIG_USE_CLOCK_GETTIME)</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;time.h&gt;</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>timespec ABTD_time;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#elif defined(ABT_CONFIG_USE_MACH_ABSOLUTE_TIME)</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;mach/mach_time.h&gt;</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">typedef</span> uint64_t ABTD_time;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#elif defined(ABT_CONFIG_USE_GETTIMEOFDAY)</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;sys/time.h&gt;</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>timeval ABTD_time;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">void</span> ABTD_time_init(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keywordtype">int</span> ABTD_time_get(ABTD_time *p_time);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keywordtype">double</span> ABTD_time_read_sec(ABTD_time *p_time);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTD_H_INCLUDED */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/d7d/abtd__stream_8h.html">abtd_stream.h</a>&quot;</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">/* ULT Context */</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/daf/abtd__ythread_8h.html">abtd_ythread.h</a>&quot;</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keywordtype">void</span> ABTD_ythread_exit(ABTI_xstream *p_local_xstream, ABTI_ythread *p_ythread);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordtype">void</span> ABTD_ythread_cancel(ABTI_xstream *p_local_xstream,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                         ABTI_ythread *p_ythread);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#if defined(ABT_CONFIG_USE_CLOCK_GETTIME)</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>timespec ABTD_time;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#elif defined(ABT_CONFIG_USE_MACH_ABSOLUTE_TIME)</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;mach/mach_time.h&gt;</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">typedef</span> uint64_t ABTD_time;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#elif defined(ABT_CONFIG_USE_GETTIMEOFDAY)</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;sys/time.h&gt;</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>timeval ABTD_time;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keywordtype">void</span> ABTD_time_init(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keywordtype">void</span> ABTD_time_get(ABTD_time *p_time);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keywordtype">double</span> ABTD_time_read_sec(ABTD_time *p_time);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTD_H_INCLUDED */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="abtd__ythread_8h_html"><div class="ttname"><a href="../../d8/daf/abtd__ythread_8h.html">abtd_ythread.h</a></div></div>
 <div class="ttc" id="abtd__stream_8h_html"><div class="ttname"><a href="../../d3/d7d/abtd__stream_8h.html">abtd_stream.h</a></div></div>
 <div class="ttc" id="abtd__context_8h_html"><div class="ttname"><a href="../../d2/db0/abtd__context_8h.html">abtd_context.h</a></div></div>
 <div class="ttc" id="abtd__atomic_8h_html"><div class="ttname"><a href="../../d2/db0/abtd__atomic_8h.html">abtd_atomic.h</a></div></div>
+<div class="ttc" id="abtu_8h_html_a071d8986b72b8f5d099cdd47979b5e81"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a></div><div class="ttdeci">#define ABTU_ret_err</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00049">abtu.h:49</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 31 2020 03:09:51 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Sep 1 2020 03:09:52 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

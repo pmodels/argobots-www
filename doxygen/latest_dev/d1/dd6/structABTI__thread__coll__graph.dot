@@ -58,7 +58,7 @@ digraph "ABTI_thread"
   Node26 [label="pthread_cond_t",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node19 -> Node21 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_arg" ,fontname="Helvetica"];
   Node1 -> Node20 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_thread" ,fontname="Helvetica"];
-  Node27 -> Node20 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_main_sched\nscheds" ,fontname="Helvetica"];
+  Node27 -> Node20 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_main_sched" ,fontname="Helvetica"];
   Node27 [label="ABTI_sched",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/dd5/structABTI__sched.html"];
   Node28 -> Node27 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" get_migr_pool" ,fontname="Helvetica"];
   Node28 [label="ABT_pool(*)(ABT_sched)",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
@@ -92,8 +92,11 @@ digraph "ABTI_thread"
   Node39 [label="enum ABT_sched_type",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node40 -> Node27 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" kind" ,fontname="Helvetica"];
   Node40 [label="uintptr_t",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node29 -> Node20 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_root_ythread" ,fontname="Helvetica"];
+  Node4 -> Node20 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_root_pool" ,fontname="Helvetica"];
   Node41 -> Node20 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" type" ,fontname="Helvetica"];
   Node41 [label="enum ABTI_xstream_type",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node20 -> Node20 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_prev\np_next" ,fontname="Helvetica"];
   Node42 -> Node20 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" state" ,fontname="Helvetica"];
   Node42 [label="ABTD_atomic_int",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/df5/structABTD__atomic__int.html"];
   Node13 -> Node42 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" val" ,fontname="Helvetica"];
@@ -119,8 +122,6 @@ digraph "ABTI_thread"
   Node33 -> Node46 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_mem_page_empty" ,fontname="Helvetica"];
   Node49 -> Node46 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" lp_type_requests" ,fontname="Helvetica"];
   Node49 [label="enum ABTU_MEM_LARGEPAGE_TYPE",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node36 -> Node20 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" request" ,fontname="Helvetica"];
-  Node19 -> Node20 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_req_arg" ,fontname="Helvetica"];
   Node37 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" type" ,fontname="Helvetica"];
   Node42 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" is_in_pool\nstate" ,fontname="Helvetica"];
   Node33 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_keytable" ,fontname="Helvetica"];

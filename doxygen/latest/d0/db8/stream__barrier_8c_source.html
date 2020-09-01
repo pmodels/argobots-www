@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">0f54072af6167fdb517ffdc4d2ae393cf4e8b076</span>
+   &#160;<span id="projectnumber">7ee1cb37947b0512554ee8d7ae2ff94baddcfa98</span>
    </div>
   </td>
  </tr>
@@ -104,91 +104,92 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    ABTI_xstream_barrier *p_newbarrier;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    abt_errno =</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="../../d5/d09/abtu_8h.html#a19f56f133e28b8481312676b83dc23b2">ABTU_malloc</a>(<span class="keyword">sizeof</span>(ABTI_xstream_barrier), (<span class="keywordtype">void</span> **)&amp;p_newbarrier);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a>(<span class="keyword">sizeof</span>(ABTI_xstream_barrier), (<span class="keywordtype">void</span> **)&amp;p_newbarrier);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    p_newbarrier-&gt;num_waiters = num_waiters;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    abt_errno = ABTD_xstream_barrier_init(num_waiters, &amp;p_newbarrier-&gt;bar);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">/* Return value */</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    *newbarrier = ABTI_xstream_barrier_get_handle(p_newbarrier);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(p_newbarrier);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">goto</span> fn_fail;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">/* Return value */</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    *newbarrier = ABTI_xstream_barrier_get_handle(p_newbarrier);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d6/d11/abti__error_8h.html#a9f103ec42ea638ec7f10dcf7bd4f7999">HANDLE_ERROR_FUNC_WITH_CODE_RET</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a5ed830632895c95a4be6692d66c1941b">ABT_ERR_FEATURE_NA</a>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../dc/d54/group__ES__BARRIER.html#gac540cb325432a8b6c33bfbac053ba02f">   67</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../dc/d54/group__ES__BARRIER.html#gac540cb325432a8b6c33bfbac053ba02f">ABT_xstream_barrier_free</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a77c35d8ec4598d111b01acaed11de536">ABT_xstream_barrier</a> *barrier)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#ifdef HAVE_PTHREAD_BARRIER_INIT</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a77c35d8ec4598d111b01acaed11de536">ABT_xstream_barrier</a> h_barrier = *barrier;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    ABTI_xstream_barrier *p_barrier = ABTI_xstream_barrier_get_ptr(h_barrier);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    ABTI_CHECK_NULL_XSTREAM_BARRIER_PTR(p_barrier);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    abt_errno = ABTD_xstream_barrier_destroy(&amp;p_barrier-&gt;bar);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d6/d11/abti__error_8h.html#a9f103ec42ea638ec7f10dcf7bd4f7999">HANDLE_ERROR_FUNC_WITH_CODE_RET</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a5ed830632895c95a4be6692d66c1941b">ABT_ERR_FEATURE_NA</a>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../dc/d54/group__ES__BARRIER.html#gac540cb325432a8b6c33bfbac053ba02f">   70</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../dc/d54/group__ES__BARRIER.html#gac540cb325432a8b6c33bfbac053ba02f">ABT_xstream_barrier_free</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a77c35d8ec4598d111b01acaed11de536">ABT_xstream_barrier</a> *barrier)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#ifdef HAVE_PTHREAD_BARRIER_INIT</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a77c35d8ec4598d111b01acaed11de536">ABT_xstream_barrier</a> h_barrier = *barrier;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    ABTI_xstream_barrier *p_barrier = ABTI_xstream_barrier_get_ptr(h_barrier);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    ABTI_CHECK_NULL_XSTREAM_BARRIER_PTR(p_barrier);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(p_barrier);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">/* Return value */</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    *barrier = <a class="code" href="../../d5/d7d/abt_8h.html#a96ff3b274e90e377dbadc18471650fa4">ABT_XSTREAM_BARRIER_NULL</a>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d6/d11/abti__error_8h.html#a9f103ec42ea638ec7f10dcf7bd4f7999">HANDLE_ERROR_FUNC_WITH_CODE_RET</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a5ed830632895c95a4be6692d66c1941b">ABT_ERR_FEATURE_NA</a>);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="../../dc/d54/group__ES__BARRIER.html#ga80a776789efc225e6e24a901f31a4374">  105</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../dc/d54/group__ES__BARRIER.html#ga80a776789efc225e6e24a901f31a4374">ABT_xstream_barrier_wait</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a77c35d8ec4598d111b01acaed11de536">ABT_xstream_barrier</a> barrier)</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#ifdef HAVE_PTHREAD_BARRIER_INIT</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    ABTI_xstream_barrier *p_barrier = ABTI_xstream_barrier_get_ptr(barrier);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    ABTI_CHECK_NULL_XSTREAM_BARRIER_PTR(p_barrier);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span> (p_barrier-&gt;num_waiters &gt; 1) {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        ABTD_xstream_barrier_wait(&amp;p_barrier-&gt;bar);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;fn_exit:</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;fn_fail:</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d6/d11/abti__error_8h.html#a9f103ec42ea638ec7f10dcf7bd4f7999">HANDLE_ERROR_FUNC_WITH_CODE_RET</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a5ed830632895c95a4be6692d66c1941b">ABT_ERR_FEATURE_NA</a>);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    ABTD_xstream_barrier_destroy(&amp;p_barrier-&gt;bar);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(p_barrier);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">/* Return value */</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    *barrier = <a class="code" href="../../d5/d7d/abt_8h.html#a96ff3b274e90e377dbadc18471650fa4">ABT_XSTREAM_BARRIER_NULL</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d6/d11/abti__error_8h.html#a9f103ec42ea638ec7f10dcf7bd4f7999">HANDLE_ERROR_FUNC_WITH_CODE_RET</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a5ed830632895c95a4be6692d66c1941b">ABT_ERR_FEATURE_NA</a>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="../../dc/d54/group__ES__BARRIER.html#ga80a776789efc225e6e24a901f31a4374">  106</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../dc/d54/group__ES__BARRIER.html#ga80a776789efc225e6e24a901f31a4374">ABT_xstream_barrier_wait</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a77c35d8ec4598d111b01acaed11de536">ABT_xstream_barrier</a> barrier)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#ifdef HAVE_PTHREAD_BARRIER_INIT</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    ABTI_xstream_barrier *p_barrier = ABTI_xstream_barrier_get_ptr(barrier);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    ABTI_CHECK_NULL_XSTREAM_BARRIER_PTR(p_barrier);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">if</span> (p_barrier-&gt;num_waiters &gt; 1) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        ABTD_xstream_barrier_wait(&amp;p_barrier-&gt;bar);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;fn_exit:</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;fn_fail:</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a>(abt_errno);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">goto</span> fn_exit;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d6/d11/abti__error_8h.html#a9f103ec42ea638ec7f10dcf7bd4f7999">HANDLE_ERROR_FUNC_WITH_CODE_RET</a>(<a class="code" href="../../d5/d7d/abt_8h.html#a5ed830632895c95a4be6692d66c1941b">ABT_ERR_FEATURE_NA</a>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="ttc" id="group__ES__BARRIER_html_ga9df48f67278b6b78ea7efb79d829c63f"><div class="ttname"><a href="../../dc/d54/group__ES__BARRIER.html#ga9df48f67278b6b78ea7efb79d829c63f">ABT_xstream_barrier_create</a></div><div class="ttdeci">int ABT_xstream_barrier_create(uint32_t num_waiters, ABT_xstream_barrier *newbarrier) ABT_API_PUBLIC</div><div class="ttdoc">Create a new ES barrier. </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/db8/stream__barrier_8c_source.html#l00026">stream_barrier.c:26</a></div></div>
-<div class="ttc" id="group__ES__BARRIER_html_ga80a776789efc225e6e24a901f31a4374"><div class="ttname"><a href="../../dc/d54/group__ES__BARRIER.html#ga80a776789efc225e6e24a901f31a4374">ABT_xstream_barrier_wait</a></div><div class="ttdeci">int ABT_xstream_barrier_wait(ABT_xstream_barrier barrier) ABT_API_PUBLIC</div><div class="ttdoc">Wait on the barrier. </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/db8/stream__barrier_8c_source.html#l00105">stream_barrier.c:105</a></div></div>
+<div class="ttc" id="abtu_8h_html_aa2d633baee4486fb78890916840282af"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a></div><div class="ttdeci">static ABTU_ret_err int ABTU_malloc(size_t size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00142">abtu.h:142</a></div></div>
+<div class="ttc" id="group__ES__BARRIER_html_ga80a776789efc225e6e24a901f31a4374"><div class="ttname"><a href="../../dc/d54/group__ES__BARRIER.html#ga80a776789efc225e6e24a901f31a4374">ABT_xstream_barrier_wait</a></div><div class="ttdeci">int ABT_xstream_barrier_wait(ABT_xstream_barrier barrier) ABT_API_PUBLIC</div><div class="ttdoc">Wait on the barrier. </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/db8/stream__barrier_8c_source.html#l00106">stream_barrier.c:106</a></div></div>
 <div class="ttc" id="abti__error_8h_html_aad3b3ce8a92436b8b7efdebd32eeb52e"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a></div><div class="ttdeci">#define HANDLE_ERROR_FUNC_WITH_CODE(n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00353">abti_error.h:353</a></div></div>
 <div class="ttc" id="abt_8h_html_acf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00064">abt.h:64</a></div></div>
 <div class="ttc" id="abt_8h_html_a77c35d8ec4598d111b01acaed11de536"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a77c35d8ec4598d111b01acaed11de536">ABT_xstream_barrier</a></div><div class="ttdeci">struct ABT_xstream_barrier_opaque * ABT_xstream_barrier</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00317">abt.h:317</a></div></div>
-<div class="ttc" id="abtu_8h_html_a19f56f133e28b8481312676b83dc23b2"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a19f56f133e28b8481312676b83dc23b2">ABTU_malloc</a></div><div class="ttdeci">static int ABTU_malloc(size_t size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00122">abtu.h:122</a></div></div>
 <div class="ttc" id="abti__error_8h_html_a9f103ec42ea638ec7f10dcf7bd4f7999"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#a9f103ec42ea638ec7f10dcf7bd4f7999">HANDLE_ERROR_FUNC_WITH_CODE_RET</a></div><div class="ttdeci">#define HANDLE_ERROR_FUNC_WITH_CODE_RET(n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00361">abti_error.h:361</a></div></div>
 <div class="ttc" id="abt_8h_html_a5ed830632895c95a4be6692d66c1941b"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a5ed830632895c95a4be6692d66c1941b">ABT_ERR_FEATURE_NA</a></div><div class="ttdeci">#define ABT_ERR_FEATURE_NA</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00116">abt.h:116</a></div></div>
 <div class="ttc" id="abti_8h_html"><div class="ttname"><a href="../../d5/d03/abti_8h.html">abti.h</a></div></div>
-<div class="ttc" id="group__ES__BARRIER_html_gac540cb325432a8b6c33bfbac053ba02f"><div class="ttname"><a href="../../dc/d54/group__ES__BARRIER.html#gac540cb325432a8b6c33bfbac053ba02f">ABT_xstream_barrier_free</a></div><div class="ttdeci">int ABT_xstream_barrier_free(ABT_xstream_barrier *barrier) ABT_API_PUBLIC</div><div class="ttdoc">Free the ES barrier. </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/db8/stream__barrier_8c_source.html#l00067">stream_barrier.c:67</a></div></div>
+<div class="ttc" id="group__ES__BARRIER_html_gac540cb325432a8b6c33bfbac053ba02f"><div class="ttname"><a href="../../dc/d54/group__ES__BARRIER.html#gac540cb325432a8b6c33bfbac053ba02f">ABT_xstream_barrier_free</a></div><div class="ttdeci">int ABT_xstream_barrier_free(ABT_xstream_barrier *barrier) ABT_API_PUBLIC</div><div class="ttdoc">Free the ES barrier. </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/db8/stream__barrier_8c_source.html#l00070">stream_barrier.c:70</a></div></div>
 <div class="ttc" id="abt_8h_html_a96ff3b274e90e377dbadc18471650fa4"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a96ff3b274e90e377dbadc18471650fa4">ABT_XSTREAM_BARRIER_NULL</a></div><div class="ttdeci">#define ABT_XSTREAM_BARRIER_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00410">abt.h:410</a></div></div>
-<div class="ttc" id="abtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00115">abtu.h:115</a></div></div>
+<div class="ttc" id="abtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00135">abtu.h:135</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 31 2020 03:09:52 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Sep 1 2020 03:09:52 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

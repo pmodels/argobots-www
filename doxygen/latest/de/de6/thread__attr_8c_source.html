@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">0f54072af6167fdb517ffdc4d2ae393cf4e8b076</span>
+   &#160;<span id="projectnumber">7ee1cb37947b0512554ee8d7ae2ff94baddcfa98</span>
    </div>
   </td>
  </tr>
@@ -101,7 +101,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    ABTI_thread_attr *p_newattr;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#a19f56f133e28b8481312676b83dc23b2">ABTU_malloc</a>(<span class="keyword">sizeof</span>(ABTI_thread_attr), (<span class="keywordtype">void</span> **)&amp;p_newattr);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a>(<span class="keyword">sizeof</span>(ABTI_thread_attr), (<span class="keywordtype">void</span> **)&amp;p_newattr);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">/* Default values */</span></div>
@@ -330,12 +330,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    fflush(p_os);</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;}</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="keywordtype">int</span> ABTI_thread_attr_dup(<span class="keyword">const</span> ABTI_thread_attr *p_attr,</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                         ABTI_thread_attr **pp_dup_attr)</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keywordtype">int</span> ABTI_thread_attr_dup(<span class="keyword">const</span> ABTI_thread_attr *p_attr,</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                                      ABTI_thread_attr **pp_dup_attr)</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;{</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    ABTI_thread_attr *p_dup_attr;</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#a19f56f133e28b8481312676b83dc23b2">ABTU_malloc</a>(<span class="keyword">sizeof</span>(ABTI_thread_attr), (<span class="keywordtype">void</span> **)&amp;p_dup_attr);</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a>(<span class="keyword">sizeof</span>(ABTI_thread_attr), (<span class="keywordtype">void</span> **)&amp;p_dup_attr);</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    ABTI_CHECK_ERROR_RET(abt_errno);</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    memcpy(p_dup_attr, p_attr, <span class="keyword">sizeof</span>(ABTI_thread_attr));</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    *pp_dup_attr = p_dup_attr;</div>
@@ -349,6 +349,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="group__ULT__ATTR_html_gaae7fa09430b9be1e9168f8cc45c311cd"><div class="ttname"><a href="../../d2/df6/group__ULT__ATTR.html#gaae7fa09430b9be1e9168f8cc45c311cd">ABT_thread_attr_set_callback</a></div><div class="ttdeci">int ABT_thread_attr_set_callback(ABT_thread_attr attr, void(*cb_func)(ABT_thread thread, void *cb_arg), void *cb_arg) ABT_API_PUBLIC</div><div class="ttdoc">Set callback function and its argument in the attribute object. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de6/thread__attr_8c_source.html#l00252">thread_attr.c:252</a></div></div>
 <div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00373">abt.h:373</a></div></div>
 <div class="ttc" id="abt_8h_html_a68176af1976c588a00f80767ca1c2835"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a68176af1976c588a00f80767ca1c2835">ABT_ERR_OTHER</a></div><div class="ttdeci">#define ABT_ERR_OTHER</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00067">abt.h:67</a></div></div>
+<div class="ttc" id="abtu_8h_html_aa2d633baee4486fb78890916840282af"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a></div><div class="ttdeci">static ABTU_ret_err int ABTU_malloc(size_t size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00142">abtu.h:142</a></div></div>
 <div class="ttc" id="group__ULT__ATTR_html_ga4b1677eb8e2a300a2e94201914471776"><div class="ttname"><a href="../../d2/df6/group__ULT__ATTR.html#ga4b1677eb8e2a300a2e94201914471776">ABT_thread_attr_create</a></div><div class="ttdeci">int ABT_thread_attr_create(ABT_thread_attr *newattr) ABT_API_PUBLIC</div><div class="ttdoc">Create a new ULT attribute object. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de6/thread__attr_8c_source.html#l00026">thread_attr.c:26</a></div></div>
 <div class="ttc" id="abt_8h_html_a186008e05c04170eed9ac74808619717"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a></div><div class="ttdeci">struct ABT_thread_opaque * ABT_thread</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00343">abt.h:343</a></div></div>
 <div class="ttc" id="abti__error_8h_html_aad3b3ce8a92436b8b7efdebd32eeb52e"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e">HANDLE_ERROR_FUNC_WITH_CODE</a></div><div class="ttdeci">#define HANDLE_ERROR_FUNC_WITH_CODE(n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00353">abti_error.h:353</a></div></div>
@@ -358,15 +359,15 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="abt_8h_html_ab6493016fce7f8140d89699ecf83c456"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ab6493016fce7f8140d89699ecf83c456">ABT_THREAD_ATTR_NULL</a></div><div class="ttdeci">#define ABT_THREAD_ATTR_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00417">abt.h:417</a></div></div>
 <div class="ttc" id="group__ULT__ATTR_html_ga26434b78a53e76c95668abf82bf149a3"><div class="ttname"><a href="../../d2/df6/group__ULT__ATTR.html#ga26434b78a53e76c95668abf82bf149a3">ABT_thread_attr_get_stack</a></div><div class="ttdeci">int ABT_thread_attr_get_stack(ABT_thread_attr attr, void **stackaddr, size_t *stacksize) ABT_API_PUBLIC</div><div class="ttdoc">Get stack attributes. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de6/thread__attr_8c_source.html#l00155">thread_attr.c:155</a></div></div>
 <div class="ttc" id="group__ULT__ATTR_html_ga19b271b779c2c43941e8881d1115d86a"><div class="ttname"><a href="../../d2/df6/group__ULT__ATTR.html#ga19b271b779c2c43941e8881d1115d86a">ABT_thread_attr_free</a></div><div class="ttdeci">int ABT_thread_attr_free(ABT_thread_attr *attr) ABT_API_PUBLIC</div><div class="ttdoc">Free the ULT attribute object. </div><div class="ttdef"><b>Definition:</b> <a href="../../de/de6/thread__attr_8c_source.html#l00061">thread_attr.c:61</a></div></div>
-<div class="ttc" id="abtu_8h_html_a19f56f133e28b8481312676b83dc23b2"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a19f56f133e28b8481312676b83dc23b2">ABTU_malloc</a></div><div class="ttdeci">static int ABTU_malloc(size_t size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00122">abtu.h:122</a></div></div>
 <div class="ttc" id="abti__error_8h_html_a9f103ec42ea638ec7f10dcf7bd4f7999"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#a9f103ec42ea638ec7f10dcf7bd4f7999">HANDLE_ERROR_FUNC_WITH_CODE_RET</a></div><div class="ttdeci">#define HANDLE_ERROR_FUNC_WITH_CODE_RET(n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00361">abti_error.h:361</a></div></div>
 <div class="ttc" id="abt_8h_html_a5ed830632895c95a4be6692d66c1941b"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a5ed830632895c95a4be6692d66c1941b">ABT_ERR_FEATURE_NA</a></div><div class="ttdeci">#define ABT_ERR_FEATURE_NA</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00116">abt.h:116</a></div></div>
 <div class="ttc" id="abti_8h_html"><div class="ttname"><a href="../../d5/d03/abti_8h.html">abti.h</a></div></div>
-<div class="ttc" id="abtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00115">abtu.h:115</a></div></div>
+<div class="ttc" id="abtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00135">abtu.h:135</a></div></div>
+<div class="ttc" id="abtu_8h_html_a071d8986b72b8f5d099cdd47979b5e81"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a></div><div class="ttdeci">#define ABTU_ret_err</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00049">abtu.h:49</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 31 2020 03:09:52 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Sep 1 2020 03:09:52 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

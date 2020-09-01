@@ -237,6 +237,7 @@ var searchData=
   ['abti_5fthread_5ftype_5fmem_5fmempool_5fdesc_5fstack',['ABTI_THREAD_TYPE_MEM_MEMPOOL_DESC_STACK',['../d5/d03/abti_8h.html#abf1d986539e3f75db2124436b39fe95b',1,'abti.h']]],
   ['abti_5fthread_5ftype_5fmigratable',['ABTI_THREAD_TYPE_MIGRATABLE',['../d5/d03/abti_8h.html#ace72b66d53b4ccd528a0631f5bc4fc82',1,'abti.h']]],
   ['abti_5fthread_5ftype_5fnamed',['ABTI_THREAD_TYPE_NAMED',['../d5/d03/abti_8h.html#ad00ca367723dea982120ebe3ec0c9a41',1,'abti.h']]],
+  ['abti_5fthread_5ftype_5froot',['ABTI_THREAD_TYPE_ROOT',['../d5/d03/abti_8h.html#a51f087b78b8ececbdcced83797358ea3',1,'abti.h']]],
   ['abti_5fthread_5ftype_5fthread',['ABTI_THREAD_TYPE_THREAD',['../d5/d03/abti_8h.html#ac40056907109ffc6bd4e9f79e244566f',1,'abti.h']]],
   ['abti_5fthread_5ftype_5fyieldable',['ABTI_THREAD_TYPE_YIELDABLE',['../d5/d03/abti_8h.html#a404127dcc10d5362057e45b713d34bbd',1,'abti.h']]],
   ['abti_5fthread_5ftypes_5fmem',['ABTI_THREAD_TYPES_MEM',['../d5/d03/abti_8h.html#abeacb7b298eaaa0542a35a65354692d1',1,'abti.h']]],
@@ -258,9 +259,6 @@ var searchData=
   ['abti_5fuse_5ftool_5finterface',['ABTI_USE_TOOL_INTERFACE',['../d2/deb/abti__tool_8h.html#a0e6e98d5f6766d2cd2453a709d7f1a56',1,'abti_tool.h']]],
   ['abti_5fvalgrind_5fregister_5fstack',['ABTI_VALGRIND_REGISTER_STACK',['../d3/d90/abti__valgrind_8h.html#a2f70861e7714ca5fc9758a11e9e9c0f4',1,'abti_valgrind.h']]],
   ['abti_5fvalgrind_5funregister_5fstack',['ABTI_VALGRIND_UNREGISTER_STACK',['../d3/d90/abti__valgrind_8h.html#aea4c8515d67bdf30e69a7c483b7e7100',1,'abti_valgrind.h']]],
-  ['abti_5fxstream_5freq_5fcancel',['ABTI_XSTREAM_REQ_CANCEL',['../d5/d03/abti_8h.html#a4c54b5160c5fd0116e24c4bd30441d15',1,'abti.h']]],
-  ['abti_5fxstream_5freq_5fjoin',['ABTI_XSTREAM_REQ_JOIN',['../d5/d03/abti_8h.html#a4bbd6e25554b61a5188109fc2aab651d',1,'abti.h']]],
-  ['abti_5fxstream_5freq_5fterminate',['ABTI_XSTREAM_REQ_TERMINATE',['../d5/d03/abti_8h.html#ab45f6c6dd8d86ca8e44d91e945034645',1,'abti.h']]],
   ['abtu_5falign_5fmember_5fvar',['ABTU_align_member_var',['../d5/d09/abtu_8h.html#aea5cb01847f12d57d2d2a5534ec12080',1,'abtu.h']]],
   ['abtu_5falignof',['ABTU_alignof',['../d5/d09/abtu_8h.html#a7ef16dec29441b0a122071a5719491db',1,'abtu.h']]],
   ['abtu_5flikely',['ABTU_likely',['../d5/d09/abtu_8h.html#a7e428ab19a648b9fcd6491a10551e27e',1,'abtu.h']]],
@@ -270,6 +268,7 @@ var searchData=
   ['abtu_5fmax_5falignment',['ABTU_MAX_ALIGNMENT',['../d5/d09/abtu_8h.html#af4893f86341de970c3b4488eee7df44d',1,'abtu.h']]],
   ['abtu_5fno_5fsanitize_5faddress',['ABTU_no_sanitize_address',['../d5/d09/abtu_8h.html#ad0e66f3acb110df07f959befc4ec748c',1,'abtu.h']]],
   ['abtu_5fnoreturn',['ABTU_noreturn',['../d5/d09/abtu_8h.html#a64c0a07a6bc37d45de89623a281c5b18',1,'abtu.h']]],
+  ['abtu_5fret_5ferr',['ABTU_ret_err',['../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81',1,'abtu.h']]],
   ['abtu_5funlikely',['ABTU_unlikely',['../d5/d09/abtu_8h.html#a15ad120401333b5a41e84b95681a76f9',1,'abtu.h']]],
   ['abtu_5funreachable',['ABTU_unreachable',['../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b',1,'abtu.h']]]
 ];

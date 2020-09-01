@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">0f54072af6167fdb517ffdc4d2ae393cf4e8b076</span>
+   &#160;<span id="projectnumber">7ee1cb37947b0512554ee8d7ae2ff94baddcfa98</span>
    </div>
   </td>
  </tr>
@@ -250,140 +250,142 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="keywordtype">int</span> ABTI_mem_pool_take_bucket(ABTI_mem_pool_global_pool *p_global_pool,</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                              ABTI_mem_pool_header **p_bucket)</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;{</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">/* Try to get a bucket. */</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    ABTI_sync_lifo_element *p_popped_bucket_lifo_elem =</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        ABTI_sync_lifo_pop(&amp;p_global_pool-&gt;bucket_lifo);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> num_headers_per_bucket = p_global_pool-&gt;num_headers_per_bucket;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d09/abtu_8h.html#a7e428ab19a648b9fcd6491a10551e27e">ABTU_likely</a>(p_popped_bucket_lifo_elem)) {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="comment">/* Use this bucket. */</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        ABTI_mem_pool_header *popped_bucket =</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <a class="code" href="../../d9/d73/mem__pool_8c.html#a5d8df49ef27482dd276d9b7a653e48d9">mem_pool_lifo_elem_to_header</a>(p_popped_bucket_lifo_elem);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        popped_bucket-&gt;bucket_info.num_headers = num_headers_per_bucket;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        *p_bucket = popped_bucket;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="comment">/* Allocate headers by myself */</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">size_t</span> header_size = p_global_pool-&gt;header_size;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordtype">int</span> num_headers = 0, i;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        ABTI_mem_pool_header *p_head = NULL;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">while</span> (1) {</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            ABTI_mem_pool_page *p_page;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            ABTI_sync_lifo_element *p_page_lifo_elem;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="comment">/* Before really allocating memory, check if a page has unused</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment">             * memory. */</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="keywordflow">if</span> ((p_page_lifo_elem =</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                     ABTI_sync_lifo_pop(&amp;p_global_pool-&gt;mem_page_lifo))) {</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                <span class="comment">/* Use a page popped from mem_page_lifo */</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                p_page = <a class="code" href="../../d9/d73/mem__pool_8c.html#a5c67afbd642a7c1f9e9e41bb04b7b6fb">mem_pool_lifo_elem_to_page</a>(p_page_lifo_elem);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                <span class="comment">/* Let&#39;s allocate memory by myself */</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">size_t</span> page_size = p_global_pool-&gt;page_size;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                <a class="code" href="../../d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082ac">ABTU_MEM_LARGEPAGE_TYPE</a> lp_type;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                <span class="keywordtype">void</span> *p_alloc_mem;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                <span class="keywordtype">int</span> abt_errno =</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                    <a class="code" href="../../d5/d09/abtu_8h.html#abe2a2ab7a220a5c4f3c0bbc062884786">ABTU_alloc_largepage</a>(page_size,</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                                         p_global_pool-&gt;alignment_hint,</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                                         p_global_pool-&gt;lp_type_requests,</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                                         p_global_pool-&gt;num_lp_type_requests,</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                                         &amp;lp_type, &amp;p_alloc_mem);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                    <span class="comment">/* It fails to take a large page. Let&#39;s return. */</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                    <span class="keywordflow">if</span> (num_headers != 0) {</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                        <span class="comment">/* p_head has some elements, so let&#39;s return them. */</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                        p_head-&gt;bucket_info.num_headers = num_headers;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                        <a class="code" href="../../d9/d73/mem__pool_8c.html#af836c6efedc1f2cd7e8bcc7769120f19">mem_pool_return_partial_bucket</a>(p_global_pool, p_head);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                    }</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                    <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                }</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                p_page =</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                    (ABTI_mem_pool_page *)(((<span class="keywordtype">char</span> *)p_alloc_mem) + page_size -</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                                           <span class="keyword">sizeof</span>(ABTI_mem_pool_page));</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                p_page-&gt;mem = p_alloc_mem;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                p_page-&gt;page_size = page_size;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                p_page-&gt;lp_type = lp_type;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                p_page-&gt;p_mem_extra = p_alloc_mem;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                p_page-&gt;mem_extra_size = page_size - <span class="keyword">sizeof</span>(ABTI_mem_pool_page);</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            }</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            <span class="comment">/* Take some memory left in this page. */</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <span class="keywordtype">int</span> num_provided = p_page-&gt;mem_extra_size / header_size;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            <span class="keywordtype">int</span> num_required = num_headers_per_bucket - num_headers;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="keywordflow">if</span> (num_required &lt; num_provided)</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                num_provided = num_required;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            ABTI_ASSERT(num_provided != 0);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <span class="keywordtype">void</span> *p_mem_extra = p_page-&gt;p_mem_extra;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            p_page-&gt;p_mem_extra =</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                (<span class="keywordtype">void</span> *)(((<span class="keywordtype">char</span> *)p_mem_extra) + header_size * num_provided);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            p_page-&gt;mem_extra_size -= header_size * num_provided;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            <span class="comment">/* We&#39;ve already gotten necessary p_mem_extra from this page. Let&#39;s</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment">             * return it. */</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <span class="keywordflow">if</span> (p_page-&gt;mem_extra_size &gt;= header_size) {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                <span class="comment">/* This page still has some extra memory. Someone will use it in</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">                 * the future. */</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                ABTI_sync_lifo_push(&amp;p_global_pool-&gt;mem_page_lifo,</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                                    &amp;p_page-&gt;lifo_elem);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                <span class="comment">/* No extra memory is left in this page. Let&#39;s push it to a list</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">                 * of empty pages.  Since mem_page_empty_lifo is push-only and</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">                 * thus there&#39;s no ABA problem, use a simpler lock-free LIFO</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment">                 * algorithm. */</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                <span class="keywordtype">void</span> *p_cur_mem_page;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                    p_cur_mem_page = ABTD_atomic_acquire_load_ptr(</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                        &amp;p_global_pool-&gt;p_mem_page_empty);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                    p_page-&gt;p_next_empty_page =</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                        (ABTI_mem_pool_page *)p_cur_mem_page;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                } <span class="keywordflow">while</span> (!ABTD_atomic_bool_cas_weak_ptr(&amp;p_global_pool</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                                                             -&gt;p_mem_page_empty,</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                                                        p_cur_mem_page,</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                                                        p_page));</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            }</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <span class="keywordtype">size_t</span> header_offset = p_global_pool-&gt;header_offset;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            ABTI_mem_pool_header *p_local_tail =</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                (ABTI_mem_pool_header *)(((<span class="keywordtype">char</span> *)p_mem_extra) + header_offset);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            p_local_tail-&gt;p_next = p_head;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            ABTI_mem_pool_header *p_prev = p_local_tail;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keywordflow">for</span> (i = 1; i &lt; num_provided; i++) {</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                ABTI_mem_pool_header *p_cur =</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                    (ABTI_mem_pool_header *)(((<span class="keywordtype">char</span> *)p_prev) + header_size);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                p_cur-&gt;p_next = p_prev;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                p_prev = p_cur;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            }</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            p_head = p_prev;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            num_headers += num_provided;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <span class="keywordflow">if</span> (num_headers == num_headers_per_bucket) {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                p_head-&gt;bucket_info.num_headers = num_headers_per_bucket;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                *p_bucket = p_head;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            }</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        }</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;}</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="keywordtype">void</span> ABTI_mem_pool_return_bucket(ABTI_mem_pool_global_pool *p_global_pool,</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                                 ABTI_mem_pool_header *bucket)</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;{</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="comment">/* Simply return that bucket to the pool */</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    ABTI_sync_lifo_push(&amp;p_global_pool-&gt;bucket_lifo,</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                        &amp;bucket-&gt;bucket_info.lifo_elem);</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keywordtype">int</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;ABTI_mem_pool_take_bucket(ABTI_mem_pool_global_pool *p_global_pool,</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                          ABTI_mem_pool_header **p_bucket)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;{</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="comment">/* Try to get a bucket. */</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    ABTI_sync_lifo_element *p_popped_bucket_lifo_elem =</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        ABTI_sync_lifo_pop(&amp;p_global_pool-&gt;bucket_lifo);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> num_headers_per_bucket = p_global_pool-&gt;num_headers_per_bucket;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d09/abtu_8h.html#a7e428ab19a648b9fcd6491a10551e27e">ABTU_likely</a>(p_popped_bucket_lifo_elem)) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="comment">/* Use this bucket. */</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        ABTI_mem_pool_header *popped_bucket =</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <a class="code" href="../../d9/d73/mem__pool_8c.html#a5d8df49ef27482dd276d9b7a653e48d9">mem_pool_lifo_elem_to_header</a>(p_popped_bucket_lifo_elem);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        popped_bucket-&gt;bucket_info.num_headers = num_headers_per_bucket;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        *p_bucket = popped_bucket;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="comment">/* Allocate headers by myself */</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">size_t</span> header_size = p_global_pool-&gt;header_size;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordtype">int</span> num_headers = 0, i;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        ABTI_mem_pool_header *p_head = NULL;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordflow">while</span> (1) {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            ABTI_mem_pool_page *p_page;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            ABTI_sync_lifo_element *p_page_lifo_elem;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="comment">/* Before really allocating memory, check if a page has unused</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment">             * memory. */</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="keywordflow">if</span> ((p_page_lifo_elem =</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                     ABTI_sync_lifo_pop(&amp;p_global_pool-&gt;mem_page_lifo))) {</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                <span class="comment">/* Use a page popped from mem_page_lifo */</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                p_page = <a class="code" href="../../d9/d73/mem__pool_8c.html#a5c67afbd642a7c1f9e9e41bb04b7b6fb">mem_pool_lifo_elem_to_page</a>(p_page_lifo_elem);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="comment">/* Let&#39;s allocate memory by myself */</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">size_t</span> page_size = p_global_pool-&gt;page_size;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                <a class="code" href="../../d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082ac">ABTU_MEM_LARGEPAGE_TYPE</a> lp_type;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                <span class="keywordtype">void</span> *p_alloc_mem;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                <span class="keywordtype">int</span> abt_errno =</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                    <a class="code" href="../../d5/d09/abtu_8h.html#ae248ad3031cfbfa19dd7b45804e6fbb0">ABTU_alloc_largepage</a>(page_size,</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                                         p_global_pool-&gt;alignment_hint,</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                                         p_global_pool-&gt;lp_type_requests,</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                                         p_global_pool-&gt;num_lp_type_requests,</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                                         &amp;lp_type, &amp;p_alloc_mem);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                    <span class="comment">/* It fails to take a large page. Let&#39;s return. */</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                    <span class="keywordflow">if</span> (num_headers != 0) {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                        <span class="comment">/* p_head has some elements, so let&#39;s return them. */</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                        p_head-&gt;bucket_info.num_headers = num_headers;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                        <a class="code" href="../../d9/d73/mem__pool_8c.html#af836c6efedc1f2cd7e8bcc7769120f19">mem_pool_return_partial_bucket</a>(p_global_pool, p_head);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                    }</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                    <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                p_page =</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    (ABTI_mem_pool_page *)(((<span class="keywordtype">char</span> *)p_alloc_mem) + page_size -</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                                           <span class="keyword">sizeof</span>(ABTI_mem_pool_page));</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                p_page-&gt;mem = p_alloc_mem;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                p_page-&gt;page_size = page_size;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                p_page-&gt;lp_type = lp_type;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                p_page-&gt;p_mem_extra = p_alloc_mem;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                p_page-&gt;mem_extra_size = page_size - <span class="keyword">sizeof</span>(ABTI_mem_pool_page);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <span class="comment">/* Take some memory left in this page. */</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            <span class="keywordtype">int</span> num_provided = p_page-&gt;mem_extra_size / header_size;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="keywordtype">int</span> num_required = num_headers_per_bucket - num_headers;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <span class="keywordflow">if</span> (num_required &lt; num_provided)</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                num_provided = num_required;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            ABTI_ASSERT(num_provided != 0);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="keywordtype">void</span> *p_mem_extra = p_page-&gt;p_mem_extra;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            p_page-&gt;p_mem_extra =</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                (<span class="keywordtype">void</span> *)(((<span class="keywordtype">char</span> *)p_mem_extra) + header_size * num_provided);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            p_page-&gt;mem_extra_size -= header_size * num_provided;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="comment">/* We&#39;ve already gotten necessary p_mem_extra from this page. Let&#39;s</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment">             * return it. */</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <span class="keywordflow">if</span> (p_page-&gt;mem_extra_size &gt;= header_size) {</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                <span class="comment">/* This page still has some extra memory. Someone will use it in</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">                 * the future. */</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                ABTI_sync_lifo_push(&amp;p_global_pool-&gt;mem_page_lifo,</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                                    &amp;p_page-&gt;lifo_elem);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                <span class="comment">/* No extra memory is left in this page. Let&#39;s push it to a list</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">                 * of empty pages.  Since mem_page_empty_lifo is push-only and</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment">                 * thus there&#39;s no ABA problem, use a simpler lock-free LIFO</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="comment">                 * algorithm. */</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                <span class="keywordtype">void</span> *p_cur_mem_page;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                    p_cur_mem_page = ABTD_atomic_acquire_load_ptr(</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                        &amp;p_global_pool-&gt;p_mem_page_empty);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                    p_page-&gt;p_next_empty_page =</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                        (ABTI_mem_pool_page *)p_cur_mem_page;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                } <span class="keywordflow">while</span> (!ABTD_atomic_bool_cas_weak_ptr(&amp;p_global_pool</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                                                             -&gt;p_mem_page_empty,</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                                                        p_cur_mem_page,</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                                                        p_page));</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keywordtype">size_t</span> header_offset = p_global_pool-&gt;header_offset;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            ABTI_mem_pool_header *p_local_tail =</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                (ABTI_mem_pool_header *)(((<span class="keywordtype">char</span> *)p_mem_extra) + header_offset);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            p_local_tail-&gt;p_next = p_head;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            ABTI_mem_pool_header *p_prev = p_local_tail;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="keywordflow">for</span> (i = 1; i &lt; num_provided; i++) {</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                ABTI_mem_pool_header *p_cur =</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                    (ABTI_mem_pool_header *)(((<span class="keywordtype">char</span> *)p_prev) + header_size);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                p_cur-&gt;p_next = p_prev;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                p_prev = p_cur;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            }</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            p_head = p_prev;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            num_headers += num_provided;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            <span class="keywordflow">if</span> (num_headers == num_headers_per_bucket) {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                p_head-&gt;bucket_info.num_headers = num_headers_per_bucket;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                *p_bucket = p_head;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            }</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        }</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    }</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;}</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="keywordtype">void</span> ABTI_mem_pool_return_bucket(ABTI_mem_pool_global_pool *p_global_pool,</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                                 ABTI_mem_pool_header *bucket)</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;{</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="comment">/* Simply return that bucket to the pool */</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    ABTI_sync_lifo_push(&amp;p_global_pool-&gt;bucket_lifo,</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                        &amp;bucket-&gt;bucket_info.lifo_elem);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;}</div>
 <div class="ttc" id="abtu_8h_html_a7e428ab19a648b9fcd6491a10551e27e"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a7e428ab19a648b9fcd6491a10551e27e">ABTU_likely</a></div><div class="ttdeci">#define ABTU_likely(cond)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00017">abtu.h:17</a></div></div>
+<div class="ttc" id="abtu_8h_html_ae248ad3031cfbfa19dd7b45804e6fbb0"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#ae248ad3031cfbfa19dd7b45804e6fbb0">ABTU_alloc_largepage</a></div><div class="ttdeci">ABTU_ret_err int ABTU_alloc_largepage(size_t size, size_t alignment_hint, const ABTU_MEM_LARGEPAGE_TYPE *requested_types, int num_requested_types, ABTU_MEM_LARGEPAGE_TYPE *p_actual, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de7/largepage_8c_source.html#l00090">largepage.c:90</a></div></div>
 <div class="ttc" id="mem__pool_8c_html_a5c67afbd642a7c1f9e9e41bb04b7b6fb"><div class="ttname"><a href="../../d9/d73/mem__pool_8c.html#a5c67afbd642a7c1f9e9e41bb04b7b6fb">mem_pool_lifo_elem_to_page</a></div><div class="ttdeci">static ABTI_mem_pool_page * mem_pool_lifo_elem_to_page(ABTI_sync_lifo_element *lifo_elem)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d73/mem__pool_8c_source.html#l00010">mem_pool.c:10</a></div></div>
 <div class="ttc" id="abt_8h_html_acf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00064">abt.h:64</a></div></div>
-<div class="ttc" id="abtu_8h_html_aa315ba860d29923548e980a7d2c4b623"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aa315ba860d29923548e980a7d2c4b623">ABTU_free_largepage</a></div><div class="ttdeci">void ABTU_free_largepage(void *ptr, size_t size, ABTU_MEM_LARGEPAGE_TYPE type)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de7/largepage_8c_source.html#l00131">largepage.c:131</a></div></div>
+<div class="ttc" id="abtu_8h_html_aa315ba860d29923548e980a7d2c4b623"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aa315ba860d29923548e980a7d2c4b623">ABTU_free_largepage</a></div><div class="ttdeci">void ABTU_free_largepage(void *ptr, size_t size, ABTU_MEM_LARGEPAGE_TYPE type)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de7/largepage_8c_source.html#l00132">largepage.c:132</a></div></div>
 <div class="ttc" id="mem__pool_8c_html_af836c6efedc1f2cd7e8bcc7769120f19"><div class="ttname"><a href="../../d9/d73/mem__pool_8c.html#af836c6efedc1f2cd7e8bcc7769120f19">mem_pool_return_partial_bucket</a></div><div class="ttdeci">static void mem_pool_return_partial_bucket(ABTI_mem_pool_global_pool *p_global_pool, ABTI_mem_pool_header *bucket)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d73/mem__pool_8c_source.html#l00027">mem_pool.c:27</a></div></div>
-<div class="ttc" id="abtu_8h_html_aef487b4e86c4c28804e18e95edd082ac"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082ac">ABTU_MEM_LARGEPAGE_TYPE</a></div><div class="ttdeci">ABTU_MEM_LARGEPAGE_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00192">abtu.h:192</a></div></div>
-<div class="ttc" id="abtu_8h_html_abe2a2ab7a220a5c4f3c0bbc062884786"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#abe2a2ab7a220a5c4f3c0bbc062884786">ABTU_alloc_largepage</a></div><div class="ttdeci">int ABTU_alloc_largepage(size_t size, size_t alignment_hint, const ABTU_MEM_LARGEPAGE_TYPE *requested_types, int num_requested_types, ABTU_MEM_LARGEPAGE_TYPE *p_actual, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de7/largepage_8c_source.html#l00089">largepage.c:89</a></div></div>
+<div class="ttc" id="abtu_8h_html_aef487b4e86c4c28804e18e95edd082ac"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082ac">ABTU_MEM_LARGEPAGE_TYPE</a></div><div class="ttdeci">ABTU_MEM_LARGEPAGE_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00218">abtu.h:218</a></div></div>
 <div class="ttc" id="mem__pool_8c_html_a5d8df49ef27482dd276d9b7a653e48d9"><div class="ttname"><a href="../../d9/d73/mem__pool_8c.html#a5d8df49ef27482dd276d9b7a653e48d9">mem_pool_lifo_elem_to_header</a></div><div class="ttdeci">static ABTI_mem_pool_header * mem_pool_lifo_elem_to_header(ABTI_sync_lifo_element *lifo_elem)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d73/mem__pool_8c_source.html#l00017">mem_pool.c:17</a></div></div>
 <div class="ttc" id="abti_8h_html"><div class="ttname"><a href="../../d5/d03/abti_8h.html">abti.h</a></div></div>
+<div class="ttc" id="abtu_8h_html_a071d8986b72b8f5d099cdd47979b5e81"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a></div><div class="ttdeci">#define ABTU_ret_err</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00049">abtu.h:49</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 31 2020 03:09:51 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Sep 1 2020 03:09:52 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
