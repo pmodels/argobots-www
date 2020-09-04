@@ -26,40 +26,42 @@ description: Argobots&#58; A Lightweight Low-level Threading Framework
 				Argobots, which was developed as a part of the Argo project, is a lightweight runtime system that supports integrated computation and data movement with massive concurrency. It will directly leverage the lowest-level constructs in the hardware and OS: lightweight notification mechanisms, data movement engines, memory mapping, and data placement strategies.
 			</p>
 		</div>
-		<div class="container flex">
+	</section>
+	<section>
+		<div class="container flex_twol">
 			<div class="text">
 				<h3>Lightweight Threads and Tasklets</h3>
 				<p>
 					Argobots implements lightweight parallel work units, such as lightweight threads or tasklets, that can dynamically and efficiently adapt to the tug of requirements from applications and hardware resources.  Threads and tasklets are efficiently scheduled based on power, resilience, memory locality, and capabilities.  Threads and tasklets are executed by abstracted execution entities called execution streams.
 				</p>
 			</div>
-			<div class="rimage">
+			<div class="image">
 				<img src="{{ site.baseurl }}/images/argobots_design.svg"/>
 			</div>
 		</div>
 	</section>
 	<section>
-		<div class="container flex">
+		<div class="container flex_twor">
 			<div class="text">
 				<h3>Customizable Schedulers</h3>
 				<p>
 					Localized scheduling strategies such as those used in current runtime systems, while efficient for short execution, are unaware of global strategies and priorities.  Adaptability and dynamic application behavior must be handled by scheduling strategies that can change over time or be customized for a particular algorithm or data structure. “Plugging” in a specialized scheduling strategy lets the OS/R handle the mechanism and utilize lightweight notification features while leaving the policy to higher levels of the system-software stack.
 				</p>
 			</div>
-			<div class="limage">
+			<div class="image">
 				<img src="{{ site.baseurl }}/images/sched.svg"/>
 			</div>
 		</div>
 	</section>
 	<section>
-		<div class="container flex">
+		<div class="container flex_twol">
 			<div class="text">
 				<h3>High Portability</h3>
 				<p>
 					Argobots works on major UNIX-based platforms including Ubuntu, FreeBSD, CentOS, macOS, and Solaris. Argobots supports most CPU architectures with special optimizations for Intel/AMD x86/64, ARMv8-A, and POWER 8 and 9.  We regularly test Argobots with numerous C compilers including GCC, Clang, ICC (Intel), XLC (IBM), PGCC (PGI), Solaris Studio (Oracle), and Arm C Compiler for HPC (ARM).  Please check <a href= "{{ site.baseurl }}/tests">here</a> for details.
 				</p>
 			</div>
-			<div class="rimage">
+			<div class="image">
 				<img src="{{ site.baseurl }}/images/support.svg"/>
 			</div>
 		</div>

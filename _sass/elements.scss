@@ -173,6 +173,7 @@ header {
 .content {
 	background: $base-color;
 	padding: 1px 0 0 0;
+	padding-bottom: 60px;
 	position: relative;
 }
 
@@ -181,7 +182,7 @@ section {
 }
 
 section + section {
-	padding-top: 0;
+	padding: 0px 0;
 }
 
 .subtext {
@@ -193,8 +194,22 @@ section + section {
 	margin: 10px auto;
 }
 
-@media screen and (max-width:799px) {
-	div.rimage, div.limage {
+@media all and #{$desktop} {
+	div.image {
+		width: 50%;
+		height: 400px;
+		img {
+			height: 400px;
+			object-fit: contain;
+		}
+	}
+	div.twoelems {
+		flex-direction: row;
+	}
+}
+
+@media not all and #{$desktop} {
+	div.image {
 		position: relative;
 		width: 100%;
 		img {
@@ -202,24 +217,9 @@ section + section {
 			display: block;
 			margin: auto;
 		}
-
 	}
-}
-
-@media screen and (min-width:800px) {
-	div.rimage, div.limage {
-		width: 50%;
-		height: 400px;
-		img {
-			height: 500px;
-			object-fit: contain;
-		}
-	}
-	div.rimage {
-		float: right;
-	}
-	div.limage {
-		float: left;
+	div.twoelems {
+		flex-direction: column;
 	}
 }
 
@@ -243,7 +243,7 @@ div.wideimage {
 
 .page {
 	margin-bottom: 0;
-	padding-bottom: 80px;
+	padding-bottom: 0px;
 }
 
 .center-text {
