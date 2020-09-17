@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">7ee1cb37947b0512554ee8d7ae2ff94baddcfa98</span>
+   &#160;<span id="projectnumber">1227c643f7a7f974f1f1778a9ffebd29d7dafecf</span>
    </div>
   </td>
  </tr>
@@ -297,7 +297,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d3/d3f/task_8c_source.html#l00100">100</a> of file <a class="el" href="../../d3/d3f/task_8c_source.html">task.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/d3f/task_8c_source.html#l00098">98</a> of file <a class="el" href="../../d3/d3f/task_8c_source.html">task.c</a>.</p>
 
 </div>
 </div>
@@ -885,6 +885,7 @@ Functions</h2></td></tr>
 
 <p>Return the handle of the calling tasklet. </p>
 <p><code><a class="el" href="../../d7/d4b/group__TASK.html#ga56767798998efc377ea68d7919292f6f" title="Return the handle of the calling tasklet. ">ABT_task_self()</a></code> returns the handle of the calling tasklet. If ULTs call this routine, <code>ABT_TASK_NULL</code> will be returned to <code>task</code>.</p>
+<p>At present <code>task</code> is set to <code>ABT_TASK_NULL</code> when an error occurs, but this behavior is deprecated. The program should not rely on this behavior.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">task</td><td>tasklet handle </td></tr>
@@ -902,7 +903,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d3/d3f/task_8c_source.html#l00213">213</a> of file <a class="el" href="../../d3/d3f/task_8c_source.html">task.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/d3f/task_8c_source.html#l00212">212</a> of file <a class="el" href="../../d3/d3f/task_8c_source.html">task.c</a>.</p>
 
 </div>
 </div>
@@ -939,7 +940,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d3/d3f/task_8c_source.html#l00248">248</a> of file <a class="el" href="../../d3/d3f/task_8c_source.html">task.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/d3f/task_8c_source.html#l00247">247</a> of file <a class="el" href="../../d3/d3f/task_8c_source.html">task.c</a>.</p>
 
 </div>
 </div>
@@ -1039,7 +1040,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 1 2020 03:09:52 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 17 2020 03:10:01 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
