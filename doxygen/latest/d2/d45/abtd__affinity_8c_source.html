@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">1227c643f7a7f974f1f1778a9ffebd29d7dafecf</span>
+   &#160;<span id="projectnumber">66b1c39742507d8df30e8d28c54839b961a14814</span>
    </div>
   </td>
  </tr>
@@ -325,7 +325,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    }</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    p_cpuset-&gt;num_cpuids = num_cpuids;</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    ret = <a class="code" href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a>(<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>) * num_cpuids, (<span class="keywordtype">void</span> **)&amp;p_cpuset-&gt;cpuids);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    ABTI_CHECK_ERROR_RET(ret);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    ABTI_CHECK_ERROR(ret);</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">for</span> (i = 0, j = 0; i &lt; CPU_SETSIZE; i++) {</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keywordflow">if</span> (CPU_ISSET(i, &amp;cpuset))</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            p_cpuset-&gt;cpuids[j++] = i;</div>
@@ -515,7 +515,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="abt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00285">abt.h:285</a></div></div>
 <div class="ttc" id="abtu_8h_html_a40521ff89b1044d613bebd52c0aaebde"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a40521ff89b1044d613bebd52c0aaebde">ABTU_realloc</a></div><div class="ttdeci">static ABTU_ret_err int ABTU_realloc(size_t old_size, size_t new_size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00165">abtu.h:165</a></div></div>
 <div class="ttc" id="structglobal__affinity_html_aa60d91287795e43bcdfe22485d47a8db"><div class="ttname"><a href="../../d6/dcd/structglobal__affinity.html#aa60d91287795e43bcdfe22485d47a8db">global_affinity::num_cpusets</a></div><div class="ttdeci">size_t num_cpusets</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d45/abtd__affinity_8c_source.html#l00186">abtd_affinity.c:186</a></div></div>
-<div class="ttc" id="abti_8h_html_a5e2e52e4bfa1e19e121d939135e4300c"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a></div><div class="ttdeci">ABTI_global * gp_ABTI_global</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d57/global_8c_source.html#l00014">global.c:14</a></div></div>
+<div class="ttc" id="abti_8h_html_a5e2e52e4bfa1e19e121d939135e4300c"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a></div><div class="ttdeci">ABTI_global * gp_ABTI_global</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d57/global_8c_source.html#l00018">global.c:18</a></div></div>
 <div class="ttc" id="abt_8h_html_acf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00064">abt.h:64</a></div></div>
 <div class="ttc" id="abt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00284">abt.h:284</a></div></div>
 <div class="ttc" id="abt_8h_html_a5ed830632895c95a4be6692d66c1941b"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a5ed830632895c95a4be6692d66c1941b">ABT_ERR_FEATURE_NA</a></div><div class="ttdeci">#define ABT_ERR_FEATURE_NA</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00116">abt.h:116</a></div></div>
@@ -528,7 +528,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 17 2020 03:10:00 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2020 03:09:49 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

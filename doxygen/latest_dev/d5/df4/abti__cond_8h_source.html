@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">1227c643f7a7f974f1f1778a9ffebd29d7dafecf</span>
+   &#160;<span id="projectnumber">66b1c39742507d8df30e8d28c54839b961a14814</span>
    </div>
   </td>
  </tr>
@@ -162,7 +162,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (!p_ythread) {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="comment">/* external thread or non-yieldable thread */</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#a88220b7f81a0f629a08915843f37bedd">ABTU_calloc</a>(1, <span class="keyword">sizeof</span>(<a class="code" href="../../d3/d55/structABTI__thread.html">ABTI_thread</a>), (<span class="keywordtype">void</span> **)&amp;p_thread);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="../../d6/d11/abti__error_8h.html#abb1a3e6fb41f517bdbaafdd8160b8e94">ABTI_CHECK_ERROR_RET</a>(abt_errno);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="../../d6/d11/abti__error_8h.html#a8bcf885e66c769e235f313e4ab615b0a">ABTI_CHECK_ERROR</a>(abt_errno);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        p_thread-&gt;<a class="code" href="../../d3/d55/structABTI__thread.html#a031815f8510c1bc87c1549f3137d2538">type</a> = <a class="code" href="../../d5/d03/abti_8h.html#a746092cfd7be6ade69fd10696b241c7b">ABTI_THREAD_TYPE_EXT</a>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">/* use state for synchronization */</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="../../d2/db0/abtd__atomic_8h.html#a694520ef45a994d5bdd1a24279396e90">ABTD_atomic_relaxed_store_int</a>(&amp;p_thread-&gt;<a class="code" href="../../d3/d55/structABTI__thread.html#a6fa27b799f9eeaa5dbc0839c3ef1c946">state</a>,</div>
@@ -305,6 +305,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="abti__spinlock_8h_html_a7e98cef37a5be5a5245e545a932136ce"><div class="ttname"><a href="../../d7/dea/abti__spinlock_8h.html#a7e98cef37a5be5a5245e545a932136ce">ABTI_spinlock_acquire</a></div><div class="ttdeci">static void ABTI_spinlock_acquire(ABTI_spinlock *p_lock)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dea/abti__spinlock_8h_source.html#l00023">abti_spinlock.h:23</a></div></div>
 <div class="ttc" id="structABTI__cond_html_ab7e04687a03ec13943544982308ca73a"><div class="ttname"><a href="../../d6/d10/structABTI__cond.html#ab7e04687a03ec13943544982308ca73a">ABTI_cond::p_waiter_mutex</a></div><div class="ttdeci">ABTI_mutex * p_waiter_mutex</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00378">abti.h:378</a></div></div>
 <div class="ttc" id="abt_8h_html_ac43e236e013a81daa29275d0f9e3b011"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ac43e236e013a81daa29275d0f9e3b011">ABT_COND_NULL</a></div><div class="ttdeci">#define ABT_COND_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00421">abt.h:421</a></div></div>
+<div class="ttc" id="abti__error_8h_html_a8bcf885e66c769e235f313e4ab615b0a"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#a8bcf885e66c769e235f313e4ab615b0a">ABTI_CHECK_ERROR</a></div><div class="ttdeci">#define ABTI_CHECK_ERROR(abt_errno)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00127">abti_error.h:127</a></div></div>
 <div class="ttc" id="abtd__atomic_8h_html_a694520ef45a994d5bdd1a24279396e90"><div class="ttname"><a href="../../d2/db0/abtd__atomic_8h.html#a694520ef45a994d5bdd1a24279396e90">ABTD_atomic_relaxed_store_int</a></div><div class="ttdeci">static void ABTD_atomic_relaxed_store_int(ABTD_atomic_int *ptr, int val)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/db0/abtd__atomic_8h_source.html#l00865">abtd_atomic.h:865</a></div></div>
 <div class="ttc" id="structABTI__ythread_html"><div class="ttname"><a href="../../d5/d5f/structABTI__ythread.html">ABTI_ythread</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00347">abti.h:347</a></div></div>
 <div class="ttc" id="structABTI__thread_html_abe296ed8df2dc4bbe911b76125a431c5"><div class="ttname"><a href="../../d3/d55/structABTI__thread.html#abe296ed8df2dc4bbe911b76125a431c5">ABTI_thread::p_next</a></div><div class="ttdeci">ABTI_thread * p_next</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00314">abti.h:314</a></div></div>
@@ -315,7 +316,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="abtu_8h_html_a88220b7f81a0f629a08915843f37bedd"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a88220b7f81a0f629a08915843f37bedd">ABTU_calloc</a></div><div class="ttdeci">static ABTU_ret_err int ABTU_calloc(size_t num, size_t size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00152">abtu.h:152</a></div></div>
 <div class="ttc" id="abtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00135">abtu.h:135</a></div></div>
 <div class="ttc" id="abti_8h_html_a746092cfd7be6ade69fd10696b241c7b"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a746092cfd7be6ade69fd10696b241c7b">ABTI_THREAD_TYPE_EXT</a></div><div class="ttdeci">#define ABTI_THREAD_TYPE_EXT</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00072">abti.h:72</a></div></div>
-<div class="ttc" id="abti__error_8h_html_abb1a3e6fb41f517bdbaafdd8160b8e94"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#abb1a3e6fb41f517bdbaafdd8160b8e94">ABTI_CHECK_ERROR_RET</a></div><div class="ttdeci">#define ABTI_CHECK_ERROR_RET(abt_errno)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00103">abti_error.h:103</a></div></div>
 <div class="ttc" id="abti__mutex_8h_html"><div class="ttname"><a href="../../d7/d89/abti__mutex_8h.html">abti_mutex.h</a></div></div>
 <div class="ttc" id="abti_8h_html_a88dbb3440b80e39a730f1410b754b5b8"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a88dbb3440b80e39a730f1410b754b5b8">ABTI_ythread_suspend</a></div><div class="ttdeci">void ABTI_ythread_suspend(ABTI_xstream **pp_local_xstream, ABTI_ythread *p_ythread, ABT_sync_event_type sync_event_type, void *p_sync)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d0d/ythread_8c_source.html#l00030">ythread.c:30</a></div></div>
 <div class="ttc" id="abtu_8h_html_a071d8986b72b8f5d099cdd47979b5e81"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a></div><div class="ttdeci">#define ABTU_ret_err</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00049">abtu.h:49</a></div></div>
@@ -324,7 +324,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 17 2020 03:09:58 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2020 03:09:47 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

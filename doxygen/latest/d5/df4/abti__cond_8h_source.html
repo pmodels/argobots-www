@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">1227c643f7a7f974f1f1778a9ffebd29d7dafecf</span>
+   &#160;<span id="projectnumber">66b1c39742507d8df30e8d28c54839b961a14814</span>
    </div>
   </td>
  </tr>
@@ -162,7 +162,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (!p_ythread) {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="comment">/* external thread or non-yieldable thread */</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#a88220b7f81a0f629a08915843f37bedd">ABTU_calloc</a>(1, <span class="keyword">sizeof</span>(ABTI_thread), (<span class="keywordtype">void</span> **)&amp;p_thread);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        ABTI_CHECK_ERROR_RET(abt_errno);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        ABTI_CHECK_ERROR(abt_errno);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        p_thread-&gt;type = ABTI_THREAD_TYPE_EXT;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">/* use state for synchronization */</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        ABTD_atomic_relaxed_store_int(&amp;p_thread-&gt;state,</div>
@@ -285,7 +285,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 17 2020 03:10:00 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2020 03:09:49 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

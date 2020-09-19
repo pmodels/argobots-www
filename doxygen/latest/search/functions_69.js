@@ -10,6 +10,7 @@ var searchData=
   ['info_5fprint_5funit',['info_print_unit',['../d5/d35/info_8c.html#a9955e2ad11f065ce448ae8bc7b412a52',1,'info.c']]],
   ['info_5ftrigger_5fprint_5fall_5fthread_5fstacks',['info_trigger_print_all_thread_stacks',['../d5/d35/info_8c.html#aa5d83f0597b4c9802b6d855083a03664',1,'info.c']]],
   ['init_5fand_5fcall_5ffcontext',['init_and_call_fcontext',['../d4/d27/abtd__fcontext_8h.html#aaeae1e13f2addc7026b6c7f2ef650df5',1,'abtd_fcontext.h']]],
+  ['init_5flibrary',['init_library',['../dc/d57/global_8c.html#a8bcdff6faa4f871c5866c6206e9966cc',1,'global.c']]],
   ['int_5frem',['int_rem',['../d2/d45/abtd__affinity_8c.html#a4caa8796c4d7938443dbe263cfb2e44c',1,'abtd_affinity.c']]],
   ['is_5fwhitespace',['is_whitespace',['../d0/d31/abtd__affinity__parser_8c.html#acc7f63289d0484554fd5f4b1debb4450',1,'abtd_affinity_parser.c']]]
 ];

@@ -3,7 +3,6 @@ var searchData=
   ['h_5flist',['h_list',['../dd/d13/structABTI__ythread__htable.html#a427594a84ac1f222ae15344384aca2bb',1,'ABTI_ythread_htable']]],
   ['handle_5ferror',['HANDLE_ERROR',['../d6/d11/abti__error_8h.html#a7ae9713e5bdb204b1554308906fcc55d',1,'abti_error.h']]],
   ['handle_5ferror_5ffunc_5fwith_5fcode',['HANDLE_ERROR_FUNC_WITH_CODE',['../d6/d11/abti__error_8h.html#aad3b3ce8a92436b8b7efdebd32eeb52e',1,'abti_error.h']]],
-  ['handle_5ferror_5ffunc_5fwith_5fcode_5fret',['HANDLE_ERROR_FUNC_WITH_CODE_RET',['../d6/d11/abti__error_8h.html#a9f103ec42ea638ec7f10dcf7bd4f7999',1,'abti_error.h']]],
   ['handle_5ferror_5fwith_5fcode',['HANDLE_ERROR_WITH_CODE',['../d6/d11/abti__error_8h.html#afb5cdf8444f8b74c186e89ca8c329f4c',1,'abti_error.h']]],
   ['handle_5fwarning',['HANDLE_WARNING',['../d6/d11/abti__error_8h.html#a1bbccb985d0f5a81b8d860e19a53e4a7',1,'abti_error.h']]],
   ['have_5f_5f_5fbuiltin_5fexpect',['HAVE___BUILTIN_EXPECT',['../dd/d6e/abt__config_8h.html#ae2533b769ebf5b1b5d1eec25050d4060',1,'abt_config.h']]],

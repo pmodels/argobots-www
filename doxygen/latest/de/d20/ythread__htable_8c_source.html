@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">1227c643f7a7f974f1f1778a9ffebd29d7dafecf</span>
+   &#160;<span id="projectnumber">66b1c39742507d8df30e8d28c54839b961a14814</span>
    </div>
   </td>
  </tr>
@@ -107,7 +107,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">size_t</span> q_size = num_rows * <span class="keyword">sizeof</span>(ABTI_ythread_queue);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a>(<span class="keyword">sizeof</span>(ABTI_ythread_htable), (<span class="keywordtype">void</span> **)&amp;p_htable);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    ABTI_CHECK_ERROR_RET(abt_errno);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#a0201a1aeb137c3b2e40b5fe64dad198a">ABTU_memalign</a>(64, q_size, (<span class="keywordtype">void</span> **)&amp;p_htable-&gt;queue);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
@@ -326,7 +326,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 17 2020 03:10:00 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2020 03:09:49 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
