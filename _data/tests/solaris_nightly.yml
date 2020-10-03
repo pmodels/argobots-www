@@ -3,13 +3,13 @@
   os: Oracle Solaris 11.4
   compiler: gnu7.3.0
   pass: yes
-  commit_id: 7496202f85916e93d6d143320764c2aba5026d93
-  date: Thu Sep 24 17:26:39 2020 -0500
+  commit_id: 4d911cc5039c9b3fbc1536473d14fbf6b14bd371
+  date: Fri Oct 2 20:45:53 2020 -0500
 - cpu: x86/64
   host: Jenkins Solaris
   os: Oracle Solaris 11.4
   compiler: solstudio12.6
   pass: yes
-  commit_id: 7496202f85916e93d6d143320764c2aba5026d93
-  date: Thu Sep 24 17:26:39 2020 -0500
+  commit_id: 4d911cc5039c9b3fbc1536473d14fbf6b14bd371
+  date: Fri Oct 2 20:45:53 2020 -0500
 
