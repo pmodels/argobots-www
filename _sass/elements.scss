@@ -139,6 +139,14 @@ li {
 	}
 }
 
+.container-border {
+	border: solid 3px $accent-color;
+	background: $sub-color;
+	padding: 5px;
+	border-radius: 10px;
+	margin-bottom: 50px;
+}
+
 header {
 	color: #fff;
 	padding: 20px 0;
@@ -203,6 +211,14 @@ section + section {
 			object-fit: contain;
 		}
 	}
+	div.image_small {
+		width: 30%;
+		height: 300px;
+		img {
+			height: 300px;
+			object-fit: contain;
+		}
+	}
 	div.twoelems {
 		flex-direction: row;
 	}
@@ -210,6 +226,15 @@ section + section {
 
 @media not all and #{$desktop} {
 	div.image {
+		position: relative;
+		width: 100%;
+		img {
+			width: 70%;
+			display: block;
+			margin: auto;
+		}
+	}
+	div.image_small {
 		position: relative;
 		width: 100%;
 		img {
