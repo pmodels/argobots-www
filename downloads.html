@@ -22,8 +22,8 @@ $ spack load argobots
 
 <h3>Download Tarballs</h3>
 
-{% for release in site.data.releases.releases %}
-   <h4>{{ release.name }}</h4>
+{% for release in site.data.releases.stable_releases %}
+   <h4>Stable release {{ release.version }}</h4>
    <p>
       <a href="{{ release.link }}">Argobots {{ release.version }} (stable release)</a> [<a href="{{ site.baseurl }}/{{ release.doxygen_path }}/index.html">doxygen</a>] ({{ release.date }})
    </p>
@@ -34,13 +34,24 @@ $ wget {{ release.link }}
    </div>
 {% endfor %}
 
+{% for release in site.data.releases.preview_releases %}
+   <h4>Preview release {{ release.version }}</h4>
+   <p>
+      <a href="{{ release.link }}">Argobots {{ release.version }} (preview release)</a> [<a href="{{ site.baseurl }}/{{ release.doxygen_path }}/index.html">doxygen</a>] ({{ release.date }})
+   </p>
+   <div class="code">
+{% highlight shell %}
+$ wget {{ release.link }}
+{% endhighlight %}
+   </div>
+{% endfor %}
 
 <h4>Older Versions</h4>
 
 <ul class="releases">
 	{% for release in site.data.releases.old_releases %}
 		<li>
-			<div class="release_name"><a href="{{ release.link }}">{{ release.name }}</a></div>
+			<div class="release_name"><a href="{{ release.link }}">{{ release.name }}</a> ({{ release.date }}, {% if release.stable %}stable release{% else %}preview release{% endif %}) </div>
 		</li>
 	{% endfor %}
 </ul>

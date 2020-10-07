@@ -1,27 +1,43 @@
 latest_release:
- - name: Release 1.0
+   name: 1.0.1
    doxygen_path: doxygen/release_1_0_0
-releases:
- - name: Release 1.0
+stable_releases:
+ - name: 1.0.1
+   version: 1.0.1
+   stable: yes
+   link: https://github.com/pmodels/argobots/releases/download/v1.0/argobots-1.0.1.tar.gz
+   date: October 7, 2020
+   doxygen_path: doxygen/release_1_0_0
+preview_releases:
+ - name: 1.1a1
+   version: 1.1a1
+   stable: no
+   link: https://github.com/pmodels/argobots/releases/download/v1.1a1/argobots-1.1a1.tar.gz
+   date: October 7, 2020
+   doxygen_path: doxygen/release_1_1_0
+old_releases:
+ - name: 1.0
    version: 1.0
+   stable: yes
    link: https://github.com/pmodels/argobots/releases/download/v1.0/argobots-1.0.tar.gz
    date: March 31, 2020
-   doxygen_path: doxygen/release_1_0_0
-   highlight: yes
-old_releases:
- - name: 1.0rc2 (preview release)
+ - name: 1.0rc2
    version: 1.0rc2
+   stable: no
    link: https://github.com/pmodels/argobots/releases/download/v1.0rc2/argobots-1.0rc2.tar.gz
-   highlight: no
- - name: 1.0rc1 (preview release)
+   date: November 17, 2019
+ - name: 1.0rc1
    version: 1.0rc1
+   stable: no
    link: https://github.com/pmodels/argobots/releases/download/v1.0rc1/argobots-1.0rc1.tar.gz
-   highlight: no
- - name: 1.0b1 (preview release)
+   date: November 8, 2018
+ - name: 1.0b1
    version: 1.0b1
+   stable: no
    link: https://github.com/pmodels/argobots/releases/download/v1.0b1/argobots-1.0b1.tar.gz
-   highlight: no
- - name: 1.0a1 (preview release)
+   date: November 10, 2017
+ - name: 1.0a1
    version: 1.0a1
+   stable: no
    link: https://github.com/pmodels/argobots/releases/download/v1.0a1/argobots-1.0a1.tar.gz
-   highlight: no
+   date: November 11, 2016
