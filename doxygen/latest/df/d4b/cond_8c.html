@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">29b0d4cc91ca184a8278ddf690fd0bcb2119000e</span>
+   &#160;<span id="projectnumber">1059a7c2eb7e3f99f736a9c3a4f6ea476ac1b804</span>
    </div>
   </td>
  </tr>
@@ -105,6 +105,10 @@ Include dependency graph for cond.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ad6bf6e234fcbb88ee9da9fe8252f2388"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d4b/cond_8c.html#ad6bf6e234fcbb88ee9da9fe8252f2388">convert_timespec_to_sec</a> (const struct timespec *p_ts)</td></tr>
+<tr class="separator:ad6bf6e234fcbb88ee9da9fe8252f2388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b9b6ad2c85752651e8a6d6ecd1eb8a3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d4b/cond_8c.html#a8b9b6ad2c85752651e8a6d6ecd1eb8a3">remove_thread</a> (ABTI_cond *p_cond, ABTI_thread *p_thread)</td></tr>
+<tr class="separator:a8b9b6ad2c85752651e8a6d6ecd1eb8a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga761c9aa0358a769538fd4aeb3e358773"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d37/group__COND.html#ga761c9aa0358a769538fd4aeb3e358773">ABT_cond_create</a> (<a class="el" href="../../d5/d7d/abt_8h.html#a284def6c1a5999af708bb5c61e7d3c83">ABT_cond</a> *newcond)</td></tr>
 <tr class="memdesc:ga761c9aa0358a769538fd4aeb3e358773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new condition variable.  <a href="../../d9/d37/group__COND.html#ga761c9aa0358a769538fd4aeb3e358773">More...</a><br/></td></tr>
 <tr class="separator:ga761c9aa0358a769538fd4aeb3e358773"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,10 +118,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ga5259b9161829998a5bef644b17635210"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d37/group__COND.html#ga5259b9161829998a5bef644b17635210">ABT_cond_wait</a> (<a class="el" href="../../d5/d7d/abt_8h.html#a284def6c1a5999af708bb5c61e7d3c83">ABT_cond</a> cond, <a class="el" href="../../d5/d7d/abt_8h.html#a47f82eaefe654cad03090b6e9c818533">ABT_mutex</a> mutex)</td></tr>
 <tr class="memdesc:ga5259b9161829998a5bef644b17635210"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait on the condition.  <a href="../../d9/d37/group__COND.html#ga5259b9161829998a5bef644b17635210">More...</a><br/></td></tr>
 <tr class="separator:ga5259b9161829998a5bef644b17635210"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6bf6e234fcbb88ee9da9fe8252f2388"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d4b/cond_8c.html#ad6bf6e234fcbb88ee9da9fe8252f2388">convert_timespec_to_sec</a> (const struct timespec *p_ts)</td></tr>
-<tr class="separator:ad6bf6e234fcbb88ee9da9fe8252f2388"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b9b6ad2c85752651e8a6d6ecd1eb8a3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d4b/cond_8c.html#a8b9b6ad2c85752651e8a6d6ecd1eb8a3">remove_thread</a> (ABTI_cond *p_cond, ABTI_thread *p_thread)</td></tr>
-<tr class="separator:a8b9b6ad2c85752651e8a6d6ecd1eb8a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga67b02f7813711cd45e6a6897d78ba0ff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d37/group__COND.html#ga67b02f7813711cd45e6a6897d78ba0ff">ABT_cond_timedwait</a> (<a class="el" href="../../d5/d7d/abt_8h.html#a284def6c1a5999af708bb5c61e7d3c83">ABT_cond</a> cond, <a class="el" href="../../d5/d7d/abt_8h.html#a47f82eaefe654cad03090b6e9c818533">ABT_mutex</a> mutex, const struct timespec *abstime)</td></tr>
 <tr class="memdesc:ga67b02f7813711cd45e6a6897d78ba0ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait on the condition.  <a href="../../d9/d37/group__COND.html#ga67b02f7813711cd45e6a6897d78ba0ff">More...</a><br/></td></tr>
 <tr class="separator:ga67b02f7813711cd45e6a6897d78ba0ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,9 +151,9 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../df/d4b/cond_8c_source.html#l00094">94</a> of file <a class="el" href="../../df/d4b/cond_8c_source.html">cond.c</a>.</p>
+<p>Definition at line <a class="el" href="../../df/d4b/cond_8c_source.html#l00274">274</a> of file <a class="el" href="../../df/d4b/cond_8c_source.html">cond.c</a>.</p>
 
-<p>Referenced by <a class="el" href="../../df/d4b/cond_8c_source.html#l00157">ABT_cond_timedwait()</a>.</p>
+<p>Referenced by <a class="el" href="../../df/d4b/cond_8c_source.html#l00119">ABT_cond_timedwait()</a>.</p>
 
 </div>
 </div>
@@ -189,16 +189,16 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../df/d4b/cond_8c_source.html#l00101">101</a> of file <a class="el" href="../../df/d4b/cond_8c_source.html">cond.c</a>.</p>
+<p>Definition at line <a class="el" href="../../df/d4b/cond_8c_source.html#l00281">281</a> of file <a class="el" href="../../df/d4b/cond_8c_source.html">cond.c</a>.</p>
 
-<p>Referenced by <a class="el" href="../../df/d4b/cond_8c_source.html#l00157">ABT_cond_timedwait()</a>.</p>
+<p>Referenced by <a class="el" href="../../df/d4b/cond_8c_source.html#l00119">ABT_cond_timedwait()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 16 2020 03:09:58 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 23 2020 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
