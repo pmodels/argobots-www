@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">20b4228c1ebd5409f79237886b2248851a0cd8cc</span>
+   &#160;<span id="projectnumber">84920fcd70a6851e44b063188091f2832f8f2baf</span>
    </div>
   </td>
  </tr>
@@ -105,7 +105,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a37c9bb74764faaf9b12300efa5f5000e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d04/abti__mem_8h.html#a37c9bb74764faaf9b12300efa5f5000e">ABTI_MEM_POOL_DESC_ELEM_SIZE</a></td></tr>
+<tr class="memitem:a37c9bb74764faaf9b12300efa5f5000e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d04/abti__mem_8h.html#a37c9bb74764faaf9b12300efa5f5000e">ABTI_MEM_POOL_DESC_ELEM_SIZE</a>&#160;&#160;&#160;<a class="el" href="../../d5/d09/abtu_8h.html#a751fc48323d8ddc11d9197960b33b4c6">ABTU_roundup_size</a>(sizeof(<a class="el" href="../../d3/d55/structABTI__thread.html">ABTI_thread</a>), <a class="el" href="../../dd/d6e/abt__config_8h.html#a9be181de89306780f2f3d7c575c52b8e">ABT_CONFIG_STATIC_CACHELINE_SIZE</a>)</td></tr>
 <tr class="separator:a37c9bb74764faaf9b12300efa5f5000e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab04ad964ec0909cbe75036d121539e8e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d04/abti__mem_8h.html#ab04ad964ec0909cbe75036d121539e8e">ABTI_MEM_POOL_DESC_SIZE</a>&#160;&#160;&#160;(<a class="el" href="../../d7/d04/abti__mem_8h.html#a37c9bb74764faaf9b12300efa5f5000e">ABTI_MEM_POOL_DESC_ELEM_SIZE</a> - 4)</td></tr>
 <tr class="separator:ab04ad964ec0909cbe75036d121539e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,18 +162,14 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ABTI_MEM_POOL_DESC_ELEM_SIZE</td>
+          <td class="memname">#define ABTI_MEM_POOL_DESC_ELEM_SIZE&#160;&#160;&#160;<a class="el" href="../../d5/d09/abtu_8h.html#a751fc48323d8ddc11d9197960b33b4c6">ABTU_roundup_size</a>(sizeof(<a class="el" href="../../d3/d55/structABTI__thread.html">ABTI_thread</a>), <a class="el" href="../../dd/d6e/abt__config_8h.html#a9be181de89306780f2f3d7c575c52b8e">ABT_CONFIG_STATIC_CACHELINE_SIZE</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">((<span class="keyword">sizeof</span>(<a class="code" href="../../d5/d03/abti_8h.html#af8f1d85365b963756aa74c569b4250ec">ABTI_thread</a>) + <a class="code" href="../../dd/d6e/abt__config_8h.html#a9be181de89306780f2f3d7c575c52b8e">ABT_CONFIG_STATIC_CACHELINE_SIZE</a> - 1) &amp;            \</div>
-<div class="line">     (~(<a class="code" href="../../dd/d6e/abt__config_8h.html#a9be181de89306780f2f3d7c575c52b8e">ABT_CONFIG_STATIC_CACHELINE_SIZE</a> - 1)))</div>
-<div class="ttc" id="abti_8h_html_af8f1d85365b963756aa74c569b4250ec"><div class="ttname"><a href="../../d5/d03/abti_8h.html#af8f1d85365b963756aa74c569b4250ec">ABTI_thread</a></div><div class="ttdeci">struct ABTI_thread ABTI_thread</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00111">abti.h:111</a></div></div>
-<div class="ttc" id="abt__config_8h_html_a9be181de89306780f2f3d7c575c52b8e"><div class="ttname"><a href="../../dd/d6e/abt__config_8h.html#a9be181de89306780f2f3d7c575c52b8e">ABT_CONFIG_STATIC_CACHELINE_SIZE</a></div><div class="ttdeci">#define ABT_CONFIG_STATIC_CACHELINE_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d6e/abt__config_8h_source.html#l00057">abt_config.h:57</a></div></div>
-</div><!-- fragment -->
+
 <p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00014">14</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00034">ABTI_mem_alloc_nythread_malloc()</a>, and <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00221">ABTI_mem_alloc_ythread_mempool_desc()</a>.</p>
+<p>Referenced by <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00033">ABTI_mem_alloc_nythread_malloc()</a>, and <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00219">ABTI_mem_alloc_ythread_mempool_desc()</a>.</p>
 
 </div>
 </div>
@@ -187,9 +183,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00296">296</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00294">294</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00298">ABTI_mem_alloc_desc()</a>, and <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00326">ABTI_mem_free_desc()</a>.</p>
+<p>Referenced by <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00296">ABTI_mem_alloc_desc()</a>, and <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00324">ABTI_mem_free_desc()</a>.</p>
 
 </div>
 </div>
@@ -216,7 +212,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00018">18</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00017">17</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
 
 </div>
 </div>
@@ -253,7 +249,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00298">298</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00296">296</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
 
 <p>Referenced by <a class="el" href="../../db/d9d/abti__key_8h_source.html#l00117">ABTI_ktable_alloc_elem()</a>, and <a class="el" href="../../db/d9d/abti__key_8h_source.html#l00067">ABTI_ktable_create()</a>.</p>
 
@@ -291,9 +287,9 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00065">65</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00064">64</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00221">ABTI_mem_alloc_ythread_mempool_desc()</a>, and <a class="el" href="../../d3/d3f/task_8c_source.html#l00448">task_create()</a>.</p>
+<p>Referenced by <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00219">ABTI_mem_alloc_ythread_mempool_desc()</a>, and <a class="el" href="../../d3/d3f/task_8c_source.html#l00448">task_create()</a>.</p>
 
 </div>
 </div>
@@ -319,9 +315,9 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00034">34</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00033">33</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00065">ABTI_mem_alloc_nythread()</a>.</p>
+<p>Referenced by <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00064">ABTI_mem_alloc_nythread()</a>.</p>
 
 </div>
 </div>
@@ -357,7 +353,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00135">135</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00133">133</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
 
 <p>Referenced by <a class="el" href="../../d3/de7/thread_8c_source.html#l01616">ythread_create()</a>.</p>
 
@@ -395,7 +391,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00201">201</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00199">199</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
 
 <p>Referenced by <a class="el" href="../../d3/de7/thread_8c_source.html#l01616">ythread_create()</a>.</p>
 
@@ -439,9 +435,9 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00117">117</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00116">116</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00135">ABTI_mem_alloc_ythread_default()</a>, and <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00201">ABTI_mem_alloc_ythread_malloc_desc_stack()</a>.</p>
+<p>Referenced by <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00133">ABTI_mem_alloc_ythread_default()</a>, and <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00199">ABTI_mem_alloc_ythread_malloc_desc_stack()</a>.</p>
 
 </div>
 </div>
@@ -483,7 +479,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00221">221</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00219">219</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
 
 <p>Referenced by <a class="el" href="../../d3/de7/thread_8c_source.html#l01616">ythread_create()</a>.</p>
 
@@ -579,7 +575,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00326">326</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00324">324</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
 
 <p>Referenced by <a class="el" href="../../db/dfd/key_8c_source.html#l00139">ABTI_ktable_free()</a>.</p>
 
@@ -617,9 +613,9 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00075">75</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00074">74</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00246">ABTI_mem_free_thread()</a>.</p>
+<p>Referenced by <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00244">ABTI_mem_free_thread()</a>.</p>
 
 </div>
 </div>
@@ -655,7 +651,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00246">246</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00244">244</a> of file <a class="el" href="../../d7/d04/abti__mem_8h_source.html">abti_mem.h</a>.</p>
 
 <p>Referenced by <a class="el" href="../../d3/de7/thread_8c_source.html#l01814">thread_free()</a>, and <a class="el" href="../../d3/de7/thread_8c_source.html#l01616">ythread_create()</a>.</p>
 
@@ -704,7 +700,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 4 2020 03:10:08 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Nov 12 2020 03:10:08 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
