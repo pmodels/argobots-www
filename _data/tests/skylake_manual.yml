@@ -1,34 +1,34 @@
 - cpu: x86/64
   host: JLSE Skylake
-  os: Red Hat Enterprise Linux Server 7.5
-  compiler: clang3.9.1
+  os: openSUSE 15.2
+  compiler: clang7.0.1
   pass: no
   commit_id: 84920fcd70a6851e44b063188091f2832f8f2baf
   date: Wed Nov 11 17:54:41 2020 -0600
 - cpu: x86/64
   host: JLSE Skylake
-  os: Red Hat Enterprise Linux Server 7.5
+  os: openSUSE 15.2
   compiler: gnu4.8.5
   pass: yes
   commit_id: 84920fcd70a6851e44b063188091f2832f8f2baf
   date: Wed Nov 11 17:54:41 2020 -0600
 - cpu: x86/64
   host: JLSE Skylake
-  os: Red Hat Enterprise Linux Server 7.5
+  os: openSUSE 15.2
   compiler: gnu6.5.0
   pass: yes
   commit_id: 84920fcd70a6851e44b063188091f2832f8f2baf
   date: Wed Nov 11 17:54:41 2020 -0600
 - cpu: x86/64
   host: JLSE Skylake
-  os: Red Hat Enterprise Linux Server 7.5
+  os: openSUSE 15.2
   compiler: gnu8.3.0
   pass: yes
   commit_id: 84920fcd70a6851e44b063188091f2832f8f2baf
   date: Wed Nov 11 17:54:41 2020 -0600
 - cpu: x86/64
   host: JLSE Skylake
-  os: Red Hat Enterprise Linux Server 7.5
+  os: openSUSE 15.2
   compiler: gnu9.2.0
   pass: yes
   commit_id: 84920fcd70a6851e44b063188091f2832f8f2baf
