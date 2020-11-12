@@ -1,78 +1,36 @@
 - cpu: x86/64
   host: JLSE Skylake
   os: Red Hat Enterprise Linux Server 7.5
-  compiler: clang10.0.0
-  pass: yes
-  commit_id: 1059a7c2eb7e3f99f736a9c3a4f6ea476ac1b804
-  date: Thu Oct 22 08:54:56 2020 -0500
-- cpu: x86/64
-  host: JLSE Skylake
-  os: Red Hat Enterprise Linux Server 7.5
   compiler: clang3.9.1
-  pass: yes
-  commit_id: 1059a7c2eb7e3f99f736a9c3a4f6ea476ac1b804
-  date: Thu Oct 22 08:54:56 2020 -0500
-- cpu: x86/64
-  host: JLSE Skylake
-  os: Red Hat Enterprise Linux Server 7.5
-  compiler: clang7.0.1
-  pass: yes
-  commit_id: 1059a7c2eb7e3f99f736a9c3a4f6ea476ac1b804
-  date: Thu Oct 22 08:54:56 2020 -0500
-- cpu: x86/64
-  host: JLSE Skylake
-  os: Red Hat Enterprise Linux Server 7.5
-  compiler: clang9.0.0
-  pass: yes
-  commit_id: 1059a7c2eb7e3f99f736a9c3a4f6ea476ac1b804
-  date: Thu Oct 22 08:54:56 2020 -0500
+  pass: no
+  commit_id: 84920fcd70a6851e44b063188091f2832f8f2baf
+  date: Wed Nov 11 17:54:41 2020 -0600
 - cpu: x86/64
   host: JLSE Skylake
   os: Red Hat Enterprise Linux Server 7.5
   compiler: gnu4.8.5
   pass: yes
-  commit_id: 1059a7c2eb7e3f99f736a9c3a4f6ea476ac1b804
-  date: Thu Oct 22 08:54:56 2020 -0500
+  commit_id: 84920fcd70a6851e44b063188091f2832f8f2baf
+  date: Wed Nov 11 17:54:41 2020 -0600
 - cpu: x86/64
   host: JLSE Skylake
   os: Red Hat Enterprise Linux Server 7.5
   compiler: gnu6.5.0
   pass: yes
-  commit_id: 1059a7c2eb7e3f99f736a9c3a4f6ea476ac1b804
-  date: Thu Oct 22 08:54:56 2020 -0500
+  commit_id: 84920fcd70a6851e44b063188091f2832f8f2baf
+  date: Wed Nov 11 17:54:41 2020 -0600
 - cpu: x86/64
   host: JLSE Skylake
   os: Red Hat Enterprise Linux Server 7.5
   compiler: gnu8.3.0
   pass: yes
-  commit_id: 1059a7c2eb7e3f99f736a9c3a4f6ea476ac1b804
-  date: Thu Oct 22 08:54:56 2020 -0500
+  commit_id: 84920fcd70a6851e44b063188091f2832f8f2baf
+  date: Wed Nov 11 17:54:41 2020 -0600
 - cpu: x86/64
   host: JLSE Skylake
   os: Red Hat Enterprise Linux Server 7.5
   compiler: gnu9.2.0
   pass: yes
-  commit_id: 1059a7c2eb7e3f99f736a9c3a4f6ea476ac1b804
-  date: Thu Oct 22 08:54:56 2020 -0500
-- cpu: x86/64
-  host: JLSE Skylake
-  os: Red Hat Enterprise Linux Server 7.5
-  compiler: intel18.1.163
-  pass: yes
-  commit_id: 1059a7c2eb7e3f99f736a9c3a4f6ea476ac1b804
-  date: Thu Oct 22 08:54:56 2020 -0500
-- cpu: x86/64
-  host: JLSE Skylake
-  os: Red Hat Enterprise Linux Server 7.5
-  compiler: intel19.4.243
-  pass: yes
-  commit_id: 1059a7c2eb7e3f99f736a9c3a4f6ea476ac1b804
-  date: Thu Oct 22 08:54:56 2020 -0500
-- cpu: x86/64
-  host: JLSE Skylake
-  os: Red Hat Enterprise Linux Server 7.5
-  compiler: intel20.0.166
-  pass: yes
-  commit_id: 1059a7c2eb7e3f99f736a9c3a4f6ea476ac1b804
-  date: Thu Oct 22 08:54:56 2020 -0500
+  commit_id: 84920fcd70a6851e44b063188091f2832f8f2baf
+  date: Wed Nov 11 17:54:41 2020 -0600
 
