@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">84920fcd70a6851e44b063188091f2832f8f2baf</span>
+   &#160;<span id="projectnumber">ae970519b99767ae27a760cd3314a141477113a5</span>
    </div>
   </td>
  </tr>
@@ -424,21 +424,21 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    fprintf(fp, <span class="stringliteral">&quot;Argobots Configuration:\n&quot;</span>);</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - # of cores: %d\n&quot;</span>, p_global-&gt;num_cores);</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - cache line size: %u\n&quot;</span>, <a class="code" href="../../dd/d6e/abt__config_8h.html#a9be181de89306780f2f3d7c575c52b8e">ABT_CONFIG_STATIC_CACHELINE_SIZE</a>);</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - OS page size: %u\n&quot;</span>, p_global-&gt;os_page_size);</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - huge page size: %u\n&quot;</span>, p_global-&gt;huge_page_size);</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - max. # of ESs: %d\n&quot;</span>, p_global-&gt;max_xstreams);</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - cur. # of ESs: %d\n&quot;</span>, p_global-&gt;num_xstreams);</div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - ES affinity: %s\n&quot;</span>,</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;            (p_global-&gt;set_affinity == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>) ? <span class="stringliteral">&quot;on&quot;</span> : <span class="stringliteral">&quot;off&quot;</span>);</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - logging: %s\n&quot;</span>,</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;            (p_global-&gt;use_logging == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>) ? <span class="stringliteral">&quot;on&quot;</span> : <span class="stringliteral">&quot;off&quot;</span>);</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - debug output: %s\n&quot;</span>,</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;            (p_global-&gt;use_debug == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>) ? <span class="stringliteral">&quot;on&quot;</span> : <span class="stringliteral">&quot;off&quot;</span>);</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - key table entries: %d\n&quot;</span>, p_global-&gt;key_table_size);</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - ULT stack size: %u KB\n&quot;</span>,</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;            (<span class="keywordtype">unsigned</span>)(p_global-&gt;thread_stacksize / 1024));</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - scheduler stack size: %u KB\n&quot;</span>,</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;            (<span class="keywordtype">unsigned</span>)(p_global-&gt;sched_stacksize / 1024));</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - huge page size: %zu\n&quot;</span>, p_global-&gt;huge_page_size);</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - max. # of ESs: %d\n&quot;</span>, p_global-&gt;max_xstreams);</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - cur. # of ESs: %d\n&quot;</span>, p_global-&gt;num_xstreams);</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - ES affinity: %s\n&quot;</span>,</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;            (p_global-&gt;set_affinity == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>) ? <span class="stringliteral">&quot;on&quot;</span> : <span class="stringliteral">&quot;off&quot;</span>);</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - logging: %s\n&quot;</span>,</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;            (p_global-&gt;use_logging == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>) ? <span class="stringliteral">&quot;on&quot;</span> : <span class="stringliteral">&quot;off&quot;</span>);</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - debug output: %s\n&quot;</span>,</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;            (p_global-&gt;use_debug == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>) ? <span class="stringliteral">&quot;on&quot;</span> : <span class="stringliteral">&quot;off&quot;</span>);</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - key table entries: %&quot;</span> PRIu32 <span class="stringliteral">&quot;\n&quot;</span>,</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;            p_global-&gt;key_table_size);</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - ULT stack size: %zu KB\n&quot;</span>,</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;            p_global-&gt;thread_stacksize / 1024);</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - scheduler stack size: %zu KB\n&quot;</span>,</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;            p_global-&gt;sched_stacksize / 1024);</div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - scheduler event check frequency: %u\n&quot;</span>,</div>
 <div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;            p_global-&gt;sched_event_freq);</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;</div>
@@ -454,9 +454,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;</div>
 <div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_USE_MEM_POOL</span></div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;<span class="preprocessor"></span>    fprintf(fp, <span class="stringliteral">&quot;Memory Pool:\n&quot;</span>);</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - page size for allocation: %u KB\n&quot;</span>,</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - page size for allocation: %zu KB\n&quot;</span>,</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;            p_global-&gt;mem_page_size / 1024);</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - stack page size: %u KB\n&quot;</span>, p_global-&gt;mem_sp_size / 1024);</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - stack page size: %zu KB\n&quot;</span>, p_global-&gt;mem_sp_size / 1024);</div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    fprintf(fp, <span class="stringliteral">&quot; - max. # of stacks per ES: %u\n&quot;</span>, p_global-&gt;mem_max_stacks);</div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keywordflow">switch</span> (p_global-&gt;mem_lp_alloc) {</div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;        <span class="keywordflow">case</span> ABTI_MEM_LP_MALLOC:</div>
@@ -734,7 +734,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 12 2020 03:10:10 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 13 2020 03:10:15 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

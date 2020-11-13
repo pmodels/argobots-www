@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">84920fcd70a6851e44b063188091f2832f8f2baf</span>
+   &#160;<span id="projectnumber">ae970519b99767ae27a760cd3314a141477113a5</span>
    </div>
   </td>
  </tr>
@@ -85,6 +85,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">abtd_env.c File Reference</div>  </div>
 </div><!--header-->
@@ -101,10 +103,391 @@ Include dependency graph for abtd_env.c:</div>
 </div>
 </div>
 <p><a href="../../de/d68/abtd__env_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a5729ebb1381241a7b095967404195c7e"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d68/abtd__env_8c.html#a5729ebb1381241a7b095967404195c7e">roundup_pow2_uint32</a> (uint32_t val)</td></tr>
+<tr class="separator:a5729ebb1381241a7b095967404195c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed16dd136b6d03250b25df1e86d9c991"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d68/abtd__env_8c.html#aed16dd136b6d03250b25df1e86d9c991">get_abt_env</a> (const char *env_suffix)</td></tr>
+<tr class="separator:aed16dd136b6d03250b25df1e86d9c991"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f476f009611c0fdc2cc908e0288642b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d68/abtd__env_8c.html#a7f476f009611c0fdc2cc908e0288642b">is_false</a> (const char *str, <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> include0)</td></tr>
+<tr class="separator:a7f476f009611c0fdc2cc908e0288642b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3be13f7f1d5dd3dca946ef4113c95d72"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d68/abtd__env_8c.html#a3be13f7f1d5dd3dca946ef4113c95d72">is_true</a> (const char *str, <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> include1)</td></tr>
+<tr class="separator:a3be13f7f1d5dd3dca946ef4113c95d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb9a0d36b426404bc82334eaca4ebe16"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d68/abtd__env_8c.html#adb9a0d36b426404bc82334eaca4ebe16">load_env_bool</a> (const char *env_suffix, <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> default_val)</td></tr>
+<tr class="separator:adb9a0d36b426404bc82334eaca4ebe16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada7c4583e435b9af385b9978950c553d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d68/abtd__env_8c.html#ada7c4583e435b9af385b9978950c553d">load_env_int</a> (const char *env_suffix, int default_val, int min_val, int max_val)</td></tr>
+<tr class="separator:ada7c4583e435b9af385b9978950c553d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec5d8bb06eace18912a7641ffee9eb07"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d68/abtd__env_8c.html#aec5d8bb06eace18912a7641ffee9eb07">load_env_uint32</a> (const char *env_suffix, uint32_t default_val, uint32_t min_val, uint32_t max_val)</td></tr>
+<tr class="separator:aec5d8bb06eace18912a7641ffee9eb07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a324055a5ebb257626f710ac3b9470a8d"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d68/abtd__env_8c.html#a324055a5ebb257626f710ac3b9470a8d">load_env_uint64</a> (const char *env_suffix, uint64_t default_val, uint64_t min_val, uint64_t max_val)</td></tr>
+<tr class="separator:a324055a5ebb257626f710ac3b9470a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e6a00737632d06c4c2e64205e3e5b15"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d68/abtd__env_8c.html#a4e6a00737632d06c4c2e64205e3e5b15">load_env_size</a> (const char *env_suffix, size_t default_val, size_t min_val, size_t max_val)</td></tr>
+<tr class="separator:a4e6a00737632d06c4c2e64205e3e5b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="aed16dd136b6d03250b25df1e86d9c991"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const char * get_abt_env </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>env_suffix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00252">252</a> of file <a class="el" href="../../de/d68/abtd__env_8c_source.html">abtd_env.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00290">load_env_bool()</a>, <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00306">load_env_int()</a>, <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00359">load_env_size()</a>, <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00323">load_env_uint32()</a>, and <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00341">load_env_uint64()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7f476f009611c0fdc2cc908e0288642b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> is_false </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a>&#160;</td>
+          <td class="paramname"><em>include0</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00268">268</a> of file <a class="el" href="../../de/d68/abtd__env_8c_source.html">abtd_env.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00290">load_env_bool()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3be13f7f1d5dd3dca946ef4113c95d72"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> is_true </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a>&#160;</td>
+          <td class="paramname"><em>include1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00279">279</a> of file <a class="el" href="../../de/d68/abtd__env_8c_source.html">abtd_env.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00290">load_env_bool()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adb9a0d36b426404bc82334eaca4ebe16"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> load_env_bool </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>env_suffix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a>&#160;</td>
+          <td class="paramname"><em>default_val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00290">290</a> of file <a class="el" href="../../de/d68/abtd__env_8c_source.html">abtd_env.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ada7c4583e435b9af385b9978950c553d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int load_env_int </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>env_suffix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>default_val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min_val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max_val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00306">306</a> of file <a class="el" href="../../de/d68/abtd__env_8c_source.html">abtd_env.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4e6a00737632d06c4c2e64205e3e5b15"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static size_t load_env_size </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>env_suffix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>default_val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>min_val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>max_val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00359">359</a> of file <a class="el" href="../../de/d68/abtd__env_8c_source.html">abtd_env.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aec5d8bb06eace18912a7641ffee9eb07"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t load_env_uint32 </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>env_suffix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>default_val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>min_val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>max_val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00323">323</a> of file <a class="el" href="../../de/d68/abtd__env_8c_source.html">abtd_env.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a324055a5ebb257626f710ac3b9470a8d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint64_t load_env_uint64 </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>env_suffix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>default_val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>min_val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>max_val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00341">341</a> of file <a class="el" href="../../de/d68/abtd__env_8c_source.html">abtd_env.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5729ebb1381241a7b095967404195c7e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t roundup_pow2_uint32 </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00237">237</a> of file <a class="el" href="../../de/d68/abtd__env_8c_source.html">abtd_env.c</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 12 2020 03:10:10 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 13 2020 03:10:15 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

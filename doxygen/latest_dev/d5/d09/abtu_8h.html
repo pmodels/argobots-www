@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">84920fcd70a6851e44b063188091f2832f8f2baf</span>
+   &#160;<span id="projectnumber">ae970519b99767ae27a760cd3314a141477113a5</span>
    </div>
   </td>
  </tr>
@@ -199,6 +199,14 @@ Functions</h2></td></tr>
 <tr class="separator:ae248ad3031cfbfa19dd7b45804e6fbb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa315ba860d29923548e980a7d2c4b623"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d09/abtu_8h.html#aa315ba860d29923548e980a7d2c4b623">ABTU_free_largepage</a> (void *ptr, size_t size, <a class="el" href="../../d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082ac">ABTU_MEM_LARGEPAGE_TYPE</a> type)</td></tr>
 <tr class="separator:aa315ba860d29923548e980a7d2c4b623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9dbccf96868f70c09524a847d510f1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d09/abtu_8h.html#af9dbccf96868f70c09524a847d510f1a">ABTU_atoi</a> (const char *str, int *p_val, <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *p_overflow)</td></tr>
+<tr class="separator:af9dbccf96868f70c09524a847d510f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc8c8343df577477c5663e30d18b663b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d09/abtu_8h.html#acc8c8343df577477c5663e30d18b663b">ABTU_atoui32</a> (const char *str, uint32_t *p_val, <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *p_overflow)</td></tr>
+<tr class="separator:acc8c8343df577477c5663e30d18b663b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58014c8f522fb3db21e7492bd8f7c42e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d09/abtu_8h.html#a58014c8f522fb3db21e7492bd8f7c42e">ABTU_atoui64</a> (const char *str, uint64_t *p_val, <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *p_overflow)</td></tr>
+<tr class="separator:a58014c8f522fb3db21e7492bd8f7c42e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb96d90123c54222ecca977219dbaa21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d09/abtu_8h.html#aeb96d90123c54222ecca977219dbaa21">ABTU_atosz</a> (const char *str, size_t *p_val, <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *p_overflow)</td></tr>
+<tr class="separator:aeb96d90123c54222ecca977219dbaa21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="aea5cb01847f12d57d2d2a5534ec12080"></a>
@@ -447,6 +455,150 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af9dbccf96868f70c09524a847d510f1a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int ABTU_atoi </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>p_val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *&#160;</td>
+          <td class="paramname"><em>p_overflow</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d93/atoi_8c_source.html#l00011">11</a> of file <a class="el" href="../../df/d93/atoi_8c_source.html">atoi.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00306">load_env_int()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb96d90123c54222ecca977219dbaa21"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int ABTU_atosz </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>p_val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *&#160;</td>
+          <td class="paramname"><em>p_overflow</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d93/atoi_8c_source.html#l00085">85</a> of file <a class="el" href="../../df/d93/atoi_8c_source.html">atoi.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00359">load_env_size()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acc8c8343df577477c5663e30d18b663b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int ABTU_atoui32 </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>p_val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *&#160;</td>
+          <td class="paramname"><em>p_overflow</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d93/atoi_8c_source.html#l00039">39</a> of file <a class="el" href="../../df/d93/atoi_8c_source.html">atoi.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../df/d93/atoi_8c_source.html#l00085">ABTU_atosz()</a>, and <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00323">load_env_uint32()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a58014c8f522fb3db21e7492bd8f7c42e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int ABTU_atoui64 </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t *&#160;</td>
+          <td class="paramname"><em>p_val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *&#160;</td>
+          <td class="paramname"><em>p_overflow</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../df/d93/atoi_8c_source.html#l00065">65</a> of file <a class="el" href="../../df/d93/atoi_8c_source.html">atoi.c</a>.</p>
+
+<p>Referenced by <a class="el" href="../../df/d93/atoi_8c_source.html#l00085">ABTU_atosz()</a>, and <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00341">load_env_uint64()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a88220b7f81a0f629a08915843f37bedd"></a>
 <div class="memitem">
 <div class="memproto">
@@ -661,6 +813,8 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../d5/d09/abtu_8h_source.html#l00015">15</a> of file <a class="el" href="../../d5/d09/abtu_8h_source.html">abtu.h</a>.</p>
 
+<p>Referenced by <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00306">load_env_int()</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aedc081650f27efa03b754abb1a32353e"></a>
@@ -769,6 +923,8 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../d5/d09/abtu_8h_source.html#l00040">40</a> of file <a class="el" href="../../d5/d09/abtu_8h_source.html">abtu.h</a>.</p>
 
+<p>Referenced by <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00359">load_env_size()</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa33c6766b317ddef2948e12414ed45ff"></a>
@@ -805,6 +961,8 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../d5/d09/abtu_8h_source.html#l00025">25</a> of file <a class="el" href="../../d5/d09/abtu_8h_source.html">abtu.h</a>.</p>
 
+<p>Referenced by <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00323">load_env_uint32()</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="abded3d5644c9fd8f3d9a3962db220e50"></a>
@@ -840,6 +998,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="../../d5/d09/abtu_8h_source.html#l00035">35</a> of file <a class="el" href="../../d5/d09/abtu_8h_source.html">abtu.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00341">load_env_uint64()</a>.</p>
 
 </div>
 </div>
@@ -921,7 +1081,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../d5/d09/abtu_8h_source.html#l00045">45</a> of file <a class="el" href="../../d5/d09/abtu_8h_source.html">abtu.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d8/d4d/stream_8c_source.html#l00831">ABT_xstream_get_affinity()</a>, and <a class="el" href="../../d8/d4d/stream_8c_source.html#l00566">ABT_xstream_get_main_pools()</a>.</p>
+<p>Referenced by <a class="el" href="../../d8/d4d/stream_8c_source.html#l00831">ABT_xstream_get_affinity()</a>, <a class="el" href="../../d8/d4d/stream_8c_source.html#l00566">ABT_xstream_get_main_pools()</a>, and <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00306">load_env_int()</a>.</p>
 
 </div>
 </div>
@@ -1031,7 +1191,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../d5/d09/abtu_8h_source.html#l00070">70</a> of file <a class="el" href="../../d5/d09/abtu_8h_source.html">abtu.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d5/d09/abtu_8h_source.html#l00240">ABTU_realloc()</a>.</p>
+<p>Referenced by <a class="el" href="../../d5/d09/abtu_8h_source.html#l00240">ABTU_realloc()</a>, and <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00359">load_env_size()</a>.</p>
 
 </div>
 </div>
@@ -1069,7 +1229,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../d5/d09/abtu_8h_source.html#l00055">55</a> of file <a class="el" href="../../d5/d09/abtu_8h_source.html">abtu.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00024">ABTD_env_init()</a>.</p>
+<p>Referenced by <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00044">ABTD_env_init()</a>, and <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00323">load_env_uint32()</a>.</p>
 
 </div>
 </div>
@@ -1106,6 +1266,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="../../d5/d09/abtu_8h_source.html#l00065">65</a> of file <a class="el" href="../../d5/d09/abtu_8h_source.html">abtu.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00341">load_env_uint64()</a>.</p>
 
 </div>
 </div>
@@ -1187,7 +1349,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../d5/d09/abtu_8h_source.html#l00095">95</a> of file <a class="el" href="../../d5/d09/abtu_8h_source.html">abtu.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00024">ABTD_env_init()</a>, <a class="el" href="../../db/d9d/abti__key_8h_source.html#l00067">ABTI_ktable_create()</a>, <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00116">ABTI_mem_alloc_ythread_malloc_desc_stack_impl()</a>, and <a class="el" href="../../d5/d09/abtu_8h_source.html#l00218">ABTU_malloc()</a>.</p>
+<p>Referenced by <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00044">ABTD_env_init()</a>, <a class="el" href="../../db/d9d/abti__key_8h_source.html#l00067">ABTI_ktable_create()</a>, <a class="el" href="../../d7/d04/abti__mem_8h_source.html#l00116">ABTI_mem_alloc_ythread_malloc_desc_stack_impl()</a>, and <a class="el" href="../../d5/d09/abtu_8h_source.html#l00218">ABTU_malloc()</a>.</p>
 
 </div>
 </div>
@@ -1225,7 +1387,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../d5/d09/abtu_8h_source.html#l00075">75</a> of file <a class="el" href="../../d5/d09/abtu_8h_source.html">abtu.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00024">ABTD_env_init()</a>.</p>
+<p>Referenced by <a class="el" href="../../de/d68/abtd__env_8c_source.html#l00044">ABTD_env_init()</a>.</p>
 
 </div>
 </div>
@@ -1268,7 +1430,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 12 2020 03:10:08 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 13 2020 03:10:14 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

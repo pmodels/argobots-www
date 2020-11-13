@@ -5,7 +5,7 @@ var searchData=
   ['sched_5fevent_5ffreq',['sched_event_freq',['../da/de9/structABTI__global.html#a60f60ee604ff342d1eeee7a12ce3f994',1,'ABTI_global']]],
   ['sched_5fprio_5fdef',['sched_prio_def',['../d2/d84/prio_8c.html#a5ceea58609bc15224f50e9ef5fa0cb77',1,'prio.c']]],
   ['sched_5frandws_5fdef',['sched_randws_def',['../da/d51/randws_8c.html#a83202c6e97e9f1c57563e8743e82280c',1,'randws.c']]],
-  ['sched_5fsleep_5fnsec',['sched_sleep_nsec',['../da/de9/structABTI__global.html#afe84d490aac2c9a75c1ae40565a3deeb',1,'ABTI_global']]],
+  ['sched_5fsleep_5fnsec',['sched_sleep_nsec',['../da/de9/structABTI__global.html#a5e7358b72c29ad81ab7be88b5a7c488f',1,'ABTI_global']]],
   ['sched_5fstacksize',['sched_stacksize',['../da/de9/structABTI__global.html#a33ef30e43d5ee3a50aa3c2233d77f0de',1,'ABTI_global']]],
   ['set_5faffinity',['set_affinity',['../da/de9/structABTI__global.html#a6ea85999f21c5deaa96e2d223aa94f35',1,'ABTI_global']]],
   ['set_5flocal_5fxstream_5ff',['set_local_xstream_f',['../dd/dc6/structABTI__local__func.html#aaacddd7a8885928d8b16de26232d92da',1,'ABTI_local_func']]],

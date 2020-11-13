@@ -12,5 +12,7 @@ var searchData=
   ['init_5fand_5fcall_5ffcontext',['init_and_call_fcontext',['../d4/d27/abtd__fcontext_8h.html#aaeae1e13f2addc7026b6c7f2ef650df5',1,'abtd_fcontext.h']]],
   ['init_5flibrary',['init_library',['../dc/d57/global_8c.html#a8bcdff6faa4f871c5866c6206e9966cc',1,'global.c']]],
   ['int_5frem',['int_rem',['../d2/d45/abtd__affinity_8c.html#a4caa8796c4d7938443dbe263cfb2e44c',1,'abtd_affinity.c']]],
+  ['is_5ffalse',['is_false',['../de/d68/abtd__env_8c.html#a7f476f009611c0fdc2cc908e0288642b',1,'abtd_env.c']]],
+  ['is_5ftrue',['is_true',['../de/d68/abtd__env_8c.html#a3be13f7f1d5dd3dca946ef4113c95d72',1,'abtd_env.c']]],
   ['is_5fwhitespace',['is_whitespace',['../d0/d31/abtd__affinity__parser_8c.html#acc7f63289d0484554fd5f4b1debb4450',1,'abtd_affinity_parser.c']]]
 ];
