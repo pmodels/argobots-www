@@ -151,6 +151,7 @@ var searchData=
   ['abtd_5fatomic_5fint64_5fstatic_5finitializer',['ABTD_ATOMIC_INT64_STATIC_INITIALIZER',['../d2/db0/abtd__atomic_8h.html#ad9f74a713d9e21610cdbc317c4aa0be3',1,'abtd_atomic.h']]],
   ['abtd_5fatomic_5fint_5fstatic_5finitializer',['ABTD_ATOMIC_INT_STATIC_INITIALIZER',['../d2/db0/abtd__atomic_8h.html#a9c1a463e4faca844852ae03b19584f05',1,'abtd_atomic.h']]],
   ['abtd_5fatomic_5fptr_5fstatic_5finitializer',['ABTD_ATOMIC_PTR_STATIC_INITIALIZER',['../d2/db0/abtd__atomic_8h.html#a82730f77670d3a0d2b38c68e1e45abc8',1,'abtd_atomic.h']]],
+  ['abtd_5fatomic_5fsize_5fstatic_5finitializer',['ABTD_ATOMIC_SIZE_STATIC_INITIALIZER',['../d2/db0/abtd__atomic_8h.html#a9e171bf6498e2a4440e0d157e536facf',1,'abtd_atomic.h']]],
   ['abtd_5fatomic_5fuint32_5fstatic_5finitializer',['ABTD_ATOMIC_UINT32_STATIC_INITIALIZER',['../d2/db0/abtd__atomic_8h.html#abcbc6b22cbd44bb26f0c3df52139db8f',1,'abtd_atomic.h']]],
   ['abtd_5fatomic_5fuint64_5fstatic_5finitializer',['ABTD_ATOMIC_UINT64_STATIC_INITIALIZER',['../d2/db0/abtd__atomic_8h.html#a83bfec8cc752a4840ee3b18a128cabe8',1,'abtd_atomic.h']]],
   ['abtd_5fenv_5fint_5fmax',['ABTD_ENV_INT_MAX',['../de/d68/abtd__env_8c.html#a97d67b416aa0ea9e75f7f24cfeaa80ac',1,'abtd_env.c']]],

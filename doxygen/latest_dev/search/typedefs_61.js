@@ -66,6 +66,7 @@ var searchData=
   ['abtd_5fatomic_5fint32',['ABTD_atomic_int32',['../d2/db0/abtd__atomic_8h.html#a6317f602653518f746dc249563057815',1,'abtd_atomic.h']]],
   ['abtd_5fatomic_5fint64',['ABTD_atomic_int64',['../d2/db0/abtd__atomic_8h.html#ab7e98dda62357ce7d46bf181933b2c6c',1,'abtd_atomic.h']]],
   ['abtd_5fatomic_5fptr',['ABTD_atomic_ptr',['../d2/db0/abtd__atomic_8h.html#a3ca626e9f2674b6b5f93304e817d0a7e',1,'abtd_atomic.h']]],
+  ['abtd_5fatomic_5fsize',['ABTD_atomic_size',['../d2/db0/abtd__atomic_8h.html#ab09c56ea3177c817a06d23ea51e29c85',1,'abtd_atomic.h']]],
   ['abtd_5fatomic_5fuint32',['ABTD_atomic_uint32',['../d2/db0/abtd__atomic_8h.html#ad424c9c35e7d1109be64e4b310a96de8',1,'abtd_atomic.h']]],
   ['abtd_5fatomic_5fuint64',['ABTD_atomic_uint64',['../d2/db0/abtd__atomic_8h.html#a352c5841e7b32984acba96e2fe0313bd',1,'abtd_atomic.h']]],
   ['abtd_5ftime',['ABTD_time',['../d3/dbf/abtd_8h.html#aadf563e16f258cbc51fa051b09dba7fa',1,'abtd.h']]],

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">ae970519b99767ae27a760cd3314a141477113a5</span>
+   &#160;<span id="projectnumber">fe9704776da8f6f84e7a743897757aecc2686685</span>
    </div>
   </td>
  </tr>
@@ -164,74 +164,74 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;{</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    ABTI_sched *p_sched = ABTI_sched_get_ptr(sched);</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    ABTI_CHECK_NULL_SCHED_PTR(p_sched);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    ABTI_CHECK_TRUE(idx + max_pools &lt;= p_sched-&gt;num_pools, <a class="code" href="../../d5/d7d/abt_8h.html#a719d6d931f037384f0366278a8affb7f">ABT_ERR_SCHED</a>);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordtype">int</span> p;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">for</span> (p = idx; p &lt; idx + max_pools; p++) {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        pools[p - idx] = p_sched-&gt;pools[p];</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
-<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="../../d0/d83/group__SCHED.html#ga3dee71a1b44221cc56d4bb66f4f02cf1">  188</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d0/d83/group__SCHED.html#ga3dee71a1b44221cc56d4bb66f4f02cf1">ABT_sched_finish</a>(<a class="code" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> sched)</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;{</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    ABTI_sched *p_sched = ABTI_sched_get_ptr(sched);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    ABTI_CHECK_NULL_SCHED_PTR(p_sched);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    ABTI_sched_finish(p_sched);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
-<div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="../../d0/d83/group__SCHED.html#gabd0ce32ef0e1e24cb5902637049fcb78">  209</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d0/d83/group__SCHED.html#gabd0ce32ef0e1e24cb5902637049fcb78">ABT_sched_exit</a>(<a class="code" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> sched)</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;{</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    ABTI_sched *p_sched = ABTI_sched_get_ptr(sched);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    ABTI_CHECK_NULL_SCHED_PTR(p_sched);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    ABTI_sched_exit(p_sched);</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;}</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
-<div class="line"><a name="l00235"></a><span class="lineno"><a class="line" href="../../d0/d83/group__SCHED.html#ga6104f52b110af4d2105ceec534a4e5c4">  235</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d0/d83/group__SCHED.html#ga6104f52b110af4d2105ceec534a4e5c4">ABT_sched_has_to_stop</a>(<a class="code" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> sched, <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *stop)</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;{</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    ABTI_local *p_local = ABTI_local_get_local();</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    ABTI_sched *p_sched = ABTI_sched_get_ptr(sched);</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    ABTI_CHECK_NULL_SCHED_PTR(p_sched);</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    *stop = ABTI_sched_has_to_stop(&amp;p_local, p_sched);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;}</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
-<div class="line"><a name="l00257"></a><span class="lineno"><a class="line" href="../../d0/d83/group__SCHED.html#ga996eed186a982e8f64c5073584ffce40">  257</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d0/d83/group__SCHED.html#ga996eed186a982e8f64c5073584ffce40">ABT_sched_set_data</a>(<a class="code" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> sched, <span class="keywordtype">void</span> *data)</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;{</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    ABTI_sched *p_sched = ABTI_sched_get_ptr(sched);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    ABTI_CHECK_NULL_SCHED_PTR(p_sched);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    p_sched-&gt;data = data;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
-<div class="line"><a name="l00278"></a><span class="lineno"><a class="line" href="../../d0/d83/group__SCHED.html#gac90f0fafacd0ad784423910ce59575c2">  278</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d0/d83/group__SCHED.html#gac90f0fafacd0ad784423910ce59575c2">ABT_sched_get_data</a>(<a class="code" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> sched, <span class="keywordtype">void</span> **data)</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;{</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    ABTI_sched *p_sched = ABTI_sched_get_ptr(sched);</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    ABTI_CHECK_NULL_SCHED_PTR(p_sched);</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    *data = p_sched-&gt;data;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;}</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div>
-<div class="line"><a name="l00298"></a><span class="lineno"><a class="line" href="../../d0/d83/group__SCHED.html#ga60224bec5158dc8887e131a87941d49a">  298</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d0/d83/group__SCHED.html#ga60224bec5158dc8887e131a87941d49a">ABT_sched_get_size</a>(<a class="code" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> sched, <span class="keywordtype">size_t</span> *size)</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;{</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    ABTI_sched *p_sched = ABTI_sched_get_ptr(sched);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    ABTI_CHECK_NULL_SCHED_PTR(p_sched);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    *size = ABTI_sched_get_size(p_sched);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="keywordtype">size_t</span> ABTI_sched_get_size(ABTI_sched *p_sched)</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;{</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordtype">size_t</span> pool_size = 0;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordtype">int</span> p;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    ABTI_CHECK_TRUE((<span class="keywordtype">size_t</span>)(idx + max_pools) &lt;= p_sched-&gt;num_pools,</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                    <a class="code" href="../../d5/d7d/abt_8h.html#a719d6d931f037384f0366278a8affb7f">ABT_ERR_SCHED</a>);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">int</span> p;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">for</span> (p = idx; p &lt; idx + max_pools; p++) {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        pools[p - idx] = p_sched-&gt;pools[p];</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="../../d0/d83/group__SCHED.html#ga3dee71a1b44221cc56d4bb66f4f02cf1">  189</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d0/d83/group__SCHED.html#ga3dee71a1b44221cc56d4bb66f4f02cf1">ABT_sched_finish</a>(<a class="code" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> sched)</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    ABTI_sched *p_sched = ABTI_sched_get_ptr(sched);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    ABTI_CHECK_NULL_SCHED_PTR(p_sched);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    ABTI_sched_finish(p_sched);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
+<div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="../../d0/d83/group__SCHED.html#gabd0ce32ef0e1e24cb5902637049fcb78">  210</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d0/d83/group__SCHED.html#gabd0ce32ef0e1e24cb5902637049fcb78">ABT_sched_exit</a>(<a class="code" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> sched)</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;{</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    ABTI_sched *p_sched = ABTI_sched_get_ptr(sched);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    ABTI_CHECK_NULL_SCHED_PTR(p_sched);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    ABTI_sched_exit(p_sched);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;}</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
+<div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="../../d0/d83/group__SCHED.html#ga6104f52b110af4d2105ceec534a4e5c4">  236</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d0/d83/group__SCHED.html#ga6104f52b110af4d2105ceec534a4e5c4">ABT_sched_has_to_stop</a>(<a class="code" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> sched, <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *stop)</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;{</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    ABTI_local *p_local = ABTI_local_get_local();</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    ABTI_sched *p_sched = ABTI_sched_get_ptr(sched);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    ABTI_CHECK_NULL_SCHED_PTR(p_sched);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    *stop = ABTI_sched_has_to_stop(&amp;p_local, p_sched);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
+<div class="line"><a name="l00258"></a><span class="lineno"><a class="line" href="../../d0/d83/group__SCHED.html#ga996eed186a982e8f64c5073584ffce40">  258</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d0/d83/group__SCHED.html#ga996eed186a982e8f64c5073584ffce40">ABT_sched_set_data</a>(<a class="code" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> sched, <span class="keywordtype">void</span> *data)</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;{</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    ABTI_sched *p_sched = ABTI_sched_get_ptr(sched);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    ABTI_CHECK_NULL_SCHED_PTR(p_sched);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    p_sched-&gt;data = data;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;}</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
+<div class="line"><a name="l00279"></a><span class="lineno"><a class="line" href="../../d0/d83/group__SCHED.html#gac90f0fafacd0ad784423910ce59575c2">  279</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d0/d83/group__SCHED.html#gac90f0fafacd0ad784423910ce59575c2">ABT_sched_get_data</a>(<a class="code" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> sched, <span class="keywordtype">void</span> **data)</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;{</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    ABTI_sched *p_sched = ABTI_sched_get_ptr(sched);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    ABTI_CHECK_NULL_SCHED_PTR(p_sched);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    *data = p_sched-&gt;data;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;}</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
+<div class="line"><a name="l00299"></a><span class="lineno"><a class="line" href="../../d0/d83/group__SCHED.html#ga60224bec5158dc8887e131a87941d49a">  299</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d0/d83/group__SCHED.html#ga60224bec5158dc8887e131a87941d49a">ABT_sched_get_size</a>(<a class="code" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> sched, <span class="keywordtype">size_t</span> *size)</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;{</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    ABTI_sched *p_sched = ABTI_sched_get_ptr(sched);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    ABTI_CHECK_NULL_SCHED_PTR(p_sched);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    *size = ABTI_sched_get_size(p_sched);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;}</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="keywordtype">size_t</span> ABTI_sched_get_size(ABTI_sched *p_sched)</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;{</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordtype">size_t</span> pool_size = 0, p;</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">for</span> (p = 0; p &lt; p_sched-&gt;num_pools; p++) {</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        ABTI_pool *p_pool = ABTI_pool_get_ptr(p_sched-&gt;pools[p]);</div>
@@ -413,7 +413,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    ABTI_ASSERT(p_sched-&gt;used == ABTI_SCHED_NOT_USED);</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <span class="comment">/* If sched is a default provided one, it should free its pool here.</span></div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;<span class="comment">     * Otherwise, freeing the pool is the user&#39;s responsibility. */</span></div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    <span class="keywordtype">int</span> p;</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    <span class="keywordtype">size_t</span> p;</div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    <span class="keywordflow">for</span> (p = 0; p &lt; p_sched-&gt;num_pools; p++) {</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;        ABTI_pool *p_pool = ABTI_pool_get_ptr(p_sched-&gt;pools[p]);</div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;        int32_t num_scheds = ABTI_pool_release(p_pool);</div>
@@ -498,263 +498,261 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;</div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;<span class="keywordtype">size_t</span> ABTI_sched_get_total_size(ABTI_sched *p_sched)</div>
 <div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;{</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    <span class="keywordtype">size_t</span> pool_size = 0;</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    <span class="keywordtype">int</span> p;</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <span class="keywordflow">for</span> (p = 0; p &lt; p_sched-&gt;num_pools; p++) {</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;        ABTI_pool *p_pool = ABTI_pool_get_ptr(p_sched-&gt;pools[p]);</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        pool_size += ABTI_pool_get_total_size(p_pool);</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    }</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    <span class="keywordflow">return</span> pool_size;</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;}</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;<span class="comment">/* Compared to \c ABTI_sched_get_total_size, ABTI_sched_get_effective_size does</span></div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;<span class="comment"> * not count the number of blocked ULTs if a pool has more than one consumer or</span></div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;<span class="comment"> * the caller ES is not the latest consumer. This is necessary when the ES</span></div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;<span class="comment"> * associated with the target scheduler has to be joined and the pool is shared</span></div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;<span class="comment"> * between different schedulers associated with different ESs. */</span></div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;<span class="keywordtype">size_t</span> ABTI_sched_get_effective_size(ABTI_local *p_local, ABTI_sched *p_sched)</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;{</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    <span class="keywordtype">size_t</span> pool_size = 0;</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    <span class="keywordtype">int</span> p;</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    <span class="keywordflow">for</span> (p = 0; p &lt; p_sched-&gt;num_pools; p++) {</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;        <a class="code" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> pool = p_sched-&gt;pools[p];</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        ABTI_pool *p_pool = ABTI_pool_get_ptr(pool);</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;        pool_size += ABTI_pool_get_size(p_pool);</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;        pool_size += ABTD_atomic_acquire_load_int32(&amp;p_pool-&gt;num_migrations);</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;        <span class="keywordflow">switch</span> (p_pool-&gt;access) {</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecfa6b52ca5bbffb03291d493257a8fe5bed">ABT_POOL_ACCESS_PRIV</a>:</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                pool_size +=</div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                    ABTD_atomic_acquire_load_int32(&amp;p_pool-&gt;num_blocked);</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecfa9385bbd5d15bee55652e14e7546a0425">ABT_POOL_ACCESS_SPSC</a>:</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecfabb04cf57d6a62299db2783422069d1ef">ABT_POOL_ACCESS_MPSC</a>:</div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecfa2d9b6671e37097bb153513c200a2ad46">ABT_POOL_ACCESS_SPMC</a>:</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecfaef5831d28ade4eb4b2a8e69a4c5bb39f">ABT_POOL_ACCESS_MPMC</a>:</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;                <span class="keywordflow">if</span> (ABTD_atomic_acquire_load_int32(&amp;p_pool-&gt;num_scheds) == 1) {</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                    pool_size +=</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                        ABTD_atomic_acquire_load_int32(&amp;p_pool-&gt;num_blocked);</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                }</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    <span class="keywordtype">size_t</span> pool_size = 0, p;</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    <span class="keywordflow">for</span> (p = 0; p &lt; p_sched-&gt;num_pools; p++) {</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        ABTI_pool *p_pool = ABTI_pool_get_ptr(p_sched-&gt;pools[p]);</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;        pool_size += ABTI_pool_get_total_size(p_pool);</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    }</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <span class="keywordflow">return</span> pool_size;</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;}</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;<span class="comment">/* Compared to \c ABTI_sched_get_total_size, ABTI_sched_get_effective_size does</span></div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;<span class="comment"> * not count the number of blocked ULTs if a pool has more than one consumer or</span></div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;<span class="comment"> * the caller ES is not the latest consumer. This is necessary when the ES</span></div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;<span class="comment"> * associated with the target scheduler has to be joined and the pool is shared</span></div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;<span class="comment"> * between different schedulers associated with different ESs. */</span></div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;<span class="keywordtype">size_t</span> ABTI_sched_get_effective_size(ABTI_local *p_local, ABTI_sched *p_sched)</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;{</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    <span class="keywordtype">size_t</span> pool_size = 0, p;</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    <span class="keywordflow">for</span> (p = 0; p &lt; p_sched-&gt;num_pools; p++) {</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;        <a class="code" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> pool = p_sched-&gt;pools[p];</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;        ABTI_pool *p_pool = ABTI_pool_get_ptr(pool);</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;        pool_size += ABTI_pool_get_size(p_pool);</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        pool_size += ABTD_atomic_acquire_load_int32(&amp;p_pool-&gt;num_migrations);</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;        <span class="keywordflow">switch</span> (p_pool-&gt;access) {</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecfa6b52ca5bbffb03291d493257a8fe5bed">ABT_POOL_ACCESS_PRIV</a>:</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                pool_size +=</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                    ABTD_atomic_acquire_load_int32(&amp;p_pool-&gt;num_blocked);</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecfa9385bbd5d15bee55652e14e7546a0425">ABT_POOL_ACCESS_SPSC</a>:</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecfabb04cf57d6a62299db2783422069d1ef">ABT_POOL_ACCESS_MPSC</a>:</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecfa2d9b6671e37097bb153513c200a2ad46">ABT_POOL_ACCESS_SPMC</a>:</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecfaef5831d28ade4eb4b2a8e69a4c5bb39f">ABT_POOL_ACCESS_MPMC</a>:</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;                <span class="keywordflow">if</span> (ABTD_atomic_acquire_load_int32(&amp;p_pool-&gt;num_scheds) == 1) {</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                    pool_size +=</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;                        ABTD_atomic_acquire_load_int32(&amp;p_pool-&gt;num_blocked);</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                }</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;            <span class="keywordflow">default</span>:</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;        }</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    }</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;    <span class="keywordflow">return</span> pool_size;</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;}</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;<span class="keywordtype">void</span> ABTI_sched_print(ABTI_sched *p_sched, FILE *p_os, <span class="keywordtype">int</span> indent,</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;                      <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> print_sub)</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;{</div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    <span class="keywordflow">if</span> (p_sched == NULL) {</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        fprintf(p_os, <span class="stringliteral">&quot;%*s== NULL SCHED ==\n&quot;</span>, indent, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;        ABTI_sched_kind kind;</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *kind_str, *type, *used;</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;        kind = p_sched-&gt;kind;</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;        <span class="keywordflow">if</span> (kind == <a class="code" href="../../db/dbe/sched_8c.html#aa664f1c92fc5bf24fb51ab6f444b113c">sched_get_kind</a>(ABTI_sched_get_basic_def())) {</div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;            kind_str = <span class="stringliteral">&quot;BASIC&quot;</span>;</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (kind == <a class="code" href="../../db/dbe/sched_8c.html#aa664f1c92fc5bf24fb51ab6f444b113c">sched_get_kind</a>(ABTI_sched_get_basic_wait_def())) {</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            kind_str = <span class="stringliteral">&quot;BASIC_WAIT&quot;</span>;</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (kind == <a class="code" href="../../db/dbe/sched_8c.html#aa664f1c92fc5bf24fb51ab6f444b113c">sched_get_kind</a>(ABTI_sched_get_prio_def())) {</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;            kind_str = <span class="stringliteral">&quot;PRIO&quot;</span>;</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;            kind_str = <span class="stringliteral">&quot;USER&quot;</span>;</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;        }</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;</div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;        <span class="keywordflow">switch</span> (p_sched-&gt;type) {</div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#a17ce4f7ba59daa4b550d590b6f4d32e8a2ef42eb63e386ad783d0c7c59a351d0f">ABT_SCHED_TYPE_ULT</a>:</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;                type = <span class="stringliteral">&quot;ULT&quot;</span>;</div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#a17ce4f7ba59daa4b550d590b6f4d32e8a32ac0f5af62db1b585bb7280fba592fc">ABT_SCHED_TYPE_TASK</a>:</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                type = <span class="stringliteral">&quot;TASKLET&quot;</span>;</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;                type = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;        }</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;        <span class="keywordflow">switch</span> (p_sched-&gt;used) {</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;            <span class="keywordflow">case</span> ABTI_SCHED_NOT_USED:</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                used = <span class="stringliteral">&quot;NOT_USED&quot;</span>;</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;            <span class="keywordflow">case</span> ABTI_SCHED_MAIN:</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                used = <span class="stringliteral">&quot;MAIN&quot;</span>;</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;            <span class="keywordflow">case</span> ABTI_SCHED_IN_POOL:</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;                used = <span class="stringliteral">&quot;IN_POOL&quot;</span>;</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;                used = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;        }</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;        fprintf(p_os,</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;                <span class="stringliteral">&quot;%*s== SCHED (%p) ==\n&quot;</span></div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;#ifdef ABT_CONFIG_USE_DEBUG_LOG</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                <span class="stringliteral">&quot;%*sid       : %&quot;</span> PRIu64 <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;#endif</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;                <span class="stringliteral">&quot;%*skind     : %&quot;</span> PRIxPTR <span class="stringliteral">&quot; (%s)\n&quot;</span></div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;                <span class="stringliteral">&quot;%*stype     : %s\n&quot;</span></div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;                <span class="stringliteral">&quot;%*sused     : %s\n&quot;</span></div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;                <span class="stringliteral">&quot;%*sautomatic: %s\n&quot;</span></div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;                <span class="stringliteral">&quot;%*srequest  : 0x%x\n&quot;</span></div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;                <span class="stringliteral">&quot;%*snum_pools: %d\n&quot;</span></div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                <span class="stringliteral">&quot;%*ssize     : %zu\n&quot;</span></div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;                <span class="stringliteral">&quot;%*stot_size : %zu\n&quot;</span></div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;                <span class="stringliteral">&quot;%*sdata     : %p\n&quot;</span>,</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                indent, <span class="stringliteral">&quot;&quot;</span>, (<span class="keywordtype">void</span> *)p_sched,</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;#ifdef ABT_CONFIG_USE_DEBUG_LOG</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                indent, <span class="stringliteral">&quot;&quot;</span>, p_sched-&gt;id,</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;#endif</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                indent, <span class="stringliteral">&quot;&quot;</span>, p_sched-&gt;kind, kind_str, indent, <span class="stringliteral">&quot;&quot;</span>, type, indent,</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                <span class="stringliteral">&quot;&quot;</span>, used, indent, <span class="stringliteral">&quot;&quot;</span>,</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                (p_sched-&gt;automatic == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>) ? <span class="stringliteral">&quot;TRUE&quot;</span> : <span class="stringliteral">&quot;FALSE&quot;</span>, indent, <span class="stringliteral">&quot;&quot;</span>,</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;                ABTD_atomic_acquire_load_uint32(&amp;p_sched-&gt;request), indent, <span class="stringliteral">&quot;&quot;</span>,</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;                p_sched-&gt;num_pools, indent, <span class="stringliteral">&quot;&quot;</span>, ABTI_sched_get_size(p_sched),</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                indent, <span class="stringliteral">&quot;&quot;</span>, ABTI_sched_get_total_size(p_sched), indent, <span class="stringliteral">&quot;&quot;</span>,</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                p_sched-&gt;data);</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        <span class="keywordflow">if</span> (print_sub == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>) {</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;            <span class="keywordtype">int</span> i;</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;            <span class="keywordflow">for</span> (i = 0; i &lt; p_sched-&gt;num_pools; i++) {</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;                ABTI_pool *p_pool = ABTI_pool_get_ptr(p_sched-&gt;pools[i]);</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;                ABTI_pool_print(p_pool, p_os, indent + 2);</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;            }</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        }</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    }</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    fflush(p_os);</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;}</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;</div>
-<div class="line"><a name="l00718"></a><span class="lineno"><a class="line" href="../../db/dbe/sched_8c.html#a00a319caec88baaca37e2fcdfc4ce518">  718</a></span>&#160;<span class="keyword">static</span> ABTD_atomic_uint64 <a class="code" href="../../db/dbe/sched_8c.html#a00a319caec88baaca37e2fcdfc4ce518">g_sched_id</a> = ABTD_ATOMIC_UINT64_STATIC_INITIALIZER(0);</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;<span class="keywordtype">void</span> ABTI_sched_reset_id(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;{</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    ABTD_atomic_relaxed_store_uint64(&amp;g_sched_id, 0);</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;}</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;        }</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    }</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    <span class="keywordflow">return</span> pool_size;</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;}</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;<span class="keywordtype">void</span> ABTI_sched_print(ABTI_sched *p_sched, FILE *p_os, <span class="keywordtype">int</span> indent,</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;                      <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> print_sub)</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;{</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    <span class="keywordflow">if</span> (p_sched == NULL) {</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;        fprintf(p_os, <span class="stringliteral">&quot;%*s== NULL SCHED ==\n&quot;</span>, indent, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        ABTI_sched_kind kind;</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *kind_str, *type, *used;</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;        kind = p_sched-&gt;kind;</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;        <span class="keywordflow">if</span> (kind == <a class="code" href="../../db/dbe/sched_8c.html#aa664f1c92fc5bf24fb51ab6f444b113c">sched_get_kind</a>(ABTI_sched_get_basic_def())) {</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;            kind_str = <span class="stringliteral">&quot;BASIC&quot;</span>;</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (kind == <a class="code" href="../../db/dbe/sched_8c.html#aa664f1c92fc5bf24fb51ab6f444b113c">sched_get_kind</a>(ABTI_sched_get_basic_wait_def())) {</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;            kind_str = <span class="stringliteral">&quot;BASIC_WAIT&quot;</span>;</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (kind == <a class="code" href="../../db/dbe/sched_8c.html#aa664f1c92fc5bf24fb51ab6f444b113c">sched_get_kind</a>(ABTI_sched_get_prio_def())) {</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            kind_str = <span class="stringliteral">&quot;PRIO&quot;</span>;</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;            kind_str = <span class="stringliteral">&quot;USER&quot;</span>;</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;        }</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;        <span class="keywordflow">switch</span> (p_sched-&gt;type) {</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#a17ce4f7ba59daa4b550d590b6f4d32e8a2ef42eb63e386ad783d0c7c59a351d0f">ABT_SCHED_TYPE_ULT</a>:</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                type = <span class="stringliteral">&quot;ULT&quot;</span>;</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d5/d7d/abt_8h.html#a17ce4f7ba59daa4b550d590b6f4d32e8a32ac0f5af62db1b585bb7280fba592fc">ABT_SCHED_TYPE_TASK</a>:</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                type = <span class="stringliteral">&quot;TASKLET&quot;</span>;</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;            <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                type = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;        }</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;        <span class="keywordflow">switch</span> (p_sched-&gt;used) {</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;            <span class="keywordflow">case</span> ABTI_SCHED_NOT_USED:</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;                used = <span class="stringliteral">&quot;NOT_USED&quot;</span>;</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;            <span class="keywordflow">case</span> ABTI_SCHED_MAIN:</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                used = <span class="stringliteral">&quot;MAIN&quot;</span>;</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;            <span class="keywordflow">case</span> ABTI_SCHED_IN_POOL:</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;                used = <span class="stringliteral">&quot;IN_POOL&quot;</span>;</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;            <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;                used = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;        }</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;        fprintf(p_os,</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;                <span class="stringliteral">&quot;%*s== SCHED (%p) ==\n&quot;</span></div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;#ifdef ABT_CONFIG_USE_DEBUG_LOG</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;                <span class="stringliteral">&quot;%*sid       : %&quot;</span> PRIu64 <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;#endif</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                <span class="stringliteral">&quot;%*skind     : %&quot;</span> PRIxPTR <span class="stringliteral">&quot; (%s)\n&quot;</span></div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                <span class="stringliteral">&quot;%*stype     : %s\n&quot;</span></div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;                <span class="stringliteral">&quot;%*sused     : %s\n&quot;</span></div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;                <span class="stringliteral">&quot;%*sautomatic: %s\n&quot;</span></div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;                <span class="stringliteral">&quot;%*srequest  : 0x%x\n&quot;</span></div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;                <span class="stringliteral">&quot;%*snum_pools: %zu\n&quot;</span></div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;                <span class="stringliteral">&quot;%*ssize     : %zu\n&quot;</span></div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;                <span class="stringliteral">&quot;%*stot_size : %zu\n&quot;</span></div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                <span class="stringliteral">&quot;%*sdata     : %p\n&quot;</span>,</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;                indent, <span class="stringliteral">&quot;&quot;</span>, (<span class="keywordtype">void</span> *)p_sched,</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;#ifdef ABT_CONFIG_USE_DEBUG_LOG</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                indent, <span class="stringliteral">&quot;&quot;</span>, p_sched-&gt;id,</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;#endif</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                indent, <span class="stringliteral">&quot;&quot;</span>, p_sched-&gt;kind, kind_str, indent, <span class="stringliteral">&quot;&quot;</span>, type, indent,</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;                <span class="stringliteral">&quot;&quot;</span>, used, indent, <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                (p_sched-&gt;automatic == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>) ? <span class="stringliteral">&quot;TRUE&quot;</span> : <span class="stringliteral">&quot;FALSE&quot;</span>, indent, <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                ABTD_atomic_acquire_load_uint32(&amp;p_sched-&gt;request), indent, <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                p_sched-&gt;num_pools, indent, <span class="stringliteral">&quot;&quot;</span>, ABTI_sched_get_size(p_sched),</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;                indent, <span class="stringliteral">&quot;&quot;</span>, ABTI_sched_get_total_size(p_sched), indent, <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;                p_sched-&gt;data);</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        <span class="keywordflow">if</span> (print_sub == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>) {</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;            <span class="keywordtype">size_t</span> i;</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;            <span class="keywordflow">for</span> (i = 0; i &lt; p_sched-&gt;num_pools; i++) {</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                ABTI_pool *p_pool = ABTI_pool_get_ptr(p_sched-&gt;pools[i]);</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;                ABTI_pool_print(p_pool, p_os, indent + 2);</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;            }</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        }</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    }</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    fflush(p_os);</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;}</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;</div>
+<div class="line"><a name="l00716"></a><span class="lineno"><a class="line" href="../../db/dbe/sched_8c.html#a00a319caec88baaca37e2fcdfc4ce518">  716</a></span>&#160;<span class="keyword">static</span> ABTD_atomic_uint64 <a class="code" href="../../db/dbe/sched_8c.html#a00a319caec88baaca37e2fcdfc4ce518">g_sched_id</a> = ABTD_ATOMIC_UINT64_STATIC_INITIALIZER(0);</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;<span class="keywordtype">void</span> ABTI_sched_reset_id(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;{</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    ABTD_atomic_relaxed_store_uint64(&amp;g_sched_id, 0);</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;}</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;<span class="comment">/* Internal static functions                                                 */</span></div>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;<span class="comment">/* Internal static functions                                                 */</span></div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;</div>
-<div class="line"><a name="l00728"></a><span class="lineno"><a class="line" href="../../db/dbe/sched_8c.html#aa664f1c92fc5bf24fb51ab6f444b113c">  728</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_sched_kind <a class="code" href="../../db/dbe/sched_8c.html#aa664f1c92fc5bf24fb51ab6f444b113c">sched_get_kind</a>(<a class="code" href="../../de/d65/structABT__sched__def.html">ABT_sched_def</a> *def)</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;{</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <span class="keywordflow">return</span> (ABTI_sched_kind)def;</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;}</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;</div>
-<div class="line"><a name="l00733"></a><span class="lineno"><a class="line" href="../../db/dbe/sched_8c.html#a66079da8b1451a98de9e15e1afd817f4">  733</a></span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="../../db/dbe/sched_8c.html#a66079da8b1451a98de9e15e1afd817f4">sched_create</a>(<a class="code" href="../../de/d65/structABT__sched__def.html">ABT_sched_def</a> *def, <span class="keywordtype">int</span> num_pools,</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                                     <a class="code" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> *pools, <a class="code" href="../../d5/d7d/abt_8h.html#a9be459e63da2c9e318b6b9d446aa4c4b">ABT_sched_config</a> config,</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                                     <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> automatic,</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                                     ABTI_sched **pp_newsched)</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;{</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    ABTI_sched *p_sched;</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;    <span class="keywordtype">int</span> p, abt_errno;</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a>(<span class="keyword">sizeof</span>(ABTI_sched), (<span class="keywordtype">void</span> **)&amp;p_sched);</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    <span class="comment">/* Copy of the contents of pools */</span></div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> *pool_list;</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a>(num_pools * <span class="keyword">sizeof</span>(<a class="code" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a>), (<span class="keywordtype">void</span> **)&amp;pool_list);</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;    <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;        <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(p_sched);</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;        <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    }</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    <span class="keywordflow">for</span> (p = 0; p &lt; num_pools; p++) {</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;        <span class="keywordflow">if</span> (pools[p] == <a class="code" href="../../d5/d7d/abt_8h.html#a73fcc4b17c8eec71fcae8437116cc5e2">ABT_POOL_NULL</a>) {</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;            ABTI_pool *p_newpool;</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;            abt_errno =</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                ABTI_pool_create_basic(<a class="code" href="../../d5/d7d/abt_8h.html#a3d9e73381c78389a50ef463732e672a1a9f3f606b821abf78ccefd65ae5ce494c">ABT_POOL_FIFO</a>, <a class="code" href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecfabb04cf57d6a62299db2783422069d1ef">ABT_POOL_ACCESS_MPSC</a>,</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                                       <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>, &amp;p_newpool);</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;            <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                <span class="keywordtype">int</span> i;</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                <span class="keywordflow">for</span> (i = 0; i &lt; p; i++) {</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                    <span class="keywordflow">if</span> (pools[i] == <a class="code" href="../../d5/d7d/abt_8h.html#a73fcc4b17c8eec71fcae8437116cc5e2">ABT_POOL_NULL</a>)</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                        ABTI_pool_free(ABTI_pool_get_ptr(pool_list[i]));</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                }</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(pool_list);</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(p_sched);</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;            }</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;            pool_list[p] = ABTI_pool_get_handle(p_newpool);</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;            pool_list[p] = pools[p];</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;        }</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    }</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    <span class="comment">/* Check if the pools are available */</span></div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    <span class="keywordflow">for</span> (p = 0; p &lt; num_pools; p++) {</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        ABTI_pool_retain(ABTI_pool_get_ptr(pool_list[p]));</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    }</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;    p_sched-&gt;used = ABTI_SCHED_NOT_USED;</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;    p_sched-&gt;automatic = automatic;</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;    p_sched-&gt;kind = <a class="code" href="../../db/dbe/sched_8c.html#aa664f1c92fc5bf24fb51ab6f444b113c">sched_get_kind</a>(def);</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;    ABTD_atomic_relaxed_store_uint32(&amp;p_sched-&gt;request, 0);</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    p_sched-&gt;pools = pool_list;</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    p_sched-&gt;num_pools = num_pools;</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;    p_sched-&gt;type = def-&gt;<a class="code" href="../../de/d65/structABT__sched__def.html#a2df45d740cd9c121f577d9cd8f19dabc">type</a>;</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;    p_sched-&gt;p_ythread = NULL;</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    p_sched-&gt;data = NULL;</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    p_sched-&gt;init = def-&gt;<a class="code" href="../../de/d65/structABT__sched__def.html#a5b40bf0b3a0a0197207e6231da6c91c2">init</a>;</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    p_sched-&gt;run = def-&gt;<a class="code" href="../../de/d65/structABT__sched__def.html#a4768600f733a9477fbdf17db8a340799">run</a>;</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;    p_sched-&gt;free = def-&gt;<a class="code" href="../../de/d65/structABT__sched__def.html#ad946d3544e7055963bbce9e8fa8c9998">free</a>;</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    p_sched-&gt;get_migr_pool = def-&gt;<a class="code" href="../../de/d65/structABT__sched__def.html#a1fab43c9ebac0bd894c975dc73085e47">get_migr_pool</a>;</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_USE_DEBUG_LOG</span></div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;<span class="preprocessor"></span>    p_sched-&gt;id = sched_get_new_id();</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[S%&quot;</span> PRIu64 <span class="stringliteral">&quot;] created\n&quot;</span>, p_sched-&gt;id);</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;    <span class="comment">/* Return value */</span></div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> newsched = ABTI_sched_get_handle(p_sched);</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    <span class="comment">/* Specific initialization */</span></div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    abt_errno = p_sched-&gt;init(newsched, config);</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;        <span class="keywordflow">for</span> (p = 0; p &lt; num_pools; p++) {</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;            <span class="keywordflow">if</span> (pools[p] == <a class="code" href="../../d5/d7d/abt_8h.html#a73fcc4b17c8eec71fcae8437116cc5e2">ABT_POOL_NULL</a>) {</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                ABTI_pool_free(ABTI_pool_get_ptr(pool_list[p]));</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                ABTI_pool_release(ABTI_pool_get_ptr(pool_list[p]));</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;            }</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        }</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(pool_list);</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;        <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(p_sched);</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;        <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;    }</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;</div>
+<div class="line"><a name="l00726"></a><span class="lineno"><a class="line" href="../../db/dbe/sched_8c.html#aa664f1c92fc5bf24fb51ab6f444b113c">  726</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_sched_kind <a class="code" href="../../db/dbe/sched_8c.html#aa664f1c92fc5bf24fb51ab6f444b113c">sched_get_kind</a>(<a class="code" href="../../de/d65/structABT__sched__def.html">ABT_sched_def</a> *def)</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;{</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    <span class="keywordflow">return</span> (ABTI_sched_kind)def;</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;}</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;</div>
+<div class="line"><a name="l00731"></a><span class="lineno"><a class="line" href="../../db/dbe/sched_8c.html#a66079da8b1451a98de9e15e1afd817f4">  731</a></span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="../../db/dbe/sched_8c.html#a66079da8b1451a98de9e15e1afd817f4">sched_create</a>(<a class="code" href="../../de/d65/structABT__sched__def.html">ABT_sched_def</a> *def, <span class="keywordtype">int</span> num_pools,</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                                     <a class="code" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> *pools, <a class="code" href="../../d5/d7d/abt_8h.html#a9be459e63da2c9e318b6b9d446aa4c4b">ABT_sched_config</a> config,</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                                     <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> automatic,</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                                     ABTI_sched **pp_newsched)</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;{</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    ABTI_sched *p_sched;</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    <span class="keywordtype">int</span> p, abt_errno;</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a>(<span class="keyword">sizeof</span>(ABTI_sched), (<span class="keywordtype">void</span> **)&amp;p_sched);</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;    <span class="comment">/* Copy of the contents of pools */</span></div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> *pool_list;</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a>(num_pools * <span class="keyword">sizeof</span>(<a class="code" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a>), (<span class="keywordtype">void</span> **)&amp;pool_list);</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(p_sched);</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;        <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    }</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    <span class="keywordflow">for</span> (p = 0; p &lt; num_pools; p++) {</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        <span class="keywordflow">if</span> (pools[p] == <a class="code" href="../../d5/d7d/abt_8h.html#a73fcc4b17c8eec71fcae8437116cc5e2">ABT_POOL_NULL</a>) {</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;            ABTI_pool *p_newpool;</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;            abt_errno =</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                ABTI_pool_create_basic(<a class="code" href="../../d5/d7d/abt_8h.html#a3d9e73381c78389a50ef463732e672a1a9f3f606b821abf78ccefd65ae5ce494c">ABT_POOL_FIFO</a>, <a class="code" href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecfabb04cf57d6a62299db2783422069d1ef">ABT_POOL_ACCESS_MPSC</a>,</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                                       <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>, &amp;p_newpool);</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;            <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                <span class="keywordflow">for</span> (i = 0; i &lt; p; i++) {</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                    <span class="keywordflow">if</span> (pools[i] == <a class="code" href="../../d5/d7d/abt_8h.html#a73fcc4b17c8eec71fcae8437116cc5e2">ABT_POOL_NULL</a>)</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                        ABTI_pool_free(ABTI_pool_get_ptr(pool_list[i]));</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                }</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(pool_list);</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(p_sched);</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;            }</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;            pool_list[p] = ABTI_pool_get_handle(p_newpool);</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;            pool_list[p] = pools[p];</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;        }</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;    }</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    <span class="comment">/* Check if the pools are available */</span></div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    <span class="keywordflow">for</span> (p = 0; p &lt; num_pools; p++) {</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        ABTI_pool_retain(ABTI_pool_get_ptr(pool_list[p]));</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    }</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    p_sched-&gt;used = ABTI_SCHED_NOT_USED;</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;    p_sched-&gt;automatic = automatic;</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;    p_sched-&gt;kind = <a class="code" href="../../db/dbe/sched_8c.html#aa664f1c92fc5bf24fb51ab6f444b113c">sched_get_kind</a>(def);</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;    ABTD_atomic_relaxed_store_uint32(&amp;p_sched-&gt;request, 0);</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;    p_sched-&gt;pools = pool_list;</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;    p_sched-&gt;num_pools = num_pools;</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    p_sched-&gt;type = def-&gt;<a class="code" href="../../de/d65/structABT__sched__def.html#a2df45d740cd9c121f577d9cd8f19dabc">type</a>;</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    p_sched-&gt;p_ythread = NULL;</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;    p_sched-&gt;data = NULL;</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    p_sched-&gt;init = def-&gt;<a class="code" href="../../de/d65/structABT__sched__def.html#a5b40bf0b3a0a0197207e6231da6c91c2">init</a>;</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;    p_sched-&gt;run = def-&gt;<a class="code" href="../../de/d65/structABT__sched__def.html#a4768600f733a9477fbdf17db8a340799">run</a>;</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    p_sched-&gt;free = def-&gt;<a class="code" href="../../de/d65/structABT__sched__def.html#ad946d3544e7055963bbce9e8fa8c9998">free</a>;</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    p_sched-&gt;get_migr_pool = def-&gt;<a class="code" href="../../de/d65/structABT__sched__def.html#a1fab43c9ebac0bd894c975dc73085e47">get_migr_pool</a>;</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_USE_DEBUG_LOG</span></div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;<span class="preprocessor"></span>    p_sched-&gt;id = sched_get_new_id();</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[S%&quot;</span> PRIu64 <span class="stringliteral">&quot;] created\n&quot;</span>, p_sched-&gt;id);</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;    <span class="comment">/* Return value */</span></div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> newsched = ABTI_sched_get_handle(p_sched);</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;    <span class="comment">/* Specific initialization */</span></div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    abt_errno = p_sched-&gt;init(newsched, config);</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;        <span class="keywordflow">for</span> (p = 0; p &lt; num_pools; p++) {</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;            <span class="keywordflow">if</span> (pools[p] == <a class="code" href="../../d5/d7d/abt_8h.html#a73fcc4b17c8eec71fcae8437116cc5e2">ABT_POOL_NULL</a>) {</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                ABTI_pool_free(ABTI_pool_get_ptr(pool_list[p]));</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                ABTI_pool_release(ABTI_pool_get_ptr(pool_list[p]));</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;            }</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;        }</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(pool_list);</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(p_sched);</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;    }</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;    *pp_newsched = p_sched;</div>
 <div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;    *pp_newsched = p_sched;</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;}</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_USE_DEBUG_LOG</span></div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;<span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">inline</span> uint64_t sched_get_new_id(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;{</div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;    <span class="keywordflow">return</span> ABTD_atomic_fetch_add_uint64(&amp;g_sched_id, 1);</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;}</div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;}</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_USE_DEBUG_LOG</span></div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;<span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">inline</span> uint64_t sched_get_new_id(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;{</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;    <span class="keywordflow">return</span> ABTD_atomic_fetch_add_uint64(&amp;g_sched_id, 1);</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;}</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="structABT__sched__def_html_ad946d3544e7055963bbce9e8fa8c9998"><div class="ttname"><a href="../../de/d65/structABT__sched__def.html#ad946d3544e7055963bbce9e8fa8c9998">ABT_sched_def::free</a></div><div class="ttdeci">ABT_sched_free_fn free</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00465">abt.h:465</a></div></div>
-<div class="ttc" id="group__SCHED_html_ga60224bec5158dc8887e131a87941d49a"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#ga60224bec5158dc8887e131a87941d49a">ABT_sched_get_size</a></div><div class="ttdeci">int ABT_sched_get_size(ABT_sched sched, size_t *size) ABT_API_PUBLIC</div><div class="ttdoc">Get the sum of the sizes of the pool of sched. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00298">sched.c:298</a></div></div>
+<div class="ttc" id="group__SCHED_html_ga60224bec5158dc8887e131a87941d49a"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#ga60224bec5158dc8887e131a87941d49a">ABT_sched_get_size</a></div><div class="ttdeci">int ABT_sched_get_size(ABT_sched sched, size_t *size) ABT_API_PUBLIC</div><div class="ttdoc">Get the sum of the sizes of the pool of sched. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00299">sched.c:299</a></div></div>
 <div class="ttc" id="abt_8h_html_a73fcc4b17c8eec71fcae8437116cc5e2"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a73fcc4b17c8eec71fcae8437116cc5e2">ABT_POOL_NULL</a></div><div class="ttdeci">#define ABT_POOL_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00413">abt.h:413</a></div></div>
 <div class="ttc" id="abt_8h_html_a4e2d8d06b58e27532adc4db03b45d1e7"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a4e2d8d06b58e27532adc4db03b45d1e7">ABT_sched_predef</a></div><div class="ttdeci">ABT_sched_predef</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00143">abt.h:143</a></div></div>
 <div class="ttc" id="abt_8h_html_ad33f04702fb8618eed4f6ece04041ecfa2d9b6671e37097bb153513c200a2ad46"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecfa2d9b6671e37097bb153513c200a2ad46">ABT_POOL_ACCESS_SPMC</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00165">abt.h:165</a></div></div>
 <div class="ttc" id="abt_8h_html_adf0a564b506bb4a288f49cbfd3116025"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a></div><div class="ttdeci">struct ABT_sched_opaque * ABT_sched</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00319">abt.h:319</a></div></div>
-<div class="ttc" id="group__SCHED_html_ga3dee71a1b44221cc56d4bb66f4f02cf1"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#ga3dee71a1b44221cc56d4bb66f4f02cf1">ABT_sched_finish</a></div><div class="ttdeci">int ABT_sched_finish(ABT_sched sched) ABT_API_PUBLIC</div><div class="ttdoc">Ask a scheduler to finish. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00188">sched.c:188</a></div></div>
+<div class="ttc" id="group__SCHED_html_ga3dee71a1b44221cc56d4bb66f4f02cf1"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#ga3dee71a1b44221cc56d4bb66f4f02cf1">ABT_sched_finish</a></div><div class="ttdeci">int ABT_sched_finish(ABT_sched sched) ABT_API_PUBLIC</div><div class="ttdoc">Ask a scheduler to finish. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00189">sched.c:189</a></div></div>
 <div class="ttc" id="abt_8h_html_ad33f04702fb8618eed4f6ece04041ecfa9385bbd5d15bee55652e14e7546a0425"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecfa9385bbd5d15bee55652e14e7546a0425">ABT_POOL_ACCESS_SPSC</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00163">abt.h:163</a></div></div>
 <div class="ttc" id="abt_8h_html_ad33f04702fb8618eed4f6ece04041ecfaef5831d28ade4eb4b2a8e69a4c5bb39f"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ad33f04702fb8618eed4f6ece04041ecfaef5831d28ade4eb4b2a8e69a4c5bb39f">ABT_POOL_ACCESS_MPMC</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00166">abt.h:166</a></div></div>
 <div class="ttc" id="abt_8h_html_a4e2d8d06b58e27532adc4db03b45d1e7ae57dc18aa4da5101dd89e86af78e0aad"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a4e2d8d06b58e27532adc4db03b45d1e7ae57dc18aa4da5101dd89e86af78e0aad">ABT_SCHED_PRIO</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00146">abt.h:146</a></div></div>
-<div class="ttc" id="sched_8c_html_a66079da8b1451a98de9e15e1afd817f4"><div class="ttname"><a href="../../db/dbe/sched_8c.html#a66079da8b1451a98de9e15e1afd817f4">sched_create</a></div><div class="ttdeci">static ABTU_ret_err int sched_create(ABT_sched_def *def, int num_pools, ABT_pool *pools, ABT_sched_config config, ABT_bool automatic, ABTI_sched **pp_newsched)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00733">sched.c:733</a></div></div>
+<div class="ttc" id="sched_8c_html_a66079da8b1451a98de9e15e1afd817f4"><div class="ttname"><a href="../../db/dbe/sched_8c.html#a66079da8b1451a98de9e15e1afd817f4">sched_create</a></div><div class="ttdeci">static ABTU_ret_err int sched_create(ABT_sched_def *def, int num_pools, ABT_pool *pools, ABT_sched_config config, ABT_bool automatic, ABTI_sched **pp_newsched)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00731">sched.c:731</a></div></div>
 <div class="ttc" id="structABT__sched__def_html_a5b40bf0b3a0a0197207e6231da6c91c2"><div class="ttname"><a href="../../de/d65/structABT__sched__def.html#a5b40bf0b3a0a0197207e6231da6c91c2">ABT_sched_def::init</a></div><div class="ttdeci">ABT_sched_init_fn init</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00463">abt.h:463</a></div></div>
 <div class="ttc" id="structABT__sched__def_html"><div class="ttname"><a href="../../de/d65/structABT__sched__def.html">ABT_sched_def</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00459">abt.h:459</a></div></div>
 <div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00373">abt.h:373</a></div></div>
 <div class="ttc" id="group__SCHED_html_gaf6e505eaab2fe977bbaddb5b19c6b413"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#gaf6e505eaab2fe977bbaddb5b19c6b413">ABT_sched_create</a></div><div class="ttdeci">int ABT_sched_create(ABT_sched_def *def, int num_pools, ABT_pool *pools, ABT_sched_config config, ABT_sched *newsched) ABT_API_PUBLIC</div><div class="ttdoc">Create a new user-defined scheduler and return its handle through newsched. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00041">sched.c:41</a></div></div>
-<div class="ttc" id="sched_8c_html_aa664f1c92fc5bf24fb51ab6f444b113c"><div class="ttname"><a href="../../db/dbe/sched_8c.html#aa664f1c92fc5bf24fb51ab6f444b113c">sched_get_kind</a></div><div class="ttdeci">static ABTI_sched_kind sched_get_kind(ABT_sched_def *def)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00728">sched.c:728</a></div></div>
+<div class="ttc" id="sched_8c_html_aa664f1c92fc5bf24fb51ab6f444b113c"><div class="ttname"><a href="../../db/dbe/sched_8c.html#aa664f1c92fc5bf24fb51ab6f444b113c">sched_get_kind</a></div><div class="ttdeci">static ABTI_sched_kind sched_get_kind(ABT_sched_def *def)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00726">sched.c:726</a></div></div>
 <div class="ttc" id="abt_8h_html_a719d6d931f037384f0366278a8affb7f"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a719d6d931f037384f0366278a8affb7f">ABT_ERR_SCHED</a></div><div class="ttdeci">#define ABT_ERR_SCHED</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00098">abt.h:98</a></div></div>
 <div class="ttc" id="abt_8h_html_a6bbc8a95dbe08348262228f3355652b2"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a></div><div class="ttdeci">struct ABT_pool_opaque * ABT_pool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00329">abt.h:329</a></div></div>
-<div class="ttc" id="group__SCHED_html_gabd0ce32ef0e1e24cb5902637049fcb78"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#gabd0ce32ef0e1e24cb5902637049fcb78">ABT_sched_exit</a></div><div class="ttdeci">int ABT_sched_exit(ABT_sched sched) ABT_API_PUBLIC</div><div class="ttdoc">Ask a scheduler to stop as soon as possible. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00209">sched.c:209</a></div></div>
+<div class="ttc" id="group__SCHED_html_gabd0ce32ef0e1e24cb5902637049fcb78"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#gabd0ce32ef0e1e24cb5902637049fcb78">ABT_sched_exit</a></div><div class="ttdeci">int ABT_sched_exit(ABT_sched sched) ABT_API_PUBLIC</div><div class="ttdoc">Ask a scheduler to stop as soon as possible. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00210">sched.c:210</a></div></div>
 <div class="ttc" id="abt_8h_html_a17ce4f7ba59daa4b550d590b6f4d32e8a2ef42eb63e386ad783d0c7c59a351d0f"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a17ce4f7ba59daa4b550d590b6f4d32e8a2ef42eb63e386ad783d0c7c59a351d0f">ABT_SCHED_TYPE_ULT</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00152">abt.h:152</a></div></div>
 <div class="ttc" id="abtu_8h_html_aa2d633baee4486fb78890916840282af"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a></div><div class="ttdeci">static ABTU_ret_err int ABTU_malloc(size_t size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00218">abtu.h:218</a></div></div>
 <div class="ttc" id="abt_8h_html_ac601a9db309d1a30954d43fc82d9602fac52464b0c79d66763383a57d6eef78a3"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fac52464b0c79d66763383a57d6eef78a3">ABT_SYNC_EVENT_TYPE_OTHER</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00247">abt.h:247</a></div></div>
@@ -776,10 +774,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="abt_8h_html_a4e2d8d06b58e27532adc4db03b45d1e7afa6ebda2e272d551b09afe3bcb0c736c"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a4e2d8d06b58e27532adc4db03b45d1e7afa6ebda2e272d551b09afe3bcb0c736c">ABT_SCHED_BASIC_WAIT</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00148">abt.h:148</a></div></div>
 <div class="ttc" id="structABT__sched__def_html_a2df45d740cd9c121f577d9cd8f19dabc"><div class="ttname"><a href="../../de/d65/structABT__sched__def.html#a2df45d740cd9c121f577d9cd8f19dabc">ABT_sched_def::type</a></div><div class="ttdeci">ABT_sched_type type</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00460">abt.h:460</a></div></div>
 <div class="ttc" id="abt_8h_html_a3d9e73381c78389a50ef463732e672a1"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a3d9e73381c78389a50ef463732e672a1">ABT_pool_kind</a></div><div class="ttdeci">ABT_pool_kind</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00156">abt.h:156</a></div></div>
-<div class="ttc" id="group__SCHED_html_gac90f0fafacd0ad784423910ce59575c2"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#gac90f0fafacd0ad784423910ce59575c2">ABT_sched_get_data</a></div><div class="ttdeci">int ABT_sched_get_data(ABT_sched sched, void **data) ABT_API_PUBLIC</div><div class="ttdoc">Retrieve the specific data of the target user-defined scheduler. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00278">sched.c:278</a></div></div>
+<div class="ttc" id="group__SCHED_html_gac90f0fafacd0ad784423910ce59575c2"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#gac90f0fafacd0ad784423910ce59575c2">ABT_sched_get_data</a></div><div class="ttdeci">int ABT_sched_get_data(ABT_sched sched, void **data) ABT_API_PUBLIC</div><div class="ttdoc">Retrieve the specific data of the target user-defined scheduler. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00279">sched.c:279</a></div></div>
 <div class="ttc" id="group__SCHED_html_ga75128dbdef6b5adceb300427d88324bb"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#ga75128dbdef6b5adceb300427d88324bb">ABT_sched_get_pools</a></div><div class="ttdeci">int ABT_sched_get_pools(ABT_sched sched, int max_pools, int idx, ABT_pool *pools) ABT_API_PUBLIC</div><div class="ttdoc">Get the pools of the scheduler sched. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00164">sched.c:164</a></div></div>
 <div class="ttc" id="group__SCHED_html_gac3ea78b200ae62bf24deecf385a33f7b"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#gac3ea78b200ae62bf24deecf385a33f7b">ABT_sched_create_basic</a></div><div class="ttdeci">int ABT_sched_create_basic(ABT_sched_predef predef, int num_pools, ABT_pool *pools, ABT_sched_config config, ABT_sched *newsched) ABT_API_PUBLIC</div><div class="ttdoc">Create a predefined scheduler. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00090">sched.c:90</a></div></div>
-<div class="ttc" id="sched_8c_html_a00a319caec88baaca37e2fcdfc4ce518"><div class="ttname"><a href="../../db/dbe/sched_8c.html#a00a319caec88baaca37e2fcdfc4ce518">g_sched_id</a></div><div class="ttdeci">static ABTD_atomic_uint64 g_sched_id</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00718">sched.c:718</a></div></div>
+<div class="ttc" id="sched_8c_html_a00a319caec88baaca37e2fcdfc4ce518"><div class="ttname"><a href="../../db/dbe/sched_8c.html#a00a319caec88baaca37e2fcdfc4ce518">g_sched_id</a></div><div class="ttdeci">static ABTD_atomic_uint64 g_sched_id</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00716">sched.c:716</a></div></div>
 <div class="ttc" id="abt_8h_html_a3d9e73381c78389a50ef463732e672a1a9f3f606b821abf78ccefd65ae5ce494c"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a3d9e73381c78389a50ef463732e672a1a9f3f606b821abf78ccefd65ae5ce494c">ABT_POOL_FIFO</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00157">abt.h:157</a></div></div>
 <div class="ttc" id="abti__log_8h_html_ac06cfc686322558f590c50eab8622ebd"><div class="ttname"><a href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></div><div class="ttdeci">#define LOG_DEBUG(fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5e/abti__log_8h_source.html#l00026">abti_log.h:26</a></div></div>
 <div class="ttc" id="abt_8h_html_a9be459e63da2c9e318b6b9d446aa4c4b"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a9be459e63da2c9e318b6b9d446aa4c4b">ABT_sched_config</a></div><div class="ttdeci">struct ABT_sched_config_opaque * ABT_sched_config</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00321">abt.h:321</a></div></div>
@@ -787,15 +785,15 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="structABT__sched__def_html_a1fab43c9ebac0bd894c975dc73085e47"><div class="ttname"><a href="../../de/d65/structABT__sched__def.html#a1fab43c9ebac0bd894c975dc73085e47">ABT_sched_def::get_migr_pool</a></div><div class="ttdeci">ABT_sched_get_migr_pool_fn get_migr_pool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00466">abt.h:466</a></div></div>
 <div class="ttc" id="abt_8h_html_a6a6ecfc1f874488af85684f7bf61f237"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a6a6ecfc1f874488af85684f7bf61f237">ABT_SCHED_CONFIG_NULL</a></div><div class="ttdeci">#define ABT_SCHED_CONFIG_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00412">abt.h:412</a></div></div>
 <div class="ttc" id="structABT__sched__def_html_a4768600f733a9477fbdf17db8a340799"><div class="ttname"><a href="../../de/d65/structABT__sched__def.html#a4768600f733a9477fbdf17db8a340799">ABT_sched_def::run</a></div><div class="ttdeci">ABT_sched_run_fn run</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00464">abt.h:464</a></div></div>
-<div class="ttc" id="group__SCHED_html_ga996eed186a982e8f64c5073584ffce40"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#ga996eed186a982e8f64c5073584ffce40">ABT_sched_set_data</a></div><div class="ttdeci">int ABT_sched_set_data(ABT_sched sched, void *data) ABT_API_PUBLIC</div><div class="ttdoc">Set the specific data of the target user-defined scheduler. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00257">sched.c:257</a></div></div>
+<div class="ttc" id="group__SCHED_html_ga996eed186a982e8f64c5073584ffce40"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#ga996eed186a982e8f64c5073584ffce40">ABT_sched_set_data</a></div><div class="ttdeci">int ABT_sched_set_data(ABT_sched sched, void *data) ABT_API_PUBLIC</div><div class="ttdoc">Set the specific data of the target user-defined scheduler. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00258">sched.c:258</a></div></div>
 <div class="ttc" id="abtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00211">abtu.h:211</a></div></div>
-<div class="ttc" id="group__SCHED_html_ga6104f52b110af4d2105ceec534a4e5c4"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#ga6104f52b110af4d2105ceec534a4e5c4">ABT_sched_has_to_stop</a></div><div class="ttdeci">int ABT_sched_has_to_stop(ABT_sched sched, ABT_bool *stop) ABT_API_PUBLIC</div><div class="ttdoc">Check if the scheduler needs to stop. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00235">sched.c:235</a></div></div>
+<div class="ttc" id="group__SCHED_html_ga6104f52b110af4d2105ceec534a4e5c4"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#ga6104f52b110af4d2105ceec534a4e5c4">ABT_sched_has_to_stop</a></div><div class="ttdeci">int ABT_sched_has_to_stop(ABT_sched sched, ABT_bool *stop) ABT_API_PUBLIC</div><div class="ttdoc">Check if the scheduler needs to stop. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00236">sched.c:236</a></div></div>
 <div class="ttc" id="abtu_8h_html_a071d8986b72b8f5d099cdd47979b5e81"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a></div><div class="ttdeci">#define ABTU_ret_err</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00138">abtu.h:138</a></div></div>
 <div class="ttc" id="abt_8h_html_a1453156e24e7ec7403e55727d760661a"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1453156e24e7ec7403e55727d760661a">ABT_ERR_INV_SCHED_PREDEF</a></div><div class="ttdeci">#define ABT_ERR_INV_SCHED_PREDEF</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00073">abt.h:73</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 13 2020 03:10:15 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 18 2020 03:10:00 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

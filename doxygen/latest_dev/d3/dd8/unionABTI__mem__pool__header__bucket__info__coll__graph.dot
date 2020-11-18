@@ -7,5 +7,5 @@ digraph "ABTI_mem_pool_header_bucket_info"
   Node2 [label="ABTI_sync_lifo_element",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d30/structABTI__sync__lifo__element.html"];
   Node2 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_next" ,fontname="Helvetica"];
   Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" num_headers" ,fontname="Helvetica"];
-  Node3 [label="int",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node3 [label="size_t",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
 }

@@ -76,7 +76,8 @@ digraph "ABTI_thread"
   Node19 -> Node33 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" val" ,fontname="Helvetica"];
   Node19 -> Node31 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_ctx" ,fontname="Helvetica"];
   Node19 -> Node29 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_stack" ,fontname="Helvetica"];
-  Node13 -> Node27 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" num_pools\nfree\nautomatic\ninit" ,fontname="Helvetica"];
+  Node30 -> Node27 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" num_pools" ,fontname="Helvetica"];
+  Node13 -> Node27 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" free\nautomatic\ninit" ,fontname="Helvetica"];
   Node34 -> Node27 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" run" ,fontname="Helvetica"];
   Node34 [label="void(*)(ABT_sched)",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node35 -> Node27 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" pools" ,fontname="Helvetica"];
@@ -108,7 +109,7 @@ digraph "ABTI_thread"
   Node44 [label="ABTI_mem_pool_header",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d24/structABTI__mem__pool__header.html"];
   Node45 -> Node44 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" bucket_info" ,fontname="Helvetica"];
   Node45 [label="ABTI_mem_pool_header\l_bucket_info",height=0.2,width=0.4,color="red", fillcolor="white", style="filled",URL="$d5/d6c/unionABTI__mem__pool__header__bucket__info.html"];
-  Node13 -> Node45 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" num_headers" ,fontname="Helvetica"];
+  Node30 -> Node45 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" num_headers" ,fontname="Helvetica"];
   Node44 -> Node44 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_next" ,fontname="Helvetica"];
   Node46 -> Node43 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_global_pool" ,fontname="Helvetica"];
   Node46 [label="ABTI_mem_pool_global_pool",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/de4/structABTI__mem__pool__global__pool.html"];
@@ -116,9 +117,9 @@ digraph "ABTI_thread"
   Node47 [label="ABTI_spinlock",height=0.2,width=0.4,color="red", fillcolor="white", style="filled",URL="$dc/d81/structABTI__spinlock.html"];
   Node48 -> Node46 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" mem_page_lifo\nbucket_lifo" ,fontname="Helvetica"];
   Node48 [label="ABTI_sync_lifo",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node30 -> Node46 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" header_size\nheader_offset\nalignment_hint\npage_size" ,fontname="Helvetica"];
+  Node30 -> Node46 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" header_size\nnum_headers_per_bucket\nheader_offset\nalignment_hint\npage_size" ,fontname="Helvetica"];
+  Node37 -> Node46 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" num_lp_type_requests" ,fontname="Helvetica"];
   Node44 -> Node46 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" partial_bucket" ,fontname="Helvetica"];
-  Node13 -> Node46 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" num_headers_per_bucket\nnum_lp_type_requests" ,fontname="Helvetica"];
   Node33 -> Node46 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_mem_page_empty" ,fontname="Helvetica"];
   Node49 -> Node46 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" lp_type_requests" ,fontname="Helvetica"];
   Node49 [label="enum ABTU_MEM_LARGEPAGE_TYPE",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];

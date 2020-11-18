@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">ae970519b99767ae27a760cd3314a141477113a5</span>
+   &#160;<span id="projectnumber">fe9704776da8f6f84e7a743897757aecc2686685</span>
    </div>
   </td>
  </tr>
@@ -356,13 +356,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;<span class="keywordtype">void</span> ABTI_mutex_wait(ABTI_xstream **pp_local_xstream, ABTI_mutex *p_mutex,</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                     <span class="keywordtype">int</span> val)</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                     uint32_t val)</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;{</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    ABTI_xstream *p_local_xstream = *pp_local_xstream;</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    ABTI_ythread_htable *p_htable = p_mutex-&gt;p_htable;</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    ABTI_ythread *p_self = ABTI_thread_get_ythread(p_local_xstream-&gt;p_thread);</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="keywordtype">int</span> rank = (int)p_local_xstream-&gt;rank;</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="keywordtype">int</span> rank = p_local_xstream-&gt;rank;</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    ABTI_ASSERT(rank &lt; p_htable-&gt;num_rows);</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    ABTI_ythread_queue *p_queue = &amp;p_htable-&gt;queue[rank];</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;</div>
@@ -392,13 +392,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;}</div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;<span class="keywordtype">void</span> ABTI_mutex_wait_low(ABTI_xstream **pp_local_xstream, ABTI_mutex *p_mutex,</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;                         <span class="keywordtype">int</span> val)</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;                         uint32_t val)</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;{</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    ABTI_xstream *p_local_xstream = *pp_local_xstream;</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    ABTI_ythread_htable *p_htable = p_mutex-&gt;p_htable;</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    ABTI_ythread *p_self = ABTI_thread_get_ythread(p_local_xstream-&gt;p_thread);</div>
 <div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    <span class="keywordtype">int</span> rank = (int)p_local_xstream-&gt;rank;</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    <span class="keywordtype">int</span> rank = p_local_xstream-&gt;rank;</div>
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    ABTI_ASSERT(rank &lt; p_htable-&gt;num_rows);</div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    ABTI_ythread_queue *p_queue = &amp;p_htable-&gt;queue[rank];</div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;</div>
@@ -741,7 +741,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 13 2020 03:10:15 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 18 2020 03:10:00 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

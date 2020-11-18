@@ -11,6 +11,7 @@ var searchData=
   ['abtd_5fatomic_5fint32',['ABTD_atomic_int32',['../db/d9a/structABTD__atomic__int32.html',1,'']]],
   ['abtd_5fatomic_5fint64',['ABTD_atomic_int64',['../d0/d23/structABTD__atomic__int64.html',1,'']]],
   ['abtd_5fatomic_5fptr',['ABTD_atomic_ptr',['../df/d5b/structABTD__atomic__ptr.html',1,'']]],
+  ['abtd_5fatomic_5fsize',['ABTD_atomic_size',['../d7/d5b/structABTD__atomic__size.html',1,'']]],
   ['abtd_5fatomic_5fuint32',['ABTD_atomic_uint32',['../db/df7/structABTD__atomic__uint32.html',1,'']]],
   ['abtd_5fatomic_5fuint64',['ABTD_atomic_uint64',['../df/d37/structABTD__atomic__uint64.html',1,'']]],
   ['abtd_5fxstream_5fcontext',['ABTD_xstream_context',['../df/dec/structABTD__xstream__context.html',1,'']]],

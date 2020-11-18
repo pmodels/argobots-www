@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">ae970519b99767ae27a760cd3314a141477113a5</span>
+   &#160;<span id="projectnumber">fe9704776da8f6f84e7a743897757aecc2686685</span>
    </div>
   </td>
  </tr>
@@ -166,10 +166,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keywordtype">void</span> ABTI_mem_pool_init_global_pool(</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    ABTI_mem_pool_global_pool *p_global_pool, <span class="keywordtype">int</span> num_headers_per_bucket,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    ABTI_mem_pool_global_pool *p_global_pool, <span class="keywordtype">size_t</span> num_headers_per_bucket,</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">size_t</span> header_size, <span class="keywordtype">size_t</span> header_offset, <span class="keywordtype">size_t</span> page_size,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082ac">ABTU_MEM_LARGEPAGE_TYPE</a> *lp_type_requests, <span class="keywordtype">int</span> num_lp_type_requests,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">size_t</span> alignment_hint)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082ac">ABTU_MEM_LARGEPAGE_TYPE</a> *lp_type_requests,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    uint32_t num_lp_type_requests, <span class="keywordtype">size_t</span> alignment_hint)</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    p_global_pool-&gt;num_headers_per_bucket = num_headers_per_bucket;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    ABTI_ASSERT(header_offset + <span class="keyword">sizeof</span>(ABTI_mem_pool_header) &lt;= header_size);</div>
@@ -239,7 +239,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        ABTI_mem_pool_return_bucket(p_local_pool-&gt;p_global_pool,</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                    p_local_pool-&gt;buckets[i]);</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> num_headers_per_bucket = p_local_pool-&gt;num_headers_per_bucket;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> num_headers_per_bucket = p_local_pool-&gt;num_headers_per_bucket;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    ABTI_mem_pool_header *cur_bucket = p_local_pool-&gt;buckets[bucket_index];</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">if</span> (cur_bucket-&gt;bucket_info.num_headers == num_headers_per_bucket) {</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="comment">/* The last bucket is also full. Return the last bucket as well. */</span></div>
@@ -385,7 +385,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 13 2020 03:10:15 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 18 2020 03:10:00 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

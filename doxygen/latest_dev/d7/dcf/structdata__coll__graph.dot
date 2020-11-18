@@ -84,7 +84,8 @@ digraph "data"
   Node23 -> Node37 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" val" ,fontname="Helvetica"];
   Node23 -> Node35 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_ctx" ,fontname="Helvetica"];
   Node23 -> Node33 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_stack" ,fontname="Helvetica"];
-  Node17 -> Node31 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" num_pools\nfree\nautomatic\ninit" ,fontname="Helvetica"];
+  Node34 -> Node31 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" num_pools" ,fontname="Helvetica"];
+  Node17 -> Node31 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" free\nautomatic\ninit" ,fontname="Helvetica"];
   Node38 -> Node31 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" run" ,fontname="Helvetica"];
   Node38 [label="void(*)(ABT_sched)",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node39 -> Node31 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" pools" ,fontname="Helvetica"];
@@ -118,9 +119,9 @@ digraph "data"
   Node49 -> Node47 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_global_pool" ,fontname="Helvetica"];
   Node49 [label="ABTI_mem_pool_global_pool",height=0.2,width=0.4,color="red", fillcolor="white", style="filled",URL="$d7/de4/structABTI__mem__pool__global__pool.html"];
   Node2 -> Node49 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" partial_bucket_lock" ,fontname="Helvetica"];
-  Node34 -> Node49 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" header_size\nheader_offset\nalignment_hint\npage_size" ,fontname="Helvetica"];
+  Node34 -> Node49 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" header_size\nnum_headers_per_bucket\nheader_offset\nalignment_hint\npage_size" ,fontname="Helvetica"];
+  Node41 -> Node49 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" num_lp_type_requests" ,fontname="Helvetica"];
   Node48 -> Node49 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" partial_bucket" ,fontname="Helvetica"];
-  Node17 -> Node49 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" num_headers_per_bucket\nnum_lp_type_requests" ,fontname="Helvetica"];
   Node37 -> Node49 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_mem_page_empty" ,fontname="Helvetica"];
   Node41 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" type" ,fontname="Helvetica"];
   Node46 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" is_in_pool\nstate" ,fontname="Helvetica"];

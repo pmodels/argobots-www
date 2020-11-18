@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">ae970519b99767ae27a760cd3314a141477113a5</span>
+   &#160;<span id="projectnumber">fe9704776da8f6f84e7a743897757aecc2686685</span>
    </div>
   </td>
  </tr>
@@ -332,7 +332,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment">     * 5 -&gt; 8 */</span></div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">if</span> (val == 0)</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    uint32_t i;</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; <span class="keyword">sizeof</span>(uint32_t) * 8; i++) {</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordflow">if</span> ((val - 1) &gt;&gt; i == 0)</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordflow">break</span>;</div>
@@ -345,7 +345,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="comment">/* Valid prefix is ABT_ and ABT_ENV_. ABT_ is prioritized. */</span></div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordtype">char</span> buffer[128];</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *prefixes[] = { <span class="stringliteral">&quot;ABT_&quot;</span>, <span class="stringliteral">&quot;ABT_ENV_&quot;</span> };</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    uint32_t i;</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; <span class="keyword">sizeof</span>(prefixes) / <span class="keyword">sizeof</span>(prefixes[0]); i++) {</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        strcpy(buffer, prefixes[i]);</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        strcpy(buffer + strlen(prefixes[i]), env_suffix);</div>
@@ -479,7 +479,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="abtd__env_8c_html_a97d67b416aa0ea9e75f7f24cfeaa80ac"><div class="ttname"><a href="../../de/d68/abtd__env_8c.html#a97d67b416aa0ea9e75f7f24cfeaa80ac">ABTD_ENV_INT_MAX</a></div><div class="ttdeci">#define ABTD_ENV_INT_MAX</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d68/abtd__env_8c_source.html#l00025">abtd_env.c:25</a></div></div>
 <div class="ttc" id="abtu_8h_html_a751fc48323d8ddc11d9197960b33b4c6"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a751fc48323d8ddc11d9197960b33b4c6">ABTU_roundup_size</a></div><div class="ttdeci">static size_t ABTU_roundup_size(size_t val, size_t multiple)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00095">abtu.h:95</a></div></div>
 <div class="ttc" id="abti__mem_8h_html_a06fc87d81c62e9abb8790b6e5713c55bab27fcde69c68dbf2d474d9dc43cda659"><div class="ttname"><a href="../../d7/d04/abti__mem_8h.html#a06fc87d81c62e9abb8790b6e5713c55bab27fcde69c68dbf2d474d9dc43cda659">ABTI_MEM_LP_MMAP_HP_RP</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d04/abti__mem_8h_source.html#l00020">abti_mem.h:20</a></div></div>
-<div class="ttc" id="abtd_8h_html_acea2d6dd9ff5f395702fd8819357e9d4"><div class="ttname"><a href="../../d3/dbf/abtd_8h.html#acea2d6dd9ff5f395702fd8819357e9d4">ABTD_affinity_init</a></div><div class="ttdeci">void ABTD_affinity_init(const char *affinity_str)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d45/abtd__affinity_8c_source.html#l00265">abtd_affinity.c:265</a></div></div>
+<div class="ttc" id="abtd_8h_html_acea2d6dd9ff5f395702fd8819357e9d4"><div class="ttname"><a href="../../d3/dbf/abtd_8h.html#acea2d6dd9ff5f395702fd8819357e9d4">ABTD_affinity_init</a></div><div class="ttdeci">void ABTD_affinity_init(const char *affinity_str)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d45/abtd__affinity_8c_source.html#l00266">abtd_affinity.c:266</a></div></div>
 <div class="ttc" id="structABTI__global_html_a33ef30e43d5ee3a50aa3c2233d77f0de"><div class="ttname"><a href="../../da/de9/structABTI__global.html#a33ef30e43d5ee3a50aa3c2233d77f0de">ABTI_global::sched_stacksize</a></div><div class="ttdeci">size_t sched_stacksize</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00183">abti.h:183</a></div></div>
 <div class="ttc" id="structABTI__global_html_aeb1a7ee056545f2730797082109a86aa"><div class="ttname"><a href="../../da/de9/structABTI__global.html#aeb1a7ee056545f2730797082109a86aa">ABTI_global::key_table_size</a></div><div class="ttdeci">uint32_t key_table_size</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00181">abti.h:181</a></div></div>
 <div class="ttc" id="abti__mem_8h_html_a08cf1e8bfb166f21e499cdb545515429"><div class="ttname"><a href="../../d7/d04/abti__mem_8h.html#a08cf1e8bfb166f21e499cdb545515429">ABTI_mem_check_lp_alloc</a></div><div class="ttdeci">int ABTI_mem_check_lp_alloc(int lp_alloc)</div></div>
@@ -540,7 +540,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 13 2020 03:10:13 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 18 2020 03:09:58 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">ae970519b99767ae27a760cd3314a141477113a5</span>
+   &#160;<span id="projectnumber">fe9704776da8f6f84e7a743897757aecc2686685</span>
    </div>
   </td>
  </tr>
@@ -339,23 +339,23 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00508"></a><span class="lineno"><a class="line" href="../../d5/d35/info_8c.html#a272619cdb223eb7162c653414439fdf0">  508</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PRINT_STACK_FLAG_WAIT 2</span></div>
 <div class="line"><a name="l00509"></a><span class="lineno"><a class="line" href="../../d5/d35/info_8c.html#a480ca05bdd837023a200ea703662feb2">  509</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PRINT_STACK_FLAG_FINALIZE 3</span></div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00511"></a><span class="lineno"><a class="line" href="../../d5/d35/info_8c.html#a0828dbcd58ffaacc3a8762a28733f566">  511</a></span>&#160;<span class="keyword">static</span> ABTD_atomic_uint32 <a class="code" href="../../d5/d35/info_8c.html#a0828dbcd58ffaacc3a8762a28733f566">print_stack_flag</a> =</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    ABTD_ATOMIC_UINT32_STATIC_INITIALIZER(<a class="code" href="../../d5/d35/info_8c.html#a651d283346df11d9f15c061a01fb784b">PRINT_STACK_FLAG_UNSET</a>);</div>
+<div class="line"><a name="l00511"></a><span class="lineno"><a class="line" href="../../d5/d35/info_8c.html#afed9a13adc644077e7994f02eb9b059d">  511</a></span>&#160;<span class="keyword">static</span> ABTD_atomic_int <a class="code" href="../../d5/d35/info_8c.html#afed9a13adc644077e7994f02eb9b059d">print_stack_flag</a> =</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    ABTD_ATOMIC_INT_STATIC_INITIALIZER(<a class="code" href="../../d5/d35/info_8c.html#a651d283346df11d9f15c061a01fb784b">PRINT_STACK_FLAG_UNSET</a>);</div>
 <div class="line"><a name="l00513"></a><span class="lineno"><a class="line" href="../../d5/d35/info_8c.html#afc9f75adad27db8b56dcf2ba15a56dba">  513</a></span>&#160;<span class="keyword">static</span> FILE *<a class="code" href="../../d5/d35/info_8c.html#afc9f75adad27db8b56dcf2ba15a56dba">print_stack_fp</a> = NULL;</div>
 <div class="line"><a name="l00514"></a><span class="lineno"><a class="line" href="../../d5/d35/info_8c.html#a39841f8db9bb0aa6395344c4a73f6cd5">  514</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="../../d5/d35/info_8c.html#a39841f8db9bb0aa6395344c4a73f6cd5">print_stack_timeout</a> = 0.0;</div>
 <div class="line"><a name="l00515"></a><span class="lineno"><a class="line" href="../../d5/d35/info_8c.html#a2b7f851c39d4121aebe0c699dad96b6a">  515</a></span>&#160;<span class="keyword">static</span> void (*<a class="code" href="../../d5/d35/info_8c.html#a2b7f851c39d4121aebe0c699dad96b6a">print_cb_func</a>)(<a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a>, <span class="keywordtype">void</span> *) = NULL;</div>
 <div class="line"><a name="l00516"></a><span class="lineno"><a class="line" href="../../d5/d35/info_8c.html#ae53fd9d71d25256742aac6d829b546a8">  516</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> *<a class="code" href="../../d5/d35/info_8c.html#ae53fd9d71d25256742aac6d829b546a8">print_arg</a> = NULL;</div>
-<div class="line"><a name="l00517"></a><span class="lineno"><a class="line" href="../../d5/d35/info_8c.html#a1fbbec1de7c816815f99682c34ce3999">  517</a></span>&#160;<span class="keyword">static</span> ABTD_atomic_uint32 <a class="code" href="../../d5/d35/info_8c.html#a1fbbec1de7c816815f99682c34ce3999">print_stack_barrier</a> =</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    ABTD_ATOMIC_UINT32_STATIC_INITIALIZER(0);</div>
+<div class="line"><a name="l00517"></a><span class="lineno"><a class="line" href="../../d5/d35/info_8c.html#a00e9fe11010ef756e735f11ca9597ade">  517</a></span>&#160;<span class="keyword">static</span> ABTD_atomic_int <a class="code" href="../../d5/d35/info_8c.html#a00e9fe11010ef756e735f11ca9597ade">print_stack_barrier</a> =</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    ABTD_ATOMIC_INT_STATIC_INITIALIZER(0);</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;</div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;<span class="keywordtype">void</span> ABTI_info_check_print_all_thread_stacks(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;{</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <span class="keywordflow">if</span> (ABTD_atomic_acquire_load_uint32(&amp;print_stack_flag) !=</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <span class="keywordflow">if</span> (ABTD_atomic_acquire_load_int(&amp;print_stack_flag) !=</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        <a class="code" href="../../d5/d35/info_8c.html#a272619cdb223eb7162c653414439fdf0">PRINT_STACK_FLAG_WAIT</a>)</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    <span class="comment">/* Wait for the other execution streams using a barrier mechanism. */</span></div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    uint32_t self_value = ABTD_atomic_fetch_add_uint32(&amp;print_stack_barrier, 1);</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    <span class="keywordtype">int</span> self_value = ABTD_atomic_fetch_add_int(&amp;print_stack_barrier, 1);</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="keywordflow">if</span> (self_value == 0) {</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;        <span class="comment">/* This ES becomes the main ES. */</span></div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        <span class="keywordtype">double</span> start_time = ABTI_get_wtime();</div>
@@ -365,7 +365,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;<span class="comment">         * printing data. */</span></div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        ABTI_spinlock_acquire(&amp;<a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;xstream_list_lock);</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;        <span class="keywordflow">while</span> (1) {</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;            <span class="keywordflow">if</span> (ABTD_atomic_acquire_load_uint32(&amp;print_stack_barrier) &gt;=</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;            <span class="keywordflow">if</span> (ABTD_atomic_acquire_load_int(&amp;print_stack_barrier) &gt;=</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                <a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;num_xstreams) {</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;            }</div>
@@ -385,7 +385,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;            fprintf(print_stack_fp,</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;                    <span class="stringliteral">&quot;ABT_info_trigger_print_all_thread_stacks: &quot;</span></div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;                    <span class="stringliteral">&quot;timeout (only %d ESs stop)\n&quot;</span>,</div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;                    (<span class="keywordtype">int</span>)ABTD_atomic_acquire_load_uint32(&amp;print_stack_barrier));</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;                    ABTD_atomic_acquire_load_int(&amp;print_stack_barrier));</div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;        }</div>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d35/info_8c.html#a5beb83bfb62430e3431ef82ee1f87647">print_all_thread_stacks</a>(print_stack_fp);</div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
@@ -397,23 +397,23 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d5/d35/info_8c.html#a2b7f851c39d4121aebe0c699dad96b6a">print_cb_func</a>)</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;            <a class="code" href="../../d5/d35/info_8c.html#a2b7f851c39d4121aebe0c699dad96b6a">print_cb_func</a>(force_print, print_arg);</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;        <span class="comment">/* Update print_stack_flag to 3. */</span></div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;        ABTD_atomic_release_store_uint32(&amp;print_stack_flag,</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                                         <a class="code" href="../../d5/d35/info_8c.html#a480ca05bdd837023a200ea703662feb2">PRINT_STACK_FLAG_FINALIZE</a>);</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;        ABTD_atomic_release_store_int(&amp;print_stack_flag,</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                                      <a class="code" href="../../d5/d35/info_8c.html#a480ca05bdd837023a200ea703662feb2">PRINT_STACK_FLAG_FINALIZE</a>);</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;        <span class="comment">/* Wait for the main ES&#39;s work. */</span></div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;        <span class="keywordflow">while</span> (ABTD_atomic_acquire_load_uint32(&amp;print_stack_flag) !=</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;        <span class="keywordflow">while</span> (ABTD_atomic_acquire_load_int(&amp;print_stack_flag) !=</div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;               <a class="code" href="../../d5/d35/info_8c.html#a480ca05bdd837023a200ea703662feb2">PRINT_STACK_FLAG_FINALIZE</a>)</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;            ABTD_atomic_pause();</div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    }</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    ABTI_ASSERT(ABTD_atomic_acquire_load_uint32(&amp;print_stack_flag) ==</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    ABTI_ASSERT(ABTD_atomic_acquire_load_int(&amp;print_stack_flag) ==</div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;                <a class="code" href="../../d5/d35/info_8c.html#a480ca05bdd837023a200ea703662feb2">PRINT_STACK_FLAG_FINALIZE</a>);</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    <span class="comment">/* Decrement the barrier value. */</span></div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    uint32_t dec_value = ABTD_atomic_fetch_sub_uint32(&amp;print_stack_barrier, 1);</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    <span class="keywordtype">int</span> dec_value = ABTD_atomic_fetch_sub_int(&amp;print_stack_barrier, 1);</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    <span class="keywordflow">if</span> (dec_value == 0) {</div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;        <span class="comment">/* The last execution stream resets the flag. */</span></div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;        ABTD_atomic_release_store_uint32(&amp;print_stack_flag,</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;                                         <a class="code" href="../../d5/d35/info_8c.html#a651d283346df11d9f15c061a01fb784b">PRINT_STACK_FLAG_UNSET</a>);</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;        ABTD_atomic_release_store_int(&amp;print_stack_flag,</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;                                      <a class="code" href="../../d5/d35/info_8c.html#a651d283346df11d9f15c061a01fb784b">PRINT_STACK_FLAG_UNSET</a>);</div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    }</div>
 <div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;}</div>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;</div>
@@ -588,63 +588,64 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;{</div>
 <div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    <span class="comment">/* This function is signal-safe, so it may not call other functions unless</span></div>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;<span class="comment">     * you really know what the called functions do. */</span></div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <span class="keywordflow">if</span> (ABTD_atomic_acquire_load_uint32(&amp;print_stack_flag) ==</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <span class="keywordflow">if</span> (ABTD_atomic_acquire_load_int(&amp;print_stack_flag) ==</div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;        <a class="code" href="../../d5/d35/info_8c.html#a651d283346df11d9f15c061a01fb784b">PRINT_STACK_FLAG_UNSET</a>) {</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;        <span class="keywordflow">if</span> (ABTD_atomic_bool_cas_strong_uint32(&amp;print_stack_flag,</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                                               <a class="code" href="../../d5/d35/info_8c.html#a651d283346df11d9f15c061a01fb784b">PRINT_STACK_FLAG_UNSET</a>,</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                                               <a class="code" href="../../d5/d35/info_8c.html#aaab1ecda7278403ede8d7ea3e4f2f8b3">PRINT_STACK_FLAG_INITIALIZE</a>)) {</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;        <span class="keywordflow">if</span> (ABTD_atomic_bool_cas_strong_int(&amp;print_stack_flag,</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                                            <a class="code" href="../../d5/d35/info_8c.html#a651d283346df11d9f15c061a01fb784b">PRINT_STACK_FLAG_UNSET</a>,</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                                            <a class="code" href="../../d5/d35/info_8c.html#aaab1ecda7278403ede8d7ea3e4f2f8b3">PRINT_STACK_FLAG_INITIALIZE</a>)) {</div>
 <div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;            <span class="comment">/* Save fp and timeout. */</span></div>
 <div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;            print_stack_fp = <a class="code" href="../../db/d64/structinfo__print__unit__arg__t.html#ae45a6ff8fbb7c5493dfed39bf1ceb160">fp</a>;</div>
 <div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;            print_stack_timeout = timeout;</div>
 <div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;            <a class="code" href="../../d5/d35/info_8c.html#a2b7f851c39d4121aebe0c699dad96b6a">print_cb_func</a> = cb_func;</div>
 <div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;            print_arg = arg;</div>
 <div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;            <span class="comment">/* Here print_stack_barrier must be 0. */</span></div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;            ABTI_ASSERT(ABTD_atomic_acquire_load_uint32(&amp;print_stack_barrier) ==</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;            ABTI_ASSERT(ABTD_atomic_acquire_load_int(&amp;print_stack_barrier) ==</div>
 <div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                        0);</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;            ABTD_atomic_release_store_uint32(&amp;print_stack_flag,</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                                             <a class="code" href="../../d5/d35/info_8c.html#a272619cdb223eb7162c653414439fdf0">PRINT_STACK_FLAG_WAIT</a>);</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;            ABTD_atomic_release_store_int(&amp;print_stack_flag,</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                                          <a class="code" href="../../d5/d35/info_8c.html#a272619cdb223eb7162c653414439fdf0">PRINT_STACK_FLAG_WAIT</a>);</div>
 <div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;        }</div>
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;    }</div>
 <div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;}</div>
 <div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;</div>
 <div class="line"><a name="l00779"></a><span class="lineno"><a class="line" href="../../d5/d35/info_8c.html#a5beb83bfb62430e3431ef82ee1f87647">  779</a></span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="../../d5/d35/info_8c.html#a5beb83bfb62430e3431ef82ee1f87647">print_all_thread_stacks</a>(FILE *fp)</div>
 <div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;{</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    <span class="keywordtype">int</span> i, abt_errno;</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d2/d94/structinfo__pool__set__t.html">info_pool_set_t</a> pool_set;</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;    abt_errno = <a class="code" href="../../d5/d35/info_8c.html#a94506357c0e91fc73de42c461431f47f">info_initialize_pool_set</a>(&amp;pool_set);</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;    ABTI_xstream *p_xstream = <a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;p_xstream_head;</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    <span class="keywordflow">while</span> (p_xstream) {</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;        ABTI_sched *p_main_sched = p_xstream-&gt;p_main_sched;</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;        fprintf(fp, <span class="stringliteral">&quot;= xstream[%d] (%p) =\n&quot;</span>, p_xstream-&gt;rank,</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                (<span class="keywordtype">void</span> *)p_xstream);</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;        fprintf(fp, <span class="stringliteral">&quot;main_sched : %p\n&quot;</span>, (<span class="keywordtype">void</span> *)p_main_sched);</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;        <span class="keywordflow">if</span> (!p_main_sched)</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        <span class="keywordflow">for</span> (i = 0; i &lt; p_main_sched-&gt;num_pools; i++) {</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;            <a class="code" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> pool = p_main_sched-&gt;pools[i];</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;            ABTI_ASSERT(pool != <a class="code" href="../../d5/d7d/abt_8h.html#a73fcc4b17c8eec71fcae8437116cc5e2">ABT_POOL_NULL</a>);</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;            fprintf(fp, <span class="stringliteral">&quot;  pools[%d] : %p\n&quot;</span>, i,</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;                    (<span class="keywordtype">void</span> *)ABTI_pool_get_ptr(pool));</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;            abt_errno = <a class="code" href="../../d5/d35/info_8c.html#a5c87f891319f7f038ef1b14b848304c7">info_add_pool_set</a>(pool, &amp;pool_set);</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;            <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;                <a class="code" href="../../d5/d35/info_8c.html#ac520916cbfe794d56787a991df902ab3">info_finalize_pool_set</a>(&amp;pool_set);</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                ABTI_HANDLE_ERROR(abt_errno);</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;            }</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;        }</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;        p_xstream = p_xstream-&gt;p_next;</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    }</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; pool_set.<a class="code" href="../../d2/d94/structinfo__pool__set__t.html#ac63466bb29f4470e4a73c4ed87a758c0">num</a>; i++) {</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        <a class="code" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> pool = pool_set.<a class="code" href="../../d2/d94/structinfo__pool__set__t.html#aeb6c727a38dbddfa4f86829e8683b0e2">pools</a>[i];</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        ABTI_pool *p_pool = ABTI_pool_get_ptr(pool);</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        abt_errno = <a class="code" href="../../d5/d35/info_8c.html#a6b9a95a1ecb035a8b7e41701e596e3eb">info_print_thread_stacks_in_pool</a>(fp, p_pool);</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;        <span class="keywordflow">if</span> (abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>)</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;            fprintf(fp, <span class="stringliteral">&quot;  Failed to print (errno = %d).\n&quot;</span>, abt_errno);</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;    }</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    <a class="code" href="../../d5/d35/info_8c.html#ac520916cbfe794d56787a991df902ab3">info_finalize_pool_set</a>(&amp;pool_set);</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;}</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    <span class="keywordtype">size_t</span> i;</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    <span class="keywordtype">int</span> abt_errno;</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d2/d94/structinfo__pool__set__t.html">info_pool_set_t</a> pool_set;</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    abt_errno = <a class="code" href="../../d5/d35/info_8c.html#a94506357c0e91fc73de42c461431f47f">info_initialize_pool_set</a>(&amp;pool_set);</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    ABTI_xstream *p_xstream = <a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;p_xstream_head;</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    <span class="keywordflow">while</span> (p_xstream) {</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;        ABTI_sched *p_main_sched = p_xstream-&gt;p_main_sched;</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;        fprintf(fp, <span class="stringliteral">&quot;= xstream[%d] (%p) =\n&quot;</span>, p_xstream-&gt;rank,</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                (<span class="keywordtype">void</span> *)p_xstream);</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;        fprintf(fp, <span class="stringliteral">&quot;main_sched : %p\n&quot;</span>, (<span class="keywordtype">void</span> *)p_main_sched);</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;        <span class="keywordflow">if</span> (!p_main_sched)</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;        <span class="keywordflow">for</span> (i = 0; i &lt; p_main_sched-&gt;num_pools; i++) {</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;            <a class="code" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> pool = p_main_sched-&gt;pools[i];</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;            ABTI_ASSERT(pool != <a class="code" href="../../d5/d7d/abt_8h.html#a73fcc4b17c8eec71fcae8437116cc5e2">ABT_POOL_NULL</a>);</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;            fprintf(fp, <span class="stringliteral">&quot;  pools[%zu] : %p\n&quot;</span>, i,</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                    (<span class="keywordtype">void</span> *)ABTI_pool_get_ptr(pool));</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;            abt_errno = <a class="code" href="../../d5/d35/info_8c.html#a5c87f891319f7f038ef1b14b848304c7">info_add_pool_set</a>(pool, &amp;pool_set);</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;            <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                <a class="code" href="../../d5/d35/info_8c.html#ac520916cbfe794d56787a991df902ab3">info_finalize_pool_set</a>(&amp;pool_set);</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                ABTI_HANDLE_ERROR(abt_errno);</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;            }</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;        }</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;        p_xstream = p_xstream-&gt;p_next;</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;    }</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; pool_set.<a class="code" href="../../d2/d94/structinfo__pool__set__t.html#ac63466bb29f4470e4a73c4ed87a758c0">num</a>; i++) {</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        <a class="code" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> pool = pool_set.<a class="code" href="../../d2/d94/structinfo__pool__set__t.html#aeb6c727a38dbddfa4f86829e8683b0e2">pools</a>[i];</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        ABTI_pool *p_pool = ABTI_pool_get_ptr(pool);</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;        abt_errno = <a class="code" href="../../d5/d35/info_8c.html#a6b9a95a1ecb035a8b7e41701e596e3eb">info_print_thread_stacks_in_pool</a>(fp, p_pool);</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;        <span class="keywordflow">if</span> (abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>)</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;            fprintf(fp, <span class="stringliteral">&quot;  Failed to print (errno = %d).\n&quot;</span>, abt_errno);</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    }</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;    <a class="code" href="../../d5/d35/info_8c.html#ac520916cbfe794d56787a991df902ab3">info_finalize_pool_set</a>(&amp;pool_set);</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;}</div>
 <div class="ttc" id="abt_8h_html_a80bdf9da42da2ec917df5bdb66e0981ca4a88df161804496652e74229ee601433"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981ca4a88df161804496652e74229ee601433">ABT_UNIT_TYPE_THREAD</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00170">abt.h:170</a></div></div>
 <div class="ttc" id="abt_8h_html_a49abe49beb3075b18fa79cf943f49219"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a></div><div class="ttdeci">struct ABT_thread_attr_opaque * ABT_thread_attr</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00345">abt.h:345</a></div></div>
 <div class="ttc" id="abt_8h_html_a2766d98ace73a538d42ff64a8b999baf"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a2766d98ace73a538d42ff64a8b999baf">ABT_unit</a></div><div class="ttdeci">struct ABT_unit_opaque * ABT_unit</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00337">abt.h:337</a></div></div>
@@ -668,6 +669,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="abt_8h_html_a740335a6e32f1eb9cb2cd0a7239d98ada82de98829d70c5294507896903bba5c0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a740335a6e32f1eb9cb2cd0a7239d98ada82de98829d70c5294507896903bba5c0">ABT_INFO_QUERY_KIND_ENABLED_VALGRIND</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00188">abt.h:188</a></div></div>
 <div class="ttc" id="abt_8h_html_a02200eeeef0025ba33f08fce1a5fde30"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a02200eeeef0025ba33f08fce1a5fde30">ABT_task</a></div><div class="ttdeci">struct ABT_thread_opaque * ABT_task</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00353">abt.h:353</a></div></div>
 <div class="ttc" id="abt_8h_html_a2b54886c7ce2ed912e6a477815c3ac66"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a2b54886c7ce2ed912e6a477815c3ac66">ABT_ERR_INV_THREAD</a></div><div class="ttdeci">#define ABT_ERR_INV_THREAD</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00080">abt.h:80</a></div></div>
+<div class="ttc" id="info_8c_html_a00e9fe11010ef756e735f11ca9597ade"><div class="ttname"><a href="../../d5/d35/info_8c.html#a00e9fe11010ef756e735f11ca9597ade">print_stack_barrier</a></div><div class="ttdeci">static ABTD_atomic_int print_stack_barrier</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/info_8c_source.html#l00517">info.c:517</a></div></div>
 <div class="ttc" id="info_8c_html_a5c87f891319f7f038ef1b14b848304c7"><div class="ttname"><a href="../../d5/d35/info_8c.html#a5c87f891319f7f038ef1b14b848304c7">info_add_pool_set</a></div><div class="ttdeci">static ABTU_ret_err int info_add_pool_set(ABT_pool pool, struct info_pool_set_t *p_set)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/info_8c_source.html#l00734">info.c:734</a></div></div>
 <div class="ttc" id="group__INFO_html_ga0349718e209a1012e376cd1b24b7caf1"><div class="ttname"><a href="../../d7/d15/group__INFO.html#ga0349718e209a1012e376cd1b24b7caf1">ABT_info_print_xstream</a></div><div class="ttdeci">int ABT_info_print_xstream(FILE *fp, ABT_xstream xstream) ABT_API_PUBLIC</div><div class="ttdoc">Write the information of the target ES to the output stream. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/info_8c_source.html#l00300">info.c:300</a></div></div>
 <div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00373">abt.h:373</a></div></div>
@@ -710,7 +712,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="abt_8h_html_a740335a6e32f1eb9cb2cd0a7239d98ada73c3f7f44ad6726ea86cc2bdca8fde8f"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a740335a6e32f1eb9cb2cd0a7239d98ada73c3f7f44ad6726ea86cc2bdca8fde8f">ABT_INFO_QUERY_KIND_ENABLED_PRINT_CONFIG</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00210">abt.h:210</a></div></div>
 <div class="ttc" id="info_8c_html_a94506357c0e91fc73de42c461431f47f"><div class="ttname"><a href="../../d5/d35/info_8c.html#a94506357c0e91fc73de42c461431f47f">info_initialize_pool_set</a></div><div class="ttdeci">static ABTU_ret_err int info_initialize_pool_set(struct info_pool_set_t *p_set)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/info_8c_source.html#l00718">info.c:718</a></div></div>
 <div class="ttc" id="group__INFO_html_ga1beb84f511139b3016d83c8c52b1e64d"><div class="ttname"><a href="../../d7/d15/group__INFO.html#ga1beb84f511139b3016d83c8c52b1e64d">ABT_info_print_thread</a></div><div class="ttdeci">int ABT_info_print_thread(FILE *fp, ABT_thread thread) ABT_API_PUBLIC</div><div class="ttdoc">Write the information of the target ULT to the output stream. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/info_8c_source.html#l00363">info.c:363</a></div></div>
-<div class="ttc" id="info_8c_html_a0828dbcd58ffaacc3a8762a28733f566"><div class="ttname"><a href="../../d5/d35/info_8c.html#a0828dbcd58ffaacc3a8762a28733f566">print_stack_flag</a></div><div class="ttdeci">static ABTD_atomic_uint32 print_stack_flag</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/info_8c_source.html#l00511">info.c:511</a></div></div>
 <div class="ttc" id="info_8c_html_a5beb83bfb62430e3431ef82ee1f87647"><div class="ttname"><a href="../../d5/d35/info_8c.html#a5beb83bfb62430e3431ef82ee1f87647">print_all_thread_stacks</a></div><div class="ttdeci">static ABTU_ret_err int print_all_thread_stacks(FILE *fp)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/info_8c_source.html#l00779">info.c:779</a></div></div>
 <div class="ttc" id="abt_8h_html_a740335a6e32f1eb9cb2cd0a7239d98ada04e8f46bee5d69de517c5d464be71a9d"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a740335a6e32f1eb9cb2cd0a7239d98ada04e8f46bee5d69de517c5d464be71a9d">ABT_INFO_QUERY_KIND_ENABLED_AFFINITY</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00212">abt.h:212</a></div></div>
 <div class="ttc" id="abt_8h_html_a740335a6e32f1eb9cb2cd0a7239d98ada35de0f5e06391a0244977ee5b4bdec82"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a740335a6e32f1eb9cb2cd0a7239d98ada35de0f5e06391a0244977ee5b4bdec82">ABT_INFO_QUERY_KIND_DEFAULT_SCHED_SLEEP_NSEC</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00222">abt.h:222</a></div></div>
@@ -725,8 +726,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="structinfo__pool__set__t_html_aeb6c727a38dbddfa4f86829e8683b0e2"><div class="ttname"><a href="../../d2/d94/structinfo__pool__set__t.html#aeb6c727a38dbddfa4f86829e8683b0e2">info_pool_set_t::pools</a></div><div class="ttdeci">ABT_pool * pools</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/info_8c_source.html#l00663">info.c:663</a></div></div>
 <div class="ttc" id="abt_8h_html_a740335a6e32f1eb9cb2cd0a7239d98ada33a67e91736b5553e9897b47c1546ed6"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a740335a6e32f1eb9cb2cd0a7239d98ada33a67e91736b5553e9897b47c1546ed6">ABT_INFO_QUERY_KIND_ENABLED_SCHED_SLEEP</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00208">abt.h:208</a></div></div>
 <div class="ttc" id="abtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00211">abtu.h:211</a></div></div>
+<div class="ttc" id="info_8c_html_afed9a13adc644077e7994f02eb9b059d"><div class="ttname"><a href="../../d5/d35/info_8c.html#afed9a13adc644077e7994f02eb9b059d">print_stack_flag</a></div><div class="ttdeci">static ABTD_atomic_int print_stack_flag</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/info_8c_source.html#l00511">info.c:511</a></div></div>
 <div class="ttc" id="abt_8h_html_ad87df4eeaf3a5abd8f8cc755058c67d4"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ad87df4eeaf3a5abd8f8cc755058c67d4">ABT_ERR_POOL</a></div><div class="ttdeci">#define ABT_ERR_POOL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00100">abt.h:100</a></div></div>
-<div class="ttc" id="info_8c_html_a1fbbec1de7c816815f99682c34ce3999"><div class="ttname"><a href="../../d5/d35/info_8c.html#a1fbbec1de7c816815f99682c34ce3999">print_stack_barrier</a></div><div class="ttdeci">static ABTD_atomic_uint32 print_stack_barrier</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/info_8c_source.html#l00517">info.c:517</a></div></div>
 <div class="ttc" id="info_8c_html_a651d283346df11d9f15c061a01fb784b"><div class="ttname"><a href="../../d5/d35/info_8c.html#a651d283346df11d9f15c061a01fb784b">PRINT_STACK_FLAG_UNSET</a></div><div class="ttdeci">#define PRINT_STACK_FLAG_UNSET</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d35/info_8c_source.html#l00506">info.c:506</a></div></div>
 <div class="ttc" id="abtu_8h_html_a071d8986b72b8f5d099cdd47979b5e81"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a></div><div class="ttdeci">#define ABTU_ret_err</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00138">abtu.h:138</a></div></div>
 <div class="ttc" id="abt_8h_html_a740335a6e32f1eb9cb2cd0a7239d98ada167aed1d2c53a9c7b190475d60f94ccc"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a740335a6e32f1eb9cb2cd0a7239d98ada167aed1d2c53a9c7b190475d60f94ccc">ABT_INFO_QUERY_KIND_ENABLED_MIGRATION</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00202">abt.h:202</a></div></div>
@@ -734,7 +735,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 13 2020 03:10:15 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 18 2020 03:10:00 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

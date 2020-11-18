@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">ae970519b99767ae27a760cd3314a141477113a5</span>
+   &#160;<span id="projectnumber">fe9704776da8f6f84e7a743897757aecc2686685</span>
    </div>
   </td>
  </tr>
@@ -154,7 +154,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                     <span class="stringliteral">&quot;ABT_ERR_INV_ARG&quot;</span> };</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    ABTI_CHECK_TRUE(err &gt;= <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a> &amp;&amp;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                        err &lt; <span class="keyword">sizeof</span>(err_str) / <span class="keyword">sizeof</span>(err_str[0]),</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                        err &lt; (<span class="keywordtype">int</span>)(<span class="keyword">sizeof</span>(err_str) / <span class="keyword">sizeof</span>(err_str[0])),</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    <a class="code" href="../../d5/d7d/abt_8h.html#a5a7703cc3cf3cafa9bed26e3fce31051">ABT_ERR_INV_ARG</a>);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">/* This entry does not exist. */</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    ABTI_CHECK_TRUE(err_str[err], <a class="code" href="../../d5/d7d/abt_8h.html#a5a7703cc3cf3cafa9bed26e3fce31051">ABT_ERR_INV_ARG</a>);</div>
@@ -171,7 +171,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 13 2020 03:10:15 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 18 2020 03:09:59 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">ae970519b99767ae27a760cd3314a141477113a5</span>
+   &#160;<span id="projectnumber">fe9704776da8f6f84e7a743897757aecc2686685</span>
    </div>
   </td>
  </tr>
@@ -353,7 +353,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a17ce4f7ba59daa4b550d590b6f4d32e8">ABT_sched_type</a> type;        <span class="comment">/* Can yield or not (ULT or task) */</span></div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    ABTD_atomic_uint32 request; <span class="comment">/* Request */</span></div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> *pools;            <span class="comment">/* Thread pools */</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordtype">int</span> num_pools;              <span class="comment">/* Number of thread pools */</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordtype">size_t</span> num_pools;           <span class="comment">/* Number of thread pools */</span></div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    ABTI_ythread *p_ythread;    <span class="comment">/* Associated ULT */</span></div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordtype">void</span> *data;                 <span class="comment">/* Data for a specific scheduler */</span></div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
@@ -482,15 +482,15 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    ABTI_spinlock lock;</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> ready;</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="keywordtype">void</span> *value;</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <span class="keywordtype">int</span> nbytes;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <span class="keywordtype">size_t</span> nbytes;</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    ABTI_thread *p_head; <span class="comment">/* Head of waiters */</span></div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    ABTI_thread *p_tail; <span class="comment">/* Tail of waiters */</span></div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;};</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;<span class="keyword">struct </span>ABTI_future {</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    ABTI_spinlock lock;</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    ABTD_atomic_uint32 counter;</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    uint32_t compartments;</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    ABTD_atomic_size counter;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <span class="keywordtype">size_t</span> compartments;</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="keywordtype">void</span> **array;</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    void (*p_callback)(<span class="keywordtype">void</span> **arg);</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    ABTI_thread *p_head; <span class="comment">/* Head of waiters */</span></div>
@@ -498,8 +498,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;};</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="keyword">struct </span>ABTI_barrier {</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    uint32_t num_waiters;</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keyword">volatile</span> uint32_t counter;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keywordtype">size_t</span> num_waiters;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keyword">volatile</span> <span class="keywordtype">size_t</span> counter;</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    ABTI_ythread **waiters;</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981c">ABT_unit_type</a> *waiter_type;</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    ABTI_spinlock lock;</div>
@@ -659,9 +659,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;<span class="comment">/* Mutex */</span></div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;<span class="keywordtype">void</span> ABTI_mutex_wait(ABTI_xstream **pp_local_xstream, ABTI_mutex *p_mutex,</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;                     <span class="keywordtype">int</span> val);</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;                     uint32_t val);</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;<span class="keywordtype">void</span> ABTI_mutex_wait_low(ABTI_xstream **pp_local_xstream, ABTI_mutex *p_mutex,</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;                         <span class="keywordtype">int</span> val);</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;                         uint32_t val);</div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;<span class="keywordtype">void</span> ABTI_mutex_wake_de(ABTI_local *p_local, ABTI_mutex *p_mutex);</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;</div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;<span class="comment">/* Information */</span></div>
@@ -769,7 +769,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 13 2020 03:10:15 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 18 2020 03:10:00 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
