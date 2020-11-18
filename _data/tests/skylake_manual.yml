@@ -3,62 +3,62 @@
   os: openSUSE 15.2
   compiler: clang10.0.0
   pass: yes
-  commit_id: ae970519b99767ae27a760cd3314a141477113a5
-  date: Fri Nov 13 00:18:59 2020 -0600
+  commit_id: fe9704776da8f6f84e7a743897757aecc2686685
+  date: Tue Nov 17 16:31:15 2020 -0600
 - cpu: x86/64
   host: JLSE Skylake
   os: openSUSE 15.2
   compiler: clang7.0.1
   pass: yes
-  commit_id: ae970519b99767ae27a760cd3314a141477113a5
-  date: Fri Nov 13 00:18:59 2020 -0600
+  commit_id: fe9704776da8f6f84e7a743897757aecc2686685
+  date: Tue Nov 17 16:31:15 2020 -0600
 - cpu: x86/64
   host: JLSE Skylake
   os: openSUSE 15.2
   compiler: clang9.0.0
   pass: yes
-  commit_id: ae970519b99767ae27a760cd3314a141477113a5
-  date: Fri Nov 13 00:18:59 2020 -0600
+  commit_id: fe9704776da8f6f84e7a743897757aecc2686685
+  date: Tue Nov 17 16:31:15 2020 -0600
 - cpu: x86/64
   host: JLSE Skylake
   os: openSUSE 15.2
   compiler: gnu7.4.0
   pass: yes
-  commit_id: ae970519b99767ae27a760cd3314a141477113a5
-  date: Fri Nov 13 00:18:59 2020 -0600
+  commit_id: fe9704776da8f6f84e7a743897757aecc2686685
+  date: Tue Nov 17 16:31:15 2020 -0600
 - cpu: x86/64
   host: JLSE Skylake
   os: openSUSE 15.2
   compiler: gnu8.3.0
   pass: yes
-  commit_id: ae970519b99767ae27a760cd3314a141477113a5
-  date: Fri Nov 13 00:18:59 2020 -0600
+  commit_id: fe9704776da8f6f84e7a743897757aecc2686685
+  date: Tue Nov 17 16:31:15 2020 -0600
 - cpu: x86/64
   host: JLSE Skylake
   os: openSUSE 15.2
   compiler: gnu9.2.0
   pass: yes
-  commit_id: ae970519b99767ae27a760cd3314a141477113a5
-  date: Fri Nov 13 00:18:59 2020 -0600
+  commit_id: fe9704776da8f6f84e7a743897757aecc2686685
+  date: Tue Nov 17 16:31:15 2020 -0600
 - cpu: x86/64
   host: JLSE Skylake
   os: openSUSE 15.2
   compiler: intel18.1.163
   pass: yes
-  commit_id: ae970519b99767ae27a760cd3314a141477113a5
-  date: Fri Nov 13 00:18:59 2020 -0600
+  commit_id: fe9704776da8f6f84e7a743897757aecc2686685
+  date: Tue Nov 17 16:31:15 2020 -0600
 - cpu: x86/64
   host: JLSE Skylake
   os: openSUSE 15.2
   compiler: intel19.4.243
   pass: yes
-  commit_id: ae970519b99767ae27a760cd3314a141477113a5
-  date: Fri Nov 13 00:18:59 2020 -0600
+  commit_id: fe9704776da8f6f84e7a743897757aecc2686685
+  date: Tue Nov 17 16:31:15 2020 -0600
 - cpu: x86/64
   host: JLSE Skylake
   os: openSUSE 15.2
   compiler: intel20.0.166
   pass: yes
-  commit_id: ae970519b99767ae27a760cd3314a141477113a5
-  date: Fri Nov 13 00:18:59 2020 -0600
+  commit_id: fe9704776da8f6f84e7a743897757aecc2686685
+  date: Tue Nov 17 16:31:15 2020 -0600
 
