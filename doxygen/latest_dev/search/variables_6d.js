@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['max_5fhandovers',['max_handovers',['../df/de7/structABTI__mutex__attr.html#a906b5b30b8b90721ff6af258d918b42c',1,'ABTI_mutex_attr']]],
-  ['max_5fwakeups',['max_wakeups',['../df/de7/structABTI__mutex__attr.html#a25c66bc84bda511cbd39e1771f737679',1,'ABTI_mutex_attr']]],
   ['max_5fxstreams',['max_xstreams',['../da/de9/structABTI__global.html#a4f18f4ac6de4e2eb882529761bde2e03',1,'ABTI_global']]],
   ['mem',['mem',['../d7/d5b/structABTI__mem__pool__page.html#a8808a9b95bf103013c6ae3a1444c9c3d',1,'ABTI_mem_pool_page']]],
   ['mem_5fextra_5fsize',['mem_extra_size',['../d7/d5b/structABTI__mem__pool__page.html#a3f9be25f7d92816faeffa25ac59cebd1',1,'ABTI_mem_pool_page']]],
@@ -18,7 +16,7 @@ var searchData=
   ['mem_5fpool_5fstack_5flock',['mem_pool_stack_lock',['../da/de9/structABTI__global.html#a0debd815abe13b083e1b40f97bbaf3a4',1,'ABTI_global']]],
   ['mem_5fsp_5fsize',['mem_sp_size',['../da/de9/structABTI__global.html#ae3dbac0c745b634de5c3e60c1ccc15b8',1,'ABTI_global']]],
   ['migratable',['migratable',['../dc/dd3/structABTI__thread__attr.html#a6c27605d116e30b3eef4bf374b8cc3a4',1,'ABTI_thread_attr']]],
-  ['mutex',['mutex',['../da/dcc/structABTI__rwlock.html#aa812aa60ed9a5099480f4560b2b3a70a',1,'ABTI_rwlock::mutex()'],['../dd/dcd/structABTI__ythread__queue.html#a9cdad6de7c9ee4d32ed5d7f00b59c785',1,'ABTI_ythread_queue::mutex()'],['../dd/d13/structABTI__ythread__htable.html#aa79413bcedc728a7e6c536a08135a59c',1,'ABTI_ythread_htable::mutex()'],['../df/dea/structdata.html#aed537d2fabbc9805853225bb667a2ad2',1,'data::mutex()'],['../df/dea/structdata.html#ad207fe97b3e2013aefd99e8b773fcc21',1,'data::mutex()']]],
+  ['mutex',['mutex',['../da/dcc/structABTI__rwlock.html#aa812aa60ed9a5099480f4560b2b3a70a',1,'ABTI_rwlock::mutex()'],['../df/dea/structdata.html#aed537d2fabbc9805853225bb667a2ad2',1,'data::mutex()'],['../df/dea/structdata.html#ad207fe97b3e2013aefd99e8b773fcc21',1,'data::mutex()']]],
   ['mutex_5fmax_5fhandovers',['mutex_max_handovers',['../da/de9/structABTI__global.html#a3739c26725baa542d81875b5c0b31219',1,'ABTI_global']]],
   ['mutex_5fmax_5fwakeups',['mutex_max_wakeups',['../da/de9/structABTI__global.html#aa67e92cbd7760d1fc1f6033aaedb9bb6',1,'ABTI_global']]]
 ];

@@ -218,8 +218,6 @@ var searchData=
   ['abti_5fspinlock_5fstatic_5finitializer',['ABTI_SPINLOCK_STATIC_INITIALIZER',['../d7/dea/abti__spinlock_8h.html#a312a2c899157f65721858d6db9349278',1,'abti_spinlock.h']]],
   ['abti_5fstatic_5fassert',['ABTI_STATIC_ASSERT',['../d6/d11/abti__error_8h.html#a10766b2cd23be8f8aeec4fe2b45f2b24',1,'abti_error.h']]],
   ['abti_5ftask_5finit_5fid',['ABTI_TASK_INIT_ID',['../d5/d03/abti_8h.html#a8d7bf57e8b5569b00315c7e5ad2015d3',1,'abti.h']]],
-  ['abti_5fthread_5fhtable_5flock',['ABTI_THREAD_HTABLE_LOCK',['../db/d45/abti__ythread__htable_8h.html#ae9cc8d0a635b2e434e25a3e9faa26d73',1,'abti_ythread_htable.h']]],
-  ['abti_5fthread_5fhtable_5funlock',['ABTI_THREAD_HTABLE_UNLOCK',['../db/d45/abti__ythread__htable_8h.html#acdc03010bb8492db1258bf676f5bd09a',1,'abti_ythread_htable.h']]],
   ['abti_5fthread_5finit_5fid',['ABTI_THREAD_INIT_ID',['../d5/d03/abti_8h.html#a203a5fba8f525a10cccdbbb01c109f41',1,'abti.h']]],
   ['abti_5fthread_5freq_5fblock',['ABTI_THREAD_REQ_BLOCK',['../d5/d03/abti_8h.html#a051acb418802c00213b4df063c339f9e',1,'abti.h']]],
   ['abti_5fthread_5freq_5fcancel',['ABTI_THREAD_REQ_CANCEL',['../d5/d03/abti_8h.html#a03a1a8c360ed1f2d6e403ed8ecbefac5',1,'abti.h']]],

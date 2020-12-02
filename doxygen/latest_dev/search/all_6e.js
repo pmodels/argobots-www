@@ -8,16 +8,13 @@ var searchData=
   ['num_5fcores',['num_cores',['../da/de9/structABTI__global.html#a2fac521035c8d3fca9135cd7b3b0d961',1,'ABTI_global']]],
   ['num_5fcpuids',['num_cpuids',['../d6/d62/structABTD__affinity__cpuset.html#afcdcdd5dc2b9a2fc94f829068f094145',1,'ABTD_affinity_cpuset']]],
   ['num_5fcpusets',['num_cpusets',['../d6/dcd/structglobal__affinity.html#a5910713bf41407253745e49076d3c2c9',1,'global_affinity']]],
-  ['num_5felems',['num_elems',['../dd/d13/structABTI__ythread__htable.html#a989e7bf7d863ff488e5e6d837e0d1fbc',1,'ABTI_ythread_htable']]],
-  ['num_5fhandovers',['num_handovers',['../dd/dcd/structABTI__ythread__queue.html#a88921737fe7886121734334353f2165e',1,'ABTI_ythread_queue']]],
   ['num_5fheaders',['num_headers',['../d5/d6c/unionABTI__mem__pool__header__bucket__info.html#a2229b65e9197300f1350a55890c9c80c',1,'ABTI_mem_pool_header_bucket_info']]],
   ['num_5fheaders_5fper_5fbucket',['num_headers_per_bucket',['../d7/de4/structABTI__mem__pool__global__pool.html#ae1da2a249dfeff4d6208efd3099e8553',1,'ABTI_mem_pool_global_pool::num_headers_per_bucket()'],['../d6/d69/structABTI__mem__pool__local__pool.html#ab46544d5aef7767d34b06ad212230ea7',1,'ABTI_mem_pool_local_pool::num_headers_per_bucket()']]],
   ['num_5flp_5ftype_5frequests',['num_lp_type_requests',['../d7/de4/structABTI__mem__pool__global__pool.html#a635d32eae32548040ea6251f20a93a40',1,'ABTI_mem_pool_global_pool']]],
   ['num_5fmigrations',['num_migrations',['../df/d65/structABTI__pool.html#afdb84281cd8d4cd8f91cdeca65a904c0',1,'ABTI_pool']]],
   ['num_5fpools',['num_pools',['../d0/dd5/structABTI__sched.html#a1d3674f1eba3831791be4f1f5abc6614',1,'ABTI_sched::num_pools()'],['../df/d3b/structsched__data.html#a7dedc2d1370e0d3202976ca89f9bd711',1,'sched_data::num_pools()']]],
-  ['num_5frows',['num_rows',['../dd/d13/structABTI__ythread__htable.html#ac290295840641b1357eed77f6541f5c4',1,'ABTI_ythread_htable']]],
   ['num_5fscheds',['num_scheds',['../df/d65/structABTI__pool.html#ab6931b8f2795af61d60de5c784d50b50',1,'ABTI_pool']]],
-  ['num_5fthreads',['num_threads',['../dd/dcd/structABTI__ythread__queue.html#ad01fc7f00eae90c8b0a878caf80955e9',1,'ABTI_ythread_queue::num_threads()'],['../df/dea/structdata.html#abe5cdbe8797ad1cac61bde1b6cec6e90',1,'data::num_threads()']]],
-  ['num_5fwaiters',['num_waiters',['../d6/d10/structABTI__cond.html#a0ea83a8426c6e560359e3e9b67b6b6d0',1,'ABTI_cond::num_waiters()'],['../d9/d20/structABTI__barrier.html#a3aa748ad45af35ad0b44f01bc62973aa',1,'ABTI_barrier::num_waiters()'],['../d8/d7e/structABTI__xstream__barrier.html#abe03df0a856469e2007e08b6a676c471',1,'ABTI_xstream_barrier::num_waiters()']]],
+  ['num_5fthreads',['num_threads',['../df/dea/structdata.html#abe5cdbe8797ad1cac61bde1b6cec6e90',1,'data']]],
+  ['num_5fwaiters',['num_waiters',['../d9/d20/structABTI__barrier.html#a3aa748ad45af35ad0b44f01bc62973aa',1,'ABTI_barrier::num_waiters()'],['../d8/d7e/structABTI__xstream__barrier.html#abe03df0a856469e2007e08b6a676c471',1,'ABTI_xstream_barrier::num_waiters()']]],
   ['num_5fxstreams',['num_xstreams',['../da/de9/structABTI__global.html#abbc40abb3b0392c79dcff51d04ce8868',1,'ABTI_global']]]
 ];

@@ -2,8 +2,6 @@ var searchData=
 [
   ['make_5ffcontext',['make_fcontext',['../d4/d27/abtd__fcontext_8h.html#a15bc37f0bbd8ca4eb862052ed707b86e',1,'abtd_fcontext.h']]],
   ['malloc_2ec',['malloc.c',['../d6/dcd/malloc_8c.html',1,'']]],
-  ['max_5fhandovers',['max_handovers',['../df/de7/structABTI__mutex__attr.html#a906b5b30b8b90721ff6af258d918b42c',1,'ABTI_mutex_attr']]],
-  ['max_5fwakeups',['max_wakeups',['../df/de7/structABTI__mutex__attr.html#a25c66bc84bda511cbd39e1771f737679',1,'ABTI_mutex_attr']]],
   ['max_5fxstreams',['max_xstreams',['../da/de9/structABTI__global.html#a4f18f4ac6de4e2eb882529761bde2e03',1,'ABTI_global']]],
   ['mem',['mem',['../d7/d5b/structABTI__mem__pool__page.html#a8808a9b95bf103013c6ae3a1444c9c3d',1,'ABTI_mem_pool_page']]],
   ['mem_5fextra_5fsize',['mem_extra_size',['../d7/d5b/structABTI__mem__pool__page.html#a3f9be25f7d92816faeffa25ac59cebd1',1,'ABTI_mem_pool_page']]],
@@ -27,12 +25,10 @@ var searchData=
   ['mmap_5ffree',['mmap_free',['../da/de7/largepage_8c.html#a981e0d8d2e36cf9dc688099d0ce0e097',1,'largepage.c']]],
   ['mmap_5fhugepage',['mmap_hugepage',['../da/de7/largepage_8c.html#ace1928ae1590396d1d34dda07e99b6a5',1,'largepage.c']]],
   ['mmap_5fregular',['mmap_regular',['../da/de7/largepage_8c.html#a53e7b53359a7e46461ae6a1a8ac6ca31',1,'largepage.c']]],
-  ['mutex',['mutex',['../da/dcc/structABTI__rwlock.html#aa812aa60ed9a5099480f4560b2b3a70a',1,'ABTI_rwlock::mutex()'],['../dd/dcd/structABTI__ythread__queue.html#a9cdad6de7c9ee4d32ed5d7f00b59c785',1,'ABTI_ythread_queue::mutex()'],['../dd/d13/structABTI__ythread__htable.html#aa79413bcedc728a7e6c536a08135a59c',1,'ABTI_ythread_htable::mutex()'],['../df/dea/structdata.html#aed537d2fabbc9805853225bb667a2ad2',1,'data::mutex()'],['../df/dea/structdata.html#ad207fe97b3e2013aefd99e8b773fcc21',1,'data::mutex()'],['../d2/d09/group__MUTEX.html',1,'(Global Namespace)']]],
+  ['mutex',['mutex',['../da/dcc/structABTI__rwlock.html#aa812aa60ed9a5099480f4560b2b3a70a',1,'ABTI_rwlock::mutex()'],['../df/dea/structdata.html#aed537d2fabbc9805853225bb667a2ad2',1,'data::mutex()'],['../df/dea/structdata.html#ad207fe97b3e2013aefd99e8b773fcc21',1,'data::mutex()'],['../d2/d09/group__MUTEX.html',1,'(Global Namespace)']]],
   ['mutex_2ec',['mutex.c',['../d8/d62/mutex_8c.html',1,'']]],
   ['mutex_20attributes',['Mutex Attributes',['../d7/de3/group__MUTEX__ATTR.html',1,'']]],
   ['mutex_5fattr_2ec',['mutex_attr.c',['../da/d36/mutex__attr_8c.html',1,'']]],
-  ['mutex_5flock_5flow',['mutex_lock_low',['../d8/d62/mutex_8c.html#ae26194a7ca93c7c674b38026632b170e',1,'mutex.c']]],
   ['mutex_5fmax_5fhandovers',['mutex_max_handovers',['../da/de9/structABTI__global.html#a3739c26725baa542d81875b5c0b31219',1,'ABTI_global']]],
-  ['mutex_5fmax_5fwakeups',['mutex_max_wakeups',['../da/de9/structABTI__global.html#aa67e92cbd7760d1fc1f6033aaedb9bb6',1,'ABTI_global']]],
-  ['mutex_5funlock_5fse',['mutex_unlock_se',['../d8/d62/mutex_8c.html#a2b5c28a878541225e1c3719d7ec7985b',1,'mutex.c']]]
+  ['mutex_5fmax_5fwakeups',['mutex_max_wakeups',['../da/de9/structABTI__global.html#aa67e92cbd7760d1fc1f6033aaedb9bb6',1,'ABTI_global']]]
 ];

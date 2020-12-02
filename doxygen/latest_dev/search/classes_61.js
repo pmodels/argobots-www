@@ -43,9 +43,8 @@ var searchData=
   ['abti_5fthread_5fattr',['ABTI_thread_attr',['../dc/dd3/structABTI__thread__attr.html',1,'']]],
   ['abti_5fthread_5fmig_5fdata',['ABTI_thread_mig_data',['../df/d26/structABTI__thread__mig__data.html',1,'']]],
   ['abti_5ftimer',['ABTI_timer',['../db/de6/structABTI__timer.html',1,'']]],
+  ['abti_5fwaitlist',['ABTI_waitlist',['../dd/d00/structABTI__waitlist.html',1,'']]],
   ['abti_5fxstream',['ABTI_xstream',['../dc/d3f/structABTI__xstream.html',1,'']]],
   ['abti_5fxstream_5fbarrier',['ABTI_xstream_barrier',['../d8/d7e/structABTI__xstream__barrier.html',1,'']]],
-  ['abti_5fythread',['ABTI_ythread',['../d5/d5f/structABTI__ythread.html',1,'']]],
-  ['abti_5fythread_5fhtable',['ABTI_ythread_htable',['../dd/d13/structABTI__ythread__htable.html',1,'']]],
-  ['abti_5fythread_5fqueue',['ABTI_ythread_queue',['../dd/dcd/structABTI__ythread__queue.html',1,'']]]
+  ['abti_5fythread',['ABTI_ythread',['../d5/d5f/structABTI__ythread.html',1,'']]]
 ];

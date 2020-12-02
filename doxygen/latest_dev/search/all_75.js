@@ -20,6 +20,5 @@ var searchData=
   ['unit_5fis_5fin_5fpool',['unit_is_in_pool',['../da/d6b/fifo_8c.html#a940e0068f7909e93e503f41ee73c04ca',1,'unit_is_in_pool(ABT_unit unit):&#160;fifo.c'],['../d2/dc8/fifo__wait_8c.html#a940e0068f7909e93e503f41ee73c04ca',1,'unit_is_in_pool(ABT_unit unit):&#160;fifo_wait.c']]],
   ['use_5fdebug',['use_debug',['../da/de9/structABTI__global.html#a10822ec93d832ba369fc83a35875d88b',1,'ABTI_global']]],
   ['use_5flogging',['use_logging',['../da/de9/structABTI__global.html#ac00baa795c667ecf0ceb29710d86ef83',1,'ABTI_global']]],
-  ['use_5fpthread_5fmutex',['USE_PTHREAD_MUTEX',['../db/d45/abti__ythread__htable_8h.html#ac57ce34f3ab6eaee161ca4a4439c6476',1,'abti_ythread_htable.h']]],
   ['used',['used',['../d0/dd5/structABTI__sched.html#a24d6601876feb5c4069f8f459088a2dd',1,'ABTI_sched']]]
 ];
