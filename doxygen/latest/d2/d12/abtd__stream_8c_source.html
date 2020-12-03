@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">eeae7fe5df42fe3a713b99b647dd296894b12940</span>
+   &#160;<span id="projectnumber">422b8312b78bcc3a312ddd8ee0ecaf6aa618bbbc</span>
    </div>
   </td>
  </tr>
@@ -199,11 +199,37 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    p_ctx-&gt;native_thread = pthread_self();</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keywordtype">void</span> ABTD_xstream_context_print(ABTD_xstream_context *p_ctx, FILE *p_os,</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                                <span class="keywordtype">int</span> indent)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">if</span> (p_ctx == NULL) {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        fprintf(p_os, <span class="stringliteral">&quot;%*s== NULL XSTREAM CONTEXT ==\n&quot;</span>, indent, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *state;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">if</span> (p_ctx-&gt;state == ABTD_XSTREAM_CONTEXT_STATE_RUNNING) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            state = <span class="stringliteral">&quot;RUNNING&quot;</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p_ctx-&gt;state == ABTD_XSTREAM_CONTEXT_STATE_WAITING) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            state = <span class="stringliteral">&quot;WAITING&quot;</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p_ctx-&gt;state == ABTD_XSTREAM_CONTEXT_STATE_REQ_JOIN) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            state = <span class="stringliteral">&quot;REQ_JOIN&quot;</span>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p_ctx-&gt;state == ABTD_XSTREAM_CONTEXT_STATE_REQ_TERMINATE) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            state = <span class="stringliteral">&quot;REQ_TERMINATE&quot;</span>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            state = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        fprintf(p_os,</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="stringliteral">&quot;%*s== XSTREAM CONTEXT (%p) ==\n&quot;</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <span class="stringliteral">&quot;%*sstate : %s\n&quot;</span>,</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                indent, <span class="stringliteral">&quot;&quot;</span>, (<span class="keywordtype">void</span> *)p_ctx, indent, <span class="stringliteral">&quot;&quot;</span>, state);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    fflush(p_os);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
 <div class="ttc" id="abti__error_8h_html_a7ae9713e5bdb204b1554308906fcc55d"><div class="ttname"><a href="../../d6/d11/abti__error_8h.html#a7ae9713e5bdb204b1554308906fcc55d">HANDLE_ERROR</a></div><div class="ttdeci">#define HANDLE_ERROR(msg)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d11/abti__error_8h_source.html#l00037">abti_error.h:37</a></div></div>
-<div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00373">abt.h:373</a></div></div>
-<div class="ttc" id="abt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00285">abt.h:285</a></div></div>
+<div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00377">abt.h:377</a></div></div>
+<div class="ttc" id="abt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00289">abt.h:289</a></div></div>
 <div class="ttc" id="abt_8h_html_acf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00064">abt.h:64</a></div></div>
-<div class="ttc" id="abt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00284">abt.h:284</a></div></div>
+<div class="ttc" id="abt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00288">abt.h:288</a></div></div>
 <div class="ttc" id="abtd__stream_8c_html_a90ffa610256e47952ae70ca6c5df63c5"><div class="ttname"><a href="../../d2/d12/abtd__stream_8c.html#a90ffa610256e47952ae70ca6c5df63c5">xstream_context_thread_func</a></div><div class="ttdeci">static void * xstream_context_thread_func(void *arg)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d12/abtd__stream_8c_source.html#l00008">abtd_stream.c:8</a></div></div>
 <div class="ttc" id="abt_8h_html_a22304733bcfc177b24c2db3a6a90ba12"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a22304733bcfc177b24c2db3a6a90ba12">ABT_ERR_XSTREAM</a></div><div class="ttdeci">#define ABT_ERR_XSTREAM</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00095">abt.h:95</a></div></div>
 <div class="ttc" id="abti_8h_html"><div class="ttname"><a href="../../d5/d03/abti_8h.html">abti.h</a></div></div>
@@ -211,7 +237,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 2 2020 03:10:05 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 3 2020 03:10:13 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
