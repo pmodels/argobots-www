@@ -8,6 +8,13 @@
 - cpu: x86/64
   host: JLSE Skylake
   os: openSUSE 15.2
+  compiler: clang11.0.0
+  pass: yes
+  commit_id: 9c58b3b1942f1d27b73ba7edd447e2022b195a33
+  date: Thu Dec 3 17:59:32 2020 -0600
+- cpu: x86/64
+  host: JLSE Skylake
+  os: openSUSE 15.2
   compiler: clang7.0.1
   pass: yes
   commit_id: 9c58b3b1942f1d27b73ba7edd447e2022b195a33
@@ -15,7 +22,7 @@
 - cpu: x86/64
   host: JLSE Skylake
   os: openSUSE 15.2
-  compiler: clang9.0.0
+  compiler: clang9.0.1
   pass: no
   commit_id: 9c58b3b1942f1d27b73ba7edd447e2022b195a33
   date: Thu Dec 3 17:59:32 2020 -0600
