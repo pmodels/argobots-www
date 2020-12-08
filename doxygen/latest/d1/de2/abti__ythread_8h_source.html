@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">9c58b3b1942f1d27b73ba7edd447e2022b195a33</span>
+   &#160;<span id="projectnumber">c7654167731757f09b08237e530801530876b931</span>
    </div>
   </td>
  </tr>
@@ -390,93 +390,108 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    }</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;}</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="comment">/* Return the previous thread. */</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_ythread *</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;ABTI_ythread_context_switch_to_sibling(ABTI_xstream **pp_local_xstream,</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                                       ABTI_ythread *p_old, ABTI_ythread *p_new)</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_ENABLE_PEEK_CONTEXT</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="preprocessor"></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_ythread_context_peek(ABTI_ythread *p_ythread,</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                                             <span class="keywordtype">void</span> (*peek_func)(<span class="keywordtype">void</span> *),</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                                             <span class="keywordtype">void</span> *arg)</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;{</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordflow">return</span> ABTI_ythread_context_switch_to_sibling_internal(pp_local_xstream,</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                                                           p_old, p_new,</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                                                           <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;}</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_ythread *ABTI_ythread_context_switch_to_parent(</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    ABTI_xstream **pp_local_xstream, ABTI_ythread *p_old,</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602f">ABT_sync_event_type</a> sync_event_type, <span class="keywordtype">void</span> *p_sync)</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;{</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordflow">return</span> ABTI_ythread_context_switch_to_parent_internal(pp_local_xstream,</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                                                          p_old, <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>,</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                                                          sync_event_type,</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                                                          p_sync);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;}</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_ythread *</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;ABTI_ythread_context_switch_to_child(ABTI_xstream **pp_local_xstream,</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                                     ABTI_ythread *p_old, ABTI_ythread *p_new)</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;{</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keywordflow">return</span> ABTI_ythread_context_switch_to_child_internal(pp_local_xstream,</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                                                         p_old, p_new);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;}</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a64c0a07a6bc37d45de89623a281c5b18">ABTU_noreturn</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;ABTI_ythread_finish_context_to_sibling(ABTI_xstream *p_local_xstream,</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                                       ABTI_ythread *p_old, ABTI_ythread *p_new)</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;{</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    ABTI_ythread_context_switch_to_sibling_internal(&amp;p_local_xstream, p_old,</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                                                    p_new, <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>);</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">ABTU_unreachable</a>();</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;}</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a64c0a07a6bc37d45de89623a281c5b18">ABTU_noreturn</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;ABTI_ythread_finish_context_to_parent(ABTI_xstream *p_local_xstream,</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                                      ABTI_ythread *p_old)</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;{</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    ABTI_ythread_context_switch_to_parent_internal(&amp;p_local_xstream, p_old,</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                                                   <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>,</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                                                   <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fa2801f298fea113717986e18eae45b7ab">ABT_SYNC_EVENT_TYPE_UNKNOWN</a>,</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                                                   NULL);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">ABTU_unreachable</a>();</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;}</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_ythread_yield(ABTI_xstream **pp_local_xstream,</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                                      ABTI_ythread *p_ythread,</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                                      <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602f">ABT_sync_event_type</a> sync_event_type,</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                                      <span class="keywordtype">void</span> *p_sync)</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;{</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[U%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] yield\n&quot;</span>,</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;              ABTI_thread_get_id(&amp;p_ythread-&gt;thread),</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;              p_ythread-&gt;thread.p_last_xstream-&gt;rank);</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="comment">/* Change the state of current running thread */</span></div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    ABTD_atomic_release_store_int(&amp;p_ythread-&gt;thread.state,</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                                  <a class="code" href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a>);</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="comment">/* Switch to the top scheduler */</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    ABTI_ythread_context_switch_to_parent(pp_local_xstream, p_ythread,</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                                          sync_event_type, p_sync);</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="comment">/* Back to the original thread */</span></div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[U%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] resume after yield\n&quot;</span>,</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;              ABTI_thread_get_id(&amp;p_ythread-&gt;thread),</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;              p_ythread-&gt;thread.p_last_xstream-&gt;rank);</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;}</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_YTHREAD_H_INCLUDED */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="preprocessor">#if ABT_CONFIG_THREAD_TYPE == ABT_THREAD_TYPE_DYNAMIC_PROMOTION</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">if</span> (!ABTI_ythread_is_dynamic_promoted(p_ythread)) {</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        ABTD_ythread_context_arm_ythread(p_ythread-&gt;stacksize,</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                                         p_ythread-&gt;p_stack, &amp;p_ythread-&gt;ctx);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    }</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor"></span>    ABTD_ythread_context_peek(&amp;p_ythread-&gt;ctx, peek_func, arg);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;}</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="comment">/* Return the previous thread. */</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_ythread *</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;ABTI_ythread_context_switch_to_sibling(ABTI_xstream **pp_local_xstream,</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                                       ABTI_ythread *p_old, ABTI_ythread *p_new)</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;{</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">return</span> ABTI_ythread_context_switch_to_sibling_internal(pp_local_xstream,</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                                                           p_old, p_new,</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                                                           <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;}</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_ythread *ABTI_ythread_context_switch_to_parent(</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    ABTI_xstream **pp_local_xstream, ABTI_ythread *p_old,</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602f">ABT_sync_event_type</a> sync_event_type, <span class="keywordtype">void</span> *p_sync)</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;{</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordflow">return</span> ABTI_ythread_context_switch_to_parent_internal(pp_local_xstream,</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                                                          p_old, <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>,</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                                                          sync_event_type,</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                                                          p_sync);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;}</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_ythread *</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;ABTI_ythread_context_switch_to_child(ABTI_xstream **pp_local_xstream,</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                                     ABTI_ythread *p_old, ABTI_ythread *p_new)</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;{</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keywordflow">return</span> ABTI_ythread_context_switch_to_child_internal(pp_local_xstream,</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                                                         p_old, p_new);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;}</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a64c0a07a6bc37d45de89623a281c5b18">ABTU_noreturn</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;ABTI_ythread_finish_context_to_sibling(ABTI_xstream *p_local_xstream,</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                                       ABTI_ythread *p_old, ABTI_ythread *p_new)</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;{</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    ABTI_ythread_context_switch_to_sibling_internal(&amp;p_local_xstream, p_old,</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                                                    p_new, <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>);</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">ABTU_unreachable</a>();</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;}</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a64c0a07a6bc37d45de89623a281c5b18">ABTU_noreturn</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;ABTI_ythread_finish_context_to_parent(ABTI_xstream *p_local_xstream,</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                                      ABTI_ythread *p_old)</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;{</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    ABTI_ythread_context_switch_to_parent_internal(&amp;p_local_xstream, p_old,</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                                                   <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>,</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                                                   <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fa2801f298fea113717986e18eae45b7ab">ABT_SYNC_EVENT_TYPE_UNKNOWN</a>,</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                                                   NULL);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">ABTU_unreachable</a>();</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;}</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_ythread_yield(ABTI_xstream **pp_local_xstream,</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                                      ABTI_ythread *p_ythread,</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                                      <a class="code" href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602f">ABT_sync_event_type</a> sync_event_type,</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                                      <span class="keywordtype">void</span> *p_sync)</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;{</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[U%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] yield\n&quot;</span>,</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;              ABTI_thread_get_id(&amp;p_ythread-&gt;thread),</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;              p_ythread-&gt;thread.p_last_xstream-&gt;rank);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="comment">/* Change the state of current running thread */</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    ABTD_atomic_release_store_int(&amp;p_ythread-&gt;thread.state,</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                                  <a class="code" href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a>);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="comment">/* Switch to the top scheduler */</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    ABTI_ythread_context_switch_to_parent(pp_local_xstream, p_ythread,</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                                          sync_event_type, p_sync);</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="comment">/* Back to the original thread */</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[U%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] resume after yield\n&quot;</span>,</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;              ABTI_thread_get_id(&amp;p_ythread-&gt;thread),</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;              p_ythread-&gt;thread.p_last_xstream-&gt;rank);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;}</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_YTHREAD_H_INCLUDED */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="abtu_8h_html_ae3782cfe8ab5b4b64d7da16a6fd6c84b"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">ABTU_unreachable</a></div><div class="ttdeci">#define ABTU_unreachable()</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00116">abtu.h:116</a></div></div>
-<div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00377">abt.h:377</a></div></div>
+<div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00379">abt.h:379</a></div></div>
 <div class="ttc" id="abt_8h_html_aa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00126">abt.h:126</a></div></div>
-<div class="ttc" id="abt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00289">abt.h:289</a></div></div>
-<div class="ttc" id="abt_8h_html_a186008e05c04170eed9ac74808619717"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a></div><div class="ttdeci">struct ABT_thread_opaque * ABT_thread</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00347">abt.h:347</a></div></div>
-<div class="ttc" id="abt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00288">abt.h:288</a></div></div>
-<div class="ttc" id="abt_8h_html_aabf134f2165a5d15ea5bd063b982d8a6"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aabf134f2165a5d15ea5bd063b982d8a6">ABT_THREAD_NULL</a></div><div class="ttdeci">#define ABT_THREAD_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00420">abt.h:420</a></div></div>
+<div class="ttc" id="abt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00291">abt.h:291</a></div></div>
+<div class="ttc" id="abt_8h_html_a186008e05c04170eed9ac74808619717"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a></div><div class="ttdeci">struct ABT_thread_opaque * ABT_thread</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00349">abt.h:349</a></div></div>
+<div class="ttc" id="abt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00290">abt.h:290</a></div></div>
+<div class="ttc" id="abt_8h_html_aabf134f2165a5d15ea5bd063b982d8a6"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aabf134f2165a5d15ea5bd063b982d8a6">ABT_THREAD_NULL</a></div><div class="ttdeci">#define ABT_THREAD_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00422">abt.h:422</a></div></div>
 <div class="ttc" id="abtu_8h_html_a64c0a07a6bc37d45de89623a281c5b18"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a64c0a07a6bc37d45de89623a281c5b18">ABTU_noreturn</a></div><div class="ttdeci">#define ABTU_noreturn</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00122">abtu.h:122</a></div></div>
 <div class="ttc" id="abti__log_8h_html_ac06cfc686322558f590c50eab8622ebd"><div class="ttname"><a href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></div><div class="ttdeci">#define LOG_DEBUG(fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5e/abti__log_8h_source.html#l00026">abti_log.h:26</a></div></div>
-<div class="ttc" id="abt_8h_html_ac601a9db309d1a30954d43fc82d9602f"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602f">ABT_sync_event_type</a></div><div class="ttdeci">ABT_sync_event_type</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00248">abt.h:248</a></div></div>
-<div class="ttc" id="abt_8h_html_ac601a9db309d1a30954d43fc82d9602fa2801f298fea113717986e18eae45b7ab"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fa2801f298fea113717986e18eae45b7ab">ABT_SYNC_EVENT_TYPE_UNKNOWN</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00249">abt.h:249</a></div></div>
+<div class="ttc" id="abt_8h_html_ac601a9db309d1a30954d43fc82d9602f"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602f">ABT_sync_event_type</a></div><div class="ttdeci">ABT_sync_event_type</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00250">abt.h:250</a></div></div>
+<div class="ttc" id="abt_8h_html_ac601a9db309d1a30954d43fc82d9602fa2801f298fea113717986e18eae45b7ab"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ac601a9db309d1a30954d43fc82d9602fa2801f298fea113717986e18eae45b7ab">ABT_SYNC_EVENT_TYPE_UNKNOWN</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00251">abt.h:251</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 4 2020 03:10:02 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 8 2020 03:10:05 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

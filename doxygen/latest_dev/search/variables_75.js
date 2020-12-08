@@ -7,6 +7,7 @@ var searchData=
   ['u_5fget_5fthread',['u_get_thread',['../d4/dfc/structABT__pool__def.html#ac0eac1f3ac108545b04e9fb64b2c75c5',1,'ABT_pool_def::u_get_thread()'],['../df/d65/structABTI__pool.html#a7f526cd3a471b2fba9781270715cc0b6',1,'ABTI_pool::u_get_thread()']]],
   ['u_5fget_5ftype',['u_get_type',['../d4/dfc/structABT__pool__def.html#a5903d0a63d8d22bc4fac0ac9b1362263',1,'ABT_pool_def::u_get_type()'],['../df/d65/structABTI__pool.html#a266d095cc36e71d36f23ef309bedbaa5',1,'ABTI_pool::u_get_type()']]],
   ['u_5fis_5fin_5fpool',['u_is_in_pool',['../d4/dfc/structABT__pool__def.html#afc257afd1c8a0f00619472dc415a4888',1,'ABT_pool_def::u_is_in_pool()'],['../df/d65/structABTI__pool.html#a7241ea6d1f864ca9109d4a4623c6c79b',1,'ABTI_pool::u_is_in_pool()']]],
+  ['uctx',['uctx',['../d8/df3/structABTD__ythread__context.html#ab34e4248b9fbc0581cb12e7dd0ef37b8',1,'ABTD_ythread_context']]],
   ['unit',['unit',['../d3/d55/structABTI__thread.html#ab1e810da505f079679018cf258a55e6e',1,'ABTI_thread']]],
   ['use_5fdebug',['use_debug',['../da/de9/structABTI__global.html#a10822ec93d832ba369fc83a35875d88b',1,'ABTI_global']]],
   ['use_5flogging',['use_logging',['../da/de9/structABTI__global.html#ac00baa795c667ecf0ceb29710d86ef83',1,'ABTI_global']]],
