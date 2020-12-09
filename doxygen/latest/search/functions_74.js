@@ -2,6 +2,7 @@ var searchData=
 [
   ['take_5ffcontext',['take_fcontext',['../d4/d27/abtd__fcontext_8h.html#a3ab3d803b940870b95764b1d4df3a60b',1,'abtd_fcontext.h']]],
   ['task_5fcreate',['task_create',['../d3/d3f/task_8c.html#a9eb8933f3721acc486674013a68e3052',1,'task.c']]],
+  ['thread_5fattr_5fset_5fstack',['thread_attr_set_stack',['../de/de6/thread__attr_8c.html#a58e9656cdb4c2654b9b7a2f19f6f5e20',1,'thread_attr.c']]],
   ['thread_5ffree',['thread_free',['../d3/de7/thread_8c.html#ac69f5c99c8a3398eec1873182abd94ac',1,'thread.c']]],
   ['thread_5fget_5fnew_5fid',['thread_get_new_id',['../d3/de7/thread_8c.html#ade9fa54421ef7744879a7a0b36572471',1,'thread.c']]],
   ['thread_5fjoin',['thread_join',['../d3/de7/thread_8c.html#ad3ed34193107c252807c0e1c9898392f',1,'thread.c']]],
