@@ -26,6 +26,5 @@ var searchData=
   ['is_5ffrom_5fmempool',['is_from_mempool',['../da/d3e/structABTI__ktable__mem__header.html#adca4c666eb8f27571f7c04a086aa046d',1,'ABTI_ktable_mem_header']]],
   ['is_5fin_5fpool',['is_in_pool',['../d3/d55/structABTI__thread.html#a519d77e3bb0780d437efd2713185dbe3',1,'ABTI_thread']]],
   ['is_5ftrue',['is_true',['../de/d68/abtd__env_8c.html#a3be13f7f1d5dd3dca946ef4113c95d72',1,'abtd_env.c']]],
-  ['is_5fwhitespace',['is_whitespace',['../d0/d31/abtd__affinity__parser_8c.html#acc7f63289d0484554fd5f4b1debb4450',1,'abtd_affinity_parser.c']]],
-  ['interface',['interface',['../d3/d05/group__Tool.html',1,'']]]
+  ['is_5fwhitespace',['is_whitespace',['../d0/d31/abtd__affinity__parser_8c.html#acc7f63289d0484554fd5f4b1debb4450',1,'abtd_affinity_parser.c']]]
 ];

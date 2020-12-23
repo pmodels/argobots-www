@@ -22,6 +22,5 @@ var searchData=
   ['int_5frem',['int_rem',['../d2/d45/abtd__affinity_8c.html#a4caa8796c4d7938443dbe263cfb2e44c',1,'abtd_affinity.c']]],
   ['is_5ffalse',['is_false',['../de/d68/abtd__env_8c.html#a7f476f009611c0fdc2cc908e0288642b',1,'abtd_env.c']]],
   ['is_5ftrue',['is_true',['../de/d68/abtd__env_8c.html#a3be13f7f1d5dd3dca946ef4113c95d72',1,'abtd_env.c']]],
-  ['is_5fwhitespace',['is_whitespace',['../d0/d31/abtd__affinity__parser_8c.html#acc7f63289d0484554fd5f4b1debb4450',1,'abtd_affinity_parser.c']]],
-  ['interface',['interface',['../d3/d05/group__Tool.html',1,'']]]
+  ['is_5fwhitespace',['is_whitespace',['../d0/d31/abtd__affinity__parser_8c.html#acc7f63289d0484554fd5f4b1debb4450',1,'abtd_affinity_parser.c']]]
 ];
