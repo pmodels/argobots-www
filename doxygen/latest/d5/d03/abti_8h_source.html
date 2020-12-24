@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">0a89091e5608424c806875ff852cfcd0f8ccfd9d</span>
+   &#160;<span id="projectnumber">15713c48615c92ed4e08c7880ac0e09c8741b209</span>
    </div>
   </td>
  </tr>
@@ -163,7 +163,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#define ABTI_THREAD_TYPE_EXT ((ABTI_thread_type)0)</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ABTI_THREAD_TYPE_THREAD ((ABTI_thread_type)(0x1 &lt;&lt; 0))</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ABTI_THREAD_TYPE_ROOT ((ABTI_thread_type)(0x1 &lt;&lt; 1))</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ABTI_THREAD_TYPE_MAIN ((ABTI_thread_type)(0x1 &lt;&lt; 2))</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ABTI_THREAD_TYPE_PRIMARY ((ABTI_thread_type)(0x1 &lt;&lt; 2))</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ABTI_THREAD_TYPE_MAIN_SCHED ((ABTI_thread_type)(0x1 &lt;&lt; 3))</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ABTI_THREAD_TYPE_YIELDABLE ((ABTI_thread_type)(0x1 &lt;&lt; 4))</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ABTI_THREAD_TYPE_NAMED ((ABTI_thread_type)(0x1 &lt;&lt; 5))</span></div>
@@ -268,16 +268,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        xstream_list_lock; <span class="comment">/* Spinlock protecting ES list. Any read and</span></div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">                            * write to this list requires a lock.*/</span></div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordtype">int</span> num_cores;                <span class="comment">/* Number of CPU cores */</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> set_affinity;        <span class="comment">/* Whether CPU affinity is used */</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> use_logging;         <span class="comment">/* Whether logging is used */</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> use_debug;           <span class="comment">/* Whether debug output is used */</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    uint32_t key_table_size;      <span class="comment">/* Default key table size */</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">size_t</span> thread_stacksize;      <span class="comment">/* Default stack size for ULT (in bytes) */</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">size_t</span> sched_stacksize;       <span class="comment">/* Default stack size for sched (in bytes) */</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    uint32_t sched_event_freq;    <span class="comment">/* Default check frequency for sched */</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    uint64_t sched_sleep_nsec;    <span class="comment">/* Default nanoseconds for scheduler sleep */</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    ABTI_ythread *p_main_ythread; <span class="comment">/* ULT of the main function */</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordtype">int</span> num_cores;             <span class="comment">/* Number of CPU cores */</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> set_affinity;     <span class="comment">/* Whether CPU affinity is used */</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> use_logging;      <span class="comment">/* Whether logging is used */</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> use_debug;        <span class="comment">/* Whether debug output is used */</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    uint32_t key_table_size;   <span class="comment">/* Default key table size */</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">size_t</span> thread_stacksize;   <span class="comment">/* Default stack size for ULT (in bytes) */</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">size_t</span> sched_stacksize;    <span class="comment">/* Default stack size for sched (in bytes) */</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    uint32_t sched_event_freq; <span class="comment">/* Default check frequency for sched */</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    uint64_t sched_sleep_nsec; <span class="comment">/* Default nanoseconds for scheduler sleep */</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    ABTI_ythread *p_primary_ythread; <span class="comment">/* Primary ULT */</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    uint32_t</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        mutex_max_handovers;    <span class="comment">/* Default max. # of local handovers (unused) */</span></div>
@@ -489,7 +489,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;<span class="keyword">struct </span>ABTI_future {</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    ABTI_spinlock lock;</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    ABTD_atomic_size counter;</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="keywordtype">size_t</span> compartments;</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="keywordtype">size_t</span> num_compartments;</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <span class="keywordtype">void</span> **array;</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    void (*p_callback)(<span class="keywordtype">void</span> **arg);</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    ABTI_waitlist waitlist;</div>
@@ -613,9 +613,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keywordtype">int</span> ABTI_ythread_create_root(ABTI_local *p_local,</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                                          ABTI_xstream *p_xstream,</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                                          ABTI_ythread **pp_root_ythread);</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keywordtype">int</span> ABTI_ythread_create_main(ABTI_local *p_local,</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                                          ABTI_xstream *p_xstream,</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;                                          ABTI_ythread **p_ythread);</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keywordtype">int</span> ABTI_ythread_create_primary(ABTI_local *p_local,</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                                             ABTI_xstream *p_xstream,</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;                                             ABTI_ythread **p_ythread);</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keywordtype">int</span> ABTI_ythread_create_main_sched(ABTI_local *p_local,</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                                                ABTI_xstream *p_xstream,</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;                                                ABTI_sched *p_sched);</div>
@@ -624,7 +624,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;                                           ABTI_sched *p_sched);</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a64c0a07a6bc37d45de89623a281c5b18">ABTU_noreturn</a> <span class="keywordtype">void</span> ABTI_ythread_exit(ABTI_xstream *p_local_xstream,</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                                     ABTI_ythread *p_ythread);</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;<span class="keywordtype">void</span> ABTI_ythread_free_main(ABTI_local *p_local, ABTI_ythread *p_ythread);</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;<span class="keywordtype">void</span> ABTI_ythread_free_primary(ABTI_local *p_local, ABTI_ythread *p_ythread);</div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;<span class="keywordtype">void</span> ABTI_ythread_free_root(ABTI_local *p_local, ABTI_ythread *p_ythread);</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;<span class="keywordtype">void</span> ABTI_ythread_set_blocked(ABTI_ythread *p_ythread);</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;<span class="keywordtype">void</span> ABTI_ythread_suspend(ABTI_xstream **pp_local_xstream,</div>
@@ -747,7 +747,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 23 2020 03:09:57 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 24 2020 03:10:11 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">0a89091e5608424c806875ff852cfcd0f8ccfd9d</span>
+   &#160;<span id="projectnumber">15713c48615c92ed4e08c7880ac0e09c8741b209</span>
    </div>
   </td>
  </tr>
@@ -85,17 +85,17 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga7b291bf2d0895e7618fdf0549fdbbe39"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#ga7b291bf2d0895e7618fdf0549fdbbe39">ABT_mutex_attr_create</a> (<a class="el" href="../../d5/d7d/abt_8h.html#aac5794c17511377fbc02410a5ba2e6fb">ABT_mutex_attr</a> *newattr)</td></tr>
-<tr class="memdesc:ga7b291bf2d0895e7618fdf0549fdbbe39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new mutex attribute object.  <a href="#ga7b291bf2d0895e7618fdf0549fdbbe39">More...</a><br/></td></tr>
+<tr class="memdesc:ga7b291bf2d0895e7618fdf0549fdbbe39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new mutex attribute.  <a href="#ga7b291bf2d0895e7618fdf0549fdbbe39">More...</a><br/></td></tr>
 <tr class="separator:ga7b291bf2d0895e7618fdf0549fdbbe39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga347126c6ff3d3b4332ff94db33a711ee"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#ga347126c6ff3d3b4332ff94db33a711ee">ABT_mutex_attr_free</a> (<a class="el" href="../../d5/d7d/abt_8h.html#aac5794c17511377fbc02410a5ba2e6fb">ABT_mutex_attr</a> *attr)</td></tr>
-<tr class="memdesc:ga347126c6ff3d3b4332ff94db33a711ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the mutex attribute object.  <a href="#ga347126c6ff3d3b4332ff94db33a711ee">More...</a><br/></td></tr>
+<tr class="memdesc:ga347126c6ff3d3b4332ff94db33a711ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a mutex attribute.  <a href="#ga347126c6ff3d3b4332ff94db33a711ee">More...</a><br/></td></tr>
 <tr class="separator:ga347126c6ff3d3b4332ff94db33a711ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab9e57fb8431079ae6fd13ec45887af83"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#gab9e57fb8431079ae6fd13ec45887af83">ABT_mutex_attr_set_recursive</a> (<a class="el" href="../../d5/d7d/abt_8h.html#aac5794c17511377fbc02410a5ba2e6fb">ABT_mutex_attr</a> attr, <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> recursive)</td></tr>
-<tr class="memdesc:gab9e57fb8431079ae6fd13ec45887af83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the recursive property in the attribute object.  <a href="#gab9e57fb8431079ae6fd13ec45887af83">More...</a><br/></td></tr>
+<tr class="memdesc:gab9e57fb8431079ae6fd13ec45887af83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a recursive property in a mutex attribute.  <a href="#gab9e57fb8431079ae6fd13ec45887af83">More...</a><br/></td></tr>
 <tr class="separator:gab9e57fb8431079ae6fd13ec45887af83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Attributes are used to specify mutex behavior that is different from the default. When a mutex is created with <code><a class="el" href="../../d2/d09/group__MUTEX.html#ga148c09e5d11e5c6c5ecabb30042caeab" title="Create a new mutex with attributes. ">ABT_mutex_create_with_attr()</a></code>, attributes can be specified with an <code>ABT_mutex_attr</code> object. </p>
+<p>Mutex attributes are used to specify mutex behavior that is different from the default. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ga7b291bf2d0895e7618fdf0549fdbbe39"></a>
 <div class="memitem">
@@ -111,23 +111,25 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Create a new mutex attribute object. </p>
-<p><code><a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#ga7b291bf2d0895e7618fdf0549fdbbe39" title="Create a new mutex attribute object. ">ABT_mutex_attr_create()</a></code> creates a mutex attribute object with default attribute values. The handle to the attribute object is returned through <code>newattr</code>. The attribute object can be used in more than one mutex.</p>
+<p>Create a new mutex attribute. </p>
+<p><code><a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#ga7b291bf2d0895e7618fdf0549fdbbe39" title="Create a new mutex attribute. ">ABT_mutex_attr_create()</a></code> creates a new mutex attribute with default attribute values and returns its handle through <code>newattr</code>.</p>
+<p>The default parameters are as follows:</p>
+<ul>
+<li>Not recursive.</li>
+</ul>
+<p><code>newattr</code> must be freed by <code><a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#ga347126c6ff3d3b4332ff94db33a711ee" title="Free a mutex attribute. ">ABT_mutex_attr_free()</a></code> after its use.</p>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned. If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned. If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.</dd></dl>
+<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined. If <code>newattr</code> is <code>NULL</code>, the results are undefined.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">newattr</td><td>handle to a new attribute object </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">newattr</td><td>mutex attribute handle </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">ABT_SUCCESS</td><td>on success </td></tr>
-  </table>
-  </dd>
-</dl>
 
-<p>Definition at line <a class="el" href="../../da/d36/mutex__attr_8c_source.html#l00026">26</a> of file <a class="el" href="../../da/d36/mutex__attr_8c_source.html">mutex_attr.c</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d36/mutex__attr_8c_source.html#l00039">39</a> of file <a class="el" href="../../da/d36/mutex__attr_8c_source.html">mutex_attr.c</a>.</p>
 
 </div>
 </div>
@@ -145,23 +147,20 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Free the mutex attribute object. </p>
-<p><code><a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#ga347126c6ff3d3b4332ff94db33a711ee" title="Free the mutex attribute object. ">ABT_mutex_attr_free()</a></code> deallocates memory used for the mutex attribute object. If this function successfully returns, <code>attr</code> will be set to <code>ABT_MUTEX_ATTR_NULL</code>.</p>
+<p>Free a mutex attribute. </p>
+<p><code><a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#ga347126c6ff3d3b4332ff94db33a711ee" title="Free a mutex attribute. ">ABT_mutex_attr_free()</a></code> deallocates the resource used for the mutex attribute <code>attr</code> and sets <code>attr</code> to <code>ABT_MUTEX_ATTR_NULL</code>.</p>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned. If <code>attr</code> points to <code>ABT_MUTEX_ATTR_NULL</code>, <code>ABT_ERR_INV_MUTEX_ATTR</code> is returned.</dd></dl>
+<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined. If <code>attr</code> is <code>NULL</code>, the results are undefined. If <code>attr</code> is accessed after calling this routine, the results are undefined.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">attr</td><td>handle to the target attribute object </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">attr</td><td>mutex attribute handle </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">ABT_SUCCESS</td><td>on success </td></tr>
-  </table>
-  </dd>
-</dl>
 
-<p>Definition at line <a class="el" href="../../da/d36/mutex__attr_8c_source.html#l00055">55</a> of file <a class="el" href="../../da/d36/mutex__attr_8c_source.html">mutex_attr.c</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d36/mutex__attr_8c_source.html#l00078">78</a> of file <a class="el" href="../../da/d36/mutex__attr_8c_source.html">mutex_attr.c</a>.</p>
 
 </div>
 </div>
@@ -189,31 +188,28 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the recursive property in the attribute object. </p>
-<p><code><a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#gab9e57fb8431079ae6fd13ec45887af83" title="Set the recursive property in the attribute object. ">ABT_mutex_attr_set_recursive()</a></code> sets the recursive property (i.e., whether the mutex can be locked multiple times by the same owner) in the attribute object associated with handle <code>attr</code>.</p>
+<p>Set a recursive property in a mutex attribute. </p>
+<p><code><a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#gab9e57fb8431079ae6fd13ec45887af83" title="Set a recursive property in a mutex attribute. ">ABT_mutex_attr_set_recursive()</a></code> sets the recursive property (i.e., whether the mutex can be locked multiple times by the same owner or not) in the mutex attribute <code>attr</code>. If <code>recursive</code> is <code>ABT_TRUE</code>, the recursive flag of <code>attr</code> is set. Otherwise, the recursive flag of <code>attr</code> is unset.</p>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned. If <code>attr</code> is <code>ABT_MUTEX_ATTR_NULL</code>, <code>ABT_ERR_INV_MUTEX_ATTR</code> is returned.</dd></dl>
+<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined. If <code>recursive</code> is neither <code>ABT_TRUE</code> nor <code>ABT_FALSE</code>, the results are undefined. If <code>attr</code> is accessed concurrently, the results are undefined.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">attr</td><td>handle to the target attribute object </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">recursive</td><td>boolean value for the recursive locking support </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">attr</td><td>mutex attribute handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">recursive</td><td>flag for a recursive locking support </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">ABT_SUCCESS</td><td>on success </td></tr>
-  </table>
-  </dd>
-</dl>
 
-<p>Definition at line <a class="el" href="../../da/d36/mutex__attr_8c_source.html#l00081">81</a> of file <a class="el" href="../../da/d36/mutex__attr_8c_source.html">mutex_attr.c</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d36/mutex__attr_8c_source.html#l00116">116</a> of file <a class="el" href="../../da/d36/mutex__attr_8c_source.html">mutex_attr.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 23 2020 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 24 2020 03:10:10 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

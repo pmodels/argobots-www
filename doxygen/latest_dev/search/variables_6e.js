@@ -5,6 +5,7 @@ var searchData=
   ['nesting_5fcnt',['nesting_cnt',['../df/de7/structABTI__mutex__attr.html#a576e00bb9e0d76f8df7a5b6b6466edf0',1,'ABTI_mutex_attr']]],
   ['num',['num',['../dd/d5a/structABTD__affinity__id__list.html#ac86fbf097a663a0f4db91e46669f9144',1,'ABTD_affinity_id_list::num()'],['../df/dd1/structABTD__affinity__parser__list.html#a60697e8ad40e6de90ff5610d0f227572',1,'ABTD_affinity_parser_list::num()'],['../d2/d94/structinfo__pool__set__t.html#ac63466bb29f4470e4a73c4ed87a758c0',1,'info_pool_set_t::num()']]],
   ['num_5fblocked',['num_blocked',['../df/d65/structABTI__pool.html#a0fd1b0b5ef5c29d28fab24f86c97d839',1,'ABTI_pool']]],
+  ['num_5fcompartments',['num_compartments',['../d1/db2/structABTI__future.html#a4344c029edd93f39464608ef819176a9',1,'ABTI_future']]],
   ['num_5fcores',['num_cores',['../da/de9/structABTI__global.html#a2fac521035c8d3fca9135cd7b3b0d961',1,'ABTI_global']]],
   ['num_5fcpuids',['num_cpuids',['../d6/d62/structABTD__affinity__cpuset.html#afcdcdd5dc2b9a2fc94f829068f094145',1,'ABTD_affinity_cpuset']]],
   ['num_5fcpusets',['num_cpusets',['../d6/dcd/structglobal__affinity.html#a5910713bf41407253745e49076d3c2c9',1,'global_affinity']]],

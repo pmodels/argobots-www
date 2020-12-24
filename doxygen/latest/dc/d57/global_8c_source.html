@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">0a89091e5608424c806875ff852cfcd0f8ccfd9d</span>
+   &#160;<span id="projectnumber">15713c48615c92ed4e08c7880ac0e09c8741b209</span>
    </div>
   </td>
  </tr>
@@ -195,22 +195,22 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="comment">/* Init the ES local data */</span></div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    ABTI_local_set_xstream(p_local_xstream);</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">/* Create the primary ULT, i.e., the main thread */</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    ABTI_ythread *p_main_ythread;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">/* Create the primary ULT */</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    ABTI_ythread *p_primary_ythread;</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    abt_errno =</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        ABTI_ythread_create_main(ABTI_xstream_get_local(p_local_xstream),</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                 p_local_xstream, &amp;p_main_ythread);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">/* Set as if p_local_xstream is currently running the main thread. */</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    ABTD_atomic_relaxed_store_int(&amp;p_main_ythread-&gt;thread.state,</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        ABTI_ythread_create_primary(ABTI_xstream_get_local(p_local_xstream),</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                    p_local_xstream, &amp;p_primary_ythread);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">/* Set as if p_local_xstream is currently running the primary ULT. */</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    ABTD_atomic_relaxed_store_int(&amp;p_primary_ythread-&gt;thread.state,</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                                  <a class="code" href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089ae0a7acd9ed47699f063ee2128f9f7ef6">ABT_THREAD_STATE_RUNNING</a>);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    p_main_ythread-&gt;thread.p_last_xstream = p_local_xstream;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    p_primary_ythread-&gt;thread.p_last_xstream = p_local_xstream;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;p_main_ythread = p_main_ythread;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    p_local_xstream-&gt;p_thread = &amp;p_main_ythread-&gt;thread;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;p_primary_ythread = p_primary_ythread;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    p_local_xstream-&gt;p_thread = &amp;p_primary_ythread-&gt;thread;</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="comment">/* Start the primary ES */</span></div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    ABTI_xstream_start_primary(&amp;p_local_xstream, p_local_xstream,</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                               p_main_ythread);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                               p_primary_ythread);</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;print_config == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>) {</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        ABTI_info_print_config(stdout);</div>
@@ -240,7 +240,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                        <span class="stringliteral">&quot;ABT_finalize must be called by the primary ES.&quot;</span>);</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    ABTI_thread *p_self = p_local_xstream-&gt;p_thread;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    ABTI_CHECK_TRUE_MSG(p_self-&gt;type &amp; ABTI_THREAD_TYPE_MAIN,</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    ABTI_CHECK_TRUE_MSG(p_self-&gt;type &amp; ABTI_THREAD_TYPE_PRIMARY,</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                        <a class="code" href="../../d5/d7d/abt_8h.html#a2b54886c7ce2ed912e6a477815c3ac66">ABT_ERR_INV_THREAD</a>,</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                        <span class="stringliteral">&quot;ABT_finalize must be called by the primary ULT.&quot;</span>);</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    ABTI_ythread *p_ythread;</div>
@@ -266,32 +266,33 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="comment">/* Remove the primary ULT */</span></div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    p_local_xstream-&gt;p_thread = NULL;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    ABTI_ythread_free_main(ABTI_xstream_get_local(p_local_xstream), p_ythread);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="comment">/* Free the primary ES */</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    ABTI_xstream_free(ABTI_xstream_get_local(p_local_xstream), p_local_xstream,</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                      <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="comment">/* Finalize the ES local data */</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    ABTI_local_set_xstream(NULL);</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="comment">/* Free the ES array */</span></div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    ABTI_ASSERT(<a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;p_xstream_head == NULL);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="comment">/* Finalize the memory pool */</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    ABTI_mem_finalize(<a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="comment">/* Restore the affinity */</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;set_affinity == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>) {</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        ABTD_affinity_finalize();</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    }</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="comment">/* Free the ABTI_global structure */</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(<a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a> = NULL;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    ABTD_atomic_release_store_uint32(&amp;<a class="code" href="../../dc/d57/global_8c.html#aa8f87a77cc849e3173fc911bc4c44142">g_ABTI_initialized</a>, 0);</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;}</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    ABTI_ythread_free_primary(ABTI_xstream_get_local(p_local_xstream),</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                              p_ythread);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="comment">/* Free the primary ES */</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    ABTI_xstream_free(ABTI_xstream_get_local(p_local_xstream), p_local_xstream,</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                      <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="comment">/* Finalize the ES local data */</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    ABTI_local_set_xstream(NULL);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="comment">/* Free the ES array */</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    ABTI_ASSERT(<a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;p_xstream_head == NULL);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="comment">/* Finalize the memory pool */</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    ABTI_mem_finalize(<a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="comment">/* Restore the affinity */</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;set_affinity == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>) {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        ABTD_affinity_finalize();</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="comment">/* Free the ABTI_global structure */</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(<a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a> = NULL;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    ABTD_atomic_release_store_uint32(&amp;<a class="code" href="../../dc/d57/global_8c.html#aa8f87a77cc849e3173fc911bc4c44142">g_ABTI_initialized</a>, 0);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;}</div>
 <div class="ttc" id="group__ENV_html_ga068e0ac9ffecb4b9a3cd8b238d632be8"><div class="ttname"><a href="../../d4/d00/group__ENV.html#ga068e0ac9ffecb4b9a3cd8b238d632be8">ABT_init</a></div><div class="ttdeci">int ABT_init(int argc, char **argv) ABT_API_PUBLIC</div><div class="ttdoc">Initialize the Argobots execution environment. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d57/global_8c_source.html#l00044">global.c:44</a></div></div>
 <div class="ttc" id="global_8c_html_a8bcdff6faa4f871c5866c6206e9966cc"><div class="ttname"><a href="../../dc/d57/global_8c.html#a8bcdff6faa4f871c5866c6206e9966cc">init_library</a></div><div class="ttdeci">static ABTU_ret_err int init_library(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d57/global_8c_source.html#l00109">global.c:109</a></div></div>
 <div class="ttc" id="global_8c_html_aa8f87a77cc849e3173fc911bc4c44142"><div class="ttname"><a href="../../dc/d57/global_8c.html#aa8f87a77cc849e3173fc911bc4c44142">g_ABTI_initialized</a></div><div class="ttdeci">static ABTD_atomic_uint32 g_ABTI_initialized</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d57/global_8c_source.html#l00025">global.c:25</a></div></div>
@@ -316,7 +317,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 23 2020 03:09:57 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 24 2020 03:10:11 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

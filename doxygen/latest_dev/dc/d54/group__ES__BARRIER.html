@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>ARGOBOTS: ES barrier</title>
+<title>ARGOBOTS: Execution-Stream Barrier</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">0a89091e5608424c806875ff852cfcd0f8ccfd9d</span>
+   &#160;<span id="projectnumber">15713c48615c92ed4e08c7880ac0e09c8741b209</span>
    </div>
   </td>
  </tr>
@@ -78,24 +78,24 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">ES barrier</div>  </div>
+<div class="title">Execution-Stream Barrier</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga9df48f67278b6b78ea7efb79d829c63f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/group__ES__BARRIER.html#ga9df48f67278b6b78ea7efb79d829c63f">ABT_xstream_barrier_create</a> (uint32_t num_waiters, <a class="el" href="../../d5/d7d/abt_8h.html#a77c35d8ec4598d111b01acaed11de536">ABT_xstream_barrier</a> *newbarrier)</td></tr>
-<tr class="memdesc:ga9df48f67278b6b78ea7efb79d829c63f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new ES barrier.  <a href="#ga9df48f67278b6b78ea7efb79d829c63f">More...</a><br/></td></tr>
+<tr class="memdesc:ga9df48f67278b6b78ea7efb79d829c63f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new execution-stream barrier.  <a href="#ga9df48f67278b6b78ea7efb79d829c63f">More...</a><br/></td></tr>
 <tr class="separator:ga9df48f67278b6b78ea7efb79d829c63f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac540cb325432a8b6c33bfbac053ba02f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/group__ES__BARRIER.html#gac540cb325432a8b6c33bfbac053ba02f">ABT_xstream_barrier_free</a> (<a class="el" href="../../d5/d7d/abt_8h.html#a77c35d8ec4598d111b01acaed11de536">ABT_xstream_barrier</a> *barrier)</td></tr>
-<tr class="memdesc:gac540cb325432a8b6c33bfbac053ba02f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the ES barrier.  <a href="#gac540cb325432a8b6c33bfbac053ba02f">More...</a><br/></td></tr>
+<tr class="memdesc:gac540cb325432a8b6c33bfbac053ba02f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free an execution-stream barrier.  <a href="#gac540cb325432a8b6c33bfbac053ba02f">More...</a><br/></td></tr>
 <tr class="separator:gac540cb325432a8b6c33bfbac053ba02f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga80a776789efc225e6e24a901f31a4374"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/group__ES__BARRIER.html#ga80a776789efc225e6e24a901f31a4374">ABT_xstream_barrier_wait</a> (<a class="el" href="../../d5/d7d/abt_8h.html#a77c35d8ec4598d111b01acaed11de536">ABT_xstream_barrier</a> barrier)</td></tr>
-<tr class="memdesc:ga80a776789efc225e6e24a901f31a4374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait on the barrier.  <a href="#ga80a776789efc225e6e24a901f31a4374">More...</a><br/></td></tr>
+<tr class="memdesc:ga80a776789efc225e6e24a901f31a4374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait on an execution-stream barrier.  <a href="#ga80a776789efc225e6e24a901f31a4374">More...</a><br/></td></tr>
 <tr class="separator:ga80a776789efc225e6e24a901f31a4374"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>This group is for ES barrier. </p>
+<p>This group is for Execution-Stream Barrier. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ga9df48f67278b6b78ea7efb79d829c63f"></a>
 <div class="memitem">
@@ -121,24 +121,30 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Create a new ES barrier. </p>
-<p><code><a class="el" href="../../dc/d54/group__ES__BARRIER.html#ga9df48f67278b6b78ea7efb79d829c63f" title="Create a new ES barrier. ">ABT_xstream_barrier_create()</a></code> creates a new ES barrier and returns its handle through <code>newbarrier</code>. If an error occurs in this routine, a non-zero error code will be returned and <code>newbarrier</code> will be set to <code>ABT_XSTREAM_BARRIER_NULL</code>.</p>
+<p>Create a new execution-stream barrier. </p>
+<p><code><a class="el" href="../../dc/d54/group__ES__BARRIER.html#ga9df48f67278b6b78ea7efb79d829c63f" title="Create a new execution-stream barrier. ">ABT_xstream_barrier_create()</a></code> creates a new execution-stream barrier and returns its handle through <code>newbarrier</code>. <code>num_waiters</code> specifies the number of waiters that must call <code><a class="el" href="../../dc/d54/group__ES__BARRIER.html#ga9df48f67278b6b78ea7efb79d829c63f" title="Create a new execution-stream barrier. ">ABT_xstream_barrier_create()</a></code> before any of the waiters successfully return from the call. <code>num_waiters</code> must be greater than zero.</p>
+<p><code>newbarrier</code> must be freed by <code><a class="el" href="../../dc/d54/group__ES__BARRIER.html#gac540cb325432a8b6c33bfbac053ba02f" title="Free an execution-stream barrier. ">ABT_xstream_barrier_free()</a></code> after its use.</p>
+<dl class="section note">
+<dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
+<dd><b>[Argobots 1.x]</b> <code>newbarrier</code> is set to <code>ABT_XSTREAM_BARRIER_NULL</code> if an error occurs. <b>[Argobots 2.0]</b> <code>newbarrier</code> is not updated if an error occurs. <dl class="section user">
+<dt>Rationale</dt>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+</dl>
+</dd>
+</dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned. If <code>num_waiters</code> is zero, <code>ABT_ERR_INV_ARG</code> is returned. If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned. If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.</dd></dl>
+<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined. If <code>newbarrier</code> is <code>NULL</code>, the results are undefined.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">num_waiters</td><td>number of waiters </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">newbarrier</td><td>handle to a new ES barrier </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">newbarrier</td><td>execution-stream barrier handle </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">ABT_SUCCESS</td><td>on success </td></tr>
-  </table>
-  </dd>
-</dl>
 
-<p>Definition at line <a class="el" href="../../d0/db8/stream__barrier_8c_source.html#l00026">26</a> of file <a class="el" href="../../d0/db8/stream__barrier_8c_source.html">stream_barrier.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/db8/stream__barrier_8c_source.html#l00044">44</a> of file <a class="el" href="../../d0/db8/stream__barrier_8c_source.html">stream_barrier.c</a>.</p>
 
 </div>
 </div>
@@ -156,23 +162,20 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Free the ES barrier. </p>
-<p><code><a class="el" href="../../dc/d54/group__ES__BARRIER.html#gac540cb325432a8b6c33bfbac053ba02f" title="Free the ES barrier. ">ABT_xstream_barrier_free()</a></code> deallocates the memory used for the ES barrier object associated with the handle <code>barrier</code>. If it is successfully processed, <code>barrier</code> is set to <code>ABT_XSTREAM_BARRIER_NULL</code>.</p>
+<p>Free an execution-stream barrier. </p>
+<p><code><a class="el" href="../../dc/d54/group__ES__BARRIER.html#gac540cb325432a8b6c33bfbac053ba02f" title="Free an execution-stream barrier. ">ABT_xstream_barrier_free()</a></code> deallocates the resource used for the execution-stream barrier <code>barrier</code> and sets <code>barrier</code> to <code>ABT_XSTREAM_BARRIER_NULL</code>.</p>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned. If <code>barrier</code> points to <code>ABT_XSTREAM_BARRIER_NULL</code>, <code>ABT_ERR_INV_XSTREAM_BARRIER</code> is returned.</dd></dl>
+<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined. If <code>barrier</code> is <code>NULL</code>, the results are undefined. If any waiter is blocked on <code>barrier</code>, the results are undefined. If <code>barrier</code> is accessed after calling this routine, the results are undefined.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">barrier</td><td>handle to the ES barrier </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">barrier</td><td>execution-stream barrier handle </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">ABT_SUCCESS</td><td>on success </td></tr>
-  </table>
-  </dd>
-</dl>
 
-<p>Definition at line <a class="el" href="../../d0/db8/stream__barrier_8c_source.html#l00066">66</a> of file <a class="el" href="../../d0/db8/stream__barrier_8c_source.html">stream_barrier.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/db8/stream__barrier_8c_source.html#l00101">101</a> of file <a class="el" href="../../d0/db8/stream__barrier_8c_source.html">stream_barrier.c</a>.</p>
 
 </div>
 </div>
@@ -190,30 +193,27 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Wait on the barrier. </p>
-<p>The work unit calling <code><a class="el" href="../../dc/d54/group__ES__BARRIER.html#ga80a776789efc225e6e24a901f31a4374" title="Wait on the barrier. ">ABT_xstream_barrier_wait()</a></code> waits on the barrier and blocks the entire ES until all the participants reach the barrier.</p>
+<p>Wait on an execution-stream barrier. </p>
+<p>The caller of <code><a class="el" href="../../dc/d54/group__ES__BARRIER.html#ga80a776789efc225e6e24a901f31a4374" title="Wait on an execution-stream barrier. ">ABT_xstream_barrier_wait()</a></code> waits on the execution-stream barrier <code>barrier</code>. The caller is blocked until as many waiters as the number of waiters specified by <code><a class="el" href="../../dc/d54/group__ES__BARRIER.html#ga9df48f67278b6b78ea7efb79d829c63f" title="Create a new execution-stream barrier. ">ABT_xstream_barrier_create()</a></code> reach <code>barrier</code>. If the caller is either a ULT or a tasklet, the underlying execution stream is blocked on <code>barrier</code>.</p>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned. If <code>barrier</code> is <code>ABT_XSTREAM_BARRIER_NULL</code>, <code>ABT_ERR_INV_XSTREAM_BARRIER</code> is returned.</dd></dl>
+<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">barrier</td><td>handle to the ES barrier </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">barrier</td><td>execution-stream barrier handle </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">ABT_SUCCESS</td><td>on success </td></tr>
-  </table>
-  </dd>
-</dl>
 
-<p>Definition at line <a class="el" href="../../d0/db8/stream__barrier_8c_source.html#l00093">93</a> of file <a class="el" href="../../d0/db8/stream__barrier_8c_source.html">stream_barrier.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/db8/stream__barrier_8c_source.html#l00140">140</a> of file <a class="el" href="../../d0/db8/stream__barrier_8c_source.html">stream_barrier.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 23 2020 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 24 2020 03:10:10 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

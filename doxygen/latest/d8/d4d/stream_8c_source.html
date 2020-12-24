@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">0a89091e5608424c806875ff852cfcd0f8ccfd9d</span>
+   &#160;<span id="projectnumber">15713c48615c92ed4e08c7880ac0e09c8741b209</span>
    </div>
   </td>
  </tr>
@@ -614,7 +614,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;                                ABTI_ythread *p_ythread)</div>
 <div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;{</div>
 <div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;    <span class="comment">/* p_ythread must be the main thread. */</span></div>
-<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;    ABTI_ASSERT(p_ythread-&gt;thread.type &amp; ABTI_THREAD_TYPE_MAIN);</div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;    ABTI_ASSERT(p_ythread-&gt;thread.type &amp; ABTI_THREAD_TYPE_PRIMARY);</div>
 <div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;    <span class="comment">/* The ES&#39;s state must be running here. */</span></div>
 <div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;    ABTI_ASSERT(ABTD_atomic_relaxed_load_int(&amp;p_xstream-&gt;state) ==</div>
 <div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;                <a class="code" href="../../d5/d7d/abt_8h.html#a092b58d9ab171ff3429b78afc1876cb0a6b190da4955f53fbd0309bccd71cffbd">ABT_XSTREAM_STATE_RUNNING</a>);</div>
@@ -632,8 +632,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;    p_xstream-&gt;p_root_ythread-&gt;thread.p_last_xstream = p_xstream;</div>
 <div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;    ABTD_ythread_context_switch(&amp;p_ythread-&gt;ctx,</div>
 <div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;                                &amp;p_xstream-&gt;p_root_ythread-&gt;ctx);</div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;    <span class="comment">/* Come back to the main thread.  Now this thread is executed on top of the</span></div>
-<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;<span class="comment">     * main scheduler, which is running on the root thread. */</span></div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;    <span class="comment">/* Come back to the primary thread.  Now this thread is executed on top of</span></div>
+<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;<span class="comment">     * the main scheduler, which is running on the root thread. */</span></div>
 <div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;    (*pp_local_xstream)-&gt;p_thread = &amp;p_ythread-&gt;thread;</div>
 <div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;}</div>
 <div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;</div>
@@ -1140,7 +1140,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;        }</div>
 <div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;    }</div>
 <div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;    <span class="keywordflow">if</span> (p_xstream-&gt;type == ABTI_XSTREAM_TYPE_PRIMARY) {</div>
-<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;        ABTI_CHECK_TRUE(p_ythread-&gt;thread.type &amp; ABTI_THREAD_TYPE_MAIN,</div>
+<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;        ABTI_CHECK_TRUE(p_ythread-&gt;thread.type &amp; ABTI_THREAD_TYPE_PRIMARY,</div>
 <div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;                        <a class="code" href="../../d5/d7d/abt_8h.html#a52674312c197adc3c930d3e797a0b2cd">ABT_ERR_THREAD</a>);</div>
 <div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;</div>
 <div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;        <span class="comment">/* Since the primary ES does not finish its execution until ABT_finalize</span></div>
@@ -1376,7 +1376,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 23 2020 03:09:58 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 24 2020 03:10:11 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

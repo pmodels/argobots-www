@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">0a89091e5608424c806875ff852cfcd0f8ccfd9d</span>
+   &#160;<span id="projectnumber">15713c48615c92ed4e08c7880ac0e09c8741b209</span>
    </div>
   </td>
  </tr>
@@ -105,25 +105,25 @@ Include dependency graph for rwlock.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga05117645feeac2ddabcbe2bed296356c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd5/group__RWLOCK.html#ga05117645feeac2ddabcbe2bed296356c">ABT_rwlock_create</a> (<a class="el" href="../../d5/d7d/abt_8h.html#a36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a> *newrwlock)</td></tr>
-<tr class="memdesc:ga05117645feeac2ddabcbe2bed296356c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new rwlock <code>ABT_rwlock_create</code> creates a new rwlock object and returns its handle through <code>newrwlock</code>. If an error occurs in this routine, a non-zero error code will be returned and <code>newrwlock</code> will be set to <code>ABT_RWLOCK_NULL</code>.  <a href="../../d1/dd5/group__RWLOCK.html#ga05117645feeac2ddabcbe2bed296356c">More...</a><br/></td></tr>
+<tr class="memdesc:ga05117645feeac2ddabcbe2bed296356c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new readers-writer lock. <code><a class="el" href="../../d1/dd5/group__RWLOCK.html#ga05117645feeac2ddabcbe2bed296356c" title="Create a new readers-writer lock. ABT_rwlock_create() creates a new readers-writer lock and returns i...">ABT_rwlock_create()</a></code> creates a new readers-writer lock and returns its handle through <code>newrwlock</code>.  <a href="../../d1/dd5/group__RWLOCK.html#ga05117645feeac2ddabcbe2bed296356c">More...</a><br/></td></tr>
 <tr class="separator:ga05117645feeac2ddabcbe2bed296356c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa58997242b0b4b933a55a671f33cdd68"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd5/group__RWLOCK.html#gaa58997242b0b4b933a55a671f33cdd68">ABT_rwlock_free</a> (<a class="el" href="../../d5/d7d/abt_8h.html#a36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a> *rwlock)</td></tr>
-<tr class="memdesc:gaa58997242b0b4b933a55a671f33cdd68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the rwlock object.  <a href="../../d1/dd5/group__RWLOCK.html#gaa58997242b0b4b933a55a671f33cdd68">More...</a><br/></td></tr>
+<tr class="memdesc:gaa58997242b0b4b933a55a671f33cdd68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a readers-writer lock.  <a href="../../d1/dd5/group__RWLOCK.html#gaa58997242b0b4b933a55a671f33cdd68">More...</a><br/></td></tr>
 <tr class="separator:gaa58997242b0b4b933a55a671f33cdd68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa868b2a29f6643f950c6c95c5a73d122"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd5/group__RWLOCK.html#gaa868b2a29f6643f950c6c95c5a73d122">ABT_rwlock_rdlock</a> (<a class="el" href="../../d5/d7d/abt_8h.html#a36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a> rwlock)</td></tr>
-<tr class="memdesc:gaa868b2a29f6643f950c6c95c5a73d122"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock the rwlock as a reader.  <a href="../../d1/dd5/group__RWLOCK.html#gaa868b2a29f6643f950c6c95c5a73d122">More...</a><br/></td></tr>
+<tr class="memdesc:gaa868b2a29f6643f950c6c95c5a73d122"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock a readers-writer lock as a reader.  <a href="../../d1/dd5/group__RWLOCK.html#gaa868b2a29f6643f950c6c95c5a73d122">More...</a><br/></td></tr>
 <tr class="separator:gaa868b2a29f6643f950c6c95c5a73d122"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaacd46e0fbc42d707d18fe3f497654992"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd5/group__RWLOCK.html#gaacd46e0fbc42d707d18fe3f497654992">ABT_rwlock_wrlock</a> (<a class="el" href="../../d5/d7d/abt_8h.html#a36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a> rwlock)</td></tr>
-<tr class="memdesc:gaacd46e0fbc42d707d18fe3f497654992"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock the rwlock as a writer.  <a href="../../d1/dd5/group__RWLOCK.html#gaacd46e0fbc42d707d18fe3f497654992">More...</a><br/></td></tr>
+<tr class="memdesc:gaacd46e0fbc42d707d18fe3f497654992"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock a readers-writer lock as a writer.  <a href="../../d1/dd5/group__RWLOCK.html#gaacd46e0fbc42d707d18fe3f497654992">More...</a><br/></td></tr>
 <tr class="separator:gaacd46e0fbc42d707d18fe3f497654992"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1e76b76719d4b518761418e081d9a902"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd5/group__RWLOCK.html#ga1e76b76719d4b518761418e081d9a902">ABT_rwlock_unlock</a> (<a class="el" href="../../d5/d7d/abt_8h.html#a36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a> rwlock)</td></tr>
-<tr class="memdesc:ga1e76b76719d4b518761418e081d9a902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlock the rwlock.  <a href="../../d1/dd5/group__RWLOCK.html#ga1e76b76719d4b518761418e081d9a902">More...</a><br/></td></tr>
+<tr class="memdesc:ga1e76b76719d4b518761418e081d9a902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlock a readers-writer lock.  <a href="../../d1/dd5/group__RWLOCK.html#ga1e76b76719d4b518761418e081d9a902">More...</a><br/></td></tr>
 <tr class="separator:ga1e76b76719d4b518761418e081d9a902"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 23 2020 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 24 2020 03:10:09 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
