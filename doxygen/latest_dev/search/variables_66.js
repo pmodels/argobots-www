@@ -6,5 +6,5 @@ var searchData=
   ['f_5fthread',['f_thread',['../d3/d55/structABTI__thread.html#a436421da60bd760faf11822043e0f303',1,'ABTI_thread']]],
   ['f_5fuctx_5fthread',['f_uctx_thread',['../d8/df3/structABTD__ythread__context.html#adaf2dcadd9c12205b40f547580ba400e',1,'ABTD_ythread_context']]],
   ['fp',['fp',['../db/d64/structinfo__print__unit__arg__t.html#ae45a6ff8fbb7c5493dfed39bf1ceb160',1,'info_print_unit_arg_t']]],
-  ['free',['free',['../de/d65/structABT__sched__def.html#ad946d3544e7055963bbce9e8fa8c9998',1,'ABT_sched_def::free()'],['../d0/dd5/structABTI__sched.html#a1ee7c7a4217d10f930bdb23d4b748976',1,'ABTI_sched::free()']]]
+  ['free',['free',['../de/d65/structABT__sched__def.html#add904cca404ddee2144ea73222cf0f0f',1,'ABT_sched_def::free()'],['../d0/dd5/structABTI__sched.html#a1ee7c7a4217d10f930bdb23d4b748976',1,'ABTI_sched::free()']]]
 ];

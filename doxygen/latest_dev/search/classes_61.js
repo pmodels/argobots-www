@@ -37,6 +37,8 @@ var searchData=
   ['abti_5fpool',['ABTI_pool',['../df/d65/structABTI__pool.html',1,'']]],
   ['abti_5frwlock',['ABTI_rwlock',['../da/dcc/structABTI__rwlock.html',1,'']]],
   ['abti_5fsched',['ABTI_sched',['../d0/dd5/structABTI__sched.html',1,'']]],
+  ['abti_5fsched_5fconfig',['ABTI_sched_config',['../d0/d90/structABTI__sched__config.html',1,'']]],
+  ['abti_5fsched_5fconfig_5felement',['ABTI_sched_config_element',['../d9/d48/structABTI__sched__config__element.html',1,'']]],
   ['abti_5fspinlock',['ABTI_spinlock',['../dc/d81/structABTI__spinlock.html',1,'']]],
   ['abti_5fsync_5flifo_5felement',['ABTI_sync_lifo_element',['../de/d30/structABTI__sync__lifo__element.html',1,'']]],
   ['abti_5fthread',['ABTI_thread',['../d3/d55/structABTI__thread.html',1,'']]],
