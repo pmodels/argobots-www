@@ -2,21 +2,21 @@
   host: Jenkins macOS
   os: macOS 10.13
   compiler: clang9.0.0
-  pass: no
-  commit_id: 4185ffb5728cdfee856fed41b0d30e980edafc2f
-  date: Sat Dec 26 20:38:13 2020 -0600
+  pass: yes
+  commit_id: 244d5d54b964b2c760b8419b0fb80b1d1800b672
+  date: Tue Dec 29 18:44:05 2020 -0600
 - cpu: x86/64
   host: Jenkins macOS
   os: macOS 10.13
   compiler: gnu10.2.0
   pass: yes
-  commit_id: 4185ffb5728cdfee856fed41b0d30e980edafc2f
-  date: Sat Dec 26 20:38:13 2020 -0600
+  commit_id: 244d5d54b964b2c760b8419b0fb80b1d1800b672
+  date: Tue Dec 29 18:44:05 2020 -0600
 - cpu: x86/64
   host: Jenkins macOS
   os: macOS 10.13
   compiler: intel19.0.4
-  pass: no
-  commit_id: 4185ffb5728cdfee856fed41b0d30e980edafc2f
-  date: Sat Dec 26 20:38:13 2020 -0600
+  pass: yes
+  commit_id: 244d5d54b964b2c760b8419b0fb80b1d1800b672
+  date: Tue Dec 29 18:44:05 2020 -0600
 
