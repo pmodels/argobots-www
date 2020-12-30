@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">4185ffb5728cdfee856fed41b0d30e980edafc2f</span>
+   &#160;<span id="projectnumber">244d5d54b964b2c760b8419b0fb80b1d1800b672</span>
    </div>
   </td>
  </tr>
@@ -253,7 +253,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00217">217</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00258">258</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -938,8 +938,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print stacks of work units in pools associated with all the main schedulers. </p>
-<p><code><a class="el" href="../../d7/d15/group__INFO.html#ga6a9b742bf675f1b12ba785ddf9a344e4" title="Print stacks of work units in pools associated with all the main schedulers. ">ABT_info_trigger_print_all_thread_stacks()</a></code> tries to print stacks of all threads stored in pools associated with all the main schedulers to the output stream <code>fp</code>. This routine itself does not print stacks; it immediately returns after updating a flag. Stacks are printed when all execution streams stop in <code><a class="el" href="../../d3/def/group__ES.html#gaca42eab0bf02e5cb1c605ff23a35a3e5" title="Check the events and process them. ">ABT_xstream_check_events()</a></code>.</p>
-<p>If some execution streams do not stop within a certain time period specified by <code>timeout</code> in seconds where <code>timeout</code> is not negative, one of the execution streams that stop at <code><a class="el" href="../../d3/def/group__ES.html#gaca42eab0bf02e5cb1c605ff23a35a3e5" title="Check the events and process them. ">ABT_xstream_check_events()</a></code> starts to print the stack information. In this case, this routine might not work correctly and at worst crashes a program. This routine does not work at all if no execution stream executes <code><a class="el" href="../../d3/def/group__ES.html#gaca42eab0bf02e5cb1c605ff23a35a3e5" title="Check the events and process them. ">ABT_xstream_check_events()</a></code>.</p>
+<p><code><a class="el" href="../../d7/d15/group__INFO.html#ga6a9b742bf675f1b12ba785ddf9a344e4" title="Print stacks of work units in pools associated with all the main schedulers. ">ABT_info_trigger_print_all_thread_stacks()</a></code> tries to print stacks of all threads stored in pools associated with all the main schedulers to the output stream <code>fp</code>. This routine itself does not print stacks; it immediately returns after updating a flag. Stacks are printed when all execution streams stop in <code><a class="el" href="../../d3/def/group__ES.html#gaca42eab0bf02e5cb1c605ff23a35a3e5" title="Process events associated with a scheduler. ">ABT_xstream_check_events()</a></code>.</p>
+<p>If some execution streams do not stop within a certain time period specified by <code>timeout</code> in seconds where <code>timeout</code> is not negative, one of the execution streams that stop at <code><a class="el" href="../../d3/def/group__ES.html#gaca42eab0bf02e5cb1c605ff23a35a3e5" title="Process events associated with a scheduler. ">ABT_xstream_check_events()</a></code> starts to print the stack information. In this case, this routine might not work correctly and at worst crashes a program. This routine does not work at all if no execution stream executes <code><a class="el" href="../../d3/def/group__ES.html#gaca42eab0bf02e5cb1c605ff23a35a3e5" title="Process events associated with a scheduler. ">ABT_xstream_check_events()</a></code>.</p>
 <p>The callback function <code>cb_func()</code> is called after completing printing stacks unless <code>cb_func</code> is <code>NULL</code>. The first argument is set to <code>ABT_TRUE</code> if not all the execution streams stop within <code>timeout</code>. Otherwise, <code>ABT_FALSE</code> is passed. The second argument is the user-defined data <code>arg</code> passed to this routine. The caller of <code>cb_func()</code> is undefined, so a program that relies on the caller of <code>cb_func()</code> is non-conforming. Neither signal-safety nor thread-safety is required for <code>cb_func()</code>.</p>
 <p>The following work units are not captured by this routine:</p>
 <ul>
@@ -970,7 +970,7 @@ If the timeout mechanism is used, the program may crash, so this functionality s
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 27 2020 03:10:07 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 30 2020 03:10:13 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

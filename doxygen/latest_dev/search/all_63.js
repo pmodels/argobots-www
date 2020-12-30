@@ -14,5 +14,6 @@ var searchData=
   ['counter',['counter',['../d1/db2/structABTI__future.html#a28080ef50c7494ec57ad43b85e09eb23',1,'ABTI_future::counter()'],['../d9/d20/structABTI__barrier.html#a90b19f91cbb3feb3638deef9752eaf4b',1,'ABTI_barrier::counter()']]],
   ['cpuids',['cpuids',['../d6/d62/structABTD__affinity__cpuset.html#a91e176f1502e7abdac5418c51e441968',1,'ABTD_affinity_cpuset']]],
   ['cpusets',['cpusets',['../d6/dcd/structglobal__affinity.html#a8f626df58e1a09f253037e5db78960e2',1,'global_affinity']]],
+  ['create_5fcpuset',['create_cpuset',['../d2/d45/abtd__affinity_8c.html#ab17b1b393f527be87731b89f4de49ebc',1,'abtd_affinity.c']]],
   ['ctx',['ctx',['../dc/d3f/structABTI__xstream.html#a6d1560ddba9f375049d5509ea27ca6d6',1,'ABTI_xstream::ctx()'],['../d5/d5f/structABTI__ythread.html#ab021ad6f35eb12409552857f8ea31eb9',1,'ABTI_ythread::ctx()']]]
 ];

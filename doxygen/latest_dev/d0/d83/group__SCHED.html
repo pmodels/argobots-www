@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">4185ffb5728cdfee856fed41b0d30e980edafc2f</span>
+   &#160;<span id="projectnumber">244d5d54b964b2c760b8419b0fb80b1d1800b672</span>
    </div>
   </td>
  </tr>
@@ -181,7 +181,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00157">157</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00164">164</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -213,7 +213,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00182">182</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00189">189</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -265,12 +265,12 @@ Functions</h2></td></tr>
 <p><code>def</code> must define all non-optional functions. See <code><a class="el" href="../../de/d65/structABT__sched__def.html" title="A struct that defines a scheduler. ">ABT_sched_def</a></code> for details.</p>
 <dl class="section note"><dt>Note</dt><dd>Specifically, any explicit or implicit yielding operation in scheduling functions except for <code>run()</code> causes undefined behavior.</dd></dl>
 <p><code>newsched</code> is associated with the array of pools <code>pools</code>, which has <code>num_pools</code> <code>ABT_pool</code> handles. If the <em>i</em> th element of <code>pools</code> is <code>ABT_POOL_NULL</code>, the default FIFO pool with the default pool configuration is newly created and used as the <em>i</em> th pool.</p>
-<dl class="section note"><dt>Note</dt><dd>To see the details of the default pool, please check <code><a class="el" href="../../d9/d52/group__POOL.html#ga7a000646ad0b5899ee47779d051758e8" title="Create a new pool and return its handle through newpool. ">ABT_pool_create()</a></code>.<br/>
+<dl class="section note"><dt>Note</dt><dd>To see the details of the default pool, please check <code><a class="el" href="../../d9/d52/group__POOL.html#ga7a000646ad0b5899ee47779d051758e8" title="Create a new pool. ">ABT_pool_create()</a></code>.<br/>
 </dd></dl>
 <p><code>newsched</code> can be configured via <code>config</code>. If the user passes <code>ABT_CONFIG_NULL</code> for <code>config</code>, the default configuration is used. <code>config</code> is also passed as the second argument of the user-defined scheduler initialization function <code>init()</code> if <code>init</code> is not <code>NULL</code>. This routine returns an error returned by <code>init()</code> if <code>init()</code> does not return <code>ABT_SUCCESS</code>.</p>
 <dl class="section note"><dt>Note</dt><dd>To see the details of the default scheduler configuration, please check <code><a class="el" href="../../dc/d23/group__SCHED__CONFIG.html#gaf99722523587197d1d71b180457584de" title="Create a new scheduler configuration. ">ABT_sched_config_create()</a></code>.</dd></dl>
 <p><code>def</code>, <code>config</code>, and the contents of <code>pools</code> are copied in this routine, so the user can free <code>def</code>, <code>config</code>, and <code>pools</code> after this routine returns.</p>
-<p>If <code>newsched</code> is not configured to be automatically freed, it is the user's responsibility to free <code>newsched</code> after its use unless <code>newsched</code> is associated with the main scheduler of the primary execution stream. If <code>newsched</code> is configured to be automatically freed, <code>newsched</code> is automatically freed when a work unit associated with <code>newsched</code> is freed. If the user never associates <code>newsched</code> with a work unit (e.g., by <code><a class="el" href="../../d9/d52/group__POOL.html#ga398216ecd06e4ae64396c2565ecb4efa" title="Push a scheduler to a pool. ">ABT_pool_add_sched()</a></code> or <code><a class="el" href="../../d3/def/group__ES.html#gaf4f24ac290204d7be10e420644121a85" title="Set the main scheduler of the target ES. ">ABT_xstream_set_main_sched()</a></code>), it is the user's responsibility to free <code>newsched</code>. By default <code>newsched</code> created by this routine is not automatically freed unless <code>config</code> enables it.</p>
+<p>If <code>newsched</code> is not configured to be automatically freed, it is the user's responsibility to free <code>newsched</code> after its use unless <code>newsched</code> is associated with the main scheduler of the primary execution stream. If <code>newsched</code> is configured to be automatically freed, <code>newsched</code> is automatically freed when a work unit associated with <code>newsched</code> is freed. If the user never associates <code>newsched</code> with a work unit (e.g., by <code><a class="el" href="../../d9/d52/group__POOL.html#ga398216ecd06e4ae64396c2565ecb4efa" title="Create a new work unit associated with a scheduler and push it to a pool. ">ABT_pool_add_sched()</a></code> or <code><a class="el" href="../../d3/def/group__ES.html#gaf4f24ac290204d7be10e420644121a85" title="Set the main scheduler of an execution stream. ">ABT_xstream_set_main_sched()</a></code>), it is the user's responsibility to free <code>newsched</code>. By default <code>newsched</code> created by this routine is not automatically freed unless <code>config</code> enables it.</p>
 <dl class="section note"><dt>Note</dt><dd><code><a class="el" href="../../d4/d00/group__ENV.html#ga70dc165656888def26f8cb6c047a6289" title="Terminate the Argobots execution environment. ">ABT_finalize()</a></code> frees the primary execution stream, its main scheduler, and pools associated with the main scheduler.</dd></dl>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
@@ -350,14 +350,14 @@ Functions</h2></td></tr>
 <p>Create a new scheduler with a predefined scheduler type. </p>
 <p><code><a class="el" href="../../d0/d83/group__SCHED.html#gac3ea78b200ae62bf24deecf385a33f7b" title="Create a new scheduler with a predefined scheduler type. ">ABT_sched_create_basic()</a></code> creates a new scheduler with the predefined scheduler type <code>predef</code> and the scheduler configuration <code>config</code> and returns its handle through <code>newsched</code>.</p>
 <p><code>newsched</code> is associated with the array of pools <code>pools</code>, which has <code>num_pools</code> <code>ABT_pool</code> handles. If the <em>i</em> th element of <code>pools</code> is <code>ABT_POOL_NULL</code>, the default FIFO pool with the default pool configuration is newly created and used as the <em>i</em> th pool.</p>
-<dl class="section note"><dt>Note</dt><dd>To see the details of the default pool, please check <code><a class="el" href="../../d9/d52/group__POOL.html#ga7a000646ad0b5899ee47779d051758e8" title="Create a new pool and return its handle through newpool. ">ABT_pool_create()</a></code>.<br/>
+<dl class="section note"><dt>Note</dt><dd>To see the details of the default pool, please check <code><a class="el" href="../../d9/d52/group__POOL.html#ga7a000646ad0b5899ee47779d051758e8" title="Create a new pool. ">ABT_pool_create()</a></code>.<br/>
 </dd></dl>
 <p>If <code>pools</code> is <code>NULL</code>, this routine creates pools automatically. The number of created pools is undefined regardless of <code>num_pools</code>, so the user should get this number of associated pools via <code><a class="el" href="../../d0/d83/group__SCHED.html#ga4a51e2af3857816d21e4bd5bbe056e9b" title="Obtain the number of pools associated with a scheduler. ">ABT_sched_get_num_pools()</a></code>.</p>
 <dl class="section note"><dt>Note</dt><dd>The user is recommended to manually create and set pools to avoid any unexpected behavior caused by automatically created pools.</dd></dl>
 <p><code>newsched</code> can be configured via <code>config</code>. If the user passes <code>ABT_CONFIG_NULL</code> for <code>config</code>, the default configuration is used.</p>
 <dl class="section note"><dt>Note</dt><dd>To see the details of the default scheduler configuration, please check <code><a class="el" href="../../dc/d23/group__SCHED__CONFIG.html#gaf99722523587197d1d71b180457584de" title="Create a new scheduler configuration. ">ABT_sched_config_create()</a></code>.</dd></dl>
 <p><code>config</code> and the contents of <code>pools</code> are copied in this routine, so the user can free <code>config</code> and <code>pools</code> after this routine returns.</p>
-<p>If <code>newsched</code> is not configured to be automatically freed, it is the user's responsibility to free <code>newsched</code> after its use unless <code>newsched</code> is associated with the main scheduler of the primary execution stream. If <code>newsched</code> is configured to be automatically freed, <code>newsched</code> is automatically freed when a work unit associated with <code>newsched</code> is freed. If the user never associates <code>newsched</code> with a work unit (e.g., by <code><a class="el" href="../../d9/d52/group__POOL.html#ga398216ecd06e4ae64396c2565ecb4efa" title="Push a scheduler to a pool. ">ABT_pool_add_sched()</a></code> or <code><a class="el" href="../../d3/def/group__ES.html#gaf4f24ac290204d7be10e420644121a85" title="Set the main scheduler of the target ES. ">ABT_xstream_set_main_sched()</a></code>), it is the user's responsibility to free <code>newsched</code>. By default <code>newsched</code> created by this routine is automatically freed unless <code>config</code> disables it.</p>
+<p>If <code>newsched</code> is not configured to be automatically freed, it is the user's responsibility to free <code>newsched</code> after its use unless <code>newsched</code> is associated with the main scheduler of the primary execution stream. If <code>newsched</code> is configured to be automatically freed, <code>newsched</code> is automatically freed when a work unit associated with <code>newsched</code> is freed. If the user never associates <code>newsched</code> with a work unit (e.g., by <code><a class="el" href="../../d9/d52/group__POOL.html#ga398216ecd06e4ae64396c2565ecb4efa" title="Create a new work unit associated with a scheduler and push it to a pool. ">ABT_pool_add_sched()</a></code> or <code><a class="el" href="../../d3/def/group__ES.html#gaf4f24ac290204d7be10e420644121a85" title="Set the main scheduler of an execution stream. ">ABT_xstream_set_main_sched()</a></code>), it is the user's responsibility to free <code>newsched</code>. By default <code>newsched</code> created by this routine is automatically freed unless <code>config</code> disables it.</p>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>newsched</code> is set to <code>ABT_SCHED_NULL</code> if an error occurs. <b>[Argobots 2.0]</b> <code>newsched</code> is not updated if an error occurs. <dl class="section user">
@@ -525,7 +525,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retrieve a user value associated with a scheduler. </p>
-<p><code><a class="el" href="../../d9/d52/group__POOL.html#gac5e9bbf2126b7c2b951068bafbd47fde" title="Retrieve the specific data of the target user-defined pool. ">ABT_pool_get_data()</a></code> returns a user value associated with the scheduler <code>sched</code> through <code>data</code>. The user value of the newly created scheduler is <code>NULL</code>.</p>
+<p><code><a class="el" href="../../d9/d52/group__POOL.html#gac5e9bbf2126b7c2b951068bafbd47fde" title="Retrieve user data from a pool. ">ABT_pool_get_data()</a></code> returns a user value associated with the scheduler <code>sched</code> through <code>data</code>. The user value of the newly created scheduler is <code>NULL</code>.</p>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned. If <code>sched</code> is <code>ABT_SCHED_NULL</code>, <code>ABT_ERR_INV_SCHED</code> is returned.</dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined. If <code>data</code> is <code>NULL</code>, the results are undefined.</dd></dl>
@@ -675,7 +675,7 @@ Functions</h2></td></tr>
 
 <p>Obtain the sum of sizes of pools associated with a scheduler. </p>
 <p><code><a class="el" href="../../d0/d83/group__SCHED.html#ga60224bec5158dc8887e131a87941d49a" title="Obtain the sum of sizes of pools associated with a scheduler. ">ABT_sched_get_size()</a></code> returns the sum of the sizes of pools associated with the scheduler <code>sched</code> through <code>size</code>.</p>
-<dl class="section note"><dt>Note</dt><dd>To see the details of the size of a pool, please check <code><a class="el" href="../../d9/d52/group__POOL.html#gaafe8ef10c4d7fe1c7f7263fdc56fa58e" title="Return the size of a pool. ">ABT_pool_get_size()</a></code>.</dd>
+<dl class="section note"><dt>Note</dt><dd>To see the details of the size of a pool, please check <code><a class="el" href="../../d9/d52/group__POOL.html#gaafe8ef10c4d7fe1c7f7263fdc56fa58e" title="Get the size of a pool. ">ABT_pool_get_size()</a></code>.</dd>
 <dd>
 This routine does not check the size of all the pools atomically, so the returned value might not be the sum of the sizes of pools associated with the scheduler at a specific point.</dd></dl>
 <dl class="section note">
@@ -728,7 +728,7 @@ This routine does not check the size of all the pools atomically, so the returne
 
 <p>Obtain the sum of the total sizes of pools associated with a scheduler. </p>
 <p><code><a class="el" href="../../d0/d83/group__SCHED.html#gaefd141b9b877482972d81372b842a3f1" title="Obtain the sum of the total sizes of pools associated with a scheduler. ">ABT_sched_get_total_size()</a></code> returns the sum of the total sizes of pools associated with the scheduler <code>sched</code> through <code>size</code>.</p>
-<dl class="section note"><dt>Note</dt><dd>To see the details of the total size of a pool, please check <code><a class="el" href="../../d9/d52/group__POOL.html#ga89312324e2c5a199992323035d9bb7c2" title="Return the total size of a pool. ">ABT_pool_get_total_size()</a></code>.</dd>
+<dl class="section note"><dt>Note</dt><dd>To see the details of the total size of a pool, please check <code><a class="el" href="../../d9/d52/group__POOL.html#ga89312324e2c5a199992323035d9bb7c2" title="Get the total size of a pool. ">ABT_pool_get_total_size()</a></code>.</dd>
 <dd>
 This routine does not check the size of all the pools atomically, so the returned value might not be the sum of the sizes of pools associated with the scheduler at a specific point.</dd></dl>
 <dl class="section note">
@@ -858,7 +858,7 @@ This routine does not check the size of all the pools atomically, so the returne
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 27 2020 03:10:07 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 30 2020 03:10:13 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

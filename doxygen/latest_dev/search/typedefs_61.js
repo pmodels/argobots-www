@@ -95,6 +95,7 @@ var searchData=
   ['abti_5fmutex_5fattr',['ABTI_mutex_attr',['../d5/d03/abti_8h.html#af3b6bf65edba89a8199ced153904c585',1,'abti.h']]],
   ['abti_5fnative_5fthread_5fid',['ABTI_native_thread_id',['../d5/d03/abti_8h.html#ac0ce0f983497e78779ec83d4c9a44310',1,'abti.h']]],
   ['abti_5fpool',['ABTI_pool',['../d5/d03/abti_8h.html#af0dcec1f1d0e33f59c45876472371111',1,'abti.h']]],
+  ['abti_5fpool_5fdef',['ABTI_pool_def',['../d5/d03/abti_8h.html#a54a4f6bb9c2f4a5b0f9b2bfc8cb51a00',1,'abti.h']]],
   ['abti_5frwlock',['ABTI_rwlock',['../d5/d03/abti_8h.html#ad2684517e4bde43287cd7867f96450f8',1,'abti.h']]],
   ['abti_5fsched',['ABTI_sched',['../d5/d03/abti_8h.html#a2984f25f1adf0cecc78f9f2f4ee98144',1,'abti.h']]],
   ['abti_5fsched_5fconfig',['ABTI_sched_config',['../d5/d03/abti_8h.html#aba9011af692bd5c140d9aba17dd50707',1,'abti.h']]],

@@ -22,7 +22,7 @@ digraph "ABT_pool_def"
   Node9 [label="int(*)(ABT_pool, ABT\l_unit)",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node10 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" u_get_type" ,fontname="Helvetica"];
   Node10 [label="ABT_unit_type(*)(ABT\l_unit)",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node11 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_pop_wait\np_pop_timedwait" ,fontname="Helvetica"];
+  Node11 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_pop_timedwait" ,fontname="Helvetica"];
   Node11 [label="ABT_unit(*)(ABT_pool,\l double)",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node12 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" p_init" ,fontname="Helvetica"];
   Node12 [label="int(*)(ABT_pool, ABT\l_pool_config)",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];

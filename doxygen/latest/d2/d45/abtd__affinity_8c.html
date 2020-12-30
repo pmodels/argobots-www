@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">4185ffb5728cdfee856fed41b0d30e980edafc2f</span>
+   &#160;<span id="projectnumber">244d5d54b964b2c760b8419b0fb80b1d1800b672</span>
    </div>
   </td>
  </tr>
@@ -116,8 +116,10 @@ Functions</h2></td></tr>
 <tr class="separator:a4caa8796c4d7938443dbe263cfb2e44c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76ab5c0a28094a34d91d15aca87e313c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#a76ab5c0a28094a34d91d15aca87e313c">get_num_cores</a> (pthread_t native_thread, int *p_num_cores)</td></tr>
 <tr class="separator:a76ab5c0a28094a34d91d15aca87e313c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8b35b39d7389309973b31889ff4a31b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#ab8b35b39d7389309973b31889ff4a31b">read_cpuset</a> (pthread_t native_thread, ABTD_affinity_cpuset *p_cpuset)</td></tr>
-<tr class="separator:ab8b35b39d7389309973b31889ff4a31b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab17b1b393f527be87731b89f4de49ebc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#ab17b1b393f527be87731b89f4de49ebc">create_cpuset</a> (pthread_t native_thread, ABTD_affinity_cpuset *p_cpuset)</td></tr>
+<tr class="separator:ab17b1b393f527be87731b89f4de49ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18d97e4d91d00466a131633db53c61cc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#a18d97e4d91d00466a131633db53c61cc">read_cpuset</a> (pthread_t native_thread, int max_cpuids, int *cpuids, int *p_num_cpuids)</td></tr>
+<tr class="separator:a18d97e4d91d00466a131633db53c61cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad381daf10a4a5d22a6358b81c31ac974"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/abtd__affinity_8c.html#ad381daf10a4a5d22a6358b81c31ac974">apply_cpuset</a> (pthread_t native_thread, const ABTD_affinity_cpuset *p_cpuset)</td></tr>
 <tr class="separator:ad381daf10a4a5d22a6358b81c31ac974"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -159,7 +161,43 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00249">249</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00273">273</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab17b1b393f527be87731b89f4de49ebc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int create_cpuset </td>
+          <td>(</td>
+          <td class="paramtype">pthread_t&#160;</td>
+          <td class="paramname"><em>native_thread</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ABTD_affinity_cpuset *&#160;</td>
+          <td class="paramname"><em>p_cpuset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00223">223</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
 
 </div>
 </div>
@@ -233,11 +271,11 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00192">192</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00249">apply_cpuset()</a>.</p>
+<p>Referenced by <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00273">apply_cpuset()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab8b35b39d7389309973b31889ff4a31b"></a>
+<a class="anchor" id="a18d97e4d91d00466a131633db53c61cc"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -253,8 +291,20 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ABTD_affinity_cpuset *&#160;</td>
-          <td class="paramname"><em>p_cpuset</em>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max_cpuids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>cpuids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>p_num_cpuids</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -269,7 +319,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00223">223</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00249">249</a> of file <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html">abtd_affinity.c</a>.</p>
 
 </div>
 </div>
@@ -299,7 +349,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 27 2020 03:10:09 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 30 2020 03:10:15 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
