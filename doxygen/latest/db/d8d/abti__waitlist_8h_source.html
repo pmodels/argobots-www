@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">244d5d54b964b2c760b8419b0fb80b1d1800b672</span>
+   &#160;<span id="projectnumber">b5acbc00243dd9d73fddd2935384824d03911d7a</span>
    </div>
   </td>
  </tr>
@@ -121,7 +121,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        ABTI_thread thread;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        thread.type = ABTI_THREAD_TYPE_EXT;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="comment">/* use state for synchronization */</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        ABTD_atomic_relaxed_store_int(&amp;thread.state, <a class="code" href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089a3638f9519e790388f3bbc7e35f30fece">ABT_THREAD_STATE_BLOCKED</a>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        ABTD_atomic_relaxed_store_int(&amp;thread.state, <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089a3638f9519e790388f3bbc7e35f30fece">ABT_THREAD_STATE_BLOCKED</a>);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">/* Add thread to the list. */</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        thread.p_next = NULL;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">if</span> (p_waitlist-&gt;p_head == NULL) {</div>
@@ -134,7 +134,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="comment">/* Non-yieldable thread is waiting here. */</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        ABTI_spinlock_release(p_lock);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">while</span> (ABTD_atomic_acquire_load_int(&amp;thread.state) !=</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;               <a class="code" href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a>)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;               <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a>)</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            ;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">/* Add p_thread to the list. */</span></div>
@@ -172,7 +172,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    ABTI_thread thread;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    thread.type = ABTI_THREAD_TYPE_EXT;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">/* use state for synchronization */</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    ABTD_atomic_relaxed_store_int(&amp;thread.state, <a class="code" href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089a3638f9519e790388f3bbc7e35f30fece">ABT_THREAD_STATE_BLOCKED</a>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    ABTD_atomic_relaxed_store_int(&amp;thread.state, <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089a3638f9519e790388f3bbc7e35f30fece">ABT_THREAD_STATE_BLOCKED</a>);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">/* Add p_thread to the list.  This implementation is tricky since this</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">     * updates p_prev as well for removal on timeout while the other functions</span></div>
@@ -190,7 +190,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">/* Waiting here. */</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    ABTI_spinlock_release(p_lock);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">while</span> (ABTD_atomic_acquire_load_int(&amp;thread.state) !=</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;           <a class="code" href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a>) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;           <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a>) {</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">double</span> cur_time = ABTI_get_wtime();</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">if</span> (cur_time &gt;= target_time) {</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="comment">/* Timeout.  Remove this thread if not signaled even after taking</span></div>
@@ -198,7 +198,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            ABTI_spinlock_acquire(p_lock);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> is_timedout =</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                (ABTD_atomic_acquire_load_int(&amp;thread.state) !=</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                 <a class="code" href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a>)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                 <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a>)</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    ? <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    : <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">if</span> (is_timedout) {</div>
@@ -261,7 +261,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <span class="comment">/* When p_thread is an external thread or a tasklet */</span></div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            ABTD_atomic_release_store_int(&amp;p_thread-&gt;state,</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                                          <a class="code" href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a>);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                                          <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a>);</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="comment">/* After updating p_thread-&gt;state, p_thread can be updated and</span></div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">         * freed. */</span></div>
@@ -286,7 +286,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                <span class="comment">/* When p_thread is an external thread or a tasklet */</span></div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                ABTD_atomic_release_store_int(&amp;p_thread-&gt;state,</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                                              <a class="code" href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a>);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                                              <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a>);</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            }</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <span class="comment">/* After updating p_thread-&gt;state, p_thread can be updated and</span></div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">             * freed. */</span></div>
@@ -303,18 +303,18 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;}</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_WAITLIST_H_INCLUDED */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00523">abt.h:523</a></div></div>
-<div class="ttc" id="abt_8h_html_aa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00139">abt.h:139</a></div></div>
-<div class="ttc" id="abt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00435">abt.h:435</a></div></div>
-<div class="ttc" id="abt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00434">abt.h:434</a></div></div>
-<div class="ttc" id="abt_8h_html_aa8e839d537fd79d677108d42d4176089a3638f9519e790388f3bbc7e35f30fece"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aa8e839d537fd79d677108d42d4176089a3638f9519e790388f3bbc7e35f30fece">ABT_THREAD_STATE_BLOCKED</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00141">abt.h:141</a></div></div>
+<div class="ttc" id="group__ULT_html_ggaa8e839d537fd79d677108d42d4176089a3638f9519e790388f3bbc7e35f30fece"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089a3638f9519e790388f3bbc7e35f30fece">ABT_THREAD_STATE_BLOCKED</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00148">abt.h:148</a></div></div>
+<div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00544">abt.h:544</a></div></div>
+<div class="ttc" id="abt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00456">abt.h:456</a></div></div>
+<div class="ttc" id="group__ULT_html_ggaa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00144">abt.h:144</a></div></div>
+<div class="ttc" id="abt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00455">abt.h:455</a></div></div>
 <div class="ttc" id="abt__config_8h_html"><div class="ttname"><a href="../../dd/d6e/abt__config_8h.html">abt_config.h</a></div></div>
-<div class="ttc" id="group__TOOL_html_ggac601a9db309d1a30954d43fc82d9602fa712e6e394eda5b5b2427171d708abf3c"><div class="ttname"><a href="../../de/d0d/group__TOOL.html#ggac601a9db309d1a30954d43fc82d9602fa712e6e394eda5b5b2427171d708abf3c">ABT_SYNC_EVENT_TYPE_EVENTUAL</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00364">abt.h:364</a></div></div>
-<div class="ttc" id="group__TOOL_html_gac601a9db309d1a30954d43fc82d9602f"><div class="ttname"><a href="../../de/d0d/group__TOOL.html#gac601a9db309d1a30954d43fc82d9602f">ABT_sync_event_type</a></div><div class="ttdeci">ABT_sync_event_type</div><div class="ttdoc">Type of synchronization event. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00346">abt.h:346</a></div></div>
+<div class="ttc" id="group__TOOL_html_ggac601a9db309d1a30954d43fc82d9602fa712e6e394eda5b5b2427171d708abf3c"><div class="ttname"><a href="../../de/d0d/group__TOOL.html#ggac601a9db309d1a30954d43fc82d9602fa712e6e394eda5b5b2427171d708abf3c">ABT_SYNC_EVENT_TYPE_EVENTUAL</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00385">abt.h:385</a></div></div>
+<div class="ttc" id="group__TOOL_html_gac601a9db309d1a30954d43fc82d9602f"><div class="ttname"><a href="../../de/d0d/group__TOOL.html#gac601a9db309d1a30954d43fc82d9602f">ABT_sync_event_type</a></div><div class="ttdeci">ABT_sync_event_type</div><div class="ttdoc">Type of synchronization event. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00367">abt.h:367</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 30 2020 03:10:15 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 31 2020 03:10:10 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

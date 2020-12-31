@@ -34,7 +34,7 @@ digraph "ABTI_sched"
   Node14 [label="ABT_unit(*)(ABT_pool,\l double)",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node15 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" u_is_in_pool\np_remove\np_free\np_print_all\nautomatic\np_init" ,fontname="Helvetica"];
   Node15 [label="int",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node16 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" num_scheds\nnum_blocked\nnum_migrations" ,fontname="Helvetica"];
+  Node16 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" num_scheds\nnum_blocked" ,fontname="Helvetica"];
   Node16 [label="ABTD_atomic_int32",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d9a/structABTD__atomic__int32.html"];
   Node17 -> Node16 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" val" ,fontname="Helvetica"];
   Node17 [label="int32_t",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];

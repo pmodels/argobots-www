@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">244d5d54b964b2c760b8419b0fb80b1d1800b672</span>
+   &#160;<span id="projectnumber">b5acbc00243dd9d73fddd2935384824d03911d7a</span>
    </div>
   </td>
  </tr>
@@ -192,7 +192,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00221">221</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00242">242</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -218,7 +218,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00203">203</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00224">224</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -279,7 +279,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00785">785</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00784">784</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
@@ -537,7 +537,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00733">733</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00732">732</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
@@ -579,7 +579,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00831">831</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00830">830</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
@@ -637,7 +637,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00334">334</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00333">333</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
@@ -669,10 +669,10 @@ Functions</h2></td></tr>
 <p><code><a class="el" href="../../d9/d52/group__POOL.html#ga89312324e2c5a199992323035d9bb7c2" title="Get the total size of a pool. ">ABT_pool_get_total_size()</a></code> returns the total size of the pool <code>pool</code> through <code>size</code>.</p>
 <ul>
 <li><p class="startli">If <code>pool</code> is created by <code><a class="el" href="../../d9/d52/group__POOL.html#ga7a000646ad0b5899ee47779d051758e8" title="Create a new pool. ">ABT_pool_create()</a></code>:</p>
-<p class="startli">This routine sets <code>size</code> to the sum of a value returned by <code>p_get_size()</code> called with <code>pool</code> as its argument and the number of blocking and migrating work units that are associated with <code>pool</code>.</p>
+<p class="startli">This routine sets <code>size</code> to the sum of a value returned by <code>p_get_size()</code> called with <code>pool</code> as its argument and the number of blocking work units that are associated with <code>pool</code>.</p>
 </li>
 <li><p class="startli">If <code>pool</code> is created by <code><a class="el" href="../../d9/d52/group__POOL.html#gaae479c7d7ae2816d8a953ea307611b49" title="Create a new pool from a predefined type. ">ABT_pool_create_basic()</a></code>:</p>
-<p class="startli">This routine sets <code>size</code> to the sum of the number of work units including in <code>pool</code> and the number of blocking or migrating work units associated with <code>pool</code>.</p>
+<p class="startli">This routine sets <code>size</code> to the sum of the number of work units including in <code>pool</code> and the number of blocking work units associated with <code>pool</code>.</p>
 </li>
 </ul>
 <dl class="section attention">
@@ -695,7 +695,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00291">291</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00290">290</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
@@ -768,7 +768,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00388">388</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00387">387</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
@@ -849,7 +849,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00512">512</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00511">511</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
@@ -921,7 +921,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00446">446</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00445">445</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
@@ -979,7 +979,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00667">667</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00666">666</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
@@ -1043,7 +1043,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00561">561</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00560">560</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
@@ -1107,7 +1107,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00613">613</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00612">612</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
@@ -1149,14 +1149,14 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00700">700</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00699">699</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 30 2020 03:10:15 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 31 2020 03:10:11 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -12,7 +12,6 @@ var searchData=
   ['num_5fheaders',['num_headers',['../d5/d6c/unionABTI__mem__pool__header__bucket__info.html#a2229b65e9197300f1350a55890c9c80c',1,'ABTI_mem_pool_header_bucket_info']]],
   ['num_5fheaders_5fper_5fbucket',['num_headers_per_bucket',['../d7/de4/structABTI__mem__pool__global__pool.html#ae1da2a249dfeff4d6208efd3099e8553',1,'ABTI_mem_pool_global_pool::num_headers_per_bucket()'],['../d6/d69/structABTI__mem__pool__local__pool.html#ab46544d5aef7767d34b06ad212230ea7',1,'ABTI_mem_pool_local_pool::num_headers_per_bucket()']]],
   ['num_5flp_5ftype_5frequests',['num_lp_type_requests',['../d7/de4/structABTI__mem__pool__global__pool.html#a635d32eae32548040ea6251f20a93a40',1,'ABTI_mem_pool_global_pool']]],
-  ['num_5fmigrations',['num_migrations',['../df/d65/structABTI__pool.html#afdb84281cd8d4cd8f91cdeca65a904c0',1,'ABTI_pool']]],
   ['num_5fpools',['num_pools',['../d0/dd5/structABTI__sched.html#a1d3674f1eba3831791be4f1f5abc6614',1,'ABTI_sched::num_pools()'],['../df/d3b/structsched__data.html#a7dedc2d1370e0d3202976ca89f9bd711',1,'sched_data::num_pools()']]],
   ['num_5fscheds',['num_scheds',['../df/d65/structABTI__pool.html#ab6931b8f2795af61d60de5c784d50b50',1,'ABTI_pool']]],
   ['num_5fthreads',['num_threads',['../df/dea/structdata.html#abe5cdbe8797ad1cac61bde1b6cec6e90',1,'data']]],

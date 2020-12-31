@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">244d5d54b964b2c760b8419b0fb80b1d1800b672</span>
+   &#160;<span id="projectnumber">b5acbc00243dd9d73fddd2935384824d03911d7a</span>
    </div>
   </td>
  </tr>
@@ -128,7 +128,7 @@ Functions</h2></td></tr>
 <p><code><a class="el" href="../../d0/d5e/group__KEY.html#gad61e66b8732a4653e03d942448deaa44" title="Create a new work-unit-specific data key. ">ABT_key_create()</a></code> creates a new work-unit-specific data key visible and returns its handle through <code>newkey</code>. Although the same key may be used by different work units, the values bound to the key set by <code><a class="el" href="../../d0/d5e/group__KEY.html#ga227c3e43f7112de4f35581e1d6e7dfdf" title="Associate a value with a work-unit-specific key in the calling work unit. ">ABT_key_set()</a></code> are maintained on a per-work-unit and persist for the life of each work unit.</p>
 <p>Upon key creation, the value <code>NULL</code> will be associated with <code>newkey</code> in all existing work units. Upon work-unit creation, the value <code>NULL</code> will be associated with all the defined keys in the new work unit.</p>
 <p>An optional destructor function <code>destructor()</code> may be associated with <code>newkey</code>. When a work unit is freed, if a key has a non-<code>NULL</code> destructor and the work unit has a non-<code>NULL</code> value associated with that key, the value of the key is set to <code>NULL</code>, and then <code>destructor()</code> is called with the last associated value as its sole argument <code>value</code>. The destructor is called before the work unit is freed. The order of destructor calls is undefined if more than one destructor exists for a work unit when it is freed.</p>
-<dl class="section note"><dt>Note</dt><dd><code>destructor()</code> is called when a work unit is <b>freed</b> (e.g., <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf31f748bfd565f97aa8ebabb89e9b632" title="Release the thread object associated with thread handle. ">ABT_thread_free()</a></code>), not <b>joined</b> (e.g., <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf5275b75a5184bca258e803370e44bea" title="Wait for thread to terminate. ">ABT_thread_join()</a></code>).</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><code>destructor()</code> is called when a work unit is <b>freed</b> (e.g., <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf31f748bfd565f97aa8ebabb89e9b632" title="Free a work unit. ">ABT_thread_free()</a></code>), not <b>joined</b> (e.g., <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf5275b75a5184bca258e803370e44bea" title="Wait for a work unit to terminate. ">ABT_thread_join()</a></code>).</dd></dl>
 <p>Unlike other implementations (e.g., <code>pthread_key_create()</code>), <code>destructor()</code> is not called by the associated work-unit, so a program that relies on a caller of <code>destructor()</code> is non-conforming.</p>
 <p><code>destructor()</code> is called even if the associated key has been freed by <code><a class="el" href="../../d0/d5e/group__KEY.html#ga795e391fb1b5fc7745d3074568e0a311" title="Free a work-unit-specific data key. ">ABT_key_free()</a></code>.</p>
 <p>The created key must be freed by <code><a class="el" href="../../d0/d5e/group__KEY.html#ga795e391fb1b5fc7745d3074568e0a311" title="Free a work-unit-specific data key. ">ABT_key_free()</a></code> after its use.</p>
@@ -285,7 +285,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 30 2020 03:10:15 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 31 2020 03:10:11 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

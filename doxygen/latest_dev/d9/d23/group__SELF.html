@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">244d5d54b964b2c760b8419b0fb80b1d1800b672</span>
+   &#160;<span id="projectnumber">b5acbc00243dd9d73fddd2935384824d03911d7a</span>
    </div>
   </td>
  </tr>
@@ -446,7 +446,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Suspend the calling ULT. </p>
-<p><code><a class="el" href="../../d9/d23/group__SELF.html#ga1ea426efb033abeea6876ee0609079d4" title="Suspend the calling ULT. ">ABT_self_suspend()</a></code> suspends the execution of the calling ULT and switches to its parent ULT. The caller ULT is not pushed to its associated pool and its state becomes blocked. The suspended ULT can be awakened and pushed back to its associated pool when <code><a class="el" href="../../d0/d6d/group__ULT.html#gaef94b0efbf392fdc4bd5d04f67f22a5e" title="Resume the target ULT. ">ABT_thread_resume()</a></code> is called.</p>
+<p><code><a class="el" href="../../d9/d23/group__SELF.html#ga1ea426efb033abeea6876ee0609079d4" title="Suspend the calling ULT. ">ABT_self_suspend()</a></code> suspends the execution of the calling ULT and switches to its parent ULT. The caller ULT is not pushed to its associated pool and its state becomes blocked. The suspended ULT can be awakened and pushed back to its associated pool when <code><a class="el" href="../../d0/d6d/group__ULT.html#gaef94b0efbf392fdc4bd5d04f67f22a5e" title="Resume a ULT. ">ABT_thread_resume()</a></code> is called.</p>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> <code>ABT_ERR_INV_THREAD</code> is returned if this routine is called by an external thread. <b>[Argobots 1.1]</b> <code>ABT_ERR_INV_XSTREAM</code> is returned if this routine is called by an external thread. <dl class="section user">
@@ -467,7 +467,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 30 2020 03:10:13 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 31 2020 03:10:09 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
