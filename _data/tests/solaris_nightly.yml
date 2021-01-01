@@ -3,13 +3,13 @@
   os: Oracle Solaris 11.4
   compiler: gnu7.3.0
   pass: yes
-  commit_id: b5acbc00243dd9d73fddd2935384824d03911d7a
-  date: Wed Dec 30 21:23:21 2020 -0600
+  commit_id: eaef486cd9a877c73038627138bf2927ececc25f
+  date: Thu Dec 31 15:00:48 2020 -0600
 - cpu: x86/64
   host: Jenkins Solaris
   os: Oracle Solaris 11.4
   compiler: solstudio12.6
   pass: yes
-  commit_id: b5acbc00243dd9d73fddd2935384824d03911d7a
-  date: Wed Dec 30 21:23:21 2020 -0600
+  commit_id: eaef486cd9a877c73038627138bf2927ececc25f
+  date: Thu Dec 31 15:00:48 2020 -0600
 
