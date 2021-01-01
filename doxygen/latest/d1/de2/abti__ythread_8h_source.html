@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">b5acbc00243dd9d73fddd2935384824d03911d7a</span>
+   &#160;<span id="projectnumber">eaef486cd9a877c73038627138bf2927ececc25f</span>
    </div>
   </td>
  </tr>
@@ -99,7 +99,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/* Inlined functions for yieldable threads */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_ythread *ABTI_ythread_get_ptr(<a class="code" href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a> thread)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_ythread *ABTI_ythread_get_ptr(<a class="code" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a> thread)</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_ERROR_CHECK</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"></span>    ABTI_ythread *p_ythread;</div>
@@ -114,18 +114,18 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a> ABTI_ythread_get_handle(ABTI_ythread *p_ythread)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a> ABTI_ythread_get_handle(ABTI_ythread *p_ythread)</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_ERROR_CHECK</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a> h_thread;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a> h_thread;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span> (p_ythread == NULL) {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        h_thread = <a class="code" href="../../d5/d7d/abt_8h.html#aabf134f2165a5d15ea5bd063b982d8a6">ABT_THREAD_NULL</a>;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        h_thread = (<a class="code" href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a>)p_ythread;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        h_thread = (<a class="code" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a>)p_ythread;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> h_thread;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> (<a class="code" href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a>)p_ythread;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> (<a class="code" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a>)p_ythread;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
@@ -477,21 +477,21 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;}</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_YTHREAD_H_INCLUDED */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="group__TOOL_html_ggac601a9db309d1a30954d43fc82d9602fa2801f298fea113717986e18eae45b7ab"><div class="ttname"><a href="../../de/d0d/group__TOOL.html#ggac601a9db309d1a30954d43fc82d9602fa2801f298fea113717986e18eae45b7ab">ABT_SYNC_EVENT_TYPE_UNKNOWN</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00369">abt.h:369</a></div></div>
+<div class="ttc" id="group__TOOL_html_ggac601a9db309d1a30954d43fc82d9602fa2801f298fea113717986e18eae45b7ab"><div class="ttname"><a href="../../de/d0d/group__TOOL.html#ggac601a9db309d1a30954d43fc82d9602fa2801f298fea113717986e18eae45b7ab">ABT_SYNC_EVENT_TYPE_UNKNOWN</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00649">abt.h:649</a></div></div>
+<div class="ttc" id="group__ULT_html_ga186008e05c04170eed9ac74808619717"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a></div><div class="ttdeci">struct ABT_thread_opaque * ABT_thread</div><div class="ttdoc">Work unit handle type. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00877">abt.h:877</a></div></div>
 <div class="ttc" id="abtu_8h_html_ae3782cfe8ab5b4b64d7da16a6fd6c84b"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">ABTU_unreachable</a></div><div class="ttdeci">#define ABTU_unreachable()</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00116">abtu.h:116</a></div></div>
-<div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00544">abt.h:544</a></div></div>
-<div class="ttc" id="abt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00456">abt.h:456</a></div></div>
-<div class="ttc" id="abt_8h_html_a186008e05c04170eed9ac74808619717"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a></div><div class="ttdeci">struct ABT_thread_opaque * ABT_thread</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00514">abt.h:514</a></div></div>
-<div class="ttc" id="group__ULT_html_ggaa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00144">abt.h:144</a></div></div>
-<div class="ttc" id="abt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00455">abt.h:455</a></div></div>
-<div class="ttc" id="abt_8h_html_aabf134f2165a5d15ea5bd063b982d8a6"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aabf134f2165a5d15ea5bd063b982d8a6">ABT_THREAD_NULL</a></div><div class="ttdeci">#define ABT_THREAD_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00588">abt.h:588</a></div></div>
+<div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdoc">Boolean type. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00988">abt.h:988</a></div></div>
+<div class="ttc" id="abt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdoc">False constant for ABT_bool. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00737">abt.h:737</a></div></div>
+<div class="ttc" id="group__ULT_html_ggaa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00409">abt.h:409</a></div></div>
+<div class="ttc" id="abt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdoc">True constant for ABT_bool. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00735">abt.h:735</a></div></div>
+<div class="ttc" id="abt_8h_html_aabf134f2165a5d15ea5bd063b982d8a6"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aabf134f2165a5d15ea5bd063b982d8a6">ABT_THREAD_NULL</a></div><div class="ttdeci">#define ABT_THREAD_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01049">abt.h:1049</a></div></div>
 <div class="ttc" id="abtu_8h_html_a64c0a07a6bc37d45de89623a281c5b18"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a64c0a07a6bc37d45de89623a281c5b18">ABTU_noreturn</a></div><div class="ttdeci">#define ABTU_noreturn</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00122">abtu.h:122</a></div></div>
 <div class="ttc" id="abti__log_8h_html_ac06cfc686322558f590c50eab8622ebd"><div class="ttname"><a href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></div><div class="ttdeci">#define LOG_DEBUG(fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5e/abti__log_8h_source.html#l00026">abti_log.h:26</a></div></div>
-<div class="ttc" id="group__TOOL_html_gac601a9db309d1a30954d43fc82d9602f"><div class="ttname"><a href="../../de/d0d/group__TOOL.html#gac601a9db309d1a30954d43fc82d9602f">ABT_sync_event_type</a></div><div class="ttdeci">ABT_sync_event_type</div><div class="ttdoc">Type of synchronization event. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00367">abt.h:367</a></div></div>
+<div class="ttc" id="group__TOOL_html_gac601a9db309d1a30954d43fc82d9602f"><div class="ttname"><a href="../../de/d0d/group__TOOL.html#gac601a9db309d1a30954d43fc82d9602f">ABT_sync_event_type</a></div><div class="ttdeci">ABT_sync_event_type</div><div class="ttdoc">Type of synchronization event. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00647">abt.h:647</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 31 2020 03:10:10 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 1 2021 03:10:13 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

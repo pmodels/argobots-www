@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">b5acbc00243dd9d73fddd2935384824d03911d7a</span>
+   &#160;<span id="projectnumber">eaef486cd9a877c73038627138bf2927ececc25f</span>
    </div>
   </td>
  </tr>
@@ -97,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef ABTI_MUTEX_H_INCLUDED</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ABTI_MUTEX_H_INCLUDED</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_mutex *ABTI_mutex_get_ptr(<a class="code" href="../../d5/d7d/abt_8h.html#a47f82eaefe654cad03090b6e9c818533">ABT_mutex</a> mutex)</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_mutex *ABTI_mutex_get_ptr(<a class="code" href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a> mutex)</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_ERROR_CHECK</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span>    ABTI_mutex *p_mutex;</div>
@@ -112,18 +112,18 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d5/d7d/abt_8h.html#a47f82eaefe654cad03090b6e9c818533">ABT_mutex</a> ABTI_mutex_get_handle(ABTI_mutex *p_mutex)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a> ABTI_mutex_get_handle(ABTI_mutex *p_mutex)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_ERROR_CHECK</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d5/d7d/abt_8h.html#a47f82eaefe654cad03090b6e9c818533">ABT_mutex</a> h_mutex;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a> h_mutex;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span> (p_mutex == NULL) {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        h_mutex = <a class="code" href="../../d5/d7d/abt_8h.html#a7f0cedd38f1395f91cfebda769947bd5">ABT_MUTEX_NULL</a>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        h_mutex = (<a class="code" href="../../d5/d7d/abt_8h.html#a47f82eaefe654cad03090b6e9c818533">ABT_mutex</a>)p_mutex;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        h_mutex = (<a class="code" href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a>)p_mutex;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span> h_mutex;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> (<a class="code" href="../../d5/d7d/abt_8h.html#a47f82eaefe654cad03090b6e9c818533">ABT_mutex</a>)p_mutex;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> (<a class="code" href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a>)p_mutex;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
@@ -206,8 +206,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> ABTI_mutex_trylock_no_recursion(ABTI_mutex *p_mutex)</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> ABTI_spinlock_try_acquire(&amp;p_mutex-&gt;lock) ? <a class="code" href="../../d5/d7d/abt_8h.html#a33d3b1a0cbf34c530b2810e21155dfc5">ABT_ERR_MUTEX_LOCKED</a></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                                                     : <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> ABTI_spinlock_try_acquire(&amp;p_mutex-&gt;lock) ? <a class="code" href="../../d7/d29/group__ERROR__CODE.html#ga33d3b1a0cbf34c530b2810e21155dfc5">ABT_ERR_MUTEX_LOCKED</a></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                                                     : <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> ABTI_mutex_trylock(ABTI_local *p_local, ABTI_mutex *p_mutex)</div>
@@ -217,7 +217,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        ABTI_thread_id self_id = ABTI_self_get_thread_id(p_local);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">if</span> (self_id != p_mutex-&gt;attr.owner_id) {</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordtype">int</span> abt_errno = ABTI_mutex_trylock_no_recursion(p_mutex);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">if</span> (abt_errno == <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">if</span> (abt_errno == <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                ABTI_ASSERT(p_mutex-&gt;attr.nesting_cnt == 0);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                p_mutex-&gt;attr.owner_id = self_id;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            }</div>
@@ -225,7 +225,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="comment">/* Increment a nesting count. */</span></div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            p_mutex-&gt;attr.nesting_cnt++;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        }</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">return</span> ABTI_mutex_trylock_no_recursion(p_mutex);</div>
@@ -286,16 +286,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_MUTEX_H_INCLUDED */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="abt_8h_html_a33d3b1a0cbf34c530b2810e21155dfc5"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a33d3b1a0cbf34c530b2810e21155dfc5">ABT_ERR_MUTEX_LOCKED</a></div><div class="ttdeci">#define ABT_ERR_MUTEX_LOCKED</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00112">abt.h:112</a></div></div>
-<div class="ttc" id="group__TOOL_html_ggac601a9db309d1a30954d43fc82d9602fae643a10c5fdf9ad56c901f16375ba959"><div class="ttname"><a href="../../de/d0d/group__TOOL.html#ggac601a9db309d1a30954d43fc82d9602fae643a10c5fdf9ad56c901f16375ba959">ABT_SYNC_EVENT_TYPE_MUTEX</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00379">abt.h:379</a></div></div>
-<div class="ttc" id="abt_8h_html_a47f82eaefe654cad03090b6e9c818533"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a47f82eaefe654cad03090b6e9c818533">ABT_mutex</a></div><div class="ttdeci">struct ABT_mutex_opaque * ABT_mutex</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00528">abt.h:528</a></div></div>
-<div class="ttc" id="abt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00456">abt.h:456</a></div></div>
-<div class="ttc" id="abt_8h_html_acf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00070">abt.h:70</a></div></div>
-<div class="ttc" id="abt_8h_html_a7f0cedd38f1395f91cfebda769947bd5"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a7f0cedd38f1395f91cfebda769947bd5">ABT_MUTEX_NULL</a></div><div class="ttdeci">#define ABT_MUTEX_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00592">abt.h:592</a></div></div>
+<div class="ttc" id="group__ERROR__CODE_html_gacf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdoc">Error code: the routine returns successfully. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00090">abt.h:90</a></div></div>
+<div class="ttc" id="group__TOOL_html_ggac601a9db309d1a30954d43fc82d9602fae643a10c5fdf9ad56c901f16375ba959"><div class="ttname"><a href="../../de/d0d/group__TOOL.html#ggac601a9db309d1a30954d43fc82d9602fae643a10c5fdf9ad56c901f16375ba959">ABT_SYNC_EVENT_TYPE_MUTEX</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00659">abt.h:659</a></div></div>
+<div class="ttc" id="abt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdoc">False constant for ABT_bool. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00737">abt.h:737</a></div></div>
+<div class="ttc" id="group__MUTEX_html_ga47f82eaefe654cad03090b6e9c818533"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a></div><div class="ttdeci">struct ABT_mutex_opaque * ABT_mutex</div><div class="ttdoc">Mutex handle type. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00932">abt.h:932</a></div></div>
+<div class="ttc" id="abt_8h_html_a7f0cedd38f1395f91cfebda769947bd5"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a7f0cedd38f1395f91cfebda769947bd5">ABT_MUTEX_NULL</a></div><div class="ttdeci">#define ABT_MUTEX_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01053">abt.h:1053</a></div></div>
+<div class="ttc" id="group__ERROR__CODE_html_ga33d3b1a0cbf34c530b2810e21155dfc5"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#ga33d3b1a0cbf34c530b2810e21155dfc5">ABT_ERR_MUTEX_LOCKED</a></div><div class="ttdeci">#define ABT_ERR_MUTEX_LOCKED</div><div class="ttdoc">Error code: a return value when a mutex is locked. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00317">abt.h:317</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 31 2020 03:10:10 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 1 2021 03:10:13 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

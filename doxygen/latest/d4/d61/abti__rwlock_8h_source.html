@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">b5acbc00243dd9d73fddd2935384824d03911d7a</span>
+   &#160;<span id="projectnumber">eaef486cd9a877c73038627138bf2927ececc25f</span>
    </div>
   </td>
  </tr>
@@ -102,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/* Inlined functions for RWLock */</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_rwlock *ABTI_rwlock_get_ptr(<a class="code" href="../../d5/d7d/abt_8h.html#a36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a> rwlock)</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_rwlock *ABTI_rwlock_get_ptr(<a class="code" href="../../d1/dd5/group__RWLOCK.html#ga36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a> rwlock)</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_ERROR_CHECK</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span>    ABTI_rwlock *p_rwlock;</div>
@@ -117,30 +117,30 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d5/d7d/abt_8h.html#a36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a> ABTI_rwlock_get_handle(ABTI_rwlock *p_rwlock)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d1/dd5/group__RWLOCK.html#ga36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a> ABTI_rwlock_get_handle(ABTI_rwlock *p_rwlock)</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_ERROR_CHECK</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d5/d7d/abt_8h.html#a36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a> h_rwlock;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d1/dd5/group__RWLOCK.html#ga36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a> h_rwlock;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span> (p_rwlock == NULL) {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        h_rwlock = <a class="code" href="../../d5/d7d/abt_8h.html#aa98582d7973b0094d421a3a76aa8a994">ABT_RWLOCK_NULL</a>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        h_rwlock = (<a class="code" href="../../d5/d7d/abt_8h.html#a36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a>)p_rwlock;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        h_rwlock = (<a class="code" href="../../d1/dd5/group__RWLOCK.html#ga36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a>)p_rwlock;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> h_rwlock;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> (<a class="code" href="../../d5/d7d/abt_8h.html#a36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a>)p_rwlock;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> (<a class="code" href="../../d1/dd5/group__RWLOCK.html#ga36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a>)p_rwlock;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_RWLOCK_H_INCLUDED */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="abt_8h_html_a36e9efdb079eb5d02a0217c3191c08ba"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a></div><div class="ttdeci">struct ABT_rwlock_opaque * ABT_rwlock</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00534">abt.h:534</a></div></div>
+<div class="ttc" id="group__RWLOCK_html_ga36e9efdb079eb5d02a0217c3191c08ba"><div class="ttname"><a href="../../d1/dd5/group__RWLOCK.html#ga36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a></div><div class="ttdeci">struct ABT_rwlock_opaque * ABT_rwlock</div><div class="ttdoc">Readers-writer lock handle type. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00953">abt.h:953</a></div></div>
 <div class="ttc" id="abti__cond_8h_html"><div class="ttname"><a href="../../d5/df4/abti__cond_8h.html">abti_cond.h</a></div></div>
-<div class="ttc" id="abt_8h_html_aa98582d7973b0094d421a3a76aa8a994"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aa98582d7973b0094d421a3a76aa8a994">ABT_RWLOCK_NULL</a></div><div class="ttdeci">#define ABT_RWLOCK_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00595">abt.h:595</a></div></div>
+<div class="ttc" id="abt_8h_html_aa98582d7973b0094d421a3a76aa8a994"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aa98582d7973b0094d421a3a76aa8a994">ABT_RWLOCK_NULL</a></div><div class="ttdeci">#define ABT_RWLOCK_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01056">abt.h:1056</a></div></div>
 <div class="ttc" id="abti__mutex_8h_html"><div class="ttname"><a href="../../d7/d89/abti__mutex_8h.html">abti_mutex.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 31 2020 03:10:10 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 1 2021 03:10:13 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

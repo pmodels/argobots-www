@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">b5acbc00243dd9d73fddd2935384824d03911d7a</span>
+   &#160;<span id="projectnumber">eaef486cd9a877c73038627138bf2927ececc25f</span>
    </div>
   </td>
  </tr>
@@ -293,10 +293,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordtype">void</span> *ptr;</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordtype">int</span> ret = posix_memalign(&amp;ptr, alignment, size);</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; ret != 0) {</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#aa87727caeba9ca9bb7251eed09c00d0f">ABT_ERR_MEM</a>;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gaa87727caeba9ca9bb7251eed09c00d0f">ABT_ERR_MEM</a>;</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    *p_ptr = ptr;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;}</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
 <div class="line"><a name="l00211"></a><span class="lineno"><a class="line" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">  211</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(<span class="keywordtype">void</span> *ptr)</div>
@@ -320,12 +320,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;{</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordtype">void</span> *ptr;</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordtype">int</span> ret = <a class="code" href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a>(num * size, &amp;ptr);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; ret != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#aa87727caeba9ca9bb7251eed09c00d0f">ABT_ERR_MEM</a>;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; ret != <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gaa87727caeba9ca9bb7251eed09c00d0f">ABT_ERR_MEM</a>;</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    }</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    memset(ptr, 0, num * size);</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    *p_ptr = ptr;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
 <div class="line"><a name="l00240"></a><span class="lineno"><a class="line" href="../../d5/d09/abtu_8h.html#a40521ff89b1044d613bebd52c0aaebde">  240</a></span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="../../d5/d09/abtu_8h.html#a40521ff89b1044d613bebd52c0aaebde">ABTU_realloc</a>(<span class="keywordtype">size_t</span> old_size, <span class="keywordtype">size_t</span> new_size,</div>
@@ -333,13 +333,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;{</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordtype">void</span> *new_ptr, *old_ptr = *p_ptr;</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordtype">int</span> ret = <a class="code" href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a>(new_size, &amp;new_ptr);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; ret != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#aa87727caeba9ca9bb7251eed09c00d0f">ABT_ERR_MEM</a>;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; ret != <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gaa87727caeba9ca9bb7251eed09c00d0f">ABT_ERR_MEM</a>;</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    }</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    memcpy(new_ptr, old_ptr, <a class="code" href="../../d5/d09/abtu_8h.html#a11d6081f2b01f58b66ba74057e659e35">ABTU_min_size</a>(old_size, new_size));</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(old_ptr);</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    *p_ptr = new_ptr;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;}</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="preprocessor">#else </span><span class="comment">/* ABT_CONFIG_USE_ALIGNED_ALLOC */</span><span class="preprocessor"></span></div>
@@ -348,10 +348,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;{</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordtype">void</span> *ptr = malloc(size);</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; ptr == NULL) {</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#aa87727caeba9ca9bb7251eed09c00d0f">ABT_ERR_MEM</a>;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gaa87727caeba9ca9bb7251eed09c00d0f">ABT_ERR_MEM</a>;</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    *p_ptr = ptr;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="../../d5/d09/abtu_8h.html#a88220b7f81a0f629a08915843f37bedd">ABTU_calloc</a>(<span class="keywordtype">size_t</span> num, <span class="keywordtype">size_t</span> size,</div>
@@ -359,10 +359,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;{</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordtype">void</span> *ptr = calloc(num, size);</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; ptr == NULL) {</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#aa87727caeba9ca9bb7251eed09c00d0f">ABT_ERR_MEM</a>;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gaa87727caeba9ca9bb7251eed09c00d0f">ABT_ERR_MEM</a>;</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    }</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    *p_ptr = ptr;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;}</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="../../d5/d09/abtu_8h.html#a40521ff89b1044d613bebd52c0aaebde">ABTU_realloc</a>(<span class="keywordtype">size_t</span> old_size, <span class="keywordtype">size_t</span> new_size,</div>
@@ -371,10 +371,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    (void)old_size;</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordtype">void</span> *ptr = realloc(*p_ptr, new_size);</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; ptr == NULL) {</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#aa87727caeba9ca9bb7251eed09c00d0f">ABT_ERR_MEM</a>;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gaa87727caeba9ca9bb7251eed09c00d0f">ABT_ERR_MEM</a>;</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    }</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    *p_ptr = ptr;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;}</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !ABT_CONFIG_USE_ALIGNED_ALLOC */</span><span class="preprocessor"></span></div>
@@ -410,9 +410,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="abtu_8h_html_aeb96d90123c54222ecca977219dbaa21"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aeb96d90123c54222ecca977219dbaa21">ABTU_atosz</a></div><div class="ttdeci">ABTU_ret_err int ABTU_atosz(const char *str, size_t *p_val, ABT_bool *p_overflow)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d93/atoi_8c_source.html#l00085">atoi.c:85</a></div></div>
 <div class="ttc" id="abtu_8h_html_a4351519a50b76890cd3031a6b83a5953"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a4351519a50b76890cd3031a6b83a5953">ABTU_roundup_uint64</a></div><div class="ttdeci">static uint64_t ABTU_roundup_uint64(uint64_t val, uint64_t multiple)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00085">abtu.h:85</a></div></div>
 <div class="ttc" id="abtu_8h_html_a02915c01ee318a342b9a7db9f3966fd1"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a02915c01ee318a342b9a7db9f3966fd1">ABTU_min_uint64</a></div><div class="ttdeci">static uint64_t ABTU_min_uint64(uint64_t a, uint64_t b)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00065">abtu.h:65</a></div></div>
+<div class="ttc" id="group__ERROR__CODE_html_gacf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdoc">Error code: the routine returns successfully. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00090">abt.h:90</a></div></div>
+<div class="ttc" id="group__ERROR__CODE_html_gaa87727caeba9ca9bb7251eed09c00d0f"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#gaa87727caeba9ca9bb7251eed09c00d0f">ABT_ERR_MEM</a></div><div class="ttdeci">#define ABT_ERR_MEM</div><div class="ttdoc">Error code: Memory allocation failure. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00103">abt.h:103</a></div></div>
 <div class="ttc" id="abtu_8h_html_afd75feb3af0c7c14037688617ef632a9"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#afd75feb3af0c7c14037688617ef632a9">ABTU_max_size</a></div><div class="ttdeci">static size_t ABTU_max_size(size_t a, size_t b)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00040">abtu.h:40</a></div></div>
 <div class="ttc" id="abtu_8h_html_a751fc48323d8ddc11d9197960b33b4c6"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a751fc48323d8ddc11d9197960b33b4c6">ABTU_roundup_size</a></div><div class="ttdeci">static size_t ABTU_roundup_size(size_t val, size_t multiple)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00095">abtu.h:95</a></div></div>
-<div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00544">abt.h:544</a></div></div>
+<div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdoc">Boolean type. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00988">abt.h:988</a></div></div>
 <div class="ttc" id="abtu_8h_html_ad0ffaf5e2f35f8be13f1bd7c1b6e7091"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#ad0ffaf5e2f35f8be13f1bd7c1b6e7091">ABTU_max_int</a></div><div class="ttdeci">static int ABTU_max_int(int a, int b)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00015">abtu.h:15</a></div></div>
 <div class="ttc" id="abt__config_8h_html_a9be181de89306780f2f3d7c575c52b8e"><div class="ttname"><a href="../../dd/d6e/abt__config_8h.html#a9be181de89306780f2f3d7c575c52b8e">ABT_CONFIG_STATIC_CACHELINE_SIZE</a></div><div class="ttdeci">#define ABT_CONFIG_STATIC_CACHELINE_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d6e/abt__config_8h_source.html#l00063">abt_config.h:63</a></div></div>
 <div class="ttc" id="abtu_8h_html_a90d2d2a16904113299eb8353e4e8c6e1"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a90d2d2a16904113299eb8353e4e8c6e1">ABTU_roundup_uint32</a></div><div class="ttdeci">static uint32_t ABTU_roundup_uint32(uint32_t val, uint32_t multiple)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00075">abtu.h:75</a></div></div>
@@ -424,9 +426,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="abtu_8h_html_af9dbccf96868f70c09524a847d510f1a"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af9dbccf96868f70c09524a847d510f1a">ABTU_atoi</a></div><div class="ttdeci">ABTU_ret_err int ABTU_atoi(const char *str, int *p_val, ABT_bool *p_overflow)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d93/atoi_8c_source.html#l00011">atoi.c:11</a></div></div>
 <div class="ttc" id="abtu_8h_html_ab42d9968c80e245045f3f4d1c2c24039"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#ab42d9968c80e245045f3f4d1c2c24039">ABTU_is_supported_largepage_type</a></div><div class="ttdeci">int ABTU_is_supported_largepage_type(size_t size, size_t alignment_hint, ABTU_MEM_LARGEPAGE_TYPE requested)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de7/largepage_8c_source.html#l00059">largepage.c:59</a></div></div>
 <div class="ttc" id="abtu_8h_html_a5ac4dc265e6f2cad6862f45b46886d3d"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a5ac4dc265e6f2cad6862f45b46886d3d">ABTU_min_int</a></div><div class="ttdeci">static int ABTU_min_int(int a, int b)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00045">abtu.h:45</a></div></div>
-<div class="ttc" id="abt_8h_html_aa87727caeba9ca9bb7251eed09c00d0f"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aa87727caeba9ca9bb7251eed09c00d0f">ABT_ERR_MEM</a></div><div class="ttdeci">#define ABT_ERR_MEM</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00072">abt.h:72</a></div></div>
 <div class="ttc" id="abtu_8h_html_aedc081650f27efa03b754abb1a32353e"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aedc081650f27efa03b754abb1a32353e">ABTU_max_int32</a></div><div class="ttdeci">static int32_t ABTU_max_int32(int32_t a, int32_t b)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00020">abtu.h:20</a></div></div>
-<div class="ttc" id="abt_8h_html_acf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00070">abt.h:70</a></div></div>
 <div class="ttc" id="abtu_8h_html_aef487b4e86c4c28804e18e95edd082aca2f8e975c6e885c05fbe291fb81cdfee2"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082aca2f8e975c6e885c05fbe291fb81cdfee2">ABTU_MEM_LARGEPAGE_MMAP_HUGEPAGE</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00295">abtu.h:295</a></div></div>
 <div class="ttc" id="abtu_8h_html_aa315ba860d29923548e980a7d2c4b623"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aa315ba860d29923548e980a7d2c4b623">ABTU_free_largepage</a></div><div class="ttdeci">void ABTU_free_largepage(void *ptr, size_t size, ABTU_MEM_LARGEPAGE_TYPE type)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de7/largepage_8c_source.html#l00132">largepage.c:132</a></div></div>
 <div class="ttc" id="abt__config_8h_html"><div class="ttname"><a href="../../dd/d6e/abt__config_8h.html">abt_config.h</a></div></div>
@@ -447,7 +447,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 31 2020 03:10:10 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 1 2021 03:10:13 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

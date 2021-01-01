@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">b5acbc00243dd9d73fddd2935384824d03911d7a</span>
+   &#160;<span id="projectnumber">eaef486cd9a877c73038627138bf2927ececc25f</span>
    </div>
   </td>
  </tr>
@@ -85,11 +85,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga2cfed2be600613c1e2d32789cb4385bd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dec/group__ERROR.html#ga2cfed2be600613c1e2d32789cb4385bd">ABT_error_get_str</a> (int err, char *str, size_t *len)</td></tr>
-<tr class="memdesc:ga2cfed2be600613c1e2d32789cb4385bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the string of error code and its length.  <a href="#ga2cfed2be600613c1e2d32789cb4385bd">More...</a><br/></td></tr>
+<tr class="memdesc:ga2cfed2be600613c1e2d32789cb4385bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a string of an error code and its length.  <a href="#ga2cfed2be600613c1e2d32789cb4385bd">More...</a><br/></td></tr>
 <tr class="separator:ga2cfed2be600613c1e2d32789cb4385bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>This group is for error classes. </p>
+<p>This group is for Error. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ga2cfed2be600613c1e2d32789cb4385bd"></a>
 <div class="memitem">
@@ -121,32 +121,38 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the string of error code and its length. </p>
-<p><code>ABT_error_get_str</code> returns the string of given error code through <code>str</code> and its length in bytes via <code>len</code>. If <code>str</code> is NULL, only <code>len</code> is returned. If <code>str</code> is not NULL, it should have enough space to save <code>len</code> bytes of characters. If <code>len</code> is NULL, <code>len</code> is ignored.</p>
+<p>Retrieve a string of an error code and its length. </p>
+<p><code><a class="el" href="../../d3/dec/group__ERROR.html#ga2cfed2be600613c1e2d32789cb4385bd" title="Retrieve a string of an error code and its length. ">ABT_error_get_str()</a></code> returns a zero-terminated string of the error code <code>err</code> through <code>str</code> and its length in bytes through <code>len</code>.</p>
+<p>If <code>str</code> is not <code>NULL</code>, the user must be responsible for passing <code>str</code> that has enough space to save <em>"the length of the string \+ 1"</em> bytes of characters. If <code>str</code> is <code>NULL</code>, <code>str</code> is not updated.</p>
+<p>If <code>len</code> is not <code>NULL</code>, this routine sets the length of the string to <code>len</code>. If <code>len</code> is <code>NULL</code>, <code>len</code> is not updated.</p>
+<dl class="section note">
+<dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
+<dd><b>[Argobots 1.x]</b> <code>ABT_ERR_OTHER</code> is returned if <code>err</code> is not a valid error code. <b>[Argobots 2.0]</b> <code>ABT_ERR_INV_ARG</code> is returned if <code>err</code> is not a valid error code. <dl class="section user">
+<dt>Rationale</dt>
+<dd>Argobots 2.0 changes the error code for consistent behavior with the other Argobots routines. </dd>
+</dl>
+</dd>
+</dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><b>[Argobots 1.x]</b> If <code>err</code> is not a valid error code, <code>ABT_ERR_OTHER</code> is returned. <b>[Argobots 2.0]</b> If <code>err</code> is not a valid error code, <code>ABT_ERR_INV_ARG</code> is returned.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">err</td><td>error code </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">str</td><td>error string </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">len</td><td>the length of string in bytes </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">len</td><td>length of string in bytes </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">ABT_SUCCESS</td><td>on success </td></tr>
-  </table>
-  </dd>
-</dl>
 
-<p>Definition at line <a class="el" href="../../db/dcc/error_8c_source.html#l00027">27</a> of file <a class="el" href="../../db/dcc/error_8c_source.html">error.c</a>.</p>
+<p>Definition at line <a class="el" href="../../db/dcc/error_8c_source.html#l00048">48</a> of file <a class="el" href="../../db/dcc/error_8c_source.html">error.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 31 2020 03:10:08 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 1 2021 03:10:11 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

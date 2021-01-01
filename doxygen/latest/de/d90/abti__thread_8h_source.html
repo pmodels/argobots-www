@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">b5acbc00243dd9d73fddd2935384824d03911d7a</span>
+   &#160;<span id="projectnumber">eaef486cd9a877c73038627138bf2927ececc25f</span>
    </div>
   </td>
  </tr>
@@ -97,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef ABTI_THREAD_H_INCLUDED</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ABTI_THREAD_H_INCLUDED</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_thread *ABTI_thread_get_ptr(<a class="code" href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a> thread)</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_thread *ABTI_thread_get_ptr(<a class="code" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a> thread)</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_ERROR_CHECK</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span>    ABTI_thread *p_thread;</div>
@@ -112,31 +112,31 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a> ABTI_thread_get_handle(ABTI_thread *p_thread)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a> ABTI_thread_get_handle(ABTI_thread *p_thread)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_ERROR_CHECK</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a> h_thread;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a> h_thread;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span> (p_thread == NULL) {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        h_thread = <a class="code" href="../../d5/d7d/abt_8h.html#aabf134f2165a5d15ea5bd063b982d8a6">ABT_THREAD_NULL</a>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        h_thread = (<a class="code" href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a>)p_thread;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        h_thread = (<a class="code" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a>)p_thread;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span> h_thread;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> (<a class="code" href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a>)p_thread;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> (<a class="code" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a>)p_thread;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">/* Inlined functions for User-level Thread (ULT) */</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981c">ABT_unit_type</a> ABTI_thread_type_get_type(ABTI_thread_type type)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../de/dab/group__UNIT.html#ga80bdf9da42da2ec917df5bdb66e0981c">ABT_unit_type</a> ABTI_thread_type_get_type(ABTI_thread_type type)</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span> (type &amp; ABTI_THREAD_TYPE_YIELDABLE) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981ca4a88df161804496652e74229ee601433">ABT_UNIT_TYPE_THREAD</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../de/dab/group__UNIT.html#gga80bdf9da42da2ec917df5bdb66e0981ca4a88df161804496652e74229ee601433">ABT_UNIT_TYPE_THREAD</a>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == ABTI_THREAD_TYPE_EXT) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981caece98bb6bb9b7c9a050c055126058342">ABT_UNIT_TYPE_EXT</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../de/dab/group__UNIT.html#gga80bdf9da42da2ec917df5bdb66e0981caece98bb6bb9b7c9a050c055126058342">ABT_UNIT_TYPE_EXT</a>;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981ca9dbf5adc43ca319df065f36fedcd9af3">ABT_UNIT_TYPE_TASK</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../de/dab/group__UNIT.html#gga80bdf9da42da2ec917df5bdb66e0981ca9dbf5adc43ca319df065f36fedcd9af3">ABT_UNIT_TYPE_TASK</a>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
@@ -168,17 +168,17 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_THREAD_H_INCLUDED */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="abt_8h_html_a80bdf9da42da2ec917df5bdb66e0981ca4a88df161804496652e74229ee601433"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981ca4a88df161804496652e74229ee601433">ABT_UNIT_TYPE_THREAD</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00265">abt.h:265</a></div></div>
-<div class="ttc" id="abt_8h_html_a186008e05c04170eed9ac74808619717"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a186008e05c04170eed9ac74808619717">ABT_thread</a></div><div class="ttdeci">struct ABT_thread_opaque * ABT_thread</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00514">abt.h:514</a></div></div>
-<div class="ttc" id="abt_8h_html_a80bdf9da42da2ec917df5bdb66e0981caece98bb6bb9b7c9a050c055126058342"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981caece98bb6bb9b7c9a050c055126058342">ABT_UNIT_TYPE_EXT</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00268">abt.h:268</a></div></div>
-<div class="ttc" id="abt_8h_html_a80bdf9da42da2ec917df5bdb66e0981c"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981c">ABT_unit_type</a></div><div class="ttdeci">ABT_unit_type</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00264">abt.h:264</a></div></div>
-<div class="ttc" id="abt_8h_html_a80bdf9da42da2ec917df5bdb66e0981ca9dbf5adc43ca319df065f36fedcd9af3"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a80bdf9da42da2ec917df5bdb66e0981ca9dbf5adc43ca319df065f36fedcd9af3">ABT_UNIT_TYPE_TASK</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00266">abt.h:266</a></div></div>
-<div class="ttc" id="abt_8h_html_aabf134f2165a5d15ea5bd063b982d8a6"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aabf134f2165a5d15ea5bd063b982d8a6">ABT_THREAD_NULL</a></div><div class="ttdeci">#define ABT_THREAD_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00588">abt.h:588</a></div></div>
-<div class="ttc" id="abt_8h_html_acedaaeb67b83967cc9129e0906f38e93"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#acedaaeb67b83967cc9129e0906f38e93">ABT_TASK_NULL</a></div><div class="ttdeci">#define ABT_TASK_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00590">abt.h:590</a></div></div>
+<div class="ttc" id="group__ULT_html_ga186008e05c04170eed9ac74808619717"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a></div><div class="ttdeci">struct ABT_thread_opaque * ABT_thread</div><div class="ttdoc">Work unit handle type. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00877">abt.h:877</a></div></div>
+<div class="ttc" id="group__UNIT_html_gga80bdf9da42da2ec917df5bdb66e0981caece98bb6bb9b7c9a050c055126058342"><div class="ttname"><a href="../../de/dab/group__UNIT.html#gga80bdf9da42da2ec917df5bdb66e0981caece98bb6bb9b7c9a050c055126058342">ABT_UNIT_TYPE_EXT</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00552">abt.h:552</a></div></div>
+<div class="ttc" id="group__UNIT_html_gga80bdf9da42da2ec917df5bdb66e0981ca9dbf5adc43ca319df065f36fedcd9af3"><div class="ttname"><a href="../../de/dab/group__UNIT.html#gga80bdf9da42da2ec917df5bdb66e0981ca9dbf5adc43ca319df065f36fedcd9af3">ABT_UNIT_TYPE_TASK</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00548">abt.h:548</a></div></div>
+<div class="ttc" id="group__UNIT_html_ga80bdf9da42da2ec917df5bdb66e0981c"><div class="ttname"><a href="../../de/dab/group__UNIT.html#ga80bdf9da42da2ec917df5bdb66e0981c">ABT_unit_type</a></div><div class="ttdeci">ABT_unit_type</div><div class="ttdoc">Type of a work unit for scheduling. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00540">abt.h:540</a></div></div>
+<div class="ttc" id="group__UNIT_html_gga80bdf9da42da2ec917df5bdb66e0981ca4a88df161804496652e74229ee601433"><div class="ttname"><a href="../../de/dab/group__UNIT.html#gga80bdf9da42da2ec917df5bdb66e0981ca4a88df161804496652e74229ee601433">ABT_UNIT_TYPE_THREAD</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00542">abt.h:542</a></div></div>
+<div class="ttc" id="abt_8h_html_aabf134f2165a5d15ea5bd063b982d8a6"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aabf134f2165a5d15ea5bd063b982d8a6">ABT_THREAD_NULL</a></div><div class="ttdeci">#define ABT_THREAD_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01049">abt.h:1049</a></div></div>
+<div class="ttc" id="abt_8h_html_acedaaeb67b83967cc9129e0906f38e93"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#acedaaeb67b83967cc9129e0906f38e93">ABT_TASK_NULL</a></div><div class="ttdeci">#define ABT_TASK_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01051">abt.h:1051</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 31 2020 03:10:10 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 1 2021 03:10:13 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

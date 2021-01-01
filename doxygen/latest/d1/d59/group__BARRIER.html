@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">b5acbc00243dd9d73fddd2935384824d03911d7a</span>
+   &#160;<span id="projectnumber">eaef486cd9a877c73038627138bf2927ececc25f</span>
    </div>
   </td>
  </tr>
@@ -76,32 +76,57 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 <div class="header">
   <div class="summary">
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Barrier</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gac65619206b67ee54239c681e38848838"><td class="memItemLeft" align="right" valign="top">typedef struct ABT_barrier_opaque *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d59/group__BARRIER.html#gac65619206b67ee54239c681e38848838">ABT_barrier</a></td></tr>
+<tr class="memdesc:gac65619206b67ee54239c681e38848838"><td class="mdescLeft">&#160;</td><td class="mdescRight">Barrier handle type.  <a href="#gac65619206b67ee54239c681e38848838">More...</a><br/></td></tr>
+<tr class="separator:gac65619206b67ee54239c681e38848838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaf1b69c7b4e3ff490a340ae042afa4426"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d59/group__BARRIER.html#gaf1b69c7b4e3ff490a340ae042afa4426">ABT_barrier_create</a> (uint32_t num_waiters, <a class="el" href="../../d5/d7d/abt_8h.html#ac65619206b67ee54239c681e38848838">ABT_barrier</a> *newbarrier)</td></tr>
+<tr class="memitem:gaf1b69c7b4e3ff490a340ae042afa4426"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d59/group__BARRIER.html#gaf1b69c7b4e3ff490a340ae042afa4426">ABT_barrier_create</a> (uint32_t num_waiters, <a class="el" href="../../d1/d59/group__BARRIER.html#gac65619206b67ee54239c681e38848838">ABT_barrier</a> *newbarrier)</td></tr>
 <tr class="memdesc:gaf1b69c7b4e3ff490a340ae042afa4426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new barrier.  <a href="#gaf1b69c7b4e3ff490a340ae042afa4426">More...</a><br/></td></tr>
 <tr class="separator:gaf1b69c7b4e3ff490a340ae042afa4426"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga246c1d8f2bfb86cab58bff5292ba0491"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d59/group__BARRIER.html#ga246c1d8f2bfb86cab58bff5292ba0491">ABT_barrier_reinit</a> (<a class="el" href="../../d5/d7d/abt_8h.html#ac65619206b67ee54239c681e38848838">ABT_barrier</a> barrier, uint32_t num_waiters)</td></tr>
+<tr class="memitem:ga246c1d8f2bfb86cab58bff5292ba0491"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d59/group__BARRIER.html#ga246c1d8f2bfb86cab58bff5292ba0491">ABT_barrier_reinit</a> (<a class="el" href="../../d1/d59/group__BARRIER.html#gac65619206b67ee54239c681e38848838">ABT_barrier</a> barrier, uint32_t num_waiters)</td></tr>
 <tr class="memdesc:ga246c1d8f2bfb86cab58bff5292ba0491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinitialize a barrier with a new number of waiters.  <a href="#ga246c1d8f2bfb86cab58bff5292ba0491">More...</a><br/></td></tr>
 <tr class="separator:ga246c1d8f2bfb86cab58bff5292ba0491"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga195bac1a3ef964c9f3a361119c275a99"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d59/group__BARRIER.html#ga195bac1a3ef964c9f3a361119c275a99">ABT_barrier_free</a> (<a class="el" href="../../d5/d7d/abt_8h.html#ac65619206b67ee54239c681e38848838">ABT_barrier</a> *barrier)</td></tr>
+<tr class="memitem:ga195bac1a3ef964c9f3a361119c275a99"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d59/group__BARRIER.html#ga195bac1a3ef964c9f3a361119c275a99">ABT_barrier_free</a> (<a class="el" href="../../d1/d59/group__BARRIER.html#gac65619206b67ee54239c681e38848838">ABT_barrier</a> *barrier)</td></tr>
 <tr class="memdesc:ga195bac1a3ef964c9f3a361119c275a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a barrier.  <a href="#ga195bac1a3ef964c9f3a361119c275a99">More...</a><br/></td></tr>
 <tr class="separator:ga195bac1a3ef964c9f3a361119c275a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad5b9e2f6ad5bf056b1f699670b13d141"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d59/group__BARRIER.html#gad5b9e2f6ad5bf056b1f699670b13d141">ABT_barrier_wait</a> (<a class="el" href="../../d5/d7d/abt_8h.html#ac65619206b67ee54239c681e38848838">ABT_barrier</a> barrier)</td></tr>
+<tr class="memitem:gad5b9e2f6ad5bf056b1f699670b13d141"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d59/group__BARRIER.html#gad5b9e2f6ad5bf056b1f699670b13d141">ABT_barrier_wait</a> (<a class="el" href="../../d1/d59/group__BARRIER.html#gac65619206b67ee54239c681e38848838">ABT_barrier</a> barrier)</td></tr>
 <tr class="memdesc:gad5b9e2f6ad5bf056b1f699670b13d141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait on a barrier.  <a href="#gad5b9e2f6ad5bf056b1f699670b13d141">More...</a><br/></td></tr>
 <tr class="separator:gad5b9e2f6ad5bf056b1f699670b13d141"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5fab26c6e6b0d9d5dfd1c595855c3720"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d59/group__BARRIER.html#ga5fab26c6e6b0d9d5dfd1c595855c3720">ABT_barrier_get_num_waiters</a> (<a class="el" href="../../d5/d7d/abt_8h.html#ac65619206b67ee54239c681e38848838">ABT_barrier</a> barrier, uint32_t *num_waiters)</td></tr>
+<tr class="memitem:ga5fab26c6e6b0d9d5dfd1c595855c3720"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d59/group__BARRIER.html#ga5fab26c6e6b0d9d5dfd1c595855c3720">ABT_barrier_get_num_waiters</a> (<a class="el" href="../../d1/d59/group__BARRIER.html#gac65619206b67ee54239c681e38848838">ABT_barrier</a> barrier, uint32_t *num_waiters)</td></tr>
 <tr class="memdesc:ga5fab26c6e6b0d9d5dfd1c595855c3720"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of waiters of a barrier.  <a href="#ga5fab26c6e6b0d9d5dfd1c595855c3720">More...</a><br/></td></tr>
 <tr class="separator:ga5fab26c6e6b0d9d5dfd1c595855c3720"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>This group is for Barrier. </p>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="gac65619206b67ee54239c681e38848838"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct ABT_barrier_opaque* <a class="el" href="../../d1/d59/group__BARRIER.html#gac65619206b67ee54239c681e38848838">ABT_barrier</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Barrier handle type. </p>
+<p>A NULL handle of this type is <code>ABT_BARRIER_NULL</code>. </p>
+
+<p>Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00974">974</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="gaf1b69c7b4e3ff490a340ae042afa4426"></a>
 <div class="memitem">
@@ -116,7 +141,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d5/d7d/abt_8h.html#ac65619206b67ee54239c681e38848838">ABT_barrier</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d1/d59/group__BARRIER.html#gac65619206b67ee54239c681e38848838">ABT_barrier</a> *&#160;</td>
           <td class="paramname"><em>newbarrier</em>&#160;</td>
         </tr>
         <tr>
@@ -169,7 +194,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int ABT_barrier_free </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d5/d7d/abt_8h.html#ac65619206b67ee54239c681e38848838">ABT_barrier</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d1/d59/group__BARRIER.html#gac65619206b67ee54239c681e38848838">ABT_barrier</a> *&#160;</td>
           <td class="paramname"><em>barrier</em></td><td>)</td>
           <td></td>
         </tr>
@@ -200,7 +225,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int ABT_barrier_get_num_waiters </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d5/d7d/abt_8h.html#ac65619206b67ee54239c681e38848838">ABT_barrier</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d1/d59/group__BARRIER.html#gac65619206b67ee54239c681e38848838">ABT_barrier</a>&#160;</td>
           <td class="paramname"><em>barrier</em>, </td>
         </tr>
         <tr>
@@ -242,7 +267,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int ABT_barrier_reinit </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d5/d7d/abt_8h.html#ac65619206b67ee54239c681e38848838">ABT_barrier</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d1/d59/group__BARRIER.html#gac65619206b67ee54239c681e38848838">ABT_barrier</a>&#160;</td>
           <td class="paramname"><em>barrier</em>, </td>
         </tr>
         <tr>
@@ -292,7 +317,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int ABT_barrier_wait </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d5/d7d/abt_8h.html#ac65619206b67ee54239c681e38848838">ABT_barrier</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d1/d59/group__BARRIER.html#gac65619206b67ee54239c681e38848838">ABT_barrier</a>&#160;</td>
           <td class="paramname"><em>barrier</em></td><td>)</td>
           <td></td>
         </tr>
@@ -328,7 +353,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 31 2020 03:10:10 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 1 2021 03:10:13 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

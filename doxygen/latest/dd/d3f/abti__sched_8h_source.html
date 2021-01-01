@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">b5acbc00243dd9d73fddd2935384824d03911d7a</span>
+   &#160;<span id="projectnumber">eaef486cd9a877c73038627138bf2927ececc25f</span>
    </div>
   </td>
  </tr>
@@ -99,7 +99,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/* Inlined functions for Scheduler */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_sched *ABTI_sched_get_ptr(<a class="code" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> sched)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_sched *ABTI_sched_get_ptr(<a class="code" href="../../d0/d83/group__SCHED.html#gadf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> sched)</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_ERROR_CHECK</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"></span>    ABTI_sched *p_sched;</div>
@@ -114,18 +114,18 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> ABTI_sched_get_handle(ABTI_sched *p_sched)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d0/d83/group__SCHED.html#gadf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> ABTI_sched_get_handle(ABTI_sched *p_sched)</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_ERROR_CHECK</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> h_sched;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d0/d83/group__SCHED.html#gadf0a564b506bb4a288f49cbfd3116025">ABT_sched</a> h_sched;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span> (p_sched == NULL) {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        h_sched = <a class="code" href="../../d5/d7d/abt_8h.html#a6ec206ed23259ffaa4ec3c554329381f">ABT_SCHED_NULL</a>;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        h_sched = (<a class="code" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a>)p_sched;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        h_sched = (<a class="code" href="../../d0/d83/group__SCHED.html#gadf0a564b506bb4a288f49cbfd3116025">ABT_sched</a>)p_sched;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> h_sched;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> (<a class="code" href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a>)p_sched;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> (<a class="code" href="../../d0/d83/group__SCHED.html#gadf0a564b506bb4a288f49cbfd3116025">ABT_sched</a>)p_sched;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
@@ -170,14 +170,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_SCHED_H_INCLUDED */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="abt_8h_html_adf0a564b506bb4a288f49cbfd3116025"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#adf0a564b506bb4a288f49cbfd3116025">ABT_sched</a></div><div class="ttdeci">struct ABT_sched_opaque * ABT_sched</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00490">abt.h:490</a></div></div>
-<div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00544">abt.h:544</a></div></div>
-<div class="ttc" id="abt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00455">abt.h:455</a></div></div>
-<div class="ttc" id="abt_8h_html_a6ec206ed23259ffaa4ec3c554329381f"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a6ec206ed23259ffaa4ec3c554329381f">ABT_SCHED_NULL</a></div><div class="ttdeci">#define ABT_SCHED_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00583">abt.h:583</a></div></div>
+<div class="ttc" id="group__SCHED_html_gadf0a564b506bb4a288f49cbfd3116025"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#gadf0a564b506bb4a288f49cbfd3116025">ABT_sched</a></div><div class="ttdeci">struct ABT_sched_opaque * ABT_sched</div><div class="ttdoc">Scheduler handle type. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00795">abt.h:795</a></div></div>
+<div class="ttc" id="abt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdoc">Boolean type. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00988">abt.h:988</a></div></div>
+<div class="ttc" id="abt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdoc">True constant for ABT_bool. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00735">abt.h:735</a></div></div>
+<div class="ttc" id="abt_8h_html_a6ec206ed23259ffaa4ec3c554329381f"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a6ec206ed23259ffaa4ec3c554329381f">ABT_SCHED_NULL</a></div><div class="ttdeci">#define ABT_SCHED_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01044">abt.h:1044</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 31 2020 03:10:10 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 1 2021 03:10:13 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

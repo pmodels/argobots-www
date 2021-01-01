@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">b5acbc00243dd9d73fddd2935384824d03911d7a</span>
+   &#160;<span id="projectnumber">eaef486cd9a877c73038627138bf2927ececc25f</span>
    </div>
   </td>
  </tr>
@@ -106,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">return</span> ABTD_time_read_sec(&amp;t);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_timer *ABTI_timer_get_ptr(<a class="code" href="../../d5/d7d/abt_8h.html#a7b3a19cda910f4c5b64f237f751edaae">ABT_timer</a> timer)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> ABTI_timer *ABTI_timer_get_ptr(<a class="code" href="../../d0/dde/group__TIMER.html#ga7b3a19cda910f4c5b64f237f751edaae">ABT_timer</a> timer)</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_ERROR_CHECK</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"></span>    ABTI_timer *p_timer;</div>
@@ -121,28 +121,28 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d5/d7d/abt_8h.html#a7b3a19cda910f4c5b64f237f751edaae">ABT_timer</a> ABTI_timer_get_handle(ABTI_timer *p_timer)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d0/dde/group__TIMER.html#ga7b3a19cda910f4c5b64f237f751edaae">ABT_timer</a> ABTI_timer_get_handle(ABTI_timer *p_timer)</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_ERROR_CHECK</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d5/d7d/abt_8h.html#a7b3a19cda910f4c5b64f237f751edaae">ABT_timer</a> h_timer;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d0/dde/group__TIMER.html#ga7b3a19cda910f4c5b64f237f751edaae">ABT_timer</a> h_timer;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span> (p_timer == NULL) {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        h_timer = <a class="code" href="../../d5/d7d/abt_8h.html#a1738831d0022506379e4fd6f1b051bdc">ABT_TIMER_NULL</a>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        h_timer = (<a class="code" href="../../d5/d7d/abt_8h.html#a7b3a19cda910f4c5b64f237f751edaae">ABT_timer</a>)p_timer;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        h_timer = (<a class="code" href="../../d0/dde/group__TIMER.html#ga7b3a19cda910f4c5b64f237f751edaae">ABT_timer</a>)p_timer;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> h_timer;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> (<a class="code" href="../../d5/d7d/abt_8h.html#a7b3a19cda910f4c5b64f237f751edaae">ABT_timer</a>)p_timer;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> (<a class="code" href="../../d0/dde/group__TIMER.html#ga7b3a19cda910f4c5b64f237f751edaae">ABT_timer</a>)p_timer;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_TIMER_H_INCLUDED */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="abt_8h_html_a1738831d0022506379e4fd6f1b051bdc"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1738831d0022506379e4fd6f1b051bdc">ABT_TIMER_NULL</a></div><div class="ttdeci">#define ABT_TIMER_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00599">abt.h:599</a></div></div>
-<div class="ttc" id="abt_8h_html_a7b3a19cda910f4c5b64f237f751edaae"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a7b3a19cda910f4c5b64f237f751edaae">ABT_timer</a></div><div class="ttdeci">struct ABT_timer_opaque * ABT_timer</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00542">abt.h:542</a></div></div>
+<div class="ttc" id="abt_8h_html_a1738831d0022506379e4fd6f1b051bdc"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1738831d0022506379e4fd6f1b051bdc">ABT_TIMER_NULL</a></div><div class="ttdeci">#define ABT_TIMER_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01060">abt.h:1060</a></div></div>
+<div class="ttc" id="group__TIMER_html_ga7b3a19cda910f4c5b64f237f751edaae"><div class="ttname"><a href="../../d0/dde/group__TIMER.html#ga7b3a19cda910f4c5b64f237f751edaae">ABT_timer</a></div><div class="ttdeci">struct ABT_timer_opaque * ABT_timer</div><div class="ttdoc">Timer handle type. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00981">abt.h:981</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 31 2020 03:10:10 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 1 2021 03:10:13 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

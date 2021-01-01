@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">b5acbc00243dd9d73fddd2935384824d03911d7a</span>
+   &#160;<span id="projectnumber">eaef486cd9a877c73038627138bf2927ececc25f</span>
    </div>
   </td>
  </tr>
@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/* Inlined functions for Barrier */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* Barrier */</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d9/d06/abti__barrier_8h.html#ae604722777748a773400425ac022b52e">   12</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d9/d20/structABTI__barrier.html">ABTI_barrier</a> *<a class="code" href="../../d9/d06/abti__barrier_8h.html#ae604722777748a773400425ac022b52e">ABTI_barrier_get_ptr</a>(<a class="code" href="../../d5/d7d/abt_8h.html#ac65619206b67ee54239c681e38848838">ABT_barrier</a> barrier)</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d9/d06/abti__barrier_8h.html#ae604722777748a773400425ac022b52e">   12</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d9/d20/structABTI__barrier.html">ABTI_barrier</a> *<a class="code" href="../../d9/d06/abti__barrier_8h.html#ae604722777748a773400425ac022b52e">ABTI_barrier_get_ptr</a>(<a class="code" href="../../d1/d59/group__BARRIER.html#gac65619206b67ee54239c681e38848838">ABT_barrier</a> barrier)</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_ERROR_CHECK</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d9/d20/structABTI__barrier.html">ABTI_barrier</a> *p_barrier;</div>
@@ -115,31 +115,31 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d9/d06/abti__barrier_8h.html#ac9bce7a230d2dd6c8cf500e9812f59d1">   27</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d5/d7d/abt_8h.html#ac65619206b67ee54239c681e38848838">ABT_barrier</a> <a class="code" href="../../d9/d06/abti__barrier_8h.html#ac9bce7a230d2dd6c8cf500e9812f59d1">ABTI_barrier_get_handle</a>(<a class="code" href="../../d9/d20/structABTI__barrier.html">ABTI_barrier</a> *p_barrier)</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d9/d06/abti__barrier_8h.html#ac9bce7a230d2dd6c8cf500e9812f59d1">   27</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d1/d59/group__BARRIER.html#gac65619206b67ee54239c681e38848838">ABT_barrier</a> <a class="code" href="../../d9/d06/abti__barrier_8h.html#ac9bce7a230d2dd6c8cf500e9812f59d1">ABTI_barrier_get_handle</a>(<a class="code" href="../../d9/d20/structABTI__barrier.html">ABTI_barrier</a> *p_barrier)</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_ERROR_CHECK</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d5/d7d/abt_8h.html#ac65619206b67ee54239c681e38848838">ABT_barrier</a> h_barrier;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor"></span>    <a class="code" href="../../d1/d59/group__BARRIER.html#gac65619206b67ee54239c681e38848838">ABT_barrier</a> h_barrier;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span> (p_barrier == NULL) {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        h_barrier = <a class="code" href="../../d5/d7d/abt_8h.html#a9a1e54404e9f8e7476ce5c3ce03f9d00">ABT_BARRIER_NULL</a>;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        h_barrier = (<a class="code" href="../../d5/d7d/abt_8h.html#ac65619206b67ee54239c681e38848838">ABT_barrier</a>)p_barrier;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        h_barrier = (<a class="code" href="../../d1/d59/group__BARRIER.html#gac65619206b67ee54239c681e38848838">ABT_barrier</a>)p_barrier;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> h_barrier;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> (<a class="code" href="../../d5/d7d/abt_8h.html#ac65619206b67ee54239c681e38848838">ABT_barrier</a>)p_barrier;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">return</span> (<a class="code" href="../../d1/d59/group__BARRIER.html#gac65619206b67ee54239c681e38848838">ABT_barrier</a>)p_barrier;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_BARRIER_H_INCLUDED */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="abti__barrier_8h_html_ae604722777748a773400425ac022b52e"><div class="ttname"><a href="../../d9/d06/abti__barrier_8h.html#ae604722777748a773400425ac022b52e">ABTI_barrier_get_ptr</a></div><div class="ttdeci">static ABTI_barrier * ABTI_barrier_get_ptr(ABT_barrier barrier)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d06/abti__barrier_8h_source.html#l00012">abti_barrier.h:12</a></div></div>
-<div class="ttc" id="abt_8h_html_ac65619206b67ee54239c681e38848838"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ac65619206b67ee54239c681e38848838">ABT_barrier</a></div><div class="ttdeci">struct ABT_barrier_opaque * ABT_barrier</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00540">abt.h:540</a></div></div>
 <div class="ttc" id="abti__barrier_8h_html_ac9bce7a230d2dd6c8cf500e9812f59d1"><div class="ttname"><a href="../../d9/d06/abti__barrier_8h.html#ac9bce7a230d2dd6c8cf500e9812f59d1">ABTI_barrier_get_handle</a></div><div class="ttdeci">static ABT_barrier ABTI_barrier_get_handle(ABTI_barrier *p_barrier)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d06/abti__barrier_8h_source.html#l00027">abti_barrier.h:27</a></div></div>
 <div class="ttc" id="structABTI__barrier_html"><div class="ttname"><a href="../../d9/d20/structABTI__barrier.html">ABTI_barrier</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00438">abti.h:438</a></div></div>
-<div class="ttc" id="abt_8h_html_a9a1e54404e9f8e7476ce5c3ce03f9d00"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a9a1e54404e9f8e7476ce5c3ce03f9d00">ABT_BARRIER_NULL</a></div><div class="ttdeci">#define ABT_BARRIER_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00598">abt.h:598</a></div></div>
+<div class="ttc" id="group__BARRIER_html_gac65619206b67ee54239c681e38848838"><div class="ttname"><a href="../../d1/d59/group__BARRIER.html#gac65619206b67ee54239c681e38848838">ABT_barrier</a></div><div class="ttdeci">struct ABT_barrier_opaque * ABT_barrier</div><div class="ttdoc">Barrier handle type. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00974">abt.h:974</a></div></div>
+<div class="ttc" id="abt_8h_html_a9a1e54404e9f8e7476ce5c3ce03f9d00"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a9a1e54404e9f8e7476ce5c3ce03f9d00">ABT_BARRIER_NULL</a></div><div class="ttdeci">#define ABT_BARRIER_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01059">abt.h:1059</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 31 2020 03:10:08 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 1 2021 03:10:11 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

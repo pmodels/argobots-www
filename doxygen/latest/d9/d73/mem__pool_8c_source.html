@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">b5acbc00243dd9d73fddd2935384824d03911d7a</span>
+   &#160;<span id="projectnumber">eaef486cd9a877c73038627138bf2927ececc25f</span>
    </div>
   </td>
  </tr>
@@ -226,7 +226,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">     * Let&#39;s take one bucket. */</span></div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">int</span> abt_errno =</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        ABTI_mem_pool_take_bucket(p_global_pool, &amp;p_local_pool-&gt;buckets[0]);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    ABTI_ASSERT(abt_errno == <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    ABTI_ASSERT(abt_errno == <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>);</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    p_local_pool-&gt;bucket_index = 0;</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
@@ -264,7 +264,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <a class="code" href="../../d9/d73/mem__pool_8c.html#a5d8df49ef27482dd276d9b7a653e48d9">mem_pool_lifo_elem_to_header</a>(p_popped_bucket_lifo_elem);</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        popped_bucket-&gt;bucket_info.num_headers = num_headers_per_bucket;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        *p_bucket = popped_bucket;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="comment">/* Allocate headers by myself */</span></div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">size_t</span> header_size = p_global_pool-&gt;header_size;</div>
@@ -290,7 +290,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                                         p_global_pool-&gt;lp_type_requests,</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                                         p_global_pool-&gt;num_lp_type_requests,</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                                         &amp;lp_type, &amp;p_alloc_mem);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; abt_errno != <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; abt_errno != <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                    <span class="comment">/* It fails to take a large page. Let&#39;s return. */</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                    <span class="keywordflow">if</span> (num_headers != 0) {</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                        <span class="comment">/* p_head has some elements, so let&#39;s return them. */</span></div>
@@ -359,7 +359,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            <span class="keywordflow">if</span> (num_headers == num_headers_per_bucket) {</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                p_head-&gt;bucket_info.num_headers = num_headers_per_bucket;</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                *p_bucket = p_head;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            }</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        }</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    }</div>
@@ -373,9 +373,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                        &amp;bucket-&gt;bucket_info.lifo_elem);</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;}</div>
 <div class="ttc" id="abtu_8h_html_a7e428ab19a648b9fcd6491a10551e27e"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a7e428ab19a648b9fcd6491a10551e27e">ABTU_likely</a></div><div class="ttdeci">#define ABTU_likely(cond)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00108">abtu.h:108</a></div></div>
+<div class="ttc" id="group__ERROR__CODE_html_gacf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdoc">Error code: the routine returns successfully. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00090">abt.h:90</a></div></div>
 <div class="ttc" id="abtu_8h_html_ae248ad3031cfbfa19dd7b45804e6fbb0"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#ae248ad3031cfbfa19dd7b45804e6fbb0">ABTU_alloc_largepage</a></div><div class="ttdeci">ABTU_ret_err int ABTU_alloc_largepage(size_t size, size_t alignment_hint, const ABTU_MEM_LARGEPAGE_TYPE *requested_types, int num_requested_types, ABTU_MEM_LARGEPAGE_TYPE *p_actual, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de7/largepage_8c_source.html#l00090">largepage.c:90</a></div></div>
 <div class="ttc" id="mem__pool_8c_html_a5c67afbd642a7c1f9e9e41bb04b7b6fb"><div class="ttname"><a href="../../d9/d73/mem__pool_8c.html#a5c67afbd642a7c1f9e9e41bb04b7b6fb">mem_pool_lifo_elem_to_page</a></div><div class="ttdeci">static ABTI_mem_pool_page * mem_pool_lifo_elem_to_page(ABTI_sync_lifo_element *lifo_elem)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d73/mem__pool_8c_source.html#l00010">mem_pool.c:10</a></div></div>
-<div class="ttc" id="abt_8h_html_acf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#acf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00070">abt.h:70</a></div></div>
 <div class="ttc" id="abtu_8h_html_aa315ba860d29923548e980a7d2c4b623"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aa315ba860d29923548e980a7d2c4b623">ABTU_free_largepage</a></div><div class="ttdeci">void ABTU_free_largepage(void *ptr, size_t size, ABTU_MEM_LARGEPAGE_TYPE type)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de7/largepage_8c_source.html#l00132">largepage.c:132</a></div></div>
 <div class="ttc" id="mem__pool_8c_html_af836c6efedc1f2cd7e8bcc7769120f19"><div class="ttname"><a href="../../d9/d73/mem__pool_8c.html#af836c6efedc1f2cd7e8bcc7769120f19">mem_pool_return_partial_bucket</a></div><div class="ttdeci">static void mem_pool_return_partial_bucket(ABTI_mem_pool_global_pool *p_global_pool, ABTI_mem_pool_header *bucket)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d73/mem__pool_8c_source.html#l00027">mem_pool.c:27</a></div></div>
 <div class="ttc" id="abtu_8h_html_aef487b4e86c4c28804e18e95edd082ac"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082ac">ABTU_MEM_LARGEPAGE_TYPE</a></div><div class="ttdeci">ABTU_MEM_LARGEPAGE_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00291">abtu.h:291</a></div></div>
@@ -385,7 +385,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 31 2020 03:10:10 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jan 1 2021 03:10:13 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
