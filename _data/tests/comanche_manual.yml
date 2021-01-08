@@ -1,13 +1,6 @@
 - cpu: ARMv8-A
   host: JLSE comanche
   os: Red Hat Enterprise Linux Server 7.6
-  compiler: arm19.2
-  pass: no
-  commit_id: eaef486cd9a877c73038627138bf2927ececc25f
-  date: Thu Dec 31 15:00:48 2020 -0600
-- cpu: ARMv8-A
-  host: JLSE comanche
-  os: Red Hat Enterprise Linux Server 7.6
   compiler: clang10.0.0
   pass: yes
   commit_id: eaef486cd9a877c73038627138bf2927ececc25f
