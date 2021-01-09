@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">eaef486cd9a877c73038627138bf2927ececc25f</span>
+   &#160;<span id="projectnumber">140a356fc09a44696eb3487150e459266f9b5405</span>
    </div>
   </td>
  </tr>
@@ -225,8 +225,8 @@ Functions</h2></td></tr>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in either a ULT context or an external thread context. Argobots must be initialized. This routine may perform context switching for the calling ULT.<br/>
-<b>[Argobots 2.0]</b> This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in either a ULT context or an external thread context. Argobots must be initialized. This routine may perform context switching for the calling ULT if <code>rwlock</code> is locked by a writer. Otherwise, this routine does not context switch the calling ULT unless any user-defined function that is involved in this routine performs context switching.<br/>
+<b>[Argobots 2.0]</b> This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT if <code>rwlock</code> is locked by a writer. Otherwise, this routine does not context switch the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned. If <code>rwlock</code> is <code>ABT_RWLOCK_NULL</code>, <code>ABT_ERR_INV_RWLOCK</code> is returned. <b>[Argobots 1.x]</b> If the caller is a tasklet, <code>ABT_ERR_RWLOCK</code> is returned.</dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -237,7 +237,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d5/d49/rwlock_8c_source.html#l00135">135</a> of file <a class="el" href="../../d5/d49/rwlock_8c_source.html">rwlock.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d49/rwlock_8c_source.html#l00137">137</a> of file <a class="el" href="../../d5/d49/rwlock_8c_source.html">rwlock.c</a>.</p>
 
 </div>
 </div>
@@ -257,7 +257,7 @@ Functions</h2></td></tr>
 
 <p>Unlock a readers-writer lock. </p>
 <p><code><a class="el" href="../../d1/dd5/group__RWLOCK.html#ga1e76b76719d4b518761418e081d9a902" title="Unlock a readers-writer lock. ">ABT_rwlock_unlock()</a></code> unlocks the readers-writer lock <code>rwlock</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT if a waiter is waiting on <code>mutex</code>. Otherwise, this routine does not context switch the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned. If <code>rwlock</code> is <code>ABT_RWLOCK_NULL</code>, <code>ABT_ERR_INV_RWLOCK</code> is returned.</dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined. If <code>rwlock</code> is not locked, the results are undefined.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -268,7 +268,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d5/d49/rwlock_8c_source.html#l00244">244</a> of file <a class="el" href="../../d5/d49/rwlock_8c_source.html">rwlock.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d49/rwlock_8c_source.html#l00249">249</a> of file <a class="el" href="../../d5/d49/rwlock_8c_source.html">rwlock.c</a>.</p>
 
 </div>
 </div>
@@ -297,8 +297,8 @@ Functions</h2></td></tr>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in either a ULT context or an external thread context. Argobots must be initialized. This routine may perform context switching for the calling ULT.<br/>
-<b>[Argobots 2.0]</b> This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in either a ULT context or an external thread context. Argobots must be initialized. This routine may perform context switching for the calling ULT if <code>rwlock</code> is locked. Otherwise, this routine does not context switch the calling ULT unless any user-defined function that is involved in this routine performs context switching.<br/>
+<b>[Argobots 2.0]</b> This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT if <code>rwlock</code> is locked. Otherwise, this routine does not context switch the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned. If <code>rwlock</code> is <code>ABT_RWLOCK_NULL</code>, <code>ABT_ERR_INV_RWLOCK</code> is returned. <b>[Argobots 1.x]</b> If the caller is a tasklet, <code>ABT_ERR_RWLOCK</code> is returned.</dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -309,14 +309,14 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d5/d49/rwlock_8c_source.html#l00194">194</a> of file <a class="el" href="../../d5/d49/rwlock_8c_source.html">rwlock.c</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d49/rwlock_8c_source.html#l00198">198</a> of file <a class="el" href="../../d5/d49/rwlock_8c_source.html">rwlock.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 1 2021 03:10:13 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jan 9 2021 03:09:58 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
