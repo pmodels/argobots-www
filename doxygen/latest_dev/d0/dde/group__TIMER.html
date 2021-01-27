@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">140a356fc09a44696eb3487150e459266f9b5405</span>
+   &#160;<span id="projectnumber">dc7ce7fd1805a24088d4159621e620a73374cbbb</span>
    </div>
   </td>
  </tr>
@@ -130,7 +130,7 @@ Functions</h2></td></tr>
 <p>Timer handle type. </p>
 <p>A NULL handle of this type is <code>ABT_TIMER_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00981">981</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00989">989</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -154,7 +154,7 @@ Functions</h2></td></tr>
 <p>Get elapsed wall clock time. </p>
 <p><code><a class="el" href="../../d0/dde/group__TIMER.html#ga872b14356c27d22d4f18c85303a37608" title="Get elapsed wall clock time.">ABT_get_wtime()</a></code> returns the elapsed wall clock time in seconds since an arbitrary time in the past.</p>
 <p>The resolution of elapsed time depends on the clock resolution by the system.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Elapsed wall clock time in seconds </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d41/timer_8c_source.html#l00028">28</a> of file <a class="el" href="../../df/d41/timer_8c_source.html">timer.c</a>.</p>
@@ -183,17 +183,16 @@ Functions</h2></td></tr>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>newtimer</code> is set to <code>ABT_TIMER_NULL</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>newtimer</code> is not updated if an error occurs.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>newtimer</code> is not updated if an error occurs. <dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>newtimer</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If <code>newtimer</code> is <code>NULL</code>, the results are undefined.<br  />
  </dd></dl>
@@ -243,18 +242,17 @@ If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>newtimer</code> is set to <code>ABT_TIMER_NULL</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>newtimer</code> is not updated if an error occurs.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>newtimer</code> is not updated if an error occurs. <dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>newtimer</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
-If <code>timer</code> is <code>ABT_TIMER_NULL</code>, <code>ABT_ERR_INV_TIMER</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
+<code>ABT_ERR_INV_TIMER</code> is returned if <code>timer</code> is <code>ABT_TIMER_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If <code>newtimer</code> is <code>NULL</code>, the results are undefined.<br  />
  </dd></dl>
@@ -289,9 +287,9 @@ If <code>timer</code> is <code>ABT_TIMER_NULL</code>, <code>ABT_ERR_INV_TIMER</c
 
 <p>Free a timer. </p>
 <p><code><a class="el" href="../../d0/dde/group__TIMER.html#ga1aa483d48ac8b8bf058e02c277b4b84e" title="Free a timer.">ABT_timer_free()</a></code> deallocates the resource used for the timer <code>timer</code> and sets <code>timer</code> to <code>ABT_TIMER_NULL</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>timer</code> points to <code>ABT_TIMER_NULL</code>, <code>ABT_ERR_INV_TIMER</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_TIMER</code> is returned if <code>timer</code> points to <code>ABT_TIMER_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If <code>timer</code> is <code>NULL</code>, the results are undefined.<br  />
 If <code>timer</code> is accessed after calling this routine, the results are undefined.<br  />
@@ -330,10 +328,10 @@ If <code>timer</code> is accessed after calling this routine, the results are un
 <p><code><a class="el" href="../../d0/dde/group__TIMER.html#ga8c559f80d2d1c7685593bebad28f9566" title="Obtain an overhead time of using ABT_timer.">ABT_timer_get_overhead()</a></code> returns the overhead time when measuring the elapsed time with <code>ABT_timer</code> and returns the overhead time in seconds through <code>overhead</code>. It measures the time difference in consecutive calls of <code><a class="el" href="../../d0/dde/group__TIMER.html#ga7d09dd38d451f6e919244214d376f2db" title="Start a timer.">ABT_timer_start()</a></code> and <code><a class="el" href="../../d0/dde/group__TIMER.html#ga47b9f59c48f61de38d2c16976efaf4c9" title="Stop a timer.">ABT_timer_stop()</a></code>.</p>
 <p>The resolution of elapsed time depends on the clock resolution by the system.</p>
 <p>This function is deprecated because the returned overhead is not a reliable value. The users are recommended to write their own benchmarks to measure the performance.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If <code>overhead</code> is <code>NULL</code>, the results are undefined.<br  />
  </dd></dl>
@@ -378,9 +376,9 @@ If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  
 <p>Read the elapsed time of the timer. </p>
 <p><code><a class="el" href="../../d0/dde/group__TIMER.html#ga4b1aef9c138af3094d3e1e393e97e01b" title="Read the elapsed time of the timer.">ABT_timer_read()</a></code> returns the time difference in seconds between the start time and the stop time of the timer <code>timer</code> through <code>secs</code>. If either the start time or the stop time <code>timer</code> has not been set, <code>secs</code> is set to an undefined value.</p>
 <p>The resolution of elapsed time depends on the clock resolution by the system.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>timer</code> is <code>ABT_TIMER_NULL</code>, <code>ABT_ERR_INV_TIMER</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_TIMER</code> is returned if <code>timer</code> is <code>ABT_TIMER_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If <code>secs</code> is <code>NULL</code>, the results are undefined.<br  />
  </dd></dl>
@@ -417,9 +415,9 @@ If <code>timer</code> is <code>ABT_TIMER_NULL</code>, <code>ABT_ERR_INV_TIMER</c
 
 <p>Start a timer. </p>
 <p><code><a class="el" href="../../d0/dde/group__TIMER.html#ga7d09dd38d451f6e919244214d376f2db" title="Start a timer.">ABT_timer_start()</a></code> sets the start time of the timer <code>timer</code> to the current time.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>timer</code> is <code>ABT_TIMER_NULL</code>, <code>ABT_ERR_INV_TIMER</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_TIMER</code> is returned if <code>timer</code> is <code>ABT_TIMER_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If <code>timer</code> is accessed concurrently, the results are undefined.<br  />
  </dd></dl>
@@ -455,9 +453,9 @@ If <code>timer</code> is <code>ABT_TIMER_NULL</code>, <code>ABT_ERR_INV_TIMER</c
 
 <p>Stop a timer. </p>
 <p><code><a class="el" href="../../d0/dde/group__TIMER.html#ga47b9f59c48f61de38d2c16976efaf4c9" title="Stop a timer.">ABT_timer_stop()</a></code> sets the stop time of the timer <code>timer</code> to the current time.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>timer</code> is <code>ABT_TIMER_NULL</code>, <code>ABT_ERR_INV_TIMER</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_TIMER</code> is returned if <code>timer</code> is <code>ABT_TIMER_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If <code>timer</code> is accessed concurrently, the results are undefined.<br  />
  </dd></dl>
@@ -504,9 +502,9 @@ If <code>timer</code> is <code>ABT_TIMER_NULL</code>, <code>ABT_ERR_INV_TIMER</c
 <p>Stop a timer and add an elapsed time of a timer. </p>
 <p><code><a class="el" href="../../d0/dde/group__TIMER.html#ga5203883962352ee60ea8a9860e33cb5c" title="Stop a timer and add an elapsed time of a timer.">ABT_timer_stop_and_add()</a></code> sets the stop time of the timer <code>timer</code> to the current time and adds the time difference in seconds between the start time and the stop time of <code>timer</code> to <code>secs</code>. If the start time has not been set, the returned value is undefined.</p>
 <p>The resolution of elapsed time depends on the clock resolution by the system.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>timer</code> is <code>ABT_TIMER_NULL</code>, <code>ABT_ERR_INV_TIMER</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_TIMER</code> is returned if <code>timer</code> is <code>ABT_TIMER_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If <code>secs</code> is <code>NULL</code>, the results are undefined.<br  />
 If <code>timer</code> is accessed concurrently, the results are undefined.<br  />
@@ -553,9 +551,9 @@ If <code>timer</code> is accessed concurrently, the results are undefined.<br  /
 <p>Stop a timer and read an elapsed time of a timer. </p>
 <p><code><a class="el" href="../../d0/dde/group__TIMER.html#ga7e99db2927acb6222741715d8173317d" title="Stop a timer and read an elapsed time of a timer.">ABT_timer_stop_and_read()</a></code> sets the stop time of the timer <code>timer</code> to the current time and returns the time difference in seconds between the start time and the stop time of <code>timer</code> through <code>secs</code>. If the start time of <code>timer</code> has not been set, <code>secs</code> is set to an undefined value.</p>
 <p>The resolution of elapsed time depends on the clock resolution by the system.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>timer</code> is <code>ABT_TIMER_NULL</code>, <code>ABT_ERR_INV_TIMER</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_TIMER</code> is returned if <code>timer</code> is <code>ABT_TIMER_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If <code>secs</code> is <code>NULL</code>, the results are undefined.<br  />
 If <code>timer</code> is accessed concurrently, the results are undefined.<br  />
@@ -576,7 +574,7 @@ If <code>timer</code> is accessed concurrently, the results are undefined.<br  /
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 11 2021 15:10:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 27 2021 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

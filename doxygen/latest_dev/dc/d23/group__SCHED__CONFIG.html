@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">140a356fc09a44696eb3487150e459266f9b5405</span>
+   &#160;<span id="projectnumber">dc7ce7fd1805a24088d4159621e620a73374cbbb</span>
    </div>
   </td>
  </tr>
@@ -142,7 +142,7 @@ Variables</h2></td></tr>
 <p>Scheduler configuration handle type. </p>
 <p>A NULL handle of this type is <code>ABT_SCHED_CONFIG_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00802">802</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00810">810</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -169,7 +169,7 @@ Variables</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01068">1068</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01076">1076</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -222,11 +222,11 @@ Variables</h2></td></tr>
 <div class="line">                        <a class="code" href="../../dc/d23/group__SCHED__CONFIG.html#ga90609651c91ed9936151abe07cee83d7">ABT_sched_config_var_end</a>);</div>
 </div><!-- fragment --></dd></dl>
 <p>If the array contains multiple tuples that have the same <code>idx</code> of <code><a class="el" href="../../d1/da5/structABT__sched__config__var.html" title="A struct that sets and gets a scheduler configuration.">ABT_sched_config_var</a></code>, the value associated with <code>idx</code> is corrupted.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If a variable of type <code><a class="el" href="../../d1/da5/structABT__sched__config__var.html" title="A struct that sets and gets a scheduler configuration.">ABT_sched_config_var</a></code> in the given list has an invalid <code>type</code>, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if a variable of type <code><a class="el" href="../../d1/da5/structABT__sched__config__var.html" title="A struct that sets and gets a scheduler configuration.">ABT_sched_config_var</a></code> in the given list has an invalid <code>type</code>.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If the <em></em>(2n+1)th element of the given variadic arguments is neither <code>ABT_sched_config_var_end</code> nor a variable of type <code><a class="el" href="../../d1/da5/structABT__sched__config__var.html" title="A struct that sets and gets a scheduler configuration.">ABT_sched_config_var</a></code>, the results are undefined.<br  />
@@ -264,9 +264,9 @@ If <code>config</code> is <code>NULL</code>, the results are undefined.<br  />
 
 <p>Free a scheduler configuration. </p>
 <p><code><a class="el" href="../../dc/d23/group__SCHED__CONFIG.html#ga564a99ab5d01fcd04a648474eaf322f2" title="Free a scheduler configuration.">ABT_sched_config_free()</a></code> deallocates the resource used for the scheduler configuration <code>sched_config</code> and sets <code>sched_config</code> to <code>ABT_SCHED_CONFIG_NULL</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>config</code> points to <code>ABT_SCHED_CONFIG_NULL</code>, <code>ABT_ERR_INV_SCHED_CONFIG</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_SCHED_CONFIG</code> is returned if <code>config</code> points to <code>ABT_SCHED_CONFIG_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>config</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -280,7 +280,7 @@ If <code>config</code> is accessed after calling this routine, the results are u
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d95/config_8c_source.html#l00240">240</a> of file <a class="el" href="../../d3/d95/config_8c_source.html">config.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d95/config_8c_source.html#l00242">242</a> of file <a class="el" href="../../d3/d95/config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -322,10 +322,10 @@ If <code>config</code> is accessed after calling this routine, the results are u
 <div class="line"><span class="keywordtype">int</span> val;</div>
 <div class="line"><a class="code" href="../../dc/d23/group__SCHED__CONFIG.html#gab9c7d102100e0b86cdb170126020d851">ABT_sched_config_read</a>(&amp;config, 2, NULL, &amp;val);</div>
 </div><!-- fragment --></dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>num_vars</code> is negative, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
-If <code>config</code> is <code>ABT_SCHED_CONFIG_NULL</code>, <code>ABT_ERR_INV_SCHED_CONFIG</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if <code>num_vars</code> is negative.<br  />
+<code>ABT_ERR_INV_SCHED_CONFIG</code> is returned if <code>config</code> is <code>ABT_SCHED_CONFIG_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
@@ -339,7 +339,7 @@ If <code>config</code> is <code>ABT_SCHED_CONFIG_NULL</code>, <code>ABT_ERR_INV_
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d95/config_8c_source.html#l00197">197</a> of file <a class="el" href="../../d3/d95/config_8c_source.html">config.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d95/config_8c_source.html#l00199">199</a> of file <a class="el" href="../../d3/d95/config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -427,16 +427,16 @@ If <code>config</code> is <code>ABT_SCHED_CONFIG_NULL</code>, <code>ABT_ERR_INV_
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="astructABT__sched__config__var_html"><div class="ttname"><a href="../../d1/da5/structABT__sched__config__var.html">ABT_sched_config_var</a></div><div class="ttdoc">A struct that sets and gets a scheduler configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01081">abt.h:1081</a></div></div>
-<div class="ttc" id="agroup__SCHED__CONFIG_html_ga9be459e63da2c9e318b6b9d446aa4c4b"><div class="ttname"><a href="../../dc/d23/group__SCHED__CONFIG.html#ga9be459e63da2c9e318b6b9d446aa4c4b">ABT_sched_config</a></div><div class="ttdeci">struct ABT_sched_config_opaque * ABT_sched_config</div><div class="ttdoc">Scheduler configuration handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00802">abt.h:802</a></div></div>
-<div class="ttc" id="agroup__SCHED__CONFIG_html_gab9c7d102100e0b86cdb170126020d851"><div class="ttname"><a href="../../dc/d23/group__SCHED__CONFIG.html#gab9c7d102100e0b86cdb170126020d851">ABT_sched_config_read</a></div><div class="ttdeci">int ABT_sched_config_read(ABT_sched_config config, int num_vars,...) ABT_API_PUBLIC</div><div class="ttdoc">Retrieve values from a scheduler configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d95/config_8c_source.html#l00197">config.c:197</a></div></div>
+<div class="ttc" id="astructABT__sched__config__var_html"><div class="ttname"><a href="../../d1/da5/structABT__sched__config__var.html">ABT_sched_config_var</a></div><div class="ttdoc">A struct that sets and gets a scheduler configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01089">abt.h:1089</a></div></div>
+<div class="ttc" id="agroup__SCHED__CONFIG_html_ga9be459e63da2c9e318b6b9d446aa4c4b"><div class="ttname"><a href="../../dc/d23/group__SCHED__CONFIG.html#ga9be459e63da2c9e318b6b9d446aa4c4b">ABT_sched_config</a></div><div class="ttdeci">struct ABT_sched_config_opaque * ABT_sched_config</div><div class="ttdoc">Scheduler configuration handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00810">abt.h:810</a></div></div>
+<div class="ttc" id="agroup__SCHED__CONFIG_html_gab9c7d102100e0b86cdb170126020d851"><div class="ttname"><a href="../../dc/d23/group__SCHED__CONFIG.html#gab9c7d102100e0b86cdb170126020d851">ABT_sched_config_read</a></div><div class="ttdeci">int ABT_sched_config_read(ABT_sched_config config, int num_vars,...) ABT_API_PUBLIC</div><div class="ttdoc">Retrieve values from a scheduler configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d95/config_8c_source.html#l00199">config.c:199</a></div></div>
 <div class="ttc" id="agroup__SCHED__CONFIG_html_ga90609651c91ed9936151abe07cee83d7"><div class="ttname"><a href="../../dc/d23/group__SCHED__CONFIG.html#ga90609651c91ed9936151abe07cee83d7">ABT_sched_config_var_end</a></div><div class="ttdeci">ABT_sched_config_var ABT_sched_config_var_end</div><div class="ttdoc">Predefined ABT_sched_config_var to mark the last parameter.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d95/config_8c_source.html#l00023">config.c:23</a></div></div>
-<div class="ttc" id="agroup__SCHED__CONFIG_html_ggaa7fb4c4d65dc699f39cece1cdf4fad18afb777ab6247be6031240a39e53dbc137"><div class="ttname"><a href="../../dc/d23/group__SCHED__CONFIG.html#ggaa7fb4c4d65dc699f39cece1cdf4fad18afb777ab6247be6031240a39e53dbc137">ABT_SCHED_CONFIG_INT</a></div><div class="ttdeci">@ ABT_SCHED_CONFIG_INT</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01070">abt.h:1070</a></div></div>
+<div class="ttc" id="agroup__SCHED__CONFIG_html_ggaa7fb4c4d65dc699f39cece1cdf4fad18afb777ab6247be6031240a39e53dbc137"><div class="ttname"><a href="../../dc/d23/group__SCHED__CONFIG.html#ggaa7fb4c4d65dc699f39cece1cdf4fad18afb777ab6247be6031240a39e53dbc137">ABT_SCHED_CONFIG_INT</a></div><div class="ttdeci">@ ABT_SCHED_CONFIG_INT</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01078">abt.h:1078</a></div></div>
 <div class="ttc" id="agroup__SCHED__CONFIG_html_gaf8fb8ad59635b9b5a1fc274d926ff2cb"><div class="ttname"><a href="../../dc/d23/group__SCHED__CONFIG.html#gaf8fb8ad59635b9b5a1fc274d926ff2cb">ABT_sched_basic_freq</a></div><div class="ttdeci">ABT_sched_config_var ABT_sched_basic_freq</div><div class="ttdoc">Predefined ABT_sched_config_var to configure the frequency for checking events of the basic scheduler...</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d95/config_8c_source.html#l00034">config.c:34</a></div></div>
 <div class="ttc" id="agroup__SCHED__CONFIG_html_gaf99722523587197d1d71b180457584de"><div class="ttname"><a href="../../dc/d23/group__SCHED__CONFIG.html#gaf99722523587197d1d71b180457584de">ABT_sched_config_create</a></div><div class="ttdeci">int ABT_sched_config_create(ABT_sched_config *config,...) ABT_API_PUBLIC</div><div class="ttdoc">Create a new scheduler configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d95/config_8c_source.html#l00102">config.c:102</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 11 2021 15:10:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 27 2021 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

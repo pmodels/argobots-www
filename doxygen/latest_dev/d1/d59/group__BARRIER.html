@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">140a356fc09a44696eb3487150e459266f9b5405</span>
+   &#160;<span id="projectnumber">dc7ce7fd1805a24088d4159621e620a73374cbbb</span>
    </div>
   </td>
  </tr>
@@ -115,7 +115,7 @@ Functions</h2></td></tr>
 <p>Barrier handle type. </p>
 <p>A NULL handle of this type is <code>ABT_BARRIER_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00974">974</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00982">982</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -154,25 +154,24 @@ Functions</h2></td></tr>
 <dd><b>[Argobots 1.0]</b> This routine accepts zero as <code>num_waiters</code>.<br  />
  <b>[Argobots 1.1]</b> This routine returns <code>ABT_ERR_INV_ARG</code> if <code>num_waiters</code> is zero. <dl class="section user">
 <dt>Rationale</dt>
-<dd>A barrier with <code>num_waiters</code> = 0 is useless and should be prohibited. Even with Argobots 1.0, calling <code><a class="el" href="../../d1/d59/group__BARRIER.html#gad5b9e2f6ad5bf056b1f699670b13d141" title="Wait on a barrier.">ABT_barrier_wait()</a></code> for a barrier with <code>num_waiters</code> = 0 is not allowed. </dd>
+<dd>A barrier whose <code>num_waiters</code> is 0 cannot define a wait operation and should be prohibited. Note that even Argobots 1.0 does not allow <code><a class="el" href="../../d1/d59/group__BARRIER.html#gad5b9e2f6ad5bf056b1f699670b13d141" title="Wait on a barrier.">ABT_barrier_wait()</a></code> with a barrier whose <code>num_waiters</code> is 0. </dd>
 </dl>
 </dd>
 </dl>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>newbarrier</code> is set to <code>ABT_BARRIER_NULL</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>newbarrier</code> is not updated if an error occurs.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>newbarrier</code> is not updated if an error occurs. <dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>newbarrier</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>num_waiters</code> is zero, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if <code>num_waiters</code> is zero.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>newbarrier</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -208,13 +207,13 @@ If <code>newbarrier</code> is <code>NULL</code>, the results are undefined.<br  
 
 <p>Free a barrier. </p>
 <p><code><a class="el" href="../../d1/d59/group__BARRIER.html#ga195bac1a3ef964c9f3a361119c275a99" title="Free a barrier.">ABT_barrier_free()</a></code> deallocates the resource used for the barrier <code>barrier</code> and sets <code>barrier</code> to <code>ABT_BARRIER_NULL</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>barrier</code> points to <code>ABT_BARRIER_NULL</code>, <code>ABT_ERR_INV_BARRIER</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_BARRIER</code> is returned if <code>barrier</code> points to <code>ABT_BARRIER_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>barrier</code> is <code>NULL</code>, the results are undefined.<br  />
-If any waiter is blocked on <code>barrier</code>, the results are undefined.<br  />
+If there is a waiter blocked on <code>barrier</code>, the results are undefined.<br  />
 If <code>barrier</code> is accessed after calling this routine, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -257,9 +256,9 @@ If <code>barrier</code> is accessed after calling this routine, the results are 
 
 <p>Get the number of waiters of a barrier. </p>
 <p><code><a class="el" href="../../d1/d59/group__BARRIER.html#ga5fab26c6e6b0d9d5dfd1c595855c3720" title="Get the number of waiters of a barrier.">ABT_barrier_get_num_waiters()</a></code> returns the number of waiters of the barrier <code>barrier</code> through <code>num_waiters</code>. The number of waiters is set by <code><a class="el" href="../../d1/d59/group__BARRIER.html#gaf1b69c7b4e3ff490a340ae042afa4426" title="Create a new barrier.">ABT_barrier_create()</a></code> and can be updated by <code><a class="el" href="../../d1/d59/group__BARRIER.html#ga246c1d8f2bfb86cab58bff5292ba0491" title="Reinitialize a barrier with a new number of waiters.">ABT_barrier_reinit()</a></code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>barrier</code> is <code>ABT_BARRIER_NULL</code>, <code>ABT_ERR_INV_BARRIER</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_BARRIER</code> is returned if <code>barrier</code> is <code>ABT_BARRIER_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>num_waiters</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -310,19 +309,19 @@ If <code>num_waiters</code> is <code>NULL</code>, the results are undefined.<br 
 <dd><b>[Argobots 1.0]</b> This routine accepts zero as <code>num_waiters</code>.<br  />
  <b>[Argobots 1.1]</b> This routine returns <code>ABT_ERR_INV_ARG</code> if <code>num_waiters</code> is zero. <dl class="section user">
 <dt>Rationale</dt>
-<dd>A barrier with <code>num_waiters</code> = 0 is useless and should be prohibited. Even with Argobots 1.0, calling <code><a class="el" href="../../d1/d59/group__BARRIER.html#gad5b9e2f6ad5bf056b1f699670b13d141" title="Wait on a barrier.">ABT_barrier_wait()</a></code> for a barrier with <code>num_waiters</code> = 0 is not allowed. </dd>
+<dd>A barrier whose <code>num_waiters</code> is 0 cannot define a wait operation and should be prohibited. Note that even Argobots 1.0 does not allow <code><a class="el" href="../../d1/d59/group__BARRIER.html#gad5b9e2f6ad5bf056b1f699670b13d141" title="Wait on a barrier.">ABT_barrier_wait()</a></code> with a barrier whose <code>num_waiters</code> is 0. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>num_waiters</code> is zero, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
-If <code>barrier</code> is <code>ABT_BARRIER_NULL</code>, <code>ABT_ERR_INV_BARRIER</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if <code>num_waiters</code> is zero.<br  />
+<code>ABT_ERR_INV_BARRIER</code> is returned if <code>barrier</code> is <code>ABT_BARRIER_NULL</code>.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
-If any waiter is blocked on <code>barrier</code>, the results are undefined.<br  />
+If there is a waiter blocked on <code>barrier</code>, the results are undefined.<br  />
 If <code>barrier</code> is accessed concurrently, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -359,18 +358,17 @@ If <code>barrier</code> is accessed concurrently, the results are undefined.<br 
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> If a tasklet calls this routine, <code>ABT_ERR_BARRIER</code> is returned.<br  />
- <b>[Argobots 2.0]</b> A tasklet may call this routine.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> A tasklet may call this routine. <dl class="section user">
 <dt>Rationale</dt>
 <dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in either a ULT context or an external thread context. Argobots must be initialized. This routine may perform context switching for the calling ULT if the caller is not the last waiter that waits on <code>barrier</code>. Otherwise, this routine does not context switch the calling ULT unless any user-defined function that is involved in this routine performs context switching.<br  />
-<b>[Argobots 2.0]</b> This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT if the caller is not the last waiter that waits on <code>barrier</code>. Otherwise, this routine does not context switch the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>barrier</code> is <code>ABT_BARRIER_NULL</code>, <code>ABT_ERR_INV_BARRIER</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If the caller is a tasklet, <code>ABT_ERR_BARRIER</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a ULT context and an external thread context. Argobots must be initialized. This routine may switch the context of the calling ULT if the caller is not the last waiter that waits on <code>barrier</code>. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.<br  />
+<b>[Argobots 2.0]</b> This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT if the caller is not the last waiter that waits on <code>barrier</code>. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_BARRIER</code> is returned if <code>barrier</code> is <code>ABT_BARRIER_NULL</code>.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_BARRIER</code> is returned if the caller is a tasklet.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
@@ -389,7 +387,7 @@ If <code>barrier</code> is <code>ABT_BARRIER_NULL</code>, <code>ABT_ERR_INV_BARR
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 11 2021 15:10:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 27 2021 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">140a356fc09a44696eb3487150e459266f9b5405</span>
+   &#160;<span id="projectnumber">dc7ce7fd1805a24088d4159621e620a73374cbbb</span>
    </div>
   </td>
  </tr>
@@ -109,7 +109,7 @@ Functions</h2></td></tr>
 <p>Execution stream barrier handle type. </p>
 <p>A NULL handle of this type is <code>ABT_XSTREAM_BARRIER_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00788">788</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00796">796</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -146,18 +146,17 @@ Functions</h2></td></tr>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>newbarrier</code> is set to <code>ABT_XSTREAM_BARRIER_NULL</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>newbarrier</code> is not updated if an error occurs.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>newbarrier</code> is not updated if an error occurs. <dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>newbarrier</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>num_waiters</code> is zero, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if <code>num_waiters</code> is zero.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>newbarrier</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -193,13 +192,13 @@ If <code>newbarrier</code> is <code>NULL</code>, the results are undefined.<br  
 
 <p>Free an execution-stream barrier. </p>
 <p><code><a class="el" href="../../dc/d54/group__ES__BARRIER.html#gac540cb325432a8b6c33bfbac053ba02f" title="Free an execution-stream barrier.">ABT_xstream_barrier_free()</a></code> deallocates the resource used for the execution-stream barrier <code>barrier</code> and sets <code>barrier</code> to <code>ABT_XSTREAM_BARRIER_NULL</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>barrier</code> points to <code>ABT_XSTREAM_BARRIER_NULL</code>, <code>ABT_ERR_INV_XSTREAM_BARRIER</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM_BARRIER</code> is returned if <code>barrier</code> points to <code>ABT_XSTREAM_BARRIER_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>barrier</code> is <code>NULL</code>, the results are undefined.<br  />
-If any waiter is blocked on <code>barrier</code>, the results are undefined.<br  />
+If there is a waiter blocked on <code>barrier</code>, the results are undefined.<br  />
 If <code>barrier</code> is accessed after calling this routine, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -232,9 +231,9 @@ If <code>barrier</code> is accessed after calling this routine, the results are 
 
 <p>Wait on an execution-stream barrier. </p>
 <p>The caller of <code><a class="el" href="../../dc/d54/group__ES__BARRIER.html#ga80a776789efc225e6e24a901f31a4374" title="Wait on an execution-stream barrier.">ABT_xstream_barrier_wait()</a></code> waits on the execution-stream barrier <code>barrier</code>. The caller is blocked until as many waiters as the number of waiters specified by <code><a class="el" href="../../dc/d54/group__ES__BARRIER.html#ga9df48f67278b6b78ea7efb79d829c63f" title="Create a new execution-stream barrier.">ABT_xstream_barrier_create()</a></code> reach <code>barrier</code>. If the caller is either a ULT or a tasklet, the underlying execution stream is blocked on <code>barrier</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>barrier</code> is <code>ABT_XSTREAM_BARRIER_NULL</code>, <code>ABT_ERR_INV_XSTREAM_BARRIER</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM_BARRIER</code> is returned if <code>barrier</code> is <code>ABT_XSTREAM_BARRIER_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
@@ -253,7 +252,7 @@ If <code>barrier</code> is <code>ABT_XSTREAM_BARRIER_NULL</code>, <code>ABT_ERR_
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 11 2021 15:10:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 27 2021 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

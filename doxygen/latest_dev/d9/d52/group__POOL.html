@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">140a356fc09a44696eb3487150e459266f9b5405</span>
+   &#160;<span id="projectnumber">dc7ce7fd1805a24088d4159621e620a73374cbbb</span>
    </div>
   </td>
  </tr>
@@ -184,7 +184,7 @@ Functions</h2></td></tr>
 <p>Pool handle type. </p>
 <p>A NULL handle of this type is <code>ABT_POOL_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00828">828</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00836">836</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -202,7 +202,7 @@ Functions</h2></td></tr>
 
 <p>Pool access type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00845">845</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00853">853</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -221,7 +221,7 @@ Functions</h2></td></tr>
 <p>Pool configuration handle type. </p>
 <p>A NULL handle of this type is <code>ABT_POOL_CONFIG_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00835">835</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00843">843</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -239,7 +239,7 @@ Functions</h2></td></tr>
 
 <p>Predefined pool type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00840">840</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00848">848</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -270,7 +270,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00514">514</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00522">522</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -296,7 +296,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00496">496</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00504">504</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -334,8 +334,7 @@ Functions</h2></td></tr>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> If a pool access violation happens regarding an access type of a pool, an error is returned.<br  />
- <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined.<br  />
- <dl class="section user">
+ <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined. <dl class="section user">
 <dt>Rationale</dt>
 <dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without any problem if it is no simultaneously accessed, although it is a user error. Such an error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
 </dl>
@@ -344,20 +343,19 @@ Functions</h2></td></tr>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>ABT_ERR_INV_SCHED</code> is returned if this routine finds <code>sched</code> is already used.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if <code>sched</code> is already used.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> The results are undefined if <code>sched</code> is already used. <dl class="section user">
 <dt>Rationale</dt>
-<dd>The current mechanism that checks if a scheduler is used is premature since this is not maintained atomically. From Argobots 2.0, it becomes the user's responsibility to guarantee that <code>sched</code> is not used. </dd>
+<dd>The current implementation of this check is crude since whether a scheduler is used or not is not maintained atomically. From Argobots 2.0, it becomes the user's responsibility to guarantee that <code>sched</code> is not used. Note that Argobots 1.x does not perform this check atomically, so the user may not concurrently call any routines that attempt to use the same scheduler by assuming that only one of them would succeed. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>pool</code> is <code>ABT_POOL_NULL</code>, <code>ABT_ERR_INV_POOL</code> is returned.<br  />
-If <code>sched</code> is <code>ABT_SCHED_NULL</code>, <code>ABT_ERR_INV_SCHED</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If <code>sched</code> is being used, <code>ABT_ERR_INV_SCHED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_POOL</code> is returned if <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
+<code>ABT_ERR_INV_SCHED</code> is returned if <code>sched</code> is <code>ABT_SCHED_NULL</code>.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_INV_SCHED</code> is returned if <code>sched</code> is being used.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 <b>[Argobots 2.0]</b> If <code>sched</code> is being used, the results are undefined.</dd></dl>
@@ -418,18 +416,17 @@ If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>newpool</code> is set to <code>ABT_POOL_NULL</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>newpool</code> is not updated if an error occurs.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>newpool</code> is not updated if an error occurs. <dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>newpool</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>p_init()</code> does not return <code>ABT_SUCCESS</code>, the error returned by <code>p_init()</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+An error code returned by <code>p_init()</code> is returned if <code>p_init()</code> does not return <code>ABT_SUCCESS</code>.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>def</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -498,8 +495,7 @@ If <code>newpool</code> is <code>NULL</code>, the results are undefined.<br  />
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> The Argobots runtime respects an access type of a pool and returns an error if possible if a pool access violation happens regarding an access type of a pool.<br  />
- <b>[Argobots 1.1]</b> The Argobots runtime does not check an access type of a pool. If a pool access violation happens regarding an access type of a pool, the results are undefined.<br  />
- <dl class="section user">
+ <b>[Argobots 1.1]</b> The Argobots runtime does not check an access type of a pool. If a pool access violation happens regarding an access type of a pool, the results are undefined. <dl class="section user">
 <dt>Rationale</dt>
 <dd>This access type was used for access violation error check. This check will be removed in Argobots 1.1 since correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
 </dl>
@@ -508,19 +504,18 @@ If <code>newpool</code> is <code>NULL</code>, the results are undefined.<br  />
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>newpool</code> is set to <code>ABT_POOL_NULL</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>newpool</code> is not updated if an error occurs.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>newpool</code> is not updated if an error occurs. <dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>newpool</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>kind</code> is not a valid pool kind, <code>ABT_ERR_INV_POOL_KIND</code> is returned.<br  />
-If <code>access</code> is not a valid pool access type, <code>ABT_ERR_INV_POOL_ACCESS</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_POOL_KIND</code> is returned if <code>kind</code> is not a valid pool kind.<br  />
+<code>ABT_ERR_INV_POOL_ACCESS</code> is returned if <code>access</code> is not a valid pool access type.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If automatic is neither <code>ABT_TRUE</code> nor <code>ABT_FALSE</code>, the results are undefined.<br  />
@@ -560,9 +555,9 @@ If <code>newpool</code> is <code>NULL</code>, the results are undefined.<br  />
 <p>Free a pool. </p>
 <p><code><a class="el" href="../../d9/d52/group__POOL.html#ga99295e7c312a3b0699b3f5c9ae4cfc60" title="Free a pool.">ABT_pool_free()</a></code> frees the resource used for the pool <code>pool</code> and sets <code>pool</code> to <code>ABT_POOL_NULL</code>. If <code>pool</code> is created by <code><a class="el" href="../../d9/d52/group__POOL.html#ga7a000646ad0b5899ee47779d051758e8" title="Create a new pool.">ABT_pool_create()</a></code> and <code>p_free</code> is not <code>NULL</code>, this routine calls <code>p_free()</code> with <code>pool</code> as the argument. The return value of <code>p_free()</code> is ignored. Afterward, this routine deallocates the resource used for <code>pool</code> and sets <code>pool</code> to <code>ABT_POOL_NULL</code>.</p>
 <p><code>pool</code> must be empty and no work unit may be associated with <code>pool</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>pool</code> points to <code>ABT_POOL_NULL</code>, <code>ABT_ERR_INV_POOL</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_POOL</code> is returned if <code>pool</code> points to <code>ABT_POOL_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>pool</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -610,9 +605,9 @@ If <code>pool</code> is accessed after calling this routine, the results are und
 
 <p>Get an access type of a pool. </p>
 <p><code><a class="el" href="../../d9/d52/group__POOL.html#ga6089256f32498ee058e6df9478f95574" title="Get an access type of a pool.">ABT_pool_get_access()</a></code> returns the access type of the pool <code>pool</code> through <code>access</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>pool</code> is <code>ABT_POOL_NULL</code>, <code>ABT_ERR_INV_POOL</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_POOL</code> is returned if <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>access</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -659,9 +654,9 @@ If <code>access</code> is <code>NULL</code>, the results are undefined.<br  />
 <p>Retrieve user data from a pool. </p>
 <p><code><a class="el" href="../../d9/d52/group__POOL.html#gaae4cb8502f813229d2fbb5e0961ffdf3" title="Set user data in a pool.">ABT_pool_set_data()</a></code> returns user data in the pool <code>pool</code> through <code>data</code>.</p>
 <dl class="section note"><dt>Note</dt><dd>The specific data of the newly created pool is <code>NULL</code>.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>pool</code> is <code>ABT_POOL_NULL</code>, <code>ABT_ERR_INV_POOL</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_POOL</code> is returned if <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>data</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -707,9 +702,9 @@ If <code>data</code> is <code>NULL</code>, the results are undefined.<br  />
 
 <p>Get ID of a pool. </p>
 <p><code><a class="el" href="../../d9/d52/group__POOL.html#gae3b9d5f542cb31852aaa4d7079350e74" title="Get ID of a pool.">ABT_pool_get_id()</a></code> returns the ID of the pool <code>pool</code> through <code>id</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>pool</code> is <code>ABT_POOL_NULL</code>, <code>ABT_ERR_INV_POOL</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_POOL</code> is returned if <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>id</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -766,16 +761,15 @@ If <code>id</code> is <code>NULL</code>, the results are undefined.<br  />
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> If a pool access violation happens regarding an access type of a pool, an error is returned.<br  />
- <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined.<br  />
- <dl class="section user">
+ <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined. <dl class="section user">
 <dt>Rationale</dt>
 <dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without any problem if it is no simultaneously accessed, although it is a user error. Such an error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>pool</code> is <code>ABT_POOL_NULL</code>, <code>ABT_ERR_INV_POOL</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_POOL</code> is returned if <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>size</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -832,16 +826,15 @@ If <code>size</code> is <code>NULL</code>, the results are undefined.<br  />
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> If a pool access violation happens regarding an access type of a pool, an error is returned.<br  />
- <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined.<br  />
- <dl class="section user">
+ <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined. <dl class="section user">
 <dt>Rationale</dt>
 <dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without any problem if it is no simultaneously accessed, although it is a user error. Such an error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>pool</code> is <code>ABT_POOL_NULL</code>, <code>ABT_ERR_INV_POOL</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_POOL</code> is returned if <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>size</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -898,14 +891,12 @@ If <code>size</code> is <code>NULL</code>, the results are undefined.<br  />
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><p class="startdd"><b>[Argobots 1.0]</b> If a pool access violation happens regarding an access type of a pool, an error is returned.<br  />
- <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined.<br  />
- </p><dl class="section user">
+ <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without any problem if it is no simultaneously accessed, although it is a user error. Such an error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.0]</b> If an external thread calls this routine, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
- <b>[Argobots 1.1]</b> An external thread may call this routine.<br  />
- </p><dl class="section user">
+ <b>[Argobots 1.1]</b> An external thread may call this routine. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>Argobots 1.0 narrows the type of the caller without any reason. Argobots 1.1 fixes it. </dd>
 </dl>
@@ -914,17 +905,16 @@ If <code>size</code> is <code>NULL</code>, the results are undefined.<br  />
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>p_unit</code> is set to <code>ABT_UNIT_NULL</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>p_unit</code> is not updated if an error occurs.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>p_unit</code> is not updated if an error occurs. <dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>p_unit</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in either a ULT context or a tasklet context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.<br  />
-<b>[Argobots 2.0]</b> This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>pool</code> is <code>ABT_POOL_NULL</code>, <code>ABT_ERR_INV_POOL</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a ULT context and a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.<br  />
+<b>[Argobots 2.0]</b> This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_POOL</code> is returned if <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>p_unit</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -989,14 +979,12 @@ If <code>p_unit</code> is <code>NULL</code>, the results are undefined.<br  />
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><p class="startdd"><b>[Argobots 1.0]</b> If a pool access violation happens regarding an access type of a pool, an error is returned.<br  />
- <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined.<br  />
- </p><dl class="section user">
+ <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without any problem if it is no simultaneously accessed, although it is a user error. Such an error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.0]</b> If an external thread calls this routine, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
- <b>[Argobots 1.1]</b> An external thread may call this routine.<br  />
- </p><dl class="section user">
+ <b>[Argobots 1.1]</b> An external thread may call this routine. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>Argobots 1.0 narrows the type of the caller without any reason. Argobots 1.1 fixes it. </dd>
 </dl>
@@ -1005,17 +993,16 @@ If <code>p_unit</code> is <code>NULL</code>, the results are undefined.<br  />
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>p_unit</code> is set to <code>ABT_UNIT_NULL</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>p_unit</code> is not updated if an error occurs.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>p_unit</code> is not updated if an error occurs. <dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>p_unit</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>pool</code> is <code>ABT_POOL_NULL</code>, <code>ABT_ERR_INV_POOL</code> is returned.<br  />
-If <code>pool</code> does not support <code>p_pop_timedwait()</code>, <code>ABT_ERR_POOL</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_POOL</code> is returned if <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
+<code>ABT_ERR_POOL</code> is returned if <code>pool</code> does not support <code>p_pop_timedwait()</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>p_unit</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -1080,23 +1067,21 @@ If <code>p_unit</code> is <code>NULL</code>, the results are undefined.<br  />
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><p class="startdd"><b>[Argobots 1.x]</b> <code><a class="el" href="../../d4/dfc/structABT__pool__def.html" title="A struct that defines a pool.">ABT_pool_def</a></code> does not define <code>p_pop_wait</code>. <br  />
- <b>[Argobots 2.0]</b> <code><a class="el" href="../../d4/dfc/structABT__pool__def.html" title="A struct that defines a pool.">ABT_pool_def</a></code> defines <code>p_pop_wait</code>. <br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> <code><a class="el" href="../../d4/dfc/structABT__pool__def.html" title="A struct that defines a pool.">ABT_pool_def</a></code> defines <code>p_pop_wait</code>. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>To maintain the ABI compatibility, <code>p_pop_wait</code> is excluded from <code><a class="el" href="../../d4/dfc/structABT__pool__def.html" title="A struct that defines a pool.">ABT_pool_def</a></code>. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.x]</b> <code>p_unit</code> is set to <code>ABT_UNIT_NULL</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>p_unit</code> is not updated if an error occurs.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> <code>p_unit</code> is not updated if an error occurs. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>p_unit</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>pool</code> is <code>ABT_POOL_NULL</code>, <code>ABT_ERR_INV_POOL</code> is returned.<br  />
-If <code>pool</code> does not support <code>p_pop_wait()</code>, <code>ABT_ERR_POOL</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_POOL</code> is returned if <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
+<code>ABT_ERR_POOL</code> is returned if <code>pool</code> does not support <code>p_pop_wait()</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>p_unit</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -1158,10 +1143,10 @@ If <code>p_unit</code> is <code>NULL</code>, the results are undefined.<br  />
 </li>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>As the name of the argument implies, <code>print_fn()</code> may not have any side effect; <code><a class="el" href="../../d9/d52/group__POOL.html#ga4e1c11ccced444023a1fab17c148a5ca" title="Apply a print function to every work unit in a pool using a user-defined function.">ABT_pool_print_all()</a></code> is for debugging and profiling. For example, changing the state of <code>ABT_unit</code> in <code>print_fn()</code> is forbidden.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>pool</code> is <code>ABT_POOL_NULL</code>, <code>ABT_ERR_INV_POOL</code> is returned.<br  />
-If <code>pool</code> does not support <code>p_print_all()</code>, <code>ABT_ERR_POOL</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_POOL</code> is returned if <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
+<code>ABT_ERR_POOL</code> is returned if <code>pool</code> does not support <code>p_print_all()</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>print_fn</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -1220,23 +1205,21 @@ If the internal state of the Argobots is changed in <code>print_fn()</code>, the
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><p class="startdd"><b>[Argobots 1.0]</b> If a pool access violation happens regarding an access type of a pool, an error is returned.<br  />
- <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined.<br  />
- </p><dl class="section user">
+ <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without any problem if it is no simultaneously accessed, although it is a user error. Such an error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.0]</b> <code>ABT_ERR_UNIT</code> is returned if <code>unit</code> is <code>ABT_UNIT_NULL</code>.<br  />
- <b>[Argobots 1.1]</b> <code>ABT_ERR_INV_UNIT</code> is returned if <code>unit</code> is <code>ABT_UNIT_NULL</code>.<br  />
- </p><dl class="section user">
+ <b>[Argobots 1.1]</b> <code>ABT_ERR_INV_UNIT</code> is returned if <code>unit</code> is <code>ABT_UNIT_NULL</code>. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 1.0 returned an error code which is obviously wrong. Argobots 1.1 fixes the error code for consistent behavior with the other Argobots routines. </dd>
+<dd>Argobots 1.0 returned an error code which is obviously wrong. Argobots 1.1 fixes the error code for consistent behavior with other Argobots routines. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>pool</code> is <code>ABT_POOL_NULL</code>, <code>ABT_ERR_INV_POOL</code> is returned.<br  />
-If <code>unit</code> is <code>ABT_UNIT_NULL</code>, <code>ABT_ERR_INV_UNIT</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_POOL</code> is returned if <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
+<code>ABT_ERR_INV_UNIT</code> is returned if <code>unit</code> is <code>ABT_UNIT_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>unit</code> is not associated with <code>pool</code>, the results are undefined.<br  />
@@ -1293,24 +1276,22 @@ If <code>unit</code> is not associated with <code>pool</code>, the results are u
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><p class="startdd"><b>[Argobots 1.0]</b> If a pool access violation happens regarding an access type of a pool, an error is returned.<br  />
- <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined.<br  />
- </p><dl class="section user">
+ <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without any problem if it is no simultaneously accessed, although it is a user error. Such an error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.0]</b> If an external thread calls this routine, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
- <b>[Argobots 1.1]</b> An external thread may call this routine.<br  />
- </p><dl class="section user">
+ <b>[Argobots 1.1]</b> An external thread may call this routine. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>Argobots 1.0 narrows the type of the caller without any reason. Argobots 1.1 fixes it. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>pool</code> is <code>ABT_POOL_NULL</code>, <code>ABT_ERR_INV_POOL</code> is returned.<br  />
-If <code>unit</code> is <code>ABT_UNIT_NULL</code>, <code>ABT_ERR_INV_UNIT</code> is returned.<br  />
-If <code>pool</code> does not support <code>p_remove()</code>, <code>ABT_ERR_POOL</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_POOL</code> is returned if <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
+<code>ABT_ERR_INV_UNIT</code> is returned if <code>unit</code> is <code>ABT_UNIT_NULL</code>.<br  />
+<code>ABT_ERR_POOL</code> is returned if <code>pool</code> does not support <code>p_remove()</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>unit</code> is not in <code>pool</code>, the results are undefined.<br  />
@@ -1356,9 +1337,9 @@ If <code>unit</code> is not in <code>pool</code>, the results are undefined.<br 
 
 <p>Set user data in a pool. </p>
 <p><code><a class="el" href="../../d9/d52/group__POOL.html#gaae4cb8502f813229d2fbb5e0961ffdf3" title="Set user data in a pool.">ABT_pool_set_data()</a></code> sets user data of the pool <code>pool</code> to <code>data</code>. The old value is overwritten.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>pool</code> is <code>ABT_POOL_NULL</code>, <code>ABT_ERR_INV_POOL</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_POOL</code> is returned if <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>pool</code> is accessed concurrently, the results are undefined.<br  />
@@ -1379,7 +1360,7 @@ If <code>pool</code> is accessed concurrently, the results are undefined.<br  />
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 11 2021 15:10:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 27 2021 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

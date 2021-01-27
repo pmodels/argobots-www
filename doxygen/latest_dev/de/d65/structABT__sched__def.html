@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">140a356fc09a44696eb3487150e459266f9b5405</span>
+   &#160;<span id="projectnumber">dc7ce7fd1805a24088d4159621e620a73374cbbb</span>
    </div>
   </td>
  </tr>
@@ -107,7 +107,7 @@ Data Fields</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A struct that defines a scheduler. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01143">1143</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01151">1151</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="add904cca404ddee2144ea73222cf0f0f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#add904cca404ddee2144ea73222cf0f0f">&#9670;&nbsp;</a></span>free</h2>
@@ -127,7 +127,7 @@ Data Fields</h2></td></tr>
 <p><code><a class="el" href="../../de/d65/structABT__sched__def.html#add904cca404ddee2144ea73222cf0f0f" title="Function that frees a scheduler.">free()</a></code> is called only on freeing a scheduler. <code><a class="el" href="../../de/d65/structABT__sched__def.html#add904cca404ddee2144ea73222cf0f0f" title="Function that frees a scheduler.">free()</a></code> is not called when its associated work unit is terminated.</p>
 <p>The caller of <code><a class="el" href="../../de/d65/structABT__sched__def.html#add904cca404ddee2144ea73222cf0f0f" title="Function that frees a scheduler.">free()</a></code> is undefined, so a program that relies on the caller of <code><a class="el" href="../../de/d65/structABT__sched__def.html#add904cca404ddee2144ea73222cf0f0f" title="Function that frees a scheduler.">free()</a></code> is non-conforming. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01224">1224</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01232">1232</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../db/dbe/sched_8c_source.html#l01044">sched_create()</a>.</p>
 
@@ -150,7 +150,7 @@ Data Fields</h2></td></tr>
 <p><code><a class="el" href="../../de/d65/structABT__sched__def.html#a13cdc07b9f269588f51000ea6e6b7b01" title="Function that returns a pool for migration.">get_migr_pool()</a></code> is optional, so the user may set <code>get_migr_pool</code> to <code>NULL</code>. If <code>get_migr_pool</code> is <code>NULL</code>, the Argobots runtime chooses a proper pool that is associated with <code>sched</code>.</p>
 <p>The caller of <code><a class="el" href="../../de/d65/structABT__sched__def.html#a13cdc07b9f269588f51000ea6e6b7b01" title="Function that returns a pool for migration.">get_migr_pool()</a></code> is undefined, so a program that relies on the caller of <code><a class="el" href="../../de/d65/structABT__sched__def.html#a13cdc07b9f269588f51000ea6e6b7b01" title="Function that returns a pool for migration.">get_migr_pool()</a></code> is non-conforming. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01241">1241</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01249">1249</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../db/dbe/sched_8c_source.html#l01044">sched_create()</a>.</p>
 
@@ -174,7 +174,7 @@ Data Fields</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>The caller of <code><a class="el" href="../../de/d65/structABT__sched__def.html#a695e40c9b7783e3601e1b0126d14f0f7" title="Function that initializes a scheduler.">init()</a></code> is undefined, so a program that relies on the caller of <code><a class="el" href="../../de/d65/structABT__sched__def.html#a695e40c9b7783e3601e1b0126d14f0f7" title="Function that initializes a scheduler.">init()</a></code> is non-conforming.</dd></dl>
 <p><code><a class="el" href="../../de/d65/structABT__sched__def.html#a695e40c9b7783e3601e1b0126d14f0f7" title="Function that initializes a scheduler.">init()</a></code> is called only on creating a scheduler. <code><a class="el" href="../../de/d65/structABT__sched__def.html#a695e40c9b7783e3601e1b0126d14f0f7" title="Function that initializes a scheduler.">init()</a></code> is not called when its associated work unit is revived. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01168">1168</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01176">1176</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../db/dbe/sched_8c_source.html#l01044">sched_create()</a>.</p>
 
@@ -211,7 +211,7 @@ Data Fields</h2></td></tr>
 <p>The caller of <code><a class="el" href="../../de/d65/structABT__sched__def.html#a169e95948e1925b79db2fe12040c40be" title="Function that defines a kernel of a scheduler.">run()</a></code> is a work unit associated with <code>sched</code>. If <code>sched</code> is the main scheduler, the underlying execution stream is unchanged in <code><a class="el" href="../../de/d65/structABT__sched__def.html#a169e95948e1925b79db2fe12040c40be" title="Function that defines a kernel of a scheduler.">run()</a></code>.</p>
 <p><code><a class="el" href="../../de/d65/structABT__sched__def.html#a169e95948e1925b79db2fe12040c40be" title="Function that defines a kernel of a scheduler.">run()</a></code> is not optional, so the user must implement this function. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01208">1208</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01216">1216</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../db/dbe/sched_8c_source.html#l01044">sched_create()</a>.</p>
 
@@ -232,7 +232,7 @@ Data Fields</h2></td></tr>
 <p>Unused value. </p>
 <p>This value is ignored. A created scheduler always uses a ULT as an underlying work unit. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01150">1150</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01158">1158</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../db/dbe/sched_8c_source.html#l01044">sched_create()</a>.</p>
 
@@ -244,7 +244,7 @@ Data Fields</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 11 2021 15:10:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 27 2021 03:09:57 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

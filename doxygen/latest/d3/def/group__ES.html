@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">140a356fc09a44696eb3487150e459266f9b5405</span>
+   &#160;<span id="projectnumber">dc7ce7fd1805a24088d4159621e620a73374cbbb</span>
    </div>
   </td>
  </tr>
@@ -190,7 +190,7 @@ Functions</h2></td></tr>
 <p>Execution stream handle type. </p>
 <p>A NULL handle of this type is <code>ABT_XSTREAM_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00776">776</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00784">784</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -208,7 +208,7 @@ Functions</h2></td></tr>
 
 <p>Execution stream state type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00781">781</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00789">789</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -233,7 +233,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00396">396</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00404">404</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -258,10 +258,10 @@ Functions</h2></td></tr>
 <p><code><a class="el" href="../../d3/def/group__ES.html#gac6d98a65472fe3e394d300b553c60000" title="Send a cancellation request to an execution stream.">ABT_xstream_cancel()</a></code> sends a cancellation request to the execution stream <code>xstream</code>. An execution stream that receives a cancellation request will terminate.</p>
 <p>Requests for execution streams are updated atomically.</p>
 <dl class="section note"><dt>Note</dt><dd>The timing of the request fulfillment is undefined, so a program that relies on when the request is fulfilled is non-conforming.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If <code>xstream</code> is the primary execution stream, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is the primary execution stream.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>xstream</code> is not running, the results are undefined.<br  />
@@ -301,19 +301,18 @@ If <code>xstream</code> is not running, the results are undefined.<br  />
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized. <dl class="section user">
 <dt>Rationale</dt>
 <dd>From Argobots 2.0, all the Argobots routines that are not explicitly noted do not check if Argobots is initialized. This omission can reduce the branches that are mostly unnecessary. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called by a work unit that is associated with <code>sched</code>. Argobots must be initialized. This routine may perform context switching for the calling ULT.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If the caller is an external thread, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If <code>sched</code> is <code>ABT_SCHED_NULL</code>, <code>ABT_ERR_INV_SCHED</code> is returned.<br  />
-If a work unit associated with <code>sched</code> is not the caller, <code>ABT_ERR_INV_THREAD</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If the Argobots runtime is not initialized, <code>ABT_ERR_UNINITIALIZED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called by a work unit that is associated with <code>sched</code>. Argobots must be initialized. This routine may switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
+<code>ABT_ERR_INV_SCHED</code> is returned if <code>sched</code> is <code>ABT_SCHED_NULL</code>.<br  />
+<code>ABT_ERR_INV_THREAD</code> is returned if a work unit associated with <code>sched</code> is not the caller.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_UNINITIALIZED</code> is returned if the Argobots runtime is not initialized.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If <code>sched</code> is accessed concurrently, the results are undefined.<br  />
 <b>[Argobots 2.0]</b> If Argobots is not initialized, the results are undefined.<br  />
@@ -366,24 +365,22 @@ To see the details of the default scheduler configuration, please check <code><a
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><p class="startdd"><b>[Argobots 1.x]</b> <code>ABT_ERR_INV_SCHED</code> is returned if this routine finds <code>sched</code> is already used.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if <code>sched</code> is already used.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> The results are undefined if <code>sched</code> is already used. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>The current mechanism that checks if a scheduler is used is premature since this is not maintained atomically. From Argobots 2.0, it becomes the user's responsibility to guarantee that <code>sched</code> is not used. </dd>
+<dd>The current implementation of this check is crude since whether a scheduler is used or not is not maintained atomically. From Argobots 2.0, it becomes the user's responsibility to guarantee that <code>sched</code> is not used. Note that Argobots 1.x does not perform this check atomically, so the user may not concurrently call any routines that attempt to use the same scheduler by assuming that only one of them would succeed. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.x]</b> <code>newxstream</code> is set to <code>ABT_XSTREAM_NULL</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>newxstream</code> is not updated if an error occurs.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> <code>newxstream</code> is not updated if an error occurs. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>newxstream</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If <code>sched</code> is being used, <code>ABT_ERR_INV_SCHED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_INV_SCHED</code> is returned if <code>sched</code> is being used.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>newxstream</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -463,19 +460,18 @@ If <code>newxstream</code> is <code>NULL</code>, the results are undefined.<br  
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>newxstream</code> is set to <code>ABT_XSTREAM_NULL</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>newxstream</code> is not updated if an error occurs.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>newxstream</code> is not updated if an error occurs. <dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>newxstream</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>num_pools</code> is negative, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
-If <code>predef</code> is not a valid predefined scheduler type, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if <code>num_pools</code> is negative.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if <code>predef</code> is not a valid predefined scheduler type.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>num_pools</code> is positive and <code>pools</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -541,26 +537,24 @@ To see the details of the default scheduler configuration, please check <code><a
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><p class="startdd"><b>[Argobots 1.x]</b> <code>ABT_ERR_INV_SCHED</code> is returned if this routine finds <code>sched</code> is already used.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if <code>sched</code> is already used.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> The results are undefined if <code>sched</code> is already used. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>The current mechanism that checks if a scheduler is used is premature since this is not maintained atomically. From Argobots 2.0, it becomes the user's responsibility to guarantee that <code>sched</code> is not used. </dd>
+<dd>The current implementation of this check is crude since whether a scheduler is used or not is not maintained atomically. From Argobots 2.0, it becomes the user's responsibility to guarantee that <code>sched</code> is not used. Note that Argobots 1.x does not perform this check atomically, so the user may not concurrently call any routines that attempt to use the same scheduler by assuming that only one of them would succeed. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.x]</b> <code>newxstream</code> is set to <code>ABT_XSTREAM_NULL</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>newxstream</code> is not updated if an error occurs.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> <code>newxstream</code> is not updated if an error occurs. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>newxstream</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>rank</code> is negative, <code>ABT_ERR_INV_XSTREAM_RANK</code> is returned.<br  />
- If <code>rank</code> has been used by another execution stream, <code>ABT_ERR_INV_XSTREAM_RANK</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If <code>sched</code> is being used, <code>ABT_ERR_INV_SCHED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM_RANK</code> is returned if <code>rank</code> is negative.<br  />
+ <code>ABT_ERR_INV_XSTREAM_RANK</code> is returned if <code>rank</code> has been used by another execution stream.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_INV_SCHED</code> is returned if <code>sched</code> is being used.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>newxstream</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -614,8 +608,8 @@ If <code>newxstream</code> is <code>NULL</code>, the results are undefined.<br  
 <p>Compare two execution stream handles for equality. </p>
 <p><code><a class="el" href="../../d3/def/group__ES.html#ga7ed5fabaaa5acf4717a8a30365637ccc" title="Compare two execution stream handles for equality.">ABT_xstream_equal()</a></code> compares two execution stream handles <code>xstream1</code> and <code>xstream2</code> for equality and returns the result through <code>result</code>.</p>
 <p>This function is deprecated since its behavior is the same as comparing values of <code>xstream1</code> and <code>xstream2</code>. </p><div class="fragment"><div class="line">*result = (xstream1 == xstream2) ? <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a> : <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
-</div><!-- fragment --><dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
+</div><!-- fragment --><dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If <code>result</code> is <code>NULL</code>, the results are undefined.<br  />
  </dd></dl>
@@ -655,19 +649,18 @@ If <code>newxstream</code> is <code>NULL</code>, the results are undefined.<br  
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized. <dl class="section user">
 <dt>Rationale</dt>
 <dd>From Argobots 2.0, all the Argobots routines that are not explicitly noted do not check if Argobots is initialized. This omission can reduce the branches that are mostly unnecessary. </dd>
 </dl>
 </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>The timing of the request fulfillment is undefined, so a program that relies on when the request is fulfilled is non-conforming.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context. Argobots must be initialized. This routine may perform context switching for the calling ULT.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If the caller is an external thread, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If the caller is a tasklet, <code>ABT_ERR_INV_THREAD</code> is returned.<br  />
-If an execution stream that is running the calling ULT is the primary execution stream, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If the Argobots runtime is not initialized, <code>ABT_ERR_UNINITIALIZED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context. Argobots must be initialized. This routine may switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
+<code>ABT_ERR_INV_THREAD</code> is returned if the caller is a tasklet.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if an execution stream that is running the calling ULT is the primary execution stream.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_UNINITIALIZED</code> is returned if the Argobots runtime is not initialized.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd><b>[Argobots 2.0]</b> If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
@@ -702,18 +695,17 @@ Only one caller can be blocked on the same <code>xstream</code> by <code><a clas
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> <code>ABT_SUCCESS</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
- <b>[Argobots 1.1]</b> <code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
- <dl class="section user">
+ <b>[Argobots 1.1]</b> <code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 1.0 returned an error code which is obviously wrong. Argobots 1.1 fixes the error code for consistent behavior with the other Argobots routines. </dd>
+<dd>Argobots 1.0 returned an error code which is obviously wrong. Argobots 1.1 fixes the error code for consistent behavior with other Argobots routines. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>xstream</code> points to <code>ABT_XSTREAM_NULL</code>, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If <code>xstream</code> is the primary execution stream, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If <code>xstream</code> is running the calling work unit, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> points to <code>ABT_XSTREAM_NULL</code>.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is the primary execution stream.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is running the calling work unit.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>xstream</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -779,21 +771,20 @@ If <code>xstream</code> is accessed after calling this routine, the results are 
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>ABT_ERR_FEATURE_NA</code> is returned if <code>xstream</code> is not bound to any CPU.<br  />
- <b>[Argobots 2.0]</b> <code>ABT_ERR_CPUID</code> is returned if <code>xstream</code> is not bound to any CPU.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>ABT_ERR_CPUID</code> is returned if <code>xstream</code> is not bound to any CPU. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 changes the error code for consistent behavior with the other Argobots routines. </dd>
+<dd>Argobots 2.0 changes the error code for consistent behavior with other Argobots routines. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If <code>max_cpuids</code> is negative, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
-If an error occurs in binding the execution stream, <code>ABT_ERR_SYS</code> is returned.<br  />
-If the affinity feature is not supported, <code>ABT_ERR_FEATURE_NA</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If <code>xstream</code> is not bound to any CPU, <code>ABT_ERR_FEATURE_NA</code> is returned.<br  />
-<b>[Argobots 2.0]</b> If <code>xstream</code> is not bound to any CPU, <code>ABT_ERR_CPUID</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if <code>max_cpuids</code> is negative.<br  />
+<code>ABT_ERR_SYS</code> is returned if an error occurs in binding the execution stream.<br  />
+<code>ABT_ERR_FEATURE_NA</code> is returned if the affinity feature is not supported.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_FEATURE_NA</code> is returned if <code>xstream</code> is not bound to any CPU.<br  />
+<b>[Argobots 2.0]</b> <code>ABT_ERR_CPUID</code> is returned if <code>xstream</code> is not bound to any CPU.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>max_cpuids</code> is positive and <code>cpuids</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -845,20 +836,19 @@ If <code>max_cpuids</code> is positive and <code>cpuids</code> is <code>NULL</co
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>ABT_ERR_FEATURE_NA</code> is returned if <code>xstream</code> is not bound to any CPU.<br  />
- <b>[Argobots 2.0]</b> <code>ABT_ERR_CPUID</code> is returned if <code>xstream</code> is not bound to any CPU.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>ABT_ERR_CPUID</code> is returned if <code>xstream</code> is not bound to any CPU. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 changes the error code for consistent behavior with the other Argobots routines. </dd>
+<dd>Argobots 2.0 changes the error code for consistent behavior with other Argobots routines. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If an error occurs in binding the execution stream, <code>ABT_ERR_SYS</code> is returned.<br  />
-If the affinity feature is not supported, <code>ABT_ERR_FEATURE_NA</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If <code>xstream</code> is not bound to any CPU, <code>ABT_ERR_FEATURE_NA</code> is returned.<br  />
-<b>[Argobots 2.0]</b> If <code>xstream</code> is not bound to any CPU, <code>ABT_ERR_CPUID</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
+<code>ABT_ERR_SYS</code> is returned if an error occurs in binding the execution stream.<br  />
+<code>ABT_ERR_FEATURE_NA</code> is returned if the affinity feature is not supported.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_FEATURE_NA</code> is returned if <code>xstream</code> is not bound to any CPU.<br  />
+<b>[Argobots 2.0]</b> <code>ABT_ERR_CPUID</code> is returned if <code>xstream</code> is not bound to any CPU.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>cpuid</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -911,10 +901,10 @@ If <code>cpuid</code> is <code>NULL</code>, the results are undefined.<br  />
 <p>Get pools associated with the main scheduler of an execution stream. </p>
 <p><code><a class="el" href="../../d3/def/group__ES.html#ga1232a5569108a5e86feb653d4b2f820e" title="Get pools associated with the main scheduler of an execution stream.">ABT_xstream_get_main_pools()</a></code> sets the pools <code>pools</code> to at maximum <code>max_pools</code> pools associated with the main scheduler of the execution stream <code>xstream</code>.</p>
 <dl class="section note"><dt>Note</dt><dd>This routine does not pad <code>pools</code> until a total <code>max_pools</code> elements have been written to <code>pools</code>. The remaining elements of <code>pools</code> that are not written by this routine are unmodified.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>max_pools</code> is negative, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
-If <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if <code>max_pools</code> is negative.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>max_pools</code> is positive and <code>pools</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -961,9 +951,9 @@ If <code>max_pools</code> is positive and <code>pools</code> is <code>NULL</code
 
 <p>Retrieve the main scheduler of an execution stream. </p>
 <p><code><a class="el" href="../../d3/def/group__ES.html#gaa8cd27faf1d8d00cce29fd3f3c938009" title="Retrieve the main scheduler of an execution stream.">ABT_xstream_get_main_sched()</a></code> returns the main scheduler of the execution stream <code>xstream</code> through <code>sched</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>sched</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -1002,22 +992,20 @@ If <code>sched</code> is <code>NULL</code>, the results are undefined.<br  />
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><p class="startdd"><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>From Argobots 2.0, all the Argobots routines that are not explicitly noted do not check if Argobots is initialized. This omission can reduce the branches that are mostly unnecessary. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.x]</b> <code>num_xstreams</code> is set to zero if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>num_xstreams</code> is not updated if an error occurs.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> <code>num_xstreams</code> is not updated if an error occurs. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>num_xstreams</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If the Argobots runtime is not initialized, <code>ABT_ERR_UNINITIALIZED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_UNINITIALIZED</code> is returned if the Argobots runtime is not initialized.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If <code>num_xstreams</code> is <code>NULL</code>, the results are undefined.<br  />
 <b>[Argobots 2.0]</b> If Argobots is not initialized, the results are undefined.<br  />
@@ -1063,9 +1051,9 @@ If <code>sched</code> is <code>NULL</code>, the results are undefined.<br  />
 <p>Retrieve a rank of an execution stream. </p>
 <p><code><a class="el" href="../../d3/def/group__ES.html#gae8f4dd5bf63f9547ce4265ea5c059b97" title="Retrieve a rank of an execution stream.">ABT_xstream_get_rank()</a></code> returns a rank of the execution stream <code>xstream</code> through <code>rank</code>.</p>
 <p>Management of ranks of execution streams is performed atomically.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>rank</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -1112,9 +1100,9 @@ If <code>rank</code> is <code>NULL</code>, the results are undefined.<br  />
 <p>Get a state of an execution stream. </p>
 <p><code><a class="el" href="../../d3/def/group__ES.html#gadf18f4e7d45e5ef06a293e6d25fb9123" title="Get a state of an execution stream.">ABT_xstream_get_state()</a></code> returns the state of the execution stream <code>xstream</code> through <code>state</code>.</p>
 <p>Management of states of execution streams is performed atomically.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>state</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -1160,9 +1148,9 @@ If <code>state</code> is <code>NULL</code>, the results are undefined.<br  />
 
 <p>Check if the target execution stream is primary. </p>
 <p><code><a class="el" href="../../d3/def/group__ES.html#ga7ed1e8dae4b66ca959679b3dd152c02a" title="Check if the target execution stream is primary.">ABT_xstream_is_primary()</a></code> checks if the execution stream <code>xstream</code> is the primary execution stream and returns the result through <code>is_primary</code>. If <code>xstream</code> is the primary execution stream, <code>is_primary</code> is set to <code>ABT_TRUE</code>. Otherwise, <code>is_primary</code> is set to <code>ABT_FALSE</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>is_primary</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -1202,11 +1190,11 @@ If <code>is_primary</code> is <code>NULL</code>, the results are undefined.<br  
 <dl class="section note"><dt>Note</dt><dd>This routine cannot free an execution stream that is running the caller.<br  />
 This routine cannot free the primary execution stream.<br  />
  </dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If <code>xstream</code> is the primary execution stream, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If <code>xstream</code> is running the calling work unit, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is the primary execution stream.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is running the calling work unit.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>xstream</code> is blocked on by <code><a class="el" href="../../d3/def/group__ES.html#ga51abc49e45abfa6932101bebb0538899" title="Wait for an execution stream to terminate.">ABT_xstream_join()</a></code> and <code><a class="el" href="../../d3/def/group__ES.html#gab3155fcca3dc1afdfb658fea157efbd3" title="Free an execution stream.">ABT_xstream_free()</a></code>, the results are undefined.<br  />
@@ -1244,12 +1232,12 @@ If <code>xstream</code> is accessed concurrently, the results are undefined.<br 
 <p><code><a class="el" href="../../d3/def/group__ES.html#gac1a978cf5167c6e16d23f41070078b0b" title="Revive a terminated execution stream.">ABT_xstream_revive()</a></code> revives the execution stream <code>xstream</code> that has been terminated by <code><a class="el" href="../../d3/def/group__ES.html#ga51abc49e45abfa6932101bebb0538899" title="Wait for an execution stream to terminate.">ABT_xstream_join()</a></code>. <code>xstream</code> starts to run immediately.</p>
 <p>Management of states of execution streams is performed atomically.</p>
 <p><code>xstream</code> may not be an execution stream that has been freed by <code><a class="el" href="../../d3/def/group__ES.html#gab3155fcca3dc1afdfb658fea157efbd3" title="Free an execution stream.">ABT_xstream_free()</a></code>. An execution stream that is blocked on by <code><a class="el" href="../../d3/def/group__ES.html#gab3155fcca3dc1afdfb658fea157efbd3" title="Free an execution stream.">ABT_xstream_free()</a></code> may not be revived.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If <code>xstream</code> is not terminated, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is not terminated.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>xstream</code> is blocked on by <code><a class="el" href="../../d3/def/group__ES.html#gab3155fcca3dc1afdfb658fea157efbd3" title="Free an execution stream.">ABT_xstream_free()</a></code>, the results are undefined.<br  />
@@ -1295,12 +1283,12 @@ If <code>xstream</code> is accessed concurrently, the results are undefined.<br 
 
 <p>Execute a work unit. </p>
 <p><code><a class="el" href="../../d3/def/group__ES.html#gab6ef8abe585d935384f0133482c5ef1f" title="Execute a work unit.">ABT_xstream_run_unit()</a></code> runs a work unit <code>unit</code> associated with the pool <code>pool</code> as a child ULT on the calling ULT, which becomes a parent ULT. The calling ULT will be resumed when <code>unit</code> finishes or yields.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context. Argobots must be initialized. This routine may perform context switching for the calling ULT.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If the caller is an external thread, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If the caller is a tasklet, <code>ABT_ERR_INV_THREAD</code> is returned.<br  />
-If <code>unit</code> is <code>ABT_UNIT_NULL</code>, <code>ABT_ERR_INV_UNIT</code> is returned.<br  />
-If <code>pool</code> is <code>ABT_POOL_NULL</code>, <code>ABT_ERR_INV_POOL</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context. Argobots must be initialized. This routine may switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
+<code>ABT_ERR_INV_THREAD</code> is returned if the caller is a tasklet.<br  />
+<code>ABT_ERR_INV_UNIT</code> is returned if <code>unit</code> is <code>ABT_UNIT_NULL</code>.<br  />
+<code>ABT_ERR_INV_POOL</code> is returned if <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>unit</code> is not ready, the results are undefined.<br  />
@@ -1340,23 +1328,21 @@ If <code>unit</code> is not associated with <code>pool</code>, the results are u
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><p class="startdd"><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>From Argobots 2.0, all the Argobots routines that are not explicitly noted do not check if Argobots is initialized. This omission can reduce the branches that are mostly unnecessary. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.x]</b> <code>xstream</code> is set to <code>ABT_XSTREAM_NULL</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>xstream</code> is not updated if an error occurs.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> <code>xstream</code> is not updated if an error occurs. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>xstream</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in either a ULT context or a tasklet context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If the caller is an external thread, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If the Argobots runtime is not initialized, <code>ABT_ERR_UNINITIALIZED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context and a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_UNINITIALIZED</code> is returned if the Argobots runtime is not initialized.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>xstream</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -1395,17 +1381,16 @@ If <code>xstream</code> is <code>NULL</code>, the results are undefined.<br  />
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized. <dl class="section user">
 <dt>Rationale</dt>
 <dd>From Argobots 2.0, all the Argobots routines that are not explicitly noted do not check if Argobots is initialized. This omission can reduce the branches that are mostly unnecessary. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in either a ULT context or a tasklet context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If the caller is an external thread, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If the Argobots runtime is not initialized, <code>ABT_ERR_UNINITIALIZED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context and a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_UNINITIALIZED</code> is returned if the Argobots runtime is not initialized.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>rank</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -1458,13 +1443,13 @@ If <code>rank</code> is <code>NULL</code>, the results are undefined.<br  />
 <p>Bind an execution stream to target CPUs. </p>
 <p><code><a class="el" href="../../d3/def/group__ES.html#gae6f237f730959327ee0cb978cd2ce23a" title="Bind an execution stream to target CPUs.">ABT_xstream_set_affinity()</a></code> updates the CPU binding of the execution stream <code>xstream</code>. If <code>num_cpuids</code> is positive, this routine binds <code>xstream</code> to CPUs that are corresponding to <code>cpuids</code> that has <code>num_cpuids</code> CPU IDs. If <code>num_cpuids</code> is zero, this routine resets the CPU binding of <code>xstream</code>.</p>
 <dl class="section note"><dt>Note</dt><dd>The CPU ID corresponds to the processor index used by an OS.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If <code>num_cpuids</code> is negative, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
-If an error occurs in binding the execution stream, <code>ABT_ERR_SYS</code> is returned.<br  />
-If any of <code>cpuids</code> is an invalid CPU ID, <code>ABT_ERR_CPUID</code> is returned.<br  />
-If the affinity feature is not supported, <code>ABT_ERR_FEATURE_NA</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if <code>num_cpuids</code> is negative.<br  />
+<code>ABT_ERR_SYS</code> is returned if an error occurs in binding the execution stream.<br  />
+<code>ABT_ERR_CPUID</code> is returned if any of <code>cpuids</code> is an invalid CPU ID.<br  />
+<code>ABT_ERR_FEATURE_NA</code> is returned if the affinity feature is not supported.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>num_cpuids</code> is positive and <code>cpuids</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -1513,12 +1498,12 @@ If <code>xstream</code> is accessed concurrently, the results are undefined.<br 
 <p>Bind an execution stream to a target CPU. </p>
 <p><code><a class="el" href="../../d3/def/group__ES.html#gac8b7ce58184f9ef8d09e68f16e52204a" title="Bind an execution stream to a target CPU.">ABT_xstream_set_cpubind()</a></code> binds the execution stream <code>xstream</code> to a CPU that is corresponding to the CPU ID <code>cpuid</code>.</p>
 <dl class="section note"><dt>Note</dt><dd>The CPU ID corresponds to the processor index used by an OS.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If an error occurs in binding the execution stream, <code>ABT_ERR_SYS</code> is returned.<br  />
-If <code>cpuid</code> is an invalid CPU ID, <code>ABT_ERR_CPUID</code> is returned.<br  />
-If the affinity feature is not supported, <code>ABT_ERR_FEATURE_NA</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
+<code>ABT_ERR_SYS</code> is returned if an error occurs in binding the execution stream.<br  />
+<code>ABT_ERR_CPUID</code> is returned if <code>cpuid</code> is an invalid CPU ID.<br  />
+<code>ABT_ERR_FEATURE_NA</code> is returned if the affinity feature is not supported.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>xstream</code> is accessed concurrently, the results are undefined.<br  />
@@ -1579,14 +1564,9 @@ If <code>xstream</code> is accessed concurrently, the results are undefined.<br 
 To see the details of the default scheduler configuration, please check <code><a class="el" href="../../dc/d23/group__SCHED__CONFIG.html#gaf99722523587197d1d71b180457584de" title="Create a new scheduler configuration.">ABT_sched_config_create()</a></code>.</dd></dl>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
-<dd><p class="startdd"><b>[Argobots 1.0]</b> If pools associated with the current main scheduler of <code>xstream</code> are not empty, <code>ABT_ERR_XSTREAM</code> is returned.<br  />
- <b>[Argobots 1.1]</b> This routine works even if pools associated with the current main scheduler of <code>xstream</code> are not empty. </p><dl class="section user">
-<dt>Rationale</dt>
-<dd>This check unnecessarily limits the applicability of this routine. It is the user's responsibility to handle work units in pools associated with the old main scheduler, e.g., by migrating them to other pools. </dd>
-</dl>
+<dd><p class="startdd">\DOC_DESC_V10_CRUDE_SCHED_SIZE_CHECK{<code>xstream</code>, <code>ABT_ERR_XSTREAM}</code> </p>
 <p class="enddd"><b>[Argobots 1.0]</b> If a pool access violation happens regarding an access type of a pool, an error is returned.<br  />
- <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined.<br  />
- </p><dl class="section user">
+ <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without any problem if it is no simultaneously accessed, although it is a user error. Such an error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
 </dl>
@@ -1595,29 +1575,27 @@ To see the details of the default scheduler configuration, please check <code><a
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><p class="startdd"><b>[Argobots 1.x]</b> <code>ABT_ERR_XSTREAM_STATE</code> is returned if the caller is not running on <code>xstream</code> while <code>xstream</code> is running.<br  />
- <b>[Argobots 2.0]</b> <code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is not running on <code>xstream</code> while <code>xstream</code> is running.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> <code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is not running on <code>xstream</code> while <code>xstream</code> is running. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 changes the error code for consistent behavior with the other Argobots routines. </dd>
+<dd>Argobots 2.0 changes the error code for consistent behavior with other Argobots routines. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.x]</b> <code>ABT_ERR_INV_SCHED</code> is returned if this routine finds <code>sched</code> is already used.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if <code>sched</code> is already used.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> The results are undefined if <code>sched</code> is already used. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>The current mechanism that checks if a scheduler is used is premature since this is not maintained atomically. From Argobots 2.0, it becomes the user's responsibility to guarantee that <code>sched</code> is not used. </dd>
+<dd>The current implementation of this check is crude since whether a scheduler is used or not is not maintained atomically. From Argobots 2.0, it becomes the user's responsibility to guarantee that <code>sched</code> is not used. Note that Argobots 1.x does not perform this check atomically, so the user may not concurrently call any routines that attempt to use the same scheduler by assuming that only one of them would succeed. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context. Argobots must be initialized. This routine may perform context switching for the calling ULT.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If the caller is an external thread, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If the caller is a tasklet, <code>ABT_ERR_INV_THREAD</code> is returned.<br  />
-If <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If a memory-related error occurs, <code>ABT_ERR_MEM</code> is returned. This error is returned only when <code>sched</code> is <code>ABT_SCHED_NULL</code>.<br  />
- If a system-resource-related error occurs, <code>ABT_ERR_SYS</code> is returned. This error is returned only when <code>sched</code> is <code>ABT_SCHED_NULL</code>.<br  />
-<b>[Argobots 1.x]</b> If <code>sched</code> is not <code>ABT_SCHED_NULL</code> and <code>sched</code> is being used, <code>ABT_ERR_INV_SCHED</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If <code>xstream</code> is running and <code>xstream</code> is running the calling work unit, <code>ABT_ERR_XSTREAM_STATE</code> is returned.<br  />
-<b>[Argobots 2.0]</b> If <code>xstream</code> is running and <code>xstream</code> is running the calling work unit, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context. Argobots must be initialized. This routine may switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
+<code>ABT_ERR_INV_THREAD</code> is returned if the caller is a tasklet.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails. This error is returned only when <code>sched</code> is <code>ABT_SCHED_NULL</code>.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs. This error is returned only when <code>sched</code> is <code>ABT_SCHED_NULL</code>.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_INV_SCHED</code> is returned if <code>sched</code> is not <code>ABT_SCHED_NULL</code> and <code>sched</code> is being used.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_XSTREAM_STATE</code> is returned if <code>xstream</code> is running and <code>xstream</code> is running the calling work unit.<br  />
+<b>[Argobots 2.0]</b> <code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is running and <code>xstream</code> is running the calling work unit.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If the caller cannot be associated with the first pool of the scheduler, the results are undefined.<br  />
@@ -1693,22 +1671,21 @@ If the old main scheduler associated with <code>xstream</code> is accessed after
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> If a pool access violation happens regarding an access type of a pool, an error is returned.<br  />
- <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined.<br  />
- <dl class="section user">
+ <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined. <dl class="section user">
 <dt>Rationale</dt>
 <dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without any problem if it is no simultaneously accessed, although it is a user error. Such an error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context. Argobots must be initialized. This routine may perform context switching for the calling ULT.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If the caller is an external thread, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If the caller is a tasklet, <code>ABT_ERR_INV_THREAD</code> is returned.<br  />
-If <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If <code>num_pools</code> is negative, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
-If <code>predef</code> is not a valid predefined scheduler type, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context. Argobots must be initialized. This routine may switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
+<code>ABT_ERR_INV_THREAD</code> is returned if the caller is a tasklet.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if <code>num_pools</code> is negative.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if <code>predef</code> is not a valid predefined scheduler type.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>num_pools</code> is positive and <code>pools</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -1763,14 +1740,14 @@ If the old main scheduler associated with <code>xstream</code> is accessed after
 <p>Management of ranks of execution streams is performed atomically.</p>
 <p>The primary execution stream cannot change its rank.</p>
 <dl class="section note"><dt>Note</dt><dd>If the affinity setting is enabled, this routine updates the CPU binding of <code>xstream</code> based on <code>rank</code>.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>rank</code> is negative, <code>ABT_ERR_INV_XSTREAM_RANK</code> is returned.<br  />
- If <code>rank</code> has been used by another execution stream, <code>ABT_ERR_INV_XSTREAM_RANK</code> is returned.<br  />
-If <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If <code>xstream</code> is the primary execution stream, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM_RANK</code> is returned if <code>rank</code> is negative.<br  />
+ <code>ABT_ERR_INV_XSTREAM_RANK</code> is returned if <code>rank</code> has been used by another execution stream.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is the primary execution stream.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
@@ -1790,19 +1767,19 @@ If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  
 </div><!-- contents -->
 <div class="ttc" id="agroup__SCHED_html_gac3ea78b200ae62bf24deecf385a33f7b"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#gac3ea78b200ae62bf24deecf385a33f7b">ABT_sched_create_basic</a></div><div class="ttdeci">int ABT_sched_create_basic(ABT_sched_predef predef, int num_pools, ABT_pool *pools, ABT_sched_config config, ABT_sched *newsched) ABT_API_PUBLIC</div><div class="ttdoc">Create a new scheduler with a predefined scheduler type.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00179">sched.c:179</a></div></div>
 <div class="ttc" id="agroup__ES_html_gad747c073d11deb9ec65ee1453c92f8b2"><div class="ttname"><a href="../../d3/def/group__ES.html#gad747c073d11deb9ec65ee1453c92f8b2">ABT_xstream_create</a></div><div class="ttdeci">int ABT_xstream_create(ABT_sched sched, ABT_xstream *newxstream) ABT_API_PUBLIC</div><div class="ttdoc">Create a new execution stream.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4d/stream_8c_source.html#l00080">stream.c:80</a></div></div>
-<div class="ttc" id="agroup__SCHED_html_gadf0a564b506bb4a288f49cbfd3116025"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#gadf0a564b506bb4a288f49cbfd3116025">ABT_sched</a></div><div class="ttdeci">struct ABT_sched_opaque * ABT_sched</div><div class="ttdoc">Scheduler handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00795">abt.h:795</a></div></div>
+<div class="ttc" id="agroup__SCHED_html_gadf0a564b506bb4a288f49cbfd3116025"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#gadf0a564b506bb4a288f49cbfd3116025">ABT_sched</a></div><div class="ttdeci">struct ABT_sched_opaque * ABT_sched</div><div class="ttdoc">Scheduler handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00803">abt.h:803</a></div></div>
 <div class="ttc" id="agroup__ES_html_ga4be5088fffea111cdd2b684a12879aaa"><div class="ttname"><a href="../../d3/def/group__ES.html#ga4be5088fffea111cdd2b684a12879aaa">ABT_xstream_create_basic</a></div><div class="ttdeci">int ABT_xstream_create_basic(ABT_sched_predef predef, int num_pools, ABT_pool *pools, ABT_sched_config config, ABT_xstream *newxstream) ABT_API_PUBLIC</div><div class="ttdoc">Create a new execution stream with a predefined scheduler.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4d/stream_8c_source.html#l00168">stream.c:168</a></div></div>
 <div class="ttc" id="agroup__ES_html_ga3882b667e35d69b331492ad153ca6edb"><div class="ttname"><a href="../../d3/def/group__ES.html#ga3882b667e35d69b331492ad153ca6edb">ABT_xstream_set_main_sched_basic</a></div><div class="ttdeci">int ABT_xstream_set_main_sched_basic(ABT_xstream xstream, ABT_sched_predef predef, int num_pools, ABT_pool *pools) ABT_API_PUBLIC</div><div class="ttdoc">Set the main scheduler of an execution stream to a predefined scheduler.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4d/stream_8c_source.html#l00910">stream.c:910</a></div></div>
-<div class="ttc" id="agroup__ERROR__CODE_html_gacf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdoc">Error code: the routine returns successfully.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00090">abt.h:90</a></div></div>
-<div class="ttc" id="aabt_8h_html_a6a6ecfc1f874488af85684f7bf61f237"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a6a6ecfc1f874488af85684f7bf61f237">ABT_SCHED_CONFIG_NULL</a></div><div class="ttdeci">#define ABT_SCHED_CONFIG_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01045">abt.h:1045</a></div></div>
-<div class="ttc" id="aabt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdoc">True constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00735">abt.h:735</a></div></div>
-<div class="ttc" id="aabt_8h_html_a6ec206ed23259ffaa4ec3c554329381f"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a6ec206ed23259ffaa4ec3c554329381f">ABT_SCHED_NULL</a></div><div class="ttdeci">#define ABT_SCHED_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01044">abt.h:1044</a></div></div>
-<div class="ttc" id="aabt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdoc">False constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00737">abt.h:737</a></div></div>
+<div class="ttc" id="agroup__ERROR__CODE_html_gacf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdoc">Error code: the routine returns successfully.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00092">abt.h:92</a></div></div>
+<div class="ttc" id="aabt_8h_html_a6a6ecfc1f874488af85684f7bf61f237"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a6a6ecfc1f874488af85684f7bf61f237">ABT_SCHED_CONFIG_NULL</a></div><div class="ttdeci">#define ABT_SCHED_CONFIG_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01053">abt.h:1053</a></div></div>
+<div class="ttc" id="aabt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdoc">True constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00743">abt.h:743</a></div></div>
+<div class="ttc" id="aabt_8h_html_a6ec206ed23259ffaa4ec3c554329381f"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a6ec206ed23259ffaa4ec3c554329381f">ABT_SCHED_NULL</a></div><div class="ttdeci">#define ABT_SCHED_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01052">abt.h:1052</a></div></div>
+<div class="ttc" id="aabt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdoc">False constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00745">abt.h:745</a></div></div>
 <div class="ttc" id="agroup__ES_html_gaf4f24ac290204d7be10e420644121a85"><div class="ttname"><a href="../../d3/def/group__ES.html#gaf4f24ac290204d7be10e420644121a85">ABT_xstream_set_main_sched</a></div><div class="ttdeci">int ABT_xstream_set_main_sched(ABT_xstream xstream, ABT_sched sched) ABT_API_PUBLIC</div><div class="ttdoc">Set the main scheduler of an execution stream.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4d/stream_8c_source.html#l00815">stream.c:815</a></div></div>
 <div class="ttc" id="agroup__SCHED_html_ga444e7300384a4a69864327b005c94f44"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#ga444e7300384a4a69864327b005c94f44">ABT_sched_free</a></div><div class="ttdeci">int ABT_sched_free(ABT_sched *sched) ABT_API_PUBLIC</div><div class="ttdoc">Free a scheduler.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00239">sched.c:239</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 11 2021 15:11:00 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 27 2021 03:10:01 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

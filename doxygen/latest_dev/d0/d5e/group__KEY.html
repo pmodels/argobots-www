@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">140a356fc09a44696eb3487150e459266f9b5405</span>
+   &#160;<span id="projectnumber">dc7ce7fd1805a24088d4159621e620a73374cbbb</span>
    </div>
   </td>
  </tr>
@@ -112,7 +112,7 @@ Functions</h2></td></tr>
 <p>Work-unit-specific data key handle type. </p>
 <p>A NULL handle of this type is <code>ABT_KEY_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00925">925</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00933">933</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -151,10 +151,10 @@ Functions</h2></td></tr>
 <p>Unlike other implementations (e.g., <code>pthread_key_create()</code>), <code>destructor()</code> is not called by the associated work-unit, so a program that relies on a caller of <code>destructor()</code> is non-conforming.</p>
 <p><code>destructor()</code> is called even if the associated key has been freed by <code><a class="el" href="../../d0/d5e/group__KEY.html#ga795e391fb1b5fc7745d3074568e0a311" title="Free a work-unit-specific data key.">ABT_key_free()</a></code>.</p>
 <p>The created key must be freed by <code><a class="el" href="../../d0/d5e/group__KEY.html#ga795e391fb1b5fc7745d3074568e0a311" title="Free a work-unit-specific data key.">ABT_key_free()</a></code> after its use.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>newkey</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -191,9 +191,9 @@ If <code>newkey</code> is <code>NULL</code>, the results are undefined.<br  />
 <p>Free a work-unit-specific data key. </p>
 <p><code><a class="el" href="../../d0/d5e/group__KEY.html#ga795e391fb1b5fc7745d3074568e0a311" title="Free a work-unit-specific data key.">ABT_key_free()</a></code> deallocates the resource used for the work-unit-specific data key <code>key</code> and sets <code>key</code> to <code>ABT_KEY_NULL</code>. It is the user's responsibility to free memory for values associated with the deleted key.</p>
 <p>The user is allowed to delete a key before terminating all work units that have non-<code>NULL</code> values associated with <code>key</code>. The user cannot refer to a value via the deleted key, but the destructor of the deleted key will be called when a work unit that has a non-<code>NULL</code> value associated with that key is freed.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>key</code> points to <code>ABT_KEY_NULL</code>, <code>ABT_ERR_INV_KEY</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_KEY</code> is returned if <code>key</code> points to <code>ABT_KEY_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>key</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -243,18 +243,17 @@ If <code>key</code> is accessed after calling this routine, the results are unde
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized. <dl class="section user">
 <dt>Rationale</dt>
 <dd>From Argobots 2.0, all the Argobots routines that are not explicitly noted do not check if Argobots is initialized. This omission can reduce the branches that are mostly unnecessary. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in either a ULT context or a tasklet context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If the caller is an external thread, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If <code>key</code> is <code>ABT_KEY_NULL</code>, <code>ABT_ERR_INV_KEY</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If the Argobots runtime is not initialized, <code>ABT_ERR_UNINITIALIZED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context and a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
+<code>ABT_ERR_INV_KEY</code> is returned if <code>key</code> is <code>ABT_KEY_NULL</code>.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_UNINITIALIZED</code> is returned if the Argobots runtime is not initialized.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If <code>value</code> is <code>NULL</code>, the results are undefined.<br  />
 <b>[Argobots 2.0]</b> If Argobots is not initialized, the results are undefined.<br  />
@@ -304,20 +303,19 @@ If <code>key</code> is <code>ABT_KEY_NULL</code>, <code>ABT_ERR_INV_KEY</code> i
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized. <dl class="section user">
 <dt>Rationale</dt>
 <dd>From Argobots 2.0, all the Argobots routines that are not explicitly noted do not check if Argobots is initialized. This omission can reduce the branches that are mostly unnecessary. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in either a ULT context or a tasklet context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If the caller is an external thread, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If <code>key</code> is <code>ABT_KEY_NULL</code>, <code>ABT_ERR_INV_KEY</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If the Argobots runtime is not initialized, <code>ABT_ERR_UNINITIALIZED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context and a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
+<code>ABT_ERR_INV_KEY</code> is returned if <code>key</code> is <code>ABT_KEY_NULL</code>.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_UNINITIALIZED</code> is returned if the Argobots runtime is not initialized.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd><b>[Argobots 2.0]</b> If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
@@ -337,7 +335,7 @@ If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 11 2021 15:10:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 27 2021 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

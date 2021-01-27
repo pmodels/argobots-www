@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">140a356fc09a44696eb3487150e459266f9b5405</span>
+   &#160;<span id="projectnumber">dc7ce7fd1805a24088d4159621e620a73374cbbb</span>
    </div>
   </td>
  </tr>
@@ -176,15 +176,14 @@ Functions</h2></td></tr>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> The value of <code>ABT_THREAD_NULL</code> is different from that of <code>ABT_TASK_NULL</code>.<br  />
- <b>[Argobots 2.0]</b> <code>ABT_TASK_NULL</code> is an alias of <code>ABT_THREAD_NULL</code>.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>ABT_TASK_NULL</code> is an alias of <code>ABT_THREAD_NULL</code>. <dl class="section user">
 <dt>Rationale</dt>
 <dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. </dd>
 </dl>
 </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00918">918</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00926">926</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -206,7 +205,7 @@ Functions</h2></td></tr>
 <dd><b>[Argobots 2.0]</b> This type is replaced by <code>ABT_thread_state</code>. </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00898">898</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00906">906</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -237,7 +236,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00426">426</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00434">434</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -309,18 +308,17 @@ Functions</h2></td></tr>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>newtask</code> is set to <code>ABT_TASK_NULL</code> if an error occurs and <code>newtask</code> is not <code>NULL</code>.<br  />
- <b>[Argobots 2.0]</b> <code>newtask</code> is not updated if an error occurs and <code>newtask</code> is not <code>NULL</code>.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>newtask</code> is not updated if an error occurs and <code>newtask</code> is not <code>NULL</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>newtask</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>pool</code> is <code>ABT_POOL_NULL</code>, <code>ABT_ERR_INV_POOL</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_POOL</code> is returned if <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>task_func</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -384,18 +382,17 @@ If <code>task_func</code> is <code>NULL</code>, the results are undefined.<br  /
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>newtask</code> is set to <code>ABT_TASK_NULL</code> if an error occurs and <code>newtask</code> is not <code>NULL</code>.<br  />
- <b>[Argobots 2.0]</b> <code>newtask</code> is not updated if an error occurs and <code>newtask</code> is not <code>NULL</code>.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>newtask</code> is not updated if an error occurs and <code>newtask</code> is not <code>NULL</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>newtask</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>task_func</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -678,18 +675,17 @@ If <code>task_func</code> is <code>NULL</code>, the results are undefined.<br  /
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> If <code>task</code> is a ULT, <code>ABT_ERR_INV_TASK</code> is returned.<br  />
- <b>[Argobots 2.0]</b> This routine accepts a ULT handle as <code>task</code>. <code>ABT_thread_state</code> and <code>ABT_task_state</code> is unified.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> This routine accepts a ULT handle as <code>task</code>. <code>ABT_thread_state</code> and <code>ABT_task_state</code> is unified. <dl class="section user">
 <dt>Rationale</dt>
 <dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>thread</code> is <code>ABT_THREAD_NULL</code> or <code>ABT_TASK_NULL</code>, <code>ABT_ERR_INV_THREAD</code> is returned.<br  />
-If <code>thread</code> is <code>ABT_THREAD_NULL</code> or <code>ABT_TASK_NULL</code>, <code>ABT_ERR_INV_TASK</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If <code>thread</code> is a ULT, <code>ABT_ERR_INV_TASK</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_THREAD</code> is returned if <code>thread</code> is <code>ABT_THREAD_NULL</code> or <code>ABT_TASK_NULL</code>.<br  />
+<code>ABT_ERR_INV_TASK</code> is returned if <code>thread</code> is <code>ABT_THREAD_NULL</code> or <code>ABT_TASK_NULL</code>.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_INV_TASK</code> is returned if <code>thread</code> is a ULT.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>state</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -893,31 +889,28 @@ If <code>state</code> is <code>NULL</code>, the results are undefined.<br  />
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><p class="startdd"><b>[Argobots 1.x]</b> If a ULT calls this routine, <code>ABT_ERR_INV_TASK</code> is returned.<br  />
- <b>[Argobots 2.0]</b> A ULT may call this routine.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> A ULT may call this routine. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. </dd>
 </dl>
 <p class="interdd"><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>From Argobots 2.0, all the Argobots routines that are not explicitly noted do not check if Argobots is initialized. This omission can reduce the branches that are mostly unnecessary. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.x]</b> <code>task</code> is set to <code>ABT_TASK_NULL</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>task</code> is not updated if an error occurs.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> <code>task</code> is not updated if an error occurs. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>task</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a tasklet context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.<br  />
-<b>[Argobots 2.0]</b> This routine can be called in either a ULT context or a tasklet context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If the caller is an external thread, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If the caller is a ULT, <code>ABT_ERR_INV_TASK</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If the Argobots runtime is not initialized, <code>ABT_ERR_UNINITIALIZED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.<br  />
+<b>[Argobots 2.0]</b> This routine can be called in a ULT context and a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_INV_TASK</code> is returned if the caller is a ULT.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_UNINITIALIZED</code> is returned if the Argobots runtime is not initialized.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If <code>task</code> is <code>NULL</code>, the results are undefined.<br  />
 <b>[Argobots 2.0]</b> If Argobots is not initialized, the results are undefined.<br  />
@@ -955,25 +948,23 @@ If the caller is an external thread, <code>ABT_ERR_INV_XSTREAM</code> is returne
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><p class="startdd"><b>[Argobots 1.x]</b> If a ULT calls this routine, <code>ABT_ERR_INV_TASK</code> is returned.<br  />
- <b>[Argobots 2.0]</b> A ULT may call this routine.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> A ULT may call this routine. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>From Argobots 2.0, all the Argobots routines that are not explicitly noted do not check if Argobots is initialized. This omission can reduce the branches that are mostly unnecessary. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a tasklet context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.<br  />
-<b>[Argobots 2.0]</b> This routine can be called in either a ULT context or a tasklet context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If the caller is an external thread, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If the caller is a ULT, <code>ABT_ERR_INV_TASK</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If the Argobots runtime is not initialized, <code>ABT_ERR_UNINITIALIZED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.<br  />
+<b>[Argobots 2.0]</b> This routine can be called in a ULT context and a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_INV_TASK</code> is returned if the caller is a ULT.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_UNINITIALIZED</code> is returned if the Argobots runtime is not initialized.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If <code>id</code> is <code>NULL</code>, the results are undefined.<br  />
 <b>[Argobots 2.0]</b> If Argobots is not initialized, the results are undefined.<br  />
@@ -1063,7 +1054,7 @@ If the caller is an external thread, <code>ABT_ERR_INV_XSTREAM</code> is returne
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 11 2021 15:11:00 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 27 2021 03:10:01 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

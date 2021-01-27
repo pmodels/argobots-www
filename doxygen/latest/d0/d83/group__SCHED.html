@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">140a356fc09a44696eb3487150e459266f9b5405</span>
+   &#160;<span id="projectnumber">dc7ce7fd1805a24088d4159621e620a73374cbbb</span>
    </div>
   </td>
  </tr>
@@ -175,7 +175,7 @@ Functions</h2></td></tr>
 <dd><b>[Argobots 2.0]</b> This type is removed since no Argobots routine uses this. </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00816">816</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00824">824</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -194,7 +194,7 @@ Functions</h2></td></tr>
 <p>Scheduler handle type. </p>
 <p>A NULL handle of this type is <code>ABT_SCHED_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00795">795</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00803">803</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -212,7 +212,7 @@ Functions</h2></td></tr>
 
 <p>Predefined scheduler type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00807">807</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00815">815</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -230,7 +230,7 @@ Functions</h2></td></tr>
 
 <p>Scheduler's work unit type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00821">821</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00829">829</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -262,7 +262,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00457">457</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00465">465</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -282,8 +282,7 @@ Functions</h2></td></tr>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> If <code>ABT_SCHED_TYPE_TASK</code> is set, the created scheduler runs on a tasklet.<br  />
- <b>[Argobots 1.1]</b> All schedulers run on ULTs.<br  />
- <dl class="section user">
+ <b>[Argobots 1.1]</b> All schedulers run on ULTs. <dl class="section user">
 <dt>Rationale</dt>
 <dd>A scheduler that cannot yield is almost useless; such a scheduler is highly restrictive while it provides tiny performance benefits. Argobots 1.1 always creates a ULT-based scheduler regardless of <code>ABT_sched_type</code>. </dd>
 </dl>
@@ -296,7 +295,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00482">482</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00490">490</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -360,26 +359,24 @@ Functions</h2></td></tr>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><p class="startdd"><b>[Argobots 1.x]</b> If <code>newsched</code> is <code>NULL</code>, <code>ABT_ERR_SCHED</code> is returned.<br  />
- <b>[Argobots 2.0]</b> If <code>newsched</code> is <code>NULL</code>, the results are undefined.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> If <code>newsched</code> is <code>NULL</code>, the results are undefined. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>Argobots 2.0 will not check NULL pointers. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.x]</b> <code>newsched</code> is set to <code>ABT_SCHED_NULL</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>newsched</code> is not updated if an error occurs.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> <code>newsched</code> is not updated if an error occurs. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>newsched</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>num_pools</code> is negative, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
-If <code>init()</code> does not return <code>ABT_SUCCESS</code>, the error returned by <code>init()</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If <code>newsched</code> is <code>NULL</code>, <code>ABT_ERR_SCHED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if <code>num_pools</code> is negative.<br  />
+An error code returned by <code>init()</code> is returned if <code>init()</code> does not return <code>ABT_SUCCESS</code>.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_SCHED</code> is returned if <code>newsched</code> is <code>NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>def</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -461,19 +458,18 @@ If <code>num_pools</code> is positive and <code>pools</code> is <code>NULL</code
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>newsched</code> is set to <code>ABT_SCHED_NULL</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>newsched</code> is not updated if an error occurs.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>newsched</code> is not updated if an error occurs. <dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>newsched</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>num_pools</code> is negative, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
-If <code>predef</code> is not a valid predefined scheduler type, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if <code>num_pools</code> is negative.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if <code>predef</code> is not a valid predefined scheduler type.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>newsched</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -515,9 +511,9 @@ If <code>newsched</code> is <code>NULL</code>, the results are undefined.<br  />
 <p>The request of <code><a class="el" href="../../d0/d83/group__SCHED.html#gabd0ce32ef0e1e24cb5902637049fcb78" title="Request a scheduler to finish.">ABT_sched_exit()</a></code> is prioritized over the request of <code><a class="el" href="../../d0/d83/group__SCHED.html#ga3dee71a1b44221cc56d4bb66f4f02cf1" title="Request a scheduler to finish after its pools get empty.">ABT_sched_finish()</a></code>.</p>
 <p>Management of requests for schedulers is performed atomically.</p>
 <dl class="section note"><dt>Note</dt><dd>The timing of the request fulfillment is undefined, so a program that relies on when the request is fulfilled is non-conforming.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>sched</code> is <code>ABT_SCHED_NULL</code>, <code>ABT_ERR_INV_SCHED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_SCHED</code> is returned if <code>sched</code> is <code>ABT_SCHED_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
@@ -554,9 +550,9 @@ If <code>sched</code> is <code>ABT_SCHED_NULL</code>, <code>ABT_ERR_INV_SCHED</c
 <p>The request of <code><a class="el" href="../../d0/d83/group__SCHED.html#gabd0ce32ef0e1e24cb5902637049fcb78" title="Request a scheduler to finish.">ABT_sched_exit()</a></code> is prioritized over the request of <code><a class="el" href="../../d0/d83/group__SCHED.html#ga3dee71a1b44221cc56d4bb66f4f02cf1" title="Request a scheduler to finish after its pools get empty.">ABT_sched_finish()</a></code>. Calling <code><a class="el" href="../../d0/d83/group__SCHED.html#ga3dee71a1b44221cc56d4bb66f4f02cf1" title="Request a scheduler to finish after its pools get empty.">ABT_sched_finish()</a></code> does not overwrite the previous request made by <code><a class="el" href="../../d0/d83/group__SCHED.html#gabd0ce32ef0e1e24cb5902637049fcb78" title="Request a scheduler to finish.">ABT_sched_exit()</a></code>.</p>
 <p>Management of requests for schedulers is performed atomically.</p>
 <dl class="section note"><dt>Note</dt><dd>The timing of the request fulfillment is undefined, so a program that relies on when the request is fulfilled is non-conforming.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>sched</code> is <code>ABT_SCHED_NULL</code>, <code>ABT_ERR_INV_SCHED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_SCHED</code> is returned if <code>sched</code> is <code>ABT_SCHED_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
@@ -601,17 +597,16 @@ If <code>sched</code> is <code>ABT_SCHED_NULL</code>, <code>ABT_ERR_INV_SCHED</c
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>ABT_ERR_SCHED</code> is returned if this routine finds <code>sched</code> is already used.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if <code>sched</code> is already used.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> The results are undefined if <code>sched</code> is already used. <dl class="section user">
 <dt>Rationale</dt>
-<dd>The current mechanism that checks if a scheduler is used is premature since this is not maintained atomically. From Argobots 2.0, it becomes the user's responsibility to guarantee that <code>sched</code> is not used. </dd>
+<dd>The current implementation of this check is crude since whether a scheduler is used or not is not maintained atomically. From Argobots 2.0, it becomes the user's responsibility to guarantee that <code>sched</code> is not used. Note that Argobots 1.x does not perform this check atomically, so the user may not concurrently call any routines that attempt to use the same scheduler by assuming that only one of them would succeed. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>sched</code> points to <code>ABT_SCHED_NULL</code>, <code>ABT_ERR_INV_SCHED</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If <code>sched</code> is being used, <code>ABT_ERR_SCHED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_SCHED</code> is returned if <code>sched</code> points to <code>ABT_SCHED_NULL</code>.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_SCHED</code> is returned if <code>sched</code> is being used.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>sched</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -657,9 +652,9 @@ If <code>sched</code> is accessed after calling this routine, the results are un
 
 <p>Retrieve a user value associated with a scheduler. </p>
 <p><code><a class="el" href="../../d9/d52/group__POOL.html#gac5e9bbf2126b7c2b951068bafbd47fde" title="Retrieve user data from a pool.">ABT_pool_get_data()</a></code> returns a user value associated with the scheduler <code>sched</code> through <code>data</code>. The user value of the newly created scheduler is <code>NULL</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>sched</code> is <code>ABT_SCHED_NULL</code>, <code>ABT_ERR_INV_SCHED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_SCHED</code> is returned if <code>sched</code> is <code>ABT_SCHED_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>data</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -705,9 +700,9 @@ If <code>data</code> is <code>NULL</code>, the results are undefined.<br  />
 
 <p>Obtain the number of pools associated with a scheduler. </p>
 <p><code><a class="el" href="../../d0/d83/group__SCHED.html#ga4a51e2af3857816d21e4bd5bbe056e9b" title="Obtain the number of pools associated with a scheduler.">ABT_sched_get_num_pools()</a></code> returns the number of pools associated with the scheduler <code>sched</code> through <code>num_pools</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>sched</code> is <code>ABT_SCHED_NULL</code>, <code>ABT_ERR_INV_SCHED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_SCHED</code> is returned if <code>sched</code> is <code>ABT_SCHED_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>num_pools</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -769,19 +764,18 @@ If <code>num_pools</code> is <code>NULL</code>, the results are undefined.<br  /
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> If the summation of <code>idx</code> and <code>max_pools</code> is larger than the number of pools associated with <code>sched</code>, this routine returns <code>ABT_ERR_SCHED</code>.<br  />
- <b>[Argobots 2.0]</b> This routine does not update elements of <code>pools</code> if corresponding pool elements specified by <code>idx</code> and <code>max_pools</code> are out of range.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> This routine does not update elements of <code>pools</code> if corresponding pool elements specified by <code>idx</code> and <code>max_pools</code> are out of range. <dl class="section user">
 <dt>Rationale</dt>
 <dd>The restriction is unnecessary and thus this behavior is deprecated. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>max_pools</code> is negative, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
-If <code>idx</code> is negative, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
-If <code>sched</code> is <code>ABT_SCHED_NULL</code>, <code>ABT_ERR_INV_SCHED</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If the summation of <code>idx</code> and <code>max_pools</code> is larger than the number of pools associated with <code>sched</code>, <code>ABT_ERR_SCHED</code> is returned.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if <code>max_pools</code> is negative.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if <code>idx</code> is negative.<br  />
+<code>ABT_ERR_INV_SCHED</code> is returned if <code>sched</code> is <code>ABT_SCHED_NULL</code>.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_SCHED</code> is returned if the summation of <code>idx</code> and <code>max_pools</code> is larger than the number of pools associated with <code>sched</code>.</dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>max_pools</code> is not zero and <code>pools</code> is <code>NULL</code>, the results are undefined.<br  />
  </dd></dl>
@@ -834,16 +828,15 @@ This routine does not check the size of all the pools atomically, so the returne
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>size</code> is set to zero if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>size</code> is not updated if an error occurs.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>size</code> is not updated if an error occurs. <dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>size</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>sched</code> is <code>ABT_SCHED_NULL</code>, <code>ABT_ERR_INV_SCHED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_SCHED</code> is returned if <code>sched</code> is <code>ABT_SCHED_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>size</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -895,16 +888,15 @@ This routine does not check the size of all the pools atomically, so the returne
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>size</code> is set to zero if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>size</code> is not updated if an error occurs.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>size</code> is not updated if an error occurs. <dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>size</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>sched</code> is <code>ABT_SCHED_NULL</code>, <code>ABT_ERR_INV_SCHED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_SCHED</code> is returned if <code>sched</code> is <code>ABT_SCHED_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>size</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -954,24 +946,22 @@ If <code>size</code> is <code>NULL</code>, the results are undefined.<br  />
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><p class="startdd"><b>[Argobots 1.x]</b> If an external thread calls this routine, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
- <b>[Argobots 2.0]</b> An external thread may call this routine.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> An external thread may call this routine. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>Argobots 2.0 allows an external thread as much as possible unless it is semantically wrong. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.x]</b> <code>stop</code> is set to <code>ABT_FALSE</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>stop</code> is not updated if an error occurs.<br  />
- </p><dl class="section user">
+ <b>[Argobots 2.0]</b> <code>stop</code> is not updated if an error occurs. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>stop</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in either a ULT context or a tasklet context. Argobots must be initialized. This routine may perform context switching for the calling ULT.<br  />
-<b>[Argobots 2.0]</b> This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>sched</code> is <code>ABT_SCHED_NULL</code>, <code>ABT_ERR_INV_SCHED</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If the caller is an external thread, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a ULT context and a tasklet context. Argobots must be initialized. This routine may switch the context of the calling ULT.<br  />
+<b>[Argobots 2.0]</b> This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_SCHED</code> is returned if <code>sched</code> is <code>ABT_SCHED_NULL</code>.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>stop</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -1017,9 +1007,9 @@ If <code>stop</code> is <code>NULL</code>, the results are undefined.<br  />
 
 <p>Associate a user value with a scheduler. </p>
 <p><code><a class="el" href="../../d0/d83/group__SCHED.html#ga996eed186a982e8f64c5073584ffce40" title="Associate a user value with a scheduler.">ABT_sched_set_data()</a></code> associates the user value <code>data</code> with the scheduler <code>sched</code>. The old user value associated with <code>sched</code> is overwritten.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>sched</code> is <code>ABT_SCHED_NULL</code>, <code>ABT_ERR_INV_SCHED</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_SCHED</code> is returned if <code>sched</code> is <code>ABT_SCHED_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>sched</code> is accessed concurrently, the results are undefined.<br  />
@@ -1040,7 +1030,7 @@ If <code>sched</code> is accessed concurrently, the results are undefined.<br  /
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 11 2021 15:11:00 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 27 2021 03:10:01 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

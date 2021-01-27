@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">140a356fc09a44696eb3487150e459266f9b5405</span>
+   &#160;<span id="projectnumber">dc7ce7fd1805a24088d4159621e620a73374cbbb</span>
    </div>
   </td>
  </tr>
@@ -136,7 +136,7 @@ Functions</h2></td></tr>
 <p>Mutex handle type. </p>
 <p>A NULL handle of this type is <code>ABT_MUTEX_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00932">932</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00940">940</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -163,17 +163,16 @@ Functions</h2></td></tr>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>newmutex</code> is set to <code>ABT_MUTEX_NULL</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>newmutex</code> is not updated if an error occurs.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>newmutex</code> is not updated if an error occurs. <dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>newmutex</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>newmutex</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -233,17 +232,16 @@ If <code>newmutex</code> is <code>NULL</code>, the results are undefined.<br  />
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>newmutex</code> is set to <code>ABT_MUTEX_NULL</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>newmutex</code> is not updated if an error occurs.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>newmutex</code> is not updated if an error occurs. <dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>newmutex</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>newmutex</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -296,8 +294,8 @@ If <code>newmutex</code> is <code>NULL</code>, the results are undefined.<br  />
 <p>Compare two mutex handles for equality. </p>
 <p><code><a class="el" href="../../d2/d09/group__MUTEX.html#gabc66c7eaf803a56536bb2ca301d8b95d" title="Compare two mutex handles for equality.">ABT_mutex_equal()</a></code> compares two mutex handles <code>mutex1</code> and <code>mutex2</code> for equality and returns the result through <code>result</code>.</p>
 <p>This function is deprecated since its behavior is the same as comparing values of <code>mutex1</code> and <code>mutex2</code>. </p><div class="fragment"><div class="line">*result = (mutex1 == mutex2) ? <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a> : <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
-</div><!-- fragment --><dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
+</div><!-- fragment --><dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If <code>result</code> is <code>NULL</code>, the results are undefined.<br  />
  </dd></dl>
@@ -334,13 +332,13 @@ If <code>newmutex</code> is <code>NULL</code>, the results are undefined.<br  />
 <p>Free a mutex. </p>
 <p><code><a class="el" href="../../d2/d09/group__MUTEX.html#gabade38c70c294371121af7e0a80d5b3e" title="Free a mutex.">ABT_mutex_free()</a></code> deallocates the resource used for the mutex <code>mutex</code> and sets <code>mutex</code> to <code>ABT_MUTEX_NULL</code>.</p>
 <dl class="section note"><dt>Note</dt><dd>This routine frees <code>mutex</code> regardless of whether it is locked or not.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>mutex</code> points to <code>ABT_MUTEX_NULL</code>, <code>ABT_ERR_INV_MUTEX</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> points to <code>ABT_MUTEX_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>mutex</code> is <code>NULL</code>, the results are undefined.<br  />
-If any waiter is blocked on <code>mutex</code>, the results are undefined.<br  />
+If there is a waiter blocked on <code>mutex</code>, the results are undefined.<br  />
 If <code>mutex</code> is accessed after calling this routine, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -374,9 +372,9 @@ If <code>mutex</code> is accessed after calling this routine, the results are un
 <p>Lock a mutex. </p>
 <p><code><a class="el" href="../../d2/d09/group__MUTEX.html#gaa04ef5552b54a247dd9aad207918d0f1" title="Lock a mutex.">ABT_mutex_lock()</a></code> locks the mutex <code>mutex</code>. If this routine successfully returns, the caller acquires <code>mutex</code>. If <code>mutex</code> has already been locked, the caller will be blocked on <code>mutex</code> until <code>mutex</code> becomes available.</p>
 <p>If <code>mutex</code> is recursive, the same caller can acquire multiple levels of ownership over <code>mutex</code>. <code>mutex</code> will remain locked until <code>mutex</code> is unlocked as many times as the level of ownership.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT if <code>mutex</code> is locked and therefore the caller fails to take a lock. Otherwise, this routine does not context switch the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>mutex</code> is <code>ABT_MUTEX_NULL</code>, <code>ABT_ERR_INV_MUTEX</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT if <code>mutex</code> is locked and therefore the caller fails to take a lock. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> is <code>ABT_MUTEX_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
@@ -411,9 +409,9 @@ If <code>mutex</code> is <code>ABT_MUTEX_NULL</code>, <code>ABT_ERR_INV_MUTEX</c
 <p>Lock a mutex with high priority. </p>
 <p><code><a class="el" href="../../d2/d09/group__MUTEX.html#gaab64a7ac90af4f8840c4f33bd23b34ce" title="Lock a mutex with low priority.">ABT_mutex_lock_low()</a></code> locks the mutex <code>mutex</code> with high priority while <code><a class="el" href="../../d2/d09/group__MUTEX.html#gaa04ef5552b54a247dd9aad207918d0f1" title="Lock a mutex.">ABT_mutex_lock()</a></code> and <code><a class="el" href="../../d2/d09/group__MUTEX.html#gaab64a7ac90af4f8840c4f33bd23b34ce" title="Lock a mutex with low priority.">ABT_mutex_lock_low()</a></code> do with lower priority. That is, waiters that call the high-priority mutex lock functions might be prioritized over the same <code>mutex</code>. Except for priority, the semantics of <code><a class="el" href="../../d2/d09/group__MUTEX.html#gafc18514a5af7e40f25f47b5d5543d61a" title="Lock a mutex with high priority.">ABT_mutex_lock_high()</a></code> is the same as that of <code><a class="el" href="../../d2/d09/group__MUTEX.html#gaa04ef5552b54a247dd9aad207918d0f1" title="Lock a mutex.">ABT_mutex_lock()</a></code>.</p>
 <dl class="section note"><dt>Note</dt><dd>A program that relies on the scheduling order regarding mutex priorities is non-conforming.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT if <code>mutex</code> is locked and therefore the caller fails to take a lock. Otherwise, this routine does not context switch the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>mutex</code> is <code>ABT_MUTEX_NULL</code>, <code>ABT_ERR_INV_MUTEX</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT if <code>mutex</code> is locked and therefore the caller fails to take a lock. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> is <code>ABT_MUTEX_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
@@ -448,9 +446,9 @@ If <code>mutex</code> is <code>ABT_MUTEX_NULL</code>, <code>ABT_ERR_INV_MUTEX</c
 <p>Lock a mutex with low priority. </p>
 <p><code><a class="el" href="../../d2/d09/group__MUTEX.html#gaab64a7ac90af4f8840c4f33bd23b34ce" title="Lock a mutex with low priority.">ABT_mutex_lock_low()</a></code> locks the mutex <code>mutex</code> with low priority while <code><a class="el" href="../../d2/d09/group__MUTEX.html#gaa04ef5552b54a247dd9aad207918d0f1" title="Lock a mutex.">ABT_mutex_lock()</a></code> and <code><a class="el" href="../../d2/d09/group__MUTEX.html#gafc18514a5af7e40f25f47b5d5543d61a" title="Lock a mutex with high priority.">ABT_mutex_lock_high()</a></code> do with higher priority. That is, waiters that call the high-priority mutex lock functions might be prioritized over the same <code>mutex</code>. Except for priority, the semantics of <code><a class="el" href="../../d2/d09/group__MUTEX.html#gaab64a7ac90af4f8840c4f33bd23b34ce" title="Lock a mutex with low priority.">ABT_mutex_lock_low()</a></code> is the same as that of <code><a class="el" href="../../d2/d09/group__MUTEX.html#gaa04ef5552b54a247dd9aad207918d0f1" title="Lock a mutex.">ABT_mutex_lock()</a></code>.</p>
 <dl class="section note"><dt>Note</dt><dd>A program that relies on the scheduling order regarding mutex priorities is non-conforming.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT if <code>mutex</code> is locked and therefore the caller fails to take a lock. Otherwise, this routine does not context switch the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>mutex</code> is <code>ABT_MUTEX_NULL</code>, <code>ABT_ERR_INV_MUTEX</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT if <code>mutex</code> is locked and therefore the caller fails to take a lock. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> is <code>ABT_MUTEX_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
@@ -486,9 +484,9 @@ If <code>mutex</code> is <code>ABT_MUTEX_NULL</code>, <code>ABT_ERR_INV_MUTEX</c
 <p><code><a class="el" href="../../d2/d09/group__MUTEX.html#ga830bd1397ef36c83c4b33a8480adee1b" title="Lock a mutex in a busy-wait loop.">ABT_mutex_spinlock()</a></code> locks the mutex <code>mutex</code> in a blocking form. If this routine successfully returns, the caller acquires <code>mutex</code>. If <code>mutex</code> has already been locked, the caller will be blocked on <code>mutex</code> until <code>mutex</code> becomes available.</p>
 <p>If <code>mutex</code> is recursive, the same caller can acquire multiple levels of ownership over <code>mutex</code>. <code>mutex</code> will remain locked until <code>mutex</code> is unlocked as many times as the level of ownership.</p>
 <dl class="section note"><dt>Note</dt><dd><code><a class="el" href="../../d2/d09/group__MUTEX.html#ga830bd1397ef36c83c4b33a8480adee1b" title="Lock a mutex in a busy-wait loop.">ABT_mutex_spinlock()</a></code> might show a slightly better performance than <code><a class="el" href="../../d2/d09/group__MUTEX.html#gaa04ef5552b54a247dd9aad207918d0f1" title="Lock a mutex.">ABT_mutex_lock()</a></code> if <code>mutex</code> is uncontended. This routine, however, blocks the underlying execution stream when <code>mutex</code> is locked even if the caller is a ULT. This blocking behavior is deadlock-prone, so the user must be cautious when using this routine.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>mutex</code> is <code>ABT_MUTEX_NULL</code>, <code>ABT_ERR_INV_MUTEX</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> is <code>ABT_MUTEX_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
@@ -524,10 +522,10 @@ If <code>mutex</code> is <code>ABT_MUTEX_NULL</code>, <code>ABT_ERR_INV_MUTEX</c
 <p><code><a class="el" href="../../d2/d09/group__MUTEX.html#gacfe5902c0db94e2b7f92bb6efb2f8ed7" title="Attempt to lock a mutex.">ABT_mutex_trylock()</a></code> attempts to lock the mutex <code>mutex</code>. If this routine returns <code>ABT_SUCCESS</code>, the caller acquires the mutex. If the caller fails to take a lock, <code>ABT_ERR_MUTEX_LOCKED</code> is returned.</p>
 <p>If <code>mutex</code> is recursive, the same caller can acquire multiple levels of ownership over <code>mutex</code>. <code>mutex</code> will remain locked until <code>mutex</code> is unlocked as many times as the level of ownership.</p>
 <p>This trylock operation is atomically strong, so lock acquisition by this routine never fails if <code>mutex</code> is not locked.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine successfully obtains <code>mutex</code>, <code>ABT_SUCCESS</code> is returned.<br  />
-If this routine fails to obtain <code>mutex</code>, <code>ABT_ERR_MUTEX_LOCKED</code> is returned.<br  />
-If <code>mutex</code> is <code>ABT_MUTEX_NULL</code>, <code>ABT_ERR_INV_MUTEX</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine successfully obtains <code>mutex</code>.<br  />
+<code>ABT_ERR_MUTEX_LOCKED</code> is returned if this routine fails to obtain <code>mutex</code>.<br  />
+<code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> is <code>ABT_MUTEX_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
@@ -562,9 +560,9 @@ If <code>mutex</code> is <code>ABT_MUTEX_NULL</code>, <code>ABT_ERR_INV_MUTEX</c
 <p>Unlock a mutex. </p>
 <p><code><a class="el" href="../../d2/d09/group__MUTEX.html#ga6047a388bffa841fc0924bdb7f8c7670" title="Unlock a mutex.">ABT_mutex_unlock()</a></code> unlocks the mutex <code>mutex</code>.</p>
 <p>If <code>mutex</code> is recursive and has been locked more than once, the caller must be the same as that of the corresponding locking function.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT if a waiter is waiting on <code>mutex</code>. Otherwise, this routine does not context switch the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>mutex</code> is <code>ABT_MUTEX_NULL</code>, <code>ABT_ERR_INV_MUTEX</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT if a waiter is waiting on <code>mutex</code>. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> is <code>ABT_MUTEX_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>mutex</code> is not locked, the results are undefined.<br  />
@@ -603,9 +601,9 @@ If <code>mutex</code> is a recursive mutex and the caller does not have ownershi
 <p>If <code>mutex</code> is recursive and has been locked more than once, the caller must be the same as that of the corresponding locking function.</p>
 <p>After unlocking the mutex, this routine tries to hand over the ownership of <code>mutex</code> to a waiter that is associated with an execution stream that is different from an execution stream running the caller if the caller is a work unit. If this attempt fails, the behavior of this routine is the same as that of <code><a class="el" href="../../d2/d09/group__MUTEX.html#ga6047a388bffa841fc0924bdb7f8c7670" title="Unlock a mutex.">ABT_mutex_unlock()</a></code>.</p>
 <dl class="section note"><dt>Note</dt><dd>A program that relies on the handover mechanism provided by this routine is non-conforming.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT if a waiter is waiting on <code>mutex</code>. Otherwise, this routine does not context switch the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>mutex</code> is <code>ABT_MUTEX_NULL</code>, <code>ABT_ERR_INV_MUTEX</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT if a waiter is waiting on <code>mutex</code>. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> is <code>ABT_MUTEX_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>mutex</code> is not locked, the results are undefined.<br  />
@@ -644,9 +642,9 @@ If <code>mutex</code> is a recursive mutex and the caller does not have ownershi
 <p>If <code>mutex</code> is recursive and has been locked more than once, the caller must be the same as that of the corresponding locking function.</p>
 <p>After unlocking the mutex, this routine tries to hand over the ownership of <code>mutex</code> to a waiter that is associated with the same execution stream as an execution stream running the caller if the caller is a work unit. If this attempt fails, the behavior of this routine is the same as that of <code><a class="el" href="../../d2/d09/group__MUTEX.html#ga6047a388bffa841fc0924bdb7f8c7670" title="Unlock a mutex.">ABT_mutex_unlock()</a></code>.</p>
 <dl class="section note"><dt>Note</dt><dd>A program that relies on the handover mechanism provided by this routine is non-conforming.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT if a waiter is waiting on <code>mutex</code>. Otherwise, this routine does not context switch the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>mutex</code> is <code>ABT_MUTEX_NULL</code>, <code>ABT_ERR_INV_MUTEX</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT if a waiter is waiting on <code>mutex</code>. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> is <code>ABT_MUTEX_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>mutex</code> is not locked, the results are undefined.<br  />
@@ -665,11 +663,11 @@ If <code>mutex</code> is a recursive mutex and the caller does not have ownershi
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="aabt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdoc">True constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00735">abt.h:735</a></div></div>
-<div class="ttc" id="aabt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdoc">False constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00737">abt.h:737</a></div></div>
+<div class="ttc" id="aabt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdoc">True constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00743">abt.h:743</a></div></div>
+<div class="ttc" id="aabt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdoc">False constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00745">abt.h:745</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 11 2021 15:10:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 27 2021 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

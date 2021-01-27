@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">140a356fc09a44696eb3487150e459266f9b5405</span>
+   &#160;<span id="projectnumber">dc7ce7fd1805a24088d4159621e620a73374cbbb</span>
    </div>
   </td>
  </tr>
@@ -109,7 +109,7 @@ Functions</h2></td></tr>
 <p>Mutex attribute handle type. </p>
 <p>A NULL handle of this type is <code>ABT_MUTEX_ATTR_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00939">939</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00947">947</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -136,10 +136,10 @@ Functions</h2></td></tr>
 <li>Not recursive.</li>
 </ul>
 <p><code>newattr</code> must be freed by <code><a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#ga347126c6ff3d3b4332ff94db33a711ee" title="Free a mutex attribute.">ABT_mutex_attr_free()</a></code> after its use.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>newattr</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -174,9 +174,9 @@ If <code>newattr</code> is <code>NULL</code>, the results are undefined.<br  />
 
 <p>Free a mutex attribute. </p>
 <p><code><a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#ga347126c6ff3d3b4332ff94db33a711ee" title="Free a mutex attribute.">ABT_mutex_attr_free()</a></code> deallocates the resource used for the mutex attribute <code>attr</code> and sets <code>attr</code> to <code>ABT_MUTEX_ATTR_NULL</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>attr</code> points to <code>ABT_MUTEX_ATTR_NULL</code>, <code>ABT_ERR_INV_MUTEX_ATTR</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_MUTEX_ATTR</code> is returned if <code>attr</code> points to <code>ABT_MUTEX_ATTR_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>attr</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -222,9 +222,9 @@ If <code>attr</code> is accessed after calling this routine, the results are und
 
 <p>Set a recursive property in a mutex attribute. </p>
 <p><code><a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#gab9e57fb8431079ae6fd13ec45887af83" title="Set a recursive property in a mutex attribute.">ABT_mutex_attr_set_recursive()</a></code> sets the recursive property (i.e., whether the mutex can be locked multiple times by the same owner or not) in the mutex attribute <code>attr</code>. If <code>recursive</code> is <code>ABT_TRUE</code>, the recursive flag of <code>attr</code> is set. Otherwise, the recursive flag of <code>attr</code> is unset.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>attr</code> is <code>ABT_MUTEX_ATTR_NULL</code>, <code>ABT_ERR_INV_MUTEX_ATTR</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_MUTEX_ATTR</code> is returned if <code>attr</code> is <code>ABT_MUTEX_ATTR_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>recursive</code> is neither <code>ABT_TRUE</code> nor <code>ABT_FALSE</code>, the results are undefined.<br  />
@@ -246,7 +246,7 @@ If <code>attr</code> is accessed concurrently, the results are undefined.<br  />
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 11 2021 15:10:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 27 2021 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

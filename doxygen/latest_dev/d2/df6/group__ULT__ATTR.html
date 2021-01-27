@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">140a356fc09a44696eb3487150e459266f9b5405</span>
+   &#160;<span id="projectnumber">dc7ce7fd1805a24088d4159621e620a73374cbbb</span>
    </div>
   </td>
  </tr>
@@ -130,17 +130,16 @@ Functions</h2></td></tr>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>newattr</code> is set to <code>ABT_THREAD_ATTR_NULL</code> if an error occurs.<br  />
- <b>[Argobots 2.0]</b> <code>newattr</code> is not updated if an error occurs.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>newattr</code> is not updated if an error occurs. <dl class="section user">
 <dt>Rationale</dt>
-<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect if the routine returns an error (as possible). Argobots 2.0 does not update a returned value when the routine throws an error. </dd>
+<dd>To ensure the atomicity of the API, Argobots 2.0 guarantees that the routine has no effect when an error is returned unless otherwise noted. Argobots 2.0 does not update <code>newattr</code> when an error occurs. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>newattr</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -175,9 +174,9 @@ If <code>newattr</code> is <code>NULL</code>, the results are undefined.<br  />
 
 <p>Free a ULT attribute. </p>
 <p><code><a class="el" href="../../d2/df6/group__ULT__ATTR.html#ga19b271b779c2c43941e8881d1115d86a" title="Free a ULT attribute.">ABT_thread_attr_free()</a></code> deallocates the resource used for the ULT attribute <code>attr</code> and sets <code>attr</code> to <code>ABT_THREAD_ATTR_NULL</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>attr</code> points to <code>ABT_THREAD_ATTR_NULL</code>, <code>ABT_ERR_INV_THREAD_ATTR</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_THREAD_ATTR</code> is returned if <code>attr</code> points to <code>ABT_THREAD_ATTR_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>attr</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -229,9 +228,9 @@ If <code>attr</code> is accessed after calling this routine, the results are und
 
 <p>Get stack attributes from a ULT attribute. </p>
 <p><code><a class="el" href="../../d2/df6/group__ULT__ATTR.html#ga26434b78a53e76c95668abf82bf149a3" title="Get stack attributes from a ULT attribute.">ABT_thread_attr_get_stack()</a></code> retrieves the stack address and the stack size (in bytes) from the ULT attribute <code>attr</code> to <code>stackaddr</code> and <code>stacksize</code>, respectively.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>attr</code> is <code>ABT_THREAD_ATTR_NULL</code>, <code>ABT_ERR_INV_THREAD_ATTR</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_THREAD_ATTR</code> is returned if <code>attr</code> is <code>ABT_THREAD_ATTR_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>stackaddr</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -279,9 +278,9 @@ If <code>stacksize</code> is <code>NULL</code>, the results are undefined.<br  /
 
 <p>Get the stack size from a ULT attribute. </p>
 <p><code><a class="el" href="../../d2/df6/group__ULT__ATTR.html#ga0673ced4a5eef913add20fcc0d032d21" title="Get the stack size from a ULT attribute.">ABT_thread_attr_get_stacksize()</a></code> returns the stack size (in bytes) through <code>stacksize</code> from the ULT attribute <code>attr</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>attr</code> is <code>ABT_THREAD_ATTR_NULL</code>, <code>ABT_ERR_INV_THREAD_ATTR</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_THREAD_ATTR</code> is returned if <code>attr</code> is <code>ABT_THREAD_ATTR_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>stacksize</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -334,10 +333,10 @@ If <code>stacksize</code> is <code>NULL</code>, the results are undefined.<br  /
 <p>Set a callback function and its argument in a ULT attribute. </p>
 <p><code><a class="el" href="../../d2/df6/group__ULT__ATTR.html#gaae7fa09430b9be1e9168f8cc45c311cd" title="Set a callback function and its argument in a ULT attribute.">ABT_thread_attr_set_callback()</a></code> sets the callback function <code>cb_func</code> and its argument <code>cb_arg</code> in the ULT attribute <code>attr</code>. If <code>cb_func</code> is <code>NULL</code>, this routine unsets the callback function in <code>attr</code>. Otherwise, <code>cb_func</code> and <code>cb_arg</code> are set in <code>attr</code>.</p>
 <p>If the callback function is set, a callback function <code>cb_func()</code> will be called every time on the migration of the associated work unit. The first argument of <code>cb_arg()</code> is the handle of a migrated work unit. The second argument is <code>cb_arg</code> passed to this routine. The caller of the callback function is undefined, so a program that relies on the caller is non-conforming.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>attr</code> is <code>ABT_THREAD_ATTR_NULL</code>, <code>ABT_ERR_INV_THREAD_ATTR</code> is returned.<br  />
-If the migration feature is not supported, <code>ABT_ERR_FEATURE_NA</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_THREAD_ATTR</code> is returned if <code>attr</code> is <code>ABT_THREAD_ATTR_NULL</code>.<br  />
+<code>ABT_ERR_FEATURE_NA</code> is returned if the migration feature is not supported.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If the internal state of the Argobots is changed in <code>cb_func()</code>, the results are undefined.<br  />
@@ -385,10 +384,10 @@ If <code>attr</code> is accessed concurrently, the results are undefined.<br  />
 
 <p>Set the ULT's migratability in a ULT attribute. </p>
 <p><code><a class="el" href="../../d2/df6/group__ULT__ATTR.html#ga995781c6d200e8a87fca29466cb44c74" title="Set the ULT&#39;s migratability in a ULT attribute.">ABT_thread_attr_set_migratable()</a></code> sets the ULT's migratability <code>is_migratable</code> in the ULT attribute <code>attr</code>. If <code>is_migratable</code> is <code>ABT_TRUE</code>, the ULT created with this attribute is migratable. If <code>is_migratable</code> is <code>ABT_FALSE</code>, the ULT created with this attribute is not migratable.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>attr</code> is <code>ABT_THREAD_ATTR_NULL</code>, <code>ABT_ERR_INV_THREAD_ATTR</code> is returned.<br  />
-If the migration feature is not supported, <code>ABT_ERR_FEATURE_NA</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_THREAD_ATTR</code> is returned if <code>attr</code> is <code>ABT_THREAD_ATTR_NULL</code>.<br  />
+<code>ABT_ERR_FEATURE_NA</code> is returned if the migration feature is not supported.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>is_migratable</code> is neither <code>ABT_TRUE</code> nor <code>ABT_FALSE</code>, the results are undefined.<br  />
@@ -454,17 +453,16 @@ If <code>attr</code> is accessed concurrently, the results are undefined.<br  />
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> <code>ABT_ERR_OTHERS</code> is returned if <code>stackaddr</code> is neither <code>NULL</code> nor a memory aligned with 8 bytes.<br  />
- <b>[Argobots 1.1]</b> <code>ABT_ERR_INV_ARG</code> is returned if <code>stackaddr</code> is neither <code>NULL</code> nor a memory aligned with 8 bytes.<br  />
- <dl class="section user">
+ <b>[Argobots 1.1]</b> <code>ABT_ERR_INV_ARG</code> is returned if <code>stackaddr</code> is neither <code>NULL</code> nor a memory aligned with 8 bytes. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 1.0 returned an error code which is obviously wrong. Argobots 1.1 fixes the error code for consistent behavior with the other Argobots routines. </dd>
+<dd>Argobots 1.0 returned an error code which is obviously wrong. Argobots 1.1 fixes the error code for consistent behavior with other Argobots routines. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>attr</code> is <code>ABT_THREAD_ATTR_NULL</code>, <code>ABT_ERR_INV_THREAD_ATTR</code> is returned.<br  />
-If <code>stackaddr</code> is neither <code>NULL</code> nor a memory aligned with 8 bytes, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_THREAD_ATTR</code> is returned if <code>attr</code> is <code>ABT_THREAD_ATTR_NULL</code>.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if <code>stackaddr</code> is neither <code>NULL</code> nor a memory aligned with 8 bytes.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>attr</code> is accessed concurrently, the results are undefined.<br  />
@@ -511,9 +509,9 @@ If <code>attr</code> is accessed concurrently, the results are undefined.<br  />
 
 <p>Set stack size in a ULT attribute. </p>
 <p><code><a class="el" href="../../d2/df6/group__ULT__ATTR.html#gadcd5ae1d9dc92637c15b3b1e3d4c8234" title="Set stack size in a ULT attribute.">ABT_thread_attr_set_stacksize()</a></code> sets the stack size <code>stacksize</code> (in bytes) in the ULT attribute <code>attr</code>. If the stack memory has been already set by <code><a class="el" href="../../d2/df6/group__ULT__ATTR.html#gac8f39be20d677898c45293c5ce31eea0" title="Set stack attributes in a ULT attribute.">ABT_thread_attr_set_stack()</a></code>, this routine updates the stack size while keeping the stack memory in <code>attr</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>attr</code> is <code>ABT_THREAD_ATTR_NULL</code>, <code>ABT_ERR_INV_THREAD_ATTR</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_THREAD_ATTR</code> is returned if <code>attr</code> is <code>ABT_THREAD_ATTR_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>attr</code> is accessed concurrently, the results are undefined.<br  />
@@ -534,7 +532,7 @@ If <code>attr</code> is accessed concurrently, the results are undefined.<br  />
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 11 2021 15:10:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 27 2021 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

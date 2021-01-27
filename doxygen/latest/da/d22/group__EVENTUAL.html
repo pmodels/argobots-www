@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">140a356fc09a44696eb3487150e459266f9b5405</span>
+   &#160;<span id="projectnumber">dc7ce7fd1805a24088d4159621e620a73374cbbb</span>
    </div>
   </td>
  </tr>
@@ -118,7 +118,7 @@ Functions</h2></td></tr>
 <p>Eventual handle type. </p>
 <p>A NULL handle of this type is <code>ABT_EVENTUAL_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00960">960</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00968">968</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -152,11 +152,11 @@ Functions</h2></td></tr>
 <p>Create a new eventual. </p>
 <p><code><a class="el" href="../../da/d22/group__EVENTUAL.html#gaeb548bd1d7d7cf749f5b58ff595d8a71" title="Create a new eventual.">ABT_eventual_create()</a></code> creates a new eventual and returns its handle through <code>neweventual</code>. <code>neweventual</code> is set to unready. If <code>nbytes</code> is greater than zero, <code>neweventual</code> has a memory buffer of <code>nbytes</code> bytes for <code>neweventual</code>. This memory buffer of <code>neweventual</code> can be set by <code><a class="el" href="../../da/d22/group__EVENTUAL.html#gae9321cd625fac88d69203f65917413cd" title="Signal an eventual.">ABT_eventual_set()</a></code> and read by <code><a class="el" href="../../da/d22/group__EVENTUAL.html#gaea11b60db3aadfacc33d24f31c53621a" title="Wait on an eventual.">ABT_eventual_wait()</a></code> and <code><a class="el" href="../../da/d22/group__EVENTUAL.html#ga05cddaa30a9f190b9ebfb087a0e62918" title="Check if an eventual is ready.">ABT_eventual_test()</a></code>. If <code>nbytes</code> is zero, <code>neweventual</code> is used without passing the data from a setter to waiters.</p>
 <p><code>neweventual</code> must be freed by <code><a class="el" href="../../da/d22/group__EVENTUAL.html#ga15a539e685211e008e2d3f8f3ae1b32a" title="Free an eventual.">ABT_eventual_free()</a></code> after its use.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>nbytes</code> is negative, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
-If an error related to memory occurs, <code>ABT_ERR_MEM</code> is returned.<br  />
- If an error related to system calls occurs, <code>ABT_ERR_SYS</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if <code>nbytes</code> is negative.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>neweventual</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -193,13 +193,13 @@ If <code>neweventual</code> is <code>NULL</code>, the results are undefined.<br 
 <p>Free an eventual. </p>
 <p><code><a class="el" href="../../da/d22/group__EVENTUAL.html#ga15a539e685211e008e2d3f8f3ae1b32a" title="Free an eventual.">ABT_eventual_free()</a></code> deallocates the resource used for the eventual <code>eventual</code> and sets <code>eventual</code> to <code>ABT_EVENTUAL_NULL</code>.</p>
 <dl class="section note"><dt>Note</dt><dd>This routine frees <code>eventual</code> regardless of its readiness.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>eventual</code> points to <code>ABT_EVENTUAL_NULL</code>, <code>ABT_ERR_INV_EVENTUAL</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_EVENTUAL</code> is returned if <code>eventual</code> points to <code>ABT_EVENTUAL_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>eventual</code> is <code>NULL</code>, the results are undefined.<br  />
-If any waiter is blocked on <code>eventual</code>, the results are undefined.<br  />
+If there is a waiter blocked on <code>eventual</code>, the results are undefined.<br  />
 If <code>eventual</code> is accessed after calling this routine, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -233,12 +233,12 @@ If <code>eventual</code> is accessed after calling this routine, the results are
 <p>Reset a readiness of an eventual. </p>
 <p><code><a class="el" href="../../da/d22/group__EVENTUAL.html#ga6d438d33e7ae9e0712dae0742e95e163" title="Reset a readiness of an eventual.">ABT_eventual_reset()</a></code> makes the eventual <code>eventual</code> unready. This routine makes <code>eventual</code> unready irrespective of its readiness.</p>
 <p>The readiness of an eventual is managed atomically.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>eventual</code> is <code>ABT_EVENTUAL_NULL</code>, <code>ABT_ERR_INV_EVENTUAL</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_EVENTUAL</code> is returned if <code>eventual</code> is <code>ABT_EVENTUAL_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
-If any waiter is blocked on <code>eventual</code>, the results are undefined.<br  />
+If there is a waiter blocked on <code>eventual</code>, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -291,8 +291,7 @@ If any waiter is blocked on <code>eventual</code>, the results are undefined.<br
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> This routine updates the memory buffer of <code>eventual</code> and returns <code>ABT_SUCCESS</code> if <code>eventual</code> is ready.<br  />
- <b>[Argobots 1.1]</b> This routine returns <code>ABT_ERR_EVENTUAL</code> if <code>eventual</code> is ready.<br  />
- <dl class="section user">
+ <b>[Argobots 1.1]</b> This routine returns <code>ABT_ERR_EVENTUAL</code> if <code>eventual</code> is ready. <dl class="section user">
 <dt>Rationale</dt>
 <dd>An update of the memory buffer when <code>eventual</code> is ready breaks the semantics of <code>eventual</code>. Such an update should be prohibited. </dd>
 </dl>
@@ -301,20 +300,19 @@ If any waiter is blocked on <code>eventual</code>, the results are undefined.<br
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>ABT_ERR_INV_EVENTUAL</code> is returned if <code>nbytes</code> is greater than the size of the memory buffer of <code>eventual</code>.<br  />
- <b>[Argobots 2.0]</b> <code>ABT_ERR_INV_ARG</code> is returned if <code>nbytes</code> is greater than the size of the memory buffer of <code>eventual</code>.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> <code>ABT_ERR_INV_ARG</code> is returned if <code>nbytes</code> is greater than the size of the memory buffer of <code>eventual</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 changes the error code for consistent behavior with the other Argobots routines. </dd>
+<dd>Argobots 2.0 changes the error code for consistent behavior with other Argobots routines. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>nbytes</code> is negative, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
-If <code>eventual</code> is <code>ABT_EVENTUAL_NULL</code>, <code>ABT_ERR_INV_EVENTUAL</code> is returned.<br  />
-If <code>eventual</code> is ready, <code>ABT_ERR_EVENTUAL</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If <code>nbytes</code> is larger than the size of the memory buffer of <code>eventual</code>, <code>ABT_ERR_INV_EVENTUAL</code> is returned.<br  />
-<b>[Argobots 2.0]</b> If <code>nbytes</code> is larger than the size of the memory buffer of <code>eventual</code>, <code>ABT_ERR_INV_ARG</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_ARG</code> is returned if <code>nbytes</code> is negative.<br  />
+<code>ABT_ERR_INV_EVENTUAL</code> is returned if <code>eventual</code> is <code>ABT_EVENTUAL_NULL</code>.<br  />
+<code>ABT_ERR_EVENTUAL</code> is returned if <code>eventual</code> is ready.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_INV_EVENTUAL</code> is returned if <code>nbytes</code> is larger than the size of the memory buffer of <code>eventual</code>.<br  />
+<b>[Argobots 2.0]</b> <code>ABT_ERR_INV_ARG</code> is returned if <code>nbytes</code> is larger than the size of the memory buffer of <code>eventual</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>nbytes</code> is greater than zero and <code>value</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -366,12 +364,12 @@ If <code>nbytes</code> is greater than zero and <code>value</code> is <code>NULL
 </div><div class="memdoc">
 
 <p>Check if an eventual is ready. </p>
-<p><code><a class="el" href="../../da/d22/group__EVENTUAL.html#ga05cddaa30a9f190b9ebfb087a0e62918" title="Check if an eventual is ready.">ABT_eventual_test()</a></code> checks if the eventual <code>eventual</code> is ready and returns the result through <code>is_ready</code>. If <code>eventual</code> is not ready, this routine sets <code>is_ready</code> to <code>ABT_FALSE</code> and leaves <code>value</code> unchanged. If <code>eventual</code> is ready, <code>is_ready</code> is set to <code>ABT_TRUE</code> and, if <code>value</code> is not <code>NULL</code>, <code>value</code> is set to the memory buffer of <code>eventual</code>. This routine returns <code>ABT_SUCCESS</code> even if <code>eventual</code> is not ready.</p>
+<p><code><a class="el" href="../../da/d22/group__EVENTUAL.html#ga05cddaa30a9f190b9ebfb087a0e62918" title="Check if an eventual is ready.">ABT_eventual_test()</a></code> checks if the eventual <code>eventual</code> is ready and returns the result through <code>is_ready</code>. If <code>eventual</code> is not ready, this routine leaves <code>value</code> unchanged and sets <code>is_ready</code> to <code>ABT_FALSE</code>. If <code>eventual</code> is ready, <code>is_ready</code> is set to <code>ABT_TRUE</code> and, if <code>value</code> is not <code>NULL</code>, <code>value</code> is set to the memory buffer of <code>eventual</code>. This routine returns <code>ABT_SUCCESS</code> even if <code>eventual</code> is not ready.</p>
 <p>The memory buffer pointed to by <code>value</code> is deallocated when <code>eventual</code> is freed by <code><a class="el" href="../../da/d22/group__EVENTUAL.html#ga15a539e685211e008e2d3f8f3ae1b32a" title="Free an eventual.">ABT_eventual_free()</a></code>. The memory buffer is properly aligned for storage of any type of object that has the given size. If the data written by <code><a class="el" href="../../da/d22/group__EVENTUAL.html#gae9321cd625fac88d69203f65917413cd" title="Signal an eventual.">ABT_eventual_set()</a></code> is smaller than the size of the memory buffer of <code>eventual</code>, the contents of the memory buffer that was not written by <code><a class="el" href="../../da/d22/group__EVENTUAL.html#gae9321cd625fac88d69203f65917413cd" title="Signal an eventual.">ABT_eventual_set()</a></code> are undefined. The contents of the memory buffer get undefined if either <code><a class="el" href="../../da/d22/group__EVENTUAL.html#gae9321cd625fac88d69203f65917413cd" title="Signal an eventual.">ABT_eventual_set()</a></code> or <code><a class="el" href="../../da/d22/group__EVENTUAL.html#ga6d438d33e7ae9e0712dae0742e95e163" title="Reset a readiness of an eventual.">ABT_eventual_reset()</a></code> is called for <code>eventual</code>. The memory buffer is read-only, so rewriting the contents of the obtained memory buffer causes undefined behavior.</p>
 <p>The readiness of an eventual is managed atomically.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not perform context switching the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>eventual</code> is <code>ABT_EVENTUAL_NULL</code>, <code>ABT_ERR_INV_EVENTUAL</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_EVENTUAL</code> is returned if <code>eventual</code> is <code>ABT_EVENTUAL_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>is_ready</code> is <code>NULL</code>, the results are undefined.<br  />
@@ -426,18 +424,17 @@ If the memory buffer pointed to by <code>value</code> is accessed after freeing 
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> If a tasklet calls this routine, <code>ABT_ERR_EVENTUAL</code> is returned.<br  />
- <b>[Argobots 2.0]</b> A tasklet may call this routine.<br  />
- <dl class="section user">
+ <b>[Argobots 2.0]</b> A tasklet may call this routine. <dl class="section user">
 <dt>Rationale</dt>
 <dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in either a ULT context or an external thread context. Argobots must be initialized. This routine may perform context switching for the calling ULT if <code>eventual</code> is not ready. Otherwise, this routine does not context switch the calling ULT unless any user-defined function that is involved in this routine performs context switching.<br  />
-<b>[Argobots 2.0]</b> This routine can be called in any execution context. Argobots must be initialized. This routine may perform context switching for the calling ULT if <code>eventual</code> is not ready. Otherwise, this routine does not context switch the calling ULT unless any user-defined function that is involved in this routine performs context switching.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>If this routine succeeds, <code>ABT_SUCCESS</code> is returned.<br  />
-If <code>eventual</code> is <code>ABT_EVENTUAL_NULL</code>, <code>ABT_ERR_INV_EVENTUAL</code> is returned.<br  />
-<b>[Argobots 1.x]</b> If the caller is a tasklet, <code>ABT_ERR_EVENTUAL</code> is returned.<br  />
+<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a ULT context and an external thread context. Argobots must be initialized. This routine may switch the context of the calling ULT if <code>eventual</code> is not ready. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.<br  />
+<b>[Argobots 2.0]</b> This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT if <code>eventual</code> is not ready. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_EVENTUAL</code> is returned if <code>eventual</code> is <code>ABT_EVENTUAL_NULL</code>.<br  />
+<b>[Argobots 1.x]</b> <code>ABT_ERR_EVENTUAL</code> is returned if the caller is a tasklet.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If the memory buffer pointed to by <code>value</code> is accessed after freeing <code>eventual</code>, the results are undefined.<br  />
@@ -459,7 +456,7 @@ If the memory buffer pointed to by <code>value</code> is accessed after freeing 
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 11 2021 15:11:00 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jan 27 2021 03:10:01 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
