@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">dc7ce7fd1805a24088d4159621e620a73374cbbb</span>
+   &#160;<span id="projectnumber">245853dee5a9fc4310f74839e4d1f17d45196264</span>
    </div>
   </td>
  </tr>
@@ -123,7 +123,8 @@ Enumerations</h2></td></tr>
 <a class="el" href="../../d7/d15/group__INFO.html#gga740335a6e32f1eb9cb2cd0a7239d98ada8bbd1f7fa594947499f2033443eca217">ABT_INFO_QUERY_KIND_FCONTEXT</a>, 
 <a class="el" href="../../d7/d15/group__INFO.html#gga740335a6e32f1eb9cb2cd0a7239d98ada517c5c5e511c364d09a21a1ec35535f9">ABT_INFO_QUERY_KIND_DYNAMIC_PROMOTION</a>, 
 <br />
-&#160;&#160;<a class="el" href="../../d7/d15/group__INFO.html#gga740335a6e32f1eb9cb2cd0a7239d98ada7f06508f54367ddd3d495ecef68d0800">ABT_INFO_QUERY_KIND_ENABLED_STACK_UNWIND</a>
+&#160;&#160;<a class="el" href="../../d7/d15/group__INFO.html#gga740335a6e32f1eb9cb2cd0a7239d98ada7f06508f54367ddd3d495ecef68d0800">ABT_INFO_QUERY_KIND_ENABLED_STACK_UNWIND</a>, 
+<a class="el" href="../../d7/d15/group__INFO.html#gga740335a6e32f1eb9cb2cd0a7239d98ada68a8acd4df69931f662c1695d017f0e8">ABT_INFO_QUERY_KIND_ENABLED_STACK_OVERFLOW_CHECK</a>
 <br />
  }</td></tr>
 <tr class="memdesc:ga740335a6e32f1eb9cb2cd0a7239d98ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query kind for <code><a class="el" href="d7/d15/group__INFO.html#ga70d9fdae92659b13973c56415811012c" title="Retrieve the configuration information.">ABT_info_query_config()</a></code>.  <a href="../../d7/d15/group__INFO.html#ga740335a6e32f1eb9cb2cd0a7239d98ad">More...</a><br /></td></tr>
@@ -240,7 +241,7 @@ Functions</h2></td></tr>
 
 <p>Query type for <code><a class="el" href="../../d7/d15/group__INFO.html#ga70d9fdae92659b13973c56415811012c" title="Retrieve the configuration information.">ABT_info_query_config()</a></code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01001">1001</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01003">1003</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -309,6 +310,8 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="gga740335a6e32f1eb9cb2cd0a7239d98ada7f06508f54367ddd3d495ecef68d0800"></a>ABT_INFO_QUERY_KIND_ENABLED_STACK_UNWIND&#160;</td><td class="fielddoc"><p>Whether the stack unwinding feature is enabled or not </p>
 </td></tr>
+<tr><td class="fieldname"><a id="gga740335a6e32f1eb9cb2cd0a7239d98ada68a8acd4df69931f662c1695d017f0e8"></a>ABT_INFO_QUERY_KIND_ENABLED_STACK_OVERFLOW_CHECK&#160;</td><td class="fielddoc"><p>Whether the stack overflow check is enabled or not </p>
+</td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00567">567</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
@@ -360,7 +363,7 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00418">418</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00431">431</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
 
 </div>
 </div>
@@ -408,7 +411,7 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00374">374</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00387">387</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
 
 </div>
 </div>
@@ -466,7 +469,7 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00560">560</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00573">573</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
 
 </div>
 </div>
@@ -524,7 +527,7 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00519">519</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00532">532</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
 
 </div>
 </div>
@@ -591,7 +594,7 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00694">694</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00707">707</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
 
 </div>
 </div>
@@ -658,7 +661,7 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00606">606</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00619">619</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
 
 </div>
 </div>
@@ -716,7 +719,7 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00647">647</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00660">660</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
 
 </div>
 </div>
@@ -784,7 +787,7 @@ If <code>thread</code> is running, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00741">741</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00754">754</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
 
 </div>
 </div>
@@ -843,7 +846,7 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00796">796</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00809">809</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
 
 </div>
 </div>
@@ -901,7 +904,7 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00478">478</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00491">491</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
 
 </div>
 </div>
@@ -1010,6 +1013,9 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 <li><p class="startli"><code>ABT_INFO_QUERY_KIND_ENABLED_STACK_UNWIND</code> </p>
 <p class="startli"><code>val</code> must be a pointer to a variable of type <code>ABT_bool</code>. <code>val</code> is set to <code>ABT_TRUE</code> if Argobots is configured to enable the stack unwinding feature. Otherwise, <code>val</code> is set to <code>ABT_FALSE</code>.</p>
 </li>
+<li><p class="startli"><code>ABT_INFO_QUERY_KIND_ENABLED_STACK_OVERFLOW_CHECK</code> </p>
+<p class="startli"><code>val</code> must be a pointer to a variable of type <code>int</code>. <code>val</code> is set to 1 if Argobots is configured to use a stack canary to check stack overflow. Otherwise, <code>val</code> is set to 0.</p>
+</li>
 </ul>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
@@ -1038,7 +1044,7 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00194">194</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00200">200</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
 
 </div>
 </div>
@@ -1111,14 +1117,14 @@ If the internal state of the Argobots is changed in <code>cb_func()</code>, the 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00867">867</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00880">880</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 27 2021 03:10:01 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jan 28 2021 03:10:08 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
