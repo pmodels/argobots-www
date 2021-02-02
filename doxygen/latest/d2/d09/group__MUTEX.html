@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">1a370ab07ac96faa0dd9f6fbd722bd3c296a434e</span>
+   &#160;<span id="projectnumber">0382fa1d10d933bb488dea219834090948927282</span>
    </div>
   </td>
  </tr>
@@ -117,6 +117,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gabc66c7eaf803a56536bb2ca301d8b95d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d09/group__MUTEX.html#gabc66c7eaf803a56536bb2ca301d8b95d">ABT_mutex_equal</a> (<a class="el" href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a> mutex1, <a class="el" href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a> mutex2, <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *result)</td></tr>
 <tr class="memdesc:gabc66c7eaf803a56536bb2ca301d8b95d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two mutex handles for equality.  <a href="../../d2/d09/group__MUTEX.html#gabc66c7eaf803a56536bb2ca301d8b95d">More...</a><br /></td></tr>
 <tr class="separator:gabc66c7eaf803a56536bb2ca301d8b95d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9d3d84d472941c27539581fb1075b69a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d09/group__MUTEX.html#ga9d3d84d472941c27539581fb1075b69a">ABT_mutex_get_attr</a> (<a class="el" href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a> mutex, <a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#gaac5794c17511377fbc02410a5ba2e6fb">ABT_mutex_attr</a> *attr)</td></tr>
+<tr class="memdesc:ga9d3d84d472941c27539581fb1075b69a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get attributes of a mutex.  <a href="../../d2/d09/group__MUTEX.html#ga9d3d84d472941c27539581fb1075b69a">More...</a><br /></td></tr>
+<tr class="separator:ga9d3d84d472941c27539581fb1075b69a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>This group is for Mutex. </p>
@@ -350,6 +353,56 @@ If <code>mutex</code> is accessed after calling this routine, the results are un
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00143">143</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
+
+</div>
+</div>
+<a id="ga9d3d84d472941c27539581fb1075b69a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9d3d84d472941c27539581fb1075b69a">&#9670;&nbsp;</a></span>ABT_mutex_get_attr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ABT_mutex_get_attr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a>&#160;</td>
+          <td class="paramname"><em>mutex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#gaac5794c17511377fbc02410a5ba2e6fb">ABT_mutex_attr</a> *&#160;</td>
+          <td class="paramname"><em>attr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get attributes of a mutex. </p>
+<p><code><a class="el" href="../../d2/d09/group__MUTEX.html#ga9d3d84d472941c27539581fb1075b69a" title="Get attributes of a mutex.">ABT_mutex_get_attr()</a></code> returns a newly created attribute object that is copied from the attributes of the mutex <code>mutex</code> through <code>attr</code>. Attribute values of <code>attr</code> may be different from those used on the creation of <code>mutex</code>. Since this routine allocates a mutex attribute object, it is the user's responsibility to free <code>attr</code> after its use.</p>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> is <code>ABT_MUTEX_NULL</code>.<br  />
+<code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
+ <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
+ </dd></dl>
+<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
+If <code>attr</code> is <code>NULL</code>, the results are undefined.<br  />
+ </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mutex</td><td>mutex handle </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">attr</td><td>mutex attribute handle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00531">531</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
 
 </div>
 </div>
@@ -667,7 +720,7 @@ If <code>mutex</code> is a recursive mutex and the caller does not have ownershi
 <div class="ttc" id="aabt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdoc">False constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00747">abt.h:747</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 30 2021 03:25:26 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 2 2021 03:09:59 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

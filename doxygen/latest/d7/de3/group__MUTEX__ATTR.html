@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">1a370ab07ac96faa0dd9f6fbd722bd3c296a434e</span>
+   &#160;<span id="projectnumber">0382fa1d10d933bb488dea219834090948927282</span>
    </div>
   </td>
  </tr>
@@ -90,6 +90,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gab9e57fb8431079ae6fd13ec45887af83"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#gab9e57fb8431079ae6fd13ec45887af83">ABT_mutex_attr_set_recursive</a> (<a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#gaac5794c17511377fbc02410a5ba2e6fb">ABT_mutex_attr</a> attr, <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> recursive)</td></tr>
 <tr class="memdesc:gab9e57fb8431079ae6fd13ec45887af83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a recursive property in a mutex attribute.  <a href="../../d7/de3/group__MUTEX__ATTR.html#gab9e57fb8431079ae6fd13ec45887af83">More...</a><br /></td></tr>
 <tr class="separator:gab9e57fb8431079ae6fd13ec45887af83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0ac11bd1ba436b997b3b84920c8acc53"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#ga0ac11bd1ba436b997b3b84920c8acc53">ABT_mutex_attr_get_recursive</a> (<a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#gaac5794c17511377fbc02410a5ba2e6fb">ABT_mutex_attr</a> attr, <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *recursive)</td></tr>
+<tr class="memdesc:ga0ac11bd1ba436b997b3b84920c8acc53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a recursive property in a mutex attribute.  <a href="../../d7/de3/group__MUTEX__ATTR.html#ga0ac11bd1ba436b997b3b84920c8acc53">More...</a><br /></td></tr>
+<tr class="separator:ga0ac11bd1ba436b997b3b84920c8acc53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Mutex attributes are used to specify mutex behavior that is different from the default. </p>
@@ -194,6 +197,54 @@ If <code>attr</code> is accessed after calling this routine, the results are und
 
 </div>
 </div>
+<a id="ga0ac11bd1ba436b997b3b84920c8acc53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0ac11bd1ba436b997b3b84920c8acc53">&#9670;&nbsp;</a></span>ABT_mutex_attr_get_recursive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ABT_mutex_attr_get_recursive </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#gaac5794c17511377fbc02410a5ba2e6fb">ABT_mutex_attr</a>&#160;</td>
+          <td class="paramname"><em>attr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *&#160;</td>
+          <td class="paramname"><em>recursive</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a recursive property in a mutex attribute. </p>
+<p><code><a class="el" href="../../d7/de3/group__MUTEX__ATTR.html#ga0ac11bd1ba436b997b3b84920c8acc53" title="Get a recursive property in a mutex attribute.">ABT_mutex_attr_get_recursive()</a></code> retrieves the recursive property (i.e., whether the mutex can be locked multiple times by the same owner or not) in the mutex attribute <code>attr</code>. If <code>attr</code> is configured to be recursive, <code>recursive</code> is set to <code>ABT_TRUE</code>. Otherwise, <code>recursive</code> is set to <code>ABT_FALSE</code>.</p>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
+<code>ABT_ERR_INV_MUTEX_ATTR</code> is returned if <code>attr</code> is <code>ABT_MUTEX_ATTR_NULL</code>.<br  />
+ </dd></dl>
+<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
+If <code>recursive</code> is <code>NULL</code>, the results are undefined.<br  />
+ </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">attr</td><td>mutex attribute handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">recursive</td><td>flag for a recursive locking support </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../da/d36/mutex__attr_8c_source.html#l00155">155</a> of file <a class="el" href="../../da/d36/mutex__attr_8c_source.html">mutex_attr.c</a>.</p>
+
+</div>
+</div>
 <a id="gab9e57fb8431079ae6fd13ec45887af83"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gab9e57fb8431079ae6fd13ec45887af83">&#9670;&nbsp;</a></span>ABT_mutex_attr_set_recursive()</h2>
 
@@ -246,7 +297,7 @@ If <code>attr</code> is accessed concurrently, the results are undefined.<br  />
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 30 2021 03:25:26 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 2 2021 03:09:59 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

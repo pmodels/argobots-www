@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">1a370ab07ac96faa0dd9f6fbd722bd3c296a434e</span>
+   &#160;<span id="projectnumber">0382fa1d10d933bb488dea219834090948927282</span>
    </div>
   </td>
  </tr>
@@ -209,6 +209,25 @@ $(function() {
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    *result = (p_mutex1 == p_mutex2) ? <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a> : <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;}</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160; </div>
+<div class="line"><a name="l00531"></a><span class="lineno"><a class="line" href="../../d2/d09/group__MUTEX.html#ga9d3d84d472941c27539581fb1075b69a">  531</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/d09/group__MUTEX.html#ga9d3d84d472941c27539581fb1075b69a">ABT_mutex_get_attr</a>(<a class="code" href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a> mutex, <a class="code" href="../../d7/de3/group__MUTEX__ATTR.html#gaac5794c17511377fbc02410a5ba2e6fb">ABT_mutex_attr</a> *attr)</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;{</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    ABTI_mutex *p_mutex = ABTI_mutex_get_ptr(mutex);</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    ABTI_CHECK_NULL_MUTEX_PTR(p_mutex);</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160; </div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    ABTI_mutex_attr *p_newattr;</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    <span class="keywordtype">int</span> abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a>(<span class="keyword">sizeof</span>(ABTI_mutex_attr), (<span class="keywordtype">void</span> **)&amp;p_newattr);</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160; </div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    <span class="comment">/* Copy values.  Nesting count must be initialized. */</span></div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    p_newattr-&gt;attrs = p_mutex-&gt;attr.attrs;</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    p_newattr-&gt;nesting_cnt = 0;</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    p_newattr-&gt;owner_id = 0;</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160; </div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    <span class="comment">/* Return value */</span></div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    *attr = ABTI_mutex_attr_get_handle(p_newattr);</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="agroup__MUTEX_html_gaab64a7ac90af4f8840c4f33bd23b34ce"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#gaab64a7ac90af4f8840c4f33bd23b34ce">ABT_mutex_lock_low</a></div><div class="ttdeci">int ABT_mutex_lock_low(ABT_mutex mutex)</div><div class="ttdoc">Lock a mutex with low priority.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00219">mutex.c:219</a></div></div>
 <div class="ttc" id="aabt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdoc">Boolean type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00998">abt.h:998</a></div></div>
@@ -231,10 +250,11 @@ $(function() {
 <div class="ttc" id="aabt_8h_html_a7f0cedd38f1395f91cfebda769947bd5"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a7f0cedd38f1395f91cfebda769947bd5">ABT_MUTEX_NULL</a></div><div class="ttdeci">#define ABT_MUTEX_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01063">abt.h:1063</a></div></div>
 <div class="ttc" id="agroup__MUTEX_html_ga148c09e5d11e5c6c5ecabb30042caeab"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga148c09e5d11e5c6c5ecabb30042caeab">ABT_mutex_create_with_attr</a></div><div class="ttdeci">int ABT_mutex_create_with_attr(ABT_mutex_attr attr, ABT_mutex *newmutex)</div><div class="ttdoc">Create a new mutex with mutex attributes.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00095">mutex.c:95</a></div></div>
 <div class="ttc" id="agroup__MUTEX_html_ga6047a388bffa841fc0924bdb7f8c7670"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga6047a388bffa841fc0924bdb7f8c7670">ABT_mutex_unlock</a></div><div class="ttdeci">int ABT_mutex_unlock(ABT_mutex mutex)</div><div class="ttdoc">Unlock a mutex.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00371">mutex.c:371</a></div></div>
+<div class="ttc" id="agroup__MUTEX_html_ga9d3d84d472941c27539581fb1075b69a"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga9d3d84d472941c27539581fb1075b69a">ABT_mutex_get_attr</a></div><div class="ttdeci">int ABT_mutex_get_attr(ABT_mutex mutex, ABT_mutex_attr *attr)</div><div class="ttdoc">Get attributes of a mutex.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00531">mutex.c:531</a></div></div>
 <div class="ttc" id="agroup__MUTEX_html_gabade38c70c294371121af7e0a80d5b3e"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#gabade38c70c294371121af7e0a80d5b3e">ABT_mutex_free</a></div><div class="ttdeci">int ABT_mutex_free(ABT_mutex *mutex)</div><div class="ttdoc">Free a mutex.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00143">mutex.c:143</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 30 2021 03:25:26 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 2 2021 03:09:58 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

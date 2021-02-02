@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">1a370ab07ac96faa0dd9f6fbd722bd3c296a434e</span>
+   &#160;<span id="projectnumber">0382fa1d10d933bb488dea219834090948927282</span>
    </div>
   </td>
  </tr>
@@ -120,6 +120,20 @@ $(function() {
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="../../d7/de3/group__MUTEX__ATTR.html#ga0ac11bd1ba436b997b3b84920c8acc53">  155</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d7/de3/group__MUTEX__ATTR.html#ga0ac11bd1ba436b997b3b84920c8acc53">ABT_mutex_attr_get_recursive</a>(<a class="code" href="../../d7/de3/group__MUTEX__ATTR.html#gaac5794c17511377fbc02410a5ba2e6fb">ABT_mutex_attr</a> attr, <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> *recursive)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;{</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    ABTI_mutex_attr *p_attr = ABTI_mutex_attr_get_ptr(attr);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    ABTI_CHECK_NULL_MUTEX_ATTR_PTR(p_attr);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">/* Get the value */</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">if</span> (p_attr-&gt;attrs &amp; ABTI_MUTEX_ATTR_RECURSIVE) {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        *recursive = <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        *recursive = <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aabt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdoc">Boolean type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00998">abt.h:998</a></div></div>
 <div class="ttc" id="aabti_8h_html"><div class="ttname"><a href="../../d5/d03/abti_8h.html">abti.h</a></div></div>
@@ -128,13 +142,15 @@ $(function() {
 <div class="ttc" id="agroup__MUTEX__ATTR_html_ga347126c6ff3d3b4332ff94db33a711ee"><div class="ttname"><a href="../../d7/de3/group__MUTEX__ATTR.html#ga347126c6ff3d3b4332ff94db33a711ee">ABT_mutex_attr_free</a></div><div class="ttdeci">int ABT_mutex_attr_free(ABT_mutex_attr *attr)</div><div class="ttdoc">Free a mutex attribute.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d36/mutex__attr_8c_source.html#l00078">mutex_attr.c:78</a></div></div>
 <div class="ttc" id="agroup__MUTEX__ATTR_html_gab9e57fb8431079ae6fd13ec45887af83"><div class="ttname"><a href="../../d7/de3/group__MUTEX__ATTR.html#gab9e57fb8431079ae6fd13ec45887af83">ABT_mutex_attr_set_recursive</a></div><div class="ttdeci">int ABT_mutex_attr_set_recursive(ABT_mutex_attr attr, ABT_bool recursive)</div><div class="ttdoc">Set a recursive property in a mutex attribute.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d36/mutex__attr_8c_source.html#l00116">mutex_attr.c:116</a></div></div>
 <div class="ttc" id="agroup__ERROR__CODE_html_gacf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdoc">Error code: the routine returns successfully.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00092">abt.h:92</a></div></div>
+<div class="ttc" id="agroup__MUTEX__ATTR_html_ga0ac11bd1ba436b997b3b84920c8acc53"><div class="ttname"><a href="../../d7/de3/group__MUTEX__ATTR.html#ga0ac11bd1ba436b997b3b84920c8acc53">ABT_mutex_attr_get_recursive</a></div><div class="ttdeci">int ABT_mutex_attr_get_recursive(ABT_mutex_attr attr, ABT_bool *recursive)</div><div class="ttdoc">Get a recursive property in a mutex attribute.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d36/mutex__attr_8c_source.html#l00155">mutex_attr.c:155</a></div></div>
 <div class="ttc" id="aabt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdoc">True constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00745">abt.h:745</a></div></div>
+<div class="ttc" id="aabt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdoc">False constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00747">abt.h:747</a></div></div>
 <div class="ttc" id="aabtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00211">abtu.h:211</a></div></div>
 <div class="ttc" id="aabt_8h_html_a031a3eefc1f5590fc52f624e66292cd9"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a031a3eefc1f5590fc52f624e66292cd9">ABT_MUTEX_ATTR_NULL</a></div><div class="ttdeci">#define ABT_MUTEX_ATTR_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01064">abt.h:1064</a></div></div>
 <div class="ttc" id="agroup__MUTEX__ATTR_html_ga7b291bf2d0895e7618fdf0549fdbbe39"><div class="ttname"><a href="../../d7/de3/group__MUTEX__ATTR.html#ga7b291bf2d0895e7618fdf0549fdbbe39">ABT_mutex_attr_create</a></div><div class="ttdeci">int ABT_mutex_attr_create(ABT_mutex_attr *newattr)</div><div class="ttdoc">Create a new mutex attribute.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d36/mutex__attr_8c_source.html#l00039">mutex_attr.c:39</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 30 2021 03:25:26 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 2 2021 03:09:58 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
