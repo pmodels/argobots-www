@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">0382fa1d10d933bb488dea219834090948927282</span>
+   &#160;<span id="projectnumber">e10f21f77711b5ff33ab18d338867e8f871f4d7c</span>
    </div>
   </td>
  </tr>
@@ -365,7 +365,7 @@ $(function() {
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;}</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="keywordtype">void</span> ABTD_affinity_init(<span class="keyword">const</span> <span class="keywordtype">char</span> *affinity_str)</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="keywordtype">void</span> ABTD_affinity_init(ABTI_global *p_global, <span class="keyword">const</span> <span class="keywordtype">char</span> *affinity_str)</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;{</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <a class="code" href="../../d2/d45/abtd__affinity_8c.html#aeb666f8897329bb993f8ef0c8ce791a8">g_affinity</a>.<a class="code" href="../../d6/dcd/structglobal__affinity.html#a5910713bf41407253745e49076d3c2c9">num_cpusets</a> = 0;</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <a class="code" href="../../d2/d45/abtd__affinity_8c.html#aeb666f8897329bb993f8ef0c8ce791a8">g_affinity</a>.<a class="code" href="../../d6/dcd/structglobal__affinity.html#a8f626df58e1a09f253037e5db78960e2">cpusets</a> = NULL;</div>
@@ -373,21 +373,21 @@ $(function() {
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    pthread_t self_native_thread = pthread_self();</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    uint32_t i;</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordtype">int</span> ret;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    ret = <a class="code" href="../../d2/d45/abtd__affinity_8c.html#a76ab5c0a28094a34d91d15aca87e313c">get_num_cores</a>(self_native_thread, &amp;<a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;num_cores);</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordflow">if</span> (ret != <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a> || <a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;num_cores == 0) {</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;set_affinity = <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    ret = <a class="code" href="../../d2/d45/abtd__affinity_8c.html#a76ab5c0a28094a34d91d15aca87e313c">get_num_cores</a>(self_native_thread, &amp;p_global-&gt;num_cores);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordflow">if</span> (ret != <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a> || p_global-&gt;num_cores == 0) {</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        p_global-&gt;set_affinity = <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    }</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    ret = <a class="code" href="../../d2/d45/abtd__affinity_8c.html#ab17b1b393f527be87731b89f4de49ebc">create_cpuset</a>(self_native_thread, &amp;<a class="code" href="../../d2/d45/abtd__affinity_8c.html#aeb666f8897329bb993f8ef0c8ce791a8">g_affinity</a>.<a class="code" href="../../d6/dcd/structglobal__affinity.html#adfb296150b9ff77a3584625a01c642a8">initial_cpuset</a>);</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">if</span> (ret != <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;set_affinity = <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        p_global-&gt;set_affinity = <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d2/d45/abtd__affinity_8c.html#aeb666f8897329bb993f8ef0c8ce791a8">g_affinity</a>.<a class="code" href="../../d6/dcd/structglobal__affinity.html#adfb296150b9ff77a3584625a01c642a8">initial_cpuset</a>.num_cpuids == 0) {</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        ABTD_affinity_cpuset_destroy(&amp;<a class="code" href="../../d2/d45/abtd__affinity_8c.html#aeb666f8897329bb993f8ef0c8ce791a8">g_affinity</a>.<a class="code" href="../../d6/dcd/structglobal__affinity.html#adfb296150b9ff77a3584625a01c642a8">initial_cpuset</a>);</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;set_affinity = <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        p_global-&gt;set_affinity = <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    }</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;set_affinity = <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    p_global-&gt;set_affinity = <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>;</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    ABTD_affinity_list *p_list = ABTD_affinity_list_create(affinity_str);</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keywordflow">if</span> (p_list) {</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keywordflow">if</span> (p_list-&gt;num == 0) {</div>
@@ -409,7 +409,7 @@ $(function() {
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            ABTI_ASSERT(ret == <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>);</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            <span class="keywordflow">if</span> (ABTI_IS_ERROR_CHECK_ENABLED &amp;&amp; ret != <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                ABTD_affinity_list_free(p_list);</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                <a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;set_affinity = <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                p_global-&gt;set_affinity = <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>;</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            }</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            <span class="keywordflow">for</span> (j = 0; j &lt; p_id_list-&gt;num; j++) {</div>
@@ -464,10 +464,10 @@ $(function() {
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    }</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;}</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="keywordtype">void</span> ABTD_affinity_finalize(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="keywordtype">void</span> ABTD_affinity_finalize(ABTI_global *p_global)</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;{</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    pthread_t self_native_thread = pthread_self();</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;set_affinity) {</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordflow">if</span> (p_global-&gt;set_affinity) {</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="comment">/* Set the affinity of the main native thread to the original one. */</span></div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="keywordtype">int</span> abt_errno =</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            <a class="code" href="../../d2/d45/abtd__affinity_8c.html#ad381daf10a4a5d22a6358b81c31ac974">apply_cpuset</a>(self_native_thread, &amp;<a class="code" href="../../d2/d45/abtd__affinity_8c.html#aeb666f8897329bb993f8ef0c8ce791a8">g_affinity</a>.<a class="code" href="../../d6/dcd/structglobal__affinity.html#adfb296150b9ff77a3584625a01c642a8">initial_cpuset</a>);</div>
@@ -504,25 +504,21 @@ $(function() {
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keywordtype">int</span> ABTD_affinity_cpuset_apply_default(ABTD_xstream_context *p_ctx,</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                                                    <span class="keywordtype">int</span> rank)</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;{</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a>-&gt;set_affinity) {</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        ABTD_affinity_cpuset *p_cpuset =</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            &amp;<a class="code" href="../../d2/d45/abtd__affinity_8c.html#aeb666f8897329bb993f8ef0c8ce791a8">g_affinity</a>.<a class="code" href="../../d6/dcd/structglobal__affinity.html#a8f626df58e1a09f253037e5db78960e2">cpusets</a>[rank % <a class="code" href="../../d2/d45/abtd__affinity_8c.html#aeb666f8897329bb993f8ef0c8ce791a8">g_affinity</a>.<a class="code" href="../../d6/dcd/structglobal__affinity.html#a5910713bf41407253745e49076d3c2c9">num_cpusets</a>];</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d45/abtd__affinity_8c.html#ad381daf10a4a5d22a6358b81c31ac974">apply_cpuset</a>(p_ctx-&gt;native_thread, p_cpuset);</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    }</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;}</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;<span class="keywordtype">void</span> ABTD_affinity_cpuset_destroy(ABTD_affinity_cpuset *p_cpuset)</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;{</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <span class="keywordflow">if</span> (p_cpuset) {</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(p_cpuset-&gt;cpuids);</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        p_cpuset-&gt;cpuids = NULL;</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    }</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;}</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    ABTD_affinity_cpuset *p_cpuset =</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        &amp;<a class="code" href="../../d2/d45/abtd__affinity_8c.html#aeb666f8897329bb993f8ef0c8ce791a8">g_affinity</a>.<a class="code" href="../../d6/dcd/structglobal__affinity.html#a8f626df58e1a09f253037e5db78960e2">cpusets</a>[rank % <a class="code" href="../../d2/d45/abtd__affinity_8c.html#aeb666f8897329bb993f8ef0c8ce791a8">g_affinity</a>.<a class="code" href="../../d6/dcd/structglobal__affinity.html#a5910713bf41407253745e49076d3c2c9">num_cpusets</a>];</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d2/d45/abtd__affinity_8c.html#ad381daf10a4a5d22a6358b81c31ac974">apply_cpuset</a>(p_ctx-&gt;native_thread, p_cpuset);</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;}</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;<span class="keywordtype">void</span> ABTD_affinity_cpuset_destroy(ABTD_affinity_cpuset *p_cpuset)</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;{</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <span class="keywordflow">if</span> (p_cpuset) {</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(p_cpuset-&gt;cpuids);</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        p_cpuset-&gt;cpuids = NULL;</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    }</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="agroup__ERROR__CODE_html_gaf5cd9c9dbf492f682ac78eb7296389f1"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#gaf5cd9c9dbf492f682ac78eb7296389f1">ABT_ERR_SYS</a></div><div class="ttdeci">#define ABT_ERR_SYS</div><div class="ttdoc">Error code: error related to system calls and standard libraries.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00393">abt.h:393</a></div></div>
 <div class="ttc" id="aabtu_8h_html_a40521ff89b1044d613bebd52c0aaebde"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a40521ff89b1044d613bebd52c0aaebde">ABTU_realloc</a></div><div class="ttdeci">static ABTU_ret_err int ABTU_realloc(size_t old_size, size_t new_size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00240">abtu.h:240</a></div></div>
-<div class="ttc" id="aabti_8h_html_a5e2e52e4bfa1e19e121d939135e4300c"><div class="ttname"><a href="../../d5/d03/abti_8h.html#a5e2e52e4bfa1e19e121d939135e4300c">gp_ABTI_global</a></div><div class="ttdeci">ABTI_global * gp_ABTI_global</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d57/global_8c_source.html#l00018">global.c:18</a></div></div>
 <div class="ttc" id="aabtd__affinity_8c_html_a76ab5c0a28094a34d91d15aca87e313c"><div class="ttname"><a href="../../d2/d45/abtd__affinity_8c.html#a76ab5c0a28094a34d91d15aca87e313c">get_num_cores</a></div><div class="ttdeci">static ABTU_ret_err int get_num_cores(pthread_t native_thread, int *p_num_cores)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d45/abtd__affinity_8c_source.html#l00202">abtd_affinity.c:202</a></div></div>
 <div class="ttc" id="aabtd__affinity_8c_html_a4caa8796c4d7938443dbe263cfb2e44c"><div class="ttname"><a href="../../d2/d45/abtd__affinity_8c.html#a4caa8796c4d7938443dbe263cfb2e44c">int_rem</a></div><div class="ttdeci">static int int_rem(int a, unsigned int b)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d45/abtd__affinity_8c_source.html#l00192">abtd_affinity.c:192</a></div></div>
 <div class="ttc" id="aabti_8h_html"><div class="ttname"><a href="../../d5/d03/abti_8h.html">abti.h</a></div></div>
@@ -544,7 +540,7 @@ $(function() {
 <div class="ttc" id="astructglobal__affinity_html_adfb296150b9ff77a3584625a01c642a8"><div class="ttname"><a href="../../d6/dcd/structglobal__affinity.html#adfb296150b9ff77a3584625a01c642a8">global_affinity::initial_cpuset</a></div><div class="ttdeci">ABTD_affinity_cpuset initial_cpuset</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d45/abtd__affinity_8c_source.html#l00185">abtd_affinity.c:185</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 2 2021 03:09:58 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 5 2021 03:10:28 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

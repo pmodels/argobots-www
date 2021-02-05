@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">0382fa1d10d933bb488dea219834090948927282</span>
+   &#160;<span id="projectnumber">e10f21f77711b5ff33ab18d338867e8f871f4d7c</span>
    </div>
   </td>
  </tr>
@@ -112,45 +112,46 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/* Set `used` of p_sched to NOT_USED and free p_sched if its `automatic` is</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> * ABT_TRUE, which means it is safe to free p_sched inside the runtime. */</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_sched_discard_and_free(ABTI_local *p_local,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                               ABTI_sched *p_sched,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                               <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> force_free)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    p_sched-&gt;used = ABTI_SCHED_NOT_USED;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (p_sched-&gt;automatic == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a> || force_free) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        ABTI_sched_free(p_local, p_sched, force_free);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">/* Threads should be discarded here. */</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        ABTI_thread_free(p_local, &amp;p_sched-&gt;p_ythread-&gt;thread);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        p_sched-&gt;p_ythread = NULL;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_sched_set_request(ABTI_sched *p_sched, uint32_t req)</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    ABTD_atomic_fetch_or_uint32(&amp;p_sched-&gt;request, req);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_sched_unset_request(ABTI_sched *p_sched, uint32_t req)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    ABTD_atomic_fetch_and_uint32(&amp;p_sched-&gt;request, ~req);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_USE_SCHED_SLEEP</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#define CNT_DECL(c) int c</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#define CNT_INIT(c, v) c = v</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#define CNT_INC(c) c++</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#define SCHED_SLEEP(c, t)                                                      \</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">    if (c == 0)                                                                \</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">    nanosleep(&amp;(t), NULL)</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../dd/d3f/abti__sched_8h.html#ab3630bdc6bba738b510791bc93b328a8">   75</a></span>&#160;<span class="preprocessor">#define CNT_DECL(c)</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../dd/d3f/abti__sched_8h.html#ac58a1aa8684ff9f41d93ee24c26ed32f">   76</a></span>&#160;<span class="preprocessor">#define CNT_INIT(c, v)</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../dd/d3f/abti__sched_8h.html#a624571aafafce12eccbd7a1a7c884ccf">   77</a></span>&#160;<span class="preprocessor">#define CNT_INC(c)</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../dd/d3f/abti__sched_8h.html#acf823f97afe8186a0c39f287356b895a">   78</a></span>&#160;<span class="preprocessor">#define SCHED_SLEEP(c, t)</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_SCHED_H_INCLUDED */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_sched_discard_and_free(ABTI_global *p_global,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                               ABTI_local *p_local,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                               ABTI_sched *p_sched,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                               <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> force_free)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    p_sched-&gt;used = ABTI_SCHED_NOT_USED;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (p_sched-&gt;automatic == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a> || force_free) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        ABTI_sched_free(p_global, p_local, p_sched, force_free);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">/* Threads should be discarded here. */</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        ABTI_thread_free(p_global, p_local, &amp;p_sched-&gt;p_ythread-&gt;thread);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        p_sched-&gt;p_ythread = NULL;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_sched_set_request(ABTI_sched *p_sched, uint32_t req)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    ABTD_atomic_fetch_or_uint32(&amp;p_sched-&gt;request, req);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_sched_unset_request(ABTI_sched *p_sched, uint32_t req)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    ABTD_atomic_fetch_and_uint32(&amp;p_sched-&gt;request, ~req);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_USE_SCHED_SLEEP</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#define CNT_DECL(c) int c</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#define CNT_INIT(c, v) c = v</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#define CNT_INC(c) c++</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#define SCHED_SLEEP(c, t)                                                      \</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">    if (c == 0)                                                                \</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">    nanosleep(&amp;(t), NULL)</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../dd/d3f/abti__sched_8h.html#ab3630bdc6bba738b510791bc93b328a8">   76</a></span>&#160;<span class="preprocessor">#define CNT_DECL(c)</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../dd/d3f/abti__sched_8h.html#ac58a1aa8684ff9f41d93ee24c26ed32f">   77</a></span>&#160;<span class="preprocessor">#define CNT_INIT(c, v)</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../dd/d3f/abti__sched_8h.html#a624571aafafce12eccbd7a1a7c884ccf">   78</a></span>&#160;<span class="preprocessor">#define CNT_INC(c)</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../dd/d3f/abti__sched_8h.html#acf823f97afe8186a0c39f287356b895a">   79</a></span>&#160;<span class="preprocessor">#define SCHED_SLEEP(c, t)</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ABTI_SCHED_H_INCLUDED */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aabt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdoc">Boolean type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00998">abt.h:998</a></div></div>
 <div class="ttc" id="agroup__SCHED_html_gadf0a564b506bb4a288f49cbfd3116025"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#gadf0a564b506bb4a288f49cbfd3116025">ABT_sched</a></div><div class="ttdeci">struct ABT_sched_opaque * ABT_sched</div><div class="ttdoc">Scheduler handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00805">abt.h:805</a></div></div>
@@ -158,7 +159,7 @@ $(function() {
 <div class="ttc" id="aabt_8h_html_a6ec206ed23259ffaa4ec3c554329381f"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a6ec206ed23259ffaa4ec3c554329381f">ABT_SCHED_NULL</a></div><div class="ttdeci">#define ABT_SCHED_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01054">abt.h:1054</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 2 2021 03:09:58 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 5 2021 03:10:29 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
