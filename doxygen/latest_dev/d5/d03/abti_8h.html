@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">e10f21f77711b5ff33ab18d338867e8f871f4d7c</span>
+   &#160;<span id="projectnumber">be1e90c61c7cc46afb4536713fb7ce8021d4d300</span>
    </div>
   </td>
  </tr>
@@ -352,6 +352,10 @@ Macros</h2></td></tr>
 <tr class="separator:a7701f6c4a3e170d99ff6cbc5713b0a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abeacb7b298eaaa0542a35a65354692d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d03/abti_8h.html#abeacb7b298eaaa0542a35a65354692d1">ABTI_THREAD_TYPES_MEM</a></td></tr>
 <tr class="separator:abeacb7b298eaaa0542a35a65354692d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68f4233acd54f266e51d7c7645999796"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d03/abti_8h.html#a68f4233acd54f266e51d7c7645999796">ABTI_MUTEX_ATTR_NONE</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a68f4233acd54f266e51d7c7645999796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7148a31113e7f9ecfbcf488db8947d0a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d03/abti_8h.html#a7148a31113e7f9ecfbcf488db8947d0a">ABTI_MUTEX_ATTR_RECURSIVE</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a7148a31113e7f9ecfbcf488db8947d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31e4285caf3b2faa9c68e6d38052b766"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d03/abti_8h.html#a31e4285caf3b2faa9c68e6d38052b766">ABTI_UNUSED</a>(a)&#160;&#160;&#160;(void)(a)</td></tr>
 <tr class="separator:a31e4285caf3b2faa9c68e6d38052b766"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -437,10 +441,6 @@ Enumerations</h2></td></tr>
 <a class="el" href="../../d5/d03/abti_8h.html#a984cffeec1b5dd8d2c41dde829f4d421a5ff0b3a3a9acfc80a6cbf06ae4f56b22">ABTI_SCHED_IN_POOL</a>
  }</td></tr>
 <tr class="separator:a984cffeec1b5dd8d2c41dde829f4d421"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab445a8523e50e66795d3beb38c36338b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d03/abti_8h.html#ab445a8523e50e66795d3beb38c36338b">ABTI_mutex_attr_val</a> { <a class="el" href="../../d5/d03/abti_8h.html#ab445a8523e50e66795d3beb38c36338ba5d842cfb76d85e661c9f99bcb1559aa9">ABTI_MUTEX_ATTR_NONE</a> = 0, 
-<a class="el" href="../../d5/d03/abti_8h.html#ab445a8523e50e66795d3beb38c36338ba7b4f9c2226c45cd02832bd65e73ca308">ABTI_MUTEX_ATTR_RECURSIVE</a> = 1 &lt;&lt; 0
- }</td></tr>
-<tr class="separator:ab445a8523e50e66795d3beb38c36338b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -638,6 +638,38 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00028">28</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
+
+</div>
+</div>
+<a id="a68f4233acd54f266e51d7c7645999796"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68f4233acd54f266e51d7c7645999796">&#9670;&nbsp;</a></span>ABTI_MUTEX_ATTR_NONE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ABTI_MUTEX_ATTR_NONE&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00098">98</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
+
+</div>
+</div>
+<a id="a7148a31113e7f9ecfbcf488db8947d0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7148a31113e7f9ecfbcf488db8947d0a">&#9670;&nbsp;</a></span>ABTI_MUTEX_ATTR_RECURSIVE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ABTI_MUTEX_ATTR_RECURSIVE&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00100">100</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
 
 </div>
 </div>
@@ -1693,26 +1725,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="ab445a8523e50e66795d3beb38c36338b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab445a8523e50e66795d3beb38c36338b">&#9670;&nbsp;</a></span>ABTI_mutex_attr_val</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="../../d5/d03/abti_8h.html#ab445a8523e50e66795d3beb38c36338b">ABTI_mutex_attr_val</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab445a8523e50e66795d3beb38c36338ba5d842cfb76d85e661c9f99bcb1559aa9"></a>ABTI_MUTEX_ATTR_NONE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab445a8523e50e66795d3beb38c36338ba7b4f9c2226c45cd02832bd65e73ca308"></a>ABTI_MUTEX_ATTR_RECURSIVE&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="../../d5/d03/abti_8h_source.html#l00097">97</a> of file <a class="el" href="../../d5/d03/abti_8h_source.html">abti.h</a>.</p>
-
-</div>
-</div>
 <a id="a984cffeec1b5dd8d2c41dde829f4d421"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a984cffeec1b5dd8d2c41dde829f4d421">&#9670;&nbsp;</a></span>ABTI_sched_used</h2>
 
@@ -3581,7 +3593,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="aabti_8h_html_ace8249a991da36ea92415adefac701bb"><div class="ttname"><a href="../../d5/d03/abti_8h.html#ace8249a991da36ea92415adefac701bb">ABTI_THREAD_TYPE_MEM_MALLOC_DESC</a></div><div class="ttdeci">#define ABTI_THREAD_TYPE_MEM_MALLOC_DESC</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d03/abti_8h_source.html#l00088">abti.h:88</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 5 2021 03:10:24 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Feb 6 2021 04:46:04 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

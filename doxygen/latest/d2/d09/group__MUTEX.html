@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">e10f21f77711b5ff33ab18d338867e8f871f4d7c</span>
+   &#160;<span id="projectnumber">be1e90c61c7cc46afb4536713fb7ce8021d4d300</span>
    </div>
   </td>
  </tr>
@@ -63,6 +63,8 @@ $(function() {
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -73,6 +75,24 @@ $(function() {
 <p>This group is for Mutex.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfe/structABT__mutex__memory.html">ABT_mutex_memory</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A struct that can be converted to ABT_mutex.  <a href="../../d2/dfe/structABT__mutex__memory.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga1c252e32b4f856e422678821afed443d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d09/group__MUTEX.html#ga1c252e32b4f856e422678821afed443d">ABT_MUTEX_INITIALIZER</a>&#160;&#160;&#160;{ { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } }</td></tr>
+<tr class="memdesc:ga1c252e32b4f856e422678821afed443d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize <code><a class="el" href="../../d2/dfe/structABT__mutex__memory.html" title="A struct that can be converted to ABT_mutex.">ABT_mutex_memory</a></code>.  <a href="../../d2/d09/group__MUTEX.html#ga1c252e32b4f856e422678821afed443d">More...</a><br /></td></tr>
+<tr class="separator:ga1c252e32b4f856e422678821afed443d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga876295de9dc6855aec28645c8557f575"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d09/group__MUTEX.html#ga876295de9dc6855aec28645c8557f575">ABT_RECURSIVE_MUTEX_INITIALIZER</a>&#160;&#160;&#160;{ { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } }</td></tr>
+<tr class="memdesc:ga876295de9dc6855aec28645c8557f575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize <code><a class="el" href="../../d2/dfe/structABT__mutex__memory.html" title="A struct that can be converted to ABT_mutex.">ABT_mutex_memory</a></code> with a recursive property.  <a href="../../d2/d09/group__MUTEX.html#ga876295de9dc6855aec28645c8557f575">More...</a><br /></td></tr>
+<tr class="separator:ga876295de9dc6855aec28645c8557f575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d446c1c9ab17ef1ba469a325bf3c768"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d09/group__MUTEX.html#ga4d446c1c9ab17ef1ba469a325bf3c768">ABT_MUTEX_MEMORY_GET_HANDLE</a>(p_mutex_memory)&#160;&#160;&#160;((<a class="el" href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a>)p_mutex_memory)</td></tr>
+<tr class="memdesc:ga4d446c1c9ab17ef1ba469a325bf3c768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain <code>ABT_mutex</code> from <code><a class="el" href="../../d2/dfe/structABT__mutex__memory.html" title="A struct that can be converted to ABT_mutex.">ABT_mutex_memory</a></code>.  <a href="../../d2/d09/group__MUTEX.html#ga4d446c1c9ab17ef1ba469a325bf3c768">More...</a><br /></td></tr>
+<tr class="separator:ga4d446c1c9ab17ef1ba469a325bf3c768"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:ga47f82eaefe654cad03090b6e9c818533"><td class="memItemLeft" align="right" valign="top">typedef struct ABT_mutex_opaque *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a></td></tr>
@@ -123,6 +143,91 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>This group is for Mutex. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga1c252e32b4f856e422678821afed443d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1c252e32b4f856e422678821afed443d">&#9670;&nbsp;</a></span>ABT_MUTEX_INITIALIZER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ABT_MUTEX_INITIALIZER&#160;&#160;&#160;{ { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize <code><a class="el" href="../../d2/dfe/structABT__mutex__memory.html" title="A struct that can be converted to ABT_mutex.">ABT_mutex_memory</a></code>. </p>
+<p><code><a class="el" href="../../d2/d09/group__MUTEX.html#ga1c252e32b4f856e422678821afed443d" title="Initialize ABT_mutex_memory.">ABT_MUTEX_INITIALIZER()</a></code> statically initializes <code><a class="el" href="../../d2/dfe/structABT__mutex__memory.html" title="A struct that can be converted to ABT_mutex.">ABT_mutex_memory</a></code>. The created mutex is not recursive.</p>
+<p>The following shows how to use <code>ABT_MUTEX_INITIALIZER</code>. </p><div class="fragment"><div class="line"><a class="code" href="../../d2/dfe/structABT__mutex__memory.html">ABT_mutex_memory</a> mutex_mem = <a class="code" href="../../d2/d09/group__MUTEX.html#ga1c252e32b4f856e422678821afed443d">ABT_MUTEX_INITIALIZER</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> thread(<span class="keywordtype">void</span> *)</div>
+<div class="line">{</div>
+<div class="line">    <a class="code" href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a> mutex = <a class="code" href="../../d2/d09/group__MUTEX.html#ga4d446c1c9ab17ef1ba469a325bf3c768">ABT_MUTEX_MEMORY_GET_HANDLE</a>(&amp;mutex_mem);</div>
+<div class="line">    <a class="code" href="../../d2/d09/group__MUTEX.html#gaa04ef5552b54a247dd9aad207918d0f1">ABT_mutex_lock</a>(mutex);</div>
+<div class="line">    <a class="code" href="../../d2/d09/group__MUTEX.html#ga6047a388bffa841fc0924bdb7f8c7670">ABT_mutex_unlock</a>(mutex);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p><code>ABT_mutex</code> obtained by <code><a class="el" href="../../d2/d09/group__MUTEX.html#ga4d446c1c9ab17ef1ba469a325bf3c768" title="Obtain ABT_mutex from ABT_mutex_memory.">ABT_MUTEX_MEMORY_GET_HANDLE()</a></code> may not be freed by <code><a class="el" href="../../d2/d09/group__MUTEX.html#gabade38c70c294371121af7e0a80d5b3e" title="Free a mutex.">ABT_mutex_free()</a></code>. The lifetime of <code>ABT_mutex</code> obtained by <code><a class="el" href="../../d2/d09/group__MUTEX.html#ga4d446c1c9ab17ef1ba469a325bf3c768" title="Obtain ABT_mutex from ABT_mutex_memory.">ABT_MUTEX_MEMORY_GET_HANDLE()</a></code> is the same as that of <code><a class="el" href="../../d2/dfe/structABT__mutex__memory.html" title="A struct that can be converted to ABT_mutex.">ABT_mutex_memory</a></code>.</p>
+<p><code><a class="el" href="../../d2/dfe/structABT__mutex__memory.html" title="A struct that can be converted to ABT_mutex.">ABT_mutex_memory</a></code> associated with the mutex that is in use may not be initialized. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01116">1116</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+
+</div>
+</div>
+<a id="ga4d446c1c9ab17ef1ba469a325bf3c768"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4d446c1c9ab17ef1ba469a325bf3c768">&#9670;&nbsp;</a></span>ABT_MUTEX_MEMORY_GET_HANDLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ABT_MUTEX_MEMORY_GET_HANDLE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">p_mutex_memory</td><td>)</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a>)p_mutex_memory)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtain <code>ABT_mutex</code> from <code><a class="el" href="../../d2/dfe/structABT__mutex__memory.html" title="A struct that can be converted to ABT_mutex.">ABT_mutex_memory</a></code>. </p>
+<p><code><a class="el" href="../../d2/d09/group__MUTEX.html#ga4d446c1c9ab17ef1ba469a325bf3c768" title="Obtain ABT_mutex from ABT_mutex_memory.">ABT_MUTEX_MEMORY_GET_HANDLE()</a></code> takes the pointer <code>p_mutex_memory</code>, which points to <code><a class="el" href="../../d2/dfe/structABT__mutex__memory.html" title="A struct that can be converted to ABT_mutex.">ABT_mutex_memory</a></code>, and returns <code>ABT_mutex</code> that internally uses <code>p_mutex_memory</code> to store the data. If the memory pointed to by <code>p_mutex_memory</code> is not properly initialized, it returns a corrupted mutex.</p>
+<p><code>ABT_mutex</code> obtained by <code><a class="el" href="../../d2/d09/group__MUTEX.html#ga4d446c1c9ab17ef1ba469a325bf3c768" title="Obtain ABT_mutex from ABT_mutex_memory.">ABT_MUTEX_MEMORY_GET_HANDLE()</a></code> may not be freed by <code><a class="el" href="../../d2/d09/group__MUTEX.html#gabade38c70c294371121af7e0a80d5b3e" title="Free a mutex.">ABT_mutex_free()</a></code>. The lifetime of <code>ABT_mutex</code> obtained by <code><a class="el" href="../../d2/d09/group__MUTEX.html#ga4d446c1c9ab17ef1ba469a325bf3c768" title="Obtain ABT_mutex from ABT_mutex_memory.">ABT_MUTEX_MEMORY_GET_HANDLE()</a></code> is the same as that of <code><a class="el" href="../../d2/dfe/structABT__mutex__memory.html" title="A struct that can be converted to ABT_mutex.">ABT_mutex_memory</a></code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01160">1160</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+
+</div>
+</div>
+<a id="ga876295de9dc6855aec28645c8557f575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga876295de9dc6855aec28645c8557f575">&#9670;&nbsp;</a></span>ABT_RECURSIVE_MUTEX_INITIALIZER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ABT_RECURSIVE_MUTEX_INITIALIZER&#160;&#160;&#160;{ { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize <code><a class="el" href="../../d2/dfe/structABT__mutex__memory.html" title="A struct that can be converted to ABT_mutex.">ABT_mutex_memory</a></code> with a recursive property. </p>
+<p><code>ABT_RECURSIVE_MUTEX_INITIALIZER</code> statically initializes <code><a class="el" href="../../d2/dfe/structABT__mutex__memory.html" title="A struct that can be converted to ABT_mutex.">ABT_mutex_memory</a></code>. The created mutex is recursive.</p>
+<p>The following shows how to use <code>ABT_RECURSIVE_MUTEX_INITIALIZER</code>. </p><div class="fragment"><div class="line"><a class="code" href="../../d2/dfe/structABT__mutex__memory.html">ABT_mutex_memory</a> rec_mutex_mem = <a class="code" href="../../d2/d09/group__MUTEX.html#ga876295de9dc6855aec28645c8557f575">ABT_RECURSIVE_MUTEX_INITIALIZER</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> thread(<span class="keywordtype">void</span> *)</div>
+<div class="line">{</div>
+<div class="line">    <a class="code" href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a> rec_mutex = <a class="code" href="../../d2/d09/group__MUTEX.html#ga4d446c1c9ab17ef1ba469a325bf3c768">ABT_MUTEX_MEMORY_GET_HANDLE</a>(&amp;rec_mutex_mem);</div>
+<div class="line">    <span class="comment">// rec_mutex is recursive.</span></div>
+<div class="line">    <a class="code" href="../../d2/d09/group__MUTEX.html#gaa04ef5552b54a247dd9aad207918d0f1">ABT_mutex_lock</a>(rec_mutex);</div>
+<div class="line">    <a class="code" href="../../d2/d09/group__MUTEX.html#gaa04ef5552b54a247dd9aad207918d0f1">ABT_mutex_lock</a>(rec_mutex);</div>
+<div class="line">    <a class="code" href="../../d2/d09/group__MUTEX.html#ga6047a388bffa841fc0924bdb7f8c7670">ABT_mutex_unlock</a>(rec_mutex);</div>
+<div class="line">    <a class="code" href="../../d2/d09/group__MUTEX.html#ga6047a388bffa841fc0924bdb7f8c7670">ABT_mutex_unlock</a>(rec_mutex);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p><code><a class="el" href="../../d2/dfe/structABT__mutex__memory.html" title="A struct that can be converted to ABT_mutex.">ABT_mutex_memory</a></code> associated with the mutex that is in use may not be initialized. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01144">1144</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga47f82eaefe654cad03090b6e9c818533"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga47f82eaefe654cad03090b6e9c818533">&#9670;&nbsp;</a></span>ABT_mutex</h2>
@@ -258,7 +363,7 @@ If <code>newmutex</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00095">95</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00098">98</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
 
 </div>
 </div>
@@ -312,7 +417,7 @@ If <code>newmutex</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00497">497</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00481">481</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
 
 </div>
 </div>
@@ -352,7 +457,7 @@ If <code>mutex</code> is accessed after calling this routine, the results are un
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00143">143</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00145">145</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
 
 </div>
 </div>
@@ -402,7 +507,7 @@ If <code>attr</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00531">531</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00515">515</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
 
 </div>
 </div>
@@ -425,11 +530,9 @@ If <code>attr</code> is <code>NULL</code>, the results are undefined.<br  />
 <p>Lock a mutex. </p>
 <p><code><a class="el" href="../../d2/d09/group__MUTEX.html#gaa04ef5552b54a247dd9aad207918d0f1" title="Lock a mutex.">ABT_mutex_lock()</a></code> locks the mutex <code>mutex</code>. If this routine successfully returns, the caller acquires <code>mutex</code>. If <code>mutex</code> has already been locked, the caller will be blocked on <code>mutex</code> until <code>mutex</code> becomes available.</p>
 <p>If <code>mutex</code> is recursive, the same caller can acquire multiple levels of ownership over <code>mutex</code>. <code>mutex</code> will remain locked until <code>mutex</code> is unlocked as many times as the level of ownership.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT if <code>mutex</code> is locked and therefore the caller fails to take a lock. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine may switch the context of the calling ULT if <code>mutex</code> is locked and therefore the caller fails to take a lock. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> is <code>ABT_MUTEX_NULL</code>.<br  />
- </dd></dl>
-<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -439,7 +542,7 @@ If <code>attr</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00182">182</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00181">181</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
 
 </div>
 </div>
@@ -462,11 +565,9 @@ If <code>attr</code> is <code>NULL</code>, the results are undefined.<br  />
 <p>Lock a mutex with high priority. </p>
 <p><code><a class="el" href="../../d2/d09/group__MUTEX.html#gaab64a7ac90af4f8840c4f33bd23b34ce" title="Lock a mutex with low priority.">ABT_mutex_lock_low()</a></code> locks the mutex <code>mutex</code> with high priority while <code><a class="el" href="../../d2/d09/group__MUTEX.html#gaa04ef5552b54a247dd9aad207918d0f1" title="Lock a mutex.">ABT_mutex_lock()</a></code> and <code><a class="el" href="../../d2/d09/group__MUTEX.html#gaab64a7ac90af4f8840c4f33bd23b34ce" title="Lock a mutex with low priority.">ABT_mutex_lock_low()</a></code> do with lower priority. That is, waiters that call the high-priority mutex lock functions might be prioritized over the same <code>mutex</code>. Except for priority, the semantics of <code><a class="el" href="../../d2/d09/group__MUTEX.html#gafc18514a5af7e40f25f47b5d5543d61a" title="Lock a mutex with high priority.">ABT_mutex_lock_high()</a></code> is the same as that of <code><a class="el" href="../../d2/d09/group__MUTEX.html#gaa04ef5552b54a247dd9aad207918d0f1" title="Lock a mutex.">ABT_mutex_lock()</a></code>.</p>
 <dl class="section note"><dt>Note</dt><dd>A program that relies on the scheduling order regarding mutex priorities is non-conforming.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT if <code>mutex</code> is locked and therefore the caller fails to take a lock. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine may switch the context of the calling ULT if <code>mutex</code> is locked and therefore the caller fails to take a lock. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> is <code>ABT_MUTEX_NULL</code>.<br  />
- </dd></dl>
-<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -476,7 +577,7 @@ If <code>attr</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00256">256</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00249">249</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
 
 </div>
 </div>
@@ -499,11 +600,9 @@ If <code>attr</code> is <code>NULL</code>, the results are undefined.<br  />
 <p>Lock a mutex with low priority. </p>
 <p><code><a class="el" href="../../d2/d09/group__MUTEX.html#gaab64a7ac90af4f8840c4f33bd23b34ce" title="Lock a mutex with low priority.">ABT_mutex_lock_low()</a></code> locks the mutex <code>mutex</code> with low priority while <code><a class="el" href="../../d2/d09/group__MUTEX.html#gaa04ef5552b54a247dd9aad207918d0f1" title="Lock a mutex.">ABT_mutex_lock()</a></code> and <code><a class="el" href="../../d2/d09/group__MUTEX.html#gafc18514a5af7e40f25f47b5d5543d61a" title="Lock a mutex with high priority.">ABT_mutex_lock_high()</a></code> do with higher priority. That is, waiters that call the high-priority mutex lock functions might be prioritized over the same <code>mutex</code>. Except for priority, the semantics of <code><a class="el" href="../../d2/d09/group__MUTEX.html#gaab64a7ac90af4f8840c4f33bd23b34ce" title="Lock a mutex with low priority.">ABT_mutex_lock_low()</a></code> is the same as that of <code><a class="el" href="../../d2/d09/group__MUTEX.html#gaa04ef5552b54a247dd9aad207918d0f1" title="Lock a mutex.">ABT_mutex_lock()</a></code>.</p>
 <dl class="section note"><dt>Note</dt><dd>A program that relies on the scheduling order regarding mutex priorities is non-conforming.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT if <code>mutex</code> is locked and therefore the caller fails to take a lock. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine may switch the context of the calling ULT if <code>mutex</code> is locked and therefore the caller fails to take a lock. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> is <code>ABT_MUTEX_NULL</code>.<br  />
- </dd></dl>
-<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -513,7 +612,7 @@ If <code>attr</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00219">219</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00215">215</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
 
 </div>
 </div>
@@ -537,11 +636,9 @@ If <code>attr</code> is <code>NULL</code>, the results are undefined.<br  />
 <p><code><a class="el" href="../../d2/d09/group__MUTEX.html#ga830bd1397ef36c83c4b33a8480adee1b" title="Lock a mutex in a busy-wait loop.">ABT_mutex_spinlock()</a></code> locks the mutex <code>mutex</code> in a blocking form. If this routine successfully returns, the caller acquires <code>mutex</code>. If <code>mutex</code> has already been locked, the caller will be blocked on <code>mutex</code> until <code>mutex</code> becomes available.</p>
 <p>If <code>mutex</code> is recursive, the same caller can acquire multiple levels of ownership over <code>mutex</code>. <code>mutex</code> will remain locked until <code>mutex</code> is unlocked as many times as the level of ownership.</p>
 <dl class="section note"><dt>Note</dt><dd><code><a class="el" href="../../d2/d09/group__MUTEX.html#ga830bd1397ef36c83c4b33a8480adee1b" title="Lock a mutex in a busy-wait loop.">ABT_mutex_spinlock()</a></code> might show a slightly better performance than <code><a class="el" href="../../d2/d09/group__MUTEX.html#gaa04ef5552b54a247dd9aad207918d0f1" title="Lock a mutex.">ABT_mutex_lock()</a></code> if <code>mutex</code> is uncontended. This routine, however, blocks the underlying execution stream when <code>mutex</code> is locked even if the caller is a ULT. This blocking behavior is deadlock-prone, so the user must be cautious when using this routine.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> is <code>ABT_MUTEX_NULL</code>.<br  />
- </dd></dl>
-<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -551,7 +648,7 @@ If <code>attr</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00337">337</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00324">324</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
 
 </div>
 </div>
@@ -575,12 +672,10 @@ If <code>attr</code> is <code>NULL</code>, the results are undefined.<br  />
 <p><code><a class="el" href="../../d2/d09/group__MUTEX.html#gacfe5902c0db94e2b7f92bb6efb2f8ed7" title="Attempt to lock a mutex.">ABT_mutex_trylock()</a></code> attempts to lock the mutex <code>mutex</code>. If this routine returns <code>ABT_SUCCESS</code>, the caller acquires the mutex. If the caller fails to take a lock, <code>ABT_ERR_MUTEX_LOCKED</code> is returned.</p>
 <p>If <code>mutex</code> is recursive, the same caller can acquire multiple levels of ownership over <code>mutex</code>. <code>mutex</code> will remain locked until <code>mutex</code> is unlocked as many times as the level of ownership.</p>
 <p>This trylock operation is atomically strong, so lock acquisition by this routine never fails if <code>mutex</code> is not locked.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine successfully obtains <code>mutex</code>.<br  />
 <code>ABT_ERR_MUTEX_LOCKED</code> is returned if this routine fails to obtain <code>mutex</code>.<br  />
 <code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> is <code>ABT_MUTEX_NULL</code>.<br  />
- </dd></dl>
-<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -590,7 +685,7 @@ If <code>attr</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00294">294</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00284">284</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
 
 </div>
 </div>
@@ -613,12 +708,11 @@ If <code>attr</code> is <code>NULL</code>, the results are undefined.<br  />
 <p>Unlock a mutex. </p>
 <p><code><a class="el" href="../../d2/d09/group__MUTEX.html#ga6047a388bffa841fc0924bdb7f8c7670" title="Unlock a mutex.">ABT_mutex_unlock()</a></code> unlocks the mutex <code>mutex</code>.</p>
 <p>If <code>mutex</code> is recursive and has been locked more than once, the caller must be the same as that of the corresponding locking function.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT if a waiter is waiting on <code>mutex</code>. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine may switch the context of the calling ULT if a waiter is waiting on <code>mutex</code>. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> is <code>ABT_MUTEX_NULL</code>.<br  />
  </dd></dl>
-<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
-If <code>mutex</code> is not locked, the results are undefined.<br  />
+<dl class="section user"><dt>Undefined behavior</dt><dd>If <code>mutex</code> is not locked, the results are undefined.<br  />
 If <code>mutex</code> is a recursive mutex and the caller does not have ownership of <code>mutex</code>, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -629,7 +723,7 @@ If <code>mutex</code> is a recursive mutex and the caller does not have ownershi
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00371">371</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00357">357</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
 
 </div>
 </div>
@@ -654,12 +748,11 @@ If <code>mutex</code> is a recursive mutex and the caller does not have ownershi
 <p>If <code>mutex</code> is recursive and has been locked more than once, the caller must be the same as that of the corresponding locking function.</p>
 <p>After unlocking the mutex, this routine tries to hand over the ownership of <code>mutex</code> to a waiter that is associated with an execution stream that is different from an execution stream running the caller if the caller is a work unit. If this attempt fails, the behavior of this routine is the same as that of <code><a class="el" href="../../d2/d09/group__MUTEX.html#ga6047a388bffa841fc0924bdb7f8c7670" title="Unlock a mutex.">ABT_mutex_unlock()</a></code>.</p>
 <dl class="section note"><dt>Note</dt><dd>A program that relies on the handover mechanism provided by this routine is non-conforming.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT if a waiter is waiting on <code>mutex</code>. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine may switch the context of the calling ULT if a waiter is waiting on <code>mutex</code>. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> is <code>ABT_MUTEX_NULL</code>.<br  />
  </dd></dl>
-<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
-If <code>mutex</code> is not locked, the results are undefined.<br  />
+<dl class="section user"><dt>Undefined behavior</dt><dd>If <code>mutex</code> is not locked, the results are undefined.<br  />
 If <code>mutex</code> is a recursive mutex and the caller does not have ownership of <code>mutex</code>, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -670,7 +763,7 @@ If <code>mutex</code> is a recursive mutex and the caller does not have ownershi
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00461">461</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00445">445</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
 
 </div>
 </div>
@@ -695,12 +788,11 @@ If <code>mutex</code> is a recursive mutex and the caller does not have ownershi
 <p>If <code>mutex</code> is recursive and has been locked more than once, the caller must be the same as that of the corresponding locking function.</p>
 <p>After unlocking the mutex, this routine tries to hand over the ownership of <code>mutex</code> to a waiter that is associated with the same execution stream as an execution stream running the caller if the caller is a work unit. If this attempt fails, the behavior of this routine is the same as that of <code><a class="el" href="../../d2/d09/group__MUTEX.html#ga6047a388bffa841fc0924bdb7f8c7670" title="Unlock a mutex.">ABT_mutex_unlock()</a></code>.</p>
 <dl class="section note"><dt>Note</dt><dd>A program that relies on the handover mechanism provided by this routine is non-conforming.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT if a waiter is waiting on <code>mutex</code>. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine may switch the context of the calling ULT if a waiter is waiting on <code>mutex</code>. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> is <code>ABT_MUTEX_NULL</code>.<br  />
  </dd></dl>
-<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
-If <code>mutex</code> is not locked, the results are undefined.<br  />
+<dl class="section user"><dt>Undefined behavior</dt><dd>If <code>mutex</code> is not locked, the results are undefined.<br  />
 If <code>mutex</code> is a recursive mutex and the caller does not have ownership of <code>mutex</code>, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -711,16 +803,23 @@ If <code>mutex</code> is a recursive mutex and the caller does not have ownershi
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00416">416</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d62/mutex_8c_source.html#l00401">401</a> of file <a class="el" href="../../d8/d62/mutex_8c_source.html">mutex.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
+<div class="ttc" id="agroup__MUTEX_html_ga47f82eaefe654cad03090b6e9c818533"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a></div><div class="ttdeci">struct ABT_mutex_opaque * ABT_mutex</div><div class="ttdoc">Mutex handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00942">abt.h:942</a></div></div>
+<div class="ttc" id="agroup__MUTEX_html_gaa04ef5552b54a247dd9aad207918d0f1"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#gaa04ef5552b54a247dd9aad207918d0f1">ABT_mutex_lock</a></div><div class="ttdeci">int ABT_mutex_lock(ABT_mutex mutex) ABT_API_PUBLIC</div><div class="ttdoc">Lock a mutex.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00181">mutex.c:181</a></div></div>
+<div class="ttc" id="agroup__MUTEX_html_ga4d446c1c9ab17ef1ba469a325bf3c768"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga4d446c1c9ab17ef1ba469a325bf3c768">ABT_MUTEX_MEMORY_GET_HANDLE</a></div><div class="ttdeci">#define ABT_MUTEX_MEMORY_GET_HANDLE(p_mutex_memory)</div><div class="ttdoc">Obtain ABT_mutex from ABT_mutex_memory.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01160">abt.h:1160</a></div></div>
 <div class="ttc" id="aabt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdoc">True constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00745">abt.h:745</a></div></div>
 <div class="ttc" id="aabt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdoc">False constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00747">abt.h:747</a></div></div>
+<div class="ttc" id="astructABT__mutex__memory_html"><div class="ttname"><a href="../../d2/dfe/structABT__mutex__memory.html">ABT_mutex_memory</a></div><div class="ttdoc">A struct that can be converted to ABT_mutex.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01086">abt.h:1086</a></div></div>
+<div class="ttc" id="agroup__MUTEX_html_ga6047a388bffa841fc0924bdb7f8c7670"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga6047a388bffa841fc0924bdb7f8c7670">ABT_mutex_unlock</a></div><div class="ttdeci">int ABT_mutex_unlock(ABT_mutex mutex) ABT_API_PUBLIC</div><div class="ttdoc">Unlock a mutex.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00357">mutex.c:357</a></div></div>
+<div class="ttc" id="agroup__MUTEX_html_ga1c252e32b4f856e422678821afed443d"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga1c252e32b4f856e422678821afed443d">ABT_MUTEX_INITIALIZER</a></div><div class="ttdeci">#define ABT_MUTEX_INITIALIZER</div><div class="ttdoc">Initialize ABT_mutex_memory.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01116">abt.h:1116</a></div></div>
+<div class="ttc" id="agroup__MUTEX_html_ga876295de9dc6855aec28645c8557f575"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga876295de9dc6855aec28645c8557f575">ABT_RECURSIVE_MUTEX_INITIALIZER</a></div><div class="ttdeci">#define ABT_RECURSIVE_MUTEX_INITIALIZER</div><div class="ttdoc">Initialize ABT_mutex_memory with a recursive property.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01144">abt.h:1144</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 5 2021 03:10:29 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Feb 6 2021 04:46:07 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

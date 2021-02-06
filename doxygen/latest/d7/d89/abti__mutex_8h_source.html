@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">e10f21f77711b5ff33ab18d338867e8f871f4d7c</span>
+   &#160;<span id="projectnumber">be1e90c61c7cc46afb4536713fb7ce8021d4d300</span>
    </div>
   </td>
  </tr>
@@ -115,9 +115,9 @@ $(function() {
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    ABTI_spinlock_clear(&amp;p_mutex-&gt;waiter_lock);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    ABTI_waitlist_init(&amp;p_mutex-&gt;waitlist);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    p_mutex-&gt;attr.attrs = ABTI_MUTEX_ATTR_NONE;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    p_mutex-&gt;attr.nesting_cnt = 0;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    p_mutex-&gt;attr.owner_id = 0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    p_mutex-&gt;attrs = ABTI_MUTEX_ATTR_NONE;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    p_mutex-&gt;nesting_cnt = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    p_mutex-&gt;owner_id = 0;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_mutex_fini(ABTI_mutex *p_mutex)</div>
@@ -169,16 +169,16 @@ $(function() {
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_mutex_lock(ABTI_local **pp_local, ABTI_mutex *p_mutex)</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (p_mutex-&gt;attr.attrs &amp; ABTI_MUTEX_ATTR_RECURSIVE) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (p_mutex-&gt;attrs &amp; ABTI_MUTEX_ATTR_RECURSIVE) {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="comment">/* Recursive mutex */</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        ABTI_thread_id self_id = ABTI_self_get_thread_id(*pp_local);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">if</span> (self_id != p_mutex-&gt;attr.owner_id) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">if</span> (self_id != p_mutex-&gt;owner_id) {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            ABTI_mutex_lock_no_recursion(pp_local, p_mutex);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            ABTI_ASSERT(p_mutex-&gt;attr.nesting_cnt == 0);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            p_mutex-&gt;attr.owner_id = self_id;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            ABTI_ASSERT(p_mutex-&gt;nesting_cnt == 0);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            p_mutex-&gt;owner_id = self_id;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="comment">/* Increment a nesting count. */</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            p_mutex-&gt;attr.nesting_cnt++;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            p_mutex-&gt;nesting_cnt++;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        ABTI_mutex_lock_no_recursion(pp_local, p_mutex);</div>
@@ -193,19 +193,19 @@ $(function() {
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> ABTI_mutex_trylock(ABTI_local *p_local, ABTI_mutex *p_mutex)</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">if</span> (p_mutex-&gt;attr.attrs &amp; ABTI_MUTEX_ATTR_RECURSIVE) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">if</span> (p_mutex-&gt;attrs &amp; ABTI_MUTEX_ATTR_RECURSIVE) {</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="comment">/* Recursive mutex */</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        ABTI_thread_id self_id = ABTI_self_get_thread_id(p_local);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">if</span> (self_id != p_mutex-&gt;attr.owner_id) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">if</span> (self_id != p_mutex-&gt;owner_id) {</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordtype">int</span> abt_errno = ABTI_mutex_trylock_no_recursion(p_mutex);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">if</span> (abt_errno == <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                ABTI_ASSERT(p_mutex-&gt;attr.nesting_cnt == 0);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                p_mutex-&gt;attr.owner_id = self_id;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                ABTI_ASSERT(p_mutex-&gt;nesting_cnt == 0);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                p_mutex-&gt;owner_id = self_id;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            }</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordflow">return</span> abt_errno;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="comment">/* Increment a nesting count. */</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            p_mutex-&gt;attr.nesting_cnt++;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            p_mutex-&gt;nesting_cnt++;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        }</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    } <span class="keywordflow">else</span> {</div>
@@ -220,16 +220,16 @@ $(function() {
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_mutex_spinlock(ABTI_local *p_local, ABTI_mutex *p_mutex)</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;{</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">if</span> (p_mutex-&gt;attr.attrs &amp; ABTI_MUTEX_ATTR_RECURSIVE) {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">if</span> (p_mutex-&gt;attrs &amp; ABTI_MUTEX_ATTR_RECURSIVE) {</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="comment">/* Recursive mutex */</span></div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        ABTI_thread_id self_id = ABTI_self_get_thread_id(p_local);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">if</span> (self_id != p_mutex-&gt;attr.owner_id) {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">if</span> (self_id != p_mutex-&gt;owner_id) {</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            ABTI_mutex_spinlock_no_recursion(p_mutex);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            ABTI_ASSERT(p_mutex-&gt;attr.nesting_cnt == 0);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            p_mutex-&gt;attr.owner_id = self_id;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            ABTI_ASSERT(p_mutex-&gt;nesting_cnt == 0);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            p_mutex-&gt;owner_id = self_id;</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="comment">/* Increment a nesting count. */</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            p_mutex-&gt;attr.nesting_cnt++;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            p_mutex-&gt;nesting_cnt++;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        }</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        ABTI_mutex_spinlock_no_recursion(p_mutex);</div>
@@ -252,13 +252,13 @@ $(function() {
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> ABTI_mutex_unlock(ABTI_local *p_local, ABTI_mutex *p_mutex)</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;{</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">if</span> (p_mutex-&gt;attr.attrs &amp; ABTI_MUTEX_ATTR_RECURSIVE) {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">if</span> (p_mutex-&gt;attrs &amp; ABTI_MUTEX_ATTR_RECURSIVE) {</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="comment">/* recursive mutex */</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">if</span> (p_mutex-&gt;attr.nesting_cnt == 0) {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            p_mutex-&gt;attr.owner_id = 0;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">if</span> (p_mutex-&gt;nesting_cnt == 0) {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            p_mutex-&gt;owner_id = 0;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            ABTI_mutex_unlock_no_recursion(p_local, p_mutex);</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            p_mutex-&gt;attr.nesting_cnt--;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            p_mutex-&gt;nesting_cnt--;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        }</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="comment">/* unknown attributes */</span></div>
@@ -276,7 +276,7 @@ $(function() {
 <div class="ttc" id="aabt_8h_html_a7f0cedd38f1395f91cfebda769947bd5"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a7f0cedd38f1395f91cfebda769947bd5">ABT_MUTEX_NULL</a></div><div class="ttdeci">#define ABT_MUTEX_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01063">abt.h:1063</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 5 2021 03:10:29 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Feb 6 2021 04:46:07 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

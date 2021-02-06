@@ -1,9 +1,8 @@
 <map id="ABTI_mutex" name="ABTI_mutex">
-<area shape="rect" id="node1" title=" " alt="" coords="99,303,201,329"/>
-<area shape="rect" id="node2" href="$dc/d81/structABTI__spinlock.html" title=" " alt="" coords="21,213,135,240"/>
-<area shape="rect" id="node3" href="$df/d2c/structABTD__atomic__bool.html" title=" " alt="" coords="5,102,151,129"/>
+<area shape="rect" id="node1" title=" " alt="" coords="179,303,281,329"/>
+<area shape="rect" id="node2" href="$dc/d81/structABTI__spinlock.html" title=" " alt="" coords="21,191,135,218"/>
+<area shape="rect" id="node3" href="$df/d2c/structABTD__atomic__bool.html" title=" " alt="" coords="5,95,151,121"/>
 <area shape="rect" id="node4" title=" " alt="" coords="45,5,111,32"/>
-<area shape="rect" id="node5" href="$df/de7/structABTI__mutex__attr.html" title=" " alt="" coords="159,213,290,240"/>
-<area shape="rect" id="node6" title=" " alt="" coords="181,102,255,129"/>
-<area shape="rect" id="node7" title=" " alt="" coords="280,95,423,136"/>
+<area shape="rect" id="node5" title=" " alt="" coords="159,184,301,225"/>
+<area shape="rect" id="node6" title=" " alt="" coords="325,191,364,218"/>
 </map>
