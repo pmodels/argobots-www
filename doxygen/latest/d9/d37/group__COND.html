@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">be1e90c61c7cc46afb4536713fb7ce8021d4d300</span>
+   &#160;<span id="projectnumber">e689eb553e46b8c068f5d4ae1a6d50978d1ab28e</span>
    </div>
   </td>
  </tr>
@@ -63,6 +63,8 @@ $(function() {
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -73,6 +75,21 @@ $(function() {
 <p>This group is for Condition Variable.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d38/structABT__cond__memory.html">ABT_cond_memory</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A struct that can be converted to ABT_cond.  <a href="../../d9/d38/structABT__cond__memory.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga643bfbaef7230b7b7c568d5f469b4698"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d37/group__COND.html#ga643bfbaef7230b7b7c568d5f469b4698">ABT_COND_INITIALIZER</a>&#160;&#160;&#160;{ { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } }</td></tr>
+<tr class="memdesc:ga643bfbaef7230b7b7c568d5f469b4698"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize <code><a class="el" href="../../d9/d38/structABT__cond__memory.html" title="A struct that can be converted to ABT_cond.">ABT_cond_memory</a></code>.  <a href="../../d9/d37/group__COND.html#ga643bfbaef7230b7b7c568d5f469b4698">More...</a><br /></td></tr>
+<tr class="separator:ga643bfbaef7230b7b7c568d5f469b4698"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad1e8f9a31eb1badc2bea91ce14525125"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d37/group__COND.html#gad1e8f9a31eb1badc2bea91ce14525125">ABT_COND_MEMORY_GET_HANDLE</a>(p_cond_memory)&#160;&#160;&#160;((<a class="el" href="../../d9/d37/group__COND.html#ga284def6c1a5999af708bb5c61e7d3c83">ABT_cond</a>)p_cond_memory)</td></tr>
+<tr class="memdesc:gad1e8f9a31eb1badc2bea91ce14525125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain <code>ABT_cond</code> from <code><a class="el" href="../../d9/d38/structABT__cond__memory.html" title="A struct that can be converted to ABT_cond.">ABT_cond_memory</a></code>.  <a href="../../d9/d37/group__COND.html#gad1e8f9a31eb1badc2bea91ce14525125">More...</a><br /></td></tr>
+<tr class="separator:gad1e8f9a31eb1badc2bea91ce14525125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:ga284def6c1a5999af708bb5c61e7d3c83"><td class="memItemLeft" align="right" valign="top">typedef struct ABT_cond_opaque *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d37/group__COND.html#ga284def6c1a5999af708bb5c61e7d3c83">ABT_cond</a></td></tr>
@@ -102,6 +119,67 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>This group is for Condition Variable. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga643bfbaef7230b7b7c568d5f469b4698"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga643bfbaef7230b7b7c568d5f469b4698">&#9670;&nbsp;</a></span>ABT_COND_INITIALIZER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ABT_COND_INITIALIZER&#160;&#160;&#160;{ { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize <code><a class="el" href="../../d9/d38/structABT__cond__memory.html" title="A struct that can be converted to ABT_cond.">ABT_cond_memory</a></code>. </p>
+<p><code><a class="el" href="../../d9/d37/group__COND.html#ga643bfbaef7230b7b7c568d5f469b4698" title="Initialize ABT_cond_memory.">ABT_COND_INITIALIZER()</a></code> statically initializes <code><a class="el" href="../../d9/d38/structABT__cond__memory.html" title="A struct that can be converted to ABT_cond.">ABT_cond_memory</a></code>.</p>
+<p>The following example shows how to use <code>ABT_COND_INITIALIZER</code>. </p><div class="fragment"><div class="line"><a class="code" href="../../d2/dfe/structABT__mutex__memory.html">ABT_mutex_memory</a> mutex_mem = <a class="code" href="../../d2/d09/group__MUTEX.html#ga1c252e32b4f856e422678821afed443d">ABT_MUTEX_INITIALIZER</a>;</div>
+<div class="line"><a class="code" href="../../d9/d38/structABT__cond__memory.html">ABT_cond_memory</a> cond_mem = <a class="code" href="../../d9/d37/group__COND.html#ga643bfbaef7230b7b7c568d5f469b4698">ABT_COND_INITIALIZER</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> thread(<span class="keywordtype">void</span> *)</div>
+<div class="line">{</div>
+<div class="line">    <a class="code" href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a> mutex = <a class="code" href="../../d2/d09/group__MUTEX.html#ga4d446c1c9ab17ef1ba469a325bf3c768">ABT_MUTEX_MEMORY_GET_HANDLE</a>(&amp;mutex_mem);</div>
+<div class="line">    <a class="code" href="../../d9/d37/group__COND.html#ga284def6c1a5999af708bb5c61e7d3c83">ABT_cond</a> cond = <a class="code" href="../../d9/d37/group__COND.html#gad1e8f9a31eb1badc2bea91ce14525125">ABT_COND_MEMORY_GET_HANDLE</a>(&amp;cond_mem);</div>
+<div class="line">    <a class="code" href="../../d2/d09/group__MUTEX.html#gaa04ef5552b54a247dd9aad207918d0f1">ABT_mutex_lock</a>(mutex);</div>
+<div class="line">    <span class="keywordflow">if</span> (...) {</div>
+<div class="line">       <a class="code" href="../../d9/d37/group__COND.html#ga5259b9161829998a5bef644b17635210">ABT_cond_wait</a>(cond, mutex);</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">       <a class="code" href="../../d9/d37/group__COND.html#ga06d68833d6c8a6cd008013d40bb16a69">ABT_cond_signal</a>(cond);</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="../../d2/d09/group__MUTEX.html#ga6047a388bffa841fc0924bdb7f8c7670">ABT_mutex_unlock</a>(mutex);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p><code>ABT_cond</code> obtained by <code><a class="el" href="../../d9/d37/group__COND.html#gad1e8f9a31eb1badc2bea91ce14525125" title="Obtain ABT_cond from ABT_cond_memory.">ABT_COND_MEMORY_GET_HANDLE()</a></code> may not be freed by <code><a class="el" href="../../d9/d37/group__COND.html#ga7475b6321893cd2ca5eb26b1b0b9ba35" title="Free a condition variable.">ABT_cond_free()</a></code>. The lifetime of <code>ABT_cond</code> obtained by <code><a class="el" href="../../d9/d37/group__COND.html#gad1e8f9a31eb1badc2bea91ce14525125" title="Obtain ABT_cond from ABT_cond_memory.">ABT_COND_MEMORY_GET_HANDLE()</a></code> is the same as that of <code><a class="el" href="../../d9/d38/structABT__cond__memory.html" title="A struct that can be converted to ABT_cond.">ABT_cond_memory</a></code>.</p>
+<p><code><a class="el" href="../../d9/d38/structABT__cond__memory.html" title="A struct that can be converted to ABT_cond.">ABT_cond_memory</a></code> associated with a condition variable that is in use may not be initialized. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01211">1211</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+
+</div>
+</div>
+<a id="gad1e8f9a31eb1badc2bea91ce14525125"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad1e8f9a31eb1badc2bea91ce14525125">&#9670;&nbsp;</a></span>ABT_COND_MEMORY_GET_HANDLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ABT_COND_MEMORY_GET_HANDLE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">p_cond_memory</td><td>)</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="../../d9/d37/group__COND.html#ga284def6c1a5999af708bb5c61e7d3c83">ABT_cond</a>)p_cond_memory)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtain <code>ABT_cond</code> from <code><a class="el" href="../../d9/d38/structABT__cond__memory.html" title="A struct that can be converted to ABT_cond.">ABT_cond_memory</a></code>. </p>
+<p><code><a class="el" href="../../d9/d37/group__COND.html#gad1e8f9a31eb1badc2bea91ce14525125" title="Obtain ABT_cond from ABT_cond_memory.">ABT_COND_MEMORY_GET_HANDLE()</a></code> takes the pointer <code>p_cond_memory</code>, which points to <code><a class="el" href="../../d9/d38/structABT__cond__memory.html" title="A struct that can be converted to ABT_cond.">ABT_cond_memory</a></code>, and returns <code>ABT_cond</code> that internally uses <code>p_cond_memory</code> to store the data. If the memory pointed to by <code>p_cond_memory</code> is not properly initialized, it returns a corrupted condition variable.</p>
+<p><code>ABT_cond</code> obtained by <code><a class="el" href="../../d9/d37/group__COND.html#gad1e8f9a31eb1badc2bea91ce14525125" title="Obtain ABT_cond from ABT_cond_memory.">ABT_COND_MEMORY_GET_HANDLE()</a></code> may not be freed by <code><a class="el" href="../../d9/d37/group__COND.html#ga7475b6321893cd2ca5eb26b1b0b9ba35" title="Free a condition variable.">ABT_cond_free()</a></code>. The lifetime of <code>ABT_cond</code> obtained by <code><a class="el" href="../../d9/d37/group__COND.html#gad1e8f9a31eb1badc2bea91ce14525125" title="Obtain ABT_cond from ABT_cond_memory.">ABT_COND_MEMORY_GET_HANDLE()</a></code> is the same as that of <code><a class="el" href="../../d9/d38/structABT__cond__memory.html" title="A struct that can be converted to ABT_cond.">ABT_cond_memory</a></code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01228">1228</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga284def6c1a5999af708bb5c61e7d3c83"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga284def6c1a5999af708bb5c61e7d3c83">&#9670;&nbsp;</a></span>ABT_cond</h2>
@@ -141,11 +219,9 @@ Functions</h2></td></tr>
 
 <p>Broadcast a condition. </p>
 <p><code><a class="el" href="../../d9/d37/group__COND.html#gacf070ccdf98a54598455e2358781152b" title="Broadcast a condition.">ABT_cond_broadcast()</a></code> signals all waiters that are blocked on the condition variable <code>cond</code>. The caller does not need to be holding a mutex associated with <code>cond</code>. This routine has no effect if no waiter is currently blocked on <code>cond</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_COND</code> is returned if <code>cond</code> is <code>ABT_COND_NULL</code>.<br  />
- </dd></dl>
-<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -155,7 +231,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d4b/cond_8c_source.html#l00322">322</a> of file <a class="el" href="../../df/d4b/cond_8c_source.html">cond.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d4b/cond_8c_source.html#l00317">317</a> of file <a class="el" href="../../df/d4b/cond_8c_source.html">cond.c</a>.</p>
 
 </div>
 </div>
@@ -251,7 +327,7 @@ If <code>cond</code> is accessed after calling this routine, the results are und
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d4b/cond_8c_source.html#l00086">86</a> of file <a class="el" href="../../df/d4b/cond_8c_source.html">cond.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d4b/cond_8c_source.html#l00089">89</a> of file <a class="el" href="../../df/d4b/cond_8c_source.html">cond.c</a>.</p>
 
 </div>
 </div>
@@ -273,11 +349,9 @@ If <code>cond</code> is accessed after calling this routine, the results are und
 
 <p>Signal a condition. </p>
 <p><code><a class="el" href="../../d9/d37/group__COND.html#ga06d68833d6c8a6cd008013d40bb16a69" title="Signal a condition.">ABT_cond_signal()</a></code> signals another waiter that is blocked on the condition variable <code>cond</code>. Only one waiter is signaled and woken up. The caller does not need to be holding a mutex associated with <code>cond</code>. This routine has no effect if no waiter is currently blocked on <code>cond</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_COND</code> is returned if <code>cond</code> is <code>ABT_COND_NULL</code>.<br  />
- </dd></dl>
-<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -287,7 +361,7 @@ If <code>cond</code> is accessed after calling this routine, the results are und
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d4b/cond_8c_source.html#l00287">287</a> of file <a class="el" href="../../df/d4b/cond_8c_source.html">cond.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d4b/cond_8c_source.html#l00285">285</a> of file <a class="el" href="../../df/d4b/cond_8c_source.html">cond.c</a>.</p>
 
 </div>
 </div>
@@ -335,14 +409,13 @@ If <code>cond</code> is accessed after calling this routine, the results are und
 <p>This routine returns with <code>mutex</code> locked even if an error occurs.</p>
 <p>If <code>mutex</code> is a recursive mutex, <code>mutex</code> must be locked only once by the caller.</p>
 <dl class="section note"><dt>Note</dt><dd>Unlike other implementations of condition variables, a spurious wakeup never occurs.</dd></dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots does not need to be initialized. This routine may switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this caller is woken up by a signal.<br  />
 <code>ABT_ERR_COND_TIMEDOUT</code> is returned if the system time exceeds <code>abstime</code> before <code>cond</code> is signaled.<br  />
 <code>ABT_ERR_INV_COND</code> is returned if <code>cond</code> is <code>ABT_COND_NULL</code>.<br  />
 <code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> is <code>ABT_MUTEX_NULL</code>.<br  />
  </dd></dl>
-<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
-If <code>abstime</code> is <code>NULL</code>, the results are undefined.<br  />
+<dl class="section user"><dt>Undefined behavior</dt><dd>If <code>abstime</code> is <code>NULL</code>, the results are undefined.<br  />
 If <code>mutex</code> is not locked, the results are undefined.<br  />
 If <code>mutex</code> is a recursive mutex and the caller does not have ownership of <code>mutex</code>, the results are undefined.<br  />
 If <code>mutex</code> is a recursive mutex and has been locked more than once, the results are undefined.<br  />
@@ -358,7 +431,7 @@ If <code>mutex</code> is a recursive mutex and has been locked more than once, t
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d4b/cond_8c_source.html#l00226">226</a> of file <a class="el" href="../../df/d4b/cond_8c_source.html">cond.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d4b/cond_8c_source.html#l00227">227</a> of file <a class="el" href="../../df/d4b/cond_8c_source.html">cond.c</a>.</p>
 
 </div>
 </div>
@@ -403,15 +476,14 @@ If <code>mutex</code> is a recursive mutex and has been locked more than once, t
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a ULT context and an external thread context. Argobots must be initialized. This routine may switch the context of the calling ULT.<br  />
-<b>[Argobots 2.0]</b> This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a ULT context and an external thread context. Argobots does not need to be initialized. This routine may switch the context of the calling ULT.<br  />
+<b>[Argobots 2.0]</b> This routine can be called in any execution context. Argobots does not need to be initialized. This routine may switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_COND</code> is returned if <code>cond</code> is <code>ABT_COND_NULL</code>.<br  />
 <code>ABT_ERR_INV_MUTEX</code> is returned if <code>mutex</code> is <code>ABT_MUTEX_NULL</code>.<br  />
 <b>[Argobots 1.x]</b> <code>ABT_ERR_COND</code> is returned if the caller is a tasklet.<br  />
  </dd></dl>
-<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
-If <code>mutex</code> is not locked, the results are undefined.<br  />
+<dl class="section user"><dt>Undefined behavior</dt><dd>If <code>mutex</code> is not locked, the results are undefined.<br  />
 If <code>mutex</code> is a recursive mutex and the caller does not have ownership of <code>mutex</code>, the results are undefined.<br  />
 If <code>mutex</code> is a recursive mutex and has been locked more than once, the results are undefined.<br  />
  If <code>cond</code> has been associated with a mutex other than <code>mutex</code>, the results are undefined.<br  />
@@ -425,15 +497,27 @@ If <code>mutex</code> is a recursive mutex and has been locked more than once, t
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d4b/cond_8c_source.html#l00149">149</a> of file <a class="el" href="../../df/d4b/cond_8c_source.html">cond.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d4b/cond_8c_source.html#l00151">151</a> of file <a class="el" href="../../df/d4b/cond_8c_source.html">cond.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="agroup__COND_html_ga67b02f7813711cd45e6a6897d78ba0ff"><div class="ttname"><a href="../../d9/d37/group__COND.html#ga67b02f7813711cd45e6a6897d78ba0ff">ABT_cond_timedwait</a></div><div class="ttdeci">int ABT_cond_timedwait(ABT_cond cond, ABT_mutex mutex, const struct timespec *abstime) ABT_API_PUBLIC</div><div class="ttdoc">Wait on a condition variable with a timeout limit.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d4b/cond_8c_source.html#l00226">cond.c:226</a></div></div>
+<div class="ttc" id="agroup__COND_html_ga67b02f7813711cd45e6a6897d78ba0ff"><div class="ttname"><a href="../../d9/d37/group__COND.html#ga67b02f7813711cd45e6a6897d78ba0ff">ABT_cond_timedwait</a></div><div class="ttdeci">int ABT_cond_timedwait(ABT_cond cond, ABT_mutex mutex, const struct timespec *abstime) ABT_API_PUBLIC</div><div class="ttdoc">Wait on a condition variable with a timeout limit.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d4b/cond_8c_source.html#l00227">cond.c:227</a></div></div>
+<div class="ttc" id="agroup__MUTEX_html_ga47f82eaefe654cad03090b6e9c818533"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a></div><div class="ttdeci">struct ABT_mutex_opaque * ABT_mutex</div><div class="ttdoc">Mutex handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00942">abt.h:942</a></div></div>
+<div class="ttc" id="astructABT__cond__memory_html"><div class="ttname"><a href="../../d9/d38/structABT__cond__memory.html">ABT_cond_memory</a></div><div class="ttdoc">A struct that can be converted to ABT_cond.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01175">abt.h:1175</a></div></div>
+<div class="ttc" id="agroup__MUTEX_html_gaa04ef5552b54a247dd9aad207918d0f1"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#gaa04ef5552b54a247dd9aad207918d0f1">ABT_mutex_lock</a></div><div class="ttdeci">int ABT_mutex_lock(ABT_mutex mutex) ABT_API_PUBLIC</div><div class="ttdoc">Lock a mutex.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00181">mutex.c:181</a></div></div>
+<div class="ttc" id="agroup__COND_html_gad1e8f9a31eb1badc2bea91ce14525125"><div class="ttname"><a href="../../d9/d37/group__COND.html#gad1e8f9a31eb1badc2bea91ce14525125">ABT_COND_MEMORY_GET_HANDLE</a></div><div class="ttdeci">#define ABT_COND_MEMORY_GET_HANDLE(p_cond_memory)</div><div class="ttdoc">Obtain ABT_cond from ABT_cond_memory.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01228">abt.h:1228</a></div></div>
+<div class="ttc" id="agroup__MUTEX_html_ga4d446c1c9ab17ef1ba469a325bf3c768"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga4d446c1c9ab17ef1ba469a325bf3c768">ABT_MUTEX_MEMORY_GET_HANDLE</a></div><div class="ttdeci">#define ABT_MUTEX_MEMORY_GET_HANDLE(p_mutex_memory)</div><div class="ttdoc">Obtain ABT_mutex from ABT_mutex_memory.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01160">abt.h:1160</a></div></div>
+<div class="ttc" id="agroup__COND_html_ga5259b9161829998a5bef644b17635210"><div class="ttname"><a href="../../d9/d37/group__COND.html#ga5259b9161829998a5bef644b17635210">ABT_cond_wait</a></div><div class="ttdeci">int ABT_cond_wait(ABT_cond cond, ABT_mutex mutex) ABT_API_PUBLIC</div><div class="ttdoc">Wait on a condition variable.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d4b/cond_8c_source.html#l00151">cond.c:151</a></div></div>
+<div class="ttc" id="astructABT__mutex__memory_html"><div class="ttname"><a href="../../d2/dfe/structABT__mutex__memory.html">ABT_mutex_memory</a></div><div class="ttdoc">A struct that can be converted to ABT_mutex.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01086">abt.h:1086</a></div></div>
+<div class="ttc" id="agroup__COND_html_ga643bfbaef7230b7b7c568d5f469b4698"><div class="ttname"><a href="../../d9/d37/group__COND.html#ga643bfbaef7230b7b7c568d5f469b4698">ABT_COND_INITIALIZER</a></div><div class="ttdeci">#define ABT_COND_INITIALIZER</div><div class="ttdoc">Initialize ABT_cond_memory.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01211">abt.h:1211</a></div></div>
+<div class="ttc" id="agroup__COND_html_ga284def6c1a5999af708bb5c61e7d3c83"><div class="ttname"><a href="../../d9/d37/group__COND.html#ga284def6c1a5999af708bb5c61e7d3c83">ABT_cond</a></div><div class="ttdeci">struct ABT_cond_opaque * ABT_cond</div><div class="ttdoc">Condition variable handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00956">abt.h:956</a></div></div>
+<div class="ttc" id="agroup__MUTEX_html_ga6047a388bffa841fc0924bdb7f8c7670"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga6047a388bffa841fc0924bdb7f8c7670">ABT_mutex_unlock</a></div><div class="ttdeci">int ABT_mutex_unlock(ABT_mutex mutex) ABT_API_PUBLIC</div><div class="ttdoc">Unlock a mutex.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d62/mutex_8c_source.html#l00357">mutex.c:357</a></div></div>
+<div class="ttc" id="agroup__MUTEX_html_ga1c252e32b4f856e422678821afed443d"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga1c252e32b4f856e422678821afed443d">ABT_MUTEX_INITIALIZER</a></div><div class="ttdeci">#define ABT_MUTEX_INITIALIZER</div><div class="ttdoc">Initialize ABT_mutex_memory.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01116">abt.h:1116</a></div></div>
+<div class="ttc" id="agroup__COND_html_ga06d68833d6c8a6cd008013d40bb16a69"><div class="ttname"><a href="../../d9/d37/group__COND.html#ga06d68833d6c8a6cd008013d40bb16a69">ABT_cond_signal</a></div><div class="ttdeci">int ABT_cond_signal(ABT_cond cond) ABT_API_PUBLIC</div><div class="ttdoc">Signal a condition.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d4b/cond_8c_source.html#l00285">cond.c:285</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 6 2021 04:46:07 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 9 2021 03:10:14 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
