@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">f816757cfdc8e5fef84abc0c0bf0a654684af46a</span>
+   &#160;<span id="projectnumber">2892a0cc7e2babf3b5cb0f43c2796b2861550983</span>
    </div>
   </td>
  </tr>
@@ -82,7 +82,7 @@ Typedefs</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga05117645feeac2ddabcbe2bed296356c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd5/group__RWLOCK.html#ga05117645feeac2ddabcbe2bed296356c">ABT_rwlock_create</a> (<a class="el" href="../../d1/dd5/group__RWLOCK.html#ga36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a> *newrwlock)</td></tr>
-<tr class="memdesc:ga05117645feeac2ddabcbe2bed296356c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new readers-writer lock. <code><a class="el" href="../../d1/dd5/group__RWLOCK.html#ga05117645feeac2ddabcbe2bed296356c" title="Create a new readers-writer lock. ABT_rwlock_create() creates a new readers-writer lock and returns i...">ABT_rwlock_create()</a></code> creates a new readers-writer lock and returns its handle through <code>newrwlock</code>.  <a href="../../d1/dd5/group__RWLOCK.html#ga05117645feeac2ddabcbe2bed296356c">More...</a><br /></td></tr>
+<tr class="memdesc:ga05117645feeac2ddabcbe2bed296356c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new readers-writer lock.  <a href="../../d1/dd5/group__RWLOCK.html#ga05117645feeac2ddabcbe2bed296356c">More...</a><br /></td></tr>
 <tr class="separator:ga05117645feeac2ddabcbe2bed296356c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa58997242b0b4b933a55a671f33cdd68"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd5/group__RWLOCK.html#gaa58997242b0b4b933a55a671f33cdd68">ABT_rwlock_free</a> (<a class="el" href="../../d1/dd5/group__RWLOCK.html#ga36e9efdb079eb5d02a0217c3191c08ba">ABT_rwlock</a> *rwlock)</td></tr>
 <tr class="memdesc:gaa58997242b0b4b933a55a671f33cdd68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a readers-writer lock.  <a href="../../d1/dd5/group__RWLOCK.html#gaa58997242b0b4b933a55a671f33cdd68">More...</a><br /></td></tr>
@@ -115,7 +115,7 @@ Functions</h2></td></tr>
 <p>Readers-writer lock handle type. </p>
 <p>A NULL handle of this type is <code>ABT_RWLOCK_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00963">963</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00964">964</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -136,7 +136,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Create a new readers-writer lock. <code><a class="el" href="../../d1/dd5/group__RWLOCK.html#ga05117645feeac2ddabcbe2bed296356c" title="Create a new readers-writer lock. ABT_rwlock_create() creates a new readers-writer lock and returns i...">ABT_rwlock_create()</a></code> creates a new readers-writer lock and returns its handle through <code>newrwlock</code>. </p>
+<p>Create a new readers-writer lock. </p>
+<p><code><a class="el" href="../../d1/dd5/group__RWLOCK.html#ga05117645feeac2ddabcbe2bed296356c" title="Create a new readers-writer lock.">ABT_rwlock_create()</a></code> creates a new readers-writer lock and returns its handle through <code>newrwlock</code>.</p>
 <p><code>newrwlock</code> must be freed by <code><a class="el" href="../../d1/dd5/group__RWLOCK.html#gaa58997242b0b4b933a55a671f33cdd68" title="Free a readers-writer lock.">ABT_rwlock_free()</a></code> after its use.</p>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
@@ -163,7 +164,7 @@ If <code>newrwlock</code> is <code>NULL</code>, the results are undefined.<br  /
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d49/rwlock_8c_source.html#l00039">39</a> of file <a class="el" href="../../d5/d49/rwlock_8c_source.html">rwlock.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d49/rwlock_8c_source.html#l00040">40</a> of file <a class="el" href="../../d5/d49/rwlock_8c_source.html">rwlock.c</a>.</p>
 
 </div>
 </div>
@@ -203,7 +204,7 @@ If <code>rwlock</code> is accessed after calling this routine, the results are u
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d49/rwlock_8c_source.html#l00086">86</a> of file <a class="el" href="../../d5/d49/rwlock_8c_source.html">rwlock.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d49/rwlock_8c_source.html#l00087">87</a> of file <a class="el" href="../../d5/d49/rwlock_8c_source.html">rwlock.c</a>.</p>
 
 </div>
 </div>
@@ -224,19 +225,19 @@ If <code>rwlock</code> is accessed after calling this routine, the results are u
 </div><div class="memdoc">
 
 <p>Lock a readers-writer lock as a reader. </p>
-<p><code><a class="el" href="../../d1/dd5/group__RWLOCK.html#gaa868b2a29f6643f950c6c95c5a73d122" title="Lock a readers-writer lock as a reader.">ABT_rwlock_rdlock()</a></code> locks the readers-writer lock <code>rwlock</code> as a reader. If this routine successfully returns, the caller acquires <code>rwlock</code>. If <code>rwlock</code> has been locked by a writer, the caller will be blocked on <code>rwlock</code> until <code>rwlock</code> becomes available.</p>
+<p><code><a class="el" href="../../d1/dd5/group__RWLOCK.html#gaa868b2a29f6643f950c6c95c5a73d122" title="Lock a readers-writer lock as a reader.">ABT_rwlock_rdlock()</a></code> locks the readers-writer lock <code>rwlock</code> as a reader. If this routine successfully returns, the caller acquires <code>rwlock</code>. If <code>rwlock</code> has been locked by a writer, the caller is blocked on <code>rwlock</code> until <code>rwlock</code> becomes available.</p>
 <p><code>rwlock</code> may be acquired by multiple readers.</p>
 <dl class="section note"><dt>Note</dt><dd>If <code>rwlock</code> is locked by multiple readers, <code><a class="el" href="../../d1/dd5/group__RWLOCK.html#ga1e76b76719d4b518761418e081d9a902" title="Unlock a readers-writer lock.">ABT_rwlock_unlock()</a></code> must be called as many as the number of readers (i.e., the number of calls of <code><a class="el" href="../../d1/dd5/group__RWLOCK.html#gaa868b2a29f6643f950c6c95c5a73d122" title="Lock a readers-writer lock as a reader.">ABT_rwlock_rdlock()</a></code>) to make <code>rwlock</code> available to a writer.</dd></dl>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
-<dd><b>[Argobots 1.x]</b> If a tasklet calls this routine, <code>rwlock</code> is returned.<br  />
+<dd><b>[Argobots 1.x]</b> If a tasklet calls this routine, <code>ABT_ERR_RWLOCK</code> is returned.<br  />
  <b>[Argobots 2.0]</b> A tasklet may call this routine. <dl class="section user">
 <dt>Rationale</dt>
 <dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a ULT context and an external thread context. Argobots must be initialized. This routine may switch the context of the calling ULT if <code>rwlock</code> is locked by a writer. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.<br  />
+<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a ULT context or an external thread context. Argobots must be initialized. This routine may switch the context of the calling ULT if <code>rwlock</code> is locked by a writer. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.<br  />
 <b>[Argobots 2.0]</b> This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT if <code>rwlock</code> is locked by a writer. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_RWLOCK</code> is returned if <code>rwlock</code> is <code>ABT_RWLOCK_NULL</code>.<br  />
@@ -252,7 +253,7 @@ If <code>rwlock</code> is accessed after calling this routine, the results are u
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d49/rwlock_8c_source.html#l00137">137</a> of file <a class="el" href="../../d5/d49/rwlock_8c_source.html">rwlock.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d49/rwlock_8c_source.html#l00138">138</a> of file <a class="el" href="../../d5/d49/rwlock_8c_source.html">rwlock.c</a>.</p>
 
 </div>
 </div>
@@ -274,6 +275,7 @@ If <code>rwlock</code> is accessed after calling this routine, the results are u
 
 <p>Unlock a readers-writer lock. </p>
 <p><code><a class="el" href="../../d1/dd5/group__RWLOCK.html#ga1e76b76719d4b518761418e081d9a902" title="Unlock a readers-writer lock.">ABT_rwlock_unlock()</a></code> unlocks the readers-writer lock <code>rwlock</code>.</p>
+<dl class="section note"><dt>Note</dt><dd>Both readers and a writer can call this routine to unlock <code>rwlock</code>.</dd></dl>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT if a waiter is waiting on <code>mutex</code>. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_RWLOCK</code> is returned if <code>rwlock</code> is <code>ABT_RWLOCK_NULL</code>.<br  />
@@ -289,7 +291,7 @@ If <code>rwlock</code> is not locked, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d49/rwlock_8c_source.html#l00249">249</a> of file <a class="el" href="../../d5/d49/rwlock_8c_source.html">rwlock.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d49/rwlock_8c_source.html#l00253">253</a> of file <a class="el" href="../../d5/d49/rwlock_8c_source.html">rwlock.c</a>.</p>
 
 </div>
 </div>
@@ -310,18 +312,18 @@ If <code>rwlock</code> is not locked, the results are undefined.<br  />
 </div><div class="memdoc">
 
 <p>Lock a readers-writer lock as a writer. </p>
-<p><code><a class="el" href="../../d1/dd5/group__RWLOCK.html#gaacd46e0fbc42d707d18fe3f497654992" title="Lock a readers-writer lock as a writer.">ABT_rwlock_wrlock()</a></code> locks the readers-writer lock <code>rwlock</code> as a writer. If this routine successfully returns, the caller acquires <code>rwlock</code>. If <code>rwlock</code> has been locked by either a reader or a writer, the caller will be blocked on <code>rwlock</code> until <code>rwlock</code> becomes available.</p>
-<p><code>rwlock</code> may be acquired by a single writer.</p>
+<p><code><a class="el" href="../../d1/dd5/group__RWLOCK.html#gaacd46e0fbc42d707d18fe3f497654992" title="Lock a readers-writer lock as a writer.">ABT_rwlock_wrlock()</a></code> locks the readers-writer lock <code>rwlock</code> as a writer. If this routine successfully returns, the caller acquires <code>rwlock</code>. If <code>rwlock</code> has been locked by either a reader or another writer, the caller is blocked on <code>rwlock</code> until <code>rwlock</code> becomes available.</p>
+<p><code>rwlock</code> may be acquired by only a single writer.</p>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
-<dd><b>[Argobots 1.x]</b> If a tasklet calls this routine, <code>rwlock</code> is returned.<br  />
+<dd><b>[Argobots 1.x]</b> If a tasklet calls this routine, <code>ABT_ERR_RWLOCK</code> is returned.<br  />
  <b>[Argobots 2.0]</b> A tasklet may call this routine. <dl class="section user">
 <dt>Rationale</dt>
 <dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a ULT context and an external thread context. Argobots must be initialized. This routine may switch the context of the calling ULT if <code>rwlock</code> is locked. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.<br  />
+<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a ULT context or an external thread context. Argobots must be initialized. This routine may switch the context of the calling ULT if <code>rwlock</code> is locked. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.<br  />
 <b>[Argobots 2.0]</b> This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT if <code>rwlock</code> is locked. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_RWLOCK</code> is returned if <code>rwlock</code> is <code>ABT_RWLOCK_NULL</code>.<br  />
@@ -337,14 +339,14 @@ If <code>rwlock</code> is not locked, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d49/rwlock_8c_source.html#l00198">198</a> of file <a class="el" href="../../d5/d49/rwlock_8c_source.html">rwlock.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d49/rwlock_8c_source.html#l00199">199</a> of file <a class="el" href="../../d5/d49/rwlock_8c_source.html">rwlock.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 10 2021 03:10:12 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 12 2021 03:10:07 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

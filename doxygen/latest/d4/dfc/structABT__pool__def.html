@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">f816757cfdc8e5fef84abc0c0bf0a654684af46a</span>
+   &#160;<span id="projectnumber">2892a0cc7e2babf3b5cb0f43c2796b2861550983</span>
    </div>
   </td>
  </tr>
@@ -146,13 +146,13 @@ Data Fields</h2></td></tr>
 <tr class="memdesc:a9b0af7ff3ea24338bcdea32488a3c249"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that frees a pool.  <a href="../../d4/dfc/structABT__pool__def.html#a9b0af7ff3ea24338bcdea32488a3c249">More...</a><br /></td></tr>
 <tr class="separator:a9b0af7ff3ea24338bcdea32488a3c249"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a471950273f0af2b5e1cf039bc205c97d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d7d/abt_8h.html#aeefb6b113ddac034f0e67caf8d42c19f">ABT_pool_print_all_fn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfc/structABT__pool__def.html#a471950273f0af2b5e1cf039bc205c97d">p_print_all</a></td></tr>
-<tr class="memdesc:a471950273f0af2b5e1cf039bc205c97d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that applies a function to all work units in a pool.  <a href="../../d4/dfc/structABT__pool__def.html#a471950273f0af2b5e1cf039bc205c97d">More...</a><br /></td></tr>
+<tr class="memdesc:a471950273f0af2b5e1cf039bc205c97d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that applies a user-given function to all work units in a pool.  <a href="../../d4/dfc/structABT__pool__def.html#a471950273f0af2b5e1cf039bc205c97d">More...</a><br /></td></tr>
 <tr class="separator:a471950273f0af2b5e1cf039bc205c97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A struct that defines a pool. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01434">1434</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01424">1424</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a9652caf35cbf3cfb4c20c78542fb429b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9652caf35cbf3cfb4c20c78542fb429b">&#9670;&nbsp;</a></span>access</h2>
@@ -167,18 +167,18 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Access type. </p>
-<p>This value is used to determine a value returned by <code><a class="el" href="../../d9/d52/group__POOL.html#ga6089256f32498ee058e6df9478f95574" title="Get an access type of a pool.">ABT_pool_get_access()</a></code>. The Argobots assumes all pools can be accessed by any ULT, tasklet, or external thread. It is the user's responsibility to manage the access to pools.</p>
+<p>This value is used to determine a value returned by <code><a class="el" href="../../d9/d52/group__POOL.html#ga6089256f32498ee058e6df9478f95574" title="Get an access type of a pool.">ABT_pool_get_access()</a></code>. Argobots assumes all pools can be accessed by any ULTs, tasklets, and external threads. It is the user's responsibility to manage the access to pools.</p>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
-<dd><b>[Argobots 1.0]</b> The Argobots runtime respects an access type of a pool and returns an error if possible if a pool access violation happens regarding an access type of a pool.<br  />
- <b>[Argobots 1.1]</b> The Argobots runtime does not check an access type of a pool. If a pool access violation happens regarding an access type of a pool, the results are undefined. <dl class="section user">
+<dd><b>[Argobots 1.0]</b> The Argobots runtime respects an access type of a pool and returns an error in a best-effort basis if a pool access violation happens regarding an access type of a pool.<br  />
+ <b>[Argobots 1.1]</b> The Argobots runtime does not check an access type of a pool. If a pool access violation happens regarding an access type of a pool, the results of this routine are undefined. <dl class="section user">
 <dt>Rationale</dt>
-<dd>This access type was used for access violation error check. This check will be removed in Argobots 1.1 since correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
+<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without an error if it is no simultaneously accessed although such a program is, strictly speaking, non-conforming. Such an access violation error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Existing programs do not work if access violation is strictly checked. From Argobots 1.1, it is the user's responsibility to manage the access to pools. </dd>
 </dl>
 </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01447">1447</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01437">1437</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -199,7 +199,7 @@ Data Fields</h2></td></tr>
 <p><code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a9b0af7ff3ea24338bcdea32488a3c249" title="Function that frees a pool.">p_free()</a></code> is optional, so the user may set <code>p_free</code> to <code>NULL</code>.</p>
 <p>The caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a9b0af7ff3ea24338bcdea32488a3c249" title="Function that frees a pool.">p_free()</a></code> is undefined, so a program that relies on the caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a9b0af7ff3ea24338bcdea32488a3c249" title="Function that frees a pool.">p_free()</a></code> is non-conforming. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01678">1678</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01670">1670</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -218,10 +218,10 @@ Data Fields</h2></td></tr>
 <p>Function that returns a work unit. </p>
 <p><code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a9dab7ea3f52344ffbac7d7b361d861bb" title="Function that returns a work unit.">p_get_size()</a></code> returns the size of the pool <code>pool</code>. The Argobots assumes that the size is the number of work units in <code>pool</code>.</p>
 <dl class="section note"><dt>Note</dt><dd>Specifically, the current Argobots treats a pool whose size is zero as an empty pool.</dd></dl>
-<p><code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a348d6bbedb37008f35fe6f3b140e8885" title="Function that frees a work unit.">u_free()</a></code> is not optional, so the user must implement this function.</p>
+<p><code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a9dab7ea3f52344ffbac7d7b361d861bb" title="Function that returns a work unit.">p_get_size()</a></code> is not optional, so the user must implement this function.</p>
 <p>The caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a9dab7ea3f52344ffbac7d7b361d861bb" title="Function that returns a work unit.">p_get_size()</a></code> is undefined, so a program that relies on the caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a9dab7ea3f52344ffbac7d7b361d861bb" title="Function that returns a work unit.">p_get_size()</a></code> is non-conforming. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01580">1580</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01572">1572</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -242,7 +242,7 @@ Data Fields</h2></td></tr>
 <p><code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a5c78948ca29cd89d18eb4c9363730349" title="Function that frees a work unit.">p_init()</a></code> is optional, so the user may set <code>p_init</code> to <code>NULL</code>.</p>
 <p>The caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a5c78948ca29cd89d18eb4c9363730349" title="Function that frees a work unit.">p_init()</a></code> is undefined, so a program that relies on the caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a5c78948ca29cd89d18eb4c9363730349" title="Function that frees a work unit.">p_init()</a></code> is non-conforming. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01563">1563</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01554">1554</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -263,7 +263,7 @@ Data Fields</h2></td></tr>
 <p><code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a0728cf722030dbd47f03fd29ab451c3f" title="Function that pops a work unit from a pool.">p_pop()</a></code> is not optional, so the user must implement this function.</p>
 <p>The caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a0728cf722030dbd47f03fd29ab451c3f" title="Function that pops a work unit from a pool.">p_pop()</a></code> is undefined, so a program that relies on the caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a0728cf722030dbd47f03fd29ab451c3f" title="Function that pops a work unit from a pool.">p_pop()</a></code> is non-conforming. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01607">1607</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01599">1599</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -285,10 +285,10 @@ Data Fields</h2></td></tr>
 <p>The caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a62a2c9b1efe113f4648a783eb6b5653d" title="Function that pops a work unit from a pool with wait.">p_pop_timedwait()</a></code> is undefined, so a program that relies on the caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a62a2c9b1efe113f4648a783eb6b5653d" title="Function that pops a work unit from a pool with wait.">p_pop_timedwait()</a></code> is non-conforming.</p>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
-<dd><b>[Argobots 2.0]</b> <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a62a2c9b1efe113f4648a783eb6b5653d" title="Function that pops a work unit from a pool with wait.">p_pop_timedwait()</a></code> is deprecated. The user should use <code>p_pop_wait()</code> instead. </dd>
+<dd><b>[Argobots 2.0]</b> <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a62a2c9b1efe113f4648a783eb6b5653d" title="Function that pops a work unit from a pool with wait.">p_pop_timedwait()</a></code> is deprecated and replaced by <code>p_pop_wait()</code>. </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01651">1651</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01643">1643</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -304,12 +304,12 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Function that applies a function to all work units in a pool. </p>
-<p><code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a471950273f0af2b5e1cf039bc205c97d" title="Function that applies a function to all work units in a pool.">p_print_all()</a></code> applies <code>print_f</code> to all work units in the pool <code>pool</code>. <code>print_f()</code> is called with the user-given argument <code>arg</code> and the work unit. The caller guarantees that <code>print_f()</code> does not modify the state of <code>pool</code> and work units in <code>pool</code>.</p>
-<p><code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a471950273f0af2b5e1cf039bc205c97d" title="Function that applies a function to all work units in a pool.">p_print_all()</a></code> is optional, so the user may set <code>p_print_all</code> to <code>NULL</code>.</p>
-<p>The caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a471950273f0af2b5e1cf039bc205c97d" title="Function that applies a function to all work units in a pool.">p_print_all()</a></code> is undefined, so a program that relies on the caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a471950273f0af2b5e1cf039bc205c97d" title="Function that applies a function to all work units in a pool.">p_print_all()</a></code> is non-conforming. </p>
+<p>Function that applies a user-given function to all work units in a pool. </p>
+<p><code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a471950273f0af2b5e1cf039bc205c97d" title="Function that applies a user-given function to all work units in a pool.">p_print_all()</a></code> applies <code>print_f</code> to all work units in the pool <code>pool</code>. <code>print_f()</code> is called with the user-given argument <code>arg</code> and the work unit handle. The caller guarantees that <code>print_f()</code> does not modify the states of <code>pool</code> and work units in <code>pool</code>.</p>
+<p><code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a471950273f0af2b5e1cf039bc205c97d" title="Function that applies a user-given function to all work units in a pool.">p_print_all()</a></code> is optional, so the user may set <code>p_print_all</code> to <code>NULL</code>.</p>
+<p>The caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a471950273f0af2b5e1cf039bc205c97d" title="Function that applies a user-given function to all work units in a pool.">p_print_all()</a></code> is undefined, so a program that relies on the caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a471950273f0af2b5e1cf039bc205c97d" title="Function that applies a user-given function to all work units in a pool.">p_print_all()</a></code> is non-conforming. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01695">1695</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01688">1688</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -326,11 +326,11 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Function that pushes a work unit to a pool. </p>
-<p><code><a class="el" href="../../d4/dfc/structABT__pool__def.html#aa2116b16f4ec4fa5a70b29dae3de7f22" title="Function that pushes a work unit to a pool.">p_push()</a></code> pushes the work unit <code>unit</code> to the pool <code>pool</code>. <code>unit</code> must be stored in <code>pool</code> and can be popped by its pop functions (e.g., <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a0728cf722030dbd47f03fd29ab451c3f" title="Function that pops a work unit from a pool.">p_pop()</a></code>) later.</p>
+<p><code><a class="el" href="../../d4/dfc/structABT__pool__def.html#aa2116b16f4ec4fa5a70b29dae3de7f22" title="Function that pushes a work unit to a pool.">p_push()</a></code> pushes the work unit <code>unit</code> to the pool <code>pool</code>. <code>unit</code> must be stored in <code>pool</code> and able to be popped by its pop functions (e.g., <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a0728cf722030dbd47f03fd29ab451c3f" title="Function that pops a work unit from a pool.">p_pop()</a></code>) later.</p>
 <p><code><a class="el" href="../../d4/dfc/structABT__pool__def.html#aa2116b16f4ec4fa5a70b29dae3de7f22" title="Function that pushes a work unit to a pool.">p_push()</a></code> is not optional, so the user must implement this function.</p>
 <p>The caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#aa2116b16f4ec4fa5a70b29dae3de7f22" title="Function that pushes a work unit to a pool.">p_push()</a></code> is undefined, so a program that relies on the caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#aa2116b16f4ec4fa5a70b29dae3de7f22" title="Function that pushes a work unit to a pool.">p_push()</a></code> is non-conforming. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01594">1594</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01586">1586</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -351,7 +351,7 @@ Data Fields</h2></td></tr>
 <p><code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a0283d45939d963553295be918d3351f0" title="Function that removes a work unit from a pool.">p_remove()</a></code> is optional, so the user may set <code>p_remove</code> to <code>NULL</code>.</p>
 <p>The caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a0283d45939d963553295be918d3351f0" title="Function that removes a work unit from a pool.">p_remove()</a></code> is undefined, so a program that relies on the caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a0283d45939d963553295be918d3351f0" title="Function that removes a work unit from a pool.">p_remove()</a></code> is non-conforming. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01665">1665</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01657">1657</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -379,7 +379,7 @@ Data Fields</h2></td></tr>
 </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01534">1534</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01524">1524</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -409,7 +409,7 @@ Data Fields</h2></td></tr>
 </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01524">1524</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01514">1514</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -426,11 +426,11 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Function that frees a work unit. </p>
-<p><code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a348d6bbedb37008f35fe6f3b140e8885" title="Function that frees a work unit.">u_free()</a></code> frees the work unit <code>unit</code> that is created by <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#ac997e04436a000841e8aeaf8e828a191" title="Function that creates an ABT_unit handle that is associated with an ABT_thread handle.">u_create_from_thread()</a></code>. Its associated entity (i.e., <code>ABT_thread</code>) is freed by the Argobots runtime. <code>unit</code> is neither pointing to <code>ABT_UNIT_NULL</code> nor <code>NULL</code>. The user may modify a value of <code>unit</code>.</p>
+<p><code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a348d6bbedb37008f35fe6f3b140e8885" title="Function that frees a work unit.">u_free()</a></code> frees the work unit <code>unit</code> that is created by <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#ac997e04436a000841e8aeaf8e828a191" title="Function that creates an ABT_unit handle that is associated with an ABT_thread handle.">u_create_from_thread()</a></code>. Its associated entity (i.e., <code>ABT_thread</code>) is freed by the Argobots runtime. Neither <code>NULL</code> nor a pointer pointing to <code>ABT_UNIT_NULL</code> is passed as <code>unit</code> to this function. <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a348d6bbedb37008f35fe6f3b140e8885" title="Function that frees a work unit.">u_free()</a></code> may modify the value pointed to be <code>unit</code>.</p>
 <p><code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a348d6bbedb37008f35fe6f3b140e8885" title="Function that frees a work unit.">u_free()</a></code> is not optional, so the user must implement this function.</p>
 <p>The caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a348d6bbedb37008f35fe6f3b140e8885" title="Function that frees a work unit.">u_free()</a></code> is undefined, so a program that relies on the caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a348d6bbedb37008f35fe6f3b140e8885" title="Function that frees a work unit.">u_free()</a></code> is non-conforming. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01549">1549</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01540">1540</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -458,7 +458,7 @@ Data Fields</h2></td></tr>
 </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01486">1486</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01476">1476</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -488,7 +488,7 @@ Data Fields</h2></td></tr>
 </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01476">1476</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01466">1466</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -516,7 +516,7 @@ Data Fields</h2></td></tr>
 </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01457">1457</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01447">1447</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -537,7 +537,7 @@ Data Fields</h2></td></tr>
 <p><code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a786dadf56c75898d62632178fd3553e1" title="Function that returns whether a work unit is in its associated pool or not.">u_is_in_pool()</a></code> is optional, so the user may set <code>u_is_in_pool</code> to <code>NULL</code>. The Argobots does not call <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a786dadf56c75898d62632178fd3553e1" title="Function that returns whether a work unit is in its associated pool or not.">u_is_in_pool()</a></code> if it is not supported.</p>
 <p>The caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a786dadf56c75898d62632178fd3553e1" title="Function that returns whether a work unit is in its associated pool or not.">u_is_in_pool()</a></code> is undefined, so a program that relies on the caller of <code><a class="el" href="../../d4/dfc/structABT__pool__def.html#a786dadf56c75898d62632178fd3553e1" title="Function that returns whether a work unit is in its associated pool or not.">u_is_in_pool()</a></code> is non-conforming. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01504">1504</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01494">1494</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -547,7 +547,7 @@ Data Fields</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 10 2021 03:10:12 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 12 2021 03:10:08 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">f816757cfdc8e5fef84abc0c0bf0a654684af46a</span>
+   &#160;<span id="projectnumber">2892a0cc7e2babf3b5cb0f43c2796b2861550983</span>
    </div>
   </td>
  </tr>
@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>This group is for User-level Thread (ULT).  
+<p>This group is for User-level Thread (ULT). A ULT is a work unit that can yield.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -129,7 +129,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga2a23f817ff7a6e7dc0ec95b474fd7404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminate a calling ULT.  <a href="../../d0/d6d/group__ULT.html#ga2a23f817ff7a6e7dc0ec95b474fd7404">More...</a><br /></td></tr>
 <tr class="separator:ga2a23f817ff7a6e7dc0ec95b474fd7404"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga218d94229458c2200f188e5ed2705afe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6d/group__ULT.html#ga218d94229458c2200f188e5ed2705afe">ABT_thread_cancel</a> (<a class="el" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a> thread)</td></tr>
-<tr class="memdesc:ga218d94229458c2200f188e5ed2705afe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a termination request to a work unit.  <a href="../../d0/d6d/group__ULT.html#ga218d94229458c2200f188e5ed2705afe">More...</a><br /></td></tr>
+<tr class="memdesc:ga218d94229458c2200f188e5ed2705afe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a cancellation request to a work unit.  <a href="../../d0/d6d/group__ULT.html#ga218d94229458c2200f188e5ed2705afe">More...</a><br /></td></tr>
 <tr class="separator:ga218d94229458c2200f188e5ed2705afe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga994a8e23d9c6ace41779d8ce2585ae88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6d/group__ULT.html#ga994a8e23d9c6ace41779d8ce2585ae88">ABT_thread_self</a> (<a class="el" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a> *thread)</td></tr>
 <tr class="memdesc:ga994a8e23d9c6ace41779d8ce2585ae88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the calling work unit.  <a href="../../d0/d6d/group__ULT.html#ga994a8e23d9c6ace41779d8ce2585ae88">More...</a><br /></td></tr>
@@ -153,7 +153,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga15349fa8b9aa7e6f673f48e74ae75fc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set an associated pool for the target work unit.  <a href="../../d0/d6d/group__ULT.html#ga15349fa8b9aa7e6f673f48e74ae75fc8">More...</a><br /></td></tr>
 <tr class="separator:ga15349fa8b9aa7e6f673f48e74ae75fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1fa419c69e734d2017e8238d438a216a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6d/group__ULT.html#ga1fa419c69e734d2017e8238d438a216a">ABT_thread_yield_to</a> (<a class="el" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a> thread)</td></tr>
-<tr class="memdesc:ga1fa419c69e734d2017e8238d438a216a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yield the calling ULT to the specific ULT.  <a href="../../d0/d6d/group__ULT.html#ga1fa419c69e734d2017e8238d438a216a">More...</a><br /></td></tr>
+<tr class="memdesc:ga1fa419c69e734d2017e8238d438a216a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yield the calling ULT to another ULT.  <a href="../../d0/d6d/group__ULT.html#ga1fa419c69e734d2017e8238d438a216a">More...</a><br /></td></tr>
 <tr class="separator:ga1fa419c69e734d2017e8238d438a216a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga177c58ca9094dc7feeb93521e30ff2aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6d/group__ULT.html#ga177c58ca9094dc7feeb93521e30ff2aa">ABT_thread_yield</a> (void)</td></tr>
 <tr class="memdesc:ga177c58ca9094dc7feeb93521e30ff2aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yield the calling ULT to its parent ULT.  <a href="../../d0/d6d/group__ULT.html#ga177c58ca9094dc7feeb93521e30ff2aa">More...</a><br /></td></tr>
@@ -171,10 +171,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga0414ecaedd36796a643e055bebafab99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request a migration of a work unit to a specific pool.  <a href="../../d0/d6d/group__ULT.html#ga0414ecaedd36796a643e055bebafab99">More...</a><br /></td></tr>
 <tr class="separator:ga0414ecaedd36796a643e055bebafab99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa2646bfbabf0df851f964ae38a92804a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6d/group__ULT.html#gaa2646bfbabf0df851f964ae38a92804a">ABT_thread_migrate</a> (<a class="el" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a> thread)</td></tr>
-<tr class="memdesc:gaa2646bfbabf0df851f964ae38a92804a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request a migration of a work unit to any available execution streams.  <a href="../../d0/d6d/group__ULT.html#gaa2646bfbabf0df851f964ae38a92804a">More...</a><br /></td></tr>
+<tr class="memdesc:gaa2646bfbabf0df851f964ae38a92804a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request a migration of a work unit to any available execution stream.  <a href="../../d0/d6d/group__ULT.html#gaa2646bfbabf0df851f964ae38a92804a">More...</a><br /></td></tr>
 <tr class="separator:gaa2646bfbabf0df851f964ae38a92804a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab6379e8104b5f37a3a0a552a6973d613"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6d/group__ULT.html#gab6379e8104b5f37a3a0a552a6973d613">ABT_thread_set_callback</a> (<a class="el" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a> thread, void(*cb_func)(<a class="el" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a> thread, void *cb_arg), void *cb_arg)</td></tr>
-<tr class="memdesc:gab6379e8104b5f37a3a0a552a6973d613"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback function in a work unit.  <a href="../../d0/d6d/group__ULT.html#gab6379e8104b5f37a3a0a552a6973d613">More...</a><br /></td></tr>
+<tr class="memdesc:gab6379e8104b5f37a3a0a552a6973d613"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a callback function in a work unit.  <a href="../../d0/d6d/group__ULT.html#gab6379e8104b5f37a3a0a552a6973d613">More...</a><br /></td></tr>
 <tr class="separator:gab6379e8104b5f37a3a0a552a6973d613"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5e29ca342b00b88a18303f1c4a09905b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6d/group__ULT.html#ga5e29ca342b00b88a18303f1c4a09905b">ABT_thread_set_migratable</a> (<a class="el" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a> thread, <a class="el" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> migratable)</td></tr>
 <tr class="memdesc:ga5e29ca342b00b88a18303f1c4a09905b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the migratability in a work unit.  <a href="../../d0/d6d/group__ULT.html#ga5e29ca342b00b88a18303f1c4a09905b">More...</a><br /></td></tr>
@@ -198,23 +198,23 @@ Functions</h2></td></tr>
 <tr class="memdesc:gaa31b2d9339e8675680d9e776108c9681"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get ID of a work unit.  <a href="../../d0/d6d/group__ULT.html#gaa31b2d9339e8675680d9e776108c9681">More...</a><br /></td></tr>
 <tr class="separator:gaa31b2d9339e8675680d9e776108c9681"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5048aacb8a6d3c91ddaf6c933d008415"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6d/group__ULT.html#ga5048aacb8a6d3c91ddaf6c933d008415">ABT_thread_set_arg</a> (<a class="el" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a> thread, void *arg)</td></tr>
-<tr class="memdesc:ga5048aacb8a6d3c91ddaf6c933d008415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set an argument for a work unit function of a work unit.  <a href="../../d0/d6d/group__ULT.html#ga5048aacb8a6d3c91ddaf6c933d008415">More...</a><br /></td></tr>
+<tr class="memdesc:ga5048aacb8a6d3c91ddaf6c933d008415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set an argument for a work-unit function of a work unit.  <a href="../../d0/d6d/group__ULT.html#ga5048aacb8a6d3c91ddaf6c933d008415">More...</a><br /></td></tr>
 <tr class="separator:ga5048aacb8a6d3c91ddaf6c933d008415"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga03e903850717ed699af35989360bedd8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6d/group__ULT.html#ga03e903850717ed699af35989360bedd8">ABT_thread_get_arg</a> (<a class="el" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a> thread, void **arg)</td></tr>
-<tr class="memdesc:ga03e903850717ed699af35989360bedd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve an argument for a work unit function of a work unit.  <a href="../../d0/d6d/group__ULT.html#ga03e903850717ed699af35989360bedd8">More...</a><br /></td></tr>
+<tr class="memdesc:ga03e903850717ed699af35989360bedd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve an argument for a work-unit function of a work unit.  <a href="../../d0/d6d/group__ULT.html#ga03e903850717ed699af35989360bedd8">More...</a><br /></td></tr>
 <tr class="separator:ga03e903850717ed699af35989360bedd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadea3971dbd47e4b45e52baa615eb1299"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6d/group__ULT.html#gadea3971dbd47e4b45e52baa615eb1299">ABT_thread_set_specific</a> (<a class="el" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a> thread, <a class="el" href="../../d0/d5e/group__KEY.html#ga3b2706b0ac83a0eed1409988a42d811c">ABT_key</a> key, void *value)</td></tr>
-<tr class="memdesc:gadea3971dbd47e4b45e52baa615eb1299"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a value with a work-unit-specific key in a work unit.  <a href="../../d0/d6d/group__ULT.html#gadea3971dbd47e4b45e52baa615eb1299">More...</a><br /></td></tr>
+<tr class="memdesc:gadea3971dbd47e4b45e52baa615eb1299"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a value with a work-unit-specific data key in a work unit.  <a href="../../d0/d6d/group__ULT.html#gadea3971dbd47e4b45e52baa615eb1299">More...</a><br /></td></tr>
 <tr class="separator:gadea3971dbd47e4b45e52baa615eb1299"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf95833ed8d21fedcf730e392f75b5bfd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6d/group__ULT.html#gaf95833ed8d21fedcf730e392f75b5bfd">ABT_thread_get_specific</a> (<a class="el" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a> thread, <a class="el" href="../../d0/d5e/group__KEY.html#ga3b2706b0ac83a0eed1409988a42d811c">ABT_key</a> key, void **value)</td></tr>
-<tr class="memdesc:gaf95833ed8d21fedcf730e392f75b5bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a value associated with a work-unit-specific key in a work unit.  <a href="../../d0/d6d/group__ULT.html#gaf95833ed8d21fedcf730e392f75b5bfd">More...</a><br /></td></tr>
+<tr class="memdesc:gaf95833ed8d21fedcf730e392f75b5bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a value associated with a work-unit-specific data key in a work unit.  <a href="../../d0/d6d/group__ULT.html#gaf95833ed8d21fedcf730e392f75b5bfd">More...</a><br /></td></tr>
 <tr class="separator:gaf95833ed8d21fedcf730e392f75b5bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5e8093bc862fc9d54e215fd2a72ddf02"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6d/group__ULT.html#ga5e8093bc862fc9d54e215fd2a72ddf02">ABT_thread_get_attr</a> (<a class="el" href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a> thread, <a class="el" href="../../d0/d6d/group__ULT.html#ga49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a> *attr)</td></tr>
 <tr class="memdesc:ga5e8093bc862fc9d54e215fd2a72ddf02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get attributes of a work unit.  <a href="../../d0/d6d/group__ULT.html#ga5e8093bc862fc9d54e215fd2a72ddf02">More...</a><br /></td></tr>
 <tr class="separator:ga5e8093bc862fc9d54e215fd2a72ddf02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>This group is for User-level Thread (ULT). </p>
+<p>This group is for User-level Thread (ULT). A ULT is a work unit that can yield. </p>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga186008e05c04170eed9ac74808619717"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga186008e05c04170eed9ac74808619717">&#9670;&nbsp;</a></span>ABT_thread</h2>
@@ -240,7 +240,7 @@ Functions</h2></td></tr>
 </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00887">887</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00888">888</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -259,7 +259,7 @@ Functions</h2></td></tr>
 <p>ULT attribute handle type. </p>
 <p>A NULL handle of this type is <code>ABT_THREAD_ATTR_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00894">894</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00895">895</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -278,7 +278,7 @@ Functions</h2></td></tr>
 <p>Work unit ID type. </p>
 <p>This type is an alias of <code>ABT_unit_id</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00915">915</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00916">916</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -296,7 +296,7 @@ Functions</h2></td></tr>
 
 <p>Work unit state type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00899">899</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00900">900</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -346,23 +346,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Send a termination request to a work unit. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga218d94229458c2200f188e5ed2705afe" title="Send a termination request to a work unit.">ABT_thread_cancel()</a></code> sends a cancellation request to the work unit <code>thread</code>. <code>thread</code> may terminate before its thread function completes.</p>
-<dl class="section note"><dt>Note</dt><dd>The timing of the request fulfillment is undefined, so a program that relies on when the request is fulfilled is non-conforming.</dd></dl>
+<p>Send a cancellation request to a work unit. </p>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga218d94229458c2200f188e5ed2705afe" title="Send a cancellation request to a work unit.">ABT_thread_cancel()</a></code> sends a cancellation request to the work unit <code>thread</code>. <code>thread</code> may terminate before its thread function completes.</p>
+<dl class="section note"><dt>Note</dt><dd>The timing of the request fulfillment is undefined, so a program that relies on the timing of the request fulfillment is non-conforming.</dd></dl>
 <p>Requests for work units are updated atomically.</p>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_THREAD</code> is returned if <code>thread</code> is <code>ABT_THREAD_NULL</code> or <code>ABT_TASK_NULL</code>.<br  />
-<code>ABT_ERR_INV_THREAD</code> is returned if <code>the</code> caller is the primary ULT.<br  />
+<code>ABT_ERR_INV_THREAD</code> is returned if the caller is the primary ULT.<br  />
 <code>ABT_ERR_FEATURE_NA</code> is returned if the cancellation feature is not supported.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
@@ -376,7 +376,7 @@ If <code>thread</code> is not running, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00659">659</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00663">663</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -425,11 +425,11 @@ If <code>thread</code> is not running, the results are undefined.<br  />
 </div><div class="memdoc">
 
 <p>Create a new ULT. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga73bd1f04ce57def336cb20cdec9b14bd" title="Create a new ULT.">ABT_thread_create()</a></code> creates a new ULT, given by the attributes <code>attr</code>, associates it with the pool <code>pool</code>, and returns its handle through <code>newthread</code>. This routine pushes the created ULT to the pool <code>pool</code>. The created ULT calls <code>thread_func()</code> with <code>arg</code> when it is scheduled.</p>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga73bd1f04ce57def336cb20cdec9b14bd" title="Create a new ULT.">ABT_thread_create()</a></code> creates a new ULT, given by the attributes <code>attr</code>, associates it with the pool <code>pool</code>, and returns its handle through <code>newthread</code>. This routine pushes the created ULT to <code>pool</code>. The created ULT calls <code>thread_func()</code> with <code>arg</code> when it is scheduled.</p>
 <p><code>attr</code> can be created by <code><a class="el" href="../../d2/df6/group__ULT__ATTR.html#ga4b1677eb8e2a300a2e94201914471776" title="Create a new ULT attribute.">ABT_thread_attr_create()</a></code>. If the user passes <code>ABT_THREAD_ATTR_NULL</code> for <code>attr</code>, the default ULT attribute is used.</p>
 <dl class="section note"><dt>Note</dt><dd>To see the details of the default ULT attributes, please check <code><a class="el" href="../../d2/df6/group__ULT__ATTR.html#ga4b1677eb8e2a300a2e94201914471776" title="Create a new ULT attribute.">ABT_thread_attr_create()</a></code>.</dd></dl>
 <p>This routine copies <code>attr</code>, so the user can free <code>attr</code> after this routine returns.</p>
-<p>If <code>newthread</code> is <code>NULL</code>, this routine creates an unnamed ULT. The unnamed ULT is automatically released on the completion of <code>thread_func()</code>. Otherwise, <code>newthread</code> must be explicitly freed by <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf31f748bfd565f97aa8ebabb89e9b632" title="Free a work unit.">ABT_thread_free()</a></code>.</p>
+<p>If <code>newthread</code> is <code>NULL</code>, this routine creates an unnamed ULT. An unnamed ULT is automatically released on the completion of <code>thread_func()</code>. Otherwise, <code>newthread</code> must be explicitly freed by <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf31f748bfd565f97aa8ebabb89e9b632" title="Free a work unit.">ABT_thread_free()</a></code>.</p>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>newthread</code> is set to <code>ABT_THREAD_NULL</code> if an error occurs and <code>newthread</code> is not <code>NULL</code>.<br  />
@@ -460,7 +460,7 @@ If <code>thread_func</code> is <code>NULL</code>, the results are undefined.<br 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00087">87</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00088">88</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -515,12 +515,12 @@ If <code>thread_func</code> is <code>NULL</code>, the results are undefined.<br 
 </div><div class="memdoc">
 
 <p>Create a set of new ULTs. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga364549e7e443807ef073c744428d8c15" title="Create a set of new ULTs.">ABT_thread_create_many()</a></code> creates a set of new ULTs, i.e., <code>num_threads</code> ULTs, having the same ULT attribute <code>attr</code> and returns ULT handles to <code>newthread_list</code>. Each newly created ULT calls the corresponding function of <code>thread_func_list</code> that has <code>num_threads</code> ULT functions with the corresponding argument of <code>arg_list</code> that has <code>num_threads</code> argument pointers an argument. Each newly created ULT is pushed to the corresponding pool of <code>pool_list</code> that has <code>num_threads</code> of pools handles. That is, the <em>i</em> th ULT is pushed to <em>i</em> th pool of <code>pool_list</code> and, when scheduled, calls the <em>i</em> th function of <code>thread_func_list</code> with the <em>i</em> th argument of <code>arg_list</code>. This routine pushes newly created ULTs to pools <code>pool</code>.</p>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga364549e7e443807ef073c744428d8c15" title="Create a set of new ULTs.">ABT_thread_create_many()</a></code> creates a set of new ULTs, i.e., <code>num_threads</code> ULTs, having the same ULT attribute <code>attr</code> and returns ULT handles through <code>newthread_list</code>. Each newly created ULT calls the corresponding function of <code>thread_func_list</code> that has <code>num_threads</code> ULT functions with the corresponding argument of <code>arg_list</code> that has <code>num_threads</code> argument pointers an argument. Each newly created ULT is pushed to the corresponding pool of <code>pool_list</code> that has <code>num_threads</code> of pools handles. That is, the <em>i</em> th ULT is pushed to <em>i</em> th pool of <code>pool_list</code> and, when scheduled, calls the <em>i</em> th function of <code>thread_func_list</code> with the <em>i</em> th argument of <code>arg_list</code>. This routine pushes newly created ULTs to pools <code>pool</code>.</p>
 <p><code>attr</code> can be created by <code><a class="el" href="../../d2/df6/group__ULT__ATTR.html#ga4b1677eb8e2a300a2e94201914471776" title="Create a new ULT attribute.">ABT_thread_attr_create()</a></code>. If the user passes <code>ABT_THREAD_ATTR_NULL</code> for <code>attr</code>, the default ULT attribute is used.</p>
 <dl class="section note"><dt>Note</dt><dd>To see the details of the default ULT attributes, please check <code><a class="el" href="../../d2/df6/group__ULT__ATTR.html#ga4b1677eb8e2a300a2e94201914471776" title="Create a new ULT attribute.">ABT_thread_attr_create()</a></code>.<br  />
 Since this routine uses the same ULT attribute for creating all ULTs, this routine does not support a user-provided stack.</dd></dl>
-<p>If <code>newthread_list</code> is <code>NULL</code>, this routine creates unnamed ULTs. The unnamed ULT is automatically released on the completion of <code>thread_func()</code>. Otherwise, the creates ULTs must be explicitly freed by <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf31f748bfd565f97aa8ebabb89e9b632" title="Free a work unit.">ABT_thread_free()</a></code>.</p>
-<p>This routine is deprecated because this routine does not provide a way for the user to keep track of an error that happens during this routine. The user should use <code><a class="el" href="../../d0/d6d/group__ULT.html#ga73bd1f04ce57def336cb20cdec9b14bd" title="Create a new ULT.">ABT_thread_create()</a></code> instead.</p>
+<p>If <code>newthread_list</code> is <code>NULL</code>, this routine creates unnamed ULTs. An unnamed ULT is automatically released on the completion of <code>thread_func()</code>. Otherwise, the creates ULTs must be explicitly freed by <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf31f748bfd565f97aa8ebabb89e9b632" title="Free a work unit.">ABT_thread_free()</a></code>.</p>
+<p>This routine is deprecated because this routine does not provide a way for the user to keep track of an error that happens during this routine. The user should call <code><a class="el" href="../../d0/d6d/group__ULT.html#ga73bd1f04ce57def336cb20cdec9b14bd" title="Create a new ULT.">ABT_thread_create()</a></code> multiple times instead.</p>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
  </dd></dl>
@@ -539,7 +539,7 @@ Since this routine uses the same ULT attribute for creating all ULTs, this routi
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00250">250</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00251">251</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -592,7 +592,7 @@ Since this routine uses the same ULT attribute for creating all ULTs, this routi
 <p><code>attr</code> can be created by <code><a class="el" href="../../d2/df6/group__ULT__ATTR.html#ga4b1677eb8e2a300a2e94201914471776" title="Create a new ULT attribute.">ABT_thread_attr_create()</a></code>. If the user passes <code>ABT_THREAD_ATTR_NULL</code> for <code>attr</code>, the default ULT attribute is used.</p>
 <dl class="section note"><dt>Note</dt><dd>To see the details of the default ULT attributes, please check <code><a class="el" href="../../d2/df6/group__ULT__ATTR.html#ga4b1677eb8e2a300a2e94201914471776" title="Create a new ULT attribute.">ABT_thread_attr_create()</a></code>.</dd></dl>
 <p>This routine copies <code>attr</code>, so the user can free <code>attr</code> after this routine returns.</p>
-<p>If <code>newthread</code> is <code>NULL</code>, this routine creates an unnamed ULT. The unnamed ULT is automatically released on the completion of <code>thread_func()</code>. Otherwise, <code>newthread</code> must be explicitly freed by <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf31f748bfd565f97aa8ebabb89e9b632" title="Free a work unit.">ABT_thread_free()</a></code>.</p>
+<p>If <code>newthread</code> is <code>NULL</code>, this routine creates an unnamed ULT. An unnamed ULT is automatically released on the completion of <code>thread_func()</code>. Otherwise, <code>newthread</code> must be explicitly freed by <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf31f748bfd565f97aa8ebabb89e9b632" title="Free a work unit.">ABT_thread_free()</a></code>.</p>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>newthread</code> is set to <code>ABT_THREAD_NULL</code> if an error occurs and <code>newthread</code> is not <code>NULL</code>.<br  />
@@ -623,7 +623,7 @@ If <code>thread_func</code> is <code>NULL</code>, the results are undefined.<br 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00167">167</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00168">168</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -672,7 +672,7 @@ If <code>thread_func</code> is <code>NULL</code>, the results are undefined.<br 
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread1</code> or <code>thread2</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread1</code> or <code>thread2</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -717,23 +717,23 @@ If <code>thread_func</code> is <code>NULL</code>, the results are undefined.<br 
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized. <dl class="section user">
+ <b>[Argobots 2.0]</b> The results of this routine are undefined if Argobots is not initialized. <dl class="section user">
 <dt>Rationale</dt>
-<dd>From Argobots 2.0, all the Argobots routines that are not explicitly noted do not check if Argobots is initialized. This omission can reduce the branches that are mostly unnecessary. </dd>
+<dd>From Argobots 2.0, Argobots routines do not check if Argobots is initialized unless otherwise noted. This omission can reduce the branches that are unnecessary in most cases. </dd>
 </dl>
 </dd>
 </dl>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context. Argobots must be initialized. This routine may switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
 <code>ABT_ERR_INV_THREAD</code> is returned if the caller is a tasklet.<br  />
-<code>ABT_ERR_INV_THREAD</code> is returned if <code>the</code> caller is the primary ULT.<br  />
+<code>ABT_ERR_INV_THREAD</code> is returned if the caller is the primary ULT.<br  />
 <b>[Argobots 1.x]</b> <code>ABT_ERR_UNINITIALIZED</code> is returned if the Argobots runtime is not initialized.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd><b>[Argobots 2.0]</b> If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00612">612</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00616">616</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -754,17 +754,17 @@ If <code>thread_func</code> is <code>NULL</code>, the results are undefined.<br 
 </div><div class="memdoc">
 
 <p>Free a work unit. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gaf31f748bfd565f97aa8ebabb89e9b632" title="Free a work unit.">ABT_thread_free()</a></code> deallocates the resource used for the thread <code>thread</code>. If <code>thread</code> is a ULT, <code>thread</code> is set to <code>ABT_THREAD_NULL</code>. If <code>thread</code> is a tasklet, <code>thread</code> is set to <code>ABT_TASK_NULL</code>. If <code>thread</code> is still running, this routine will be blocked on <code>thread</code> until <code>thread</code> terminates.</p>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gaf31f748bfd565f97aa8ebabb89e9b632" title="Free a work unit.">ABT_thread_free()</a></code> deallocates the resource used for the work unit <code>thread</code> and sets <code>thread</code> to <code>ABT_THREAD_NULL</code>. If <code>thread</code> is still running, this routine will be blocked on <code>thread</code> until <code>thread</code> terminates.</p>
 <dl class="section note"><dt>Note</dt><dd>Because an unnamed work unit will be freed immediately after its termination, an unnamed work unit cannot be freed by this routine.<br  />
 This routine cannot free the calling work unit.<br  />
-This routine cannot free the main ULT or the main scheduler ULT.<br  />
+This routine cannot free the main ULT or the main scheduler's ULT.<br  />
 Only one caller can join or free the same work unit.</dd></dl>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -777,7 +777,7 @@ Only one caller can join or free the same work unit.</dd></dl>
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>thread</code> is <code>NULL</code>, the results are undefined.<br  />
-If <code>thread</code>, <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf5275b75a5184bca258e803370e44bea" title="Wait for a work unit to terminate.">ABT_thread_join()</a></code> and <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf31f748bfd565f97aa8ebabb89e9b632" title="Free a work unit.">ABT_thread_free()</a></code> is blocked on by , the results are undefined.<br  />
+If <code>thread</code> is blocked on by a caller of <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf5275b75a5184bca258e803370e44bea" title="Wait for a work unit to terminate.">ABT_thread_join()</a></code> or <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf31f748bfd565f97aa8ebabb89e9b632" title="Free a work unit.">ABT_thread_free()</a></code>, the results are undefined.<br  />
 If <code>thread</code> is accessed after calling this routine, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -788,7 +788,7 @@ If <code>thread</code> is accessed after calling this routine, the results are u
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00413">413</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00415">415</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -819,15 +819,15 @@ If <code>thread</code> is accessed after calling this routine, the results are u
 </div><div class="memdoc">
 
 <p>Free a set of work units. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga51f99be6079db81a6c651231096788d3" title="Free a set of work units.">ABT_thread_free_many()</a></code> deallocates a set of work units listed in <code>thread_list</code> that has <code>num_threads</code> work unit handles. Each handle referenced by <code>thread_list</code> is set to <code>ABT_THRAED_NULL</code>.</p>
-<p>This routine is deprecated because this routine does not provide a way for the user to keep track of an error that happens during this routine. The user should use <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf31f748bfd565f97aa8ebabb89e9b632" title="Free a work unit.">ABT_thread_free()</a></code> instead.</p>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga51f99be6079db81a6c651231096788d3" title="Free a set of work units.">ABT_thread_free_many()</a></code> deallocates a set of work units listed in <code>thread_list</code> that has <code>num_threads</code> work unit handles. If any of work units is still running, this routine will be blocked on the running work unit until it terminates. Each handle referenced by <code>thread_list</code> is set to <code>ABT_THRAED_NULL</code>.</p>
+<p>This routine is deprecated because this routine does not provide a way for the user to keep track of an error that happens during this routine. The user should call <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf31f748bfd565f97aa8ebabb89e9b632" title="Free a work unit.">ABT_thread_free()</a></code> multiple times instead.</p>
 <p>Management of states of work units is performed atomically.</p>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as an element of <code>thread_list</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as an element of <code>thread_list</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -845,7 +845,7 @@ If <code>thread</code> is accessed after calling this routine, the results are u
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00471">471</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00475">475</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -875,14 +875,14 @@ If <code>thread</code> is accessed after calling this routine, the results are u
       </table>
 </div><div class="memdoc">
 
-<p>Retrieve an argument for a work unit function of a work unit. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga03e903850717ed699af35989360bedd8" title="Retrieve an argument for a work unit function of a work unit.">ABT_thread_get_arg()</a></code> returns the argument for the work unit function of the work unit <code>thread</code> through <code>arg</code>.</p>
+<p>Retrieve an argument for a work-unit function of a work unit. </p>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga03e903850717ed699af35989360bedd8" title="Retrieve an argument for a work-unit function of a work unit.">ABT_thread_get_arg()</a></code> returns the argument for the work-unit function of the work unit <code>thread</code> through <code>arg</code>.</p>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -896,7 +896,7 @@ If <code>arg</code> is <code>NULL</code>, the results are undefined.<br  />
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">thread</td><td>work unit handle </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">arg</td><td>argument for the work unit function </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">arg</td><td>argument for the work-unit function </td></tr>
   </table>
   </dd>
 </dl>
@@ -943,7 +943,7 @@ If <code>arg</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a ULT context or an external thread context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT. <b>[Argobots 2.0]</b> This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_THREAD</code> is returned if <code>thread</code> is <code>ABT_THREAD_NULL</code> or <code>ABT_TASK_NULL</code>.<br  />
 <code>ABT_ERR_MEM</code> is returned if memory allocation fails.<br  />
@@ -962,7 +962,7 @@ If <code>attr</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l02134">2134</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l02137">2137</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -993,13 +993,13 @@ If <code>attr</code> is <code>NULL</code>, the results are undefined.<br  />
 </div><div class="memdoc">
 
 <p>Get ID of a work unit. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gaa31b2d9339e8675680d9e776108c9681" title="Get ID of a work unit.">ABT_thread_get_id()</a></code> returns the ID of the work unit <code>a</code> thread through <code>thread_id</code>.</p>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gaa31b2d9339e8675680d9e776108c9681" title="Get ID of a work unit.">ABT_thread_get_id()</a></code> returns the ID of the work unit <code>thread</code> through <code>thread_id</code>.</p>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -1057,7 +1057,7 @@ If <code>thread_id</code> is <code>NULL</code>, the results are undefined.<br  /
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -1077,7 +1077,7 @@ If <code>pool</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00883">883</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00887">887</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -1115,7 +1115,7 @@ If <code>pool</code> is <code>NULL</code>, the results are undefined.<br  />
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -1136,7 +1136,7 @@ If the last pool associated with <code>thread</code> has already been freed, the
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00923">923</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00927">927</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -1185,7 +1185,7 @@ If <code>xstream</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00802">802</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00806">806</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -1221,8 +1221,8 @@ If <code>xstream</code> is <code>NULL</code>, the results are undefined.<br  />
       </table>
 </div><div class="memdoc">
 
-<p>Get a value associated with a work-unit-specific key in a work unit. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gaf95833ed8d21fedcf730e392f75b5bfd" title="Get a value associated with a work-unit-specific key in a work unit.">ABT_thread_get_specific()</a></code> returns the value of the work-unit-specific data key <code>key</code> in the work unit <code>thread</code> through <code>value</code>. If <code>thread</code> has never set a value for <code>key</code>, this routine sets <code>value</code> to <code>NULL</code>.</p>
+<p>Get a value associated with a work-unit-specific data key in a work unit. </p>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gaf95833ed8d21fedcf730e392f75b5bfd" title="Get a value associated with a work-unit-specific data key in a work unit.">ABT_thread_get_specific()</a></code> returns the value associated with the work-unit-specific data key <code>key</code> in the work unit <code>thread</code> through <code>value</code>. If <code>thread</code> has never set a value for <code>key</code>, this routine sets <code>value</code> to <code>NULL</code>.</p>
 <p>Work-unit-specific values associated with a work-unit-specific data key are read and updated atomically.</p>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
@@ -1242,7 +1242,7 @@ If <code>value</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l02090">2090</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l02092">2092</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -1273,13 +1273,13 @@ If <code>value</code> is <code>NULL</code>, the results are undefined.<br  />
 </div><div class="memdoc">
 
 <p>Get a stack size of a work unit. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gae1515f2d99034a3969855ebfbe1e0808" title="Get a stack size of a work unit.">ABT_thread_get_stacksize()</a></code> returns the stack size of the work unit <code>thread</code> in bytes through <code>stacksize</code>. If <code>thread</code> does not have a stack managed by the Argobots runtime (e.g., the tasklet or the primary ULT), <code>stacksize</code> is set to 0.</p>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gae1515f2d99034a3969855ebfbe1e0808" title="Get a stack size of a work unit.">ABT_thread_get_stacksize()</a></code> returns the stack size of the work unit <code>thread</code> in bytes through <code>stacksize</code>. If <code>thread</code> does not have a stack managed by the Argobots runtime (e.g., a tasklet or the primary ULT), <code>stacksize</code> is set to 0.</p>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -1337,7 +1337,7 @@ If <code>stacksize</code> is <code>NULL</code>, the results are undefined.<br  /
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -1358,7 +1358,7 @@ If <code>state</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00843">843</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00847">847</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -1395,7 +1395,7 @@ If <code>state</code> is <code>NULL</code>, the results are undefined.<br  />
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -1416,7 +1416,7 @@ If <code>is_migratable</code> is <code>NULL</code>, the results are undefined.<b
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01737">1737</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01736">1736</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -1453,7 +1453,7 @@ If <code>is_migratable</code> is <code>NULL</code>, the results are undefined.<b
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -1473,7 +1473,7 @@ If <code>flag</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01779">1779</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01778">1778</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -1504,14 +1504,14 @@ If <code>flag</code> is <code>NULL</code>, the results are undefined.<br  />
 </div><div class="memdoc">
 
 <p>Check if a work unit is unnamed. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga748ab622b69796462333725a2513db1a" title="Check if a work unit is the primary ULT.">ABT_thread_is_primary()</a></code> checks if the work unit <code>thread</code> is unnamed and returns the result through <code>flag</code>. If <code>thread</code> is unnamed, <code>flag</code> is set to <code>ABT_TRUE</code>. Otherwise, <code>flag</code> is set to <code>ABT_FALSE</code>.</p>
-<dl class="section note"><dt>Note</dt><dd>A handle of an unnamed work unit can be obtained by, for example, running <code><a class="el" href="../../d0/d6d/group__ULT.html#ga994a8e23d9c6ace41779d8ce2585ae88" title="Get the calling work unit.">ABT_thread_self()</a></code> on an unnamed work unit.</dd></dl>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga748ab622b69796462333725a2513db1a" title="Check if a work unit is the primary ULT.">ABT_thread_is_primary()</a></code> checks if the work unit <code>thread</code> is unnamed and returns the result through <code>is_unnamed</code>. If <code>thread</code> is unnamed, <code>is_unnamed</code> is set to <code>ABT_TRUE</code>. Otherwise, <code>is_unnamed</code> is set to <code>ABT_FALSE</code>.</p>
+<dl class="section note"><dt>Note</dt><dd>A handle of an unnamed work unit can be obtained by, for example, running <code><a class="el" href="../../d9/d23/group__SELF.html#ga23185cde2a2786be83125cd0e17ebb91" title="Get the calling work unit.">ABT_self_get_thread()</a></code> on an unnamed work unit.</dd></dl>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_THREAD</code> is returned if <code>thread</code> is <code>ABT_THREAD_NULL</code> or <code>ABT_TASK_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
-If <code>flag</code> is <code>NULL</code>, the results are undefined.<br  />
+If <code>is_unnamed</code> is <code>NULL</code>, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1554,7 +1554,7 @@ Only one caller can join or free the same work unit.</dd></dl>
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -1566,7 +1566,7 @@ Only one caller can join or free the same work unit.</dd></dl>
 <code>ABT_ERR_INV_THREAD</code> is returned if <code>thread</code> is the work unit of the main scheduler.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
-If <code>thread</code>, <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf5275b75a5184bca258e803370e44bea" title="Wait for a work unit to terminate.">ABT_thread_join()</a></code> and <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf31f748bfd565f97aa8ebabb89e9b632" title="Free a work unit.">ABT_thread_free()</a></code> is blocked on by , the results are undefined.<br  />
+If <code>thread</code> is blocked on by a caller of <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf5275b75a5184bca258e803370e44bea" title="Wait for a work unit to terminate.">ABT_thread_join()</a></code> or <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf31f748bfd565f97aa8ebabb89e9b632" title="Free a work unit.">ABT_thread_free()</a></code>, the results are undefined.<br  />
 If <code>thread</code> is accessed concurrently, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1577,7 +1577,7 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00526">526</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00530">530</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -1609,14 +1609,14 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
 
 <p>Wait for a set of work units to terminate. </p>
 <p>The caller of <code><a class="el" href="../../d0/d6d/group__ULT.html#ga7c23f76b44d29ec70a18759ba019b050" title="Wait for a set of work units to terminate.">ABT_thread_join_many()</a></code> waits for all the work units in <code>thread_list</code> that has <code>num_threads</code> work unit handles until all the work units in <code>thread_list</code> terminate.</p>
-<p>This routine is deprecated because this routine does not provide a way for the user to keep track of an error that happens during this routine. The user should use <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf5275b75a5184bca258e803370e44bea" title="Wait for a work unit to terminate.">ABT_thread_join()</a></code> instead.</p>
+<p>This routine is deprecated because this routine does not provide a way for the user to keep track of an error that happens during this routine. The user should call <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf5275b75a5184bca258e803370e44bea" title="Wait for a work unit to terminate.">ABT_thread_join()</a></code> multiple times instead.</p>
 <p>Management of states of work units is performed atomically.</p>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as an element of <code>thread_list</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as an element of <code>thread_list</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -1634,7 +1634,7 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00573">573</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00577">577</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -1654,21 +1654,21 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
       </table>
 </div><div class="memdoc">
 
-<p>Request a migration of a work unit to any available execution streams. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gaa2646bfbabf0df851f964ae38a92804a" title="Request a migration of a work unit to any available execution streams.">ABT_thread_migrate()</a></code> requests a migration of the work unit <code>thread</code> to one of the execution streams. The last execution stream of <code>thread</code> is not chosen as the target execution stream. The previous migration request will be overwritten by the new migration request. The requested work unit may be migrated before its work unit function completes.</p>
-<dl class="section note"><dt>Note</dt><dd>The timing of the request fulfillment is undefined, so a program that relies on when the request is fulfilled is non-conforming.</dd></dl>
+<p>Request a migration of a work unit to any available execution stream. </p>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gaa2646bfbabf0df851f964ae38a92804a" title="Request a migration of a work unit to any available execution stream.">ABT_thread_migrate()</a></code> requests a migration of the work unit <code>thread</code> to one of the execution streams. The last execution stream of <code>thread</code> is not chosen as the target execution stream. The previous migration request will be overwritten by the new migration request. The requested work unit may be migrated before its work-unit function completes.</p>
+<dl class="section note"><dt>Note</dt><dd>The timing of the request fulfillment is undefined, so a program that relies on the timing of the request fulfillment is non-conforming.</dd></dl>
 <p>Requests for work units are updated atomically.</p>
-<p>It is the user's responsibility to keep all the execution streams, the main schedulers, and their associated pools until the migration process completes or <code>thread</code> is freed, whichever is earlier.</p>
-<p>This routine is deprecated because this routine will not choose an execution stream that is expected by the user while this routine is significantly restrictive. The user should use other migration functions instead.</p>
+<p>It is the user's responsibility to keep all the execution streams, the main schedulers, and their associated pools alive until the migration process completes or <code>thread</code> is freed, whichever is earlier.</p>
+<p>This routine is deprecated because this routine is significantly restrictive. The user should use other migration functions instead.</p>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><p class="startdd"><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.0]</b> <code>ABT_ERR_INV_THREAD</code> is returned if the runtime finds that <code>thread</code> is terminated.<br  />
- <b>[Argobots 1.1]</b> The results are undefined if <code>thread</code> is terminated. </p><dl class="section user">
+ <b>[Argobots 1.1]</b> The results of this routine are undefined if <code>thread</code> is terminated. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>Proper implementation of this check is expensive since it requires atomic management of a work unit state and a request. Argobots 1.1 eliminates this check. </dd>
 </dl>
@@ -1696,7 +1696,7 @@ If <code>thread</code> is terminated, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01502">1502</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01505">1505</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -1727,19 +1727,19 @@ If <code>thread</code> is terminated, the results are undefined.<br  />
 </div><div class="memdoc">
 
 <p>Request a migration of a work unit to a specific pool. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga0414ecaedd36796a643e055bebafab99" title="Request a migration of a work unit to a specific pool.">ABT_thread_migrate_to_pool()</a></code> requests a migration of the work unit <code>thread</code> to the pool <code>pool</code>. The previous migration request will be overwritten by the new migration request. The requested work unit may be migrated before its work unit function completes.</p>
-<dl class="section note"><dt>Note</dt><dd>The timing of the request fulfillment is undefined, so a program that relies on when the request is fulfilled is non-conforming.</dd></dl>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga0414ecaedd36796a643e055bebafab99" title="Request a migration of a work unit to a specific pool.">ABT_thread_migrate_to_pool()</a></code> requests a migration of the work unit <code>thread</code> to the pool <code>pool</code>. The previous migration request will be overwritten by the new migration request. The requested work unit may be migrated before its work-unit function completes.</p>
+<dl class="section note"><dt>Note</dt><dd>The timing of the request fulfillment is undefined, so a program that relies on the timing of the request fulfillment is non-conforming.</dd></dl>
 <p>Requests for work units are updated atomically.</p>
-<p>It is the user's responsibility to keep <code>pool</code> until the migration process completes or <code>thread</code> is freed, whichever is earlier.</p>
+<p>It is the user's responsibility to keep <code>pool</code> alive until the migration process completes or <code>thread</code> is freed, whichever is earlier.</p>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><p class="startdd"><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.0]</b> <code>ABT_ERR_INV_THREAD</code> is returned if the runtime finds that <code>thread</code> is terminated.<br  />
- <b>[Argobots 1.1]</b> The results are undefined if <code>thread</code> is terminated. </p><dl class="section user">
+ <b>[Argobots 1.1]</b> The results of this routine are undefined if <code>thread</code> is terminated. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>Proper implementation of this check is expensive since it requires atomic management of a work unit state and a request. Argobots 1.1 eliminates this check. </dd>
 </dl>
@@ -1769,7 +1769,7 @@ If <code>thread</code> is terminated, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01424">1424</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01428">1428</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -1800,19 +1800,19 @@ If <code>thread</code> is terminated, the results are undefined.<br  />
 </div><div class="memdoc">
 
 <p>Request a migration of a work unit to a specific scheduler. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga8ccc5f3082e1608f555dc06e9a70d202" title="Request a migration of a work unit to a specific scheduler.">ABT_thread_migrate_to_sched()</a></code> requests a migration of the work unit <code>thread</code> to any pool associated with the scheduler <code>sched</code>. The previous migration request is overwritten by the new migration request. The requested work unit may be migrated before its work unit function completes.</p>
-<dl class="section note"><dt>Note</dt><dd>The timing of the request fulfillment is undefined, so a program that relies on when the request is fulfilled is non-conforming.</dd></dl>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga8ccc5f3082e1608f555dc06e9a70d202" title="Request a migration of a work unit to a specific scheduler.">ABT_thread_migrate_to_sched()</a></code> requests a migration of the work unit <code>thread</code> to any pool associated with the scheduler <code>sched</code>. The previous migration request is overwritten by the new migration request. The requested work unit may be migrated before its work-unit function completes.</p>
+<dl class="section note"><dt>Note</dt><dd>The timing of the request fulfillment is undefined, so a program that relies on the timing of the request fulfillment is non-conforming.</dd></dl>
 <p>Requests for work units are updated atomically.</p>
-<p>It is the user's responsibility to keep <code>sched</code> and its associated pools until the migration process completes or <code>thread</code> is freed, whichever is earlier.</p>
+<p>It is the user's responsibility to keep <code>sched</code> and its associated pools alive until the migration process completes or <code>thread</code> is freed, whichever is earlier.</p>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><p class="startdd"><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.0]</b> <code>ABT_ERR_INV_THREAD</code> is returned if the runtime finds that <code>thread</code> is terminated.<br  />
- <b>[Argobots 1.1]</b> The results are undefined if <code>thread</code> is terminated. </p><dl class="section user">
+ <b>[Argobots 1.1]</b> The results of this routine are undefined if <code>thread</code> is terminated. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>Proper implementation of this check is expensive since it requires atomic management of a work unit state and a request. Argobots 1.1 eliminates this check. </dd>
 </dl>
@@ -1842,7 +1842,7 @@ If <code>thread</code> is terminated, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01341">1341</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01345">1345</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -1873,19 +1873,19 @@ If <code>thread</code> is terminated, the results are undefined.<br  />
 </div><div class="memdoc">
 
 <p>Request a migration of a work unit to a specific execution stream. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gafa5495103e2bf9968136c381634fc242" title="Request a migration of a work unit to a specific execution stream.">ABT_thread_migrate_to_xstream()</a></code> requests a migration of the work unit <code>thread</code> to any pool associated with the main scheduler of execution stream <code>xstream</code>. The previous migration request is overwritten by the new migration request. The requested work unit may be migrated before its work unit function completes.</p>
-<dl class="section note"><dt>Note</dt><dd>The timing of the request fulfillment is undefined, so a program that relies on when the request is fulfilled is non-conforming.</dd></dl>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gafa5495103e2bf9968136c381634fc242" title="Request a migration of a work unit to a specific execution stream.">ABT_thread_migrate_to_xstream()</a></code> requests a migration of the work unit <code>thread</code> to any pool associated with the main scheduler of execution stream <code>xstream</code>. The previous migration request is overwritten by the new migration request. The requested work unit may be migrated before its work-unit function completes.</p>
+<dl class="section note"><dt>Note</dt><dd>The timing of the request fulfillment is undefined, so a program that relies on the timing of the request fulfillment is non-conforming.</dd></dl>
 <p>Requests for work units are updated atomically.</p>
-<p>It is the user's responsibility to keep <code>xstream</code>, its main scheduler, and its associated pools until the migration process completes or <code>thread</code> is freed, whichever is earlier.</p>
+<p>It is the user's responsibility to keep <code>xstream</code>, its main scheduler, and its associated pools alive until the migration process completes or <code>thread</code> is freed, whichever is earlier.</p>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><p class="startdd"><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.0]</b> <code>ABT_ERR_INV_THREAD</code> is returned if the runtime finds that <code>thread</code> is terminated.<br  />
- <b>[Argobots 1.1]</b> The results are undefined if <code>thread</code> is terminated. </p><dl class="section user">
+ <b>[Argobots 1.1]</b> The results of this routine are undefined if <code>thread</code> is terminated. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>Proper implementation of this check is expensive since it requires atomic management of a work unit state and a request. Argobots 1.1 eliminates this check. </dd>
 </dl>
@@ -1915,7 +1915,7 @@ If <code>thread</code> is terminated, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01255">1255</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01259">1259</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -1936,11 +1936,11 @@ If <code>thread</code> is terminated, the results are undefined.<br  />
 </div><div class="memdoc">
 
 <p>Resume a ULT. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gaef94b0efbf392fdc4bd5d04f67f22a5e" title="Resume a ULT.">ABT_thread_resume()</a></code> resumes the ULT <code>thread</code> blocked by <code>ABT_thread_suspend()</code> schedulable by making <code>thread</code> ready and pushing <code>thread</code> to its associated pool.</p>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gaef94b0efbf392fdc4bd5d04f67f22a5e" title="Resume a ULT.">ABT_thread_resume()</a></code> resumes the ULT <code>thread</code> blocked by <code><a class="el" href="../../d9/d23/group__SELF.html#ga1ea426efb033abeea6876ee0609079d4" title="Suspend the calling ULT.">ABT_self_suspend()</a></code> by making <code>thread</code> ready and pushing <code>thread</code> to its associated pool.</p>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>ABT_ERR_THREAD</code> is returned if <code>thread</code> is not suspended.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if <code>thread</code> is not suspended. <dl class="section user">
+ <b>[Argobots 2.0]</b> The results of this routine are undefined if <code>thread</code> is not suspended. <dl class="section user">
 <dt>Rationale</dt>
 <dd>This check of the current implementation is not atomic while making this check atomic is expensive. From Argobots 2.0, it becomes the user's responsibility to guarantee that <code>thread</code> has been suspended. Note that Argobots 1.x does not perform this check atomically, so the user may not concurrently call <code><a class="el" href="../../d0/d6d/group__ULT.html#gaef94b0efbf392fdc4bd5d04f67f22a5e" title="Resume a ULT.">ABT_thread_resume()</a></code> for the same ULT. </dd>
 </dl>
@@ -1964,7 +1964,7 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01184">1184</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01188">1188</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -2007,7 +2007,8 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
 </div><div class="memdoc">
 
 <p>Revive a terminated work unit. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gaf3c80cb3fe88262dd64e42ec63191d4e" title="Revive a terminated work unit.">ABT_thread_revive()</a></code> revives the work unit <code>thread</code> with <code>thread_func</code> and <code>arg</code>. This routine does not change the attributes of <code>thread</code>. The revived work unit is pushed to <code>pool</code>. Although this routine takes a pointer of <code>ABT_thread</code>, the handle of <code>thread</code> is not updated by this routine.</p>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gaf3c80cb3fe88262dd64e42ec63191d4e" title="Revive a terminated work unit.">ABT_thread_revive()</a></code> revives the work unit <code>thread</code> with the new work-unit function <code>thread_func()</code> and its argument <code>arg</code>. This routine does not change the attributes of <code>thread</code>. The revived work unit is pushed to the pool <code>pool</code>.</p>
+<p>Although this routine takes a pointer of <code>ABT_thread</code>, the handle of <code>thread</code> is not updated by this routine.</p>
 <p><code>thread</code> must be a terminated work unit that has not been freed. A work unit that is blocked on by another caller may not be revived.</p>
 <dl class="section note"><dt>Note</dt><dd>Because an unnamed work unit will be freed immediately after its termination, an unnamed work unit cannot be revived.</dd></dl>
 <p>Management of states of work units is performed atomically.</p>
@@ -2016,7 +2017,7 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -2031,7 +2032,7 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>thread_func</code> is <code>NULL</code>, the results are undefined.<br  />
 If <code>thread</code> is <code>NULL</code>, the results are undefined.<br  />
-If <code>thread</code>, <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf31f748bfd565f97aa8ebabb89e9b632" title="Free a work unit.">ABT_thread_free()</a></code> is blocked on by , the results are undefined.<br  />
+If <code>thread</code> is blocked on by a caller of <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf31f748bfd565f97aa8ebabb89e9b632" title="Free a work unit.">ABT_thread_free()</a></code>, the results are undefined.<br  />
 If <code>thread</code> is accessed concurrently, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -2045,9 +2046,9 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00352">352</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00355">355</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d3/d3f/task_8c_source.html#l00153">ABT_task_revive()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d3/d3f/task_8c_source.html#l00156">ABT_task_revive()</a>.</p>
 
 </div>
 </div>
@@ -2078,9 +2079,9 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
 <dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. </dd>
 </dl>
 <p class="interdd"><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized. </p><dl class="section user">
+ <b>[Argobots 2.0]</b> The results of this routine are undefined if Argobots is not initialized. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>From Argobots 2.0, all the Argobots routines that are not explicitly noted do not check if Argobots is initialized. This omission can reduce the branches that are mostly unnecessary. </dd>
+<dd>From Argobots 2.0, Argobots routines do not check if Argobots is initialized unless otherwise noted. This omission can reduce the branches that are unnecessary in most cases. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.x]</b> <code>thread</code> is set to <code>ABT_THREAD_NULL</code> if an error occurs.<br  />
  <b>[Argobots 2.0]</b> <code>thread</code> is not updated if an error occurs. </p><dl class="section user">
@@ -2090,7 +2091,7 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
 </dd>
 </dl>
 <dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a ULT context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.<br  />
-<b>[Argobots 2.0]</b> This routine can be called in a ULT context and a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<b>[Argobots 2.0]</b> This routine can be called in a ULT context or a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
 <b>[Argobots 1.x]</b> <code>ABT_ERR_INV_THREAD</code> is returned if the caller is a tasklet.<br  />
@@ -2107,7 +2108,7 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00710">710</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00714">714</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -2138,14 +2139,14 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
 <dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized. </p><dl class="section user">
+ <b>[Argobots 2.0]</b> The results of this routine are undefined if Argobots is not initialized. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>From Argobots 2.0, all the Argobots routines that are not explicitly noted do not check if Argobots is initialized. This omission can reduce the branches that are mostly unnecessary. </dd>
+<dd>From Argobots 2.0, Argobots routines do not check if Argobots is initialized unless otherwise noted. This omission can reduce the branches that are unnecessary in most cases. </dd>
 </dl>
 </dd>
 </dl>
 <dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a ULT context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.<br  />
-<b>[Argobots 2.0]</b> This routine can be called in a ULT context and a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<b>[Argobots 2.0]</b> This routine can be called in a ULT context or a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
 <b>[Argobots 1.x]</b> <code>ABT_ERR_INV_THREAD</code> is returned if the caller is a tasklet.<br  />
@@ -2162,7 +2163,7 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00759">759</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00763">763</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -2192,14 +2193,14 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
       </table>
 </div><div class="memdoc">
 
-<p>Set an argument for a work unit function of a work unit. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga5048aacb8a6d3c91ddaf6c933d008415" title="Set an argument for a work unit function of a work unit.">ABT_thread_set_arg()</a></code> sets the argument <code>arg</code> for the work unit function of the work unit <code>thread</code>.</p>
+<p>Set an argument for a work-unit function of a work unit. </p>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga5048aacb8a6d3c91ddaf6c933d008415" title="Set an argument for a work-unit function of a work unit.">ABT_thread_set_arg()</a></code> sets the argument <code>arg</code> for the work-unit function of the work unit <code>thread</code>.</p>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -2213,7 +2214,7 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">thread</td><td>work unit handle </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>argument for the work unit function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>argument for the work-unit function </td></tr>
   </table>
   </dd>
 </dl>
@@ -2256,7 +2257,7 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -2278,7 +2279,7 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00962">962</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l00966">966</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -2314,15 +2315,14 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
       </table>
 </div><div class="memdoc">
 
-<p>Set a callback function in a work unit. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gab6379e8104b5f37a3a0a552a6973d613" title="Set a callback function in a work unit.">ABT_thread_set_callback()</a></code> sets the callback function <code>cb_func()</code> and its argument <code>cb_arg</code> in the work unit <code>thread</code>. If <code>cb_func</code> is not <code>NULL</code>, <code>cb_func()</code> is called with <code>cb_arg</code> as an argument on the migration of <code>thread</code>. If <code>cb_func</code> is <code>NULL</code>, <code>thread</code> not call a callback function on its migration.</p>
-<p>If the callback function is set, a callback function <code>cb_func()</code> will be called every time on migration of the associated work unit. The first argument of <code>cb_arg()</code> is the handle of a migrated work unit. The second argument is <code>cb_arg</code> passed to this routine. The caller of the callback function is undefined, so a program that relies on the caller is non-conforming.</p>
+<p>Register a callback function in a work unit. </p>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gab6379e8104b5f37a3a0a552a6973d613" title="Register a callback function in a work unit.">ABT_thread_set_callback()</a></code> registers the callback function <code>cb_func()</code> and its argument <code>cb_arg</code> in the work unit <code>thread</code>. If <code>cb_func</code> is not <code>NULL</code>, <code>cb_func()</code> is called when <code>thread</code> is migrated. The first argument of <code>cb_func()</code> is the handle of a migrated work unit. The second argument is <code>cb_arg</code> passed to this routine. The caller of the callback function is undefined, so a program that relies on the caller is non-conforming. If <code>cb_func</code> is <code>NULL</code>, this routine unregisters a callback function in <code>thread</code>.</p>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -2347,7 +2347,7 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01618">1618</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01617">1617</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -2384,7 +2384,7 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -2419,7 +2419,7 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01680">1680</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01679">1679</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -2455,8 +2455,8 @@ If <code>thread</code> is accessed concurrently, the results are undefined.<br  
       </table>
 </div><div class="memdoc">
 
-<p>Set a value with a work-unit-specific key in a work unit. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gadea3971dbd47e4b45e52baa615eb1299" title="Set a value with a work-unit-specific key in a work unit.">ABT_thread_set_specific()</a></code> associates the value <code>value</code> of the work-unit-specific data key <code>key</code> in the work unit <code>thread</code>.</p>
+<p>Set a value with a work-unit-specific data key in a work unit. </p>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#gadea3971dbd47e4b45e52baa615eb1299" title="Set a value with a work-unit-specific data key in a work unit.">ABT_thread_set_specific()</a></code> associates the value <code>value</code> with the work-unit-specific data key <code>key</code> in the work unit <code>thread</code>.</p>
 <p>Work-unit-specific values associated with a work-unit-specific data key are read and updated atomically.</p>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
@@ -2525,7 +2525,7 @@ If the caller is accessed concurrently, the results are undefined.<br  />
  </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01132">1132</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01136">1136</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -2545,8 +2545,8 @@ If the caller is accessed concurrently, the results are undefined.<br  />
       </table>
 </div><div class="memdoc">
 
-<p>Yield the calling ULT to the specific ULT. </p>
-<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga1fa419c69e734d2017e8238d438a216a" title="Yield the calling ULT to the specific ULT.">ABT_thread_yield_to()</a></code> yields the calling ULT and schedules the ULT <code>thread</code> that is in its associated pool. The calling ULT will be pushed to its associated pool.</p>
+<p>Yield the calling ULT to another ULT. </p>
+<p><code><a class="el" href="../../d0/d6d/group__ULT.html#ga1fa419c69e734d2017e8238d438a216a" title="Yield the calling ULT to another ULT.">ABT_thread_yield_to()</a></code> yields the calling ULT and schedules the ULT <code>thread</code> that is in its associated pool. The calling ULT will be pushed to its associated pool.</p>
 <dl class="section note"><dt>Note</dt><dd>This routine is experimental. The details of this function may be updated in the future.</dd></dl>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
@@ -2587,18 +2587,18 @@ If <code>thread</code> is not ready, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01018">1018</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/de7/thread_8c_source.html#l01022">1022</a> of file <a class="el" href="../../d3/de7/thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="aabt_8h_html_aabf134f2165a5d15ea5bd063b982d8a6"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aabf134f2165a5d15ea5bd063b982d8a6">ABT_THREAD_NULL</a></div><div class="ttdeci">#define ABT_THREAD_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01059">abt.h:1059</a></div></div>
-<div class="ttc" id="aabt_8h_html_acedaaeb67b83967cc9129e0906f38e93"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#acedaaeb67b83967cc9129e0906f38e93">ABT_TASK_NULL</a></div><div class="ttdeci">#define ABT_TASK_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01061">abt.h:1061</a></div></div>
-<div class="ttc" id="aabt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdoc">True constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00745">abt.h:745</a></div></div>
-<div class="ttc" id="aabt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdoc">False constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00747">abt.h:747</a></div></div>
+<div class="ttc" id="aabt_8h_html_aabf134f2165a5d15ea5bd063b982d8a6"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aabf134f2165a5d15ea5bd063b982d8a6">ABT_THREAD_NULL</a></div><div class="ttdeci">#define ABT_THREAD_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01060">abt.h:1060</a></div></div>
+<div class="ttc" id="aabt_8h_html_acedaaeb67b83967cc9129e0906f38e93"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#acedaaeb67b83967cc9129e0906f38e93">ABT_TASK_NULL</a></div><div class="ttdeci">#define ABT_TASK_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01062">abt.h:1062</a></div></div>
+<div class="ttc" id="aabt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdoc">True constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00746">abt.h:746</a></div></div>
+<div class="ttc" id="aabt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdoc">False constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00748">abt.h:748</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 10 2021 03:10:12 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 12 2021 03:10:08 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

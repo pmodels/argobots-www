@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">f816757cfdc8e5fef84abc0c0bf0a654684af46a</span>
+   &#160;<span id="projectnumber">2892a0cc7e2babf3b5cb0f43c2796b2861550983</span>
    </div>
   </td>
  </tr>
@@ -121,7 +121,7 @@ Functions</h2></td></tr>
 <p><code>ABT_unit</code> is a work unit handle encapsulated by its associated pool, so the value of <code>ABT_unit</code> is different from its associated <code>ABT_thread</code> or <code>ABT_task</code>.</p>
 <p>A NULL handle of this type is <code>ABT_UNIT_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00866">866</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00867">867</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -139,7 +139,7 @@ Functions</h2></td></tr>
 
 <p>Work unit ID type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00876">876</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00877">877</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -157,7 +157,7 @@ Functions</h2></td></tr>
 
 <p>Work unit type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00871">871</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00872">872</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -219,7 +219,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the associated pool for a work unit. </p>
-<p><code><a class="el" href="../../de/dab/group__UNIT.html#gac1e38da11bb526632d7dc34808932394" title="Set the associated pool for a work unit.">ABT_unit_set_associated_pool()</a></code> changes the associated pool of the target work unit <code>unit</code> to <code>pool</code>. This routine must be called after <code>unit</code> is popped from its original associated pool (i.e., <code>unit</code> must not be inside any pool).</p>
+<p><code><a class="el" href="../../de/dab/group__UNIT.html#gac1e38da11bb526632d7dc34808932394" title="Set the associated pool for a work unit.">ABT_unit_set_associated_pool()</a></code> changes the associated pool of the target work unit <code>unit</code> to the pool <code>pool</code>. This routine must be called after <code>unit</code> is popped from its original associated pool (i.e., <code>unit</code> must not be inside any pool).</p>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_UNIT</code> is returned if <code>unit</code> is <code>ABT_UNIT_NULL</code>.<br  />
@@ -245,7 +245,7 @@ If <code>unit</code> is accessed concurrently, the results are undefined.<br  />
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 10 2021 03:10:12 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 12 2021 03:10:08 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

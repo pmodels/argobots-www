@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">f816757cfdc8e5fef84abc0c0bf0a654684af46a</span>
+   &#160;<span id="projectnumber">2892a0cc7e2babf3b5cb0f43c2796b2861550983</span>
    </div>
   </td>
  </tr>
@@ -190,7 +190,7 @@ Functions</h2></td></tr>
 <p>Execution stream handle type. </p>
 <p>A NULL handle of this type is <code>ABT_XSTREAM_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00786">786</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00787">787</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -208,7 +208,7 @@ Functions</h2></td></tr>
 
 <p>Execution stream state type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00791">791</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00792">792</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -257,7 +257,7 @@ Functions</h2></td></tr>
 <p>Send a cancellation request to an execution stream. </p>
 <p><code><a class="el" href="../../d3/def/group__ES.html#gac6d98a65472fe3e394d300b553c60000" title="Send a cancellation request to an execution stream.">ABT_xstream_cancel()</a></code> sends a cancellation request to the execution stream <code>xstream</code>. An execution stream that receives a cancellation request will terminate.</p>
 <p>Requests for execution streams are updated atomically.</p>
-<dl class="section note"><dt>Note</dt><dd>The timing of the request fulfillment is undefined, so a program that relies on when the request is fulfilled is non-conforming.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The timing of the request fulfillment is undefined, so a program that relies on the timing of the request fulfillment is non-conforming.</dd></dl>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
@@ -274,7 +274,7 @@ If <code>xstream</code> is not running, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l00571">571</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l00572">572</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
 
 </div>
 </div>
@@ -295,15 +295,14 @@ If <code>xstream</code> is not running, the results are undefined.<br  />
 </div><div class="memdoc">
 
 <p>Process events associated with a scheduler. </p>
-<p><code><a class="el" href="../../d3/def/group__ES.html#gaca42eab0bf02e5cb1c605ff23a35a3e5" title="Process events associated with a scheduler.">ABT_xstream_check_events()</a></code> processes events associated with the scheduler <code>sched</code>. The calling work unit must be associated with the scheduler <code>sched</code>.</p>
-<p>This routine must be called by a scheduler periodically.</p>
-<dl class="section note"><dt>Note</dt><dd>For example, a user-defined scheduler should call this routine every hundred iterations of its scheduling loop.</dd></dl>
+<p><code><a class="el" href="../../d3/def/group__ES.html#gaca42eab0bf02e5cb1c605ff23a35a3e5" title="Process events associated with a scheduler.">ABT_xstream_check_events()</a></code> processes events associated with the scheduler <code>sched</code>. The calling work unit must be associated with <code>sched</code>.</p>
+<p>This routine must be called by a scheduler periodically. For example, a user-defined scheduler should call this routine every N iterations of its scheduling loop.</p>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized. <dl class="section user">
+ <b>[Argobots 2.0]</b> The results of this routine are undefined if Argobots is not initialized. <dl class="section user">
 <dt>Rationale</dt>
-<dd>From Argobots 2.0, all the Argobots routines that are not explicitly noted do not check if Argobots is initialized. This omission can reduce the branches that are mostly unnecessary. </dd>
+<dd>From Argobots 2.0, Argobots routines do not check if Argobots is initialized unless otherwise noted. This omission can reduce the branches that are unnecessary in most cases. </dd>
 </dl>
 </dd>
 </dl>
@@ -325,7 +324,7 @@ If <code>xstream</code> is not running, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01251">1251</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01247">1247</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
 
 </div>
 </div>
@@ -365,7 +364,7 @@ To see the details of the default scheduler configuration, please check <code><a
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><p class="startdd"><b>[Argobots 1.x]</b> <code>ABT_ERR_INV_SCHED</code> is returned if this routine finds <code>sched</code> is already used.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if <code>sched</code> is already used. </p><dl class="section user">
+ <b>[Argobots 2.0]</b> The results of this routine are undefined if <code>sched</code> is already used. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>The current implementation of this check is crude since whether a scheduler is used or not is not maintained atomically. From Argobots 2.0, it becomes the user's responsibility to guarantee that <code>sched</code> is not used. Note that Argobots 1.x does not perform this check atomically, so the user may not concurrently call any routines that attempt to use the same scheduler by assuming that only one of them would succeed. </dd>
 </dl>
@@ -531,13 +530,13 @@ If <code>newxstream</code> is <code>NULL</code>, the results are undefined.<br  
 To see the details of the default pool, please check <code><a class="el" href="../../d9/d52/group__POOL.html#ga7a000646ad0b5899ee47779d051758e8" title="Create a new pool.">ABT_pool_create()</a></code>.<br  />
 To see the details of the default scheduler configuration, please check <code><a class="el" href="../../dc/d23/group__SCHED__CONFIG.html#gaf99722523587197d1d71b180457584de" title="Create a new scheduler configuration.">ABT_sched_config_create()</a></code>.</dd></dl>
 <p>If <code>sched</code> is not <code>ABT_SCHED_NULL</code>, the user may not reuse <code>sched</code> to create another execution stream. If <code>sched</code> is not configured to be automatically freed, it is the user's responsibility to free <code>sched</code> after <code>newxstream</code> is freed.</p>
-<p>This routine allocates the rank <code>rank</code> for <code>newxstream</code>. <code>rank</code> must be non-negative value and unique among all the execution streams.</p>
+<p>This routine allocates the rank <code>rank</code> for <code>newxstream</code>. <code>rank</code> must be non-negative and not used by another execution stream.</p>
 <p>Management of ranks of execution streams is performed atomically.</p>
 <p><code>newxstream</code> must be freed by <code><a class="el" href="../../d3/def/group__ES.html#gab3155fcca3dc1afdfb658fea157efbd3" title="Free an execution stream.">ABT_xstream_free()</a></code> after its use.</p>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><p class="startdd"><b>[Argobots 1.x]</b> <code>ABT_ERR_INV_SCHED</code> is returned if this routine finds <code>sched</code> is already used.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if <code>sched</code> is already used. </p><dl class="section user">
+ <b>[Argobots 2.0]</b> The results of this routine are undefined if <code>sched</code> is already used. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>The current implementation of this check is crude since whether a scheduler is used or not is not maintained atomically. From Argobots 2.0, it becomes the user's responsibility to guarantee that <code>sched</code> is not used. Note that Argobots 1.x does not perform this check atomically, so the user may not concurrently call any routines that attempt to use the same scheduler by assuming that only one of them would succeed. </dd>
 </dl>
@@ -623,7 +622,7 @@ If <code>newxstream</code> is <code>NULL</code>, the results are undefined.<br  
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01093">1093</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01092">1092</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
 
 </div>
 </div>
@@ -646,19 +645,20 @@ If <code>newxstream</code> is <code>NULL</code>, the results are undefined.<br  
 <p>Terminate an execution stream that is running the calling ULT. </p>
 <p><code><a class="el" href="../../d3/def/group__ES.html#ga7c680ac44eb625f04301d9829bc2c8f8" title="Terminate an execution stream that is running the calling ULT.">ABT_xstream_exit()</a></code> sends a cancellation request to the execution stream that is running the calling ULT and terminates the calling ULT. This routine does not return if it succeeds. An execution stream that receives a cancellation request will terminate.</p>
 <p>Requests for execution streams are updated atomically.</p>
+<dl class="section note"><dt>Note</dt><dd>The timing of the request fulfillment is undefined, so a program that relies on the timing of the request fulfillment is non-conforming.</dd></dl>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized. <dl class="section user">
+ <b>[Argobots 2.0]</b> The results of this routine are undefined if Argobots is not initialized. <dl class="section user">
 <dt>Rationale</dt>
-<dd>From Argobots 2.0, all the Argobots routines that are not explicitly noted do not check if Argobots is initialized. This omission can reduce the branches that are mostly unnecessary. </dd>
+<dd>From Argobots 2.0, Argobots routines do not check if Argobots is initialized unless otherwise noted. This omission can reduce the branches that are unnecessary in most cases. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>The timing of the request fulfillment is undefined, so a program that relies on when the request is fulfilled is non-conforming.</dd></dl>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context. Argobots must be initialized. This routine may switch the context of the calling ULT.</dd></dl>
-<dl class="section user"><dt>Errors</dt><dd><code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
-<code>ABT_ERR_INV_THREAD</code> is returned if the caller is a tasklet.<br  />
+<dl class="section user"><dt>Errors</dt><dd><code>ABT_ERR_INV_THREAD</code> is returned if the caller is a tasklet.<br  />
+<code>ABT_ERR_INV_THREAD</code> is returned if the caller is the primary ULT.<br  />
+<code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
 <code>ABT_ERR_INV_XSTREAM</code> is returned if an execution stream that is running the calling ULT is the primary execution stream.<br  />
 <b>[Argobots 1.x]</b> <code>ABT_ERR_UNINITIALIZED</code> is returned if the Argobots runtime is not initialized.<br  />
  </dd></dl>
@@ -666,7 +666,7 @@ If <code>newxstream</code> is <code>NULL</code>, the results are undefined.<br  
  </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l00521">521</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l00522">522</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
 
 </div>
 </div>
@@ -697,7 +697,7 @@ Only one caller can be blocked on the same <code>xstream</code> by <code><a clas
 <dd><b>[Argobots 1.0]</b> <code>ABT_SUCCESS</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
  <b>[Argobots 1.1]</b> <code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 1.0 returned an error code which is obviously wrong. Argobots 1.1 fixes the error code for consistent behavior with other Argobots routines. </dd>
+<dd>Argobots 1.0 returned a wrong error code. Argobots 1.1 fixes the error code for consistent behavior with other Argobots routines. </dd>
 </dl>
 </dd>
 </dl>
@@ -709,7 +709,7 @@ Only one caller can be blocked on the same <code>xstream</code> by <code><a clas
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
 If <code>xstream</code> is <code>NULL</code>, the results are undefined.<br  />
-If <code>xstream</code> is blocked on by <code><a class="el" href="../../d3/def/group__ES.html#ga51abc49e45abfa6932101bebb0538899" title="Wait for an execution stream to terminate.">ABT_xstream_join()</a></code> and <code><a class="el" href="../../d3/def/group__ES.html#gab3155fcca3dc1afdfb658fea157efbd3" title="Free an execution stream.">ABT_xstream_free()</a></code>, the results are undefined.<br  />
+If <code>xstream</code> is blocked on by a caller of <code><a class="el" href="../../d3/def/group__ES.html#ga51abc49e45abfa6932101bebb0538899" title="Wait for an execution stream to terminate.">ABT_xstream_join()</a></code> or <code><a class="el" href="../../d3/def/group__ES.html#gab3155fcca3dc1afdfb658fea157efbd3" title="Free an execution stream.">ABT_xstream_free()</a></code>, the results are undefined.<br  />
 If <code>xstream</code> is accessed after calling this routine, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -800,7 +800,7 @@ If <code>max_cpuids</code> is positive and <code>cpuids</code> is <code>NULL</co
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01459">1459</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01455">1455</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
 
 </div>
 </div>
@@ -831,7 +831,7 @@ If <code>max_cpuids</code> is positive and <code>cpuids</code> is <code>NULL</co
 </div><div class="memdoc">
 
 <p>Get CPU ID of a CPU to which an execution stream is bound. </p>
-<p><code><a class="el" href="../../d3/def/group__ES.html#ga622fb8c9066a33371375e5bb13ae1510" title="Get CPU ID of a CPU to which an execution stream is bound.">ABT_xstream_get_cpubind()</a></code> returns the CPU ID of a CPU to which the execution stream <code>xstream</code> is bound through <code>cpuid</code>. If <code>xstream</code> is bound to more than one CPU, one of the CPU IDs is set to <code>cpuid</code>.</p>
+<p><code><a class="el" href="../../d3/def/group__ES.html#ga622fb8c9066a33371375e5bb13ae1510" title="Get CPU ID of a CPU to which an execution stream is bound.">ABT_xstream_get_cpubind()</a></code> returns the CPU ID of a CPU to which the execution stream <code>xstream</code> is bound through <code>cpuid</code>. If <code>xstream</code> is bound to more than one CPU, <code>cpuid</code> is set to one of the CPU IDs.</p>
 <dl class="section note"><dt>Note</dt><dd>The CPU ID corresponds to the processor index used by an OS.</dd></dl>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
@@ -862,7 +862,7 @@ If <code>cpuid</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01346">1346</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01342">1342</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
 
 </div>
 </div>
@@ -919,7 +919,7 @@ If <code>max_pools</code> is positive and <code>pools</code> is <code>NULL</code
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01021">1021</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01020">1020</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
 
 </div>
 </div>
@@ -967,7 +967,7 @@ If <code>sched</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l00984">984</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l00983">983</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
 
 </div>
 </div>
@@ -992,9 +992,9 @@ If <code>sched</code> is <code>NULL</code>, the results are undefined.<br  />
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><p class="startdd"><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized. </p><dl class="section user">
+ <b>[Argobots 2.0]</b> The results of this routine are undefined if Argobots is not initialized. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>From Argobots 2.0, all the Argobots routines that are not explicitly noted do not check if Argobots is initialized. This omission can reduce the branches that are mostly unnecessary. </dd>
+<dd>From Argobots 2.0, Argobots routines do not check if Argobots is initialized unless otherwise noted. This omission can reduce the branches that are unnecessary in most cases. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.x]</b> <code>num_xstreams</code> is set to zero if an error occurs.<br  />
  <b>[Argobots 2.0]</b> <code>num_xstreams</code> is not updated if an error occurs. </p><dl class="section user">
@@ -1018,7 +1018,7 @@ If <code>sched</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01130">1130</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01129">1129</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
 
 </div>
 </div>
@@ -1067,7 +1067,7 @@ If <code>rank</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l00753">753</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l00752">752</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
 
 </div>
 </div>
@@ -1116,7 +1116,7 @@ If <code>state</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01057">1057</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01056">1056</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
 
 </div>
 </div>
@@ -1164,7 +1164,7 @@ If <code>is_primary</code> is <code>NULL</code>, the results are undefined.<br  
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01163">1163</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01162">1162</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
 
 </div>
 </div>
@@ -1197,7 +1197,7 @@ This routine cannot free the primary execution stream.<br  />
 <code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is running the calling work unit.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
-If <code>xstream</code> is blocked on by <code><a class="el" href="../../d3/def/group__ES.html#ga51abc49e45abfa6932101bebb0538899" title="Wait for an execution stream to terminate.">ABT_xstream_join()</a></code> and <code><a class="el" href="../../d3/def/group__ES.html#gab3155fcca3dc1afdfb658fea157efbd3" title="Free an execution stream.">ABT_xstream_free()</a></code>, the results are undefined.<br  />
+If <code>xstream</code> is blocked on by a caller of <code><a class="el" href="../../d3/def/group__ES.html#ga51abc49e45abfa6932101bebb0538899" title="Wait for an execution stream to terminate.">ABT_xstream_join()</a></code> or <code><a class="el" href="../../d3/def/group__ES.html#gab3155fcca3dc1afdfb658fea157efbd3" title="Free an execution stream.">ABT_xstream_free()</a></code>, the results are undefined.<br  />
 If <code>xstream</code> is accessed concurrently, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1231,7 +1231,7 @@ If <code>xstream</code> is accessed concurrently, the results are undefined.<br 
 <p>Revive a terminated execution stream. </p>
 <p><code><a class="el" href="../../d3/def/group__ES.html#gac1a978cf5167c6e16d23f41070078b0b" title="Revive a terminated execution stream.">ABT_xstream_revive()</a></code> revives the execution stream <code>xstream</code> that has been terminated by <code><a class="el" href="../../d3/def/group__ES.html#ga51abc49e45abfa6932101bebb0538899" title="Wait for an execution stream to terminate.">ABT_xstream_join()</a></code>. <code>xstream</code> starts to run immediately.</p>
 <p>Management of states of execution streams is performed atomically.</p>
-<p><code>xstream</code> may not be an execution stream that has been freed by <code><a class="el" href="../../d3/def/group__ES.html#gab3155fcca3dc1afdfb658fea157efbd3" title="Free an execution stream.">ABT_xstream_free()</a></code>. An execution stream that is blocked on by <code><a class="el" href="../../d3/def/group__ES.html#gab3155fcca3dc1afdfb658fea157efbd3" title="Free an execution stream.">ABT_xstream_free()</a></code> may not be revived.</p>
+<p><code>xstream</code> may not be an execution stream that has been freed by <code><a class="el" href="../../d3/def/group__ES.html#gab3155fcca3dc1afdfb658fea157efbd3" title="Free an execution stream.">ABT_xstream_free()</a></code>. An execution stream that is blocked on by a caller of <code><a class="el" href="../../d3/def/group__ES.html#gab3155fcca3dc1afdfb658fea157efbd3" title="Free an execution stream.">ABT_xstream_free()</a></code> may not be revived.</p>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_XSTREAM</code> is returned if <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
@@ -1240,7 +1240,7 @@ If <code>xstream</code> is accessed concurrently, the results are undefined.<br 
  <code>ABT_ERR_SYS</code> is returned if an error related to system calls and standard libraries occurs.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
-If <code>xstream</code> is blocked on by <code><a class="el" href="../../d3/def/group__ES.html#gab3155fcca3dc1afdfb658fea157efbd3" title="Free an execution stream.">ABT_xstream_free()</a></code>, the results are undefined.<br  />
+If <code>xstream</code> is blocked on by a caller of <code><a class="el" href="../../d3/def/group__ES.html#gab3155fcca3dc1afdfb658fea157efbd3" title="Free an execution stream.">ABT_xstream_free()</a></code>, the results are undefined.<br  />
 If <code>xstream</code> is accessed concurrently, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1282,7 +1282,7 @@ If <code>xstream</code> is accessed concurrently, the results are undefined.<br 
 </div><div class="memdoc">
 
 <p>Execute a work unit. </p>
-<p><code><a class="el" href="../../d3/def/group__ES.html#gab6ef8abe585d935384f0133482c5ef1f" title="Execute a work unit.">ABT_xstream_run_unit()</a></code> runs a work unit <code>unit</code> associated with the pool <code>pool</code> as a child ULT on the calling ULT, which becomes a parent ULT. The calling ULT will be resumed when <code>unit</code> finishes or yields.</p>
+<p><code><a class="el" href="../../d3/def/group__ES.html#gab6ef8abe585d935384f0133482c5ef1f" title="Execute a work unit.">ABT_xstream_run_unit()</a></code> runs the work unit <code>unit</code> associated with the pool <code>pool</code> as a child ULT on the calling ULT, which becomes a parent ULT. The calling ULT will be resumed when <code>unit</code> finishes or yields.</p>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context. Argobots must be initialized. This routine may switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
@@ -1303,7 +1303,7 @@ If <code>unit</code> is not associated with <code>pool</code>, the results are u
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01201">1201</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01200">1200</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
 
 </div>
 </div>
@@ -1329,9 +1329,9 @@ If <code>unit</code> is not associated with <code>pool</code>, the results are u
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><p class="startdd"><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized. </p><dl class="section user">
+ <b>[Argobots 2.0]</b> The results of this routine are undefined if Argobots is not initialized. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>From Argobots 2.0, all the Argobots routines that are not explicitly noted do not check if Argobots is initialized. This omission can reduce the branches that are mostly unnecessary. </dd>
+<dd>From Argobots 2.0, Argobots routines do not check if Argobots is initialized unless otherwise noted. This omission can reduce the branches that are unnecessary in most cases. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.x]</b> <code>xstream</code> is set to <code>ABT_XSTREAM_NULL</code> if an error occurs.<br  />
  <b>[Argobots 2.0]</b> <code>xstream</code> is not updated if an error occurs. </p><dl class="section user">
@@ -1340,13 +1340,12 @@ If <code>unit</code> is not associated with <code>pool</code>, the results are u
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context and a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context or a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
 <b>[Argobots 1.x]</b> <code>ABT_ERR_UNINITIALIZED</code> is returned if the Argobots runtime is not initialized.<br  />
  </dd></dl>
-<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
-If <code>xstream</code> is <code>NULL</code>, the results are undefined.<br  />
+<dl class="section user"><dt>Undefined behavior</dt><dd>If <code>xstream</code> is <code>NULL</code>, the results are undefined.<br  />
 <b>[Argobots 2.0]</b> If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1383,19 +1382,18 @@ If <code>xstream</code> is <code>NULL</code>, the results are undefined.<br  />
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized. <dl class="section user">
+ <b>[Argobots 2.0]</b> The results of this routine are undefined if Argobots is not initialized. <dl class="section user">
 <dt>Rationale</dt>
-<dd>From Argobots 2.0, all the Argobots routines that are not explicitly noted do not check if Argobots is initialized. This omission can reduce the branches that are mostly unnecessary. </dd>
+<dd>From Argobots 2.0, Argobots routines do not check if Argobots is initialized unless otherwise noted. This omission can reduce the branches that are unnecessary in most cases. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context and a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context or a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
 <b>[Argobots 1.x]</b> <code>ABT_ERR_UNINITIALIZED</code> is returned if the Argobots runtime is not initialized.<br  />
  </dd></dl>
-<dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
-If <code>rank</code> is <code>NULL</code>, the results are undefined.<br  />
+<dl class="section user"><dt>Undefined behavior</dt><dd>If <code>rank</code> is <code>NULL</code>, the results are undefined.<br  />
 <b>[Argobots 2.0]</b> If Argobots is not initialized, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1406,7 +1404,7 @@ If <code>rank</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l00661">661</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l00660">660</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
 
 </div>
 </div>
@@ -1467,7 +1465,7 @@ If <code>xstream</code> is accessed concurrently, the results are undefined.<br 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01395">1395</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01391">1391</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
 
 </div>
 </div>
@@ -1519,7 +1517,7 @@ If <code>xstream</code> is accessed concurrently, the results are undefined.<br 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01296">1296</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l01292">1292</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
 
 </div>
 </div>
@@ -1566,11 +1564,15 @@ If <code>xstream</code> is accessed concurrently, the results are undefined.<br 
 To see the details of the default scheduler configuration, please check <code><a class="el" href="../../dc/d23/group__SCHED__CONFIG.html#gaf99722523587197d1d71b180457584de" title="Create a new scheduler configuration.">ABT_sched_config_create()</a></code>.</dd></dl>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
-<dd><p class="startdd">\DOC_DESC_V10_CRUDE_SCHED_SIZE_CHECK{<code>xstream</code>, <code>ABT_ERR_XSTREAM}</code> </p>
-<p class="enddd"><b>[Argobots 1.0]</b> If a pool access violation happens regarding an access type of a pool, an error is returned.<br  />
- <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined. </p><dl class="section user">
+<dd><p class="startdd"><b>[Argobots 1.0]</b> If pools associated with the current main scheduler of <code>xstream</code> are not empty, <code>ABT_ERR_XSTREAM</code> is returned.<br  />
+ <b>[Argobots 1.1]</b> This routine works even if pools associated with the current main scheduler of <code>xstream</code> are not empty. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without any problem if it is no simultaneously accessed, although it is a user error. Such an error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
+<dd>This check unnecessarily limits the applicability of this routine. It is the user's responsibility to handle work units in pools associated with the old main scheduler, e.g., by migrating them to other pools. </dd>
+</dl>
+<p class="enddd"><b>[Argobots 1.0]</b> If a pool access violation happens regarding an access type of a pool, an error is returned.<br  />
+ <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results of this routine are undefined. </p><dl class="section user">
+<dt>Rationale</dt>
+<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without an error if it is no simultaneously accessed although such a program is, strictly speaking, non-conforming. Such an access violation error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Existing programs do not work if access violation is strictly checked. From Argobots 1.1, it is the user's responsibility to manage the access to pools. </dd>
 </dl>
 </dd>
 </dl>
@@ -1582,7 +1584,7 @@ To see the details of the default scheduler configuration, please check <code><a
 <dd>Argobots 2.0 changes the error code for consistent behavior with other Argobots routines. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.x]</b> <code>ABT_ERR_INV_SCHED</code> is returned if this routine finds <code>sched</code> is already used.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if <code>sched</code> is already used. </p><dl class="section user">
+ <b>[Argobots 2.0]</b> The results of this routine are undefined if <code>sched</code> is already used. </p><dl class="section user">
 <dt>Rationale</dt>
 <dd>The current implementation of this check is crude since whether a scheduler is used or not is not maintained atomically. From Argobots 2.0, it becomes the user's responsibility to guarantee that <code>sched</code> is not used. Note that Argobots 1.x does not perform this check atomically, so the user may not concurrently call any routines that attempt to use the same scheduler by assuming that only one of them would succeed. </dd>
 </dl>
@@ -1614,7 +1616,7 @@ If the old main scheduler associated with <code>xstream</code> is accessed after
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l00842">842</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l00841">841</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
 
 </div>
 </div>
@@ -1673,9 +1675,9 @@ If the old main scheduler associated with <code>xstream</code> is accessed after
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> If a pool access violation happens regarding an access type of a pool, an error is returned.<br  />
- <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined. <dl class="section user">
+ <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results of this routine are undefined. <dl class="section user">
 <dt>Rationale</dt>
-<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without any problem if it is no simultaneously accessed, although it is a user error. Such an error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
+<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without an error if it is no simultaneously accessed although such a program is, strictly speaking, non-conforming. Such an access violation error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Existing programs do not work if access violation is strictly checked. From Argobots 1.1, it is the user's responsibility to manage the access to pools. </dd>
 </dl>
 </dd>
 </dl>
@@ -1706,7 +1708,7 @@ If the old main scheduler associated with <code>xstream</code> is accessed after
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l00940">940</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l00939">939</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
 
 </div>
 </div>
@@ -1738,9 +1740,9 @@ If the old main scheduler associated with <code>xstream</code> is accessed after
 
 <p>Set a rank for an execution stream. </p>
 <p><code><a class="el" href="../../d3/def/group__ES.html#gafffbe544760bc0db3eb3af1e7d8505ce" title="Set a rank for an execution stream.">ABT_xstream_set_rank()</a></code> allocates the new rank <code>rank</code> and assigns it to the execution stream <code>xstream</code>. The original rank of <code>xstream</code> is deallocated.</p>
-<p><code>rank</code> must be non-negative and unique among all the execution streams.</p>
+<p><code>rank</code> must be non-negative and not used by another execution stream.</p>
 <p>Management of ranks of execution streams is performed atomically.</p>
-<p>The primary execution stream cannot change its rank.</p>
+<p>The rank of the primary execution stream may not be changed.</p>
 <dl class="section note"><dt>Note</dt><dd>If the affinity setting is enabled, this routine updates the CPU binding of <code>xstream</code> based on <code>rank</code>.</dd></dl>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
@@ -1762,26 +1764,26 @@ If the old main scheduler associated with <code>xstream</code> is accessed after
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l00708">708</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/stream_8c_source.html#l00707">707</a> of file <a class="el" href="../../d8/d4d/stream_8c_source.html">stream.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="agroup__SCHED_html_gac3ea78b200ae62bf24deecf385a33f7b"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#gac3ea78b200ae62bf24deecf385a33f7b">ABT_sched_create_basic</a></div><div class="ttdeci">int ABT_sched_create_basic(ABT_sched_predef predef, int num_pools, ABT_pool *pools, ABT_sched_config config, ABT_sched *newsched) ABT_API_PUBLIC</div><div class="ttdoc">Create a new scheduler with a predefined scheduler type.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00179">sched.c:179</a></div></div>
+<div class="ttc" id="agroup__SCHED_html_gac3ea78b200ae62bf24deecf385a33f7b"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#gac3ea78b200ae62bf24deecf385a33f7b">ABT_sched_create_basic</a></div><div class="ttdeci">int ABT_sched_create_basic(ABT_sched_predef predef, int num_pools, ABT_pool *pools, ABT_sched_config config, ABT_sched *newsched) ABT_API_PUBLIC</div><div class="ttdoc">Create a new scheduler with a predefined scheduler type.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00174">sched.c:174</a></div></div>
 <div class="ttc" id="agroup__ES_html_gad747c073d11deb9ec65ee1453c92f8b2"><div class="ttname"><a href="../../d3/def/group__ES.html#gad747c073d11deb9ec65ee1453c92f8b2">ABT_xstream_create</a></div><div class="ttdeci">int ABT_xstream_create(ABT_sched sched, ABT_xstream *newxstream) ABT_API_PUBLIC</div><div class="ttdoc">Create a new execution stream.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4d/stream_8c_source.html#l00088">stream.c:88</a></div></div>
-<div class="ttc" id="agroup__SCHED_html_gadf0a564b506bb4a288f49cbfd3116025"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#gadf0a564b506bb4a288f49cbfd3116025">ABT_sched</a></div><div class="ttdeci">struct ABT_sched_opaque * ABT_sched</div><div class="ttdoc">Scheduler handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00805">abt.h:805</a></div></div>
+<div class="ttc" id="agroup__SCHED_html_gadf0a564b506bb4a288f49cbfd3116025"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#gadf0a564b506bb4a288f49cbfd3116025">ABT_sched</a></div><div class="ttdeci">struct ABT_sched_opaque * ABT_sched</div><div class="ttdoc">Scheduler handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00806">abt.h:806</a></div></div>
 <div class="ttc" id="agroup__ES_html_ga4be5088fffea111cdd2b684a12879aaa"><div class="ttname"><a href="../../d3/def/group__ES.html#ga4be5088fffea111cdd2b684a12879aaa">ABT_xstream_create_basic</a></div><div class="ttdeci">int ABT_xstream_create_basic(ABT_sched_predef predef, int num_pools, ABT_pool *pools, ABT_sched_config config, ABT_xstream *newxstream) ABT_API_PUBLIC</div><div class="ttdoc">Create a new execution stream with a predefined scheduler.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4d/stream_8c_source.html#l00179">stream.c:179</a></div></div>
-<div class="ttc" id="agroup__ES_html_ga3882b667e35d69b331492ad153ca6edb"><div class="ttname"><a href="../../d3/def/group__ES.html#ga3882b667e35d69b331492ad153ca6edb">ABT_xstream_set_main_sched_basic</a></div><div class="ttdeci">int ABT_xstream_set_main_sched_basic(ABT_xstream xstream, ABT_sched_predef predef, int num_pools, ABT_pool *pools) ABT_API_PUBLIC</div><div class="ttdoc">Set the main scheduler of an execution stream to a predefined scheduler.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4d/stream_8c_source.html#l00940">stream.c:940</a></div></div>
+<div class="ttc" id="agroup__ES_html_ga3882b667e35d69b331492ad153ca6edb"><div class="ttname"><a href="../../d3/def/group__ES.html#ga3882b667e35d69b331492ad153ca6edb">ABT_xstream_set_main_sched_basic</a></div><div class="ttdeci">int ABT_xstream_set_main_sched_basic(ABT_xstream xstream, ABT_sched_predef predef, int num_pools, ABT_pool *pools) ABT_API_PUBLIC</div><div class="ttdoc">Set the main scheduler of an execution stream to a predefined scheduler.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4d/stream_8c_source.html#l00939">stream.c:939</a></div></div>
 <div class="ttc" id="agroup__ERROR__CODE_html_gacf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdoc">Error code: the routine returns successfully.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00092">abt.h:92</a></div></div>
-<div class="ttc" id="aabt_8h_html_a6a6ecfc1f874488af85684f7bf61f237"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a6a6ecfc1f874488af85684f7bf61f237">ABT_SCHED_CONFIG_NULL</a></div><div class="ttdeci">#define ABT_SCHED_CONFIG_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01055">abt.h:1055</a></div></div>
-<div class="ttc" id="aabt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdoc">True constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00745">abt.h:745</a></div></div>
-<div class="ttc" id="aabt_8h_html_a6ec206ed23259ffaa4ec3c554329381f"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a6ec206ed23259ffaa4ec3c554329381f">ABT_SCHED_NULL</a></div><div class="ttdeci">#define ABT_SCHED_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01054">abt.h:1054</a></div></div>
-<div class="ttc" id="aabt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdoc">False constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00747">abt.h:747</a></div></div>
-<div class="ttc" id="agroup__ES_html_gaf4f24ac290204d7be10e420644121a85"><div class="ttname"><a href="../../d3/def/group__ES.html#gaf4f24ac290204d7be10e420644121a85">ABT_xstream_set_main_sched</a></div><div class="ttdeci">int ABT_xstream_set_main_sched(ABT_xstream xstream, ABT_sched sched) ABT_API_PUBLIC</div><div class="ttdoc">Set the main scheduler of an execution stream.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4d/stream_8c_source.html#l00842">stream.c:842</a></div></div>
-<div class="ttc" id="agroup__SCHED_html_ga444e7300384a4a69864327b005c94f44"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#ga444e7300384a4a69864327b005c94f44">ABT_sched_free</a></div><div class="ttdeci">int ABT_sched_free(ABT_sched *sched) ABT_API_PUBLIC</div><div class="ttdoc">Free a scheduler.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00239">sched.c:239</a></div></div>
+<div class="ttc" id="aabt_8h_html_a6a6ecfc1f874488af85684f7bf61f237"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a6a6ecfc1f874488af85684f7bf61f237">ABT_SCHED_CONFIG_NULL</a></div><div class="ttdeci">#define ABT_SCHED_CONFIG_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01056">abt.h:1056</a></div></div>
+<div class="ttc" id="aabt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdoc">True constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00746">abt.h:746</a></div></div>
+<div class="ttc" id="aabt_8h_html_a6ec206ed23259ffaa4ec3c554329381f"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a6ec206ed23259ffaa4ec3c554329381f">ABT_SCHED_NULL</a></div><div class="ttdeci">#define ABT_SCHED_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01055">abt.h:1055</a></div></div>
+<div class="ttc" id="aabt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdoc">False constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00748">abt.h:748</a></div></div>
+<div class="ttc" id="agroup__ES_html_gaf4f24ac290204d7be10e420644121a85"><div class="ttname"><a href="../../d3/def/group__ES.html#gaf4f24ac290204d7be10e420644121a85">ABT_xstream_set_main_sched</a></div><div class="ttdeci">int ABT_xstream_set_main_sched(ABT_xstream xstream, ABT_sched sched) ABT_API_PUBLIC</div><div class="ttdoc">Set the main scheduler of an execution stream.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4d/stream_8c_source.html#l00841">stream.c:841</a></div></div>
+<div class="ttc" id="agroup__SCHED_html_ga444e7300384a4a69864327b005c94f44"><div class="ttname"><a href="../../d0/d83/group__SCHED.html#ga444e7300384a4a69864327b005c94f44">ABT_sched_free</a></div><div class="ttdeci">int ABT_sched_free(ABT_sched *sched) ABT_API_PUBLIC</div><div class="ttdoc">Free a scheduler.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbe/sched_8c_source.html#l00234">sched.c:234</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 10 2021 03:10:12 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 12 2021 03:10:08 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

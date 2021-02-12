@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">f816757cfdc8e5fef84abc0c0bf0a654684af46a</span>
+   &#160;<span id="projectnumber">2892a0cc7e2babf3b5cb0f43c2796b2861550983</span>
    </div>
   </td>
  </tr>
@@ -184,7 +184,7 @@ Functions</h2></td></tr>
 <p>Pool handle type. </p>
 <p>A NULL handle of this type is <code>ABT_POOL_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00838">838</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00839">839</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -202,7 +202,7 @@ Functions</h2></td></tr>
 
 <p>Pool access type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00855">855</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00856">856</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -221,7 +221,7 @@ Functions</h2></td></tr>
 <p>Pool configuration handle type. </p>
 <p>A NULL handle of this type is <code>ABT_POOL_CONFIG_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00845">845</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00846">846</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -239,7 +239,7 @@ Functions</h2></td></tr>
 
 <p>Predefined pool type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00850">850</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00851">851</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -334,16 +334,16 @@ Functions</h2></td></tr>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> If a pool access violation happens regarding an access type of a pool, an error is returned.<br  />
- <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined. <dl class="section user">
+ <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results of this routine are undefined. <dl class="section user">
 <dt>Rationale</dt>
-<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without any problem if it is no simultaneously accessed, although it is a user error. Such an error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
+<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without an error if it is no simultaneously accessed although such a program is, strictly speaking, non-conforming. Such an access violation error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Existing programs do not work if access violation is strictly checked. From Argobots 1.1, it is the user's responsibility to manage the access to pools. </dd>
 </dl>
 </dd>
 </dl>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> <code>ABT_ERR_INV_SCHED</code> is returned if this routine finds <code>sched</code> is already used.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if <code>sched</code> is already used. <dl class="section user">
+ <b>[Argobots 2.0]</b> The results of this routine are undefined if <code>sched</code> is already used. <dl class="section user">
 <dt>Rationale</dt>
 <dd>The current implementation of this check is crude since whether a scheduler is used or not is not maintained atomically. From Argobots 2.0, it becomes the user's responsibility to guarantee that <code>sched</code> is not used. Note that Argobots 1.x does not perform this check atomically, so the user may not concurrently call any routines that attempt to use the same scheduler by assuming that only one of them would succeed. </dd>
 </dl>
@@ -368,7 +368,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00784">784</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00782">782</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
@@ -406,7 +406,7 @@ Functions</h2></td></tr>
 
 <p>Create a new pool. </p>
 <p><code><a class="el" href="../../d9/d52/group__POOL.html#ga7a000646ad0b5899ee47779d051758e8" title="Create a new pool.">ABT_pool_create()</a></code> creates a new pool, given by the pool definition (<code>def</code>) and a pool configuration (<code>config</code>), and returns its handle through <code>newpool</code>. If <code>p_init</code> is not <code>NULL</code>, this routine calls <code>p_init()</code> with <code>newpool</code> as the first argument and <code>config</code> as the second argument. This routine returns an error returned by <code>p_init()</code> if <code>p_init()</code> does not return <code>ABT_SUCCESS</code>.</p>
-<p>The user can pass <code>ABT_POOL_CONFIG_NULL</code> as <code>config</code>. The configuration is passed as the parameter of the initialization function of the pool.</p>
+<p><code>config</code> is passed as the second argument of the initialization function of the pool.</p>
 <p><code>def</code> must define all the non-optional functions. See <code><a class="el" href="../../d4/dfc/structABT__pool__def.html" title="A struct that defines a pool.">ABT_pool_def</a></code> for details.</p>
 <p>The caller of each pool function is undefined, so a program that relies on the caller of pool functions is non-conforming.</p>
 <dl class="section note"><dt>Note</dt><dd>Specifically, any explicit or implicit context-switching operation in a pool function may cause undefined behavior.</dd></dl>
@@ -494,10 +494,10 @@ If <code>newpool</code> is <code>NULL</code>, the results are undefined.<br  />
 <p>If <code>automatic</code> is <code>ABT_TRUE</code>, <code>newpool</code> is automatically freed when all the schedulers associated with <code>newpool</code> are freed. If the user does not associate <code>newpool</code> with a scheduler, the user needs to manually free <code>newpool</code> regardless of <code>automatic</code>.</p>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
-<dd><b>[Argobots 1.0]</b> The Argobots runtime respects an access type of a pool and returns an error if possible if a pool access violation happens regarding an access type of a pool.<br  />
- <b>[Argobots 1.1]</b> The Argobots runtime does not check an access type of a pool. If a pool access violation happens regarding an access type of a pool, the results are undefined. <dl class="section user">
+<dd><b>[Argobots 1.0]</b> The Argobots runtime respects an access type of a pool and returns an error in a best-effort basis if a pool access violation happens regarding an access type of a pool.<br  />
+ <b>[Argobots 1.1]</b> The Argobots runtime does not check an access type of a pool. If a pool access violation happens regarding an access type of a pool, the results of this routine are undefined. <dl class="section user">
 <dt>Rationale</dt>
-<dd>This access type was used for access violation error check. This check will be removed in Argobots 1.1 since correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
+<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without an error if it is no simultaneously accessed although such a program is, strictly speaking, non-conforming. Such an access violation error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Existing programs do not work if access violation is strictly checked. From Argobots 1.1, it is the user's responsibility to manage the access to pools. </dd>
 </dl>
 </dd>
 </dl>
@@ -652,8 +652,8 @@ If <code>access</code> is <code>NULL</code>, the results are undefined.<br  />
 </div><div class="memdoc">
 
 <p>Retrieve user data from a pool. </p>
-<p><code><a class="el" href="../../d9/d52/group__POOL.html#gaae4cb8502f813229d2fbb5e0961ffdf3" title="Set user data in a pool.">ABT_pool_set_data()</a></code> returns user data in the pool <code>pool</code> through <code>data</code>.</p>
-<dl class="section note"><dt>Note</dt><dd>The specific data of the newly created pool is <code>NULL</code>.</dd></dl>
+<p><code><a class="el" href="../../d9/d52/group__POOL.html#gac5e9bbf2126b7c2b951068bafbd47fde" title="Retrieve user data from a pool.">ABT_pool_get_data()</a></code> returns user data in the pool <code>pool</code> through <code>data</code>.</p>
+<dl class="section note"><dt>Note</dt><dd>The user data of the newly created pool is <code>NULL</code>.</dd></dl>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_POOL</code> is returned if <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
@@ -670,7 +670,7 @@ If <code>data</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00732">732</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00730">730</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
@@ -718,7 +718,7 @@ If <code>id</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00834">834</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00832">832</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
@@ -761,9 +761,9 @@ If <code>id</code> is <code>NULL</code>, the results are undefined.<br  />
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> If a pool access violation happens regarding an access type of a pool, an error is returned.<br  />
- <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined. <dl class="section user">
+ <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results of this routine are undefined. <dl class="section user">
 <dt>Rationale</dt>
-<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without any problem if it is no simultaneously accessed, although it is a user error. Such an error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
+<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without an error if it is no simultaneously accessed although such a program is, strictly speaking, non-conforming. Such an access violation error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Existing programs do not work if access violation is strictly checked. From Argobots 1.1, it is the user's responsibility to manage the access to pools. </dd>
 </dl>
 </dd>
 </dl>
@@ -820,15 +820,15 @@ If <code>size</code> is <code>NULL</code>, the results are undefined.<br  />
 <p class="startli">This routine sets <code>size</code> to the sum of a value returned by <code>p_get_size()</code> called with <code>pool</code> as its argument and the number of blocking work units that are associated with <code>pool</code>.</p>
 </li>
 <li><p class="startli">If <code>pool</code> is created by <code><a class="el" href="../../d9/d52/group__POOL.html#gaae479c7d7ae2816d8a953ea307611b49" title="Create a new pool from a predefined type.">ABT_pool_create_basic()</a></code>:</p>
-<p class="startli">This routine sets <code>size</code> to the sum of the number of work units including in <code>pool</code> and the number of blocking work units associated with <code>pool</code>.</p>
+<p class="startli">This routine sets <code>size</code> to the sum of the number of work units including works units in <code>pool</code> and suspended work units associated with <code>pool</code>.</p>
 </li>
 </ul>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> If a pool access violation happens regarding an access type of a pool, an error is returned.<br  />
- <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined. <dl class="section user">
+ <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results of this routine are undefined. <dl class="section user">
 <dt>Rationale</dt>
-<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without any problem if it is no simultaneously accessed, although it is a user error. Such an error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
+<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without an error if it is no simultaneously accessed although such a program is, strictly speaking, non-conforming. Such an access violation error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Existing programs do not work if access violation is strictly checked. From Argobots 1.1, it is the user's responsibility to manage the access to pools. </dd>
 </dl>
 </dd>
 </dl>
@@ -885,15 +885,15 @@ If <code>size</code> is <code>NULL</code>, the results are undefined.<br  />
 <p class="startli">This routine sets <code>p_unit</code> to a value returned by <code>p_pop()</code> called with <code>pool</code> as its argument.</p>
 </li>
 <li><p class="startli">If <code>pool</code> is created by <code><a class="el" href="../../d9/d52/group__POOL.html#gaae479c7d7ae2816d8a953ea307611b49" title="Create a new pool from a predefined type.">ABT_pool_create_basic()</a></code>:</p>
-<p class="startli">This routine tries to pop a work unit from <code>pool</code>. If this routine successfully pops a work unit, this routine sets <code>p_unit</code> to the obtained handle of <code>ABT_unit</code>. Otherwise, this routine sets <code>ABT_UNIT_NULL</code> to <code>p_unit</code>.</p>
+<p class="startli">This routine tries to pop a work unit from <code>pool</code>. If this routine successfully pops a work unit, this routine sets <code>p_unit</code> to the obtained handle of <code>ABT_unit</code>. Otherwise, this routine sets <code>p_unit</code> to <code>ABT_UNIT_NULL</code>.</p>
 </li>
 </ul>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><p class="startdd"><b>[Argobots 1.0]</b> If a pool access violation happens regarding an access type of a pool, an error is returned.<br  />
- <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined. </p><dl class="section user">
+ <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results of this routine are undefined. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without any problem if it is no simultaneously accessed, although it is a user error. Such an error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
+<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without an error if it is no simultaneously accessed although such a program is, strictly speaking, non-conforming. Such an access violation error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Existing programs do not work if access violation is strictly checked. From Argobots 1.1, it is the user's responsibility to manage the access to pools. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.0]</b> If an external thread calls this routine, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
  <b>[Argobots 1.1]</b> An external thread may call this routine. </p><dl class="section user">
@@ -911,7 +911,7 @@ If <code>size</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a ULT context and a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.<br  />
+<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a ULT context or a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.<br  />
 <b>[Argobots 2.0]</b> This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_POOL</code> is returned if <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
@@ -968,20 +968,20 @@ If <code>p_unit</code> is <code>NULL</code>, the results are undefined.<br  />
 <p><code><a class="el" href="../../d9/d52/group__POOL.html#ga2352e41d6926b40fdabb97a72a90c144" title="Pop a unit from a pool with timed wait.">ABT_pool_pop_timedwait()</a></code> pops a work unit from the pool <code>pool</code> and sets it to <code>p_unit</code>.</p>
 <ul>
 <li><p class="startli">If <code>pool</code> is created by <code><a class="el" href="../../d9/d52/group__POOL.html#ga7a000646ad0b5899ee47779d051758e8" title="Create a new pool.">ABT_pool_create()</a></code>:</p>
-<p class="startli">This routine sets <code>p_unit</code> to a value returned by <code>p_pop_timedwait()</code> called with <code>pool</code> as its first argument and <code>abstime_sec</code> as the second argument.</p>
+<p class="startli">This routine sets <code>p_unit</code> to a value returned by <code>p_pop_timedwait()</code> called with <code>pool</code> as its first argument and <code>abstime_secs</code> as the second argument.</p>
 </li>
 <li><p class="startli">If <code>pool</code> is created by <code><a class="el" href="../../d9/d52/group__POOL.html#gaae479c7d7ae2816d8a953ea307611b49" title="Create a new pool from a predefined type.">ABT_pool_create_basic()</a></code>:</p>
-<p class="startli">This routine tries to pop a work unit from <code>pool</code>. If <code>pool</code> is empty, an underlying execution stream or an external thread that calls this routine is blocked on <code>pool</code> until the current time exceeds <code>abstime_secs</code>. If this routine successfully pops a work unit, this routine sets <code>p_unit</code> to the obtained handle of <code>ABT_unit</code>. Otherwise, this routine sets <code>ABT_UNIT_NULL</code> to <code>p_unit</code>.</p>
+<p class="startli">This routine tries to pop a work unit from <code>pool</code>. If <code>pool</code> is empty, an underlying execution stream or an external thread that calls this routine is blocked on <code>pool</code> until the current time exceeds <code>abstime_secs</code>. If this routine successfully pops a work unit, this routine sets <code>p_unit</code> to the obtained handle of <code>ABT_unit</code>. Otherwise, this routine sets <code>p_unit</code> to <code>ABT_UNIT_NULL</code>.</p>
 </li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd><code>abstime_secs</code> can be calculated by adding an offset time to a value returned by <code><a class="el" href="../../d0/dde/group__TIMER.html#ga872b14356c27d22d4f18c85303a37608" title="Get elapsed wall clock time.">ABT_get_wtime()</a></code>.</dd></dl>
-<p>This routine is deprecated. The user should use <code><a class="el" href="../../d9/d52/group__POOL.html#gaf22802d586052a8562abc07f779b5302" title="Pop a unit from a pool with wait.">ABT_pool_pop_wait()</a></code> instead.</p>
+<dl class="section note"><dt>Note</dt><dd><code>abstime_secs</code> can be calculated by adding an offset time to a value returned by <code><a class="el" href="../../d0/dde/group__TIMER.html#ga872b14356c27d22d4f18c85303a37608" title="Get elapsed wall clock time.">ABT_get_wtime()</a></code>.<br  />
+This routine will be replaced by <code><a class="el" href="../../d9/d52/group__POOL.html#gaf22802d586052a8562abc07f779b5302" title="Pop a unit from a pool with wait.">ABT_pool_pop_wait()</a></code> in the future..</dd></dl>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><p class="startdd"><b>[Argobots 1.0]</b> If a pool access violation happens regarding an access type of a pool, an error is returned.<br  />
- <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined. </p><dl class="section user">
+ <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results of this routine are undefined. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without any problem if it is no simultaneously accessed, although it is a user error. Such an error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
+<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without an error if it is no simultaneously accessed although such a program is, strictly speaking, non-conforming. Such an access violation error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Existing programs do not work if access violation is strictly checked. From Argobots 1.1, it is the user's responsibility to manage the access to pools. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.0]</b> If an external thread calls this routine, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
  <b>[Argobots 1.1]</b> An external thread may call this routine. </p><dl class="section user">
@@ -1017,7 +1017,7 @@ If <code>p_unit</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00511">511</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00509">509</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
@@ -1063,13 +1063,13 @@ If <code>p_unit</code> is <code>NULL</code>, the results are undefined.<br  />
 <p class="startli">This routine tries to pop a work unit from <code>pool</code>. If <code>pool</code> is empty, an underlying execution stream or an external thread that calls this routine is blocked on <code>pool</code> for <code>time_sec</code> seconds. If this routine successfully pops a work unit, this routine sets <code>p_unit</code> to the obtained handle of <code>ABT_unit</code>. Otherwise, this routine sets <code>p_unit</code> to <code>ABT_UNIT_NULL</code>.</p>
 </li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>In most cases, <code><a class="el" href="../../d9/d52/group__POOL.html#ga50138fd611a69d657d3314cd606c68f6" title="Pop a work unit from a pool.">ABT_pool_pop()</a></code> is more efficient. <code><a class="el" href="../../d9/d52/group__POOL.html#gaf22802d586052a8562abc07f779b5302" title="Pop a unit from a pool with wait.">ABT_pool_pop_wait()</a></code> would be useful in cases where the user wants to make execution streams sleep when <code>pool</code> is empty.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>In most cases, <code><a class="el" href="../../d9/d52/group__POOL.html#ga50138fd611a69d657d3314cd606c68f6" title="Pop a work unit from a pool.">ABT_pool_pop()</a></code> is more efficient. <code><a class="el" href="../../d9/d52/group__POOL.html#gaf22802d586052a8562abc07f779b5302" title="Pop a unit from a pool with wait.">ABT_pool_pop_wait()</a></code> would be useful in cases where the user wants to sleep execution streams when <code>pool</code> is empty.</dd></dl>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><p class="startdd"><b>[Argobots 1.x]</b> <code><a class="el" href="../../d4/dfc/structABT__pool__def.html" title="A struct that defines a pool.">ABT_pool_def</a></code> does not define <code>p_pop_wait</code>. <br  />
  <b>[Argobots 2.0]</b> <code><a class="el" href="../../d4/dfc/structABT__pool__def.html" title="A struct that defines a pool.">ABT_pool_def</a></code> defines <code>p_pop_wait</code>. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>To maintain the ABI compatibility, <code>p_pop_wait</code> is excluded from <code><a class="el" href="../../d4/dfc/structABT__pool__def.html" title="A struct that defines a pool.">ABT_pool_def</a></code>. </dd>
+<dd>To maintain the ABI compatibility, Argobots 1.x does not define <code>p_pop_wait</code> in <code><a class="el" href="../../d4/dfc/structABT__pool__def.html" title="A struct that defines a pool.">ABT_pool_def</a></code>. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.x]</b> <code>p_unit</code> is set to <code>ABT_UNIT_NULL</code> if an error occurs.<br  />
  <b>[Argobots 2.0]</b> <code>p_unit</code> is not updated if an error occurs. </p><dl class="section user">
@@ -1162,7 +1162,7 @@ If the internal state of the Argobots is changed in <code>print_fn()</code>, the
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00666">666</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00664">664</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
@@ -1205,14 +1205,14 @@ If the internal state of the Argobots is changed in <code>print_fn()</code>, the
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><p class="startdd"><b>[Argobots 1.0]</b> If a pool access violation happens regarding an access type of a pool, an error is returned.<br  />
- <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined. </p><dl class="section user">
+ <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results of this routine are undefined. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without any problem if it is no simultaneously accessed, although it is a user error. Such an error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
+<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without an error if it is no simultaneously accessed although such a program is, strictly speaking, non-conforming. Such an access violation error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Existing programs do not work if access violation is strictly checked. From Argobots 1.1, it is the user's responsibility to manage the access to pools. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.0]</b> <code>ABT_ERR_UNIT</code> is returned if <code>unit</code> is <code>ABT_UNIT_NULL</code>.<br  />
  <b>[Argobots 1.1]</b> <code>ABT_ERR_INV_UNIT</code> is returned if <code>unit</code> is <code>ABT_UNIT_NULL</code>. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 1.0 returned an error code which is obviously wrong. Argobots 1.1 fixes the error code for consistent behavior with other Argobots routines. </dd>
+<dd>Argobots 1.0 returned a wrong error code. Argobots 1.1 fixes the error code for consistent behavior with other Argobots routines. </dd>
 </dl>
 </dd>
 </dl>
@@ -1233,7 +1233,7 @@ If <code>unit</code> is not associated with <code>pool</code>, the results are u
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00560">560</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00558">558</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
@@ -1276,9 +1276,9 @@ If <code>unit</code> is not associated with <code>pool</code>, the results are u
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><p class="startdd"><b>[Argobots 1.0]</b> If a pool access violation happens regarding an access type of a pool, an error is returned.<br  />
- <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results are undefined. </p><dl class="section user">
+ <b>[Argobots 1.1]</b> If a pool access violation happens regarding an access type of a pool, the results of this routine are undefined. </p><dl class="section user">
 <dt>Rationale</dt>
-<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without any problem if it is no simultaneously accessed, although it is a user error. Such an error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Correctly implementing the access violation check could break the actual API compatibility. From Argobots 1.1, it is the user's responsibility to manage access to pools. </dd>
+<dd>The implementation of Argobots 1.0 does not strictly check this error, so some user programs work without an error if it is no simultaneously accessed although such a program is, strictly speaking, non-conforming. Such an access violation error is often not recoverable, for example, when an execution stream pushes a ULT to a pool that cannot be accessed by this execution stream. Existing programs do not work if access violation is strictly checked. From Argobots 1.1, it is the user's responsibility to manage the access to pools. </dd>
 </dl>
 <p class="enddd"><b>[Argobots 1.0]</b> If an external thread calls this routine, <code>ABT_ERR_INV_XSTREAM</code> is returned.<br  />
  <b>[Argobots 1.1]</b> An external thread may call this routine. </p><dl class="section user">
@@ -1305,7 +1305,7 @@ If <code>unit</code> is not in <code>pool</code>, the results are undefined.<br 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00612">612</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00610">610</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
@@ -1353,14 +1353,14 @@ If <code>pool</code> is accessed concurrently, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00699">699</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/de5/pool_8c_source.html#l00697">697</a> of file <a class="el" href="../../d4/de5/pool_8c_source.html">pool.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 10 2021 03:10:12 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 12 2021 03:10:07 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

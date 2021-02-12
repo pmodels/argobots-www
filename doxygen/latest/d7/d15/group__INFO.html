@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">f816757cfdc8e5fef84abc0c0bf0a654684af46a</span>
+   &#160;<span id="projectnumber">2892a0cc7e2babf3b5cb0f43c2796b2861550983</span>
    </div>
   </td>
  </tr>
@@ -139,7 +139,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga277bdca06b7d339790c947dc9926c788"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the runtime information of Argobots.  <a href="../../d7/d15/group__INFO.html#ga277bdca06b7d339790c947dc9926c788">More...</a><br /></td></tr>
 <tr class="separator:ga277bdca06b7d339790c947dc9926c788"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab166d8349988cc165a6b3a998ee629fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d15/group__INFO.html#gab166d8349988cc165a6b3a998ee629fe">ABT_info_print_all_xstreams</a> (FILE *fp)</td></tr>
-<tr class="memdesc:gab166d8349988cc165a6b3a998ee629fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the information of execution streams.  <a href="../../d7/d15/group__INFO.html#gab166d8349988cc165a6b3a998ee629fe">More...</a><br /></td></tr>
+<tr class="memdesc:gab166d8349988cc165a6b3a998ee629fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the information of all execution streams.  <a href="../../d7/d15/group__INFO.html#gab166d8349988cc165a6b3a998ee629fe">More...</a><br /></td></tr>
 <tr class="separator:gab166d8349988cc165a6b3a998ee629fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0349718e209a1012e376cd1b24b7caf1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d15/group__INFO.html#ga0349718e209a1012e376cd1b24b7caf1">ABT_info_print_xstream</a> (FILE *fp, <a class="el" href="../../d3/def/group__ES.html#gad79a2fa8571915e3cfcd1383fcebf6f3">ABT_xstream</a> xstream)</td></tr>
 <tr class="memdesc:ga0349718e209a1012e376cd1b24b7caf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the information of an execution stream.  <a href="../../d7/d15/group__INFO.html#ga0349718e209a1012e376cd1b24b7caf1">More...</a><br /></td></tr>
@@ -193,7 +193,7 @@ Functions</h2></td></tr>
 <div class="line">   BETA (b)  = 1 (ABT_RELEASE_TYPE_BETA)</div>
 <div class="line">   RC (rc)   = 2 (ABT_RELEASE_TYPE_RC)</div>
 <div class="line">   PATCH (p) = 3 (ABT_RELEASE_TYPE_PATCH)</div>
-</div><!-- fragment --><p><code>ABT_NUMVERSION</code> has 1 digit for MAJ, 2 digits for MIN, 2 digits for REV, 1 digit for EXT, and 2 digits for EXT_NUMBER, so 1.0.7rc1 is converted to the numeric version 10007201. </p>
+</div><!-- fragment --><p><code>ABT_NUMVERSION</code> has 1 digit for MAJ, 2 digits for MIN, 2 digits for REV, 1 digit for EXT, and 2 digits for EXT_NUMBER. For example, 1.0.7rc1 is converted to the numeric version 10007201. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00068">68</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
@@ -214,7 +214,7 @@ Functions</h2></td></tr>
 <p>Version string of Argobots. </p>
 <p><code>ABT_VERSION</code> is the version string of Argobots. <code>ABT_VERSION</code> uses the following format:</p>
 <div class="fragment"><div class="line">ABT_VERSION = [MAJ].[MIN].[REV][EXT][EXT_NUMBER]</div>
-<div class="line">Example: 1.0.7rc1 has</div>
+<div class="line">Example: ABT_VERSION = 1.0.7rc1 represents</div>
 <div class="line">         MAJ = 1</div>
 <div class="line">         MIN = 0</div>
 <div class="line">         REV = 7</div>
@@ -241,7 +241,7 @@ Functions</h2></td></tr>
 
 <p>Query type for <code><a class="el" href="../../d7/d15/group__INFO.html#ga70d9fdae92659b13973c56415811012c" title="Retrieve the configuration information.">ABT_info_query_config()</a></code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01003">1003</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01004">1004</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -266,7 +266,7 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="gga740335a6e32f1eb9cb2cd0a7239d98ada92e79387b5e59a45e35dcbf0e647188f"></a>ABT_INFO_QUERY_KIND_ENABLED_LOG&#160;</td><td class="fielddoc"><p>Whether Argobots prints a debug message or not </p>
 </td></tr>
-<tr><td class="fieldname"><a id="gga740335a6e32f1eb9cb2cd0a7239d98ada82de98829d70c5294507896903bba5c0"></a>ABT_INFO_QUERY_KIND_ENABLED_VALGRIND&#160;</td><td class="fielddoc"><p>Whether Argobots is configured to be Valgrind friendly </p>
+<tr><td class="fieldname"><a id="gga740335a6e32f1eb9cb2cd0a7239d98ada82de98829d70c5294507896903bba5c0"></a>ABT_INFO_QUERY_KIND_ENABLED_VALGRIND&#160;</td><td class="fielddoc"><p>Whether Argobots is configured to be Valgrind friendly or not </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga740335a6e32f1eb9cb2cd0a7239d98adae6682f751588fc2be2fe941587efdb36"></a>ABT_INFO_QUERY_KIND_ENABLED_CHECK_ERROR&#160;</td><td class="fielddoc"><p>Whether an error is checked or not </p>
 </td></tr>
@@ -286,9 +286,9 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="gga740335a6e32f1eb9cb2cd0a7239d98ada4e8a9b46d9a45bf33dfebcdc19019c04"></a>ABT_INFO_QUERY_KIND_ENABLED_EXTERNAL_THREAD&#160;</td><td class="fielddoc"><p>Whether the external thread feature is supported or not </p>
 </td></tr>
-<tr><td class="fieldname"><a id="gga740335a6e32f1eb9cb2cd0a7239d98ada33a67e91736b5553e9897b47c1546ed6"></a>ABT_INFO_QUERY_KIND_ENABLED_SCHED_SLEEP&#160;</td><td class="fielddoc"><p>Whether a predefined scheduler sleeps or not </p>
+<tr><td class="fieldname"><a id="gga740335a6e32f1eb9cb2cd0a7239d98ada33a67e91736b5553e9897b47c1546ed6"></a>ABT_INFO_QUERY_KIND_ENABLED_SCHED_SLEEP&#160;</td><td class="fielddoc"><p>Whether a predefined scheduler sleeps when idle or not </p>
 </td></tr>
-<tr><td class="fieldname"><a id="gga740335a6e32f1eb9cb2cd0a7239d98ada73c3f7f44ad6726ea86cc2bdca8fde8f"></a>ABT_INFO_QUERY_KIND_ENABLED_PRINT_CONFIG&#160;</td><td class="fielddoc"><p>Whether the Argobots configuration is printed on <a class="el" href="../../d4/d00/group__ENV.html#ga068e0ac9ffecb4b9a3cd8b238d632be8" title="Initialize the Argobots execution environment.">ABT_init()</a> or not </p>
+<tr><td class="fieldname"><a id="gga740335a6e32f1eb9cb2cd0a7239d98ada73c3f7f44ad6726ea86cc2bdca8fde8f"></a>ABT_INFO_QUERY_KIND_ENABLED_PRINT_CONFIG&#160;</td><td class="fielddoc"><p>Whether the Argobots configuration is printed in the top-level <a class="el" href="../../d4/d00/group__ENV.html#ga068e0ac9ffecb4b9a3cd8b238d632be8" title="Initialize the Argobots execution environment.">ABT_init()</a> or not </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga740335a6e32f1eb9cb2cd0a7239d98ada04e8f46bee5d69de517c5d464be71a9d"></a>ABT_INFO_QUERY_KIND_ENABLED_AFFINITY&#160;</td><td class="fielddoc"><p>Whether the affinity setting is supported or not </p>
 </td></tr>
@@ -335,15 +335,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Print the information of execution streams. </p>
-<p><code><a class="el" href="../../d7/d15/group__INFO.html#gab166d8349988cc165a6b3a998ee629fe" title="Print the information of execution streams.">ABT_info_print_all_xstreams()</a></code> writes the information of all execution streams to the output stream <code>fp</code>.</p>
-<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis and can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
+<p>Print the information of all execution streams. </p>
+<p><code><a class="el" href="../../d7/d15/group__INFO.html#gab166d8349988cc165a6b3a998ee629fe" title="Print the information of all execution streams.">ABT_info_print_all_xstreams()</a></code> writes the information of all execution streams to the output stream <code>fp</code>.</p>
+<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis, so the contents and the format of the printed information can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> when Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> This routine prints the queried information and returns <code>ABT_SUCCESS</code> when Argobots is not initialized. <dl class="section user">
+ <b>[Argobots 2.0]</b> This routine prints the information and returns <code>ABT_SUCCESS</code> when Argobots is not initialized. <dl class="section user">
 <dt>Rationale</dt>
-<dd>The information routines primarily for debugging and diagnosis should avoid returning an error as much as possible. </dd>
+<dd>The information routines are primarily for debugging and diagnosis, so they should avoid returning an error. </dd>
 </dl>
 </dd>
 </dl>
@@ -385,13 +385,13 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 
 <p>Print the runtime information of Argobots. </p>
 <p><code><a class="el" href="../../d7/d15/group__INFO.html#ga277bdca06b7d339790c947dc9926c788" title="Print the runtime information of Argobots.">ABT_info_print_config()</a></code> writes the runtime information of Argobots to the output stream <code>fp</code>.</p>
-<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis and can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis, so the contents and the format of the printed information can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> when Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> This routine prints the queried information and returns <code>ABT_SUCCESS</code> when Argobots is not initialized. <dl class="section user">
+ <b>[Argobots 2.0]</b> This routine prints the information and returns <code>ABT_SUCCESS</code> when Argobots is not initialized. <dl class="section user">
 <dt>Rationale</dt>
-<dd>The information routines primarily for debugging and diagnosis should avoid returning an error as much as possible. </dd>
+<dd>The information routines are primarily for debugging and diagnosis, so they should avoid returning an error. </dd>
 </dl>
 </dd>
 </dl>
@@ -443,13 +443,13 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 
 <p>Print the information of a pool. </p>
 <p><code><a class="el" href="../../d7/d15/group__INFO.html#ga285d8d7835704a40b12492736dbca2dc" title="Print the information of a pool.">ABT_info_print_pool()</a></code> writes the information of the pool <code>pool</code> to the output stream <code>fp</code>.</p>
-<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis and can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis, so the contents and the format of the printed information can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_INV_POOL</code> when <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
  <b>[Argobots 2.0]</b> This routine prints that <code>pool</code> is an invalid handle when <code>pool</code> is <code>ABT_POOL_NULL</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>The information routines primarily for debugging and diagnosis should avoid returning an error as much as possible. </dd>
+<dd>The information routines are primarily for debugging and diagnosis, so they should avoid returning an error. </dd>
 </dl>
 </dd>
 </dl>
@@ -501,13 +501,13 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 
 <p>Print the information of a scheduler. </p>
 <p><code><a class="el" href="../../d7/d15/group__INFO.html#ga678a7b7a173039b4a2057fc9da52a19b" title="Print the information of a scheduler.">ABT_info_print_sched()</a></code> writes the information of the scheduler <code>sched</code> to the output stream <code>fp</code>.</p>
-<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis and can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis, so the contents and the format of the printed information can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_INV_SCHED</code> when <code>sched</code> is <code>ABT_SCHED_NULL</code>.<br  />
  <b>[Argobots 2.0]</b> This routine prints that <code>sched</code> is an invalid handle when <code>sched</code> is <code>ABT_SCHED_NULL</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>The information routines primarily for debugging and diagnosis should avoid returning an error as much as possible. </dd>
+<dd>The information routines are primarily for debugging and diagnosis, so they should avoid returning an error. </dd>
 </dl>
 </dd>
 </dl>
@@ -558,14 +558,14 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 </div><div class="memdoc">
 
 <p>Print the information of a work unit. </p>
-<p><code><a class="el" href="../../d7/d15/group__INFO.html#gaaf30aa8ccf8c048252ee7e5cde7b88b5" title="Print the information of a work unit.">ABT_info_print_task()</a></code> writes the information of the work unit <code>task</code> to the output stream <code>fp</code>. This routine is deprecated because this routine is the same as <code><a class="el" href="../../d7/d15/group__INFO.html#ga1beb84f511139b3016d83c8c52b1e64d" title="Print the information of a work unit.">ABT_info_print_thread()</a></code>.</p>
-<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis and can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
+<p><code><a class="el" href="../../d7/d15/group__INFO.html#gaaf30aa8ccf8c048252ee7e5cde7b88b5" title="Print the information of a work unit.">ABT_info_print_task()</a></code> writes the information of the work unit <code>task</code> to the output stream <code>fp</code>. This routine is deprecated because its functionality is the same as that of <code><a class="el" href="../../d7/d15/group__INFO.html#ga1beb84f511139b3016d83c8c52b1e64d" title="Print the information of a work unit.">ABT_info_print_thread()</a></code>.</p>
+<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis, so the contents and the format of the printed information can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> The user cannot pass a ULT handle as <code>task</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a ULT handle as <code>task</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -574,7 +574,7 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_INV_TASK</code> when <code>task</code> is <code>ABT_THREAD_NULL</code> or <code>ABT_TASK_NULL</code>.<br  />
  <b>[Argobots 2.0]</b> This routine prints that <code>task</code> is an invalid handle when <code>task</code> is <code>ABT_THREAD_NULL</code> or <code>ABT_TASK_NULL</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>The information routines primarily for debugging and diagnosis should avoid returning an error as much as possible. </dd>
+<dd>The information routines are primarily for debugging and diagnosis, so they should avoid returning an error. </dd>
 </dl>
 </dd>
 </dl>
@@ -626,13 +626,13 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 
 <p>Print the information of a work unit. </p>
 <p><code><a class="el" href="../../d7/d15/group__INFO.html#ga1beb84f511139b3016d83c8c52b1e64d" title="Print the information of a work unit.">ABT_info_print_thread()</a></code> writes the information of the work unit <code>thread</code> to the output stream <code>fp</code>.</p>
-<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis and can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis, so the contents and the format of the printed information can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -641,7 +641,7 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_INV_THREAD</code> when <code>thread</code> is <code>ABT_THREAD_NULL</code> or <code>ABT_TASK_NULL</code>.<br  />
  <b>[Argobots 2.0]</b> This routine prints that <code>thread</code> is an invalid handle when <code>thread</code> is <code>ABT_THREAD_NULL</code> or <code>ABT_TASK_NULL</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>The information routines primarily for debugging and diagnosis should avoid returning an error as much as possible. </dd>
+<dd>The information routines are primarily for debugging and diagnosis, so they should avoid returning an error. </dd>
 </dl>
 </dd>
 </dl>
@@ -693,13 +693,13 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 
 <p>Print the information of a ULT attribute. </p>
 <p><code><a class="el" href="../../d7/d15/group__INFO.html#gadd6a4e71e79076378f206c2e99651c76" title="Print the information of a ULT attribute.">ABT_info_print_thread_attr()</a></code> writes the information of the ULT attribute <code>attr</code> to the output stream <code>fp</code>.</p>
-<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis and can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis, so the contents and the format of the printed information can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_INV_THREAD_ATTR</code> when <code>attr</code> is <code>ABT_THREAD_ATTR_NULL</code>.<br  />
  <b>[Argobots 2.0]</b> This routine prints that <code>attr</code> is an invalid handle when <code>attr</code> is <code>ABT_THREAD_ATTR_NULL</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>The information routines primarily for debugging and diagnosis should avoid returning an error as much as possible. </dd>
+<dd>The information routines are primarily for debugging and diagnosis, so they should avoid returning an error. </dd>
 </dl>
 </dd>
 </dl>
@@ -750,14 +750,14 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 </div><div class="memdoc">
 
 <p>Print stack of a work unit. </p>
-<p><code><a class="el" href="../../d7/d15/group__INFO.html#gac6f4cd11160d942d08d8be85e8a69416" title="Print stack of a work unit.">ABT_info_print_thread_stack()</a></code> prints the stack of the work unit <code>thread</code> to the output stream <code>fp</code>.</p>
-<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis and can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
+<p><code><a class="el" href="../../d7/d15/group__INFO.html#gac6f4cd11160d942d08d8be85e8a69416" title="Print stack of a work unit.">ABT_info_print_thread_stack()</a></code> prints the information of the stack of the work unit <code>thread</code> to the output stream <code>fp</code>.</p>
+<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis, so the contents and the format of the printed information can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> The user cannot pass a tasklet handle as <code>thread</code>.<br  />
  <b>[Argobots 1.1]</b> This routine accepts a tasklet handle as <code>thread</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 has introduced this change since this change does not break the compatibility of API and ABI of Argobots 1.0. </dd>
+<dd>Argobots 2.0 integrates a ULT and a tasklet into a single thread concept to make the API more general. Argobots 1.1 introduces this change since it does not break the compatibility of API and ABI with Argobots 1.0. </dd>
 </dl>
 </dd>
 </dl>
@@ -766,7 +766,7 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_INV_THREAD</code> when <code>thread</code> is <code>ABT_THREAD_NULL</code> or <code>ABT_TASK_NULL</code>.<br  />
  <b>[Argobots 2.0]</b> This routine prints that <code>thread</code> is an invalid handle when <code>thread</code> is <code>ABT_THREAD_NULL</code> or <code>ABT_TASK_NULL</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>The information routines primarily for debugging and diagnosis should avoid returning an error as much as possible. </dd>
+<dd>The information routines are primarily for debugging and diagnosis, so they should avoid returning an error. </dd>
 </dl>
 </dd>
 </dl>
@@ -818,14 +818,14 @@ If <code>thread</code> is running, the results are undefined.<br  />
 </div><div class="memdoc">
 
 <p>Print stacks of all work units in a pool. </p>
-<p><code><a class="el" href="../../d7/d15/group__INFO.html#gac3bd7e965c9abd14e66d8679599f70e7" title="Print stacks of all work units in a pool.">ABT_info_print_thread_stacks_in_pool()</a></code> prints stacks of all work units in the pool <code>pool</code> to the output stream <code>fp</code>. <code>pool</code> must support <code>p_print_all()</code> to check all work units in the pool.</p>
-<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis and can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
+<p><code><a class="el" href="../../d7/d15/group__INFO.html#gac3bd7e965c9abd14e66d8679599f70e7" title="Print stacks of all work units in a pool.">ABT_info_print_thread_stacks_in_pool()</a></code> prints the information of stacks of all work units in the pool <code>pool</code> to the output stream <code>fp</code>. <code>pool</code> must support <code>p_print_all()</code>.</p>
+<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis, so the contents and the format of the printed information can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_INV_POOL</code> when <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
  <b>[Argobots 2.0]</b> This routine prints that <code>pool</code> is an invalid handle when <code>pool</code> is <code>ABT_POOL_NULL</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>The information routines primarily for debugging and diagnosis should avoid returning an error as much as possible. </dd>
+<dd>The information routines are primarily for debugging and diagnosis, so they should avoid returning an error. </dd>
 </dl>
 </dd>
 </dl>
@@ -878,13 +878,13 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 
 <p>Print the information of an execution stream. </p>
 <p><code><a class="el" href="../../d7/d15/group__INFO.html#ga0349718e209a1012e376cd1b24b7caf1" title="Print the information of an execution stream.">ABT_info_print_xstream()</a></code> writes the information of the execution stream <code>xstream</code> to the output stream <code>fp</code>.</p>
-<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis and can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The information written by this routine is meant for debugging and diagnosis, so the contents and the format of the printed information can be changed because of an update of the internal implementation of Argobots. A program that relies on the output of this routine is non-conforming.</dd></dl>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_INV_XSTREAM</code> when <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>.<br  />
  <b>[Argobots 2.0]</b> This routine prints that <code>xstream</code> is an invalid handle when <code>xstream</code> is <code>ABT_XSTREAM_NULL</code>. <dl class="section user">
 <dt>Rationale</dt>
-<dd>The information routines primarily for debugging and diagnosis should avoid returning an error as much as possible. </dd>
+<dd>The information routines are primarily for debugging and diagnosis, so they should avoid returning an error. </dd>
 </dl>
 </dd>
 </dl>
@@ -936,7 +936,7 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 
 <p>Retrieve the configuration information. </p>
 <p><code><a class="el" href="../../d7/d15/group__INFO.html#ga70d9fdae92659b13973c56415811012c" title="Retrieve the configuration information.">ABT_info_query_config()</a></code> returns the configuration information associated with the query kind <code>query_kind</code> through <code>val</code>.</p>
-<p>The retrieved information is selected by <code>query_kind</code>.</p>
+<p>The retrieved information is selected via <code>query_kind</code>.</p>
 <ul>
 <li><p class="startli"><code>ABT_INFO_QUERY_KIND_ENABLED_DEBUG</code> </p>
 <p class="startli"><code>val</code> must be a pointer to a variable of type <code>ABT_bool</code>. <code>val</code> is set to <code>ABT_TRUE</code> if Argobots is configured to enable the debug mode. Otherwise, <code>val</code> is set to <code>ABT_FALSE</code>.</p>
@@ -969,25 +969,25 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 <p class="startli"><code>val</code> must be a pointer to a variable of type <code>ABT_bool</code>. <code>val</code> is set to <code>ABT_TRUE</code> if Argobots is configured to enable the task cancellation feature. Otherwise, <code>val</code> is set to <code>ABT_FALSE</code>.</p>
 </li>
 <li><p class="startli"><code>ABT_INFO_QUERY_KIND_ENABLED_MIGRATION</code> </p>
-<p class="startli"><code>val</code> must be a pointer to a variable of type <code>ABT_bool</code>. <code>val</code> is set to <code>ABT_TRUE</code> if Argobots is configured to enable the thread/task migration cancellation feature. Otherwise, <code>val</code> is set to <code>ABT_FALSE</code>.</p>
+<p class="startli"><code>val</code> must be a pointer to a variable of type <code>ABT_bool</code>. <code>val</code> is set to <code>ABT_TRUE</code> if Argobots is configured to enable the thread/task migration feature. Otherwise, <code>val</code> is set to <code>ABT_FALSE</code>.</p>
 </li>
 <li><p class="startli"><code>ABT_INFO_QUERY_KIND_ENABLED_STACKABLE_SCHED</code> </p>
-<p class="startli"><code>val</code> must be a pointer to a variable of type <code>ABT_bool</code>. <code>val</code> is set to <code>ABT_TRUE</code> if Argobots is configured to enable the stackable scheduler feature is supported. Otherwise, <code>val</code> is set to <code>ABT_FALSE</code>.</p>
+<p class="startli"><code>val</code> must be a pointer to a variable of type <code>ABT_bool</code>. <code>val</code> is set to <code>ABT_TRUE</code> if Argobots is configured to enable the stackable scheduler feature. Otherwise, <code>val</code> is set to <code>ABT_FALSE</code>.</p>
 </li>
 <li><p class="startli"><code>ABT_INFO_QUERY_KIND_ENABLED_EXTERNAL_THREAD</code> </p>
-<p class="startli"><code>val</code> must be a pointer to a variable of type <code>ABT_bool</code>. <code>val</code> is set to <code>ABT_TRUE</code> if Argobots is configured to enable the external thread feature is supported. Otherwise, <code>val</code> is set to <code>ABT_FALSE</code>.</p>
+<p class="startli"><code>val</code> must be a pointer to a variable of type <code>ABT_bool</code>. <code>val</code> is set to <code>ABT_TRUE</code> if Argobots is configured to enable the external thread feature. Otherwise, <code>val</code> is set to <code>ABT_FALSE</code>.</p>
 </li>
 <li><p class="startli"><code>ABT_INFO_QUERY_KIND_ENABLED_SCHED_SLEEP</code> </p>
-<p class="startli"><code>val</code> must be a pointer to a variable of type <code>ABT_bool</code>. <code>val</code> is set to <code>ABT_TRUE</code> if Argobots is configured to enable the sleep feature of predefined schedulers. Otherwise, <code>val</code> is set to <code>ABT_FALSE</code>.</p>
+<p class="startli"><code>val</code> must be a pointer to a variable of type <code>ABT_bool</code>. <code>val</code> is set to <code>ABT_TRUE</code> if Argobots is configured to enable the sleep feature for predefined schedulers. Otherwise, <code>val</code> is set to <code>ABT_FALSE</code>.</p>
 </li>
 <li><p class="startli"><code>ABT_INFO_QUERY_KIND_ENABLED_PRINT_CONFIG</code> </p>
-<p class="startli"><code>val</code> must be a pointer to a variable of type <code>ABT_bool</code>. <code>val</code> is set to <code>ABT_TRUE</code> if Argobots is configured to print all the configuration settings in <code><a class="el" href="../../d4/d00/group__ENV.html#ga068e0ac9ffecb4b9a3cd8b238d632be8" title="Initialize the Argobots execution environment.">ABT_init()</a></code>. Otherwise, <code>val</code> is set to <code>ABT_FALSE</code>.</p>
+<p class="startli"><code>val</code> must be a pointer to a variable of type <code>ABT_bool</code>. <code>val</code> is set to <code>ABT_TRUE</code> if Argobots is configured to print all the configuration settings in the top-level <code><a class="el" href="../../d4/d00/group__ENV.html#ga068e0ac9ffecb4b9a3cd8b238d632be8" title="Initialize the Argobots execution environment.">ABT_init()</a></code>. Otherwise, <code>val</code> is set to <code>ABT_FALSE</code>.</p>
 </li>
 <li><p class="startli"><code>ABT_INFO_QUERY_KIND_ENABLED_AFFINITY</code> </p>
 <p class="startli"><code>val</code> must be a pointer to a variable of type <code>ABT_bool</code>. <code>val</code> is set to <code>ABT_TRUE</code> if Argobots is configured to enable the affinity setting. Otherwise, <code>val</code> is set to <code>ABT_FALSE</code>.</p>
 </li>
 <li><p class="startli"><code>ABT_INFO_QUERY_KIND_MAX_NUM_XSTREAMS</code> </p>
-<p class="startli"><code>val</code> must be a pointer to a variable of type <code>unsigned</code> <code>int</code>. <code>val</code> is set to the maximum number of execution streams that can be created by Argobots.</p>
+<p class="startli"><code>val</code> must be a pointer to a variable of type <code>unsigned</code> <code>int</code>. <code>val</code> is set to the maximum number of execution streams in Argobots.</p>
 </li>
 <li><p class="startli"><code>ABT_INFO_QUERY_KIND_DEFAULT_THREAD_STACKSIZE</code> </p>
 <p class="startli"><code>val</code> must be a pointer to a variable of type <code>size_t</code>. <code>val</code> is set to the default stack size of ULTs.</p>
@@ -1020,9 +1020,9 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized and the queried information cannot be retrieved when Argobots is not initialized. <dl class="section user">
+ <b>[Argobots 2.0]</b> This routine sets <code>val</code> and returns <code>ABT_SUCCESS</code> even when Argobots is not initialized if the queried information can be retrieved without Argobots initialization. <dl class="section user">
 <dt>Rationale</dt>
-<dd>Retrieving static configurations before initializing Argobots is helpful to check if the loaded Argobots implements necessary features. </dd>
+<dd>Retrieving static configurations before initializing Argobots is helpful to check if the Argobots library is configured to enable necessary features. </dd>
 </dl>
 </dd>
 </dl>
@@ -1087,9 +1087,9 @@ If an error occurs regarding <code>fp</code>, the results are undefined.<br  />
 </div><div class="memdoc">
 
 <p>Print stacks of work units in pools associated with all the main schedulers. </p>
-<p><code><a class="el" href="../../d7/d15/group__INFO.html#ga6a9b742bf675f1b12ba785ddf9a344e4" title="Print stacks of work units in pools associated with all the main schedulers.">ABT_info_trigger_print_all_thread_stacks()</a></code> tries to print stacks of all threads stored in pools associated with all the main schedulers to the output stream <code>fp</code>. This routine itself does not print stacks; it immediately returns after updating a flag. Stacks are printed when all execution streams stop in <code><a class="el" href="../../d3/def/group__ES.html#gaca42eab0bf02e5cb1c605ff23a35a3e5" title="Process events associated with a scheduler.">ABT_xstream_check_events()</a></code>.</p>
-<p>If some execution streams do not stop within a certain time period specified by <code>timeout</code> in seconds where <code>timeout</code> is not negative, one of the execution streams that stop at <code><a class="el" href="../../d3/def/group__ES.html#gaca42eab0bf02e5cb1c605ff23a35a3e5" title="Process events associated with a scheduler.">ABT_xstream_check_events()</a></code> starts to print the stack information. In this case, this routine might not work correctly and at worst crashes a program. This routine does not work at all if no execution stream executes <code><a class="el" href="../../d3/def/group__ES.html#gaca42eab0bf02e5cb1c605ff23a35a3e5" title="Process events associated with a scheduler.">ABT_xstream_check_events()</a></code>.</p>
-<p>The callback function <code>cb_func()</code> is called after completing printing stacks unless <code>cb_func</code> is <code>NULL</code>. The first argument is set to <code>ABT_TRUE</code> if not all the execution streams stop within <code>timeout</code>. Otherwise, <code>ABT_FALSE</code> is passed. The second argument is the user-defined data <code>arg</code> passed to this routine. The caller of <code>cb_func()</code> is undefined, so a program that relies on the caller of <code>cb_func()</code> is non-conforming. Neither signal-safety nor thread-safety is required for <code>cb_func()</code>.</p>
+<p><code><a class="el" href="../../d7/d15/group__INFO.html#ga6a9b742bf675f1b12ba785ddf9a344e4" title="Print stacks of work units in pools associated with all the main schedulers.">ABT_info_trigger_print_all_thread_stacks()</a></code> tries to print the information of stacks of all work units stored in pools associated with all the main schedulers to the output stream <code>fp</code>. This routine itself does not print the information; this routine immediately returns after updating a flag. The stack information is printed when all execution streams stop at <code><a class="el" href="../../d3/def/group__ES.html#gaca42eab0bf02e5cb1c605ff23a35a3e5" title="Process events associated with a scheduler.">ABT_xstream_check_events()</a></code>.</p>
+<p>If <code>timeout</code> is negative, the stack information is printed only after all the execution streams stop at <code><a class="el" href="../../d3/def/group__ES.html#gaca42eab0bf02e5cb1c605ff23a35a3e5" title="Process events associated with a scheduler.">ABT_xstream_check_events()</a></code>. If <code>timeout</code> is nonnegative, one of the execution streams that stop at <code><a class="el" href="../../d3/def/group__ES.html#gaca42eab0bf02e5cb1c605ff23a35a3e5" title="Process events associated with a scheduler.">ABT_xstream_check_events()</a></code> starts to print the stack information even if some of the execution streams do not stop at <code><a class="el" href="../../d3/def/group__ES.html#gaca42eab0bf02e5cb1c605ff23a35a3e5" title="Process events associated with a scheduler.">ABT_xstream_check_events()</a></code> within a certain time period specified by <code>timeout</code> in seconds. In this case, this routine might not work correctly and at worst crashes a program. The stack information is never printed if no execution stream executes <code><a class="el" href="../../d3/def/group__ES.html#gaca42eab0bf02e5cb1c605ff23a35a3e5" title="Process events associated with a scheduler.">ABT_xstream_check_events()</a></code>.</p>
+<p>The callback function <code>cb_func()</code> is called after completing printing stacks unless it is registered. The first argument of <code>cb_func()</code> is set to <code>ABT_TRUE</code> if <code>timeout</code> is nonnegative and not all the execution streams stop within <code>timeout</code>. Otherwise, the first argument is set to <code>ABT_FALSE</code>. The second argument of <code>cb_func()</code> is the user-defined data <code>arg</code> passed to this routine. The caller of <code>cb_func()</code> is undefined, so a program that relies on the caller of <code>cb_func()</code> is non-conforming. Neither signal-safety nor thread-safety is required for <code>cb_func()</code>.</p>
 <p>The following work units are not captured by this routine:</p><ul>
 <li>Work units that are suspending (e.g., by <code>ABT_thread_suspend()</code>).</li>
 <li>Work units in pools that are not associated with main schedulers.</li>
@@ -1117,14 +1117,14 @@ If the internal state of the Argobots is changed in <code>cb_func()</code>, the 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00893">893</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d35/info_8c_source.html#l00898">898</a> of file <a class="el" href="../../d5/d35/info_8c_source.html">info.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 10 2021 03:10:12 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 12 2021 03:10:07 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

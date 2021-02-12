@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">f816757cfdc8e5fef84abc0c0bf0a654684af46a</span>
+   &#160;<span id="projectnumber">2892a0cc7e2babf3b5cb0f43c2796b2861550983</span>
    </div>
   </td>
  </tr>
@@ -111,7 +111,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga2136c210cb0ce233426b0b971a1e7d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Work-unit-event mask: resuming a work unit.  <a href="../../de/d0d/group__TOOL.html#ga2136c210cb0ce233426b0b971a1e7d20">More...</a><br /></td></tr>
 <tr class="separator:ga2136c210cb0ce233426b0b971a1e7d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaedc9ee8b6983cde0527bc98d3e6599c6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0d/group__TOOL.html#gaedc9ee8b6983cde0527bc98d3e6599c6">ABT_TOOL_EVENT_THREAD_ALL</a>&#160;&#160;&#160;((uint64_t)((1 &lt;&lt; 12) - 1))</td></tr>
-<tr class="memdesc:gaedc9ee8b6983cde0527bc98d3e6599c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Work-unit-event mask: all events above.  <a href="../../de/d0d/group__TOOL.html#gaedc9ee8b6983cde0527bc98d3e6599c6">More...</a><br /></td></tr>
+<tr class="memdesc:gaedc9ee8b6983cde0527bc98d3e6599c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Work-unit-event mask: all events.  <a href="../../de/d0d/group__TOOL.html#gaedc9ee8b6983cde0527bc98d3e6599c6">More...</a><br /></td></tr>
 <tr class="separator:gaedc9ee8b6983cde0527bc98d3e6599c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -141,7 +141,7 @@ Enumerations</h2></td></tr>
 <a class="el" href="../../de/d0d/group__TOOL.html#ggae0cb4fbeb9842cf875613879a2270353ac90ca28d90d1640b40cdd7f76b0072b5">ABT_TOOL_QUERY_KIND_SYNC_OBJECT_HANDLE</a>
 <br />
  }</td></tr>
-<tr class="memdesc:gae0cb4fbeb9842cf875613879a2270353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tool query kind for <code><a class="el" href="de/d0d/group__TOOL.html#gaced121a1dfb0d5e4c835bfff62c41ef7" title="Query information associated with a work unit event.">ABT_tool_query_thread()</a></code>.  <a href="../../de/d0d/group__TOOL.html#gae0cb4fbeb9842cf875613879a2270353">More...</a><br /></td></tr>
+<tr class="memdesc:gae0cb4fbeb9842cf875613879a2270353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tool query kind for <code><a class="el" href="de/d0d/group__TOOL.html#gaced121a1dfb0d5e4c835bfff62c41ef7" title="Query information associated with a work-unit event.">ABT_tool_query_thread()</a></code>.  <a href="../../de/d0d/group__TOOL.html#gae0cb4fbeb9842cf875613879a2270353">More...</a><br /></td></tr>
 <tr class="separator:gae0cb4fbeb9842cf875613879a2270353"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga69630bc7141c1fcb241854125438a142"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0d/group__TOOL.html#ga69630bc7141c1fcb241854125438a142">ABT_exec_entity_type</a> { <a class="el" href="../../de/d0d/group__TOOL.html#gga69630bc7141c1fcb241854125438a142a56f98117bd1a3a9b416f564fd240541c">ABT_EXEC_ENTITY_TYPE_EXT</a>, 
 <a class="el" href="../../de/d0d/group__TOOL.html#gga69630bc7141c1fcb241854125438a142af0bcd85b4001b879954e9ee620f670be">ABT_EXEC_ENTITY_TYPE_THREAD</a>
@@ -170,10 +170,10 @@ Enumerations</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga293144f013b3a1b2f14e7fff08ae58b1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0d/group__TOOL.html#ga293144f013b3a1b2f14e7fff08ae58b1">ABT_tool_register_thread_callback</a> (<a class="el" href="../../d5/d7d/abt_8h.html#ae114c1d9cc467c4ada2031deb0aadfb0">ABT_tool_thread_callback_fn</a> cb_func, uint64_t event_mask, void *user_arg)</td></tr>
-<tr class="memdesc:ga293144f013b3a1b2f14e7fff08ae58b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a callback function for work unit events.  <a href="../../de/d0d/group__TOOL.html#ga293144f013b3a1b2f14e7fff08ae58b1">More...</a><br /></td></tr>
+<tr class="memdesc:ga293144f013b3a1b2f14e7fff08ae58b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a callback function for work-unit events.  <a href="../../de/d0d/group__TOOL.html#ga293144f013b3a1b2f14e7fff08ae58b1">More...</a><br /></td></tr>
 <tr class="separator:ga293144f013b3a1b2f14e7fff08ae58b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaced121a1dfb0d5e4c835bfff62c41ef7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0d/group__TOOL.html#gaced121a1dfb0d5e4c835bfff62c41ef7">ABT_tool_query_thread</a> (<a class="el" href="../../de/d0d/group__TOOL.html#ga5d0ea838c8fa1bfdcfc1fce16d6d9c5e">ABT_tool_context</a> context, uint64_t event, <a class="el" href="../../de/d0d/group__TOOL.html#gae0cb4fbeb9842cf875613879a2270353">ABT_tool_query_kind</a> query_kind, void *val)</td></tr>
-<tr class="memdesc:gaced121a1dfb0d5e4c835bfff62c41ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query information associated with a work unit event.  <a href="../../de/d0d/group__TOOL.html#gaced121a1dfb0d5e4c835bfff62c41ef7">More...</a><br /></td></tr>
+<tr class="memdesc:gaced121a1dfb0d5e4c835bfff62c41ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query information associated with a work-unit event.  <a href="../../de/d0d/group__TOOL.html#gaced121a1dfb0d5e4c835bfff62c41ef7">More...</a><br /></td></tr>
 <tr class="separator:gaced121a1dfb0d5e4c835bfff62c41ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -191,9 +191,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Work-unit-event mask: all events above. </p>
+<p>Work-unit-event mask: all events. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00741">741</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00742">742</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -211,7 +211,7 @@ Functions</h2></td></tr>
 
 <p>Work-unit-event mask: canceling a work unit. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00721">721</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00722">722</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -229,7 +229,7 @@ Functions</h2></td></tr>
 
 <p>Work-unit-event mask: creating a work unit. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00691">691</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00692">692</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -247,7 +247,7 @@ Functions</h2></td></tr>
 
 <p>Work-unit-event mask: finishing a work unit. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00716">716</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00717">717</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -265,7 +265,7 @@ Functions</h2></td></tr>
 
 <p>Work-unit-event mask: freeing a work unit. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00701">701</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00702">702</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -283,7 +283,7 @@ Functions</h2></td></tr>
 
 <p>Work-unit-event mask: joining a work unit. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00696">696</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00697">697</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -301,7 +301,7 @@ Functions</h2></td></tr>
 
 <p>Work-unit-event mask: none. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00686">686</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00687">687</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -319,7 +319,7 @@ Functions</h2></td></tr>
 
 <p>Work-unit-event mask: resuming a work unit. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00736">736</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00737">737</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -337,7 +337,7 @@ Functions</h2></td></tr>
 
 <p>Work-unit-event mask: reviving a work unit. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00706">706</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00707">707</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -355,7 +355,7 @@ Functions</h2></td></tr>
 
 <p>Work-unit-event mask: running a work unit. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00711">711</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00712">712</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -373,7 +373,7 @@ Functions</h2></td></tr>
 
 <p>Work-unit-event mask: suspending a work unit. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00731">731</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00732">732</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -391,7 +391,7 @@ Functions</h2></td></tr>
 
 <p>Work-unit-event mask: yielding a work unit. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00726">726</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00727">727</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -410,7 +410,7 @@ Functions</h2></td></tr>
 
 <p>Execution entity type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01020">1020</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01021">1021</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -428,7 +428,7 @@ Functions</h2></td></tr>
 
 <p>Synchronization event type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01025">1025</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01026">1026</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -447,7 +447,7 @@ Functions</h2></td></tr>
 <p>Tool context handle type. </p>
 <p>A NULL handle of this type is <code>ABT_TOOL_CONTEXT_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01010">1010</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01011">1011</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -465,7 +465,7 @@ Functions</h2></td></tr>
 
 <p>Tool query type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01015">1015</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l01016">1016</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -490,7 +490,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00646">646</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00647">647</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -514,7 +514,7 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="ggac601a9db309d1a30954d43fc82d9602fac52464b0c79d66763383a57d6eef78a3"></a>ABT_SYNC_EVENT_TYPE_OTHER&#160;</td><td class="fielddoc"><p>Other synchronization events. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ggac601a9db309d1a30954d43fc82d9602fa5d5a98b3f1fc0121d1d9685415e1bee2"></a>ABT_SYNC_EVENT_TYPE_XSTREAM_JOIN&#160;</td><td class="fielddoc"><p>Joining an executions stream. </p>
+<tr><td class="fieldname"><a id="ggac601a9db309d1a30954d43fc82d9602fa5d5a98b3f1fc0121d1d9685415e1bee2"></a>ABT_SYNC_EVENT_TYPE_XSTREAM_JOIN&#160;</td><td class="fielddoc"><p>Joining an execution stream. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ggac601a9db309d1a30954d43fc82d9602fa159c5b0bea263cf48764c0c557848492"></a>ABT_SYNC_EVENT_TYPE_THREAD_JOIN&#160;</td><td class="fielddoc"><p>Joining a work unit. </p>
 </td></tr>
@@ -532,7 +532,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00657">657</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00658">658</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -548,23 +548,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Tool query kind for <code><a class="el" href="../../de/d0d/group__TOOL.html#gaced121a1dfb0d5e4c835bfff62c41ef7" title="Query information associated with a work unit event.">ABT_tool_query_thread()</a></code>. </p>
+<p>Tool query kind for <code><a class="el" href="../../de/d0d/group__TOOL.html#gaced121a1dfb0d5e4c835bfff62c41ef7" title="Query information associated with a work-unit event.">ABT_tool_query_thread()</a></code>. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggae0cb4fbeb9842cf875613879a2270353aa476f3cc786aa216393209bd0aff1e50"></a>ABT_TOOL_QUERY_KIND_POOL&#160;</td><td class="fielddoc"><p>Query a pool to which a work unit is or will be pushed. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ggae0cb4fbeb9842cf875613879a2270353ae471340e171c8440592afaebd01ff779"></a>ABT_TOOL_QUERY_KIND_STACK_DEPTH&#160;</td><td class="fielddoc"><p>Query a current depth of stackable work units. </p>
+<tr><td class="fieldname"><a id="ggae0cb4fbeb9842cf875613879a2270353ae471340e171c8440592afaebd01ff779"></a>ABT_TOOL_QUERY_KIND_STACK_DEPTH&#160;</td><td class="fielddoc"><p>Query a current depth of stacked work units. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ggae0cb4fbeb9842cf875613879a2270353a5ad6046de9394cd377eb9e1df7394228"></a>ABT_TOOL_QUERY_KIND_CALLER_TYPE&#160;</td><td class="fielddoc"><p>Query a type of caller that incurs an event. </p>
+<tr><td class="fieldname"><a id="ggae0cb4fbeb9842cf875613879a2270353a5ad6046de9394cd377eb9e1df7394228"></a>ABT_TOOL_QUERY_KIND_CALLER_TYPE&#160;</td><td class="fielddoc"><p>Query a type of the caller that incurs an event. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ggae0cb4fbeb9842cf875613879a2270353a2ed00fb7cbc8a3f15140630215e1b0c6"></a>ABT_TOOL_QUERY_KIND_CALLER_HANDLE&#160;</td><td class="fielddoc"><p>Query a handle to the caller that incurs an event. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ggae0cb4fbeb9842cf875613879a2270353a097f02dce3a51e31e3a06e66f770633f"></a>ABT_TOOL_QUERY_KIND_SYNC_OBJECT_TYPE&#160;</td><td class="fielddoc"><p>Query a type of synchronization object that incurs an event. </p>
+<tr><td class="fieldname"><a id="ggae0cb4fbeb9842cf875613879a2270353a097f02dce3a51e31e3a06e66f770633f"></a>ABT_TOOL_QUERY_KIND_SYNC_OBJECT_TYPE&#160;</td><td class="fielddoc"><p>Query a type of the synchronization object that incurs an event. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ggae0cb4fbeb9842cf875613879a2270353ac90ca28d90d1640b40cdd7f76b0072b5"></a>ABT_TOOL_QUERY_KIND_SYNC_OBJECT_HANDLE&#160;</td><td class="fielddoc"><p>Query a handle of the synchronization object that incurs an event. </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00627">627</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00628">628</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -607,17 +607,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Query information associated with a work unit event. </p>
-<p><code><a class="el" href="../../de/d0d/group__TOOL.html#gaced121a1dfb0d5e4c835bfff62c41ef7" title="Query information associated with a work unit event.">ABT_tool_query_thread()</a></code> returns information associated with the tool context <code>context</code> through <code>val</code>. Because <code>context</code> is valid only in the callback function, this function must be called in the callback function.</p>
-<p>When <code>query_kind</code> is <code>ABT_TOOL_QUERY_KIND_POOL</code>, this routine sets <code>val</code> to <code>ABT_pool</code> of a pool to which a work unit is or will be pushed. The query is valid when <code>event</code> is <code>THREAD_CREATE</code>, <code>THREAD_REVIVE</code>, <code>THREAD_YIELD</code>, <code>THREAD_RESUME</code>.</p>
-<p>When <code>query_kind</code> is <code>ABT_TOOL_QUERY_KIND_STACK_DEPTH</code>, this routine sets <code>val</code> to the current depth of stackable work units as an <code>int</code> value while the level of the work unit associated with the main scheduler is zero. For example, if the current thread is running directly on the main scheduler, the depth is <em>1</em>. The query is valid when <code>event</code> is <code>THREAD_RUN</code> (the depth after the work unit runs), <code>THREAD_FINISH</code> (the depth before the work unit finishes), <code>THREAD_YIELD</code> (the depth before the work unit yields), and <code>THREAD_SUSPEND</code> (the depth before the work unit suspends).</p>
-<p>When <code>query_kind</code> is <code>ABT_TOOL_QUERY_KIND_CALLER_TYPE</code>, this routine sets <code>val</code> to <code>ABT_exec_entity_type</code> of an entity that incurs this event. The query is valid for all events.</p>
-<p>When <code>query_kind</code> is <code>ABT_TOOL_QUERY_KIND_CALLER_HANDLE</code>, this routine sets <code>val</code> to a handle of an entity that incurs this event. Specifically, this routine sets <code>val</code> to a work unit handle (<code>ABT_thread</code>) if the caller type is <code>ABT_EXEC_ENTITY_TYPE_THREAD</code>. If the caller is an external thread, this routine sets <code>val</code> to <code>NULL</code>. The query is valid for all events except for <code>THREAD_CANCEL</code>. Note that the caller is a previous work unit running on the same execution stream when <code>event</code> is <code>THRAED_RUN</code>.</p>
-<p>When <code>query_kind</code> is <code>ABT_TOOL_QUERY_KIND_SYNC_OBJECT_TYPE</code>, this routine sets <code>val</code> to <code>ABT_sync_event_type</code> of an synchronization object that incurs this event. The synchronization object is returned when <code>query_kind</code> is <code>ABT_TOOL_QUERY_KIND_SYNC_OBJECT_HANDLE</code>. This query is valid for <code>THREAD_YIELD</code> and <code>THREAD_SUSPEND</code>.</p>
+<p>Query information associated with a work-unit event. </p>
+<p><code><a class="el" href="../../de/d0d/group__TOOL.html#gaced121a1dfb0d5e4c835bfff62c41ef7" title="Query information associated with a work-unit event.">ABT_tool_query_thread()</a></code> returns information associated with the tool context <code>context</code> through <code>val</code>. Because <code>context</code> is valid only in the callback function, this function must be called in the callback function.</p>
+<p>When <code>query_kind</code> is <code>ABT_TOOL_QUERY_KIND_POOL</code>, <code>val</code> must be a pointer to a variable of type <code>ABT_pool</code>. This routine sets <code>val</code> to a handle of a pool to which a work unit is or will be pushed. This query is valid when <code>event</code> is <code>THREAD_CREATE</code>, <code>THREAD_REVIVE</code>, <code>THREAD_YIELD</code>, or <code>THREAD_RESUME</code>.</p>
+<p>When <code>query_kind</code> is <code>ABT_TOOL_QUERY_KIND_STACK_DEPTH</code>, <code>val</code> must be a pointer to a variable of type <code>int</code>. This routine sets <code>val</code> to the current depth of stacked work units while the level of the work unit associated with the main scheduler is zero. For example, if the current work unit is running directly on the main scheduler, the depth is <em>1</em>. This query is valid when <code>event</code> is <code>THREAD_RUN</code> (the depth after the work unit runs), <code>THREAD_FINISH</code> (the depth before the work unit finishes), <code>THREAD_YIELD</code> (the depth before the work unit yields), or <code>THREAD_SUSPEND</code> (the depth before the work unit suspends).</p>
+<p>When <code>query_kind</code> is <code>ABT_TOOL_QUERY_KIND_CALLER_TYPE</code>, <code>val</code> must be a pointer to a variable of type <code>ABT_exec_entity_type</code>. This routine sets <code>val</code> to a type of an entity that incurs this event. This query is valid for all events.</p>
+<p>When <code>query_kind</code> is <code>ABT_TOOL_QUERY_KIND_CALLER_HANDLE</code>, <code>val</code> must be a pointer to a variable of a handle type of an entity that incurs this event. This routine sets <code>val</code> to a handle of an entity that incurs this event. Specifically, this routine sets <code>val</code> to a work unit handle (<code>ABT_thread</code>) if the caller type is <code>ABT_EXEC_ENTITY_TYPE_THREAD</code>. If the caller is an external thread, this routine sets <code>val</code> to <code>NULL</code>. The query is valid for all events except for <code>THREAD_CANCEL</code>. Note that the caller is the previous work unit running on the same execution stream when <code>event</code> is <code>THRAED_RUN</code>.</p>
+<p>When <code>query_kind</code> is <code>ABT_TOOL_QUERY_KIND_SYNC_OBJECT_TYPE</code>, <code>val</code> must be a pointer to a variable of type <code>ABT_sync_event_type</code>. This routine sets <code>val</code> to a type of the synchronization object that incurs this event. This query is valid when <code>event</code> is <code>THREAD_YIELD</code> or <code>THREAD_SUSPEND</code>.</p>
+<p>When <code>query_kind</code> is <code>ABT_TOOL_QUERY_KIND_SYNC_OBJECT_HANDLE</code>, <code>val</code> must be a pointer to a variable of a handle type of the synchronization object that incurs this event. This routine sets <code>val</code> to a handle of the synchronization object that incurs this event. This query is valid when <code>event</code> is <code>THREAD_YIELD</code> or <code>THREAD_SUSPEND</code>.</p>
 <p>Synchronization events, <code>ABT_sync_event_type</code>, and synchronization objects are mapped as follows:</p>
 <ul>
 <li><p class="startli"><code>ABT_SYNC_EVENT_TYPE_USER:</code> </p>
-<p class="startli">The user's explicit call (e.g., <code><a class="el" href="../../d0/d6d/group__ULT.html#ga177c58ca9094dc7feeb93521e30ff2aa" title="Yield the calling ULT to its parent ULT.">ABT_thread_yield()</a></code>). The synchronization object is none, so <code>NULL</code> is set to <code>val</code> if <code>ABT_TOOL_QUERY_KIND_SYNC_OBJECT_HANDLE</code> is passed.</p>
+<p class="startli">A user's explicit call (e.g., <code><a class="el" href="../../d0/d6d/group__ULT.html#ga177c58ca9094dc7feeb93521e30ff2aa" title="Yield the calling ULT to its parent ULT.">ABT_thread_yield()</a></code>). The synchronization object is none, so <code>NULL</code> is set to <code>val</code> if <code>ABT_TOOL_QUERY_KIND_SYNC_OBJECT_HANDLE</code> is passed.</p>
 </li>
 <li><p class="startli"><code>ABT_SYNC_EVENT_TYPE_XSTREAM_JOIN:</code> </p>
 <p class="startli">Waiting for completion of execution streams (e.g., <code><a class="el" href="../../d3/def/group__ES.html#ga51abc49e45abfa6932101bebb0538899" title="Wait for an execution stream to terminate.">ABT_xstream_join()</a></code>). The synchronization object is an execution stream (<code>ABT_xstream</code>).</p>
@@ -644,11 +645,11 @@ Functions</h2></td></tr>
 <p class="startli">Synchronization regarding a barrier (e.g., <code><a class="el" href="../../d1/d59/group__BARRIER.html#gad5b9e2f6ad5bf056b1f699670b13d141" title="Wait on a barrier.">ABT_barrier_wait()</a></code>). The synchronization object is a barrier (<code>ABT_barrier</code>).</p>
 </li>
 <li><p class="startli"><code>ABT_SYNC_EVENT_TYPE_OTHER:</code> </p>
-<p class="startli">Unclassified synchronization (e.g., <code><a class="el" href="../../d3/def/group__ES.html#ga7c680ac44eb625f04301d9829bc2c8f8" title="Terminate an execution stream that is running the calling ULT.">ABT_xstream_exit()</a></code>) The synchronization object is none, so <code>NULL</code> is set to <code>val</code> if <code>ABT_TOOL_QUERY_KIND_SYNC_OBJECT_HANDLE</code> is passed.</p>
+<p class="startli">Other synchronization (e.g., <code><a class="el" href="../../d3/def/group__ES.html#ga7c680ac44eb625f04301d9829bc2c8f8" title="Terminate an execution stream that is running the calling ULT.">ABT_xstream_exit()</a></code>). The synchronization object is none, so <code>NULL</code> is set to <code>val</code> if <code>ABT_TOOL_QUERY_KIND_SYNC_OBJECT_HANDLE</code> is passed.</p>
 </li>
 </ul>
-<p>An object referenced by the returned handle (e.g., the work unit handle) may be in an intermediate state, so users are recommended not to read any internal state of such an object (e.g., by <code><a class="el" href="../../d7/d4b/group__TASK.html#ga96a36794740194cfe2fa31438c11be03" title="Get a state of a work unit.">ABT_task_get_state()</a></code>) in <code>cb_func()</code>.</p>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called only in a tool callback function the tool callback function. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<p>An object referenced by the returned handle (e.g., the work unit handle) may be in an intermediate state, so the user should not to read any internal state of such an object (e.g., by <code><a class="el" href="../../d0/d6d/group__ULT.html#ga7c9d02c8bdd6a75538b7301c9db0a485" title="Get a state of a work unit.">ABT_thread_get_state()</a></code>) in <code>cb_func()</code>.</p>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called only in a tool callback function. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_ARG</code> is returned if <code>query_kind</code> is not a valid tool query kind for <code>query</code>.<br  />
 <code>ABT_ERR_FEATURE_NA</code> is returned if the tool feature is not supported.<br  />
@@ -670,7 +671,7 @@ If <code>context</code> is a tool context that is not passed to the calling call
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/db9/tool_8c_source.html#l00225">225</a> of file <a class="el" href="../../df/db9/tool_8c_source.html">tool.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/db9/tool_8c_source.html#l00233">233</a> of file <a class="el" href="../../df/db9/tool_8c_source.html">tool.c</a>.</p>
 
 </div>
 </div>
@@ -706,22 +707,22 @@ If <code>context</code> is a tool context that is not passed to the calling call
       </table>
 </div><div class="memdoc">
 
-<p>Register a callback function for work unit events. </p>
-<p><code><a class="el" href="../../de/d0d/group__TOOL.html#ga293144f013b3a1b2f14e7fff08ae58b1" title="Register a callback function for work unit events.">ABT_tool_register_thread_callback()</a></code> sets the callback function <code>cb_func()</code> for work unit events. The events are enabled if <code>event_mask</code> have their corresponding bits. The other events are disabled. Users can stop the event callback by setting <code>cb_func</code> to <code>NULL</code>.</p>
+<p>Register a callback function for work-unit events. </p>
+<p><code><a class="el" href="../../de/d0d/group__TOOL.html#ga293144f013b3a1b2f14e7fff08ae58b1" title="Register a callback function for work-unit events.">ABT_tool_register_thread_callback()</a></code> registers the callback function <code>cb_func()</code> for work-unit events. The events are enabled if <code>event_mask</code> have the corresponding bits. The other events are disabled. The routine unregisters the callback function if <code>cb_func</code> is <code>NULL</code>.</p>
 <p><code>cb_func()</code> is called with the following arguments:</p>
 <ul>
 <li>The first argument: a work unit that triggers the event</li>
-<li>The second argument: a handle of the underlying execution stream</li>
+<li>The second argument: an underlying execution stream</li>
 <li>The third argument: an event code (see <code>ABT_TOOL_EVENT_THREAD</code>)</li>
-<li>The fourth argument: a tool context for <code><a class="el" href="../../de/d0d/group__TOOL.html#gaced121a1dfb0d5e4c835bfff62c41ef7" title="Query information associated with a work unit event.">ABT_tool_query_thread()</a></code> </li>
-<li>The fifth argument: <code>user_arg</code> passed to this routine.</li>
+<li>The fourth argument: a tool context for <code><a class="el" href="../../de/d0d/group__TOOL.html#gaced121a1dfb0d5e4c835bfff62c41ef7" title="Query information associated with a work-unit event.">ABT_tool_query_thread()</a></code> </li>
+<li>The fifth argument: <code>user_arg</code> passed to this routine</li>
 </ul>
-<p>If the event occurs on an external thread, <code>ABT_XSTREAM_NULL</code> is passed as the second argument. The returned tool context is valid only before the callback function finishes.</p>
-<p>An object referenced by the returned handle (e.g., a work unit handle) may be in an intermediate state, so users are discouraged to read any internal state of such an object (e.g., by <code><a class="el" href="../../d0/d6d/group__ULT.html#ga7c9d02c8bdd6a75538b7301c9db0a485" title="Get a state of a work unit.">ABT_thread_get_state()</a></code>) in <code>cb_func()</code>. Instead, the user should use <code><a class="el" href="../../de/d0d/group__TOOL.html#gaced121a1dfb0d5e4c835bfff62c41ef7" title="Query information associated with a work unit event.">ABT_tool_query_thread()</a></code>. The caller of <code>cb_func()</code> might be neither a work unit that triggers the event nor a work unit that is running on the same execution stream. A program that relies on the caller of <code>cb_func()</code> is non-conforming.</p>
-<p>This routine can be called while other work unit events are happening. This routine atomically sets <code>cb_func()</code>, <code>event_mask</code>, and <code>user_arg</code> at the same time.</p>
+<p>If an event occurs on an external thread, <code>ABT_XSTREAM_NULL</code> is passed as the second argument. The returned tool context is valid only in the callback function.</p>
+<p>An object referenced by the returned handle (e.g., a work unit handle) may be in an intermediate state, so the user should not read any internal state of such an object (e.g., by <code><a class="el" href="../../d0/d6d/group__ULT.html#ga7c9d02c8bdd6a75538b7301c9db0a485" title="Get a state of a work unit.">ABT_thread_get_state()</a></code>) in <code>cb_func()</code>. Instead, the user should use <code><a class="el" href="../../de/d0d/group__TOOL.html#gaced121a1dfb0d5e4c835bfff62c41ef7" title="Query information associated with a work-unit event.">ABT_tool_query_thread()</a></code>. The caller of <code>cb_func()</code> might be neither a work unit that triggers the event nor a work unit that is running on the same execution stream. A program that relies on the caller of <code>cb_func()</code> is non-conforming.</p>
+<p>This routine can be called while other work-unit events are being triggered. This routine atomically registers <code>cb_func()</code>, <code>event_mask</code>, and <code>user_arg</code> at the same time.</p>
 <dl class="section note"><dt>Note</dt><dd>Invoking an event in <code>cb_func()</code> may cause an infinite invocation of <code>cb_func()</code>. It is the user's responsibility to take a proper measure to avoid it.</dd></dl>
 <p>A combination of a callback function, an event mask its argument for a tool interface is updated atomically.</p>
-<dl class="section note"><dt>Note</dt><dd>Even after <code><a class="el" href="../../de/d0d/group__TOOL.html#ga293144f013b3a1b2f14e7fff08ae58b1" title="Register a callback function for work unit events.">ABT_tool_register_thread_callback()</a></code> returns, another event call might be still in the previous <code>cb_func()</code> and using the previous <code>user_arg</code>. Argobots does not provide a method to guarantee that the previous <code>cb_func</code> and <code>user_arg</code> get unused. Hence, the user needs to carefully maintain consistency before and after <code><a class="el" href="../../de/d0d/group__TOOL.html#ga293144f013b3a1b2f14e7fff08ae58b1" title="Register a callback function for work unit events.">ABT_tool_register_thread_callback()</a></code>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Even after <code><a class="el" href="../../de/d0d/group__TOOL.html#ga293144f013b3a1b2f14e7fff08ae58b1" title="Register a callback function for work-unit events.">ABT_tool_register_thread_callback()</a></code> returns, another event call might not have finished. If so, the previous <code>cb_func()</code> might be using the previous <code>user_arg</code>. Argobots does not provide a method to guarantee that the previous <code>cb_func()</code> and <code>user_arg</code> get unused. Hence, the user needs to carefully maintain consistency before and after <code><a class="el" href="../../de/d0d/group__TOOL.html#ga293144f013b3a1b2f14e7fff08ae58b1" title="Register a callback function for work-unit events.">ABT_tool_register_thread_callback()</a></code>.</dd></dl>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_FEATURE_NA</code> is returned if the tool feature is not supported.<br  />
@@ -747,7 +748,7 @@ If the internal state of the Argobots is changed in <code>cb_func()</code>, the 
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 10 2021 03:10:09 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 12 2021 03:10:04 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

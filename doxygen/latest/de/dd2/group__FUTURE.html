@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">f816757cfdc8e5fef84abc0c0bf0a654684af46a</span>
+   &#160;<span id="projectnumber">2892a0cc7e2babf3b5cb0f43c2796b2861550983</span>
    </div>
   </td>
  </tr>
@@ -118,7 +118,7 @@ Functions</h2></td></tr>
 <p>Future handle type. </p>
 <p>A NULL handle of this type is <code>ABT_FUTURE_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00977">977</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00978">978</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -159,14 +159,14 @@ Functions</h2></td></tr>
 <p><code><a class="el" href="../../de/dd2/group__FUTURE.html#ga09a46979e03051515f86592716f09420" title="Create a new future.">ABT_future_create()</a></code> creates a new future and returns its handle through <code>newfuture</code>. <code>newfuture</code> is unready and has <code>num_compartments</code> compartments. <code>newfuture</code> gets ready if <code><a class="el" href="../../de/dd2/group__FUTURE.html#ga5711cff15789de2abcf0e7532f61b376" title="Signal a future.">ABT_future_set()</a></code> for <code>newfuture</code> succeeds <code>num_compartments</code> times.</p>
 <dl class="section note"><dt>Note</dt><dd>Calling <code><a class="el" href="../../de/dd2/group__FUTURE.html#ga5711cff15789de2abcf0e7532f61b376" title="Signal a future.">ABT_future_set()</a></code> for a future that has no compartment is erroneous. <code><a class="el" href="../../de/dd2/group__FUTURE.html#ga5dbdd249a5091a3c50740437d8d7e424" title="Wait on a future.">ABT_future_wait()</a></code> and <code><a class="el" href="../../de/dd2/group__FUTURE.html#ga46c35c733b970b5eb39fe77d242ad44a" title="Check if a future is ready.">ABT_future_test()</a></code> succeed without <code><a class="el" href="../../de/dd2/group__FUTURE.html#ga5711cff15789de2abcf0e7532f61b376" title="Signal a future.">ABT_future_set()</a></code> for a future that has no compartment.<br  />
 <code>cb_func()</code> is never called if <code>num_compartments</code> is zero.</dd></dl>
-<p>If <code>cb_func</code> is not <code>NULL</code>, a callback function <code>cb_func()</code> will be called just before all the compartments are set by <code><a class="el" href="../../de/dd2/group__FUTURE.html#ga5711cff15789de2abcf0e7532f61b376" title="Signal a future.">ABT_future_set()</a></code>. The caller of <code>cb_func()</code> is undefined, so a program that relies on the caller of <code>cb_func()</code> is non-conforming. Calling any routine for a future in <code>cb_func()</code> that is associated with the future causes undefined behavior. The argument <code>arg</code> of <code>cb_func()</code> is a properly aligned array each of which element stores <code>value</code> passed to <code><a class="el" href="../../de/dd2/group__FUTURE.html#ga5711cff15789de2abcf0e7532f61b376" title="Signal a future.">ABT_future_set()</a></code>. The contents of <code>arg</code> are read-only and may not be accessed after <code>cb_func()</code> finishes.</p>
+<p>If <code>cb_func</code> is not <code>NULL</code>, the callback function <code>cb_func()</code> is registered to <code>future</code>. <code>cb_func()</code> will be called before all the compartments are set by <code><a class="el" href="../../de/dd2/group__FUTURE.html#ga5711cff15789de2abcf0e7532f61b376" title="Signal a future.">ABT_future_set()</a></code>. The caller of <code>cb_func()</code> is undefined, so a program that relies on the caller of <code>cb_func()</code> is non-conforming. The state of the future that invokes <code>cb_func()</code> is undefined in <code>cb_func()</code>. The argument <code>arg</code> of <code>cb_func()</code> is a properly aligned array each of which element stores <code>value</code> passed to <code><a class="el" href="../../de/dd2/group__FUTURE.html#ga5711cff15789de2abcf0e7532f61b376" title="Signal a future.">ABT_future_set()</a></code>. The contents of <code>arg</code> are read-only and may not be accessed after <code>cb_func()</code> finishes.</p>
 <p><code>newfuture</code> must be freed by <code><a class="el" href="../../de/dd2/group__FUTURE.html#ga3e85de2029217ff8986bffeefff50637" title="Free a future.">ABT_future_free()</a></code> after its use.</p>
 <dl class="section attention">
 <dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
 <dd><b>[Argobots 1.0]</b> The order of elements of <code>arg</code> passed to <code>cb_func()</code> is the same order as the <code><a class="el" href="../../de/dd2/group__FUTURE.html#ga5711cff15789de2abcf0e7532f61b376" title="Signal a future.">ABT_future_set()</a></code> calls are terminated.<br  />
  <b>[Argobots 1.1]</b> The order of elements of <code>arg</code> passed to <code>cb_func()</code> is undefined. <dl class="section user">
 <dt>Rationale</dt>
-<dd>This specification in Argobots 1.0 is unclear and unreasonable because the exact timing of termination of <code><a class="el" href="../../de/dd2/group__FUTURE.html#ga5711cff15789de2abcf0e7532f61b376" title="Signal a future.">ABT_future_set()</a></code> is not observable if <code><a class="el" href="../../de/dd2/group__FUTURE.html#ga5711cff15789de2abcf0e7532f61b376" title="Signal a future.">ABT_future_set()</a></code> is called concurrently. </dd>
+<dd>This specification in Argobots 1.0 is not reasonable because the exact timing of termination of <code><a class="el" href="../../de/dd2/group__FUTURE.html#ga5711cff15789de2abcf0e7532f61b376" title="Signal a future.">ABT_future_set()</a></code> is not observable if <code><a class="el" href="../../de/dd2/group__FUTURE.html#ga5711cff15789de2abcf0e7532f61b376" title="Signal a future.">ABT_future_set()</a></code> is called concurrently. </dd>
 </dl>
 </dd>
 </dl>
@@ -191,7 +191,7 @@ If the contents of the argument <code>arg</code> passed to <code>cb_func()</code
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/df6/futures_8c_source.html#l00060">60</a> of file <a class="el" href="../../dc/df6/futures_8c_source.html">futures.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/df6/futures_8c_source.html#l00061">61</a> of file <a class="el" href="../../dc/df6/futures_8c_source.html">futures.c</a>.</p>
 
 </div>
 </div>
@@ -231,7 +231,7 @@ If <code>future</code> is accessed after calling this routine, the results are u
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/df6/futures_8c_source.html#l00115">115</a> of file <a class="el" href="../../dc/df6/futures_8c_source.html">futures.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/df6/futures_8c_source.html#l00116">116</a> of file <a class="el" href="../../dc/df6/futures_8c_source.html">futures.c</a>.</p>
 
 </div>
 </div>
@@ -252,7 +252,8 @@ If <code>future</code> is accessed after calling this routine, the results are u
 </div><div class="memdoc">
 
 <p>Reset readiness of a future. </p>
-<p><code><a class="el" href="../../de/dd2/group__FUTURE.html#ga7174f1f51c89e54ae6a029fb1d130c43" title="Reset readiness of a future.">ABT_future_reset()</a></code> resets the readiness of the future <code>future</code>. <code>future</code> gets ready if <code><a class="el" href="../../de/dd2/group__FUTURE.html#ga5711cff15789de2abcf0e7532f61b376" title="Signal a future.">ABT_future_set()</a></code> for <code>future</code> succeeds as many times as the number of compartments of the future. This routine makes <code>future</code> unready irrespective of its readiness.</p>
+<p><code><a class="el" href="../../de/dd2/group__FUTURE.html#ga7174f1f51c89e54ae6a029fb1d130c43" title="Reset readiness of a future.">ABT_future_reset()</a></code> resets the readiness of the future <code>future</code>. A future reset by this routine will get ready if <code><a class="el" href="../../de/dd2/group__FUTURE.html#ga5711cff15789de2abcf0e7532f61b376" title="Signal a future.">ABT_future_set()</a></code> succeeds as many times as the number of its compartments.</p>
+<dl class="section note"><dt>Note</dt><dd>This routine makes <code>future</code> unready irrespective of its readiness.</dd></dl>
 <p>The readiness of a future is managed atomically.</p>
 <dl class="section note"><dt>Note</dt><dd>This routine has no effect if the number of compartments of <code>future</code> is zero.</dd></dl>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
@@ -270,7 +271,7 @@ If there is a waiter blocked on <code>future</code>, the results are undefined.<
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/df6/futures_8c_source.html#l00319">319</a> of file <a class="el" href="../../dc/df6/futures_8c_source.html">futures.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/df6/futures_8c_source.html#l00323">323</a> of file <a class="el" href="../../dc/df6/futures_8c_source.html">futures.c</a>.</p>
 
 </div>
 </div>
@@ -301,7 +302,7 @@ If there is a waiter blocked on <code>future</code>, the results are undefined.<
 </div><div class="memdoc">
 
 <p>Signal a future. </p>
-<p><code><a class="el" href="../../de/dd2/group__FUTURE.html#ga5711cff15789de2abcf0e7532f61b376" title="Signal a future.">ABT_future_set()</a></code> sets a value <code>value</code> to one of the unset compartments of the future <code>future</code>. If all the compartments of <code>future</code> are set, this routine triggers a callback function of <code>future</code> if it is not <code>NULL</code>, makes <code>future</code> ready, and wakes up all waiters that are blocked on <code>future</code>.</p>
+<p><code><a class="el" href="../../de/dd2/group__FUTURE.html#ga5711cff15789de2abcf0e7532f61b376" title="Signal a future.">ABT_future_set()</a></code> sets a value <code>value</code> to one of the unset compartments of the future <code>future</code>. If all the compartments of <code>future</code> are set, this routine makes <code>future</code> ready and wakes up all waiters that are blocked on <code>future</code>. If the callback function is set to <code>future</code>, the callback function is triggered before <code>future</code> is set to ready.</p>
 <p>The readiness of a future is managed atomically.</p>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
@@ -320,7 +321,7 @@ If there is a waiter blocked on <code>future</code>, the results are undefined.<
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/df6/futures_8c_source.html#l00256">256</a> of file <a class="el" href="../../dc/df6/futures_8c_source.html">futures.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/df6/futures_8c_source.html#l00258">258</a> of file <a class="el" href="../../dc/df6/futures_8c_source.html">futures.c</a>.</p>
 
 </div>
 </div>
@@ -369,7 +370,7 @@ If <code>is_ready</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/df6/futures_8c_source.html#l00219">219</a> of file <a class="el" href="../../dc/df6/futures_8c_source.html">futures.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/df6/futures_8c_source.html#l00220">220</a> of file <a class="el" href="../../dc/df6/futures_8c_source.html">futures.c</a>.</p>
 
 </div>
 </div>
@@ -390,7 +391,7 @@ If <code>is_ready</code> is <code>NULL</code>, the results are undefined.<br  />
 </div><div class="memdoc">
 
 <p>Wait on a future. </p>
-<p>The caller of <code><a class="el" href="../../de/dd2/group__FUTURE.html#ga5dbdd249a5091a3c50740437d8d7e424" title="Wait on a future.">ABT_future_wait()</a></code> waits on the future <code>future</code>. If <code>future</code> is ready, this routine returns immediately. If <code>future</code> is not ready, the caller of this routine suspends and will be resumed once <code>future</code> gets ready.</p>
+<p>The caller of <code><a class="el" href="../../de/dd2/group__FUTURE.html#ga5dbdd249a5091a3c50740437d8d7e424" title="Wait on a future.">ABT_future_wait()</a></code> waits on the future <code>future</code>. If <code>future</code> is ready, this routine returns immediately. If <code>future</code> is not ready, the caller of this routine suspends. The caller will be resumed once <code>future</code> gets ready.</p>
 <p>The readiness of a future is managed atomically.</p>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
@@ -401,7 +402,7 @@ If <code>is_ready</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a ULT context and an external thread context. Argobots must be initialized. This routine may switch the context of the calling ULT if <code>future</code> is not ready. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.<br  />
+<dl class="section user"><dt>Execution context</dt><dd><b>[Argobots 1.x]</b> This routine can be called in a ULT context or an external thread context. Argobots must be initialized. This routine may switch the context of the calling ULT if <code>future</code> is not ready. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.<br  />
 <b>[Argobots 2.0]</b> This routine can be called in any execution context. Argobots must be initialized. This routine may switch the context of the calling ULT if <code>future</code> is not ready. Otherwise, this routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_FUTURE</code> is returned if <code>future</code> is <code>ABT_FUTURE_NULL</code>.<br  />
@@ -417,14 +418,14 @@ If <code>is_ready</code> is <code>NULL</code>, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/df6/futures_8c_source.html#l00164">164</a> of file <a class="el" href="../../dc/df6/futures_8c_source.html">futures.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/df6/futures_8c_source.html#l00165">165</a> of file <a class="el" href="../../dc/df6/futures_8c_source.html">futures.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 10 2021 03:10:12 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 12 2021 03:10:07 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

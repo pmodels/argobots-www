@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ARGOBOTS: Work-Unit Local Storage</title>
+<title>ARGOBOTS: Work-Unit-Specific Data</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">f816757cfdc8e5fef84abc0c0bf0a654684af46a</span>
+   &#160;<span id="projectnumber">2892a0cc7e2babf3b5cb0f43c2796b2861550983</span>
    </div>
   </td>
  </tr>
@@ -66,11 +66,11 @@ $(function() {
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Work-Unit Local Storage</div>  </div>
+<div class="title">Work-Unit-Specific Data</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This group is for work-unit specific data, which can be described as work-unit local storage (which is similar to "thread-local storage" or TLS).  
+<p>This group is for work-unit-specific data, which can be described as work-unit local storage (which is similar to "thread-local storage" or TLS).  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -88,14 +88,14 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga795e391fb1b5fc7745d3074568e0a311"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a work-unit-specific data key.  <a href="../../d0/d5e/group__KEY.html#ga795e391fb1b5fc7745d3074568e0a311">More...</a><br /></td></tr>
 <tr class="separator:ga795e391fb1b5fc7745d3074568e0a311"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga227c3e43f7112de4f35581e1d6e7dfdf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5e/group__KEY.html#ga227c3e43f7112de4f35581e1d6e7dfdf">ABT_key_set</a> (<a class="el" href="../../d0/d5e/group__KEY.html#ga3b2706b0ac83a0eed1409988a42d811c">ABT_key</a> key, void *value)</td></tr>
-<tr class="memdesc:ga227c3e43f7112de4f35581e1d6e7dfdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Associate a value with a work-unit-specific key in the calling work unit.  <a href="../../d0/d5e/group__KEY.html#ga227c3e43f7112de4f35581e1d6e7dfdf">More...</a><br /></td></tr>
+<tr class="memdesc:ga227c3e43f7112de4f35581e1d6e7dfdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Associate a value with a work-unit-specific data key in the calling work unit.  <a href="../../d0/d5e/group__KEY.html#ga227c3e43f7112de4f35581e1d6e7dfdf">More...</a><br /></td></tr>
 <tr class="separator:ga227c3e43f7112de4f35581e1d6e7dfdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabd0060d5743708069163a5e76542febc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5e/group__KEY.html#gabd0060d5743708069163a5e76542febc">ABT_key_get</a> (<a class="el" href="../../d0/d5e/group__KEY.html#ga3b2706b0ac83a0eed1409988a42d811c">ABT_key</a> key, void **value)</td></tr>
-<tr class="memdesc:gabd0060d5743708069163a5e76542febc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a value associated with a key in the calling work unit.  <a href="../../d0/d5e/group__KEY.html#gabd0060d5743708069163a5e76542febc">More...</a><br /></td></tr>
+<tr class="memdesc:gabd0060d5743708069163a5e76542febc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a value associated with a work-unit-specific data key in the calling work unit.  <a href="../../d0/d5e/group__KEY.html#gabd0060d5743708069163a5e76542febc">More...</a><br /></td></tr>
 <tr class="separator:gabd0060d5743708069163a5e76542febc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>This group is for work-unit specific data, which can be described as work-unit local storage (which is similar to "thread-local storage" or TLS). </p>
+<p>This group is for work-unit-specific data, which can be described as work-unit local storage (which is similar to "thread-local storage" or TLS). </p>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga3b2706b0ac83a0eed1409988a42d811c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga3b2706b0ac83a0eed1409988a42d811c">&#9670;&nbsp;</a></span>ABT_key</h2>
@@ -112,7 +112,7 @@ Functions</h2></td></tr>
 <p>Work-unit-specific data key handle type. </p>
 <p>A NULL handle of this type is <code>ABT_KEY_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00935">935</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00936">936</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -144,12 +144,12 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Create a new work-unit-specific data key. </p>
-<p><code><a class="el" href="../../d0/d5e/group__KEY.html#gad61e66b8732a4653e03d942448deaa44" title="Create a new work-unit-specific data key.">ABT_key_create()</a></code> creates a new work-unit-specific data key visible and returns its handle through <code>newkey</code>. Although the same key may be used by different work units, the values bound to the key set by <code><a class="el" href="../../d0/d5e/group__KEY.html#ga227c3e43f7112de4f35581e1d6e7dfdf" title="Associate a value with a work-unit-specific key in the calling work unit.">ABT_key_set()</a></code> are maintained on a per-work-unit and persist for the life of each work unit.</p>
+<p><code><a class="el" href="../../d0/d5e/group__KEY.html#gad61e66b8732a4653e03d942448deaa44" title="Create a new work-unit-specific data key.">ABT_key_create()</a></code> creates a new work-unit-specific data key visible and returns its handle through <code>newkey</code>. Although the same key may be used by different work units, the values bound to the key set by <code><a class="el" href="../../d0/d5e/group__KEY.html#ga227c3e43f7112de4f35581e1d6e7dfdf" title="Associate a value with a work-unit-specific data key in the calling work unit.">ABT_key_set()</a></code> are maintained on a per-work-unit and persist for the life of each work unit.</p>
 <p>Upon key creation, the value <code>NULL</code> will be associated with <code>newkey</code> in all existing work units. Upon work-unit creation, the value <code>NULL</code> will be associated with all the defined keys in the new work unit.</p>
-<p>An optional destructor function <code>destructor()</code> may be associated with <code>newkey</code>. When a work unit is freed, if a key has a non-<code>NULL</code> destructor and the work unit has a non-<code>NULL</code> value associated with that key, the value of the key is set to <code>NULL</code>, and then <code>destructor()</code> is called with the last associated value as its sole argument <code>value</code>. The destructor is called before the work unit is freed. The order of destructor calls is undefined if more than one destructor exists for a work unit when it is freed.</p>
+<p>An optional destructor function <code>destructor()</code> may be registered to <code>newkey</code>. When a work unit is freed, if a key has a non-<code>NULL</code> destructor and the work unit has a non-<code>NULL</code> value associated with that key, the value of the key is set to <code>NULL</code>, and then <code>destructor()</code> is called with the last associated value as its sole argument <code>value</code>. The destructor is called before the work unit is freed. The order of destructor calls is undefined if more than one destructor exists for a work unit when it is freed.</p>
 <dl class="section note"><dt>Note</dt><dd><code>destructor()</code> is called when a work unit is <b>freed</b> (e.g., <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf31f748bfd565f97aa8ebabb89e9b632" title="Free a work unit.">ABT_thread_free()</a></code>), not <b>joined</b> (e.g., <code><a class="el" href="../../d0/d6d/group__ULT.html#gaf5275b75a5184bca258e803370e44bea" title="Wait for a work unit to terminate.">ABT_thread_join()</a></code>).</dd></dl>
 <p>Unlike other implementations (e.g., <code>pthread_key_create()</code>), <code>destructor()</code> is not called by the associated work-unit, so a program that relies on a caller of <code>destructor()</code> is non-conforming.</p>
-<p><code>destructor()</code> is called even if the associated key has been freed by <code><a class="el" href="../../d0/d5e/group__KEY.html#ga795e391fb1b5fc7745d3074568e0a311" title="Free a work-unit-specific data key.">ABT_key_free()</a></code>.</p>
+<p><code>destructor()</code> is called even if the associated key has already been freed by <code><a class="el" href="../../d0/d5e/group__KEY.html#ga795e391fb1b5fc7745d3074568e0a311" title="Free a work-unit-specific data key.">ABT_key_free()</a></code>.</p>
 <p>The created key must be freed by <code><a class="el" href="../../d0/d5e/group__KEY.html#ga795e391fb1b5fc7745d3074568e0a311" title="Free a work-unit-specific data key.">ABT_key_free()</a></code> after its use.</p>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
@@ -189,8 +189,9 @@ If <code>newkey</code> is <code>NULL</code>, the results are undefined.<br  />
 </div><div class="memdoc">
 
 <p>Free a work-unit-specific data key. </p>
-<p><code><a class="el" href="../../d0/d5e/group__KEY.html#ga795e391fb1b5fc7745d3074568e0a311" title="Free a work-unit-specific data key.">ABT_key_free()</a></code> deallocates the resource used for the work-unit-specific data key <code>key</code> and sets <code>key</code> to <code>ABT_KEY_NULL</code>. It is the user's responsibility to free memory for values associated with the deleted key.</p>
-<p>The user is allowed to delete a key before terminating all work units that have non-<code>NULL</code> values associated with <code>key</code>. The user cannot refer to a value via the deleted key, but the destructor of the deleted key will be called when a work unit that has a non-<code>NULL</code> value associated with that key is freed.</p>
+<p><code><a class="el" href="../../d0/d5e/group__KEY.html#ga795e391fb1b5fc7745d3074568e0a311" title="Free a work-unit-specific data key.">ABT_key_free()</a></code> deallocates the resource used for the work-unit-specific data key <code>key</code> and sets <code>key</code> to <code>ABT_KEY_NULL</code>.</p>
+<p>It is the user's responsibility to free memory for values associated with the deleted key.</p>
+<p>The user is allowed to delete a key before terminating all work units that have non-<code>NULL</code> values associated with <code>key</code>. The user cannot refer to a value via the deleted key, but the destructor of the deleted key is called when a work unit is freed.</p>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_KEY</code> is returned if <code>key</code> points to <code>ABT_KEY_NULL</code>.<br  />
@@ -207,7 +208,7 @@ If <code>key</code> is accessed after calling this routine, the results are unde
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/dfd/key_8c_source.html#l00108">108</a> of file <a class="el" href="../../db/dfd/key_8c_source.html">key.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/dfd/key_8c_source.html#l00109">109</a> of file <a class="el" href="../../db/dfd/key_8c_source.html">key.c</a>.</p>
 
 </div>
 </div>
@@ -237,20 +238,20 @@ If <code>key</code> is accessed after calling this routine, the results are unde
       </table>
 </div><div class="memdoc">
 
-<p>Get a value associated with a key in the calling work unit. </p>
-<p><code><a class="el" href="../../d0/d5e/group__KEY.html#gabd0060d5743708069163a5e76542febc" title="Get a value associated with a key in the calling work unit.">ABT_key_get()</a></code> returns the value in the caller associated with the work-unit-specific data key <code>key</code> in the calling work unit through <code>value</code>. If the caller has never set a value for the key, this routine sets <code>value</code> to <code>NULL</code>.</p>
+<p>Get a value associated with a work-unit-specific data key in the calling work unit. </p>
+<p><code><a class="el" href="../../d0/d5e/group__KEY.html#gabd0060d5743708069163a5e76542febc" title="Get a value associated with a work-unit-specific data key in the calling work unit.">ABT_key_get()</a></code> returns the value in the caller associated with the work-unit-specific data key <code>key</code> in the calling work unit through <code>value</code>. If the caller has never set a value for <code>key</code>, this routine sets <code>value</code> to <code>NULL</code>.</p>
 <p>Work-unit-specific values associated with a work-unit-specific data key are read and updated atomically.</p>
-<dl class="section note"><dt>Note</dt><dd>This routine will be replaced by <code><a class="el" href="../../d9/d23/group__SELF.html#ga1843ed5b39fb3bcdbd46943b7b569de0" title="Get a value associated with a key in the calling work unit.">ABT_self_get_specific()</a></code> in the future.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This routine will be replaced by <code><a class="el" href="../../d9/d23/group__SELF.html#ga1843ed5b39fb3bcdbd46943b7b569de0" title="Get a value associated with a work-unit-specific data key in the calling work unit.">ABT_self_get_specific()</a></code> in the future.</dd></dl>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized. <dl class="section user">
+ <b>[Argobots 2.0]</b> The results of this routine are undefined if Argobots is not initialized. <dl class="section user">
 <dt>Rationale</dt>
-<dd>From Argobots 2.0, all the Argobots routines that are not explicitly noted do not check if Argobots is initialized. This omission can reduce the branches that are mostly unnecessary. </dd>
+<dd>From Argobots 2.0, Argobots routines do not check if Argobots is initialized unless otherwise noted. This omission can reduce the branches that are unnecessary in most cases. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context and a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context or a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
 <code>ABT_ERR_INV_KEY</code> is returned if <code>key</code> is <code>ABT_KEY_NULL</code>.<br  />
@@ -268,7 +269,7 @@ If <code>key</code> is accessed after calling this routine, the results are unde
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/dfd/key_8c_source.html#l00209">209</a> of file <a class="el" href="../../db/dfd/key_8c_source.html">key.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/dfd/key_8c_source.html#l00211">211</a> of file <a class="el" href="../../db/dfd/key_8c_source.html">key.c</a>.</p>
 
 </div>
 </div>
@@ -298,20 +299,20 @@ If <code>key</code> is accessed after calling this routine, the results are unde
       </table>
 </div><div class="memdoc">
 
-<p>Associate a value with a work-unit-specific key in the calling work unit. </p>
-<p><code><a class="el" href="../../d0/d5e/group__KEY.html#ga227c3e43f7112de4f35581e1d6e7dfdf" title="Associate a value with a work-unit-specific key in the calling work unit.">ABT_key_set()</a></code> associates a value <code>value</code> of the work-unit-specific data key <code>key</code> in the calling work unit. Different work units may bind different values to the same key.</p>
+<p>Associate a value with a work-unit-specific data key in the calling work unit. </p>
+<p><code><a class="el" href="../../d0/d5e/group__KEY.html#ga227c3e43f7112de4f35581e1d6e7dfdf" title="Associate a value with a work-unit-specific data key in the calling work unit.">ABT_key_set()</a></code> associates a value <code>value</code> with the work-unit-specific data key <code>key</code> in the calling work unit. Different work units may bind different values to the same key.</p>
 <p>Work-unit-specific values associated with a work-unit-specific data key are read and updated atomically.</p>
-<dl class="section note"><dt>Note</dt><dd>This routine will be replaced by <code><a class="el" href="../../d9/d23/group__SELF.html#ga3c0f0831c0ea52deb093d692984bd6b9" title="Associate a value with a work-unit-specific key in the calling work unit.">ABT_self_set_specific()</a></code> in the future.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This routine will be replaced by <code><a class="el" href="../../d9/d23/group__SELF.html#ga3c0f0831c0ea52deb093d692984bd6b9" title="Associate a value with a work-unit-specific data key in the calling work unit.">ABT_self_set_specific()</a></code> in the future.</dd></dl>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
 <dd><b>[Argobots 1.x]</b> This routine returns <code>ABT_ERR_UNINITIALIZED</code> if Argobots is not initialized.<br  />
- <b>[Argobots 2.0]</b> The results are undefined if Argobots is not initialized. <dl class="section user">
+ <b>[Argobots 2.0]</b> The results of this routine are undefined if Argobots is not initialized. <dl class="section user">
 <dt>Rationale</dt>
-<dd>From Argobots 2.0, all the Argobots routines that are not explicitly noted do not check if Argobots is initialized. This omission can reduce the branches that are mostly unnecessary. </dd>
+<dd>From Argobots 2.0, Argobots routines do not check if Argobots is initialized unless otherwise noted. This omission can reduce the branches that are unnecessary in most cases. </dd>
 </dl>
 </dd>
 </dl>
-<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context and a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
+<dl class="section user"><dt>Execution context</dt><dd>This routine can be called in a ULT context or a tasklet context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_XSTREAM</code> is returned if the caller is an external thread.<br  />
 <code>ABT_ERR_INV_KEY</code> is returned if <code>key</code> is <code>ABT_KEY_NULL</code>.<br  />
@@ -330,14 +331,14 @@ If <code>key</code> is accessed after calling this routine, the results are unde
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/dfd/key_8c_source.html#l00155">155</a> of file <a class="el" href="../../db/dfd/key_8c_source.html">key.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/dfd/key_8c_source.html#l00156">156</a> of file <a class="el" href="../../db/dfd/key_8c_source.html">key.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 10 2021 03:10:08 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 12 2021 03:10:03 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

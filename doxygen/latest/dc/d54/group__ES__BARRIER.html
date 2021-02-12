@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">f816757cfdc8e5fef84abc0c0bf0a654684af46a</span>
+   &#160;<span id="projectnumber">2892a0cc7e2babf3b5cb0f43c2796b2861550983</span>
    </div>
   </td>
  </tr>
@@ -76,7 +76,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:ga77c35d8ec4598d111b01acaed11de536"><td class="memItemLeft" align="right" valign="top">typedef struct ABT_xstream_barrier_opaque *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/group__ES__BARRIER.html#ga77c35d8ec4598d111b01acaed11de536">ABT_xstream_barrier</a></td></tr>
-<tr class="memdesc:ga77c35d8ec4598d111b01acaed11de536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execution stream barrier handle type.  <a href="../../dc/d54/group__ES__BARRIER.html#ga77c35d8ec4598d111b01acaed11de536">More...</a><br /></td></tr>
+<tr class="memdesc:ga77c35d8ec4598d111b01acaed11de536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execution-stream barrier handle type.  <a href="../../dc/d54/group__ES__BARRIER.html#ga77c35d8ec4598d111b01acaed11de536">More...</a><br /></td></tr>
 <tr class="separator:ga77c35d8ec4598d111b01acaed11de536"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -106,10 +106,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Execution stream barrier handle type. </p>
+<p>Execution-stream barrier handle type. </p>
 <p>A NULL handle of this type is <code>ABT_XSTREAM_BARRIER_NULL</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00798">798</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7d/abt_8h_source.html#l00799">799</a> of file <a class="el" href="../../d5/d7d/abt_8h_source.html">abt.h</a>.</p>
 
 </div>
 </div>
@@ -141,7 +141,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Create a new execution-stream barrier. </p>
-<p><code><a class="el" href="../../dc/d54/group__ES__BARRIER.html#ga9df48f67278b6b78ea7efb79d829c63f" title="Create a new execution-stream barrier.">ABT_xstream_barrier_create()</a></code> creates a new execution-stream barrier and returns its handle through <code>newbarrier</code>. <code>num_waiters</code> specifies the number of waiters that must call <code><a class="el" href="../../dc/d54/group__ES__BARRIER.html#ga9df48f67278b6b78ea7efb79d829c63f" title="Create a new execution-stream barrier.">ABT_xstream_barrier_create()</a></code> before any of the waiters successfully return from the call. <code>num_waiters</code> must be greater than zero.</p>
+<p><code><a class="el" href="../../dc/d54/group__ES__BARRIER.html#ga9df48f67278b6b78ea7efb79d829c63f" title="Create a new execution-stream barrier.">ABT_xstream_barrier_create()</a></code> creates a new execution-stream barrier and returns its handle through <code>newbarrier</code>. <code>num_waiters</code> specifies the number of waiters that must call <code><a class="el" href="../../dc/d54/group__ES__BARRIER.html#ga80a776789efc225e6e24a901f31a4374" title="Wait on an execution-stream barrier.">ABT_xstream_barrier_wait()</a></code> before any of the waiters successfully return from the call. <code>num_waiters</code> must be greater than zero.</p>
 <p><code>newbarrier</code> must be freed by <code><a class="el" href="../../dc/d54/group__ES__BARRIER.html#gac540cb325432a8b6c33bfbac053ba02f" title="Free an execution-stream barrier.">ABT_xstream_barrier_free()</a></code> after its use.</p>
 <dl class="section note">
 <dt>Changes from Argobots 1.x to Argobots 2.0 (planned)</dt>
@@ -252,7 +252,7 @@ If <code>barrier</code> is accessed after calling this routine, the results are 
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 10 2021 03:10:12 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 12 2021 03:10:08 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
