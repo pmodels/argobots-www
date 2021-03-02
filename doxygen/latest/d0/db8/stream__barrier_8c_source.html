@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">0fe9a69fef0da01b7d13b05bf3ea11c116497027</span>
+   &#160;<span id="projectnumber">b0afc3b487feaee57aad36a350817b0894b15983</span>
    </div>
   </td>
  </tr>
@@ -100,7 +100,7 @@ $(function() {
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        ABTI_HANDLE_ERROR(abt_errno);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    ABTI_spinlock_clear(&amp;p_newbarrier-&gt;lock);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    ABTD_spinlock_clear(&amp;p_newbarrier-&gt;lock);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    p_newbarrier-&gt;counter = 0;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    ABTD_atomic_relaxed_store_uint64(&amp;p_newbarrier-&gt;tag, 0);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -138,7 +138,7 @@ $(function() {
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="comment">/* The following implementation is a simple sense-reversal barrier</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">         * implementation while it uses uint64_t instead of boolean to prevent</span></div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">         * a sense variable from wrapping around. */</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        ABTI_spinlock_acquire(&amp;p_barrier-&gt;lock);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        ABTD_spinlock_acquire(&amp;p_barrier-&gt;lock);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        p_barrier-&gt;counter++;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">if</span> (p_barrier-&gt;counter == p_barrier-&gt;num_waiters) {</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="comment">/* Wake up the other waiters. */</span></div>
@@ -148,11 +148,11 @@ $(function() {
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            uint64_t cur_tag = ABTD_atomic_relaxed_load_uint64(&amp;p_barrier-&gt;tag);</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            uint64_t new_tag = (cur_tag + 1) &amp; (UINT64_MAX &gt;&gt; 1);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            ABTD_atomic_release_store_uint64(&amp;p_barrier-&gt;tag, new_tag);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            ABTI_spinlock_release(&amp;p_barrier-&gt;lock);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            ABTD_spinlock_release(&amp;p_barrier-&gt;lock);</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <span class="comment">/* Wait until the tag is updated by the last waiter */</span></div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            uint64_t cur_tag = ABTD_atomic_relaxed_load_uint64(&amp;p_barrier-&gt;tag);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            ABTI_spinlock_release(&amp;p_barrier-&gt;lock);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            ABTD_spinlock_release(&amp;p_barrier-&gt;lock);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">while</span> (cur_tag == ABTD_atomic_acquire_load_uint64(&amp;p_barrier-&gt;tag))</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                ABTD_atomic_pause();</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        }</div>
@@ -166,14 +166,14 @@ $(function() {
 <div class="ttc" id="aabti_8h_html"><div class="ttname"><a href="../../d5/d03/abti_8h.html">abti.h</a></div></div>
 <div class="ttc" id="aabtu_8h_html_aa2d633baee4486fb78890916840282af"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a></div><div class="ttdeci">static ABTU_ret_err int ABTU_malloc(size_t size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00218">abtu.h:218</a></div></div>
 <div class="ttc" id="agroup__ERROR__CODE_html_gacf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdoc">Error code: the routine returns successfully.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00092">abt.h:92</a></div></div>
-<div class="ttc" id="aabt_8h_html_a96ff3b274e90e377dbadc18471650fa4"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a96ff3b274e90e377dbadc18471650fa4">ABT_XSTREAM_BARRIER_NULL</a></div><div class="ttdeci">#define ABT_XSTREAM_BARRIER_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01054">abt.h:1054</a></div></div>
-<div class="ttc" id="agroup__ES__BARRIER_html_ga77c35d8ec4598d111b01acaed11de536"><div class="ttname"><a href="../../dc/d54/group__ES__BARRIER.html#ga77c35d8ec4598d111b01acaed11de536">ABT_xstream_barrier</a></div><div class="ttdeci">struct ABT_xstream_barrier_opaque * ABT_xstream_barrier</div><div class="ttdoc">Execution-stream barrier handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00799">abt.h:799</a></div></div>
+<div class="ttc" id="aabt_8h_html_a96ff3b274e90e377dbadc18471650fa4"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a96ff3b274e90e377dbadc18471650fa4">ABT_XSTREAM_BARRIER_NULL</a></div><div class="ttdeci">#define ABT_XSTREAM_BARRIER_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01056">abt.h:1056</a></div></div>
+<div class="ttc" id="agroup__ES__BARRIER_html_ga77c35d8ec4598d111b01acaed11de536"><div class="ttname"><a href="../../dc/d54/group__ES__BARRIER.html#ga77c35d8ec4598d111b01acaed11de536">ABT_xstream_barrier</a></div><div class="ttdeci">struct ABT_xstream_barrier_opaque * ABT_xstream_barrier</div><div class="ttdoc">Execution-stream barrier handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00801">abt.h:801</a></div></div>
 <div class="ttc" id="agroup__ERROR__CODE_html_ga5a7703cc3cf3cafa9bed26e3fce31051"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#ga5a7703cc3cf3cafa9bed26e3fce31051">ABT_ERR_INV_ARG</a></div><div class="ttdeci">#define ABT_ERR_INV_ARG</div><div class="ttdoc">Error code: invalid user argument.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00250">abt.h:250</a></div></div>
 <div class="ttc" id="aabtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00211">abtu.h:211</a></div></div>
 <div class="ttc" id="agroup__ES__BARRIER_html_ga9df48f67278b6b78ea7efb79d829c63f"><div class="ttname"><a href="../../dc/d54/group__ES__BARRIER.html#ga9df48f67278b6b78ea7efb79d829c63f">ABT_xstream_barrier_create</a></div><div class="ttdeci">int ABT_xstream_barrier_create(uint32_t num_waiters, ABT_xstream_barrier *newbarrier)</div><div class="ttdoc">Create a new execution-stream barrier.</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/db8/stream__barrier_8c_source.html#l00044">stream_barrier.c:44</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 13 2021 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 2 2021 03:10:03 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

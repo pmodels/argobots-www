@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">0fe9a69fef0da01b7d13b05bf3ea11c116497027</span>
+   &#160;<span id="projectnumber">b0afc3b487feaee57aad36a350817b0894b15983</span>
    </div>
   </td>
  </tr>
@@ -145,10 +145,10 @@ $(function() {
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                   num_requested_types,</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                   p_global-&gt;mem_page_size);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_DISABLE_EXT_THREAD</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    ABTI_spinlock_clear(&amp;p_global-&gt;mem_pool_stack_lock);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    ABTD_spinlock_clear(&amp;p_global-&gt;mem_pool_stack_lock);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    ABTI_mem_pool_init_local_pool(&amp;p_global-&gt;mem_pool_stack_ext,</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                  &amp;p_global-&gt;mem_pool_stack);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    ABTI_spinlock_clear(&amp;p_global-&gt;mem_pool_desc_lock);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    ABTD_spinlock_clear(&amp;p_global-&gt;mem_pool_desc_lock);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    ABTI_mem_pool_init_local_pool(&amp;p_global-&gt;mem_pool_desc_ext,</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                  &amp;p_global-&gt;mem_pool_desc);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -254,12 +254,12 @@ $(function() {
 <div class="ttc" id="aabtu_8h_html_aef487b4e86c4c28804e18e95edd082aca2f8e975c6e885c05fbe291fb81cdfee2"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082aca2f8e975c6e885c05fbe291fb81cdfee2">ABTU_MEM_LARGEPAGE_MMAP_HUGEPAGE</a></div><div class="ttdeci">@ ABTU_MEM_LARGEPAGE_MMAP_HUGEPAGE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00295">abtu.h:295</a></div></div>
 <div class="ttc" id="aabti_8h_html"><div class="ttname"><a href="../../d5/d03/abti_8h.html">abti.h</a></div></div>
 <div class="ttc" id="aabtu_8h_html_aef487b4e86c4c28804e18e95edd082ac"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082ac">ABTU_MEM_LARGEPAGE_TYPE</a></div><div class="ttdeci">ABTU_MEM_LARGEPAGE_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00291">abtu.h:291</a></div></div>
-<div class="ttc" id="aabt__config_8h_html_a9be181de89306780f2f3d7c575c52b8e"><div class="ttname"><a href="../../dd/d6e/abt__config_8h.html#a9be181de89306780f2f3d7c575c52b8e">ABT_CONFIG_STATIC_CACHELINE_SIZE</a></div><div class="ttdeci">#define ABT_CONFIG_STATIC_CACHELINE_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d6e/abt__config_8h_source.html#l00069">abt_config.h:69</a></div></div>
+<div class="ttc" id="aabt__config_8h_html_a9be181de89306780f2f3d7c575c52b8e"><div class="ttname"><a href="../../dd/d6e/abt__config_8h.html#a9be181de89306780f2f3d7c575c52b8e">ABT_CONFIG_STATIC_CACHELINE_SIZE</a></div><div class="ttdeci">#define ABT_CONFIG_STATIC_CACHELINE_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d6e/abt__config_8h_source.html#l00072">abt_config.h:72</a></div></div>
 <div class="ttc" id="aabtu_8h_html_aef487b4e86c4c28804e18e95edd082aca08ade95db1e37310677f054df5817967"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082aca08ade95db1e37310677f054df5817967">ABTU_MEM_LARGEPAGE_MALLOC</a></div><div class="ttdeci">@ ABTU_MEM_LARGEPAGE_MALLOC</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00292">abtu.h:292</a></div></div>
 <div class="ttc" id="aabtu_8h_html_aef487b4e86c4c28804e18e95edd082aca0c460c1a80ca642a6cfb42b2d3a8702a"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082aca0c460c1a80ca642a6cfb42b2d3a8702a">ABTU_MEM_LARGEPAGE_MEMALIGN</a></div><div class="ttdeci">@ ABTU_MEM_LARGEPAGE_MEMALIGN</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00293">abtu.h:293</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 13 2021 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 2 2021 03:10:03 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

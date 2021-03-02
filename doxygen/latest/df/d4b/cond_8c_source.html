@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">0fe9a69fef0da01b7d13b05bf3ea11c116497027</span>
+   &#160;<span id="projectnumber">b0afc3b487feaee57aad36a350817b0894b15983</span>
    </div>
   </td>
  </tr>
@@ -153,13 +153,13 @@ $(function() {
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    thread.type = ABTI_THREAD_TYPE_EXT;</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    ABTD_atomic_relaxed_store_int(&amp;thread.state, <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089a3638f9519e790388f3bbc7e35f30fece">ABT_THREAD_STATE_BLOCKED</a>);</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    ABTI_spinlock_acquire(&amp;p_cond-&gt;lock);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    ABTD_spinlock_acquire(&amp;p_cond-&gt;lock);</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordflow">if</span> (p_cond-&gt;p_waiter_mutex == NULL) {</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        p_cond-&gt;p_waiter_mutex = p_mutex;</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordflow">if</span> (p_cond-&gt;p_waiter_mutex != p_mutex) {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            ABTI_spinlock_release(&amp;p_cond-&gt;lock);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            ABTD_spinlock_release(&amp;p_cond-&gt;lock);</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            ABTI_HANDLE_ERROR(<a class="code" href="../../d7/d29/group__ERROR__CODE.html#gadfc64188071528c3d34983f22871316a">ABT_ERR_INV_MUTEX</a>);</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        }</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    }</div>
@@ -168,74 +168,72 @@ $(function() {
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    ABTI_mutex_unlock(p_local, p_mutex);</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> is_timedout =</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        ABTI_waitlist_wait_timedout_and_unlock(&amp;p_local, &amp;p_cond-&gt;waitlist,</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                                               &amp;p_cond-&gt;lock, <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>,</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                                               tar_time,</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                                               <a class="code" href="../../de/d0d/group__TOOL.html#ggac601a9db309d1a30954d43fc82d9602fa67d08b4f9e8ca3b7a4d8640c21d52e3c">ABT_SYNC_EVENT_TYPE_COND</a>,</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                                               (<span class="keywordtype">void</span> *)p_cond);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="comment">/* Lock the mutex again */</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    ABTI_mutex_lock(&amp;p_local, p_mutex);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">return</span> is_timedout ? <a class="code" href="../../d7/d29/group__ERROR__CODE.html#ga0ad26dd53f27d0d8cefdd4843185222f">ABT_ERR_COND_TIMEDOUT</a> : <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00285"></a><span class="lineno"><a class="line" href="../../d9/d37/group__COND.html#ga06d68833d6c8a6cd008013d40bb16a69">  285</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d37/group__COND.html#ga06d68833d6c8a6cd008013d40bb16a69">ABT_cond_signal</a>(<a class="code" href="../../d9/d37/group__COND.html#ga284def6c1a5999af708bb5c61e7d3c83">ABT_cond</a> cond)</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;{</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    ABTI_local *p_local = ABTI_local_get_local();</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    ABTI_cond *p_cond = ABTI_cond_get_ptr(cond);</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    ABTI_CHECK_NULL_COND_PTR(p_cond);</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    ABTI_spinlock_acquire(&amp;p_cond-&gt;lock);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    ABTI_waitlist_signal(p_local, &amp;p_cond-&gt;waitlist);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    ABTI_spinlock_release(&amp;p_cond-&gt;lock);</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;}</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
-<div class="line"><a name="l00317"></a><span class="lineno"><a class="line" href="../../d9/d37/group__COND.html#gacf070ccdf98a54598455e2358781152b">  317</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d37/group__COND.html#gacf070ccdf98a54598455e2358781152b">ABT_cond_broadcast</a>(<a class="code" href="../../d9/d37/group__COND.html#ga284def6c1a5999af708bb5c61e7d3c83">ABT_cond</a> cond)</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;{</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    ABTI_local *p_local = ABTI_local_get_local();</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    ABTI_cond *p_cond = ABTI_cond_get_ptr(cond);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    ABTI_CHECK_NULL_COND_PTR(p_cond);</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    ABTI_cond_broadcast(p_local, p_cond);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;}</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="comment">/* Internal static functions                                                 */</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
-<div class="line"><a name="l00331"></a><span class="lineno"><a class="line" href="../../df/d4b/cond_8c.html#ad6bf6e234fcbb88ee9da9fe8252f2388">  331</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="../../df/d4b/cond_8c.html#ad6bf6e234fcbb88ee9da9fe8252f2388">convert_timespec_to_sec</a>(<span class="keyword">const</span> <span class="keyword">struct</span> timespec *p_ts)</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;{</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordtype">double</span> secs;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    secs = ((double)p_ts-&gt;tv_sec) + 1.0e-9 * ((double)p_ts-&gt;tv_nsec);</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">return</span> secs;</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;}</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                                               &amp;p_cond-&gt;lock, tar_time,</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                                               <a class="code" href="../../de/d0d/group__TOOL.html#ggac601a9db309d1a30954d43fc82d9602fa67d08b4f9e8ca3b7a4d8640c21d52e3c">ABT_SYNC_EVENT_TYPE_COND</a>,</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                                               (<span class="keywordtype">void</span> *)p_cond);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="comment">/* Lock the mutex again */</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    ABTI_mutex_lock(&amp;p_local, p_mutex);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">return</span> is_timedout ? <a class="code" href="../../d7/d29/group__ERROR__CODE.html#ga0ad26dd53f27d0d8cefdd4843185222f">ABT_ERR_COND_TIMEDOUT</a> : <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;}</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00284"></a><span class="lineno"><a class="line" href="../../d9/d37/group__COND.html#ga06d68833d6c8a6cd008013d40bb16a69">  284</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d37/group__COND.html#ga06d68833d6c8a6cd008013d40bb16a69">ABT_cond_signal</a>(<a class="code" href="../../d9/d37/group__COND.html#ga284def6c1a5999af708bb5c61e7d3c83">ABT_cond</a> cond)</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;{</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    ABTI_local *p_local = ABTI_local_get_local();</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    ABTI_cond *p_cond = ABTI_cond_get_ptr(cond);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    ABTI_CHECK_NULL_COND_PTR(p_cond);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    ABTD_spinlock_acquire(&amp;p_cond-&gt;lock);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    ABTI_waitlist_signal(p_local, &amp;p_cond-&gt;waitlist);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    ABTD_spinlock_release(&amp;p_cond-&gt;lock);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;}</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00316"></a><span class="lineno"><a class="line" href="../../d9/d37/group__COND.html#gacf070ccdf98a54598455e2358781152b">  316</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d37/group__COND.html#gacf070ccdf98a54598455e2358781152b">ABT_cond_broadcast</a>(<a class="code" href="../../d9/d37/group__COND.html#ga284def6c1a5999af708bb5c61e7d3c83">ABT_cond</a> cond)</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;{</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    ABTI_local *p_local = ABTI_local_get_local();</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    ABTI_cond *p_cond = ABTI_cond_get_ptr(cond);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    ABTI_CHECK_NULL_COND_PTR(p_cond);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    ABTI_cond_broadcast(p_local, p_cond);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;}</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="comment">/* Internal static functions                                                 */</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
+<div class="line"><a name="l00330"></a><span class="lineno"><a class="line" href="../../df/d4b/cond_8c.html#ad6bf6e234fcbb88ee9da9fe8252f2388">  330</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="../../df/d4b/cond_8c.html#ad6bf6e234fcbb88ee9da9fe8252f2388">convert_timespec_to_sec</a>(<span class="keyword">const</span> <span class="keyword">struct</span> timespec *p_ts)</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;{</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordtype">double</span> secs;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    secs = ((double)p_ts-&gt;tv_sec) + 1.0e-9 * ((double)p_ts-&gt;tv_nsec);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keywordflow">return</span> secs;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aabt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdoc">Boolean type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00999">abt.h:999</a></div></div>
+<div class="ttc" id="aabt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdoc">Boolean type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01001">abt.h:1001</a></div></div>
 <div class="ttc" id="agroup__COND_html_ga7475b6321893cd2ca5eb26b1b0b9ba35"><div class="ttname"><a href="../../d9/d37/group__COND.html#ga7475b6321893cd2ca5eb26b1b0b9ba35">ABT_cond_free</a></div><div class="ttdeci">int ABT_cond_free(ABT_cond *cond)</div><div class="ttdoc">Free a condition variable.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d4b/cond_8c_source.html#l00089">cond.c:89</a></div></div>
 <div class="ttc" id="agroup__COND_html_ga67b02f7813711cd45e6a6897d78ba0ff"><div class="ttname"><a href="../../d9/d37/group__COND.html#ga67b02f7813711cd45e6a6897d78ba0ff">ABT_cond_timedwait</a></div><div class="ttdeci">int ABT_cond_timedwait(ABT_cond cond, ABT_mutex mutex, const struct timespec *abstime)</div><div class="ttdoc">Wait on a condition variable with a timeout limit.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d4b/cond_8c_source.html#l00227">cond.c:227</a></div></div>
-<div class="ttc" id="aabt_8h_html_ac43e236e013a81daa29275d0f9e3b011"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ac43e236e013a81daa29275d0f9e3b011">ABT_COND_NULL</a></div><div class="ttdeci">#define ABT_COND_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01066">abt.h:1066</a></div></div>
+<div class="ttc" id="aabt_8h_html_ac43e236e013a81daa29275d0f9e3b011"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ac43e236e013a81daa29275d0f9e3b011">ABT_COND_NULL</a></div><div class="ttdeci">#define ABT_COND_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01068">abt.h:1068</a></div></div>
 <div class="ttc" id="agroup__ERROR__CODE_html_ga73bc4b82033379b8cb5cad687ae2b62e"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#ga73bc4b82033379b8cb5cad687ae2b62e">ABT_ERR_COND</a></div><div class="ttdeci">#define ABT_ERR_COND</div><div class="ttdoc">Error code: error related to a condition variable.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00323">abt.h:323</a></div></div>
-<div class="ttc" id="agroup__MUTEX_html_ga47f82eaefe654cad03090b6e9c818533"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a></div><div class="ttdeci">struct ABT_mutex_opaque * ABT_mutex</div><div class="ttdoc">Mutex handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00943">abt.h:943</a></div></div>
-<div class="ttc" id="astructABT__cond__memory_html"><div class="ttname"><a href="../../d9/d38/structABT__cond__memory.html">ABT_cond_memory</a></div><div class="ttdoc">A struct that can be converted to ABT_cond.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01170">abt.h:1170</a></div></div>
+<div class="ttc" id="agroup__MUTEX_html_ga47f82eaefe654cad03090b6e9c818533"><div class="ttname"><a href="../../d2/d09/group__MUTEX.html#ga47f82eaefe654cad03090b6e9c818533">ABT_mutex</a></div><div class="ttdeci">struct ABT_mutex_opaque * ABT_mutex</div><div class="ttdoc">Mutex handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00945">abt.h:945</a></div></div>
+<div class="ttc" id="astructABT__cond__memory_html"><div class="ttname"><a href="../../d9/d38/structABT__cond__memory.html">ABT_cond_memory</a></div><div class="ttdoc">A struct that can be converted to ABT_cond.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01172">abt.h:1172</a></div></div>
 <div class="ttc" id="agroup__ERROR__CODE_html_gadfc64188071528c3d34983f22871316a"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#gadfc64188071528c3d34983f22871316a">ABT_ERR_INV_MUTEX</a></div><div class="ttdeci">#define ABT_ERR_INV_MUTEX</div><div class="ttdoc">Error code: invalid mutex.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00200">abt.h:200</a></div></div>
 <div class="ttc" id="agroup__ULT_html_ggaa8e839d537fd79d677108d42d4176089a3638f9519e790388f3bbc7e35f30fece"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089a3638f9519e790388f3bbc7e35f30fece">ABT_THREAD_STATE_BLOCKED</a></div><div class="ttdeci">@ ABT_THREAD_STATE_BLOCKED</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00421">abt.h:421</a></div></div>
 <div class="ttc" id="aabti_8h_html"><div class="ttname"><a href="../../d5/d03/abti_8h.html">abti.h</a></div></div>
 <div class="ttc" id="aabtu_8h_html_aa2d633baee4486fb78890916840282af"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a></div><div class="ttdeci">static ABTU_ret_err int ABTU_malloc(size_t size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00218">abtu.h:218</a></div></div>
-<div class="ttc" id="agroup__TOOL_html_ggac601a9db309d1a30954d43fc82d9602fa67d08b4f9e8ca3b7a4d8640c21d52e3c"><div class="ttname"><a href="../../de/d0d/group__TOOL.html#ggac601a9db309d1a30954d43fc82d9602fa67d08b4f9e8ca3b7a4d8640c21d52e3c">ABT_SYNC_EVENT_TYPE_COND</a></div><div class="ttdeci">@ ABT_SYNC_EVENT_TYPE_COND</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00672">abt.h:672</a></div></div>
+<div class="ttc" id="agroup__TOOL_html_ggac601a9db309d1a30954d43fc82d9602fa67d08b4f9e8ca3b7a4d8640c21d52e3c"><div class="ttname"><a href="../../de/d0d/group__TOOL.html#ggac601a9db309d1a30954d43fc82d9602fa67d08b4f9e8ca3b7a4d8640c21d52e3c">ABT_SYNC_EVENT_TYPE_COND</a></div><div class="ttdeci">@ ABT_SYNC_EVENT_TYPE_COND</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00674">abt.h:674</a></div></div>
 <div class="ttc" id="agroup__COND_html_ga761c9aa0358a769538fd4aeb3e358773"><div class="ttname"><a href="../../d9/d37/group__COND.html#ga761c9aa0358a769538fd4aeb3e358773">ABT_cond_create</a></div><div class="ttdeci">int ABT_cond_create(ABT_cond *newcond)</div><div class="ttdoc">Create a new condition variable.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d4b/cond_8c_source.html#l00042">cond.c:42</a></div></div>
 <div class="ttc" id="agroup__ERROR__CODE_html_gacf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdoc">Error code: the routine returns successfully.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00092">abt.h:92</a></div></div>
-<div class="ttc" id="agroup__COND_html_gacf070ccdf98a54598455e2358781152b"><div class="ttname"><a href="../../d9/d37/group__COND.html#gacf070ccdf98a54598455e2358781152b">ABT_cond_broadcast</a></div><div class="ttdeci">int ABT_cond_broadcast(ABT_cond cond)</div><div class="ttdoc">Broadcast a condition.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d4b/cond_8c_source.html#l00317">cond.c:317</a></div></div>
-<div class="ttc" id="acond_8c_html_ad6bf6e234fcbb88ee9da9fe8252f2388"><div class="ttname"><a href="../../df/d4b/cond_8c.html#ad6bf6e234fcbb88ee9da9fe8252f2388">convert_timespec_to_sec</a></div><div class="ttdeci">static double convert_timespec_to_sec(const struct timespec *p_ts)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d4b/cond_8c_source.html#l00331">cond.c:331</a></div></div>
-<div class="ttc" id="aabt_8h_html_aedde437380ced4813c3c36d97e926a25"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a></div><div class="ttdeci">#define ABT_FALSE</div><div class="ttdoc">False constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00748">abt.h:748</a></div></div>
+<div class="ttc" id="agroup__COND_html_gacf070ccdf98a54598455e2358781152b"><div class="ttname"><a href="../../d9/d37/group__COND.html#gacf070ccdf98a54598455e2358781152b">ABT_cond_broadcast</a></div><div class="ttdeci">int ABT_cond_broadcast(ABT_cond cond)</div><div class="ttdoc">Broadcast a condition.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d4b/cond_8c_source.html#l00316">cond.c:316</a></div></div>
+<div class="ttc" id="acond_8c_html_ad6bf6e234fcbb88ee9da9fe8252f2388"><div class="ttname"><a href="../../df/d4b/cond_8c.html#ad6bf6e234fcbb88ee9da9fe8252f2388">convert_timespec_to_sec</a></div><div class="ttdeci">static double convert_timespec_to_sec(const struct timespec *p_ts)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d4b/cond_8c_source.html#l00330">cond.c:330</a></div></div>
 <div class="ttc" id="agroup__COND_html_ga5259b9161829998a5bef644b17635210"><div class="ttname"><a href="../../d9/d37/group__COND.html#ga5259b9161829998a5bef644b17635210">ABT_cond_wait</a></div><div class="ttdeci">int ABT_cond_wait(ABT_cond cond, ABT_mutex mutex)</div><div class="ttdoc">Wait on a condition variable.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d4b/cond_8c_source.html#l00151">cond.c:151</a></div></div>
 <div class="ttc" id="agroup__ERROR__CODE_html_ga0ad26dd53f27d0d8cefdd4843185222f"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#ga0ad26dd53f27d0d8cefdd4843185222f">ABT_ERR_COND_TIMEDOUT</a></div><div class="ttdeci">#define ABT_ERR_COND_TIMEDOUT</div><div class="ttdoc">Error code: a return value when a condition variable is timed out.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00330">abt.h:330</a></div></div>
 <div class="ttc" id="aabtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00211">abtu.h:211</a></div></div>
-<div class="ttc" id="agroup__COND_html_ga284def6c1a5999af708bb5c61e7d3c83"><div class="ttname"><a href="../../d9/d37/group__COND.html#ga284def6c1a5999af708bb5c61e7d3c83">ABT_cond</a></div><div class="ttdeci">struct ABT_cond_opaque * ABT_cond</div><div class="ttdoc">Condition variable handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00957">abt.h:957</a></div></div>
-<div class="ttc" id="agroup__COND_html_ga06d68833d6c8a6cd008013d40bb16a69"><div class="ttname"><a href="../../d9/d37/group__COND.html#ga06d68833d6c8a6cd008013d40bb16a69">ABT_cond_signal</a></div><div class="ttdeci">int ABT_cond_signal(ABT_cond cond)</div><div class="ttdoc">Signal a condition.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d4b/cond_8c_source.html#l00285">cond.c:285</a></div></div>
+<div class="ttc" id="agroup__COND_html_ga284def6c1a5999af708bb5c61e7d3c83"><div class="ttname"><a href="../../d9/d37/group__COND.html#ga284def6c1a5999af708bb5c61e7d3c83">ABT_cond</a></div><div class="ttdeci">struct ABT_cond_opaque * ABT_cond</div><div class="ttdoc">Condition variable handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00959">abt.h:959</a></div></div>
+<div class="ttc" id="agroup__COND_html_ga06d68833d6c8a6cd008013d40bb16a69"><div class="ttname"><a href="../../d9/d37/group__COND.html#ga06d68833d6c8a6cd008013d40bb16a69">ABT_cond_signal</a></div><div class="ttdeci">int ABT_cond_signal(ABT_cond cond)</div><div class="ttdoc">Signal a condition.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d4b/cond_8c_source.html#l00284">cond.c:284</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 13 2021 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 2 2021 03:10:03 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

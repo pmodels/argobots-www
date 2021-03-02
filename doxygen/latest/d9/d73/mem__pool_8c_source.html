@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">0fe9a69fef0da01b7d13b05bf3ea11c116497027</span>
+   &#160;<span id="projectnumber">b0afc3b487feaee57aad36a350817b0894b15983</span>
    </div>
   </td>
  </tr>
@@ -102,7 +102,7 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> i;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> num_headers_per_bucket = p_global_pool-&gt;num_headers_per_bucket;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">/* Return headers in the last bucket to partial_bucket. */</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    ABTI_spinlock_acquire(&amp;p_global_pool-&gt;partial_bucket_lock);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    ABTD_spinlock_acquire(&amp;p_global_pool-&gt;partial_bucket_lock);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span> (!p_global_pool-&gt;partial_bucket) {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        p_global_pool-&gt;partial_bucket = bucket;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    } <span class="keywordflow">else</span> {</div>
@@ -143,7 +143,7 @@ $(function() {
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            p_global_pool-&gt;partial_bucket = new_partial_bucket;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    ABTI_spinlock_release(&amp;p_global_pool-&gt;partial_bucket_lock);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    ABTD_spinlock_release(&amp;p_global_pool-&gt;partial_bucket_lock);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keywordtype">void</span> ABTI_mem_pool_init_global_pool(</div>
@@ -170,7 +170,7 @@ $(function() {
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    ABTI_sync_lifo_init(&amp;p_global_pool-&gt;mem_page_lifo);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    ABTD_atomic_relaxed_store_ptr(&amp;p_global_pool-&gt;p_mem_page_empty, NULL);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    ABTI_sync_lifo_init(&amp;p_global_pool-&gt;bucket_lifo);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    ABTI_spinlock_clear(&amp;p_global_pool-&gt;partial_bucket_lock);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    ABTD_spinlock_clear(&amp;p_global_pool-&gt;partial_bucket_lock);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    p_global_pool-&gt;partial_bucket = NULL;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
@@ -366,7 +366,7 @@ $(function() {
 <div class="ttc" id="amem__pool_8c_html_a5c67afbd642a7c1f9e9e41bb04b7b6fb"><div class="ttname"><a href="../../d9/d73/mem__pool_8c.html#a5c67afbd642a7c1f9e9e41bb04b7b6fb">mem_pool_lifo_elem_to_page</a></div><div class="ttdeci">static ABTI_mem_pool_page * mem_pool_lifo_elem_to_page(ABTI_sync_lifo_element *lifo_elem)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d73/mem__pool_8c_source.html#l00010">mem_pool.c:10</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 13 2021 03:09:56 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 2 2021 03:10:03 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
