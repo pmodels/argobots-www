@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">b0afc3b487feaee57aad36a350817b0894b15983</span>
+   &#160;<span id="projectnumber">edf86c8cf11cb7b3dd3671e67f1a8382ceed83c5</span>
    </div>
   </td>
  </tr>
@@ -277,177 +277,180 @@ $(function() {
 <div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;    <span class="keywordtype">int</span> abt_errno =</div>
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;        ABTI_ythread_create_sched(p_global, p_local, p_pool, p_sched);</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;}</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160; </div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d52/group__POOL.html#gae3b9d5f542cb31852aaa4d7079350e74">ABT_pool_get_id</a>(<a class="code" href="../../d9/d52/group__POOL.html#ga6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> pool, <span class="keywordtype">int</span> *<span class="keywordtype">id</span>)</div>
-<div class="line"><a name="l00832"></a><span class="lineno"><a class="line" href="../../d9/d52/group__POOL.html#gae3b9d5f542cb31852aaa4d7079350e74">  832</a></span>&#160;{</div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    ABTI_pool *p_pool = ABTI_pool_get_ptr(pool);</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    ABTI_CHECK_NULL_POOL_PTR(p_pool);</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160; </div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;    *<span class="keywordtype">id</span> = (int)p_pool-&gt;id;</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;}</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160; </div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;<span class="comment">/* Private APIs                                                              */</span></div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160; </div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keywordtype">int</span> ABTI_pool_create_basic(<a class="code" href="../../d9/d52/group__POOL.html#ga3d9e73381c78389a50ef463732e672a1">ABT_pool_kind</a> kind,</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;                                        <a class="code" href="../../d9/d52/group__POOL.html#gad33f04702fb8618eed4f6ece04041ecf">ABT_pool_access</a> access,</div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;                                        <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> automatic,</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;                                        ABTI_pool **pp_newpool)</div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;{</div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;    <span class="keywordtype">int</span> abt_errno;</div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;    ABTI_pool_def def;</div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160; </div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;    ABTI_CHECK_TRUE(access == <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfa6b52ca5bbffb03291d493257a8fe5bed">ABT_POOL_ACCESS_PRIV</a> ||</div>
-<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;                        access == <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfa9385bbd5d15bee55652e14e7546a0425">ABT_POOL_ACCESS_SPSC</a> ||</div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;                        access == <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfabb04cf57d6a62299db2783422069d1ef">ABT_POOL_ACCESS_MPSC</a> ||</div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;                        access == <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfa2d9b6671e37097bb153513c200a2ad46">ABT_POOL_ACCESS_SPMC</a> ||</div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;                        access == <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfaef5831d28ade4eb4b2a8e69a4c5bb39f">ABT_POOL_ACCESS_MPMC</a>,</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;                    <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gad1089de1eed803e47bb198c6b4e381c6">ABT_ERR_INV_POOL_ACCESS</a>);</div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;    <span class="keywordflow">switch</span> (kind) {</div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d9/d52/group__POOL.html#gga3d9e73381c78389a50ef463732e672a1a9f3f606b821abf78ccefd65ae5ce494c">ABT_POOL_FIFO</a>:</div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;            abt_errno = ABTI_pool_get_fifo_def(access, &amp;def);</div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d9/d52/group__POOL.html#gga3d9e73381c78389a50ef463732e672a1a0cb3dad152f9501d06400bd075c4dbd6">ABT_POOL_FIFO_WAIT</a>:</div>
-<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;            abt_errno = ABTI_pool_get_fifo_wait_def(access, &amp;def);</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    <span class="keywordflow">if</span> (abt_errno != <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;        p_sched-&gt;used = ABTI_SCHED_NOT_USED;</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        ABTI_HANDLE_ERROR(abt_errno);</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;    }</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;}</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160; </div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d9/d52/group__POOL.html#gae3b9d5f542cb31852aaa4d7079350e74">ABT_pool_get_id</a>(<a class="code" href="../../d9/d52/group__POOL.html#ga6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> pool, <span class="keywordtype">int</span> *<span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00835"></a><span class="lineno"><a class="line" href="../../d9/d52/group__POOL.html#gae3b9d5f542cb31852aaa4d7079350e74">  835</a></span>&#160;{</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;    ABTI_pool *p_pool = ABTI_pool_get_ptr(pool);</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;    ABTI_CHECK_NULL_POOL_PTR(p_pool);</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160; </div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;    *<span class="keywordtype">id</span> = (int)p_pool-&gt;id;</div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;}</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160; </div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;<span class="comment">/* Private APIs                                                              */</span></div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160; </div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keywordtype">int</span> ABTI_pool_create_basic(<a class="code" href="../../d9/d52/group__POOL.html#ga3d9e73381c78389a50ef463732e672a1">ABT_pool_kind</a> kind,</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;                                        <a class="code" href="../../d9/d52/group__POOL.html#gad33f04702fb8618eed4f6ece04041ecf">ABT_pool_access</a> access,</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;                                        <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> automatic,</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;                                        ABTI_pool **pp_newpool)</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;{</div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;    <span class="keywordtype">int</span> abt_errno;</div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;    ABTI_pool_def def;</div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160; </div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;    ABTI_CHECK_TRUE(access == <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfa6b52ca5bbffb03291d493257a8fe5bed">ABT_POOL_ACCESS_PRIV</a> ||</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;                        access == <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfa9385bbd5d15bee55652e14e7546a0425">ABT_POOL_ACCESS_SPSC</a> ||</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;                        access == <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfabb04cf57d6a62299db2783422069d1ef">ABT_POOL_ACCESS_MPSC</a> ||</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;                        access == <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfa2d9b6671e37097bb153513c200a2ad46">ABT_POOL_ACCESS_SPMC</a> ||</div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;                        access == <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfaef5831d28ade4eb4b2a8e69a4c5bb39f">ABT_POOL_ACCESS_MPMC</a>,</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;                    <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gad1089de1eed803e47bb198c6b4e381c6">ABT_ERR_INV_POOL_ACCESS</a>);</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;    <span class="keywordflow">switch</span> (kind) {</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d9/d52/group__POOL.html#gga3d9e73381c78389a50ef463732e672a1a9f3f606b821abf78ccefd65ae5ce494c">ABT_POOL_FIFO</a>:</div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;            abt_errno = ABTI_pool_get_fifo_def(access, &amp;def);</div>
 <div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;            abt_errno = <a class="code" href="../../d7/d29/group__ERROR__CODE.html#ga451e366f0ad9b060fd046e77e77ddc65">ABT_ERR_INV_POOL_KIND</a>;</div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d9/d52/group__POOL.html#gga3d9e73381c78389a50ef463732e672a1a0cb3dad152f9501d06400bd075c4dbd6">ABT_POOL_FIFO_WAIT</a>:</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;            abt_errno = ABTI_pool_get_fifo_wait_def(access, &amp;def);</div>
 <div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;    }</div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160; </div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;    abt_errno = <a class="code" href="../../d4/de5/pool_8c.html#a9c844339af61c7653aeabbfc495770d6">pool_create</a>(&amp;def, <a class="code" href="../../d5/d7d/abt_8h.html#a8040b0a9fd0b898cf67f4dd875914570">ABT_POOL_CONFIG_NULL</a>, automatic, pp_newpool);</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;            abt_errno = <a class="code" href="../../d7/d29/group__ERROR__CODE.html#ga451e366f0ad9b060fd046e77e77ddc65">ABT_ERR_INV_POOL_KIND</a>;</div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;    }</div>
 <div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;}</div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160; </div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;<span class="keywordtype">void</span> ABTI_pool_free(ABTI_pool *p_pool)</div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;{</div>
-<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[P%&quot;</span> PRIu64 <span class="stringliteral">&quot;] freed\n&quot;</span>, p_pool-&gt;id);</div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;    <a class="code" href="../../d9/d52/group__POOL.html#ga6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> h_pool = ABTI_pool_get_handle(p_pool);</div>
-<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;    <span class="keywordflow">if</span> (p_pool-&gt;p_free) {</div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;        p_pool-&gt;p_free(h_pool);</div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;    }</div>
-<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(p_pool);</div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;}</div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160; </div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;<span class="keywordtype">void</span> ABTI_pool_print(ABTI_pool *p_pool, FILE *p_os, <span class="keywordtype">int</span> indent)</div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;{</div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;    <span class="keywordflow">if</span> (p_pool == NULL) {</div>
-<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;        fprintf(p_os, <span class="stringliteral">&quot;%*s== NULL POOL ==\n&quot;</span>, indent, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *access;</div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160; </div>
-<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;        <span class="keywordflow">switch</span> (p_pool-&gt;access) {</div>
-<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfa6b52ca5bbffb03291d493257a8fe5bed">ABT_POOL_ACCESS_PRIV</a>:</div>
-<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;                access = <span class="stringliteral">&quot;PRIV&quot;</span>;</div>
-<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfa9385bbd5d15bee55652e14e7546a0425">ABT_POOL_ACCESS_SPSC</a>:</div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;                access = <span class="stringliteral">&quot;SPSC&quot;</span>;</div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160; </div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;    abt_errno = <a class="code" href="../../d4/de5/pool_8c.html#a9c844339af61c7653aeabbfc495770d6">pool_create</a>(&amp;def, <a class="code" href="../../d5/d7d/abt_8h.html#a8040b0a9fd0b898cf67f4dd875914570">ABT_POOL_CONFIG_NULL</a>, automatic, pp_newpool);</div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;}</div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160; </div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;<span class="keywordtype">void</span> ABTI_pool_free(ABTI_pool *p_pool)</div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;{</div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[P%&quot;</span> PRIu64 <span class="stringliteral">&quot;] freed\n&quot;</span>, p_pool-&gt;id);</div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;    <a class="code" href="../../d9/d52/group__POOL.html#ga6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> h_pool = ABTI_pool_get_handle(p_pool);</div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;    <span class="keywordflow">if</span> (p_pool-&gt;p_free) {</div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;        p_pool-&gt;p_free(h_pool);</div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;    }</div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(p_pool);</div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;}</div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160; </div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;<span class="keywordtype">void</span> ABTI_pool_print(ABTI_pool *p_pool, FILE *p_os, <span class="keywordtype">int</span> indent)</div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;{</div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;    <span class="keywordflow">if</span> (p_pool == NULL) {</div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;        fprintf(p_os, <span class="stringliteral">&quot;%*s== NULL POOL ==\n&quot;</span>, indent, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *access;</div>
+<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160; </div>
+<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;        <span class="keywordflow">switch</span> (p_pool-&gt;access) {</div>
+<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfa6b52ca5bbffb03291d493257a8fe5bed">ABT_POOL_ACCESS_PRIV</a>:</div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;                access = <span class="stringliteral">&quot;PRIV&quot;</span>;</div>
 <div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfabb04cf57d6a62299db2783422069d1ef">ABT_POOL_ACCESS_MPSC</a>:</div>
-<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;                access = <span class="stringliteral">&quot;MPSC&quot;</span>;</div>
+<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfa9385bbd5d15bee55652e14e7546a0425">ABT_POOL_ACCESS_SPSC</a>:</div>
+<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;                access = <span class="stringliteral">&quot;SPSC&quot;</span>;</div>
 <div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfa2d9b6671e37097bb153513c200a2ad46">ABT_POOL_ACCESS_SPMC</a>:</div>
-<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;                access = <span class="stringliteral">&quot;SPMC&quot;</span>;</div>
+<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfabb04cf57d6a62299db2783422069d1ef">ABT_POOL_ACCESS_MPSC</a>:</div>
+<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;                access = <span class="stringliteral">&quot;MPSC&quot;</span>;</div>
 <div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfaef5831d28ade4eb4b2a8e69a4c5bb39f">ABT_POOL_ACCESS_MPMC</a>:</div>
-<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;                access = <span class="stringliteral">&quot;MPMC&quot;</span>;</div>
+<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfa2d9b6671e37097bb153513c200a2ad46">ABT_POOL_ACCESS_SPMC</a>:</div>
+<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;                access = <span class="stringliteral">&quot;SPMC&quot;</span>;</div>
 <div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;                access = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
+<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="../../d9/d52/group__POOL.html#ggad33f04702fb8618eed4f6ece04041ecfaef5831d28ade4eb4b2a8e69a4c5bb39f">ABT_POOL_ACCESS_MPMC</a>:</div>
+<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;                access = <span class="stringliteral">&quot;MPMC&quot;</span>;</div>
 <div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;        }</div>
-<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160; </div>
-<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;        fprintf(p_os,</div>
-<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;                <span class="stringliteral">&quot;%*s== POOL (%p) ==\n&quot;</span></div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;                <span class="stringliteral">&quot;%*sid            : %&quot;</span> PRIu64 <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;                <span class="stringliteral">&quot;%*saccess        : %s\n&quot;</span></div>
-<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;                <span class="stringliteral">&quot;%*sautomatic     : %s\n&quot;</span></div>
-<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;                <span class="stringliteral">&quot;%*snum_scheds    : %d\n&quot;</span></div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;                <span class="stringliteral">&quot;%*ssize          : %zu\n&quot;</span></div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;                <span class="stringliteral">&quot;%*snum_blocked   : %d\n&quot;</span></div>
-<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;                <span class="stringliteral">&quot;%*sdata          : %p\n&quot;</span>,</div>
-<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;                indent, <span class="stringliteral">&quot;&quot;</span>, (<span class="keywordtype">void</span> *)p_pool, indent, <span class="stringliteral">&quot;&quot;</span>, p_pool-&gt;id, indent, <span class="stringliteral">&quot;&quot;</span>,</div>
-<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;                access, indent, <span class="stringliteral">&quot;&quot;</span>,</div>
-<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;                (p_pool-&gt;automatic == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>) ? <span class="stringliteral">&quot;TRUE&quot;</span> : <span class="stringliteral">&quot;FALSE&quot;</span>, indent, <span class="stringliteral">&quot;&quot;</span>,</div>
-<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;                ABTD_atomic_acquire_load_int32(&amp;p_pool-&gt;num_scheds), indent, <span class="stringliteral">&quot;&quot;</span>,</div>
-<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;                ABTI_pool_get_size(p_pool), indent, <span class="stringliteral">&quot;&quot;</span>,</div>
-<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;                ABTD_atomic_acquire_load_int32(&amp;p_pool-&gt;num_blocked), indent,</div>
-<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;                <span class="stringliteral">&quot;&quot;</span>, p_pool-&gt;data);</div>
-<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;    }</div>
-<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;    fflush(p_os);</div>
-<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;}</div>
-<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160; </div>
-<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;<span class="keyword">static</span> ABTD_atomic_uint64 <a class="code" href="../../d4/de5/pool_8c.html#a981321f7189da9a8d0d6c52d7889fe46">g_pool_id</a> = ABTD_ATOMIC_UINT64_STATIC_INITIALIZER(0);</div>
-<div class="line"><a name="l00935"></a><span class="lineno"><a class="line" href="../../d4/de5/pool_8c.html#a981321f7189da9a8d0d6c52d7889fe46">  935</a></span>&#160;<span class="keywordtype">void</span> ABTI_pool_reset_id(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;{</div>
-<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;    ABTD_atomic_release_store_uint64(&amp;<a class="code" href="../../d4/de5/pool_8c.html#a981321f7189da9a8d0d6c52d7889fe46">g_pool_id</a>, 0);</div>
-<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;}</div>
-<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160; </div>
-<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;<span class="comment">/* Internal static functions                                                 */</span></div>
-<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160; </div>
-<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint64_t <a class="code" href="../../d4/de5/pool_8c.html#ae2c0d7059407905387e02b333a0e801f">pool_get_new_id</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="../../d4/de5/pool_8c.html#a9c844339af61c7653aeabbfc495770d6">pool_create</a>(ABTI_pool_def *def, <a class="code" href="../../d9/d52/group__POOL.html#ga4b2554363a286799e1e0f4be8b442802">ABT_pool_config</a> config,</div>
-<div class="line"><a name="l00946"></a><span class="lineno"><a class="line" href="../../d4/de5/pool_8c.html#a9c844339af61c7653aeabbfc495770d6">  946</a></span>&#160;                                    <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> automatic, ABTI_pool **pp_newpool)</div>
-<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;{</div>
-<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;    <span class="keywordtype">int</span> abt_errno;</div>
-<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;    ABTI_pool *p_pool;</div>
-<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a>(<span class="keyword">sizeof</span>(ABTI_pool), (<span class="keywordtype">void</span> **)&amp;p_pool);</div>
-<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
-<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160; </div>
-<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;    p_pool-&gt;access = def-&gt;access;</div>
-<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;    p_pool-&gt;automatic = automatic;</div>
-<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;    ABTD_atomic_release_store_int32(&amp;p_pool-&gt;num_scheds, 0);</div>
-<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;    ABTD_atomic_release_store_int32(&amp;p_pool-&gt;num_blocked, 0);</div>
-<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;    p_pool-&gt;data = NULL;</div>
-<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160; </div>
-<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;    <span class="comment">/* Set up the pool functions from def */</span></div>
-<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;    p_pool-&gt;u_get_thread = def-&gt;u_get_thread;</div>
-<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;    p_pool-&gt;u_is_in_pool = def-&gt;u_is_in_pool;</div>
-<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;    p_pool-&gt;u_create_from_thread = def-&gt;u_create_from_thread;</div>
-<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;    p_pool-&gt;u_free = def-&gt;u_free;</div>
-<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;    p_pool-&gt;p_init = def-&gt;p_init;</div>
-<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;    p_pool-&gt;p_get_size = def-&gt;p_get_size;</div>
-<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;    p_pool-&gt;p_push = def-&gt;p_push;</div>
-<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;    p_pool-&gt;p_pop = def-&gt;p_pop;</div>
-<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;    p_pool-&gt;p_pop_wait = def-&gt;p_pop_wait;</div>
-<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;    p_pool-&gt;p_pop_timedwait = def-&gt;p_pop_timedwait;</div>
-<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;    p_pool-&gt;p_remove = def-&gt;p_remove;</div>
-<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;    p_pool-&gt;p_free = def-&gt;p_free;</div>
-<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;    p_pool-&gt;p_print_all = def-&gt;p_print_all;</div>
-<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;    p_pool-&gt;id = <a class="code" href="../../d4/de5/pool_8c.html#ae2c0d7059407905387e02b333a0e801f">pool_get_new_id</a>();</div>
-<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[P%&quot;</span> PRIu64 <span class="stringliteral">&quot;] created\n&quot;</span>, p_pool-&gt;id);</div>
-<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160; </div>
-<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;    <span class="comment">/* Configure the pool */</span></div>
-<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;    <span class="keywordflow">if</span> (p_pool-&gt;p_init) {</div>
-<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;        abt_errno = p_pool-&gt;p_init(ABTI_pool_get_handle(p_pool), config);</div>
-<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;        <span class="keywordflow">if</span> (abt_errno != <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
-<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;            <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(p_pool);</div>
-<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;            <span class="keywordflow">return</span> abt_errno;</div>
-<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;        }</div>
-<div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;    }</div>
-<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;    *pp_newpool = p_pool;</div>
-<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
-<div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;}</div>
-<div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160; </div>
-<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint64_t <a class="code" href="../../d4/de5/pool_8c.html#ae2c0d7059407905387e02b333a0e801f">pool_get_new_id</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00989"></a><span class="lineno"><a class="line" href="../../d4/de5/pool_8c.html#ae2c0d7059407905387e02b333a0e801f">  989</a></span>&#160;{</div>
-<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;    <span class="keywordflow">return</span> (uint64_t)ABTD_atomic_fetch_add_uint64(&amp;<a class="code" href="../../d4/de5/pool_8c.html#a981321f7189da9a8d0d6c52d7889fe46">g_pool_id</a>, 1);</div>
-<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;}</div>
+<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;            <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;                access = <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
+<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;        }</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160; </div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;        fprintf(p_os,</div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;                <span class="stringliteral">&quot;%*s== POOL (%p) ==\n&quot;</span></div>
+<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;                <span class="stringliteral">&quot;%*sid            : %&quot;</span> PRIu64 <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;                <span class="stringliteral">&quot;%*saccess        : %s\n&quot;</span></div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;                <span class="stringliteral">&quot;%*sautomatic     : %s\n&quot;</span></div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;                <span class="stringliteral">&quot;%*snum_scheds    : %d\n&quot;</span></div>
+<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;                <span class="stringliteral">&quot;%*ssize          : %zu\n&quot;</span></div>
+<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;                <span class="stringliteral">&quot;%*snum_blocked   : %d\n&quot;</span></div>
+<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;                <span class="stringliteral">&quot;%*sdata          : %p\n&quot;</span>,</div>
+<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;                indent, <span class="stringliteral">&quot;&quot;</span>, (<span class="keywordtype">void</span> *)p_pool, indent, <span class="stringliteral">&quot;&quot;</span>, p_pool-&gt;id, indent, <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;                access, indent, <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;                (p_pool-&gt;automatic == <a class="code" href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a>) ? <span class="stringliteral">&quot;TRUE&quot;</span> : <span class="stringliteral">&quot;FALSE&quot;</span>, indent, <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;                ABTD_atomic_acquire_load_int32(&amp;p_pool-&gt;num_scheds), indent, <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;                ABTI_pool_get_size(p_pool), indent, <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;                ABTD_atomic_acquire_load_int32(&amp;p_pool-&gt;num_blocked), indent,</div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;                <span class="stringliteral">&quot;&quot;</span>, p_pool-&gt;data);</div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;    }</div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;    fflush(p_os);</div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;}</div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160; </div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;<span class="keyword">static</span> ABTD_atomic_uint64 <a class="code" href="../../d4/de5/pool_8c.html#a981321f7189da9a8d0d6c52d7889fe46">g_pool_id</a> = ABTD_ATOMIC_UINT64_STATIC_INITIALIZER(0);</div>
+<div class="line"><a name="l00938"></a><span class="lineno"><a class="line" href="../../d4/de5/pool_8c.html#a981321f7189da9a8d0d6c52d7889fe46">  938</a></span>&#160;<span class="keywordtype">void</span> ABTI_pool_reset_id(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;{</div>
+<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;    ABTD_atomic_release_store_uint64(&amp;<a class="code" href="../../d4/de5/pool_8c.html#a981321f7189da9a8d0d6c52d7889fe46">g_pool_id</a>, 0);</div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;}</div>
+<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160; </div>
+<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;<span class="comment">/* Internal static functions                                                 */</span></div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160; </div>
+<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint64_t <a class="code" href="../../d4/de5/pool_8c.html#ae2c0d7059407905387e02b333a0e801f">pool_get_new_id</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;<a class="code" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="../../d4/de5/pool_8c.html#a9c844339af61c7653aeabbfc495770d6">pool_create</a>(ABTI_pool_def *def, <a class="code" href="../../d9/d52/group__POOL.html#ga4b2554363a286799e1e0f4be8b442802">ABT_pool_config</a> config,</div>
+<div class="line"><a name="l00949"></a><span class="lineno"><a class="line" href="../../d4/de5/pool_8c.html#a9c844339af61c7653aeabbfc495770d6">  949</a></span>&#160;                                    <a class="code" href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a> automatic, ABTI_pool **pp_newpool)</div>
+<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;{</div>
+<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;    <span class="keywordtype">int</span> abt_errno;</div>
+<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;    ABTI_pool *p_pool;</div>
+<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;    abt_errno = <a class="code" href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a>(<span class="keyword">sizeof</span>(ABTI_pool), (<span class="keywordtype">void</span> **)&amp;p_pool);</div>
+<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;    ABTI_CHECK_ERROR(abt_errno);</div>
+<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160; </div>
+<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;    p_pool-&gt;access = def-&gt;access;</div>
+<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;    p_pool-&gt;automatic = automatic;</div>
+<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;    ABTD_atomic_release_store_int32(&amp;p_pool-&gt;num_scheds, 0);</div>
+<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;    ABTD_atomic_release_store_int32(&amp;p_pool-&gt;num_blocked, 0);</div>
+<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;    p_pool-&gt;data = NULL;</div>
+<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160; </div>
+<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;    <span class="comment">/* Set up the pool functions from def */</span></div>
+<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;    p_pool-&gt;u_get_thread = def-&gt;u_get_thread;</div>
+<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;    p_pool-&gt;u_is_in_pool = def-&gt;u_is_in_pool;</div>
+<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;    p_pool-&gt;u_create_from_thread = def-&gt;u_create_from_thread;</div>
+<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;    p_pool-&gt;u_free = def-&gt;u_free;</div>
+<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;    p_pool-&gt;p_init = def-&gt;p_init;</div>
+<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;    p_pool-&gt;p_get_size = def-&gt;p_get_size;</div>
+<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;    p_pool-&gt;p_push = def-&gt;p_push;</div>
+<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;    p_pool-&gt;p_pop = def-&gt;p_pop;</div>
+<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;    p_pool-&gt;p_pop_wait = def-&gt;p_pop_wait;</div>
+<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;    p_pool-&gt;p_pop_timedwait = def-&gt;p_pop_timedwait;</div>
+<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;    p_pool-&gt;p_remove = def-&gt;p_remove;</div>
+<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;    p_pool-&gt;p_free = def-&gt;p_free;</div>
+<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;    p_pool-&gt;p_print_all = def-&gt;p_print_all;</div>
+<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;    p_pool-&gt;id = <a class="code" href="../../d4/de5/pool_8c.html#ae2c0d7059407905387e02b333a0e801f">pool_get_new_id</a>();</div>
+<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[P%&quot;</span> PRIu64 <span class="stringliteral">&quot;] created\n&quot;</span>, p_pool-&gt;id);</div>
+<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160; </div>
+<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;    <span class="comment">/* Configure the pool */</span></div>
+<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;    <span class="keywordflow">if</span> (p_pool-&gt;p_init) {</div>
+<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;        abt_errno = p_pool-&gt;p_init(ABTI_pool_get_handle(p_pool), config);</div>
+<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;        <span class="keywordflow">if</span> (abt_errno != <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>) {</div>
+<div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;            <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(p_pool);</div>
+<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;            <span class="keywordflow">return</span> abt_errno;</div>
+<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;        }</div>
+<div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;    }</div>
+<div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;    *pp_newpool = p_pool;</div>
+<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a>;</div>
+<div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;}</div>
+<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160; </div>
+<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint64_t <a class="code" href="../../d4/de5/pool_8c.html#ae2c0d7059407905387e02b333a0e801f">pool_get_new_id</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00992"></a><span class="lineno"><a class="line" href="../../d4/de5/pool_8c.html#ae2c0d7059407905387e02b333a0e801f">  992</a></span>&#160;{</div>
+<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;    <span class="keywordflow">return</span> (uint64_t)ABTD_atomic_fetch_add_uint64(&amp;<a class="code" href="../../d4/de5/pool_8c.html#a981321f7189da9a8d0d6c52d7889fe46">g_pool_id</a>, 1);</div>
+<div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="agroup__POOL_html_gac5e9bbf2126b7c2b951068bafbd47fde"><div class="ttname"><a href="../../d9/d52/group__POOL.html#gac5e9bbf2126b7c2b951068bafbd47fde">ABT_pool_get_data</a></div><div class="ttdeci">int ABT_pool_get_data(ABT_pool pool, void **data)</div><div class="ttdoc">Retrieve user data from a pool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/pool_8c_source.html#l00730">pool.c:730</a></div></div>
 <div class="ttc" id="agroup__POOL_html_gaf22802d586052a8562abc07f779b5302"><div class="ttname"><a href="../../d9/d52/group__POOL.html#gaf22802d586052a8562abc07f779b5302">ABT_pool_pop_wait</a></div><div class="ttdeci">int ABT_pool_pop_wait(ABT_pool pool, ABT_unit *p_unit, double time_secs)</div><div class="ttdoc">Pop a unit from a pool with wait.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/pool_8c_source.html#l00445">pool.c:445</a></div></div>
 <div class="ttc" id="aabt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdoc">Boolean type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01001">abt.h:1001</a></div></div>
 <div class="ttc" id="agroup__POOL_html_gaafe8ef10c4d7fe1c7f7263fdc56fa58e"><div class="ttname"><a href="../../d9/d52/group__POOL.html#gaafe8ef10c4d7fe1c7f7263fdc56fa58e">ABT_pool_get_size</a></div><div class="ttdeci">int ABT_pool_get_size(ABT_pool pool, size_t *size)</div><div class="ttdoc">Get the size of a pool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/pool_8c_source.html#l00333">pool.c:333</a></div></div>
-<div class="ttc" id="apool_8c_html_a9c844339af61c7653aeabbfc495770d6"><div class="ttname"><a href="../../d4/de5/pool_8c.html#a9c844339af61c7653aeabbfc495770d6">pool_create</a></div><div class="ttdeci">static ABTU_ret_err int pool_create(ABTI_pool_def *def, ABT_pool_config config, ABT_bool automatic, ABTI_pool **pp_newpool)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/pool_8c_source.html#l00946">pool.c:946</a></div></div>
+<div class="ttc" id="apool_8c_html_a9c844339af61c7653aeabbfc495770d6"><div class="ttname"><a href="../../d4/de5/pool_8c.html#a9c844339af61c7653aeabbfc495770d6">pool_create</a></div><div class="ttdeci">static ABTU_ret_err int pool_create(ABTI_pool_def *def, ABT_pool_config config, ABT_bool automatic, ABTI_pool **pp_newpool)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/pool_8c_source.html#l00949">pool.c:949</a></div></div>
 <div class="ttc" id="agroup__POOL_html_ga7a000646ad0b5899ee47779d051758e8"><div class="ttname"><a href="../../d9/d52/group__POOL.html#ga7a000646ad0b5899ee47779d051758e8">ABT_pool_create</a></div><div class="ttdeci">int ABT_pool_create(ABT_pool_def *def, ABT_pool_config config, ABT_pool *newpool)</div><div class="ttdoc">Create a new pool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/pool_8c_source.html#l00072">pool.c:72</a></div></div>
 <div class="ttc" id="agroup__POOL_html_ga398216ecd06e4ae64396c2565ecb4efa"><div class="ttname"><a href="../../d9/d52/group__POOL.html#ga398216ecd06e4ae64396c2565ecb4efa">ABT_pool_add_sched</a></div><div class="ttdeci">int ABT_pool_add_sched(ABT_pool pool, ABT_sched sched)</div><div class="ttdoc">Create a new work unit associated with a scheduler and push it to a pool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/pool_8c_source.html#l00782">pool.c:782</a></div></div>
 <div class="ttc" id="agroup__ERROR__CODE_html_gad87df4eeaf3a5abd8f8cc755058c67d4"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#gad87df4eeaf3a5abd8f8cc755058c67d4">ABT_ERR_POOL</a></div><div class="ttdeci">#define ABT_ERR_POOL</div><div class="ttdoc">Error code: error related to a pool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00282">abt.h:282</a></div></div>
@@ -466,7 +469,7 @@ $(function() {
 <div class="ttc" id="astructABT__pool__def_html"><div class="ttname"><a href="../../d4/dfc/structABT__pool__def.html">ABT_pool_def</a></div><div class="ttdoc">A struct that defines a pool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01426">abt.h:1426</a></div></div>
 <div class="ttc" id="agroup__POOL_html_ga2d7747df606be0704dd7894ac79dd56b"><div class="ttname"><a href="../../d9/d52/group__POOL.html#ga2d7747df606be0704dd7894ac79dd56b">ABT_pool_remove</a></div><div class="ttdeci">int ABT_pool_remove(ABT_pool pool, ABT_unit unit)</div><div class="ttdoc">Remove a specified work unit from a pool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/pool_8c_source.html#l00610">pool.c:610</a></div></div>
 <div class="ttc" id="aabt_8h_html_a8040b0a9fd0b898cf67f4dd875914570"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a8040b0a9fd0b898cf67f4dd875914570">ABT_POOL_CONFIG_NULL</a></div><div class="ttdeci">#define ABT_POOL_CONFIG_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01060">abt.h:1060</a></div></div>
-<div class="ttc" id="apool_8c_html_a981321f7189da9a8d0d6c52d7889fe46"><div class="ttname"><a href="../../d4/de5/pool_8c.html#a981321f7189da9a8d0d6c52d7889fe46">g_pool_id</a></div><div class="ttdeci">static ABTD_atomic_uint64 g_pool_id</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/pool_8c_source.html#l00935">pool.c:935</a></div></div>
+<div class="ttc" id="apool_8c_html_a981321f7189da9a8d0d6c52d7889fe46"><div class="ttname"><a href="../../d4/de5/pool_8c.html#a981321f7189da9a8d0d6c52d7889fe46">g_pool_id</a></div><div class="ttdeci">static ABTD_atomic_uint64 g_pool_id</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/pool_8c_source.html#l00938">pool.c:938</a></div></div>
 <div class="ttc" id="agroup__POOL_html_ga4b2554363a286799e1e0f4be8b442802"><div class="ttname"><a href="../../d9/d52/group__POOL.html#ga4b2554363a286799e1e0f4be8b442802">ABT_pool_config</a></div><div class="ttdeci">struct ABT_pool_config_opaque * ABT_pool_config</div><div class="ttdoc">Pool configuration handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00848">abt.h:848</a></div></div>
 <div class="ttc" id="aabtu_8h_html_aa2d633baee4486fb78890916840282af"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a></div><div class="ttdeci">static ABTU_ret_err int ABTU_malloc(size_t size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00218">abtu.h:218</a></div></div>
 <div class="ttc" id="aabti__log_8h_html_ac06cfc686322558f590c50eab8622ebd"><div class="ttname"><a href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></div><div class="ttdeci">#define LOG_DEBUG(fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5e/abti__log_8h_source.html#l00026">abti_log.h:26</a></div></div>
@@ -486,7 +489,7 @@ $(function() {
 <div class="ttc" id="agroup__ERROR__CODE_html_gacf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdoc">Error code: the routine returns successfully.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00092">abt.h:92</a></div></div>
 <div class="ttc" id="agroup__POOL_html_ga8f37f5da3f8c2d8a0eb349063e31f3fa"><div class="ttname"><a href="../../d9/d52/group__POOL.html#ga8f37f5da3f8c2d8a0eb349063e31f3fa">ABT_pool_push</a></div><div class="ttdeci">int ABT_pool_push(ABT_pool pool, ABT_unit unit)</div><div class="ttdoc">Push a unit to a pool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/pool_8c_source.html#l00558">pool.c:558</a></div></div>
 <div class="ttc" id="aabtu_8h_html_a071d8986b72b8f5d099cdd47979b5e81"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a></div><div class="ttdeci">#define ABTU_ret_err</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00138">abtu.h:138</a></div></div>
-<div class="ttc" id="apool_8c_html_ae2c0d7059407905387e02b333a0e801f"><div class="ttname"><a href="../../d4/de5/pool_8c.html#ae2c0d7059407905387e02b333a0e801f">pool_get_new_id</a></div><div class="ttdeci">static uint64_t pool_get_new_id(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/pool_8c_source.html#l00989">pool.c:989</a></div></div>
+<div class="ttc" id="apool_8c_html_ae2c0d7059407905387e02b333a0e801f"><div class="ttname"><a href="../../d4/de5/pool_8c.html#ae2c0d7059407905387e02b333a0e801f">pool_get_new_id</a></div><div class="ttdeci">static uint64_t pool_get_new_id(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/pool_8c_source.html#l00992">pool.c:992</a></div></div>
 <div class="ttc" id="agroup__POOL_html_ga89312324e2c5a199992323035d9bb7c2"><div class="ttname"><a href="../../d9/d52/group__POOL.html#ga89312324e2c5a199992323035d9bb7c2">ABT_pool_get_total_size</a></div><div class="ttdeci">int ABT_pool_get_total_size(ABT_pool pool, size_t *size)</div><div class="ttdoc">Get the total size of a pool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/pool_8c_source.html#l00290">pool.c:290</a></div></div>
 <div class="ttc" id="agroup__POOL_html_gaae479c7d7ae2816d8a953ea307611b49"><div class="ttname"><a href="../../d9/d52/group__POOL.html#gaae479c7d7ae2816d8a953ea307611b49">ABT_pool_create_basic</a></div><div class="ttdeci">int ABT_pool_create_basic(ABT_pool_kind kind, ABT_pool_access access, ABT_bool automatic, ABT_pool *newpool)</div><div class="ttdoc">Create a new pool from a predefined type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/pool_8c_source.html#l00166">pool.c:166</a></div></div>
 <div class="ttc" id="aabt_8h_html_a1839f64e5a2462a68ffd82ba94213582"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a1839f64e5a2462a68ffd82ba94213582">ABT_TRUE</a></div><div class="ttdeci">#define ABT_TRUE</div><div class="ttdoc">True constant for ABT_bool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00748">abt.h:748</a></div></div>
@@ -504,11 +507,11 @@ $(function() {
 <div class="ttc" id="aabt_8h_html_ad6965c86292ec2b77ca0dd2797b3f4e7"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ad6965c86292ec2b77ca0dd2797b3f4e7">ABT_UNIT_NULL</a></div><div class="ttdeci">#define ABT_UNIT_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01061">abt.h:1061</a></div></div>
 <div class="ttc" id="agroup__POOL_html_ga3d9e73381c78389a50ef463732e672a1"><div class="ttname"><a href="../../d9/d52/group__POOL.html#ga3d9e73381c78389a50ef463732e672a1">ABT_pool_kind</a></div><div class="ttdeci">ABT_pool_kind</div><div class="ttdoc">Predefined pool type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00504">abt.h:504</a></div></div>
 <div class="ttc" id="agroup__POOL_html_ga6089256f32498ee058e6df9478f95574"><div class="ttname"><a href="../../d9/d52/group__POOL.html#ga6089256f32498ee058e6df9478f95574">ABT_pool_get_access</a></div><div class="ttdeci">int ABT_pool_get_access(ABT_pool pool, ABT_pool_access *access)</div><div class="ttdoc">Get an access type of a pool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/pool_8c_source.html#l00244">pool.c:244</a></div></div>
-<div class="ttc" id="agroup__POOL_html_gae3b9d5f542cb31852aaa4d7079350e74"><div class="ttname"><a href="../../d9/d52/group__POOL.html#gae3b9d5f542cb31852aaa4d7079350e74">ABT_pool_get_id</a></div><div class="ttdeci">int ABT_pool_get_id(ABT_pool pool, int *id)</div><div class="ttdoc">Get ID of a pool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/pool_8c_source.html#l00832">pool.c:832</a></div></div>
+<div class="ttc" id="agroup__POOL_html_gae3b9d5f542cb31852aaa4d7079350e74"><div class="ttname"><a href="../../d9/d52/group__POOL.html#gae3b9d5f542cb31852aaa4d7079350e74">ABT_pool_get_id</a></div><div class="ttdeci">int ABT_pool_get_id(ABT_pool pool, int *id)</div><div class="ttdoc">Get ID of a pool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/pool_8c_source.html#l00835">pool.c:835</a></div></div>
 <div class="ttc" id="agroup__POOL_html_gad33f04702fb8618eed4f6ece04041ecf"><div class="ttname"><a href="../../d9/d52/group__POOL.html#gad33f04702fb8618eed4f6ece04041ecf">ABT_pool_access</a></div><div class="ttdeci">ABT_pool_access</div><div class="ttdoc">Pool access type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00522">abt.h:522</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 2 2021 03:10:03 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 13 2021 03:10:02 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

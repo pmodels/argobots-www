@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">b0afc3b487feaee57aad36a350817b0894b15983</span>
+   &#160;<span id="projectnumber">edf86c8cf11cb7b3dd3671e67f1a8382ceed83c5</span>
    </div>
   </td>
  </tr>
@@ -67,7 +67,9 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">abtd_affinity_parser.c File Reference</div>  </div>
@@ -134,25 +136,41 @@ Include dependency graph for abtd_affinity_parser.c:</div>
 </div>
 <p><a href="../../d0/d31/abtd__affinity__parser_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d73/structalloc__header.html">alloc_header</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d14/structalloc__list.html">alloc_list</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:ad56a0c99001de62b546b7e170049faf0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#ad56a0c99001de62b546b7e170049faf0">MAX_NUM_ELEMS</a>&#160;&#160;&#160;(1024 * 1024)</td></tr>
 <tr class="separator:ad56a0c99001de62b546b7e170049faf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0af94d6779384d2e1d77f680a3ef6bad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#a0af94d6779384d2e1d77f680a3ef6bad">ALLOC_HEADER_SIZE</a></td></tr>
+<tr class="separator:a0af94d6779384d2e1d77f680a3ef6bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a0531692053328d1bbdeb10816faa3fd6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="../../d7/d73/structalloc__header.html">alloc_header</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#a0531692053328d1bbdeb10816faa3fd6">alloc_header</a></td></tr>
+<tr class="separator:a0531692053328d1bbdeb10816faa3fd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aae0f92dd5b4540bb8db3080d27405d3a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d5a/structABTD__affinity__id__list.html">ABTD_affinity_id_list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#aae0f92dd5b4540bb8db3080d27405d3a">id_list_create</a> (void)</td></tr>
-<tr class="separator:aae0f92dd5b4540bb8db3080d27405d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f7516ae6c56794c70358aeff8ba09ec"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#a3f7516ae6c56794c70358aeff8ba09ec">id_list_free</a> (<a class="el" href="../../dd/d5a/structABTD__affinity__id__list.html">ABTD_affinity_id_list</a> *p_id_list)</td></tr>
-<tr class="separator:a3f7516ae6c56794c70358aeff8ba09ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add7ced3db723159c5db7dded76de6433"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#add7ced3db723159c5db7dded76de6433">id_list_add</a> (<a class="el" href="../../dd/d5a/structABTD__affinity__id__list.html">ABTD_affinity_id_list</a> *p_id_list, int id, uint32_t num, int stride)</td></tr>
-<tr class="separator:add7ced3db723159c5db7dded76de6433"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae70bff5209b4937c9249c10c5036dfc2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d3/dbf/abtd_8h.html#aa375709acd427caee8e7dc4d8eaefc36">ABTD_affinity_list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#ae70bff5209b4937c9249c10c5036dfc2">list_create</a> (void)</td></tr>
-<tr class="separator:ae70bff5209b4937c9249c10c5036dfc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af85ab8fc0cf997a9ff84c9e3305554bd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#af85ab8fc0cf997a9ff84c9e3305554bd">list_free</a> (<a class="el" href="../../d3/dbf/abtd_8h.html#aa375709acd427caee8e7dc4d8eaefc36">ABTD_affinity_list</a> *p_list)</td></tr>
-<tr class="separator:af85ab8fc0cf997a9ff84c9e3305554bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af921a6dae4545073aee01e863a198525"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#af921a6dae4545073aee01e863a198525">list_add</a> (<a class="el" href="../../d3/dbf/abtd_8h.html#aa375709acd427caee8e7dc4d8eaefc36">ABTD_affinity_list</a> *p_list, <a class="el" href="../../dd/d5a/structABTD__affinity__id__list.html">ABTD_affinity_id_list</a> *p_base, uint32_t num, int stride)</td></tr>
-<tr class="separator:af921a6dae4545073aee01e863a198525"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa471860eb6f831b02914433942965fc9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#aa471860eb6f831b02914433942965fc9">list_calloc</a> (<a class="el" href="../../d6/d14/structalloc__list.html">alloc_list</a> *p_alloc_list, size_t size, void **p_ptr)</td></tr>
+<tr class="separator:aa471860eb6f831b02914433942965fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac495e1caff140997b9c11de2f46a2502"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#ac495e1caff140997b9c11de2f46a2502">list_realloc</a> (<a class="el" href="../../d6/d14/structalloc__list.html">alloc_list</a> *p_alloc_list, size_t old_size, size_t new_size, void **p_ptr)</td></tr>
+<tr class="separator:ac495e1caff140997b9c11de2f46a2502"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c620a3154aff61cf806ea47d9c80215"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#a7c620a3154aff61cf806ea47d9c80215">list_free_all</a> (void *p_head)</td></tr>
+<tr class="separator:a7c620a3154aff61cf806ea47d9c80215"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd621c00667822332d69bf49888ec708"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#acd621c00667822332d69bf49888ec708">id_list_create</a> (<a class="el" href="../../d6/d14/structalloc__list.html">alloc_list</a> *p_alloc_list, <a class="el" href="../../dd/d5a/structABTD__affinity__id__list.html">ABTD_affinity_id_list</a> **pp_id_list)</td></tr>
+<tr class="separator:acd621c00667822332d69bf49888ec708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb4a17b148ac0b34a1aef15b79047440"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#aeb4a17b148ac0b34a1aef15b79047440">id_list_add</a> (<a class="el" href="../../d6/d14/structalloc__list.html">alloc_list</a> *p_alloc_list, <a class="el" href="../../dd/d5a/structABTD__affinity__id__list.html">ABTD_affinity_id_list</a> *p_id_list, int id, uint32_t num, int stride)</td></tr>
+<tr class="separator:aeb4a17b148ac0b34a1aef15b79047440"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8336f8af908245a9055c1799df7e6051"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#a8336f8af908245a9055c1799df7e6051">list_create</a> (<a class="el" href="../../d6/d14/structalloc__list.html">alloc_list</a> *p_alloc_list, <a class="el" href="../../da/d8f/structABTD__affinity__list.html">ABTD_affinity_list</a> **pp_affinity_list)</td></tr>
+<tr class="separator:a8336f8af908245a9055c1799df7e6051"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad46ef7da9f1af51c14d0a6f04b5082eb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#ad46ef7da9f1af51c14d0a6f04b5082eb">list_add</a> (<a class="el" href="../../d6/d14/structalloc__list.html">alloc_list</a> *p_alloc_list, <a class="el" href="../../da/d8f/structABTD__affinity__list.html">ABTD_affinity_list</a> *p_list, <a class="el" href="../../dd/d5a/structABTD__affinity__id__list.html">ABTD_affinity_id_list</a> *p_base, uint32_t num, int stride)</td></tr>
+<tr class="separator:ad46ef7da9f1af51c14d0a6f04b5082eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc7f63289d0484554fd5f4b1debb4450"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#acc7f63289d0484554fd5f4b1debb4450">is_whitespace</a> (char c)</td></tr>
 <tr class="separator:acc7f63289d0484554fd5f4b1debb4450"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61d73d99f55bc81b89d51c3ae1bd5809"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#a61d73d99f55bc81b89d51c3ae1bd5809">consume_int</a> (const char *str, uint32_t *p_index, int *p_val)</td></tr>
@@ -161,16 +179,34 @@ Functions</h2></td></tr>
 <tr class="separator:a22b6b512cde6fc37e545c79324849123"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68e490f2e66678bafcf40309e2900e6e"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#a68e490f2e66678bafcf40309e2900e6e">consume_symbol</a> (const char *str, uint32_t *p_index, char symbol)</td></tr>
 <tr class="separator:a68e490f2e66678bafcf40309e2900e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9234c662794527e4afa8775b28feb14"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d5a/structABTD__affinity__id__list.html">ABTD_affinity_id_list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#ae9234c662794527e4afa8775b28feb14">parse_es_id_list</a> (const char *affinity_str, uint32_t *p_index)</td></tr>
-<tr class="separator:ae9234c662794527e4afa8775b28feb14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4abf1af0baba23e6baac3837e7286c2c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d3/dbf/abtd_8h.html#aa375709acd427caee8e7dc4d8eaefc36">ABTD_affinity_list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#a4abf1af0baba23e6baac3837e7286c2c">parse_list</a> (const char *affinity_str)</td></tr>
-<tr class="separator:a4abf1af0baba23e6baac3837e7286c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad4691c9c8676609ecd956b553faa761"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/dbf/abtd_8h.html#aa375709acd427caee8e7dc4d8eaefc36">ABTD_affinity_list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#aad4691c9c8676609ecd956b553faa761">ABTD_affinity_list_create</a> (const char *affinity_str)</td></tr>
-<tr class="separator:aad4691c9c8676609ecd956b553faa761"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a385d226a7fb399674296cf0d52c077c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#a385d226a7fb399674296cf0d52c077c1">ABTD_affinity_list_free</a> (<a class="el" href="../../d3/dbf/abtd_8h.html#aa375709acd427caee8e7dc4d8eaefc36">ABTD_affinity_list</a> *p_list)</td></tr>
-<tr class="separator:a385d226a7fb399674296cf0d52c077c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a4d13204bf32020223f53680c6b2e16"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#a0a4d13204bf32020223f53680c6b2e16">parse_es_id_list</a> (<a class="el" href="../../d6/d14/structalloc__list.html">alloc_list</a> *p_alloc_list, const char *affinity_str, uint32_t *p_index, <a class="el" href="../../dd/d5a/structABTD__affinity__id__list.html">ABTD_affinity_id_list</a> **pp_affinity_id_list)</td></tr>
+<tr class="separator:a0a4d13204bf32020223f53680c6b2e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34c6e7e83e4a65ffe01aa2d71ccfebbd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#a34c6e7e83e4a65ffe01aa2d71ccfebbd">parse_list</a> (<a class="el" href="../../d6/d14/structalloc__list.html">alloc_list</a> *p_alloc_list, const char *affinity_str, <a class="el" href="../../da/d8f/structABTD__affinity__list.html">ABTD_affinity_list</a> **pp_affinity_list)</td></tr>
+<tr class="separator:a34c6e7e83e4a65ffe01aa2d71ccfebbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab275c00ac552a0e5d64ac4314602b58f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#ab275c00ac552a0e5d64ac4314602b58f">ABTD_affinity_list_create</a> (const char *affinity_str, <a class="el" href="../../da/d8f/structABTD__affinity__list.html">ABTD_affinity_list</a> **pp_affinity_list)</td></tr>
+<tr class="separator:ab275c00ac552a0e5d64ac4314602b58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93c6b9c802d214563ab3ec8012884ba4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/abtd__affinity__parser_8c.html#a93c6b9c802d214563ab3ec8012884ba4">ABTD_affinity_list_free</a> (<a class="el" href="../../da/d8f/structABTD__affinity__list.html">ABTD_affinity_list</a> *p_affinity_list)</td></tr>
+<tr class="separator:a93c6b9c802d214563ab3ec8012884ba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a0af94d6779384d2e1d77f680a3ef6bad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0af94d6779384d2e1d77f680a3ef6bad">&#9670;&nbsp;</a></span>ALLOC_HEADER_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ALLOC_HEADER_SIZE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    ((<span class="keyword">sizeof</span>(<a class="code" href="../../d0/d31/abtd__affinity__parser_8c.html#a0531692053328d1bbdeb10816faa3fd6">alloc_header</a>) + <a class="code" href="../../d5/d09/abtu_8h.html#af4893f86341de970c3b4488eee7df44d">ABTU_MAX_ALIGNMENT</a> - 1) / <a class="code" href="../../d5/d09/abtu_8h.html#af4893f86341de970c3b4488eee7df44d">ABTU_MAX_ALIGNMENT</a> *    \</div>
+<div class="line">     ABTU_MAX_ALIGNMENT)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00015">15</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
+
+</div>
+</div>
 <a id="ad56a0c99001de62b546b7e170049faf0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad56a0c99001de62b546b7e170049faf0">&#9670;&nbsp;</a></span>MAX_NUM_ELEMS</h2>
 
@@ -187,31 +223,56 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="aad4691c9c8676609ecd956b553faa761"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad4691c9c8676609ecd956b553faa761">&#9670;&nbsp;</a></span>ABTD_affinity_list_create()</h2>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a0531692053328d1bbdeb10816faa3fd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0531692053328d1bbdeb10816faa3fd6">&#9670;&nbsp;</a></span>alloc_header</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d3/dbf/abtd_8h.html#aa375709acd427caee8e7dc4d8eaefc36">ABTD_affinity_list</a>* ABTD_affinity_list_create </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>affinity_str</em></td><td>)</td>
-          <td></td>
+          <td class="memname">typedef struct <a class="el" href="../../d7/d73/structalloc__header.html">alloc_header</a> <a class="el" href="../../d7/d73/structalloc__header.html">alloc_header</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00261">261</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ab275c00ac552a0e5d64ac4314602b58f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab275c00ac552a0e5d64ac4314602b58f">&#9670;&nbsp;</a></span>ABTD_affinity_list_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int ABTD_affinity_list_create </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>affinity_str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/d8f/structABTD__affinity__list.html">ABTD_affinity_list</a> **&#160;</td>
+          <td class="paramname"><em>pp_affinity_list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00337">337</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00296">ABTD_affinity_init()</a>.</p>
 
 </div>
 </div>
-<a id="a385d226a7fb399674296cf0d52c077c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a385d226a7fb399674296cf0d52c077c1">&#9670;&nbsp;</a></span>ABTD_affinity_list_free()</h2>
+<a id="a93c6b9c802d214563ab3ec8012884ba4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93c6b9c802d214563ab3ec8012884ba4">&#9670;&nbsp;</a></span>ABTD_affinity_list_free()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,14 +280,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void ABTD_affinity_list_free </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d3/dbf/abtd_8h.html#aa375709acd427caee8e7dc4d8eaefc36">ABTD_affinity_list</a> *&#160;</td>
-          <td class="paramname"><em>p_list</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../da/d8f/structABTD__affinity__list.html">ABTD_affinity_list</a> *&#160;</td>
+          <td class="paramname"><em>p_affinity_list</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00266">266</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00356">356</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d2/d45/abtd__affinity_8c_source.html#l00296">ABTD_affinity_init()</a>.</p>
 
@@ -272,9 +333,9 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00093">93</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00158">158</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00130">consume_pint()</a>, <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00162">parse_es_id_list()</a>, and <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00213">parse_list()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00195">consume_pint()</a>, <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00228">parse_es_id_list()</a>, and <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00284">parse_list()</a>.</p>
 
 </div>
 </div>
@@ -318,9 +379,9 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00130">130</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00195">195</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00162">parse_es_id_list()</a>, and <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00213">parse_list()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00228">parse_es_id_list()</a>, and <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00284">parse_list()</a>.</p>
 
 </div>
 </div>
@@ -364,14 +425,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00144">144</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00209">209</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00162">parse_es_id_list()</a>, and <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00213">parse_list()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00228">parse_es_id_list()</a>, and <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00284">parse_list()</a>.</p>
 
 </div>
 </div>
-<a id="add7ced3db723159c5db7dded76de6433"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add7ced3db723159c5db7dded76de6433">&#9670;&nbsp;</a></span>id_list_add()</h2>
+<a id="aeb4a17b148ac0b34a1aef15b79047440"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb4a17b148ac0b34a1aef15b79047440">&#9670;&nbsp;</a></span>id_list_add()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -380,8 +441,14 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void id_list_add </td>
+          <td class="memname">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int id_list_add </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/d14/structalloc__list.html">alloc_list</a> *&#160;</td>
+          <td class="paramname"><em>p_alloc_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype"><a class="el" href="../../dd/d5a/structABTD__affinity__id__list.html">ABTD_affinity_id_list</a> *&#160;</td>
           <td class="paramname"><em>p_id_list</em>, </td>
         </tr>
@@ -416,14 +483,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00027">27</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00097">97</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00162">parse_es_id_list()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00228">parse_es_id_list()</a>.</p>
 
 </div>
 </div>
-<a id="aae0f92dd5b4540bb8db3080d27405d3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae0f92dd5b4540bb8db3080d27405d3a">&#9670;&nbsp;</a></span>id_list_create()</h2>
+<a id="acd621c00667822332d69bf49888ec708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd621c00667822332d69bf49888ec708">&#9670;&nbsp;</a></span>id_list_create()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -432,11 +499,21 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="../../dd/d5a/structABTD__affinity__id__list.html">ABTD_affinity_id_list</a>* id_list_create </td>
+          <td class="memname">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int id_list_create </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../d6/d14/structalloc__list.html">alloc_list</a> *&#160;</td>
+          <td class="paramname"><em>p_alloc_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/d5a/structABTD__affinity__id__list.html">ABTD_affinity_id_list</a> **&#160;</td>
+          <td class="paramname"><em>pp_id_list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -446,39 +523,9 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00011">11</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00090">90</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00062">list_add()</a>, and <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00162">parse_es_id_list()</a>.</p>
-
-</div>
-</div>
-<a id="a3f7516ae6c56794c70358aeff8ba09ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f7516ae6c56794c70358aeff8ba09ec">&#9670;&nbsp;</a></span>id_list_free()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void id_list_free </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../dd/d5a/structABTD__affinity__id__list.html">ABTD_affinity_id_list</a> *&#160;</td>
-          <td class="paramname"><em>p_id_list</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00020">20</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00051">list_free()</a>, <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00162">parse_es_id_list()</a>, and <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00213">parse_list()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00121">list_add()</a>, and <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00228">parse_es_id_list()</a>.</p>
 
 </div>
 </div>
@@ -506,14 +553,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00087">87</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00152">152</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00093">consume_int()</a>, and <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00144">consume_symbol()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00158">consume_int()</a>, and <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00209">consume_symbol()</a>.</p>
 
 </div>
 </div>
-<a id="af921a6dae4545073aee01e863a198525"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af921a6dae4545073aee01e863a198525">&#9670;&nbsp;</a></span>list_add()</h2>
+<a id="ad46ef7da9f1af51c14d0a6f04b5082eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad46ef7da9f1af51c14d0a6f04b5082eb">&#9670;&nbsp;</a></span>list_add()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -522,9 +569,15 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void list_add </td>
+          <td class="memname">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int list_add </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d3/dbf/abtd_8h.html#aa375709acd427caee8e7dc4d8eaefc36">ABTD_affinity_list</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d6/d14/structalloc__list.html">alloc_list</a> *&#160;</td>
+          <td class="paramname"><em>p_alloc_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/d8f/structABTD__affinity__list.html">ABTD_affinity_list</a> *&#160;</td>
           <td class="paramname"><em>p_list</em>, </td>
         </tr>
         <tr>
@@ -558,14 +611,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00062">62</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00121">121</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00213">parse_list()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00284">parse_list()</a>.</p>
 
 </div>
 </div>
-<a id="ae70bff5209b4937c9249c10c5036dfc2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae70bff5209b4937c9249c10c5036dfc2">&#9670;&nbsp;</a></span>list_create()</h2>
+<a id="aa471860eb6f831b02914433942965fc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa471860eb6f831b02914433942965fc9">&#9670;&nbsp;</a></span>list_calloc()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -574,76 +627,22 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="../../d3/dbf/abtd_8h.html#aa375709acd427caee8e7dc4d8eaefc36">ABTD_affinity_list</a>* list_create </td>
+          <td class="memname">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int list_calloc </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00042">42</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00213">parse_list()</a>.</p>
-
-</div>
-</div>
-<a id="af85ab8fc0cf997a9ff84c9e3305554bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af85ab8fc0cf997a9ff84c9e3305554bd">&#9670;&nbsp;</a></span>list_free()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void list_free </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d3/dbf/abtd_8h.html#aa375709acd427caee8e7dc4d8eaefc36">ABTD_affinity_list</a> *&#160;</td>
-          <td class="paramname"><em>p_list</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00051">51</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00266">ABTD_affinity_list_free()</a>, and <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00213">parse_list()</a>.</p>
-
-</div>
-</div>
-<a id="ae9234c662794527e4afa8775b28feb14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9234c662794527e4afa8775b28feb14">&#9670;&nbsp;</a></span>parse_es_id_list()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="../../dd/d5a/structABTD__affinity__id__list.html">ABTD_affinity_id_list</a>* parse_es_id_list </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>affinity_str</em>, </td>
+          <td class="paramtype"><a class="el" href="../../d6/d14/structalloc__list.html">alloc_list</a> *&#160;</td>
+          <td class="paramname"><em>p_alloc_list</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t *&#160;</td>
-          <td class="paramname"><em>p_index</em>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void **&#160;</td>
+          <td class="paramname"><em>p_ptr</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -658,14 +657,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00162">162</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00026">26</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00213">parse_list()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00090">id_list_create()</a>, <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00121">list_add()</a>, <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00114">list_create()</a>, and <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00047">list_realloc()</a>.</p>
 
 </div>
 </div>
-<a id="a4abf1af0baba23e6baac3837e7286c2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4abf1af0baba23e6baac3837e7286c2c">&#9670;&nbsp;</a></span>parse_list()</h2>
+<a id="a8336f8af908245a9055c1799df7e6051"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8336f8af908245a9055c1799df7e6051">&#9670;&nbsp;</a></span>list_create()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -674,10 +673,50 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="../../d3/dbf/abtd_8h.html#aa375709acd427caee8e7dc4d8eaefc36">ABTD_affinity_list</a>* parse_list </td>
+          <td class="memname">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int list_create </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>affinity_str</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../d6/d14/structalloc__list.html">alloc_list</a> *&#160;</td>
+          <td class="paramname"><em>p_alloc_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/d8f/structABTD__affinity__list.html">ABTD_affinity_list</a> **&#160;</td>
+          <td class="paramname"><em>pp_affinity_list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00114">114</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00284">parse_list()</a>.</p>
+
+</div>
+</div>
+<a id="a7c620a3154aff61cf806ea47d9c80215"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c620a3154aff61cf806ea47d9c80215">&#9670;&nbsp;</a></span>list_free_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void list_free_all </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>p_head</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -688,16 +727,168 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00213">213</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00080">80</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00261">ABTD_affinity_list_create()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00337">ABTD_affinity_list_create()</a>, and <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00356">ABTD_affinity_list_free()</a>.</p>
+
+</div>
+</div>
+<a id="ac495e1caff140997b9c11de2f46a2502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac495e1caff140997b9c11de2f46a2502">&#9670;&nbsp;</a></span>list_realloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int list_realloc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/d14/structalloc__list.html">alloc_list</a> *&#160;</td>
+          <td class="paramname"><em>p_alloc_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>old_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>new_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void **&#160;</td>
+          <td class="paramname"><em>p_ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00047">47</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00097">id_list_add()</a>, and <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00121">list_add()</a>.</p>
+
+</div>
+</div>
+<a id="a0a4d13204bf32020223f53680c6b2e16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a4d13204bf32020223f53680c6b2e16">&#9670;&nbsp;</a></span>parse_es_id_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int parse_es_id_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/d14/structalloc__list.html">alloc_list</a> *&#160;</td>
+          <td class="paramname"><em>p_alloc_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>affinity_str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>p_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/d5a/structABTD__affinity__id__list.html">ABTD_affinity_id_list</a> **&#160;</td>
+          <td class="paramname"><em>pp_affinity_id_list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00228">228</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00284">parse_list()</a>.</p>
+
+</div>
+</div>
+<a id="a34c6e7e83e4a65ffe01aa2d71ccfebbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34c6e7e83e4a65ffe01aa2d71ccfebbd">&#9670;&nbsp;</a></span>parse_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a> int parse_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/d14/structalloc__list.html">alloc_list</a> *&#160;</td>
+          <td class="paramname"><em>p_alloc_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>affinity_str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/d8f/structABTD__affinity__list.html">ABTD_affinity_list</a> **&#160;</td>
+          <td class="paramname"><em>pp_affinity_list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00284">284</a> of file <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html">abtd_affinity_parser.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d31/abtd__affinity__parser_8c_source.html#l00337">ABTD_affinity_list_create()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
+<div class="ttc" id="aabtd__affinity__parser_8c_html_a0531692053328d1bbdeb10816faa3fd6"><div class="ttname"><a href="../../d0/d31/abtd__affinity__parser_8c.html#a0531692053328d1bbdeb10816faa3fd6">alloc_header</a></div><div class="ttdeci">struct alloc_header alloc_header</div></div>
+<div class="ttc" id="aabtu_8h_html_af4893f86341de970c3b4488eee7df44d"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af4893f86341de970c3b4488eee7df44d">ABTU_MAX_ALIGNMENT</a></div><div class="ttdeci">#define ABTU_MAX_ALIGNMENT</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00134">abtu.h:134</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 2 2021 03:09:59 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 13 2021 03:09:58 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

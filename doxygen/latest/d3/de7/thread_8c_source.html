@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">b0afc3b487feaee57aad36a350817b0894b15983</span>
+   &#160;<span id="projectnumber">edf86c8cf11cb7b3dd3671e67f1a8382ceed83c5</span>
    </div>
   </td>
  </tr>
@@ -1480,244 +1480,248 @@ $(function() {
 <div class="line"><a name="l02717"></a><span class="lineno"> 2717</span>&#160;        p_sched-&gt;p_ythread = NULL;</div>
 <div class="line"><a name="l02718"></a><span class="lineno"> 2718</span>&#160;        ABTI_sched_free(p_global, ABTI_local_get_local_uninlined(), p_sched,</div>
 <div class="line"><a name="l02719"></a><span class="lineno"> 2719</span>&#160;                        <a class="code" href="../../d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">ABT_FALSE</a>);</div>
-<div class="line"><a name="l02720"></a><span class="lineno"> 2720</span>&#160;    }</div>
-<div class="line"><a name="l02721"></a><span class="lineno"> 2721</span>&#160;}</div>
-<div class="line"><a name="l02722"></a><span class="lineno"> 2722</span>&#160; </div>
-<div class="line"><a name="l02723"></a><span class="lineno"> 2723</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/de7/thread_8c.html#af74e2b5f3cbb8bc7c7400a58c20c8c77">thread_key_destructor_migration</a>(<span class="keywordtype">void</span> *p_value)</div>
-<div class="line"><a name="l02724"></a><span class="lineno"> 2724</span>&#160;{</div>
-<div class="line"><a name="l02725"></a><span class="lineno"><a class="line" href="../../d3/de7/thread_8c.html#af74e2b5f3cbb8bc7c7400a58c20c8c77"> 2725</a></span>&#160;    ABTI_thread_mig_data *p_mig_data = (ABTI_thread_mig_data *)p_value;</div>
-<div class="line"><a name="l02726"></a><span class="lineno"> 2726</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(p_mig_data);</div>
-<div class="line"><a name="l02727"></a><span class="lineno"> 2727</span>&#160;}</div>
-<div class="line"><a name="l02728"></a><span class="lineno"> 2728</span>&#160; </div>
-<div class="line"><a name="l02729"></a><span class="lineno"> 2729</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/de7/thread_8c.html#a726aa92f134c931e6ca57edd514076cf">thread_join_busywait</a>(ABTI_thread *p_thread)</div>
-<div class="line"><a name="l02730"></a><span class="lineno"> 2730</span>&#160;{</div>
-<div class="line"><a name="l02731"></a><span class="lineno"><a class="line" href="../../d3/de7/thread_8c.html#a726aa92f134c931e6ca57edd514076cf"> 2731</a></span>&#160;    <span class="keywordflow">while</span> (ABTD_atomic_acquire_load_int(&amp;p_thread-&gt;state) !=</div>
-<div class="line"><a name="l02732"></a><span class="lineno"> 2732</span>&#160;           <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089ade61dddc74434ee2705c536698d07149">ABT_THREAD_STATE_TERMINATED</a>) {</div>
-<div class="line"><a name="l02733"></a><span class="lineno"> 2733</span>&#160;        ABTD_atomic_pause();</div>
-<div class="line"><a name="l02734"></a><span class="lineno"> 2734</span>&#160;    }</div>
-<div class="line"><a name="l02735"></a><span class="lineno"> 2735</span>&#160;    ABTI_tool_event_thread_join(NULL, p_thread, NULL);</div>
-<div class="line"><a name="l02736"></a><span class="lineno"> 2736</span>&#160;}</div>
-<div class="line"><a name="l02737"></a><span class="lineno"> 2737</span>&#160; </div>
-<div class="line"><a name="l02738"></a><span class="lineno"> 2738</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_ACTIVE_WAIT_POLICY</span></div>
-<div class="line"><a name="l02739"></a><span class="lineno"> 2739</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/de7/thread_8c.html#a0d607194868d1432b8b3b5f57cfe30e7">thread_join_futexwait</a>(ABTI_thread *p_thread)</div>
-<div class="line"><a name="l02740"></a><span class="lineno"> 2740</span>&#160;{</div>
-<div class="line"><a name="l02741"></a><span class="lineno"><a class="line" href="../../d3/de7/thread_8c.html#a0d607194868d1432b8b3b5f57cfe30e7"> 2741</a></span>&#160;    ABTI_ythread *p_ythread = ABTI_thread_get_ythread_or_null(p_thread);</div>
-<div class="line"><a name="l02742"></a><span class="lineno"> 2742</span>&#160;    <span class="keywordflow">if</span> (p_ythread) {</div>
-<div class="line"><a name="l02743"></a><span class="lineno"> 2743</span>&#160;        <span class="comment">/* tell that this thread will join */</span></div>
-<div class="line"><a name="l02744"></a><span class="lineno"> 2744</span>&#160;        uint32_t req = ABTD_atomic_fetch_or_uint32(&amp;p_ythread-&gt;thread.request,</div>
-<div class="line"><a name="l02745"></a><span class="lineno"> 2745</span>&#160;                                                   ABTI_THREAD_REQ_JOIN);</div>
-<div class="line"><a name="l02746"></a><span class="lineno"> 2746</span>&#160;        <span class="keywordflow">if</span> (!(req &amp; ABTI_THREAD_REQ_JOIN)) {</div>
-<div class="line"><a name="l02747"></a><span class="lineno"> 2747</span>&#160;            ABTD_futex_single futex;</div>
-<div class="line"><a name="l02748"></a><span class="lineno"> 2748</span>&#160;            ABTD_futex_single_init(&amp;futex);</div>
-<div class="line"><a name="l02749"></a><span class="lineno"> 2749</span>&#160;            ABTI_ythread dummy_ythread;</div>
-<div class="line"><a name="l02750"></a><span class="lineno"> 2750</span>&#160;            dummy_ythread.thread.type = ABTI_THREAD_TYPE_EXT;</div>
-<div class="line"><a name="l02751"></a><span class="lineno"> 2751</span>&#160;            <span class="comment">/* Just arbitrarily choose p_arg to store futex. */</span></div>
-<div class="line"><a name="l02752"></a><span class="lineno"> 2752</span>&#160;            dummy_ythread.thread.p_arg = &amp;futex;</div>
-<div class="line"><a name="l02753"></a><span class="lineno"> 2753</span>&#160;            ABTD_atomic_release_store_ythread_context_ptr(&amp;p_ythread-&gt;ctx</div>
-<div class="line"><a name="l02754"></a><span class="lineno"> 2754</span>&#160;                                                               .p_link,</div>
-<div class="line"><a name="l02755"></a><span class="lineno"> 2755</span>&#160;                                                          &amp;dummy_ythread.ctx);</div>
-<div class="line"><a name="l02756"></a><span class="lineno"> 2756</span>&#160;            ABTD_futex_suspend(&amp;futex);</div>
-<div class="line"><a name="l02757"></a><span class="lineno"> 2757</span>&#160;            <span class="comment">/* Resumed. */</span></div>
-<div class="line"><a name="l02758"></a><span class="lineno"> 2758</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l02759"></a><span class="lineno"> 2759</span>&#160;            <span class="comment">/* If request already has ABTI_THREAD_REQ_JOIN, p_ythread is</span></div>
-<div class="line"><a name="l02760"></a><span class="lineno"> 2760</span>&#160;<span class="comment">             * terminating.  We can&#39;t suspend in this case. */</span></div>
-<div class="line"><a name="l02761"></a><span class="lineno"> 2761</span>&#160;        }</div>
-<div class="line"><a name="l02762"></a><span class="lineno"> 2762</span>&#160;    }</div>
-<div class="line"><a name="l02763"></a><span class="lineno"> 2763</span>&#160;    <span class="comment">/* No matter whether this thread has been resumed or not, we need to busy-</span></div>
-<div class="line"><a name="l02764"></a><span class="lineno"> 2764</span>&#160;<span class="comment">     * wait to make sure that the thread&#39;s state gets terminated. */</span></div>
-<div class="line"><a name="l02765"></a><span class="lineno"> 2765</span>&#160;    <a class="code" href="../../d3/de7/thread_8c.html#a726aa92f134c931e6ca57edd514076cf">thread_join_busywait</a>(p_thread);</div>
-<div class="line"><a name="l02766"></a><span class="lineno"> 2766</span>&#160;}</div>
-<div class="line"><a name="l02767"></a><span class="lineno"> 2767</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l02768"></a><span class="lineno"> 2768</span>&#160; </div>
-<div class="line"><a name="l02769"></a><span class="lineno"> 2769</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/de7/thread_8c.html#ac4a0f18fe68ed5c4fa85fc432f538f8a">thread_join_yield_thread</a>(ABTI_xstream **pp_local_xstream,</div>
-<div class="line"><a name="l02770"></a><span class="lineno"> 2770</span>&#160;                                     ABTI_ythread *p_self,</div>
-<div class="line"><a name="l02771"></a><span class="lineno"><a class="line" href="../../d3/de7/thread_8c.html#ac4a0f18fe68ed5c4fa85fc432f538f8a"> 2771</a></span>&#160;                                     ABTI_thread *p_thread)</div>
-<div class="line"><a name="l02772"></a><span class="lineno"> 2772</span>&#160;{</div>
-<div class="line"><a name="l02773"></a><span class="lineno"> 2773</span>&#160;    <span class="keywordflow">while</span> (ABTD_atomic_acquire_load_int(&amp;p_thread-&gt;state) !=</div>
-<div class="line"><a name="l02774"></a><span class="lineno"> 2774</span>&#160;           <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089ade61dddc74434ee2705c536698d07149">ABT_THREAD_STATE_TERMINATED</a>) {</div>
-<div class="line"><a name="l02775"></a><span class="lineno"> 2775</span>&#160;        ABTI_ythread_yield(pp_local_xstream, p_self,</div>
-<div class="line"><a name="l02776"></a><span class="lineno"> 2776</span>&#160;                           <a class="code" href="../../de/d0d/group__TOOL.html#ggac601a9db309d1a30954d43fc82d9602fa159c5b0bea263cf48764c0c557848492">ABT_SYNC_EVENT_TYPE_THREAD_JOIN</a>, (<span class="keywordtype">void</span> *)p_thread);</div>
-<div class="line"><a name="l02777"></a><span class="lineno"> 2777</span>&#160;    }</div>
-<div class="line"><a name="l02778"></a><span class="lineno"> 2778</span>&#160;    ABTI_tool_event_thread_join(ABTI_xstream_get_local(*pp_local_xstream),</div>
-<div class="line"><a name="l02779"></a><span class="lineno"> 2779</span>&#160;                                p_thread, &amp;p_self-&gt;thread);</div>
-<div class="line"><a name="l02780"></a><span class="lineno"> 2780</span>&#160;}</div>
-<div class="line"><a name="l02781"></a><span class="lineno"> 2781</span>&#160; </div>
-<div class="line"><a name="l02782"></a><span class="lineno"> 2782</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/de7/thread_8c.html#ad3ed34193107c252807c0e1c9898392f">thread_join</a>(ABTI_local **pp_local, ABTI_thread *p_thread)</div>
-<div class="line"><a name="l02783"></a><span class="lineno"> 2783</span>&#160;{</div>
-<div class="line"><a name="l02784"></a><span class="lineno"><a class="line" href="../../d3/de7/thread_8c.html#ad3ed34193107c252807c0e1c9898392f"> 2784</a></span>&#160;    <span class="keywordflow">if</span> (ABTD_atomic_acquire_load_int(&amp;p_thread-&gt;state) ==</div>
-<div class="line"><a name="l02785"></a><span class="lineno"> 2785</span>&#160;        <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089ade61dddc74434ee2705c536698d07149">ABT_THREAD_STATE_TERMINATED</a>) {</div>
-<div class="line"><a name="l02786"></a><span class="lineno"> 2786</span>&#160;        ABTI_tool_event_thread_join(*pp_local, p_thread,</div>
-<div class="line"><a name="l02787"></a><span class="lineno"> 2787</span>&#160;                                    ABTI_local_get_xstream_or_null(*pp_local)</div>
-<div class="line"><a name="l02788"></a><span class="lineno"> 2788</span>&#160;                                        ? ABTI_local_get_xstream(*pp_local)</div>
-<div class="line"><a name="l02789"></a><span class="lineno"> 2789</span>&#160;                                              -&gt;p_thread</div>
-<div class="line"><a name="l02790"></a><span class="lineno"> 2790</span>&#160;                                        : NULL);</div>
-<div class="line"><a name="l02791"></a><span class="lineno"> 2791</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l02792"></a><span class="lineno"> 2792</span>&#160;    }</div>
-<div class="line"><a name="l02793"></a><span class="lineno"> 2793</span>&#160;    <span class="comment">/* The primary ULT cannot be joined. */</span></div>
-<div class="line"><a name="l02794"></a><span class="lineno"> 2794</span>&#160;    ABTI_ASSERT(!(p_thread-&gt;type &amp; ABTI_THREAD_TYPE_PRIMARY));</div>
-<div class="line"><a name="l02795"></a><span class="lineno"> 2795</span>&#160; </div>
-<div class="line"><a name="l02796"></a><span class="lineno"> 2796</span>&#160;    ABTI_xstream *p_local_xstream = ABTI_local_get_xstream_or_null(*pp_local);</div>
-<div class="line"><a name="l02797"></a><span class="lineno"> 2797</span>&#160;    <span class="keywordflow">if</span> (ABTI_IS_EXT_THREAD_ENABLED &amp;&amp; !p_local_xstream) {</div>
-<div class="line"><a name="l02798"></a><span class="lineno"> 2798</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_ACTIVE_WAIT_POLICY</span></div>
-<div class="line"><a name="l02799"></a><span class="lineno"> 2799</span>&#160;        <a class="code" href="../../d3/de7/thread_8c.html#a726aa92f134c931e6ca57edd514076cf">thread_join_busywait</a>(p_thread);</div>
-<div class="line"><a name="l02800"></a><span class="lineno"> 2800</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l02801"></a><span class="lineno"> 2801</span>&#160;        <a class="code" href="../../d3/de7/thread_8c.html#a0d607194868d1432b8b3b5f57cfe30e7">thread_join_futexwait</a>(p_thread);</div>
-<div class="line"><a name="l02802"></a><span class="lineno"> 2802</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l02803"></a><span class="lineno"> 2803</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l02804"></a><span class="lineno"> 2804</span>&#160;    }</div>
-<div class="line"><a name="l02805"></a><span class="lineno"> 2805</span>&#160; </div>
-<div class="line"><a name="l02806"></a><span class="lineno"> 2806</span>&#160;    ABTI_thread *p_self_thread = p_local_xstream-&gt;p_thread;</div>
-<div class="line"><a name="l02807"></a><span class="lineno"> 2807</span>&#160; </div>
-<div class="line"><a name="l02808"></a><span class="lineno"> 2808</span>&#160;    ABTI_ythread *p_self = ABTI_thread_get_ythread_or_null(p_self_thread);</div>
-<div class="line"><a name="l02809"></a><span class="lineno"> 2809</span>&#160;    <span class="keywordflow">if</span> (!p_self) {</div>
-<div class="line"><a name="l02810"></a><span class="lineno"> 2810</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_ACTIVE_WAIT_POLICY</span></div>
-<div class="line"><a name="l02811"></a><span class="lineno"> 2811</span>&#160;        <a class="code" href="../../d3/de7/thread_8c.html#a726aa92f134c931e6ca57edd514076cf">thread_join_busywait</a>(p_thread);</div>
-<div class="line"><a name="l02812"></a><span class="lineno"> 2812</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l02813"></a><span class="lineno"> 2813</span>&#160;        <a class="code" href="../../d3/de7/thread_8c.html#a0d607194868d1432b8b3b5f57cfe30e7">thread_join_futexwait</a>(p_thread);</div>
-<div class="line"><a name="l02814"></a><span class="lineno"> 2814</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l02815"></a><span class="lineno"> 2815</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l02816"></a><span class="lineno"> 2816</span>&#160;    }</div>
-<div class="line"><a name="l02817"></a><span class="lineno"> 2817</span>&#160; </div>
-<div class="line"><a name="l02818"></a><span class="lineno"> 2818</span>&#160;    <span class="comment">/* The target ULT should be different. */</span></div>
-<div class="line"><a name="l02819"></a><span class="lineno"> 2819</span>&#160;    ABTI_ASSERT(p_thread != p_self_thread);</div>
-<div class="line"><a name="l02820"></a><span class="lineno"> 2820</span>&#160; </div>
-<div class="line"><a name="l02821"></a><span class="lineno"> 2821</span>&#160;    ABTI_ythread *p_ythread = ABTI_thread_get_ythread_or_null(p_thread);</div>
-<div class="line"><a name="l02822"></a><span class="lineno"> 2822</span>&#160;    <span class="keywordflow">if</span> (!p_ythread) {</div>
-<div class="line"><a name="l02823"></a><span class="lineno"> 2823</span>&#160;        <a class="code" href="../../d3/de7/thread_8c.html#ac4a0f18fe68ed5c4fa85fc432f538f8a">thread_join_yield_thread</a>(&amp;p_local_xstream, p_self, p_thread);</div>
-<div class="line"><a name="l02824"></a><span class="lineno"> 2824</span>&#160;        *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
-<div class="line"><a name="l02825"></a><span class="lineno"> 2825</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l02826"></a><span class="lineno"> 2826</span>&#160;    }</div>
-<div class="line"><a name="l02827"></a><span class="lineno"> 2827</span>&#160; </div>
-<div class="line"><a name="l02828"></a><span class="lineno"> 2828</span>&#160;    <span class="comment">/* Tell p_ythread that there has been a join request. */</span></div>
-<div class="line"><a name="l02829"></a><span class="lineno"> 2829</span>&#160;    <span class="comment">/* If request already has ABTI_THREAD_REQ_JOIN, p_ythread is</span></div>
-<div class="line"><a name="l02830"></a><span class="lineno"> 2830</span>&#160;<span class="comment">     * terminating. We can&#39;t block p_self in this case. */</span></div>
-<div class="line"><a name="l02831"></a><span class="lineno"> 2831</span>&#160;    uint32_t req = ABTD_atomic_fetch_or_uint32(&amp;p_ythread-&gt;thread.request,</div>
-<div class="line"><a name="l02832"></a><span class="lineno"> 2832</span>&#160;                                               ABTI_THREAD_REQ_JOIN);</div>
-<div class="line"><a name="l02833"></a><span class="lineno"> 2833</span>&#160;    <span class="keywordflow">if</span> (req &amp; ABTI_THREAD_REQ_JOIN) {</div>
-<div class="line"><a name="l02834"></a><span class="lineno"> 2834</span>&#160;        <a class="code" href="../../d3/de7/thread_8c.html#ac4a0f18fe68ed5c4fa85fc432f538f8a">thread_join_yield_thread</a>(&amp;p_local_xstream, p_self, &amp;p_ythread-&gt;thread);</div>
-<div class="line"><a name="l02835"></a><span class="lineno"> 2835</span>&#160;        *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
-<div class="line"><a name="l02836"></a><span class="lineno"> 2836</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l02837"></a><span class="lineno"> 2837</span>&#160;    }</div>
-<div class="line"><a name="l02838"></a><span class="lineno"> 2838</span>&#160; </div>
-<div class="line"><a name="l02839"></a><span class="lineno"> 2839</span>&#160;    ABTI_ythread_set_blocked(p_self);</div>
-<div class="line"><a name="l02840"></a><span class="lineno"> 2840</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[U%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] blocked to join U%&quot;</span> PRIu64 <span class="stringliteral">&quot;\n&quot;</span>,</div>
-<div class="line"><a name="l02841"></a><span class="lineno"> 2841</span>&#160;              ABTI_thread_get_id(&amp;p_self-&gt;thread),</div>
-<div class="line"><a name="l02842"></a><span class="lineno"> 2842</span>&#160;              p_self-&gt;thread.p_last_xstream-&gt;rank,</div>
-<div class="line"><a name="l02843"></a><span class="lineno"> 2843</span>&#160;              ABTI_thread_get_id(&amp;p_ythread-&gt;thread));</div>
-<div class="line"><a name="l02844"></a><span class="lineno"> 2844</span>&#160; </div>
-<div class="line"><a name="l02845"></a><span class="lineno"> 2845</span>&#160;    <span class="comment">/* Set the link in the context of the target ULT. This p_link might be</span></div>
-<div class="line"><a name="l02846"></a><span class="lineno"> 2846</span>&#160;<span class="comment">     * read by p_ythread running on another ES in parallel, so release-store</span></div>
-<div class="line"><a name="l02847"></a><span class="lineno"> 2847</span>&#160;<span class="comment">     * is needed here. */</span></div>
-<div class="line"><a name="l02848"></a><span class="lineno"> 2848</span>&#160;    ABTD_atomic_release_store_ythread_context_ptr(&amp;p_ythread-&gt;ctx.p_link,</div>
-<div class="line"><a name="l02849"></a><span class="lineno"> 2849</span>&#160;                                                  &amp;p_self-&gt;ctx);</div>
-<div class="line"><a name="l02850"></a><span class="lineno"> 2850</span>&#160; </div>
-<div class="line"><a name="l02851"></a><span class="lineno"> 2851</span>&#160;    <span class="comment">/* Suspend the current ULT */</span></div>
-<div class="line"><a name="l02852"></a><span class="lineno"> 2852</span>&#160;    ABTI_ythread_suspend(&amp;p_local_xstream, p_self,</div>
-<div class="line"><a name="l02853"></a><span class="lineno"> 2853</span>&#160;                         <a class="code" href="../../de/d0d/group__TOOL.html#ggac601a9db309d1a30954d43fc82d9602fa159c5b0bea263cf48764c0c557848492">ABT_SYNC_EVENT_TYPE_THREAD_JOIN</a>, (<span class="keywordtype">void</span> *)p_ythread);</div>
-<div class="line"><a name="l02854"></a><span class="lineno"> 2854</span>&#160;    *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
-<div class="line"><a name="l02855"></a><span class="lineno"> 2855</span>&#160; </div>
-<div class="line"><a name="l02856"></a><span class="lineno"> 2856</span>&#160;    <span class="comment">/* Resume */</span></div>
-<div class="line"><a name="l02857"></a><span class="lineno"> 2857</span>&#160;    <span class="comment">/* If p_self&#39;s state is BLOCKED, the target ULT has terminated on the same</span></div>
-<div class="line"><a name="l02858"></a><span class="lineno"> 2858</span>&#160;<span class="comment">     * ES as p_self&#39;s ES and the control has come from the target ULT.</span></div>
-<div class="line"><a name="l02859"></a><span class="lineno"> 2859</span>&#160;<span class="comment">     * Otherwise, the target ULT had been migrated to a different ES, p_self</span></div>
-<div class="line"><a name="l02860"></a><span class="lineno"> 2860</span>&#160;<span class="comment">     * has been resumed by p_self&#39;s scheduler.  In the latter case, we don&#39;t</span></div>
-<div class="line"><a name="l02861"></a><span class="lineno"> 2861</span>&#160;<span class="comment">     * need to change p_self&#39;s state. */</span></div>
-<div class="line"><a name="l02862"></a><span class="lineno"> 2862</span>&#160;    <span class="keywordflow">if</span> (ABTD_atomic_relaxed_load_int(&amp;p_self-&gt;thread.state) ==</div>
-<div class="line"><a name="l02863"></a><span class="lineno"> 2863</span>&#160;        <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089a3638f9519e790388f3bbc7e35f30fece">ABT_THREAD_STATE_BLOCKED</a>) {</div>
-<div class="line"><a name="l02864"></a><span class="lineno"> 2864</span>&#160;        ABTD_atomic_release_store_int(&amp;p_self-&gt;thread.state,</div>
-<div class="line"><a name="l02865"></a><span class="lineno"> 2865</span>&#160;                                      <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089ae0a7acd9ed47699f063ee2128f9f7ef6">ABT_THREAD_STATE_RUNNING</a>);</div>
-<div class="line"><a name="l02866"></a><span class="lineno"> 2866</span>&#160;        ABTI_pool_dec_num_blocked(p_self-&gt;thread.p_pool);</div>
-<div class="line"><a name="l02867"></a><span class="lineno"> 2867</span>&#160;        <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[U%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] resume after join\n&quot;</span>,</div>
-<div class="line"><a name="l02868"></a><span class="lineno"> 2868</span>&#160;                  ABTI_thread_get_id(&amp;p_self-&gt;thread),</div>
-<div class="line"><a name="l02869"></a><span class="lineno"> 2869</span>&#160;                  p_self-&gt;thread.p_last_xstream-&gt;rank);</div>
-<div class="line"><a name="l02870"></a><span class="lineno"> 2870</span>&#160;        ABTI_tool_event_thread_join(*pp_local, p_thread, &amp;p_self-&gt;thread);</div>
-<div class="line"><a name="l02871"></a><span class="lineno"> 2871</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l02872"></a><span class="lineno"> 2872</span>&#160;        <span class="comment">/* Use a yield-based method. */</span></div>
-<div class="line"><a name="l02873"></a><span class="lineno"> 2873</span>&#160;        <a class="code" href="../../d3/de7/thread_8c.html#ac4a0f18fe68ed5c4fa85fc432f538f8a">thread_join_yield_thread</a>(&amp;p_local_xstream, p_self, &amp;p_ythread-&gt;thread);</div>
-<div class="line"><a name="l02874"></a><span class="lineno"> 2874</span>&#160;        *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
-<div class="line"><a name="l02875"></a><span class="lineno"> 2875</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l02876"></a><span class="lineno"> 2876</span>&#160;    }</div>
-<div class="line"><a name="l02877"></a><span class="lineno"> 2877</span>&#160;}</div>
-<div class="line"><a name="l02878"></a><span class="lineno"> 2878</span>&#160; </div>
-<div class="line"><a name="l02879"></a><span class="lineno"> 2879</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/de7/thread_8c.html#aea00fcf9fbb062e48dc8ca2af8539996">thread_root_func</a>(<span class="keywordtype">void</span> *arg)</div>
-<div class="line"><a name="l02880"></a><span class="lineno"> 2880</span>&#160;{</div>
-<div class="line"><a name="l02881"></a><span class="lineno"><a class="line" href="../../d3/de7/thread_8c.html#aea00fcf9fbb062e48dc8ca2af8539996"> 2881</a></span>&#160;    <span class="comment">/* root thread is working on a special context, so it should not rely on</span></div>
-<div class="line"><a name="l02882"></a><span class="lineno"> 2882</span>&#160;<span class="comment">     * functionality that needs yield. */</span></div>
-<div class="line"><a name="l02883"></a><span class="lineno"> 2883</span>&#160;    ABTI_global *p_global = ABTI_global_get_global();</div>
-<div class="line"><a name="l02884"></a><span class="lineno"> 2884</span>&#160;    ABTI_local *p_local = ABTI_local_get_local();</div>
-<div class="line"><a name="l02885"></a><span class="lineno"> 2885</span>&#160;    ABTI_xstream *p_local_xstream = ABTI_local_get_xstream(p_local);</div>
-<div class="line"><a name="l02886"></a><span class="lineno"> 2886</span>&#160;    ABTI_ASSERT(ABTD_atomic_relaxed_load_int(&amp;p_local_xstream-&gt;state) ==</div>
-<div class="line"><a name="l02887"></a><span class="lineno"> 2887</span>&#160;                <a class="code" href="../../d3/def/group__ES.html#gga092b58d9ab171ff3429b78afc1876cb0a6b190da4955f53fbd0309bccd71cffbd">ABT_XSTREAM_STATE_RUNNING</a>);</div>
-<div class="line"><a name="l02888"></a><span class="lineno"> 2888</span>&#160; </div>
-<div class="line"><a name="l02889"></a><span class="lineno"> 2889</span>&#160;    ABTI_ythread *p_root_ythread = p_local_xstream-&gt;p_root_ythread;</div>
-<div class="line"><a name="l02890"></a><span class="lineno"> 2890</span>&#160;    p_local_xstream-&gt;p_thread = &amp;p_root_ythread-&gt;thread;</div>
-<div class="line"><a name="l02891"></a><span class="lineno"> 2891</span>&#160;    ABTI_pool *p_root_pool = p_local_xstream-&gt;p_root_pool;</div>
+<div class="line"><a name="l02720"></a><span class="lineno"> 2720</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l02721"></a><span class="lineno"> 2721</span>&#160;        <span class="comment">/* If it is not automatic, p_ythread must be set to NULL to avoid double</span></div>
+<div class="line"><a name="l02722"></a><span class="lineno"> 2722</span>&#160;<span class="comment">         * free corruption. */</span></div>
+<div class="line"><a name="l02723"></a><span class="lineno"> 2723</span>&#160;        p_sched-&gt;p_ythread = NULL;</div>
+<div class="line"><a name="l02724"></a><span class="lineno"> 2724</span>&#160;    }</div>
+<div class="line"><a name="l02725"></a><span class="lineno"> 2725</span>&#160;}</div>
+<div class="line"><a name="l02726"></a><span class="lineno"> 2726</span>&#160; </div>
+<div class="line"><a name="l02727"></a><span class="lineno"> 2727</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/de7/thread_8c.html#af74e2b5f3cbb8bc7c7400a58c20c8c77">thread_key_destructor_migration</a>(<span class="keywordtype">void</span> *p_value)</div>
+<div class="line"><a name="l02728"></a><span class="lineno"> 2728</span>&#160;{</div>
+<div class="line"><a name="l02729"></a><span class="lineno"><a class="line" href="../../d3/de7/thread_8c.html#af74e2b5f3cbb8bc7c7400a58c20c8c77"> 2729</a></span>&#160;    ABTI_thread_mig_data *p_mig_data = (ABTI_thread_mig_data *)p_value;</div>
+<div class="line"><a name="l02730"></a><span class="lineno"> 2730</span>&#160;    <a class="code" href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a>(p_mig_data);</div>
+<div class="line"><a name="l02731"></a><span class="lineno"> 2731</span>&#160;}</div>
+<div class="line"><a name="l02732"></a><span class="lineno"> 2732</span>&#160; </div>
+<div class="line"><a name="l02733"></a><span class="lineno"> 2733</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/de7/thread_8c.html#a726aa92f134c931e6ca57edd514076cf">thread_join_busywait</a>(ABTI_thread *p_thread)</div>
+<div class="line"><a name="l02734"></a><span class="lineno"> 2734</span>&#160;{</div>
+<div class="line"><a name="l02735"></a><span class="lineno"><a class="line" href="../../d3/de7/thread_8c.html#a726aa92f134c931e6ca57edd514076cf"> 2735</a></span>&#160;    <span class="keywordflow">while</span> (ABTD_atomic_acquire_load_int(&amp;p_thread-&gt;state) !=</div>
+<div class="line"><a name="l02736"></a><span class="lineno"> 2736</span>&#160;           <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089ade61dddc74434ee2705c536698d07149">ABT_THREAD_STATE_TERMINATED</a>) {</div>
+<div class="line"><a name="l02737"></a><span class="lineno"> 2737</span>&#160;        ABTD_atomic_pause();</div>
+<div class="line"><a name="l02738"></a><span class="lineno"> 2738</span>&#160;    }</div>
+<div class="line"><a name="l02739"></a><span class="lineno"> 2739</span>&#160;    ABTI_tool_event_thread_join(NULL, p_thread, NULL);</div>
+<div class="line"><a name="l02740"></a><span class="lineno"> 2740</span>&#160;}</div>
+<div class="line"><a name="l02741"></a><span class="lineno"> 2741</span>&#160; </div>
+<div class="line"><a name="l02742"></a><span class="lineno"> 2742</span>&#160;<span class="preprocessor">#ifndef ABT_CONFIG_ACTIVE_WAIT_POLICY</span></div>
+<div class="line"><a name="l02743"></a><span class="lineno"> 2743</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/de7/thread_8c.html#a0d607194868d1432b8b3b5f57cfe30e7">thread_join_futexwait</a>(ABTI_thread *p_thread)</div>
+<div class="line"><a name="l02744"></a><span class="lineno"> 2744</span>&#160;{</div>
+<div class="line"><a name="l02745"></a><span class="lineno"><a class="line" href="../../d3/de7/thread_8c.html#a0d607194868d1432b8b3b5f57cfe30e7"> 2745</a></span>&#160;    ABTI_ythread *p_ythread = ABTI_thread_get_ythread_or_null(p_thread);</div>
+<div class="line"><a name="l02746"></a><span class="lineno"> 2746</span>&#160;    <span class="keywordflow">if</span> (p_ythread) {</div>
+<div class="line"><a name="l02747"></a><span class="lineno"> 2747</span>&#160;        <span class="comment">/* tell that this thread will join */</span></div>
+<div class="line"><a name="l02748"></a><span class="lineno"> 2748</span>&#160;        uint32_t req = ABTD_atomic_fetch_or_uint32(&amp;p_ythread-&gt;thread.request,</div>
+<div class="line"><a name="l02749"></a><span class="lineno"> 2749</span>&#160;                                                   ABTI_THREAD_REQ_JOIN);</div>
+<div class="line"><a name="l02750"></a><span class="lineno"> 2750</span>&#160;        <span class="keywordflow">if</span> (!(req &amp; ABTI_THREAD_REQ_JOIN)) {</div>
+<div class="line"><a name="l02751"></a><span class="lineno"> 2751</span>&#160;            ABTD_futex_single futex;</div>
+<div class="line"><a name="l02752"></a><span class="lineno"> 2752</span>&#160;            ABTD_futex_single_init(&amp;futex);</div>
+<div class="line"><a name="l02753"></a><span class="lineno"> 2753</span>&#160;            ABTI_ythread dummy_ythread;</div>
+<div class="line"><a name="l02754"></a><span class="lineno"> 2754</span>&#160;            dummy_ythread.thread.type = ABTI_THREAD_TYPE_EXT;</div>
+<div class="line"><a name="l02755"></a><span class="lineno"> 2755</span>&#160;            <span class="comment">/* Just arbitrarily choose p_arg to store futex. */</span></div>
+<div class="line"><a name="l02756"></a><span class="lineno"> 2756</span>&#160;            dummy_ythread.thread.p_arg = &amp;futex;</div>
+<div class="line"><a name="l02757"></a><span class="lineno"> 2757</span>&#160;            ABTD_atomic_release_store_ythread_context_ptr(&amp;p_ythread-&gt;ctx</div>
+<div class="line"><a name="l02758"></a><span class="lineno"> 2758</span>&#160;                                                               .p_link,</div>
+<div class="line"><a name="l02759"></a><span class="lineno"> 2759</span>&#160;                                                          &amp;dummy_ythread.ctx);</div>
+<div class="line"><a name="l02760"></a><span class="lineno"> 2760</span>&#160;            ABTD_futex_suspend(&amp;futex);</div>
+<div class="line"><a name="l02761"></a><span class="lineno"> 2761</span>&#160;            <span class="comment">/* Resumed. */</span></div>
+<div class="line"><a name="l02762"></a><span class="lineno"> 2762</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l02763"></a><span class="lineno"> 2763</span>&#160;            <span class="comment">/* If request already has ABTI_THREAD_REQ_JOIN, p_ythread is</span></div>
+<div class="line"><a name="l02764"></a><span class="lineno"> 2764</span>&#160;<span class="comment">             * terminating.  We can&#39;t suspend in this case. */</span></div>
+<div class="line"><a name="l02765"></a><span class="lineno"> 2765</span>&#160;        }</div>
+<div class="line"><a name="l02766"></a><span class="lineno"> 2766</span>&#160;    }</div>
+<div class="line"><a name="l02767"></a><span class="lineno"> 2767</span>&#160;    <span class="comment">/* No matter whether this thread has been resumed or not, we need to busy-</span></div>
+<div class="line"><a name="l02768"></a><span class="lineno"> 2768</span>&#160;<span class="comment">     * wait to make sure that the thread&#39;s state gets terminated. */</span></div>
+<div class="line"><a name="l02769"></a><span class="lineno"> 2769</span>&#160;    <a class="code" href="../../d3/de7/thread_8c.html#a726aa92f134c931e6ca57edd514076cf">thread_join_busywait</a>(p_thread);</div>
+<div class="line"><a name="l02770"></a><span class="lineno"> 2770</span>&#160;}</div>
+<div class="line"><a name="l02771"></a><span class="lineno"> 2771</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l02772"></a><span class="lineno"> 2772</span>&#160; </div>
+<div class="line"><a name="l02773"></a><span class="lineno"> 2773</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/de7/thread_8c.html#ac4a0f18fe68ed5c4fa85fc432f538f8a">thread_join_yield_thread</a>(ABTI_xstream **pp_local_xstream,</div>
+<div class="line"><a name="l02774"></a><span class="lineno"> 2774</span>&#160;                                     ABTI_ythread *p_self,</div>
+<div class="line"><a name="l02775"></a><span class="lineno"><a class="line" href="../../d3/de7/thread_8c.html#ac4a0f18fe68ed5c4fa85fc432f538f8a"> 2775</a></span>&#160;                                     ABTI_thread *p_thread)</div>
+<div class="line"><a name="l02776"></a><span class="lineno"> 2776</span>&#160;{</div>
+<div class="line"><a name="l02777"></a><span class="lineno"> 2777</span>&#160;    <span class="keywordflow">while</span> (ABTD_atomic_acquire_load_int(&amp;p_thread-&gt;state) !=</div>
+<div class="line"><a name="l02778"></a><span class="lineno"> 2778</span>&#160;           <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089ade61dddc74434ee2705c536698d07149">ABT_THREAD_STATE_TERMINATED</a>) {</div>
+<div class="line"><a name="l02779"></a><span class="lineno"> 2779</span>&#160;        ABTI_ythread_yield(pp_local_xstream, p_self,</div>
+<div class="line"><a name="l02780"></a><span class="lineno"> 2780</span>&#160;                           <a class="code" href="../../de/d0d/group__TOOL.html#ggac601a9db309d1a30954d43fc82d9602fa159c5b0bea263cf48764c0c557848492">ABT_SYNC_EVENT_TYPE_THREAD_JOIN</a>, (<span class="keywordtype">void</span> *)p_thread);</div>
+<div class="line"><a name="l02781"></a><span class="lineno"> 2781</span>&#160;    }</div>
+<div class="line"><a name="l02782"></a><span class="lineno"> 2782</span>&#160;    ABTI_tool_event_thread_join(ABTI_xstream_get_local(*pp_local_xstream),</div>
+<div class="line"><a name="l02783"></a><span class="lineno"> 2783</span>&#160;                                p_thread, &amp;p_self-&gt;thread);</div>
+<div class="line"><a name="l02784"></a><span class="lineno"> 2784</span>&#160;}</div>
+<div class="line"><a name="l02785"></a><span class="lineno"> 2785</span>&#160; </div>
+<div class="line"><a name="l02786"></a><span class="lineno"> 2786</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/de7/thread_8c.html#ad3ed34193107c252807c0e1c9898392f">thread_join</a>(ABTI_local **pp_local, ABTI_thread *p_thread)</div>
+<div class="line"><a name="l02787"></a><span class="lineno"> 2787</span>&#160;{</div>
+<div class="line"><a name="l02788"></a><span class="lineno"><a class="line" href="../../d3/de7/thread_8c.html#ad3ed34193107c252807c0e1c9898392f"> 2788</a></span>&#160;    <span class="keywordflow">if</span> (ABTD_atomic_acquire_load_int(&amp;p_thread-&gt;state) ==</div>
+<div class="line"><a name="l02789"></a><span class="lineno"> 2789</span>&#160;        <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089ade61dddc74434ee2705c536698d07149">ABT_THREAD_STATE_TERMINATED</a>) {</div>
+<div class="line"><a name="l02790"></a><span class="lineno"> 2790</span>&#160;        ABTI_tool_event_thread_join(*pp_local, p_thread,</div>
+<div class="line"><a name="l02791"></a><span class="lineno"> 2791</span>&#160;                                    ABTI_local_get_xstream_or_null(*pp_local)</div>
+<div class="line"><a name="l02792"></a><span class="lineno"> 2792</span>&#160;                                        ? ABTI_local_get_xstream(*pp_local)</div>
+<div class="line"><a name="l02793"></a><span class="lineno"> 2793</span>&#160;                                              -&gt;p_thread</div>
+<div class="line"><a name="l02794"></a><span class="lineno"> 2794</span>&#160;                                        : NULL);</div>
+<div class="line"><a name="l02795"></a><span class="lineno"> 2795</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l02796"></a><span class="lineno"> 2796</span>&#160;    }</div>
+<div class="line"><a name="l02797"></a><span class="lineno"> 2797</span>&#160;    <span class="comment">/* The primary ULT cannot be joined. */</span></div>
+<div class="line"><a name="l02798"></a><span class="lineno"> 2798</span>&#160;    ABTI_ASSERT(!(p_thread-&gt;type &amp; ABTI_THREAD_TYPE_PRIMARY));</div>
+<div class="line"><a name="l02799"></a><span class="lineno"> 2799</span>&#160; </div>
+<div class="line"><a name="l02800"></a><span class="lineno"> 2800</span>&#160;    ABTI_xstream *p_local_xstream = ABTI_local_get_xstream_or_null(*pp_local);</div>
+<div class="line"><a name="l02801"></a><span class="lineno"> 2801</span>&#160;    <span class="keywordflow">if</span> (ABTI_IS_EXT_THREAD_ENABLED &amp;&amp; !p_local_xstream) {</div>
+<div class="line"><a name="l02802"></a><span class="lineno"> 2802</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_ACTIVE_WAIT_POLICY</span></div>
+<div class="line"><a name="l02803"></a><span class="lineno"> 2803</span>&#160;        <a class="code" href="../../d3/de7/thread_8c.html#a726aa92f134c931e6ca57edd514076cf">thread_join_busywait</a>(p_thread);</div>
+<div class="line"><a name="l02804"></a><span class="lineno"> 2804</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l02805"></a><span class="lineno"> 2805</span>&#160;        <a class="code" href="../../d3/de7/thread_8c.html#a0d607194868d1432b8b3b5f57cfe30e7">thread_join_futexwait</a>(p_thread);</div>
+<div class="line"><a name="l02806"></a><span class="lineno"> 2806</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l02807"></a><span class="lineno"> 2807</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l02808"></a><span class="lineno"> 2808</span>&#160;    }</div>
+<div class="line"><a name="l02809"></a><span class="lineno"> 2809</span>&#160; </div>
+<div class="line"><a name="l02810"></a><span class="lineno"> 2810</span>&#160;    ABTI_thread *p_self_thread = p_local_xstream-&gt;p_thread;</div>
+<div class="line"><a name="l02811"></a><span class="lineno"> 2811</span>&#160; </div>
+<div class="line"><a name="l02812"></a><span class="lineno"> 2812</span>&#160;    ABTI_ythread *p_self = ABTI_thread_get_ythread_or_null(p_self_thread);</div>
+<div class="line"><a name="l02813"></a><span class="lineno"> 2813</span>&#160;    <span class="keywordflow">if</span> (!p_self) {</div>
+<div class="line"><a name="l02814"></a><span class="lineno"> 2814</span>&#160;<span class="preprocessor">#ifdef ABT_CONFIG_ACTIVE_WAIT_POLICY</span></div>
+<div class="line"><a name="l02815"></a><span class="lineno"> 2815</span>&#160;        <a class="code" href="../../d3/de7/thread_8c.html#a726aa92f134c931e6ca57edd514076cf">thread_join_busywait</a>(p_thread);</div>
+<div class="line"><a name="l02816"></a><span class="lineno"> 2816</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l02817"></a><span class="lineno"> 2817</span>&#160;        <a class="code" href="../../d3/de7/thread_8c.html#a0d607194868d1432b8b3b5f57cfe30e7">thread_join_futexwait</a>(p_thread);</div>
+<div class="line"><a name="l02818"></a><span class="lineno"> 2818</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l02819"></a><span class="lineno"> 2819</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l02820"></a><span class="lineno"> 2820</span>&#160;    }</div>
+<div class="line"><a name="l02821"></a><span class="lineno"> 2821</span>&#160; </div>
+<div class="line"><a name="l02822"></a><span class="lineno"> 2822</span>&#160;    <span class="comment">/* The target ULT should be different. */</span></div>
+<div class="line"><a name="l02823"></a><span class="lineno"> 2823</span>&#160;    ABTI_ASSERT(p_thread != p_self_thread);</div>
+<div class="line"><a name="l02824"></a><span class="lineno"> 2824</span>&#160; </div>
+<div class="line"><a name="l02825"></a><span class="lineno"> 2825</span>&#160;    ABTI_ythread *p_ythread = ABTI_thread_get_ythread_or_null(p_thread);</div>
+<div class="line"><a name="l02826"></a><span class="lineno"> 2826</span>&#160;    <span class="keywordflow">if</span> (!p_ythread) {</div>
+<div class="line"><a name="l02827"></a><span class="lineno"> 2827</span>&#160;        <a class="code" href="../../d3/de7/thread_8c.html#ac4a0f18fe68ed5c4fa85fc432f538f8a">thread_join_yield_thread</a>(&amp;p_local_xstream, p_self, p_thread);</div>
+<div class="line"><a name="l02828"></a><span class="lineno"> 2828</span>&#160;        *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
+<div class="line"><a name="l02829"></a><span class="lineno"> 2829</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l02830"></a><span class="lineno"> 2830</span>&#160;    }</div>
+<div class="line"><a name="l02831"></a><span class="lineno"> 2831</span>&#160; </div>
+<div class="line"><a name="l02832"></a><span class="lineno"> 2832</span>&#160;    <span class="comment">/* Tell p_ythread that there has been a join request. */</span></div>
+<div class="line"><a name="l02833"></a><span class="lineno"> 2833</span>&#160;    <span class="comment">/* If request already has ABTI_THREAD_REQ_JOIN, p_ythread is</span></div>
+<div class="line"><a name="l02834"></a><span class="lineno"> 2834</span>&#160;<span class="comment">     * terminating. We can&#39;t block p_self in this case. */</span></div>
+<div class="line"><a name="l02835"></a><span class="lineno"> 2835</span>&#160;    uint32_t req = ABTD_atomic_fetch_or_uint32(&amp;p_ythread-&gt;thread.request,</div>
+<div class="line"><a name="l02836"></a><span class="lineno"> 2836</span>&#160;                                               ABTI_THREAD_REQ_JOIN);</div>
+<div class="line"><a name="l02837"></a><span class="lineno"> 2837</span>&#160;    <span class="keywordflow">if</span> (req &amp; ABTI_THREAD_REQ_JOIN) {</div>
+<div class="line"><a name="l02838"></a><span class="lineno"> 2838</span>&#160;        <a class="code" href="../../d3/de7/thread_8c.html#ac4a0f18fe68ed5c4fa85fc432f538f8a">thread_join_yield_thread</a>(&amp;p_local_xstream, p_self, &amp;p_ythread-&gt;thread);</div>
+<div class="line"><a name="l02839"></a><span class="lineno"> 2839</span>&#160;        *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
+<div class="line"><a name="l02840"></a><span class="lineno"> 2840</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l02841"></a><span class="lineno"> 2841</span>&#160;    }</div>
+<div class="line"><a name="l02842"></a><span class="lineno"> 2842</span>&#160; </div>
+<div class="line"><a name="l02843"></a><span class="lineno"> 2843</span>&#160;    ABTI_ythread_set_blocked(p_self);</div>
+<div class="line"><a name="l02844"></a><span class="lineno"> 2844</span>&#160;    <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[U%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] blocked to join U%&quot;</span> PRIu64 <span class="stringliteral">&quot;\n&quot;</span>,</div>
+<div class="line"><a name="l02845"></a><span class="lineno"> 2845</span>&#160;              ABTI_thread_get_id(&amp;p_self-&gt;thread),</div>
+<div class="line"><a name="l02846"></a><span class="lineno"> 2846</span>&#160;              p_self-&gt;thread.p_last_xstream-&gt;rank,</div>
+<div class="line"><a name="l02847"></a><span class="lineno"> 2847</span>&#160;              ABTI_thread_get_id(&amp;p_ythread-&gt;thread));</div>
+<div class="line"><a name="l02848"></a><span class="lineno"> 2848</span>&#160; </div>
+<div class="line"><a name="l02849"></a><span class="lineno"> 2849</span>&#160;    <span class="comment">/* Set the link in the context of the target ULT. This p_link might be</span></div>
+<div class="line"><a name="l02850"></a><span class="lineno"> 2850</span>&#160;<span class="comment">     * read by p_ythread running on another ES in parallel, so release-store</span></div>
+<div class="line"><a name="l02851"></a><span class="lineno"> 2851</span>&#160;<span class="comment">     * is needed here. */</span></div>
+<div class="line"><a name="l02852"></a><span class="lineno"> 2852</span>&#160;    ABTD_atomic_release_store_ythread_context_ptr(&amp;p_ythread-&gt;ctx.p_link,</div>
+<div class="line"><a name="l02853"></a><span class="lineno"> 2853</span>&#160;                                                  &amp;p_self-&gt;ctx);</div>
+<div class="line"><a name="l02854"></a><span class="lineno"> 2854</span>&#160; </div>
+<div class="line"><a name="l02855"></a><span class="lineno"> 2855</span>&#160;    <span class="comment">/* Suspend the current ULT */</span></div>
+<div class="line"><a name="l02856"></a><span class="lineno"> 2856</span>&#160;    ABTI_ythread_suspend(&amp;p_local_xstream, p_self,</div>
+<div class="line"><a name="l02857"></a><span class="lineno"> 2857</span>&#160;                         <a class="code" href="../../de/d0d/group__TOOL.html#ggac601a9db309d1a30954d43fc82d9602fa159c5b0bea263cf48764c0c557848492">ABT_SYNC_EVENT_TYPE_THREAD_JOIN</a>, (<span class="keywordtype">void</span> *)p_ythread);</div>
+<div class="line"><a name="l02858"></a><span class="lineno"> 2858</span>&#160;    *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
+<div class="line"><a name="l02859"></a><span class="lineno"> 2859</span>&#160; </div>
+<div class="line"><a name="l02860"></a><span class="lineno"> 2860</span>&#160;    <span class="comment">/* Resume */</span></div>
+<div class="line"><a name="l02861"></a><span class="lineno"> 2861</span>&#160;    <span class="comment">/* If p_self&#39;s state is BLOCKED, the target ULT has terminated on the same</span></div>
+<div class="line"><a name="l02862"></a><span class="lineno"> 2862</span>&#160;<span class="comment">     * ES as p_self&#39;s ES and the control has come from the target ULT.</span></div>
+<div class="line"><a name="l02863"></a><span class="lineno"> 2863</span>&#160;<span class="comment">     * Otherwise, the target ULT had been migrated to a different ES, p_self</span></div>
+<div class="line"><a name="l02864"></a><span class="lineno"> 2864</span>&#160;<span class="comment">     * has been resumed by p_self&#39;s scheduler.  In the latter case, we don&#39;t</span></div>
+<div class="line"><a name="l02865"></a><span class="lineno"> 2865</span>&#160;<span class="comment">     * need to change p_self&#39;s state. */</span></div>
+<div class="line"><a name="l02866"></a><span class="lineno"> 2866</span>&#160;    <span class="keywordflow">if</span> (ABTD_atomic_relaxed_load_int(&amp;p_self-&gt;thread.state) ==</div>
+<div class="line"><a name="l02867"></a><span class="lineno"> 2867</span>&#160;        <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089a3638f9519e790388f3bbc7e35f30fece">ABT_THREAD_STATE_BLOCKED</a>) {</div>
+<div class="line"><a name="l02868"></a><span class="lineno"> 2868</span>&#160;        ABTD_atomic_release_store_int(&amp;p_self-&gt;thread.state,</div>
+<div class="line"><a name="l02869"></a><span class="lineno"> 2869</span>&#160;                                      <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089ae0a7acd9ed47699f063ee2128f9f7ef6">ABT_THREAD_STATE_RUNNING</a>);</div>
+<div class="line"><a name="l02870"></a><span class="lineno"> 2870</span>&#160;        ABTI_pool_dec_num_blocked(p_self-&gt;thread.p_pool);</div>
+<div class="line"><a name="l02871"></a><span class="lineno"> 2871</span>&#160;        <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[U%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] resume after join\n&quot;</span>,</div>
+<div class="line"><a name="l02872"></a><span class="lineno"> 2872</span>&#160;                  ABTI_thread_get_id(&amp;p_self-&gt;thread),</div>
+<div class="line"><a name="l02873"></a><span class="lineno"> 2873</span>&#160;                  p_self-&gt;thread.p_last_xstream-&gt;rank);</div>
+<div class="line"><a name="l02874"></a><span class="lineno"> 2874</span>&#160;        ABTI_tool_event_thread_join(*pp_local, p_thread, &amp;p_self-&gt;thread);</div>
+<div class="line"><a name="l02875"></a><span class="lineno"> 2875</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l02876"></a><span class="lineno"> 2876</span>&#160;        <span class="comment">/* Use a yield-based method. */</span></div>
+<div class="line"><a name="l02877"></a><span class="lineno"> 2877</span>&#160;        <a class="code" href="../../d3/de7/thread_8c.html#ac4a0f18fe68ed5c4fa85fc432f538f8a">thread_join_yield_thread</a>(&amp;p_local_xstream, p_self, &amp;p_ythread-&gt;thread);</div>
+<div class="line"><a name="l02878"></a><span class="lineno"> 2878</span>&#160;        *pp_local = ABTI_xstream_get_local(p_local_xstream);</div>
+<div class="line"><a name="l02879"></a><span class="lineno"> 2879</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l02880"></a><span class="lineno"> 2880</span>&#160;    }</div>
+<div class="line"><a name="l02881"></a><span class="lineno"> 2881</span>&#160;}</div>
+<div class="line"><a name="l02882"></a><span class="lineno"> 2882</span>&#160; </div>
+<div class="line"><a name="l02883"></a><span class="lineno"> 2883</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/de7/thread_8c.html#aea00fcf9fbb062e48dc8ca2af8539996">thread_root_func</a>(<span class="keywordtype">void</span> *arg)</div>
+<div class="line"><a name="l02884"></a><span class="lineno"> 2884</span>&#160;{</div>
+<div class="line"><a name="l02885"></a><span class="lineno"><a class="line" href="../../d3/de7/thread_8c.html#aea00fcf9fbb062e48dc8ca2af8539996"> 2885</a></span>&#160;    <span class="comment">/* root thread is working on a special context, so it should not rely on</span></div>
+<div class="line"><a name="l02886"></a><span class="lineno"> 2886</span>&#160;<span class="comment">     * functionality that needs yield. */</span></div>
+<div class="line"><a name="l02887"></a><span class="lineno"> 2887</span>&#160;    ABTI_global *p_global = ABTI_global_get_global();</div>
+<div class="line"><a name="l02888"></a><span class="lineno"> 2888</span>&#160;    ABTI_local *p_local = ABTI_local_get_local();</div>
+<div class="line"><a name="l02889"></a><span class="lineno"> 2889</span>&#160;    ABTI_xstream *p_local_xstream = ABTI_local_get_xstream(p_local);</div>
+<div class="line"><a name="l02890"></a><span class="lineno"> 2890</span>&#160;    ABTI_ASSERT(ABTD_atomic_relaxed_load_int(&amp;p_local_xstream-&gt;state) ==</div>
+<div class="line"><a name="l02891"></a><span class="lineno"> 2891</span>&#160;                <a class="code" href="../../d3/def/group__ES.html#gga092b58d9ab171ff3429b78afc1876cb0a6b190da4955f53fbd0309bccd71cffbd">ABT_XSTREAM_STATE_RUNNING</a>);</div>
 <div class="line"><a name="l02892"></a><span class="lineno"> 2892</span>&#160; </div>
-<div class="line"><a name="l02893"></a><span class="lineno"> 2893</span>&#160;    <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l02894"></a><span class="lineno"> 2894</span>&#160;        <a class="code" href="../../de/dab/group__UNIT.html#ga2766d98ace73a538d42ff64a8b999baf">ABT_unit</a> unit = ABTI_pool_pop(p_root_pool);</div>
-<div class="line"><a name="l02895"></a><span class="lineno"> 2895</span>&#160;        <span class="keywordflow">if</span> (unit != <a class="code" href="../../d5/d7d/abt_8h.html#ad6965c86292ec2b77ca0dd2797b3f4e7">ABT_UNIT_NULL</a>) {</div>
-<div class="line"><a name="l02896"></a><span class="lineno"> 2896</span>&#160;            ABTI_xstream *p_xstream = p_local_xstream;</div>
-<div class="line"><a name="l02897"></a><span class="lineno"> 2897</span>&#160;            ABTI_xstream_run_unit(p_global, &amp;p_xstream, unit, p_root_pool);</div>
-<div class="line"><a name="l02898"></a><span class="lineno"> 2898</span>&#160;            <span class="comment">/* The root thread must be executed on the same execution stream. */</span></div>
-<div class="line"><a name="l02899"></a><span class="lineno"> 2899</span>&#160;            ABTI_ASSERT(p_xstream == p_local_xstream);</div>
-<div class="line"><a name="l02900"></a><span class="lineno"> 2900</span>&#160;        }</div>
-<div class="line"><a name="l02901"></a><span class="lineno"> 2901</span>&#160;    } <span class="keywordflow">while</span> (ABTD_atomic_acquire_load_int(</div>
-<div class="line"><a name="l02902"></a><span class="lineno"> 2902</span>&#160;                 &amp;p_local_xstream-&gt;p_main_sched-&gt;p_ythread-&gt;thread.state) !=</div>
-<div class="line"><a name="l02903"></a><span class="lineno"> 2903</span>&#160;             <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089ade61dddc74434ee2705c536698d07149">ABT_THREAD_STATE_TERMINATED</a>);</div>
-<div class="line"><a name="l02904"></a><span class="lineno"> 2904</span>&#160;    <span class="comment">/* The main scheduler thread finishes. */</span></div>
-<div class="line"><a name="l02905"></a><span class="lineno"> 2905</span>&#160; </div>
-<div class="line"><a name="l02906"></a><span class="lineno"> 2906</span>&#160;    <span class="comment">/* Set the ES&#39;s state as TERMINATED */</span></div>
-<div class="line"><a name="l02907"></a><span class="lineno"> 2907</span>&#160;    ABTD_atomic_release_store_int(&amp;p_local_xstream-&gt;state,</div>
-<div class="line"><a name="l02908"></a><span class="lineno"> 2908</span>&#160;                                  <a class="code" href="../../d3/def/group__ES.html#gga092b58d9ab171ff3429b78afc1876cb0a129b7977595640346f5f360996a004f1">ABT_XSTREAM_STATE_TERMINATED</a>);</div>
+<div class="line"><a name="l02893"></a><span class="lineno"> 2893</span>&#160;    ABTI_ythread *p_root_ythread = p_local_xstream-&gt;p_root_ythread;</div>
+<div class="line"><a name="l02894"></a><span class="lineno"> 2894</span>&#160;    p_local_xstream-&gt;p_thread = &amp;p_root_ythread-&gt;thread;</div>
+<div class="line"><a name="l02895"></a><span class="lineno"> 2895</span>&#160;    ABTI_pool *p_root_pool = p_local_xstream-&gt;p_root_pool;</div>
+<div class="line"><a name="l02896"></a><span class="lineno"> 2896</span>&#160; </div>
+<div class="line"><a name="l02897"></a><span class="lineno"> 2897</span>&#160;    <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l02898"></a><span class="lineno"> 2898</span>&#160;        <a class="code" href="../../de/dab/group__UNIT.html#ga2766d98ace73a538d42ff64a8b999baf">ABT_unit</a> unit = ABTI_pool_pop(p_root_pool);</div>
+<div class="line"><a name="l02899"></a><span class="lineno"> 2899</span>&#160;        <span class="keywordflow">if</span> (unit != <a class="code" href="../../d5/d7d/abt_8h.html#ad6965c86292ec2b77ca0dd2797b3f4e7">ABT_UNIT_NULL</a>) {</div>
+<div class="line"><a name="l02900"></a><span class="lineno"> 2900</span>&#160;            ABTI_xstream *p_xstream = p_local_xstream;</div>
+<div class="line"><a name="l02901"></a><span class="lineno"> 2901</span>&#160;            ABTI_xstream_run_unit(p_global, &amp;p_xstream, unit, p_root_pool);</div>
+<div class="line"><a name="l02902"></a><span class="lineno"> 2902</span>&#160;            <span class="comment">/* The root thread must be executed on the same execution stream. */</span></div>
+<div class="line"><a name="l02903"></a><span class="lineno"> 2903</span>&#160;            ABTI_ASSERT(p_xstream == p_local_xstream);</div>
+<div class="line"><a name="l02904"></a><span class="lineno"> 2904</span>&#160;        }</div>
+<div class="line"><a name="l02905"></a><span class="lineno"> 2905</span>&#160;    } <span class="keywordflow">while</span> (ABTD_atomic_acquire_load_int(</div>
+<div class="line"><a name="l02906"></a><span class="lineno"> 2906</span>&#160;                 &amp;p_local_xstream-&gt;p_main_sched-&gt;p_ythread-&gt;thread.state) !=</div>
+<div class="line"><a name="l02907"></a><span class="lineno"> 2907</span>&#160;             <a class="code" href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089ade61dddc74434ee2705c536698d07149">ABT_THREAD_STATE_TERMINATED</a>);</div>
+<div class="line"><a name="l02908"></a><span class="lineno"> 2908</span>&#160;    <span class="comment">/* The main scheduler thread finishes. */</span></div>
 <div class="line"><a name="l02909"></a><span class="lineno"> 2909</span>&#160; </div>
-<div class="line"><a name="l02910"></a><span class="lineno"> 2910</span>&#160;    <span class="keywordflow">if</span> (p_local_xstream-&gt;type == ABTI_XSTREAM_TYPE_PRIMARY) {</div>
-<div class="line"><a name="l02911"></a><span class="lineno"> 2911</span>&#160;        <span class="comment">/* Let us jump back to the primary thread (then finalize Argobots) */</span></div>
-<div class="line"><a name="l02912"></a><span class="lineno"> 2912</span>&#160;        ABTD_ythread_finish_context(&amp;p_root_ythread-&gt;ctx,</div>
-<div class="line"><a name="l02913"></a><span class="lineno"> 2913</span>&#160;                                    &amp;p_global-&gt;p_primary_ythread-&gt;ctx);</div>
-<div class="line"><a name="l02914"></a><span class="lineno"> 2914</span>&#160;    }</div>
-<div class="line"><a name="l02915"></a><span class="lineno"> 2915</span>&#160;}</div>
-<div class="line"><a name="l02916"></a><span class="lineno"> 2916</span>&#160; </div>
-<div class="line"><a name="l02917"></a><span class="lineno"> 2917</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/de7/thread_8c.html#a270fd6a996bd63003620eb993d098f76">thread_main_sched_func</a>(<span class="keywordtype">void</span> *arg)</div>
-<div class="line"><a name="l02918"></a><span class="lineno"> 2918</span>&#160;{</div>
-<div class="line"><a name="l02919"></a><span class="lineno"><a class="line" href="../../d3/de7/thread_8c.html#a270fd6a996bd63003620eb993d098f76"> 2919</a></span>&#160;    ABTI_local *p_local = ABTI_local_get_local();</div>
-<div class="line"><a name="l02920"></a><span class="lineno"> 2920</span>&#160;    ABTI_xstream *p_local_xstream = ABTI_local_get_xstream(p_local);</div>
-<div class="line"><a name="l02921"></a><span class="lineno"> 2921</span>&#160; </div>
-<div class="line"><a name="l02922"></a><span class="lineno"> 2922</span>&#160;    <span class="keywordflow">while</span> (1) {</div>
-<div class="line"><a name="l02923"></a><span class="lineno"> 2923</span>&#160;        <span class="comment">/* Execute the run function of scheduler */</span></div>
-<div class="line"><a name="l02924"></a><span class="lineno"> 2924</span>&#160;        ABTI_sched *p_sched = p_local_xstream-&gt;p_main_sched;</div>
-<div class="line"><a name="l02925"></a><span class="lineno"> 2925</span>&#160;        ABTI_ASSERT(p_local_xstream-&gt;p_thread == &amp;p_sched-&gt;p_ythread-&gt;thread);</div>
-<div class="line"><a name="l02926"></a><span class="lineno"> 2926</span>&#160; </div>
-<div class="line"><a name="l02927"></a><span class="lineno"> 2927</span>&#160;        <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[S%&quot;</span> PRIu64 <span class="stringliteral">&quot;] start\n&quot;</span>, p_sched-&gt;id);</div>
-<div class="line"><a name="l02928"></a><span class="lineno"> 2928</span>&#160;        p_sched-&gt;run(ABTI_sched_get_handle(p_sched));</div>
-<div class="line"><a name="l02929"></a><span class="lineno"> 2929</span>&#160;        <span class="comment">/* From here the main scheduler can have been already replaced. */</span></div>
-<div class="line"><a name="l02930"></a><span class="lineno"> 2930</span>&#160;        <span class="comment">/* The main scheduler must be executed on the same execution stream. */</span></div>
-<div class="line"><a name="l02931"></a><span class="lineno"> 2931</span>&#160;        ABTI_ASSERT(p_local == ABTI_local_get_local_uninlined());</div>
-<div class="line"><a name="l02932"></a><span class="lineno"> 2932</span>&#160;        <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[S%&quot;</span> PRIu64 <span class="stringliteral">&quot;] end\n&quot;</span>, p_sched-&gt;id);</div>
-<div class="line"><a name="l02933"></a><span class="lineno"> 2933</span>&#160; </div>
-<div class="line"><a name="l02934"></a><span class="lineno"> 2934</span>&#160;        p_sched = p_local_xstream-&gt;p_main_sched;</div>
-<div class="line"><a name="l02935"></a><span class="lineno"> 2935</span>&#160;        uint32_t request = ABTD_atomic_acquire_load_uint32(</div>
-<div class="line"><a name="l02936"></a><span class="lineno"> 2936</span>&#160;            &amp;p_sched-&gt;p_ythread-&gt;thread.request);</div>
+<div class="line"><a name="l02910"></a><span class="lineno"> 2910</span>&#160;    <span class="comment">/* Set the ES&#39;s state as TERMINATED */</span></div>
+<div class="line"><a name="l02911"></a><span class="lineno"> 2911</span>&#160;    ABTD_atomic_release_store_int(&amp;p_local_xstream-&gt;state,</div>
+<div class="line"><a name="l02912"></a><span class="lineno"> 2912</span>&#160;                                  <a class="code" href="../../d3/def/group__ES.html#gga092b58d9ab171ff3429b78afc1876cb0a129b7977595640346f5f360996a004f1">ABT_XSTREAM_STATE_TERMINATED</a>);</div>
+<div class="line"><a name="l02913"></a><span class="lineno"> 2913</span>&#160; </div>
+<div class="line"><a name="l02914"></a><span class="lineno"> 2914</span>&#160;    <span class="keywordflow">if</span> (p_local_xstream-&gt;type == ABTI_XSTREAM_TYPE_PRIMARY) {</div>
+<div class="line"><a name="l02915"></a><span class="lineno"> 2915</span>&#160;        <span class="comment">/* Let us jump back to the primary thread (then finalize Argobots) */</span></div>
+<div class="line"><a name="l02916"></a><span class="lineno"> 2916</span>&#160;        ABTD_ythread_finish_context(&amp;p_root_ythread-&gt;ctx,</div>
+<div class="line"><a name="l02917"></a><span class="lineno"> 2917</span>&#160;                                    &amp;p_global-&gt;p_primary_ythread-&gt;ctx);</div>
+<div class="line"><a name="l02918"></a><span class="lineno"> 2918</span>&#160;    }</div>
+<div class="line"><a name="l02919"></a><span class="lineno"> 2919</span>&#160;}</div>
+<div class="line"><a name="l02920"></a><span class="lineno"> 2920</span>&#160; </div>
+<div class="line"><a name="l02921"></a><span class="lineno"> 2921</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/de7/thread_8c.html#a270fd6a996bd63003620eb993d098f76">thread_main_sched_func</a>(<span class="keywordtype">void</span> *arg)</div>
+<div class="line"><a name="l02922"></a><span class="lineno"> 2922</span>&#160;{</div>
+<div class="line"><a name="l02923"></a><span class="lineno"><a class="line" href="../../d3/de7/thread_8c.html#a270fd6a996bd63003620eb993d098f76"> 2923</a></span>&#160;    ABTI_local *p_local = ABTI_local_get_local();</div>
+<div class="line"><a name="l02924"></a><span class="lineno"> 2924</span>&#160;    ABTI_xstream *p_local_xstream = ABTI_local_get_xstream(p_local);</div>
+<div class="line"><a name="l02925"></a><span class="lineno"> 2925</span>&#160; </div>
+<div class="line"><a name="l02926"></a><span class="lineno"> 2926</span>&#160;    <span class="keywordflow">while</span> (1) {</div>
+<div class="line"><a name="l02927"></a><span class="lineno"> 2927</span>&#160;        <span class="comment">/* Execute the run function of scheduler */</span></div>
+<div class="line"><a name="l02928"></a><span class="lineno"> 2928</span>&#160;        ABTI_sched *p_sched = p_local_xstream-&gt;p_main_sched;</div>
+<div class="line"><a name="l02929"></a><span class="lineno"> 2929</span>&#160;        ABTI_ASSERT(p_local_xstream-&gt;p_thread == &amp;p_sched-&gt;p_ythread-&gt;thread);</div>
+<div class="line"><a name="l02930"></a><span class="lineno"> 2930</span>&#160; </div>
+<div class="line"><a name="l02931"></a><span class="lineno"> 2931</span>&#160;        <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[S%&quot;</span> PRIu64 <span class="stringliteral">&quot;] start\n&quot;</span>, p_sched-&gt;id);</div>
+<div class="line"><a name="l02932"></a><span class="lineno"> 2932</span>&#160;        p_sched-&gt;run(ABTI_sched_get_handle(p_sched));</div>
+<div class="line"><a name="l02933"></a><span class="lineno"> 2933</span>&#160;        <span class="comment">/* From here the main scheduler can have been already replaced. */</span></div>
+<div class="line"><a name="l02934"></a><span class="lineno"> 2934</span>&#160;        <span class="comment">/* The main scheduler must be executed on the same execution stream. */</span></div>
+<div class="line"><a name="l02935"></a><span class="lineno"> 2935</span>&#160;        ABTI_ASSERT(p_local == ABTI_local_get_local_uninlined());</div>
+<div class="line"><a name="l02936"></a><span class="lineno"> 2936</span>&#160;        <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[S%&quot;</span> PRIu64 <span class="stringliteral">&quot;] end\n&quot;</span>, p_sched-&gt;id);</div>
 <div class="line"><a name="l02937"></a><span class="lineno"> 2937</span>&#160; </div>
-<div class="line"><a name="l02938"></a><span class="lineno"> 2938</span>&#160;        <span class="comment">/* If there is an exit or a cancel request, the ES terminates</span></div>
-<div class="line"><a name="l02939"></a><span class="lineno"> 2939</span>&#160;<span class="comment">         * regardless of remaining work units. */</span></div>
-<div class="line"><a name="l02940"></a><span class="lineno"> 2940</span>&#160;        <span class="keywordflow">if</span> (request &amp; (ABTI_THREAD_REQ_TERMINATE | ABTI_THREAD_REQ_CANCEL))</div>
-<div class="line"><a name="l02941"></a><span class="lineno"> 2941</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l02942"></a><span class="lineno"> 2942</span>&#160; </div>
-<div class="line"><a name="l02943"></a><span class="lineno"> 2943</span>&#160;        <span class="comment">/* When join is requested, the ES terminates after finishing</span></div>
-<div class="line"><a name="l02944"></a><span class="lineno"> 2944</span>&#160;<span class="comment">         * execution of all work units. */</span></div>
-<div class="line"><a name="l02945"></a><span class="lineno"> 2945</span>&#160;        <span class="keywordflow">if</span> ((ABTD_atomic_relaxed_load_uint32(&amp;p_sched-&gt;request) &amp;</div>
-<div class="line"><a name="l02946"></a><span class="lineno"> 2946</span>&#160;             ABTI_SCHED_REQ_FINISH) &amp;&amp;</div>
-<div class="line"><a name="l02947"></a><span class="lineno"> 2947</span>&#160;            ABTI_sched_get_effective_size(p_local, p_sched) == 0) {</div>
-<div class="line"><a name="l02948"></a><span class="lineno"> 2948</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l02949"></a><span class="lineno"> 2949</span>&#160;        }</div>
-<div class="line"><a name="l02950"></a><span class="lineno"> 2950</span>&#160;    }</div>
-<div class="line"><a name="l02951"></a><span class="lineno"> 2951</span>&#160;    <span class="comment">/* Finish this thread and goes back to the root thread. */</span></div>
-<div class="line"><a name="l02952"></a><span class="lineno"> 2952</span>&#160;}</div>
-<div class="line"><a name="l02953"></a><span class="lineno"> 2953</span>&#160; </div>
-<div class="line"><a name="l02954"></a><span class="lineno"> 2954</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../de/dab/group__UNIT.html#ga8f4ca28fbf35ddd6a922e65f49723bee">ABT_unit_id</a> <a class="code" href="../../d3/de7/thread_8c.html#ade9fa54421ef7744879a7a0b36572471">thread_get_new_id</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l02955"></a><span class="lineno"> 2955</span>&#160;{</div>
-<div class="line"><a name="l02956"></a><span class="lineno"><a class="line" href="../../d3/de7/thread_8c.html#ade9fa54421ef7744879a7a0b36572471"> 2956</a></span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../de/dab/group__UNIT.html#ga8f4ca28fbf35ddd6a922e65f49723bee">ABT_unit_id</a>)ABTD_atomic_fetch_add_uint64(&amp;<a class="code" href="../../d3/de7/thread_8c.html#a10381f38fd2b3f58b4ecae996e7135cc">g_thread_id</a>, 1);</div>
-<div class="line"><a name="l02957"></a><span class="lineno"> 2957</span>&#160;}</div>
+<div class="line"><a name="l02938"></a><span class="lineno"> 2938</span>&#160;        p_sched = p_local_xstream-&gt;p_main_sched;</div>
+<div class="line"><a name="l02939"></a><span class="lineno"> 2939</span>&#160;        uint32_t request = ABTD_atomic_acquire_load_uint32(</div>
+<div class="line"><a name="l02940"></a><span class="lineno"> 2940</span>&#160;            &amp;p_sched-&gt;p_ythread-&gt;thread.request);</div>
+<div class="line"><a name="l02941"></a><span class="lineno"> 2941</span>&#160; </div>
+<div class="line"><a name="l02942"></a><span class="lineno"> 2942</span>&#160;        <span class="comment">/* If there is an exit or a cancel request, the ES terminates</span></div>
+<div class="line"><a name="l02943"></a><span class="lineno"> 2943</span>&#160;<span class="comment">         * regardless of remaining work units. */</span></div>
+<div class="line"><a name="l02944"></a><span class="lineno"> 2944</span>&#160;        <span class="keywordflow">if</span> (request &amp; (ABTI_THREAD_REQ_TERMINATE | ABTI_THREAD_REQ_CANCEL))</div>
+<div class="line"><a name="l02945"></a><span class="lineno"> 2945</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l02946"></a><span class="lineno"> 2946</span>&#160; </div>
+<div class="line"><a name="l02947"></a><span class="lineno"> 2947</span>&#160;        <span class="comment">/* When join is requested, the ES terminates after finishing</span></div>
+<div class="line"><a name="l02948"></a><span class="lineno"> 2948</span>&#160;<span class="comment">         * execution of all work units. */</span></div>
+<div class="line"><a name="l02949"></a><span class="lineno"> 2949</span>&#160;        <span class="keywordflow">if</span> ((ABTD_atomic_relaxed_load_uint32(&amp;p_sched-&gt;request) &amp;</div>
+<div class="line"><a name="l02950"></a><span class="lineno"> 2950</span>&#160;             ABTI_SCHED_REQ_FINISH) &amp;&amp;</div>
+<div class="line"><a name="l02951"></a><span class="lineno"> 2951</span>&#160;            ABTI_sched_get_effective_size(p_local, p_sched) == 0) {</div>
+<div class="line"><a name="l02952"></a><span class="lineno"> 2952</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l02953"></a><span class="lineno"> 2953</span>&#160;        }</div>
+<div class="line"><a name="l02954"></a><span class="lineno"> 2954</span>&#160;    }</div>
+<div class="line"><a name="l02955"></a><span class="lineno"> 2955</span>&#160;    <span class="comment">/* Finish this thread and goes back to the root thread. */</span></div>
+<div class="line"><a name="l02956"></a><span class="lineno"> 2956</span>&#160;}</div>
+<div class="line"><a name="l02957"></a><span class="lineno"> 2957</span>&#160; </div>
+<div class="line"><a name="l02958"></a><span class="lineno"> 2958</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../de/dab/group__UNIT.html#ga8f4ca28fbf35ddd6a922e65f49723bee">ABT_unit_id</a> <a class="code" href="../../d3/de7/thread_8c.html#ade9fa54421ef7744879a7a0b36572471">thread_get_new_id</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l02959"></a><span class="lineno"> 2959</span>&#160;{</div>
+<div class="line"><a name="l02960"></a><span class="lineno"><a class="line" href="../../d3/de7/thread_8c.html#ade9fa54421ef7744879a7a0b36572471"> 2960</a></span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../de/dab/group__UNIT.html#ga8f4ca28fbf35ddd6a922e65f49723bee">ABT_unit_id</a>)ABTD_atomic_fetch_add_uint64(&amp;<a class="code" href="../../d3/de7/thread_8c.html#a10381f38fd2b3f58b4ecae996e7135cc">g_thread_id</a>, 1);</div>
+<div class="line"><a name="l02961"></a><span class="lineno"> 2961</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="agroup__ULT_html_ggaa8e839d537fd79d677108d42d4176089ade61dddc74434ee2705c536698d07149"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089ade61dddc74434ee2705c536698d07149">ABT_THREAD_STATE_TERMINATED</a></div><div class="ttdeci">@ ABT_THREAD_STATE_TERMINATED</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00423">abt.h:423</a></div></div>
 <div class="ttc" id="agroup__ULT_html_gafa5495103e2bf9968136c381634fc242"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#gafa5495103e2bf9968136c381634fc242">ABT_thread_migrate_to_xstream</a></div><div class="ttdeci">int ABT_thread_migrate_to_xstream(ABT_thread thread, ABT_xstream xstream)</div><div class="ttdoc">Request a migration of a work unit to a specific execution stream.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l01259">thread.c:1259</a></div></div>
@@ -1729,7 +1733,7 @@ $(function() {
 <div class="ttc" id="agroup__ULT_html_ga748ab622b69796462333725a2513db1a"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ga748ab622b69796462333725a2513db1a">ABT_thread_is_primary</a></div><div class="ttdeci">int ABT_thread_is_primary(ABT_thread thread, ABT_bool *is_primary)</div><div class="ttdoc">Check if a work unit is the primary ULT.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l01778">thread.c:1778</a></div></div>
 <div class="ttc" id="aabt_8h_html_a28854ddb62b26e4a2ee42132671bbef0"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#a28854ddb62b26e4a2ee42132671bbef0">ABT_bool</a></div><div class="ttdeci">int ABT_bool</div><div class="ttdoc">Boolean type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01001">abt.h:1001</a></div></div>
 <div class="ttc" id="agroup__ULT_html_ggaa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089a87eb81bc600c1ceedc3e7c32cc7ea53a">ABT_THREAD_STATE_READY</a></div><div class="ttdeci">@ ABT_THREAD_STATE_READY</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00417">abt.h:417</a></div></div>
-<div class="ttc" id="athread_8c_html_a270fd6a996bd63003620eb993d098f76"><div class="ttname"><a href="../../d3/de7/thread_8c.html#a270fd6a996bd63003620eb993d098f76">thread_main_sched_func</a></div><div class="ttdeci">static void thread_main_sched_func(void *arg)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02919">thread.c:2919</a></div></div>
+<div class="ttc" id="athread_8c_html_a270fd6a996bd63003620eb993d098f76"><div class="ttname"><a href="../../d3/de7/thread_8c.html#a270fd6a996bd63003620eb993d098f76">thread_main_sched_func</a></div><div class="ttdeci">static void thread_main_sched_func(void *arg)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02923">thread.c:2923</a></div></div>
 <div class="ttc" id="agroup__ULT_html_ga49abe49beb3075b18fa79cf943f49219"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ga49abe49beb3075b18fa79cf943f49219">ABT_thread_attr</a></div><div class="ttdeci">struct ABT_thread_attr_opaque * ABT_thread_attr</div><div class="ttdoc">ULT attribute handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00897">abt.h:897</a></div></div>
 <div class="ttc" id="agroup__ULT_html_ga186008e05c04170eed9ac74808619717"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ga186008e05c04170eed9ac74808619717">ABT_thread</a></div><div class="ttdeci">struct ABT_thread_opaque * ABT_thread</div><div class="ttdoc">Work unit handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00890">abt.h:890</a></div></div>
 <div class="ttc" id="athread_8c_html_a10381f38fd2b3f58b4ecae996e7135cc"><div class="ttname"><a href="../../d3/de7/thread_8c.html#a10381f38fd2b3f58b4ecae996e7135cc">g_thread_id</a></div><div class="ttdeci">static ABTD_atomic_uint64 g_thread_id</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02483">thread.c:2483</a></div></div>
@@ -1759,16 +1763,16 @@ $(function() {
 <div class="ttc" id="agroup__ES_html_gad79a2fa8571915e3cfcd1383fcebf6f3"><div class="ttname"><a href="../../d3/def/group__ES.html#gad79a2fa8571915e3cfcd1383fcebf6f3">ABT_xstream</a></div><div class="ttdeci">struct ABT_xstream_opaque * ABT_xstream</div><div class="ttdoc">Execution stream handle type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00789">abt.h:789</a></div></div>
 <div class="ttc" id="agroup__ULT_html_ga177c58ca9094dc7feeb93521e30ff2aa"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ga177c58ca9094dc7feeb93521e30ff2aa">ABT_thread_yield</a></div><div class="ttdeci">int ABT_thread_yield(void)</div><div class="ttdoc">Yield the calling ULT to its parent ULT.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l01136">thread.c:1136</a></div></div>
 <div class="ttc" id="agroup__ULT_html_ga1d0baa47137ae3c140ff3c125b8a21ed"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ga1d0baa47137ae3c140ff3c125b8a21ed">ABT_thread_get_last_pool</a></div><div class="ttdeci">int ABT_thread_get_last_pool(ABT_thread thread, ABT_pool *pool)</div><div class="ttdoc">Get the last pool of a work unit.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l00887">thread.c:887</a></div></div>
-<div class="ttc" id="athread_8c_html_af74e2b5f3cbb8bc7c7400a58c20c8c77"><div class="ttname"><a href="../../d3/de7/thread_8c.html#af74e2b5f3cbb8bc7c7400a58c20c8c77">thread_key_destructor_migration</a></div><div class="ttdeci">static void thread_key_destructor_migration(void *p_value)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02725">thread.c:2725</a></div></div>
+<div class="ttc" id="athread_8c_html_af74e2b5f3cbb8bc7c7400a58c20c8c77"><div class="ttname"><a href="../../d3/de7/thread_8c.html#af74e2b5f3cbb8bc7c7400a58c20c8c77">thread_key_destructor_migration</a></div><div class="ttdeci">static void thread_key_destructor_migration(void *p_value)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02729">thread.c:2729</a></div></div>
 <div class="ttc" id="aabtu_8h_html_aa2d633baee4486fb78890916840282af"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#aa2d633baee4486fb78890916840282af">ABTU_malloc</a></div><div class="ttdeci">static ABTU_ret_err int ABTU_malloc(size_t size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00218">abtu.h:218</a></div></div>
 <div class="ttc" id="aabti__log_8h_html_ac06cfc686322558f590c50eab8622ebd"><div class="ttname"><a href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a></div><div class="ttdeci">#define LOG_DEBUG(fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d5e/abti__log_8h_source.html#l00026">abti_log.h:26</a></div></div>
 <div class="ttc" id="agroup__ULT_html_ga15349fa8b9aa7e6f673f48e74ae75fc8"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ga15349fa8b9aa7e6f673f48e74ae75fc8">ABT_thread_set_associated_pool</a></div><div class="ttdeci">int ABT_thread_set_associated_pool(ABT_thread thread, ABT_pool pool)</div><div class="ttdoc">Set an associated pool for the target work unit.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l00966">thread.c:966</a></div></div>
 <div class="ttc" id="agroup__ULT_html_gaf5275b75a5184bca258e803370e44bea"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#gaf5275b75a5184bca258e803370e44bea">ABT_thread_join</a></div><div class="ttdeci">int ABT_thread_join(ABT_thread thread)</div><div class="ttdoc">Wait for a work unit to terminate.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l00530">thread.c:530</a></div></div>
 <div class="ttc" id="agroup__ERROR__CODE_html_gacf05d9acec49d0cee608490b84c28b88"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#gacf05d9acec49d0cee608490b84c28b88">ABT_ERR_INV_THREAD_ATTR</a></div><div class="ttdeci">#define ABT_ERR_INV_THREAD_ATTR</div><div class="ttdoc">Error code: invalid ULT attribute.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00181">abt.h:181</a></div></div>
-<div class="ttc" id="athread_8c_html_aea00fcf9fbb062e48dc8ca2af8539996"><div class="ttname"><a href="../../d3/de7/thread_8c.html#aea00fcf9fbb062e48dc8ca2af8539996">thread_root_func</a></div><div class="ttdeci">static void thread_root_func(void *arg)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02881">thread.c:2881</a></div></div>
+<div class="ttc" id="athread_8c_html_aea00fcf9fbb062e48dc8ca2af8539996"><div class="ttname"><a href="../../d3/de7/thread_8c.html#aea00fcf9fbb062e48dc8ca2af8539996">thread_root_func</a></div><div class="ttdeci">static void thread_root_func(void *arg)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02885">thread.c:2885</a></div></div>
 <div class="ttc" id="agroup__UNIT_html_ga2766d98ace73a538d42ff64a8b999baf"><div class="ttname"><a href="../../de/dab/group__UNIT.html#ga2766d98ace73a538d42ff64a8b999baf">ABT_unit</a></div><div class="ttdeci">struct ABT_unit_opaque * ABT_unit</div><div class="ttdoc">Work unit handle type for scheduling.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00869">abt.h:869</a></div></div>
 <div class="ttc" id="athread_8c_html_a670ed429e8d7aacfb0308c3ed46ce364"><div class="ttname"><a href="../../d3/de7/thread_8c.html#a670ed429e8d7aacfb0308c3ed46ce364">thread_migrate_to_pool</a></div><div class="ttdeci">static ABTU_ret_err int thread_migrate_to_pool(ABTI_global *p_global, ABTI_local *p_local, ABTI_thread *p_thread, ABTI_pool *p_pool)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02662">thread.c:2662</a></div></div>
-<div class="ttc" id="athread_8c_html_ad3ed34193107c252807c0e1c9898392f"><div class="ttname"><a href="../../d3/de7/thread_8c.html#ad3ed34193107c252807c0e1c9898392f">thread_join</a></div><div class="ttdeci">static void thread_join(ABTI_local **pp_local, ABTI_thread *p_thread)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02784">thread.c:2784</a></div></div>
+<div class="ttc" id="athread_8c_html_ad3ed34193107c252807c0e1c9898392f"><div class="ttname"><a href="../../d3/de7/thread_8c.html#ad3ed34193107c252807c0e1c9898392f">thread_join</a></div><div class="ttdeci">static void thread_join(ABTI_local **pp_local, ABTI_thread *p_thread)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02788">thread.c:2788</a></div></div>
 <div class="ttc" id="agroup__ULT_html_gacf91b0c5c7252f6e57ef253583635e7c"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#gacf91b0c5c7252f6e57ef253583635e7c">ABT_thread_is_unnamed</a></div><div class="ttdeci">int ABT_thread_is_unnamed(ABT_thread thread, ABT_bool *is_unnamed)</div><div class="ttdoc">Check if a work unit is unnamed.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l01816">thread.c:1816</a></div></div>
 <div class="ttc" id="aabtu_8h_html_a88220b7f81a0f629a08915843f37bedd"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a88220b7f81a0f629a08915843f37bedd">ABTU_calloc</a></div><div class="ttdeci">static ABTU_ret_err int ABTU_calloc(size_t num, size_t size, void **p_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00227">abtu.h:227</a></div></div>
 <div class="ttc" id="agroup__ERROR__CODE_html_ga41a49fcc566f48232217fa53d772c57f"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#ga41a49fcc566f48232217fa53d772c57f">ABT_ERR_MIGRATION_TARGET</a></div><div class="ttdeci">#define ABT_ERR_MIGRATION_TARGET</div><div class="ttdoc">Error code: error related to a migration target.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00360">abt.h:360</a></div></div>
@@ -1777,7 +1781,7 @@ $(function() {
 <div class="ttc" id="athread_8c_html_ade614c071175b1baa5107dcb0e86b2f4"><div class="ttname"><a href="../../d3/de7/thread_8c.html#ade614c071175b1baa5107dcb0e86b2f4">thread_key_destructor_stackable_sched</a></div><div class="ttdeci">static void thread_key_destructor_stackable_sched(void *p_value)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02711">thread.c:2711</a></div></div>
 <div class="ttc" id="agroup__ULT_html_ga5048aacb8a6d3c91ddaf6c933d008415"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ga5048aacb8a6d3c91ddaf6c933d008415">ABT_thread_set_arg</a></div><div class="ttdeci">int ABT_thread_set_arg(ABT_thread thread, void *arg)</div><div class="ttdoc">Set an argument for a work-unit function of a work unit.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l01973">thread.c:1973</a></div></div>
 <div class="ttc" id="agroup__ERROR__CODE_html_gacf7cd1bec0cd7f441708504429ee7fd3"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#gacf7cd1bec0cd7f441708504429ee7fd3">ABT_SUCCESS</a></div><div class="ttdeci">#define ABT_SUCCESS</div><div class="ttdoc">Error code: the routine returns successfully.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00092">abt.h:92</a></div></div>
-<div class="ttc" id="athread_8c_html_ade9fa54421ef7744879a7a0b36572471"><div class="ttname"><a href="../../d3/de7/thread_8c.html#ade9fa54421ef7744879a7a0b36572471">thread_get_new_id</a></div><div class="ttdeci">static ABT_unit_id thread_get_new_id(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02956">thread.c:2956</a></div></div>
+<div class="ttc" id="athread_8c_html_ade9fa54421ef7744879a7a0b36572471"><div class="ttname"><a href="../../d3/de7/thread_8c.html#ade9fa54421ef7744879a7a0b36572471">thread_get_new_id</a></div><div class="ttdeci">static ABT_unit_id thread_get_new_id(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02960">thread.c:2960</a></div></div>
 <div class="ttc" id="aabtu_8h_html_a071d8986b72b8f5d099cdd47979b5e81"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#a071d8986b72b8f5d099cdd47979b5e81">ABTU_ret_err</a></div><div class="ttdeci">#define ABTU_ret_err</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00138">abtu.h:138</a></div></div>
 <div class="ttc" id="agroup__ULT_html_gabe017b55ac9641198e73cdb99cbce8e9"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#gabe017b55ac9641198e73cdb99cbce8e9">ABT_thread_get_last_xstream</a></div><div class="ttdeci">int ABT_thread_get_last_xstream(ABT_thread thread, ABT_xstream *xstream)</div><div class="ttdoc">Get an execution stream associated with a work unit.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l00806">thread.c:806</a></div></div>
 <div class="ttc" id="agroup__ULT_html_gaa2646bfbabf0df851f964ae38a92804a"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#gaa2646bfbabf0df851f964ae38a92804a">ABT_thread_migrate</a></div><div class="ttdeci">int ABT_thread_migrate(ABT_thread thread)</div><div class="ttdoc">Request a migration of a work unit to any available execution stream.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l01505">thread.c:1505</a></div></div>
@@ -1794,8 +1798,8 @@ $(function() {
 <div class="ttc" id="agroup__ULT_html_ga68dc0d52cae397a965818516b34e0e09"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ga68dc0d52cae397a965818516b34e0e09">ABT_thread_is_migratable</a></div><div class="ttdeci">int ABT_thread_is_migratable(ABT_thread thread, ABT_bool *is_migratable)</div><div class="ttdoc">Get the migratability of a work unit.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l01736">thread.c:1736</a></div></div>
 <div class="ttc" id="agroup__ULT_html_ga73bd1f04ce57def336cb20cdec9b14bd"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ga73bd1f04ce57def336cb20cdec9b14bd">ABT_thread_create</a></div><div class="ttdeci">int ABT_thread_create(ABT_pool pool, void(*thread_func)(void *), void *arg, ABT_thread_attr attr, ABT_thread *newthread)</div><div class="ttdoc">Create a new ULT.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l00088">thread.c:88</a></div></div>
 <div class="ttc" id="aabtu_8h_html_af0f6a5e8ef4ccd33c1c2bdaf0fa905a3"><div class="ttname"><a href="../../d5/d09/abtu_8h.html#af0f6a5e8ef4ccd33c1c2bdaf0fa905a3">ABTU_free</a></div><div class="ttdeci">static void ABTU_free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d09/abtu_8h_source.html#l00211">abtu.h:211</a></div></div>
-<div class="ttc" id="athread_8c_html_a0d607194868d1432b8b3b5f57cfe30e7"><div class="ttname"><a href="../../d3/de7/thread_8c.html#a0d607194868d1432b8b3b5f57cfe30e7">thread_join_futexwait</a></div><div class="ttdeci">static void thread_join_futexwait(ABTI_thread *p_thread)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02741">thread.c:2741</a></div></div>
-<div class="ttc" id="athread_8c_html_a726aa92f134c931e6ca57edd514076cf"><div class="ttname"><a href="../../d3/de7/thread_8c.html#a726aa92f134c931e6ca57edd514076cf">thread_join_busywait</a></div><div class="ttdeci">static void thread_join_busywait(ABTI_thread *p_thread)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02731">thread.c:2731</a></div></div>
+<div class="ttc" id="athread_8c_html_a0d607194868d1432b8b3b5f57cfe30e7"><div class="ttname"><a href="../../d3/de7/thread_8c.html#a0d607194868d1432b8b3b5f57cfe30e7">thread_join_futexwait</a></div><div class="ttdeci">static void thread_join_futexwait(ABTI_thread *p_thread)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02745">thread.c:2745</a></div></div>
+<div class="ttc" id="athread_8c_html_a726aa92f134c931e6ca57edd514076cf"><div class="ttname"><a href="../../d3/de7/thread_8c.html#a726aa92f134c931e6ca57edd514076cf">thread_join_busywait</a></div><div class="ttdeci">static void thread_join_busywait(ABTI_thread *p_thread)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02735">thread.c:2735</a></div></div>
 <div class="ttc" id="agroup__ULT_html_ga1fa419c69e734d2017e8238d438a216a"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ga1fa419c69e734d2017e8238d438a216a">ABT_thread_yield_to</a></div><div class="ttdeci">int ABT_thread_yield_to(ABT_thread thread)</div><div class="ttdoc">Yield the calling ULT to another ULT.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l01022">thread.c:1022</a></div></div>
 <div class="ttc" id="athread_8c_html_aa446b03fd7208a3c4370682c197d6991"><div class="ttname"><a href="../../d3/de7/thread_8c.html#aa446b03fd7208a3c4370682c197d6991">g_thread_mig_data_key</a></div><div class="ttdeci">static ABTI_key g_thread_mig_data_key</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l00031">thread.c:31</a></div></div>
 <div class="ttc" id="agroup__ULT_html_ga4bd69e6f45c2c4578bd736c197c5d2e6"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ga4bd69e6f45c2c4578bd736c197c5d2e6">ABT_thread_get_last_pool_id</a></div><div class="ttdeci">int ABT_thread_get_last_pool_id(ABT_thread thread, int *id)</div><div class="ttdoc">Get the last pool's ID of a work unit.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l00927">thread.c:927</a></div></div>
@@ -1804,7 +1808,7 @@ $(function() {
 <div class="ttc" id="agroup__ERROR__CODE_html_ga5ed830632895c95a4be6692d66c1941b"><div class="ttname"><a href="../../d7/d29/group__ERROR__CODE.html#ga5ed830632895c95a4be6692d66c1941b">ABT_ERR_FEATURE_NA</a></div><div class="ttdeci">#define ABT_ERR_FEATURE_NA</div><div class="ttdoc">Error code: unsupported feature.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00381">abt.h:381</a></div></div>
 <div class="ttc" id="agroup__ULT_html_ggaa8e839d537fd79d677108d42d4176089ae0a7acd9ed47699f063ee2128f9f7ef6"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ggaa8e839d537fd79d677108d42d4176089ae0a7acd9ed47699f063ee2128f9f7ef6">ABT_THREAD_STATE_RUNNING</a></div><div class="ttdeci">@ ABT_THREAD_STATE_RUNNING</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l00419">abt.h:419</a></div></div>
 <div class="ttc" id="athread_8c_html_a2e61f0dad99a8d91b88648495fa01971"><div class="ttname"><a href="../../d3/de7/thread_8c.html#a2e61f0dad99a8d91b88648495fa01971">ythread_create</a></div><div class="ttdeci">static ABTU_ret_err int ythread_create(ABTI_global *p_global, ABTI_local *p_local, ABTI_pool *p_pool, void(*thread_func)(void *), void *arg, ABTI_thread_attr *p_attr, ABTI_thread_type thread_type, ABTI_sched *p_sched, ABT_bool push_pool, ABTI_ythread **pp_newthread)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02506">thread.c:2506</a></div></div>
-<div class="ttc" id="athread_8c_html_ac4a0f18fe68ed5c4fa85fc432f538f8a"><div class="ttname"><a href="../../d3/de7/thread_8c.html#ac4a0f18fe68ed5c4fa85fc432f538f8a">thread_join_yield_thread</a></div><div class="ttdeci">static void thread_join_yield_thread(ABTI_xstream **pp_local_xstream, ABTI_ythread *p_self, ABTI_thread *p_thread)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02771">thread.c:2771</a></div></div>
+<div class="ttc" id="athread_8c_html_ac4a0f18fe68ed5c4fa85fc432f538f8a"><div class="ttname"><a href="../../d3/de7/thread_8c.html#ac4a0f18fe68ed5c4fa85fc432f538f8a">thread_join_yield_thread</a></div><div class="ttdeci">static void thread_join_yield_thread(ABTI_xstream **pp_local_xstream, ABTI_ythread *p_self, ABTI_thread *p_thread)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02775">thread.c:2775</a></div></div>
 <div class="ttc" id="agroup__ULT_html_gaf95833ed8d21fedcf730e392f75b5bfd"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#gaf95833ed8d21fedcf730e392f75b5bfd">ABT_thread_get_specific</a></div><div class="ttdeci">int ABT_thread_get_specific(ABT_thread thread, ABT_key key, void **value)</div><div class="ttdoc">Get a value associated with a work-unit-specific data key in a work unit.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02092">thread.c:2092</a></div></div>
 <div class="ttc" id="aabt_8h_html_ad6965c86292ec2b77ca0dd2797b3f4e7"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ad6965c86292ec2b77ca0dd2797b3f4e7">ABT_UNIT_NULL</a></div><div class="ttdeci">#define ABT_UNIT_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01061">abt.h:1061</a></div></div>
 <div class="ttc" id="agroup__ULT_html_ga0414ecaedd36796a643e055bebafab99"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ga0414ecaedd36796a643e055bebafab99">ABT_thread_migrate_to_pool</a></div><div class="ttdeci">int ABT_thread_migrate_to_pool(ABT_thread thread, ABT_pool pool)</div><div class="ttdoc">Request a migration of a work unit to a specific pool.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l01428">thread.c:1428</a></div></div>
@@ -1813,7 +1817,7 @@ $(function() {
 <div class="ttc" id="agroup__ULT_html_ga5e8093bc862fc9d54e215fd2a72ddf02"><div class="ttname"><a href="../../d0/d6d/group__ULT.html#ga5e8093bc862fc9d54e215fd2a72ddf02">ABT_thread_get_attr</a></div><div class="ttdeci">int ABT_thread_get_attr(ABT_thread thread, ABT_thread_attr *attr)</div><div class="ttdoc">Get attributes of a work unit.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de7/thread_8c_source.html#l02137">thread.c:2137</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 2 2021 03:10:03 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 13 2021 03:10:02 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

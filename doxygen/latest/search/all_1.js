@@ -606,8 +606,11 @@ var searchData=
   ['abtu_5funlikely_605',['ABTU_unlikely',['../d5/d09/abtu_8h.html#a15ad120401333b5a41e84b95681a76f9',1,'abtu.h']]],
   ['abtu_5funreachable_606',['ABTU_unreachable',['../d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b',1,'abtu.h']]],
   ['access_607',['access',['../d4/dfc/structABT__pool__def.html#a9652caf35cbf3cfb4c20c78542fb429b',1,'ABT_pool_def']]],
-  ['apply_5fcpuset_608',['apply_cpuset',['../d2/d45/abtd__affinity_8c.html#ad381daf10a4a5d22a6358b81c31ac974',1,'abtd_affinity.c']]],
-  ['atoi_2ec_609',['atoi.c',['../df/d93/atoi_8c.html',1,'']]],
-  ['atoi_5fimpl_610',['atoi_impl',['../df/d93/atoi_8c.html#a15d0eaaec4cc64c34b762c2c6634a599',1,'atoi.c']]],
-  ['august_611',['August',['../d6/d5b/LICENSE__1__0_8txt.html#ae71537e16143fd1fb0983ebba966a63f',1,'LICENSE_1_0.txt']]]
+  ['alloc_5fheader_608',['alloc_header',['../d7/d73/structalloc__header.html',1,'alloc_header'],['../d0/d31/abtd__affinity__parser_8c.html#a0531692053328d1bbdeb10816faa3fd6',1,'alloc_header():&#160;abtd_affinity_parser.c']]],
+  ['alloc_5fheader_5fsize_609',['ALLOC_HEADER_SIZE',['../d0/d31/abtd__affinity__parser_8c.html#a0af94d6779384d2e1d77f680a3ef6bad',1,'abtd_affinity_parser.c']]],
+  ['alloc_5flist_610',['alloc_list',['../d6/d14/structalloc__list.html',1,'']]],
+  ['apply_5fcpuset_611',['apply_cpuset',['../d2/d45/abtd__affinity_8c.html#ad381daf10a4a5d22a6358b81c31ac974',1,'abtd_affinity.c']]],
+  ['atoi_2ec_612',['atoi.c',['../df/d93/atoi_8c.html',1,'']]],
+  ['atoi_5fimpl_613',['atoi_impl',['../df/d93/atoi_8c.html#a15d0eaaec4cc64c34b762c2c6634a599',1,'atoi.c']]],
+  ['august_614',['August',['../d6/d5b/LICENSE__1__0_8txt.html#ae71537e16143fd1fb0983ebba966a63f',1,'LICENSE_1_0.txt']]]
 ];

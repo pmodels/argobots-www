@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['global_5faffinity_929',['global_affinity',['../d6/dcd/structglobal__affinity.html',1,'']]]
+  ['global_5faffinity_937',['global_affinity',['../d6/dcd/structglobal__affinity.html',1,'']]]
 ];
