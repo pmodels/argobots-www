@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">1.1b1</span>
+   &#160;<span id="projectnumber">1.1rc1</span>
    </div>
   </td>
  </tr>
@@ -111,6 +111,9 @@ $(function() {
 <li>ABT_CONFIG_STATIC_CACHELINE_SIZE
 : <a class="el" href="dd/d6e/abt__config_8h.html#a9be181de89306780f2f3d7c575c52b8e">abt_config.h</a>
 </li>
+<li>ABT_CONFIG_SYS_HUGE_PAGE_SIZE
+: <a class="el" href="dd/d6e/abt__config_8h.html#a118596821ea23c94966a7197fe1c5b15">abt_config.h</a>
+</li>
 <li>ABT_CONFIG_THREAD_TYPE
 : <a class="el" href="dd/d6e/abt__config_8h.html#ab21a68affd9ca0da38f0d876e31e8188">abt_config.h</a>
 </li>
@@ -122,6 +125,9 @@ $(function() {
 </li>
 <li>ABT_CONFIG_USE_FCONTEXT
 : <a class="el" href="dd/d6e/abt__config_8h.html#acc7e618db15cdb0deb8cf9f27752c04a">abt_config.h</a>
+</li>
+<li>ABT_CONFIG_USE_LINUX_FUTEX
+: <a class="el" href="dd/d6e/abt__config_8h.html#a0ac422054d0409b2ffad62adcfe22dda">abt_config.h</a>
 </li>
 <li>ABT_CONFIG_USE_MEM_POOL
 : <a class="el" href="dd/d6e/abt__config_8h.html#a256e926157a9aca7a2dd630413c96461">abt_config.h</a>
@@ -531,6 +537,9 @@ $(function() {
 <li>ABTD_SCHED_SLEEP_NSEC
 : <a class="el" href="de/d68/abtd__env_8c.html#aa068d7deb7dead92ce7f90da2a740d30">abtd_env.c</a>
 </li>
+<li>ABTD_SPINLOCK_STATIC_INITIALIZER
+: <a class="el" href="dc/d25/abtd__spinlock_8h.html#a3b984c3df9ddeaee395cad58a02824ba">abtd_spinlock.h</a>
+</li>
 <li>ABTD_THREAD_DEFAULT_STACKSIZE
 : <a class="el" href="de/d68/abtd__env_8c.html#a8a5199c4a599a5511679622a1ff0c2d0">abtd_env.c</a>
 </li>
@@ -677,9 +686,6 @@ $(function() {
 </li>
 <li>ABTI_SETUP_LOCAL_YTHREAD
 : <a class="el" href="d6/d11/abti__error_8h.html#a45b3cb4ca86b982b3fa73ee2c48913d5">abti_error.h</a>
-</li>
-<li>ABTI_SPINLOCK_STATIC_INITIALIZER
-: <a class="el" href="d7/dea/abti__spinlock_8h.html#a312a2c899157f65721858d6db9349278">abti_spinlock.h</a>
 </li>
 <li>ABTI_STACK_CANARY_VALUE
 : <a class="el" href="d7/d04/abti__mem_8h.html#adfa7328d4315f343ebd0cc13938978d2">abti_mem.h</a>
@@ -852,11 +858,14 @@ $(function() {
 <li>ABTU_unreachable
 : <a class="el" href="d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">abtu.h</a>
 </li>
+<li>ALLOC_HEADER_SIZE
+: <a class="el" href="d0/d31/abtd__affinity__parser_8c.html#a0af94d6779384d2e1d77f680a3ef6bad">abtd_affinity_parser.c</a>
+</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 12 2021 11:09:41 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 15 2021 09:36:51 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

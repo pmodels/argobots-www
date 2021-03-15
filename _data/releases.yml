@@ -9,13 +9,18 @@ stable_releases:
    date: October 7, 2020
    doxygen_path: doxygen/release_1_0_0
 preview_releases:
+ - name: 1.1rc1
+   version: 1.1rc1
+   stable: no
+   link: https://github.com/pmodels/argobots/releases/download/v1.1rc1/argobots-1.1rc1.tar.gz
+   date: March 15, 2021
+   doxygen_path: doxygen/release_1_1_0
+old_releases:
  - name: 1.1b1
    version: 1.1b1
    stable: no
    link: https://github.com/pmodels/argobots/releases/download/v1.1b1/argobots-1.1b1.tar.gz
    date: February 12, 2021
-   doxygen_path: doxygen/release_1_1_0
-old_releases:
  - name: 1.1a1
    version: 1.1a1
    stable: no

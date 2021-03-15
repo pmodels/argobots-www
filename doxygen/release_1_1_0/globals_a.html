@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">1.1b1</span>
+   &#160;<span id="projectnumber">1.1rc1</span>
    </div>
   </td>
  </tr>
@@ -164,6 +164,9 @@ $(function() {
 <li>ABT_CONFIG_STATIC_CACHELINE_SIZE
 : <a class="el" href="dd/d6e/abt__config_8h.html#a9be181de89306780f2f3d7c575c52b8e">abt_config.h</a>
 </li>
+<li>ABT_CONFIG_SYS_HUGE_PAGE_SIZE
+: <a class="el" href="dd/d6e/abt__config_8h.html#a118596821ea23c94966a7197fe1c5b15">abt_config.h</a>
+</li>
 <li>ABT_CONFIG_THREAD_TYPE
 : <a class="el" href="dd/d6e/abt__config_8h.html#ab21a68affd9ca0da38f0d876e31e8188">abt_config.h</a>
 </li>
@@ -175,6 +178,9 @@ $(function() {
 </li>
 <li>ABT_CONFIG_USE_FCONTEXT
 : <a class="el" href="dd/d6e/abt__config_8h.html#acc7e618db15cdb0deb8cf9f27752c04a">abt_config.h</a>
+</li>
+<li>ABT_CONFIG_USE_LINUX_FUTEX
+: <a class="el" href="dd/d6e/abt__config_8h.html#a0ac422054d0409b2ffad62adcfe22dda">abt_config.h</a>
 </li>
 <li>ABT_CONFIG_USE_MEM_POOL
 : <a class="el" href="dd/d6e/abt__config_8h.html#a256e926157a9aca7a2dd630413c96461">abt_config.h</a>
@@ -400,8 +406,8 @@ $(function() {
 : <a class="el" href="d5/d7d/abt_8h.html#aedde437380ced4813c3c36d97e926a25">abt.h</a>
 </li>
 <li>ABT_finalize()
-: <a class="el" href="d4/d00/group__ENV.html#ga70dc165656888def26f8cb6c047a6289">global.c</a>
-, <a class="el" href="d4/d00/group__ENV.html#ga70dc165656888def26f8cb6c047a6289">abt.h</a>
+: <a class="el" href="d4/d00/group__ENV.html#ga70dc165656888def26f8cb6c047a6289">abt.h</a>
+, <a class="el" href="d4/d00/group__ENV.html#ga70dc165656888def26f8cb6c047a6289">global.c</a>
 </li>
 <li>ABT_future
 : <a class="el" href="de/dd2/group__FUTURE.html#gafd02cb9f6153347103ab39c51cb54182">abt.h</a>
@@ -562,6 +568,9 @@ $(function() {
 <li>ABT_INFO_QUERY_KIND_MAX_NUM_XSTREAMS
 : <a class="el" href="d7/d15/group__INFO.html#gga740335a6e32f1eb9cb2cd0a7239d98ada4f80f430205f8b2b7a0358bfe4337318">abt.h</a>
 </li>
+<li>ABT_INFO_QUERY_KIND_WAIT_POLICY
+: <a class="el" href="d7/d15/group__INFO.html#gga740335a6e32f1eb9cb2cd0a7239d98ada243047cc93e354294145ce140832c584">abt.h</a>
+</li>
 <li>ABT_info_trigger_print_all_thread_stacks()
 : <a class="el" href="d7/d15/group__INFO.html#ga6a9b742bf675f1b12ba785ddf9a344e4">abt.h</a>
 , <a class="el" href="d7/d15/group__INFO.html#ga6a9b742bf675f1b12ba785ddf9a344e4">info.c</a>
@@ -688,8 +697,8 @@ $(function() {
 , <a class="el" href="d2/d09/group__MUTEX.html#gad2b6347caaeae84ac947e095217f324d">mutex.c</a>
 </li>
 <li>ABT_mutex_unlock_se()
-: <a class="el" href="d2/d09/group__MUTEX.html#ga0a62f0d74ae7e799d37d0517b5254321">abt.h</a>
-, <a class="el" href="d2/d09/group__MUTEX.html#ga0a62f0d74ae7e799d37d0517b5254321">mutex.c</a>
+: <a class="el" href="d2/d09/group__MUTEX.html#ga0a62f0d74ae7e799d37d0517b5254321">mutex.c</a>
+, <a class="el" href="d2/d09/group__MUTEX.html#ga0a62f0d74ae7e799d37d0517b5254321">abt.h</a>
 </li>
 <li>ABT_NULL
 : <a class="el" href="d5/d7d/abt_8h.html#af474587ee3020444b0c819a148de5e80">abt.h</a>
@@ -1269,8 +1278,8 @@ $(function() {
 , <a class="el" href="d2/df6/group__ULT__ATTR.html#gadcd5ae1d9dc92637c15b3b1e3d4c8234">thread_attr.c</a>
 </li>
 <li>ABT_thread_cancel()
-: <a class="el" href="d0/d6d/group__ULT.html#ga218d94229458c2200f188e5ed2705afe">abt.h</a>
-, <a class="el" href="d0/d6d/group__ULT.html#ga218d94229458c2200f188e5ed2705afe">thread.c</a>
+: <a class="el" href="d0/d6d/group__ULT.html#ga218d94229458c2200f188e5ed2705afe">thread.c</a>
+, <a class="el" href="d0/d6d/group__ULT.html#ga218d94229458c2200f188e5ed2705afe">abt.h</a>
 </li>
 <li>ABT_thread_create()
 : <a class="el" href="d0/d6d/group__ULT.html#ga73bd1f04ce57def336cb20cdec9b14bd">abt.h</a>
@@ -1765,16 +1774,16 @@ $(function() {
 , <a class="el" href="d2/d45/abtd__affinity_8c.html#a0d7dca623d56888a2f1073227ea7c3f0">abtd_affinity.c</a>
 </li>
 <li>ABTD_affinity_cpuset_apply_default()
-: <a class="el" href="d2/d45/abtd__affinity_8c.html#a29e336f98f4d2f0eeaf297fd61ee3b8b">abtd_affinity.c</a>
-, <a class="el" href="d3/dbf/abtd_8h.html#ae41b867bd1062896dfcaa49d7f15a4ef">abtd.h</a>
+: <a class="el" href="d3/dbf/abtd_8h.html#ae41b867bd1062896dfcaa49d7f15a4ef">abtd.h</a>
+, <a class="el" href="d2/d45/abtd__affinity_8c.html#a29e336f98f4d2f0eeaf297fd61ee3b8b">abtd_affinity.c</a>
 </li>
 <li>ABTD_affinity_cpuset_destroy()
 : <a class="el" href="d3/dbf/abtd_8h.html#a1bd7075b35f8ee53063ef9c466ec0dc1">abtd.h</a>
 , <a class="el" href="d2/d45/abtd__affinity_8c.html#a1bd7075b35f8ee53063ef9c466ec0dc1">abtd_affinity.c</a>
 </li>
 <li>ABTD_affinity_cpuset_read()
-: <a class="el" href="d2/d45/abtd__affinity_8c.html#a58d1b7a43a54cb9e02b18321f500017c">abtd_affinity.c</a>
-, <a class="el" href="d3/dbf/abtd_8h.html#a58d1b7a43a54cb9e02b18321f500017c">abtd.h</a>
+: <a class="el" href="d3/dbf/abtd_8h.html#a58d1b7a43a54cb9e02b18321f500017c">abtd.h</a>
+, <a class="el" href="d2/d45/abtd__affinity_8c.html#a58d1b7a43a54cb9e02b18321f500017c">abtd_affinity.c</a>
 </li>
 <li>ABTD_affinity_finalize()
 : <a class="el" href="d3/dbf/abtd_8h.html#a2126c428ea24629f778416b52899c5c6">abtd.h</a>
@@ -1784,19 +1793,19 @@ $(function() {
 : <a class="el" href="d3/dbf/abtd_8h.html#ae855cbf1fc44d47c30eccbc360c2af86">abtd.h</a>
 </li>
 <li>ABTD_affinity_init()
-: <a class="el" href="d3/dbf/abtd_8h.html#a578ec7176960e36557a601a28df2e16c">abtd.h</a>
-, <a class="el" href="d2/d45/abtd__affinity_8c.html#a578ec7176960e36557a601a28df2e16c">abtd_affinity.c</a>
+: <a class="el" href="d2/d45/abtd__affinity_8c.html#a578ec7176960e36557a601a28df2e16c">abtd_affinity.c</a>
+, <a class="el" href="d3/dbf/abtd_8h.html#a578ec7176960e36557a601a28df2e16c">abtd.h</a>
 </li>
 <li>ABTD_affinity_list
-: <a class="el" href="d3/dbf/abtd_8h.html#aa375709acd427caee8e7dc4d8eaefc36">abtd.h</a>
+: <a class="el" href="d3/dbf/abtd_8h.html#a409dcd7efec898e32fa8fafc1a31d407">abtd.h</a>
 </li>
 <li>ABTD_affinity_list_create()
-: <a class="el" href="d0/d31/abtd__affinity__parser_8c.html#aad4691c9c8676609ecd956b553faa761">abtd_affinity_parser.c</a>
-, <a class="el" href="d3/dbf/abtd_8h.html#aad4691c9c8676609ecd956b553faa761">abtd.h</a>
+: <a class="el" href="d3/dbf/abtd_8h.html#ab275c00ac552a0e5d64ac4314602b58f">abtd.h</a>
+, <a class="el" href="d0/d31/abtd__affinity__parser_8c.html#ab275c00ac552a0e5d64ac4314602b58f">abtd_affinity_parser.c</a>
 </li>
 <li>ABTD_affinity_list_free()
 : <a class="el" href="d3/dbf/abtd_8h.html#a385d226a7fb399674296cf0d52c077c1">abtd.h</a>
-, <a class="el" href="d0/d31/abtd__affinity__parser_8c.html#a385d226a7fb399674296cf0d52c077c1">abtd_affinity_parser.c</a>
+, <a class="el" href="d0/d31/abtd__affinity__parser_8c.html#a93c6b9c802d214563ab3ec8012884ba4">abtd_affinity_parser.c</a>
 </li>
 <li>ABTD_asm_bool_cas_weak_int128()
 : <a class="el" href="d5/d9d/abtd__asm__int128__cas_8h.html#a85d3df0558ee90bf0fafed0560fcef8a">abtd_asm_int128_cas.h</a>
@@ -2183,6 +2192,38 @@ $(function() {
 <li>ABTD_FCONTEXT_PRESERVE_FPU
 : <a class="el" href="dd/d6e/abt__config_8h.html#aa1e0f993f204b20513e36036b5969660">abt_config.h</a>
 </li>
+<li>ABTD_futex_broadcast()
+: <a class="el" href="d7/d17/abtd__futex_8c.html#a8ccad1f6f57d4109c40098abd369be13">abtd_futex.c</a>
+, <a class="el" href="d2/d48/abtd__futex_8h.html#a8ccad1f6f57d4109c40098abd369be13">abtd_futex.h</a>
+</li>
+<li>ABTD_futex_multiple
+: <a class="el" href="d2/d48/abtd__futex_8h.html#a8c0473cb2a0633f125888ae5243774be">abtd_futex.h</a>
+</li>
+<li>ABTD_futex_multiple_init()
+: <a class="el" href="d2/d48/abtd__futex_8h.html#ad441a791a4fd14c54921046575f982f6">abtd_futex.h</a>
+</li>
+<li>ABTD_futex_resume()
+: <a class="el" href="d2/d48/abtd__futex_8h.html#a8ffe8962cb12a373b4a4b4bb401c794d">abtd_futex.h</a>
+, <a class="el" href="d7/d17/abtd__futex_8c.html#a8ffe8962cb12a373b4a4b4bb401c794d">abtd_futex.c</a>
+</li>
+<li>ABTD_futex_single
+: <a class="el" href="d2/d48/abtd__futex_8h.html#a940c406aa0e63a43532940cd1adda631">abtd_futex.h</a>
+</li>
+<li>ABTD_futex_single_init()
+: <a class="el" href="d2/d48/abtd__futex_8h.html#a1d345b492f09b8f5140973770e3fd2ee">abtd_futex.h</a>
+</li>
+<li>ABTD_futex_suspend()
+: <a class="el" href="d7/d17/abtd__futex_8c.html#af847a6ec9c17aaa91fd7f27953e5013c">abtd_futex.c</a>
+, <a class="el" href="d2/d48/abtd__futex_8h.html#af847a6ec9c17aaa91fd7f27953e5013c">abtd_futex.h</a>
+</li>
+<li>ABTD_futex_timedwait_and_unlock()
+: <a class="el" href="d2/d48/abtd__futex_8h.html#a5ce2830934e2afdbb5efc60696c02cfb">abtd_futex.h</a>
+, <a class="el" href="d7/d17/abtd__futex_8c.html#a5ce2830934e2afdbb5efc60696c02cfb">abtd_futex.c</a>
+</li>
+<li>ABTD_futex_wait_and_unlock()
+: <a class="el" href="d7/d17/abtd__futex_8c.html#aab346158bf16314d4b843d9b2e0dea35">abtd_futex.c</a>
+, <a class="el" href="d2/d48/abtd__futex_8h.html#aab346158bf16314d4b843d9b2e0dea35">abtd_futex.h</a>
+</li>
 <li>ABTD_HUGE_PAGE_SIZE
 : <a class="el" href="de/d68/abtd__env_8c.html#a5ef86f33169883d4ac0b398b90e6ab5c">abtd_env.c</a>
 </li>
@@ -2212,6 +2253,27 @@ $(function() {
 </li>
 <li>ABTD_SCHED_SLEEP_NSEC
 : <a class="el" href="de/d68/abtd__env_8c.html#aa068d7deb7dead92ce7f90da2a740d30">abtd_env.c</a>
+</li>
+<li>ABTD_spinlock
+: <a class="el" href="dc/d25/abtd__spinlock_8h.html#a9a8b5fb4e9546f4d605d0032df5acbfb">abtd_spinlock.h</a>
+</li>
+<li>ABTD_spinlock_acquire()
+: <a class="el" href="dc/d25/abtd__spinlock_8h.html#a0995098ecd6b55a43ecc9ede46ba9e77">abtd_spinlock.h</a>
+</li>
+<li>ABTD_spinlock_clear()
+: <a class="el" href="dc/d25/abtd__spinlock_8h.html#ad2e7caf22cba0d5d415dc6df909629f4">abtd_spinlock.h</a>
+</li>
+<li>ABTD_spinlock_is_locked()
+: <a class="el" href="dc/d25/abtd__spinlock_8h.html#a97ddafaf8e67d63588a1593eae0129a8">abtd_spinlock.h</a>
+</li>
+<li>ABTD_spinlock_release()
+: <a class="el" href="dc/d25/abtd__spinlock_8h.html#ac4926cdbe50222e45639214c3a0e115a">abtd_spinlock.h</a>
+</li>
+<li>ABTD_SPINLOCK_STATIC_INITIALIZER
+: <a class="el" href="dc/d25/abtd__spinlock_8h.html#a3b984c3df9ddeaee395cad58a02824ba">abtd_spinlock.h</a>
+</li>
+<li>ABTD_spinlock_try_acquire()
+: <a class="el" href="dc/d25/abtd__spinlock_8h.html#a4e0b28009897c749ad8398f5f96f04c1">abtd_spinlock.h</a>
 </li>
 <li>ABTD_THREAD_DEFAULT_STACKSIZE
 : <a class="el" href="de/d68/abtd__env_8c.html#a8a5199c4a599a5511679622a1ff0c2d0">abtd_env.c</a>
@@ -2245,8 +2307,8 @@ $(function() {
 , <a class="el" href="d2/d12/abtd__stream_8c.html#a7336ba4a3a2bd50350eef6935d6f5416">abtd_stream.c</a>
 </li>
 <li>ABTD_xstream_context_free()
-: <a class="el" href="d3/dbf/abtd_8h.html#a3ae4bf8612492393a3d1d00b6d709ce8">abtd.h</a>
-, <a class="el" href="d2/d12/abtd__stream_8c.html#a3ae4bf8612492393a3d1d00b6d709ce8">abtd_stream.c</a>
+: <a class="el" href="d2/d12/abtd__stream_8c.html#a3ae4bf8612492393a3d1d00b6d709ce8">abtd_stream.c</a>
+, <a class="el" href="d3/dbf/abtd_8h.html#a3ae4bf8612492393a3d1d00b6d709ce8">abtd.h</a>
 </li>
 <li>ABTD_xstream_context_join()
 : <a class="el" href="d3/dbf/abtd_8h.html#acefaf49c71beb8e2dc3457cd9c7e4b11">abtd.h</a>
@@ -2261,8 +2323,8 @@ $(function() {
 , <a class="el" href="d2/d12/abtd__stream_8c.html#aca73815c4129f9c44c3d123202e235ff">abtd_stream.c</a>
 </li>
 <li>ABTD_xstream_context_set_self()
-: <a class="el" href="d2/d12/abtd__stream_8c.html#a0697445167b493936eb1ea7729b81c68">abtd_stream.c</a>
-, <a class="el" href="d3/dbf/abtd_8h.html#a0697445167b493936eb1ea7729b81c68">abtd.h</a>
+: <a class="el" href="d3/dbf/abtd_8h.html#a0697445167b493936eb1ea7729b81c68">abtd.h</a>
+, <a class="el" href="d2/d12/abtd__stream_8c.html#a0697445167b493936eb1ea7729b81c68">abtd_stream.c</a>
 </li>
 <li>ABTD_xstream_context_state
 : <a class="el" href="d3/dbf/abtd_8h.html#adb0514b0ba76618ad192f410b6b208c1">abtd.h</a>
@@ -2275,6 +2337,9 @@ $(function() {
 </li>
 <li>ABTD_XSTREAM_CONTEXT_STATE_RUNNING
 : <a class="el" href="d3/dbf/abtd_8h.html#adb0514b0ba76618ad192f410b6b208c1a60cfa6c9c17a2245db9b2f8a00617d9e">abtd.h</a>
+</li>
+<li>ABTD_XSTREAM_CONTEXT_STATE_UNINIT
+: <a class="el" href="d3/dbf/abtd_8h.html#adb0514b0ba76618ad192f410b6b208c1aef4c509fbc87ef2839cbd566c908c704">abtd.h</a>
 </li>
 <li>ABTD_XSTREAM_CONTEXT_STATE_WAITING
 : <a class="el" href="d3/dbf/abtd_8h.html#adb0514b0ba76618ad192f410b6b208c1ad5238411e070290eb74965320fd094c0">abtd.h</a>
@@ -2323,9 +2388,9 @@ $(function() {
 , <a class="el" href="d6/de0/abtd__ucontext_8h.html#afba0ff943cc4c29dfd5862e74edd7c50">abtd_ucontext.h</a>
 </li>
 <li>ABTD_ythread_context_make()
-: <a class="el" href="d2/db0/abtd__context_8h.html#a21ce4ecd65d7275774712d158643544d">abtd_context.h</a>
-, <a class="el" href="d4/d27/abtd__fcontext_8h.html#a21ce4ecd65d7275774712d158643544d">abtd_fcontext.h</a>
+: <a class="el" href="d4/d27/abtd__fcontext_8h.html#a21ce4ecd65d7275774712d158643544d">abtd_fcontext.h</a>
 , <a class="el" href="d6/de0/abtd__ucontext_8h.html#a21ce4ecd65d7275774712d158643544d">abtd_ucontext.h</a>
+, <a class="el" href="d2/db0/abtd__context_8h.html#a21ce4ecd65d7275774712d158643544d">abtd_context.h</a>
 </li>
 <li>ABTD_ythread_context_make_and_call()
 : <a class="el" href="d8/daf/abtd__ythread_8h.html#a367c8f961814a926ed804cd25b10bca1">abtd_ythread.h</a>
@@ -2334,9 +2399,9 @@ $(function() {
 : <a class="el" href="d8/daf/abtd__ythread_8h.html#a5c68174feacac4c46a40444442c34381">abtd_ythread.h</a>
 </li>
 <li>ABTD_ythread_context_take()
-: <a class="el" href="d4/d27/abtd__fcontext_8h.html#aa4967cc4e7bbc5d9d37da1cb62456d9a">abtd_fcontext.h</a>
+: <a class="el" href="d2/db0/abtd__context_8h.html#aa4967cc4e7bbc5d9d37da1cb62456d9a">abtd_context.h</a>
+, <a class="el" href="d4/d27/abtd__fcontext_8h.html#aa4967cc4e7bbc5d9d37da1cb62456d9a">abtd_fcontext.h</a>
 , <a class="el" href="d6/de0/abtd__ucontext_8h.html#aa4967cc4e7bbc5d9d37da1cb62456d9a">abtd_ucontext.h</a>
-, <a class="el" href="d2/db0/abtd__context_8h.html#aa4967cc4e7bbc5d9d37da1cb62456d9a">abtd_context.h</a>
 </li>
 <li>ABTD_ythread_exit()
 : <a class="el" href="d3/dbf/abtd_8h.html#a447f15c9156813d86497ffe03c9686e0">abtd.h</a>
@@ -2350,8 +2415,8 @@ $(function() {
 , <a class="el" href="de/d1a/abtd__ythread_8c.html#af5614ad2aa09e9e9028c14b9a66518c3">abtd_ythread.c</a>
 </li>
 <li>ABTD_ythread_print_context()
-: <a class="el" href="de/d1a/abtd__ythread_8c.html#ab6696d69aad45d0152ab7c1414306dd0">abtd_ythread.c</a>
-, <a class="el" href="d2/db0/abtd__context_8h.html#ab6696d69aad45d0152ab7c1414306dd0">abtd_context.h</a>
+: <a class="el" href="d2/db0/abtd__context_8h.html#ab6696d69aad45d0152ab7c1414306dd0">abtd_context.h</a>
+, <a class="el" href="de/d1a/abtd__ythread_8c.html#ab6696d69aad45d0152ab7c1414306dd0">abtd_ythread.c</a>
 </li>
 <li>ABTD_ythread_terminate_no_arg()
 : <a class="el" href="d8/daf/abtd__ythread_8h.html#ad90940f75c8534e54d77f54a1e393a71">abtd_ythread.h</a>
@@ -2594,8 +2659,8 @@ $(function() {
 : <a class="el" href="db/d9d/abti__key_8h.html#aa7c3b607c6c9af165f50380c923efd59">abti_key.h</a>
 </li>
 <li>ABTI_ktable_free()
-: <a class="el" href="db/dfd/key_8c.html#a6e62922fcfc096f7fa645d48ba799912">key.c</a>
-, <a class="el" href="d5/d03/abti_8h.html#a6e62922fcfc096f7fa645d48ba799912">abti.h</a>
+: <a class="el" href="d5/d03/abti_8h.html#a6e62922fcfc096f7fa645d48ba799912">abti.h</a>
+, <a class="el" href="db/dfd/key_8c.html#a6e62922fcfc096f7fa645d48ba799912">key.c</a>
 </li>
 <li>ABTI_ktable_get()
 : <a class="el" href="db/d9d/abti__key_8h.html#a55433e48f60a1f4d82fd490e3a5a7768">abti_key.h</a>
@@ -2673,8 +2738,8 @@ $(function() {
 : <a class="el" href="d7/d04/abti__mem_8h.html#a17cd895ad855f1fcb9a40e45c5804471">abti_mem.h</a>
 </li>
 <li>ABTI_mem_finalize()
-: <a class="el" href="d7/d04/abti__mem_8h.html#a81a714d5ae2cdc5627d4c8e06db4f375">abti_mem.h</a>
-, <a class="el" href="d6/dcd/malloc_8c.html#a81a714d5ae2cdc5627d4c8e06db4f375">malloc.c</a>
+: <a class="el" href="d6/dcd/malloc_8c.html#a81a714d5ae2cdc5627d4c8e06db4f375">malloc.c</a>
+, <a class="el" href="d7/d04/abti__mem_8h.html#a81a714d5ae2cdc5627d4c8e06db4f375">abti_mem.h</a>
 </li>
 <li>ABTI_mem_finalize_local()
 : <a class="el" href="d7/d04/abti__mem_8h.html#aedc94b98b839b2cae998f717cc7f1ce5">abti_mem.h</a>
@@ -2690,12 +2755,12 @@ $(function() {
 : <a class="el" href="d7/d04/abti__mem_8h.html#a251969ea8c1c7eca54458f4eefa2b36a">abti_mem.h</a>
 </li>
 <li>ABTI_mem_init()
-: <a class="el" href="d7/d04/abti__mem_8h.html#ac7335b4de1654da57a78e338bc469434">abti_mem.h</a>
-, <a class="el" href="d6/dcd/malloc_8c.html#ac7335b4de1654da57a78e338bc469434">malloc.c</a>
+: <a class="el" href="d7/d04/abti__mem_8h.html#a5b4ed963d7c1b26d64b3a9e435fdd41a">abti_mem.h</a>
+, <a class="el" href="d6/dcd/malloc_8c.html#a5b4ed963d7c1b26d64b3a9e435fdd41a">malloc.c</a>
 </li>
 <li>ABTI_mem_init_local()
-: <a class="el" href="d6/dcd/malloc_8c.html#a4884d872b92cca337167dd16b7791434">malloc.c</a>
-, <a class="el" href="d7/d04/abti__mem_8h.html#a4884d872b92cca337167dd16b7791434">abti_mem.h</a>
+: <a class="el" href="d7/d04/abti__mem_8h.html#a39da7e81abe6e7dabe4ceec3c2dac2a0">abti_mem.h</a>
+, <a class="el" href="d6/dcd/malloc_8c.html#a39da7e81abe6e7dabe4ceec3c2dac2a0">malloc.c</a>
 </li>
 <li>ABTI_MEM_LP_MALLOC
 : <a class="el" href="d7/d04/abti__mem_8h.html#a06fc87d81c62e9abb8790b6e5713c55baa15616fca3be251c90f7b9482cc82768">abti_mem.h</a>
@@ -2726,8 +2791,8 @@ $(function() {
 , <a class="el" href="d9/d73/mem__pool_8c.html#a6d69f1eb7905a224a89f327522a29fda">mem_pool.c</a>
 </li>
 <li>ABTI_mem_pool_destroy_local_pool()
-: <a class="el" href="d9/d73/mem__pool_8c.html#a99931a40844d7c5071b70a4bb64f4d97">mem_pool.c</a>
-, <a class="el" href="d9/d33/abti__mem__pool_8h.html#a99931a40844d7c5071b70a4bb64f4d97">abti_mem_pool.h</a>
+: <a class="el" href="d9/d33/abti__mem__pool_8h.html#a99931a40844d7c5071b70a4bb64f4d97">abti_mem_pool.h</a>
+, <a class="el" href="d9/d73/mem__pool_8c.html#a99931a40844d7c5071b70a4bb64f4d97">mem_pool.c</a>
 </li>
 <li>ABTI_mem_pool_free()
 : <a class="el" href="d9/d33/abti__mem__pool_8h.html#a9d861777f2e03044a3c84cbf9707c20c">abti_mem_pool.h</a>
@@ -2746,8 +2811,8 @@ $(function() {
 , <a class="el" href="d9/d33/abti__mem__pool_8h.html#ae7ace68adfdc56f8b894a0071c3116bf">abti_mem_pool.h</a>
 </li>
 <li>ABTI_mem_pool_init_local_pool()
-: <a class="el" href="d9/d73/mem__pool_8c.html#ae3b5d257d550f7cc1dcbef630e803d15">mem_pool.c</a>
-, <a class="el" href="d9/d33/abti__mem__pool_8h.html#ae3b5d257d550f7cc1dcbef630e803d15">abti_mem_pool.h</a>
+: <a class="el" href="d9/d33/abti__mem__pool_8h.html#ae9aa43659ab3474f4446f8cbfb01989c">abti_mem_pool.h</a>
+, <a class="el" href="d9/d73/mem__pool_8c.html#ae9aa43659ab3474f4446f8cbfb01989c">mem_pool.c</a>
 </li>
 <li>ABTI_mem_pool_local_pool
 : <a class="el" href="d9/d33/abti__mem__pool_8h.html#a052b0c4d1f87d570444bf93474b9a899">abti_mem_pool.h</a>
@@ -2756,8 +2821,8 @@ $(function() {
 : <a class="el" href="d9/d33/abti__mem__pool_8h.html#a598b0b45fda496d531ae014322b3a3d6">abti_mem_pool.h</a>
 </li>
 <li>ABTI_mem_pool_return_bucket()
-: <a class="el" href="d9/d73/mem__pool_8c.html#ab9a7ee976a68e9b14b8a17a4c6c095e0">mem_pool.c</a>
-, <a class="el" href="d9/d33/abti__mem__pool_8h.html#ab9a7ee976a68e9b14b8a17a4c6c095e0">abti_mem_pool.h</a>
+: <a class="el" href="d9/d33/abti__mem__pool_8h.html#ab9a7ee976a68e9b14b8a17a4c6c095e0">abti_mem_pool.h</a>
+, <a class="el" href="d9/d73/mem__pool_8c.html#ab9a7ee976a68e9b14b8a17a4c6c095e0">mem_pool.c</a>
 </li>
 <li>ABTI_mem_pool_take_bucket()
 : <a class="el" href="d9/d33/abti__mem__pool_8h.html#a5742d9c346313c49bf8078feb8d268d0">abti_mem_pool.h</a>
@@ -2833,8 +2898,8 @@ $(function() {
 : <a class="el" href="d0/d4e/abti__pool_8h.html#ac06eebbeab266e73bac7d5d519c79165">abti_pool.h</a>
 </li>
 <li>ABTI_pool_create_basic()
-: <a class="el" href="d5/d03/abti_8h.html#a98b6d845f71d01993da93691d8687644">abti.h</a>
-, <a class="el" href="d4/de5/pool_8c.html#a98b6d845f71d01993da93691d8687644">pool.c</a>
+: <a class="el" href="d4/de5/pool_8c.html#a98b6d845f71d01993da93691d8687644">pool.c</a>
+, <a class="el" href="d5/d03/abti_8h.html#a98b6d845f71d01993da93691d8687644">abti.h</a>
 </li>
 <li>ABTI_pool_dec_num_blocked()
 : <a class="el" href="d0/d4e/abti__pool_8h.html#a0b4e4f6c3e05ddd54ac29dacf0fdb8da">abti_pool.h</a>
@@ -2847,8 +2912,8 @@ $(function() {
 , <a class="el" href="d5/d03/abti_8h.html#a32ba2d4ea065771a566d98c4e0c4b548">abti.h</a>
 </li>
 <li>ABTI_pool_get_fifo_def()
-: <a class="el" href="d5/d03/abti_8h.html#a228cf46ba30658cea19bc55d69bfd71c">abti.h</a>
-, <a class="el" href="da/d6b/fifo_8c.html#a228cf46ba30658cea19bc55d69bfd71c">fifo.c</a>
+: <a class="el" href="da/d6b/fifo_8c.html#a228cf46ba30658cea19bc55d69bfd71c">fifo.c</a>
+, <a class="el" href="d5/d03/abti_8h.html#a228cf46ba30658cea19bc55d69bfd71c">abti.h</a>
 </li>
 <li>ABTI_pool_get_fifo_wait_def()
 : <a class="el" href="d2/dc8/fifo__wait_8c.html#a3617fb29414932bfb00a9c694432e9b2">fifo_wait.c</a>
@@ -2879,8 +2944,8 @@ $(function() {
 : <a class="el" href="d0/d4e/abti__pool_8h.html#a0cdcf4ff7c159140eedc07a3f5c52c5c">abti_pool.h</a>
 </li>
 <li>ABTI_pool_print()
-: <a class="el" href="d5/d03/abti_8h.html#a00003cc6b5507f68e146f926270214ad">abti.h</a>
-, <a class="el" href="d4/de5/pool_8c.html#a00003cc6b5507f68e146f926270214ad">pool.c</a>
+: <a class="el" href="d4/de5/pool_8c.html#a00003cc6b5507f68e146f926270214ad">pool.c</a>
+, <a class="el" href="d5/d03/abti_8h.html#a00003cc6b5507f68e146f926270214ad">abti.h</a>
 </li>
 <li>ABTI_pool_push()
 : <a class="el" href="d0/d4e/abti__pool_8h.html#a4e82cea6c29143257142af78bdcb62c6">abti_pool.h</a>
@@ -2948,20 +3013,20 @@ $(function() {
 , <a class="el" href="db/dbe/sched_8c.html#ae93f69d1397b291c73dd589ab66fa6c1">sched.c</a>
 </li>
 <li>ABTI_sched_free()
-: <a class="el" href="db/dbe/sched_8c.html#ab7643f8786cba0aae8a13f52236a6138">sched.c</a>
-, <a class="el" href="d5/d03/abti_8h.html#ab7643f8786cba0aae8a13f52236a6138">abti.h</a>
+: <a class="el" href="d5/d03/abti_8h.html#ab7643f8786cba0aae8a13f52236a6138">abti.h</a>
+, <a class="el" href="db/dbe/sched_8c.html#ab7643f8786cba0aae8a13f52236a6138">sched.c</a>
 </li>
 <li>ABTI_sched_get_basic_def()
-: <a class="el" href="d8/da2/basic_8c.html#aa8f9cbb24018aa187ad82515f6a9f712">basic.c</a>
-, <a class="el" href="d5/d03/abti_8h.html#aa8f9cbb24018aa187ad82515f6a9f712">abti.h</a>
+: <a class="el" href="d5/d03/abti_8h.html#aa8f9cbb24018aa187ad82515f6a9f712">abti.h</a>
+, <a class="el" href="d8/da2/basic_8c.html#aa8f9cbb24018aa187ad82515f6a9f712">basic.c</a>
 </li>
 <li>ABTI_sched_get_basic_wait_def()
-: <a class="el" href="da/dfb/basic__wait_8c.html#a769792c4fa094d3b08af8ea930bed321">basic_wait.c</a>
-, <a class="el" href="d5/d03/abti_8h.html#a769792c4fa094d3b08af8ea930bed321">abti.h</a>
+: <a class="el" href="d5/d03/abti_8h.html#a769792c4fa094d3b08af8ea930bed321">abti.h</a>
+, <a class="el" href="da/dfb/basic__wait_8c.html#a769792c4fa094d3b08af8ea930bed321">basic_wait.c</a>
 </li>
 <li>ABTI_sched_get_effective_size()
-: <a class="el" href="db/dbe/sched_8c.html#a81d315386137446befe8bc020ab2c9dd">sched.c</a>
-, <a class="el" href="d5/d03/abti_8h.html#a81d315386137446befe8bc020ab2c9dd">abti.h</a>
+: <a class="el" href="d5/d03/abti_8h.html#a81d315386137446befe8bc020ab2c9dd">abti.h</a>
+, <a class="el" href="db/dbe/sched_8c.html#a81d315386137446befe8bc020ab2c9dd">sched.c</a>
 </li>
 <li>ABTI_sched_get_handle()
 : <a class="el" href="dd/d3f/abti__sched_8h.html#a1938656abd2c4dea04108b2d5ce28563">abti_sched.h</a>
@@ -2982,16 +3047,16 @@ $(function() {
 , <a class="el" href="d5/d03/abti_8h.html#a7cbdb1292be390e175de5b31589370d6">abti.h</a>
 </li>
 <li>ABTI_sched_get_size()
-: <a class="el" href="db/dbe/sched_8c.html#a62af6b60ba44d6c647302f604a10901f">sched.c</a>
-, <a class="el" href="d5/d03/abti_8h.html#a62af6b60ba44d6c647302f604a10901f">abti.h</a>
+: <a class="el" href="d5/d03/abti_8h.html#a62af6b60ba44d6c647302f604a10901f">abti.h</a>
+, <a class="el" href="db/dbe/sched_8c.html#a62af6b60ba44d6c647302f604a10901f">sched.c</a>
 </li>
 <li>ABTI_sched_get_total_size()
 : <a class="el" href="d5/d03/abti_8h.html#a6a8699fd7e0ce0319ba4c46fc5f2d3c3">abti.h</a>
 , <a class="el" href="db/dbe/sched_8c.html#a6a8699fd7e0ce0319ba4c46fc5f2d3c3">sched.c</a>
 </li>
 <li>ABTI_sched_has_to_stop()
-: <a class="el" href="db/dbe/sched_8c.html#a6b823650d42b4fcab7b7d515dee7fed3">sched.c</a>
-, <a class="el" href="d5/d03/abti_8h.html#a6b823650d42b4fcab7b7d515dee7fed3">abti.h</a>
+: <a class="el" href="d5/d03/abti_8h.html#a6b823650d42b4fcab7b7d515dee7fed3">abti.h</a>
+, <a class="el" href="db/dbe/sched_8c.html#a6b823650d42b4fcab7b7d515dee7fed3">sched.c</a>
 </li>
 <li>ABTI_sched_id
 : <a class="el" href="d5/d03/abti_8h.html#a1f2422c7d97e092c493cb7b0511380b3">abti.h</a>
@@ -3012,8 +3077,8 @@ $(function() {
 : <a class="el" href="d5/d03/abti_8h.html#a531491b3c52802ddf0fec021b959cd82">abti.h</a>
 </li>
 <li>ABTI_sched_print()
-: <a class="el" href="db/dbe/sched_8c.html#a9bfa137d64ff664076c2e2b4c2acc0f5">sched.c</a>
-, <a class="el" href="d5/d03/abti_8h.html#a9bfa137d64ff664076c2e2b4c2acc0f5">abti.h</a>
+: <a class="el" href="d5/d03/abti_8h.html#a9bfa137d64ff664076c2e2b4c2acc0f5">abti.h</a>
+, <a class="el" href="db/dbe/sched_8c.html#a9bfa137d64ff664076c2e2b4c2acc0f5">sched.c</a>
 </li>
 <li>ABTI_SCHED_REQ_EXIT
 : <a class="el" href="d5/d03/abti_8h.html#a020280902e5e9da764c839859034a47a">abti.h</a>
@@ -3022,8 +3087,8 @@ $(function() {
 : <a class="el" href="d5/d03/abti_8h.html#a21fe040d6fd6fa7b74496afd794580ca">abti.h</a>
 </li>
 <li>ABTI_sched_reset_id()
-: <a class="el" href="db/dbe/sched_8c.html#a2c3abae81abb4d8a1c2f9324c59c9e48">sched.c</a>
-, <a class="el" href="d5/d03/abti_8h.html#a2c3abae81abb4d8a1c2f9324c59c9e48">abti.h</a>
+: <a class="el" href="d5/d03/abti_8h.html#a2c3abae81abb4d8a1c2f9324c59c9e48">abti.h</a>
+, <a class="el" href="db/dbe/sched_8c.html#a2c3abae81abb4d8a1c2f9324c59c9e48">sched.c</a>
 </li>
 <li>ABTI_sched_set_request()
 : <a class="el" href="dd/d3f/abti__sched_8h.html#ac82359dfdbb6fafb67c56f08add56a6f">abti_sched.h</a>
@@ -3032,7 +3097,7 @@ $(function() {
 : <a class="el" href="dd/d3f/abti__sched_8h.html#a5edbba94f620d0f1d890deb734f87e0d">abti_sched.h</a>
 </li>
 <li>ABTI_sched_used
-: <a class="el" href="d5/d03/abti_8h.html#a76129a246cf50de92318fd66dbeef16b">abti.h</a>
+: <a class="el" href="d5/d03/abti_8h.html#a984cffeec1b5dd8d2c41dde829f4d421">abti.h</a>
 </li>
 <li>ABTI_self_get_native_thread_id()
 : <a class="el" href="d0/dfe/abti__self_8h.html#aeb541871dc35c5d4df30da6101daee8e">abti_self.h</a>
@@ -3048,27 +3113,6 @@ $(function() {
 </li>
 <li>ABTI_SETUP_LOCAL_YTHREAD
 : <a class="el" href="d6/d11/abti__error_8h.html#a45b3cb4ca86b982b3fa73ee2c48913d5">abti_error.h</a>
-</li>
-<li>ABTI_spinlock
-: <a class="el" href="d5/d03/abti_8h.html#aa2cec49da808b89ccf6cf701c119a68b">abti.h</a>
-</li>
-<li>ABTI_spinlock_acquire()
-: <a class="el" href="d7/dea/abti__spinlock_8h.html#a7e98cef37a5be5a5245e545a932136ce">abti_spinlock.h</a>
-</li>
-<li>ABTI_spinlock_clear()
-: <a class="el" href="d7/dea/abti__spinlock_8h.html#a761cff8937069ed62917e95d93551fc2">abti_spinlock.h</a>
-</li>
-<li>ABTI_spinlock_is_locked()
-: <a class="el" href="d7/dea/abti__spinlock_8h.html#ac0f81ea8a8666dd92a6350425550a7d2">abti_spinlock.h</a>
-</li>
-<li>ABTI_spinlock_release()
-: <a class="el" href="d7/dea/abti__spinlock_8h.html#ac1a59a7a3cdb46815d4bc8a400880eb8">abti_spinlock.h</a>
-</li>
-<li>ABTI_SPINLOCK_STATIC_INITIALIZER
-: <a class="el" href="d7/dea/abti__spinlock_8h.html#a312a2c899157f65721858d6db9349278">abti_spinlock.h</a>
-</li>
-<li>ABTI_spinlock_try_acquire()
-: <a class="el" href="d7/dea/abti__spinlock_8h.html#ac9243e640a5de656bb30f89091a086a2">abti_spinlock.h</a>
 </li>
 <li>ABTI_STACK_CANARY_VALUE
 : <a class="el" href="d7/d04/abti__mem_8h.html#adfa7328d4315f343ebd0cc13938978d2">abti_mem.h</a>
@@ -3137,8 +3181,8 @@ $(function() {
 , <a class="el" href="d5/d03/abti_8h.html#a197dd4fb8921d20af91eeeefdea653b4">abti.h</a>
 </li>
 <li>ABTI_thread_get_handle()
-: <a class="el" href="de/d90/abti__thread_8h.html#a90bc49bacbf1c485106c7dac3325ff99">abti_thread.h</a>
-, <a class="el" href="d2/deb/abti__tool_8h.html#aaaa278c563fefda91b7eaf56fbb0fd85">abti_tool.h</a>
+: <a class="el" href="d2/deb/abti__tool_8h.html#aaaa278c563fefda91b7eaf56fbb0fd85">abti_tool.h</a>
+, <a class="el" href="de/d90/abti__thread_8h.html#a90bc49bacbf1c485106c7dac3325ff99">abti_thread.h</a>
 </li>
 <li>ABTI_thread_get_id()
 : <a class="el" href="d3/de7/thread_8c.html#a31b403b5fdf1506f9d00c321e2cb69b3">thread.c</a>
@@ -3164,15 +3208,15 @@ $(function() {
 : <a class="el" href="d5/d03/abti_8h.html#a203a5fba8f525a10cccdbbb01c109f41">abti.h</a>
 </li>
 <li>ABTI_thread_join()
-: <a class="el" href="d3/de7/thread_8c.html#a6c7166bba74c9e1cf99773b7aead64be">thread.c</a>
-, <a class="el" href="d5/d03/abti_8h.html#a6c7166bba74c9e1cf99773b7aead64be">abti.h</a>
+: <a class="el" href="d5/d03/abti_8h.html#a6c7166bba74c9e1cf99773b7aead64be">abti.h</a>
+, <a class="el" href="d3/de7/thread_8c.html#a6c7166bba74c9e1cf99773b7aead64be">thread.c</a>
 </li>
 <li>ABTI_thread_mig_data
 : <a class="el" href="d5/d03/abti_8h.html#a2370b79c8ba45535918c8e35472e5dcd">abti.h</a>
 </li>
 <li>ABTI_thread_print()
-: <a class="el" href="d5/d03/abti_8h.html#a82c785b38ef5210114d473f91ec31c1b">abti.h</a>
-, <a class="el" href="d3/de7/thread_8c.html#a82c785b38ef5210114d473f91ec31c1b">thread.c</a>
+: <a class="el" href="d3/de7/thread_8c.html#a82c785b38ef5210114d473f91ec31c1b">thread.c</a>
+, <a class="el" href="d5/d03/abti_8h.html#a82c785b38ef5210114d473f91ec31c1b">abti.h</a>
 </li>
 <li>ABTI_THREAD_REQ_BLOCK
 : <a class="el" href="d5/d03/abti_8h.html#a051acb418802c00213b4df063c339f9e">abti.h</a>
@@ -3203,8 +3247,8 @@ $(function() {
 , <a class="el" href="d3/de7/thread_8c.html#ae36398a5f513e144b57c13d18066ad90">thread.c</a>
 </li>
 <li>ABTI_thread_revive()
-: <a class="el" href="d5/d03/abti_8h.html#a526ef08ad99637b00b8464ff586e3c28">abti.h</a>
-, <a class="el" href="d3/de7/thread_8c.html#a526ef08ad99637b00b8464ff586e3c28">thread.c</a>
+: <a class="el" href="d3/de7/thread_8c.html#a526ef08ad99637b00b8464ff586e3c28">thread.c</a>
+, <a class="el" href="d5/d03/abti_8h.html#a526ef08ad99637b00b8464ff586e3c28">abti.h</a>
 </li>
 <li>ABTI_thread_set_request()
 : <a class="el" href="de/d90/abti__thread_8h.html#a63f1a3da8d86de4f14c416de9f1141b1">abti_thread.h</a>
@@ -3382,10 +3426,10 @@ $(function() {
 : <a class="el" href="db/d8d/abti__waitlist_8h.html#a22f43b31544b217ea315eaa04c54dca7">abti_waitlist.h</a>
 </li>
 <li>ABTI_waitlist_wait_and_unlock()
-: <a class="el" href="db/d8d/abti__waitlist_8h.html#a981da0085c066796ab47028db7277872">abti_waitlist.h</a>
+: <a class="el" href="db/d8d/abti__waitlist_8h.html#aa43e0216faacf715add988395a82b984">abti_waitlist.h</a>
 </li>
 <li>ABTI_waitlist_wait_timedout_and_unlock()
-: <a class="el" href="db/d8d/abti__waitlist_8h.html#a9d7c2f5e34e438eda3ed4a6b8ac1d423">abti_waitlist.h</a>
+: <a class="el" href="db/d8d/abti__waitlist_8h.html#ae3c858561272a347566184f7277cca16">abti_waitlist.h</a>
 </li>
 <li>ABTI_xstream
 : <a class="el" href="d5/d03/abti_8h.html#a66e3469fc6e0c6bfc401b0c62ef87bed">abti.h</a>
@@ -3400,16 +3444,16 @@ $(function() {
 : <a class="el" href="d4/d9b/abti__stream__barrier_8h.html#af26fe582a14b0fadf8f749ace2ae0441">abti_stream_barrier.h</a>
 </li>
 <li>ABTI_xstream_check_events()
-: <a class="el" href="d5/d03/abti_8h.html#a2f104f0d347c2589dbecd123fb765aed">abti.h</a>
-, <a class="el" href="d8/d4d/stream_8c.html#a2f104f0d347c2589dbecd123fb765aed">stream.c</a>
+: <a class="el" href="d8/d4d/stream_8c.html#a2f104f0d347c2589dbecd123fb765aed">stream.c</a>
+, <a class="el" href="d5/d03/abti_8h.html#a2f104f0d347c2589dbecd123fb765aed">abti.h</a>
 </li>
 <li>ABTI_xstream_create_primary()
 : <a class="el" href="d5/d03/abti_8h.html#a247ceb2096aaded10f7552f4163551c8">abti.h</a>
 , <a class="el" href="d8/d4d/stream_8c.html#a247ceb2096aaded10f7552f4163551c8">stream.c</a>
 </li>
 <li>ABTI_xstream_free()
-: <a class="el" href="d8/d4d/stream_8c.html#a5f6d8d780662eaaef194f22805dc0040">stream.c</a>
-, <a class="el" href="d5/d03/abti_8h.html#a5f6d8d780662eaaef194f22805dc0040">abti.h</a>
+: <a class="el" href="d5/d03/abti_8h.html#a5f6d8d780662eaaef194f22805dc0040">abti.h</a>
+, <a class="el" href="d8/d4d/stream_8c.html#a5f6d8d780662eaaef194f22805dc0040">stream.c</a>
 </li>
 <li>ABTI_xstream_get_handle()
 : <a class="el" href="d4/dbc/abti__stream_8h.html#a6367e78131d732df8703997e4049de92">abti_stream.h</a>
@@ -3424,19 +3468,19 @@ $(function() {
 : <a class="el" href="d4/dbc/abti__stream_8h.html#a59af2136109657fe99015ccf9ecd9690">abti_stream.h</a>
 </li>
 <li>ABTI_xstream_print()
-: <a class="el" href="d5/d03/abti_8h.html#affe82d5121e664b5092924a131ecbb9a">abti.h</a>
-, <a class="el" href="d8/d4d/stream_8c.html#affe82d5121e664b5092924a131ecbb9a">stream.c</a>
+: <a class="el" href="d8/d4d/stream_8c.html#affe82d5121e664b5092924a131ecbb9a">stream.c</a>
+, <a class="el" href="d5/d03/abti_8h.html#affe82d5121e664b5092924a131ecbb9a">abti.h</a>
 </li>
 <li>ABTI_xstream_run_unit()
-: <a class="el" href="d5/d03/abti_8h.html#a5602838519f3fcf9819c0a465116590d">abti.h</a>
-, <a class="el" href="d8/d4d/stream_8c.html#a5602838519f3fcf9819c0a465116590d">stream.c</a>
+: <a class="el" href="d8/d4d/stream_8c.html#a5602838519f3fcf9819c0a465116590d">stream.c</a>
+, <a class="el" href="d5/d03/abti_8h.html#a5602838519f3fcf9819c0a465116590d">abti.h</a>
 </li>
 <li>ABTI_xstream_schedule()
 : <a class="el" href="d5/d03/abti_8h.html#adf3fbbbc8bd7f973b206555d2b155d91">abti.h</a>
 </li>
 <li>ABTI_xstream_start_primary()
-: <a class="el" href="d8/d4d/stream_8c.html#a3053d4ff2253e8d16ea7bd28dc1adbab">stream.c</a>
-, <a class="el" href="d5/d03/abti_8h.html#a3053d4ff2253e8d16ea7bd28dc1adbab">abti.h</a>
+: <a class="el" href="d5/d03/abti_8h.html#a3053d4ff2253e8d16ea7bd28dc1adbab">abti.h</a>
+, <a class="el" href="d8/d4d/stream_8c.html#a3053d4ff2253e8d16ea7bd28dc1adbab">stream.c</a>
 </li>
 <li>ABTI_xstream_terminate_thread()
 : <a class="el" href="d4/dbc/abti__stream_8h.html#a782cf0484b59f494fb0c88f0f545e681">abti_stream.h</a>
@@ -3475,8 +3519,8 @@ $(function() {
 : <a class="el" href="d1/de2/abti__ythread_8h.html#a240eb56d386c117fd4271fbcefc30287">abti_ythread.h</a>
 </li>
 <li>ABTI_ythread_create_main_sched()
-: <a class="el" href="d3/de7/thread_8c.html#af8305106d1a0d3e20f4ef6bea41fa9e6">thread.c</a>
-, <a class="el" href="d5/d03/abti_8h.html#af8305106d1a0d3e20f4ef6bea41fa9e6">abti.h</a>
+: <a class="el" href="d5/d03/abti_8h.html#af8305106d1a0d3e20f4ef6bea41fa9e6">abti.h</a>
+, <a class="el" href="d3/de7/thread_8c.html#af8305106d1a0d3e20f4ef6bea41fa9e6">thread.c</a>
 </li>
 <li>ABTI_ythread_create_primary()
 : <a class="el" href="d5/d03/abti_8h.html#acce2f08d3a54d4d7524192e7a760b292">abti.h</a>
@@ -3487,15 +3531,15 @@ $(function() {
 , <a class="el" href="d5/d03/abti_8h.html#adab604bba895f346b9eed2397f9b31da">abti.h</a>
 </li>
 <li>ABTI_ythread_create_sched()
-: <a class="el" href="d5/d03/abti_8h.html#aaa87895298834fdb3cda8d965bc9fbb3">abti.h</a>
-, <a class="el" href="d3/de7/thread_8c.html#aaa87895298834fdb3cda8d965bc9fbb3">thread.c</a>
+: <a class="el" href="d3/de7/thread_8c.html#aaa87895298834fdb3cda8d965bc9fbb3">thread.c</a>
+, <a class="el" href="d5/d03/abti_8h.html#aaa87895298834fdb3cda8d965bc9fbb3">abti.h</a>
 </li>
 <li>ABTI_ythread_dynamic_promote_ythread()
 : <a class="el" href="d1/de2/abti__ythread_8h.html#a24a8005337e07025d51dbf53be9d06e6">abti_ythread.h</a>
 </li>
 <li>ABTI_ythread_exit()
-: <a class="el" href="d5/d03/abti_8h.html#a81183d1eca653d32eed2ab3a6e828455">abti.h</a>
-, <a class="el" href="d3/de7/thread_8c.html#a81183d1eca653d32eed2ab3a6e828455">thread.c</a>
+: <a class="el" href="d3/de7/thread_8c.html#a81183d1eca653d32eed2ab3a6e828455">thread.c</a>
+, <a class="el" href="d5/d03/abti_8h.html#a81183d1eca653d32eed2ab3a6e828455">abti.h</a>
 </li>
 <li>ABTI_ythread_finish_context_to_parent()
 : <a class="el" href="d1/de2/abti__ythread_8h.html#a89889e5623b126f214f48ee9436a5be8">abti_ythread.h</a>
@@ -3504,16 +3548,16 @@ $(function() {
 : <a class="el" href="d1/de2/abti__ythread_8h.html#af8d8c56a0b202f39557fae667ef46d75">abti_ythread.h</a>
 </li>
 <li>ABTI_ythread_free_primary()
-: <a class="el" href="d5/d03/abti_8h.html#a264a0f9119b4a588c123da5009f4ded2">abti.h</a>
-, <a class="el" href="d3/de7/thread_8c.html#a264a0f9119b4a588c123da5009f4ded2">thread.c</a>
+: <a class="el" href="d3/de7/thread_8c.html#a264a0f9119b4a588c123da5009f4ded2">thread.c</a>
+, <a class="el" href="d5/d03/abti_8h.html#a264a0f9119b4a588c123da5009f4ded2">abti.h</a>
 </li>
 <li>ABTI_ythread_free_root()
-: <a class="el" href="d5/d03/abti_8h.html#afe4a15c4f000c3d050acb195ab9d2a6b">abti.h</a>
-, <a class="el" href="d3/de7/thread_8c.html#afe4a15c4f000c3d050acb195ab9d2a6b">thread.c</a>
+: <a class="el" href="d3/de7/thread_8c.html#afe4a15c4f000c3d050acb195ab9d2a6b">thread.c</a>
+, <a class="el" href="d5/d03/abti_8h.html#afe4a15c4f000c3d050acb195ab9d2a6b">abti.h</a>
 </li>
 <li>ABTI_ythread_get_handle()
-: <a class="el" href="d1/de2/abti__ythread_8h.html#a390ca252ef5f57ecdde4303549365eaf">abti_ythread.h</a>
-, <a class="el" href="d2/deb/abti__tool_8h.html#a575bdc4aa9a86ccef28f9c2fe443cb17">abti_tool.h</a>
+: <a class="el" href="d2/deb/abti__tool_8h.html#a575bdc4aa9a86ccef28f9c2fe443cb17">abti_tool.h</a>
+, <a class="el" href="d1/de2/abti__ythread_8h.html#a390ca252ef5f57ecdde4303549365eaf">abti_ythread.h</a>
 </li>
 <li>ABTI_ythread_get_ptr()
 : <a class="el" href="d1/de2/abti__ythread_8h.html#ae4cb8565c5ce9b2ac6e4de71378af435">abti_ythread.h</a>
@@ -3522,16 +3566,16 @@ $(function() {
 : <a class="el" href="d1/de2/abti__ythread_8h.html#a214ae018487dc954c79c32f0e595b0f9">abti_ythread.h</a>
 </li>
 <li>ABTI_ythread_print_stack()
-: <a class="el" href="d5/d03/abti_8h.html#ade1c8cd609458279071a8b314bef5171">abti.h</a>
-, <a class="el" href="d4/d0d/ythread_8c.html#a5d28e6ee118946de4f7ec34d90516030">ythread.c</a>
+: <a class="el" href="d4/d0d/ythread_8c.html#a5d28e6ee118946de4f7ec34d90516030">ythread.c</a>
+, <a class="el" href="d5/d03/abti_8h.html#ade1c8cd609458279071a8b314bef5171">abti.h</a>
 </li>
 <li>ABTI_ythread_set_blocked()
 : <a class="el" href="d5/d03/abti_8h.html#a2c9658f562b00e5d82d220f26dad7751">abti.h</a>
 , <a class="el" href="d4/d0d/ythread_8c.html#a2c9658f562b00e5d82d220f26dad7751">ythread.c</a>
 </li>
 <li>ABTI_ythread_set_ready()
-: <a class="el" href="d4/d0d/ythread_8c.html#adfe8bded13e4837f2bba404fba5d84b5">ythread.c</a>
-, <a class="el" href="d5/d03/abti_8h.html#adfe8bded13e4837f2bba404fba5d84b5">abti.h</a>
+: <a class="el" href="d5/d03/abti_8h.html#adfe8bded13e4837f2bba404fba5d84b5">abti.h</a>
+, <a class="el" href="d4/d0d/ythread_8c.html#adfe8bded13e4837f2bba404fba5d84b5">ythread.c</a>
 </li>
 <li>ABTI_ythread_suspend()
 : <a class="el" href="d5/d03/abti_8h.html#a88dbb3440b80e39a730f1410b754b5b8">abti.h</a>
@@ -3547,24 +3591,24 @@ $(function() {
 : <a class="el" href="d5/d09/abtu_8h.html#a7ef16dec29441b0a122071a5719491db">abtu.h</a>
 </li>
 <li>ABTU_alloc_largepage()
-: <a class="el" href="da/de7/largepage_8c.html#ae248ad3031cfbfa19dd7b45804e6fbb0">largepage.c</a>
-, <a class="el" href="d5/d09/abtu_8h.html#ae248ad3031cfbfa19dd7b45804e6fbb0">abtu.h</a>
+: <a class="el" href="d5/d09/abtu_8h.html#ae248ad3031cfbfa19dd7b45804e6fbb0">abtu.h</a>
+, <a class="el" href="da/de7/largepage_8c.html#ae248ad3031cfbfa19dd7b45804e6fbb0">largepage.c</a>
 </li>
 <li>ABTU_atoi()
 : <a class="el" href="d5/d09/abtu_8h.html#af9dbccf96868f70c09524a847d510f1a">abtu.h</a>
 , <a class="el" href="df/d93/atoi_8c.html#af9dbccf96868f70c09524a847d510f1a">atoi.c</a>
 </li>
 <li>ABTU_atosz()
-: <a class="el" href="df/d93/atoi_8c.html#aeb96d90123c54222ecca977219dbaa21">atoi.c</a>
-, <a class="el" href="d5/d09/abtu_8h.html#aeb96d90123c54222ecca977219dbaa21">abtu.h</a>
+: <a class="el" href="d5/d09/abtu_8h.html#aeb96d90123c54222ecca977219dbaa21">abtu.h</a>
+, <a class="el" href="df/d93/atoi_8c.html#aeb96d90123c54222ecca977219dbaa21">atoi.c</a>
 </li>
 <li>ABTU_atoui32()
-: <a class="el" href="df/d93/atoi_8c.html#acc8c8343df577477c5663e30d18b663b">atoi.c</a>
-, <a class="el" href="d5/d09/abtu_8h.html#acc8c8343df577477c5663e30d18b663b">abtu.h</a>
+: <a class="el" href="d5/d09/abtu_8h.html#acc8c8343df577477c5663e30d18b663b">abtu.h</a>
+, <a class="el" href="df/d93/atoi_8c.html#acc8c8343df577477c5663e30d18b663b">atoi.c</a>
 </li>
 <li>ABTU_atoui64()
-: <a class="el" href="d5/d09/abtu_8h.html#a58014c8f522fb3db21e7492bd8f7c42e">abtu.h</a>
-, <a class="el" href="df/d93/atoi_8c.html#a58014c8f522fb3db21e7492bd8f7c42e">atoi.c</a>
+: <a class="el" href="df/d93/atoi_8c.html#a58014c8f522fb3db21e7492bd8f7c42e">atoi.c</a>
+, <a class="el" href="d5/d09/abtu_8h.html#a58014c8f522fb3db21e7492bd8f7c42e">abtu.h</a>
 </li>
 <li>ABTU_calloc()
 : <a class="el" href="d5/d09/abtu_8h.html#a88220b7f81a0f629a08915843f37bedd">abtu.h</a>
@@ -3577,8 +3621,8 @@ $(function() {
 , <a class="el" href="da/de7/largepage_8c.html#aa315ba860d29923548e980a7d2c4b623">largepage.c</a>
 </li>
 <li>ABTU_is_supported_largepage_type()
-: <a class="el" href="da/de7/largepage_8c.html#ab42d9968c80e245045f3f4d1c2c24039">largepage.c</a>
-, <a class="el" href="d5/d09/abtu_8h.html#ab42d9968c80e245045f3f4d1c2c24039">abtu.h</a>
+: <a class="el" href="d5/d09/abtu_8h.html#ab42d9968c80e245045f3f4d1c2c24039">abtu.h</a>
+, <a class="el" href="da/de7/largepage_8c.html#ab42d9968c80e245045f3f4d1c2c24039">largepage.c</a>
 </li>
 <li>ABTU_likely
 : <a class="el" href="d5/d09/abtu_8h.html#a7e428ab19a648b9fcd6491a10551e27e">abtu.h</a>
@@ -3629,7 +3673,7 @@ $(function() {
 : <a class="el" href="d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082aca2f8e975c6e885c05fbe291fb81cdfee2">abtu.h</a>
 </li>
 <li>ABTU_MEM_LARGEPAGE_TYPE
-: <a class="el" href="d5/d09/abtu_8h.html#a0b6351dddaba57787cb917552f72ffe0">abtu.h</a>
+: <a class="el" href="d5/d09/abtu_8h.html#aef487b4e86c4c28804e18e95edd082ac">abtu.h</a>
 </li>
 <li>ABTU_memalign()
 : <a class="el" href="d5/d09/abtu_8h.html#a0201a1aeb137c3b2e40b5fe64dad198a">abtu.h</a>
@@ -3679,6 +3723,12 @@ $(function() {
 <li>ABTU_unreachable
 : <a class="el" href="d5/d09/abtu_8h.html#ae3782cfe8ab5b4b64d7da16a6fd6c84b">abtu.h</a>
 </li>
+<li>alloc_header
+: <a class="el" href="d0/d31/abtd__affinity__parser_8c.html#a0531692053328d1bbdeb10816faa3fd6">abtd_affinity_parser.c</a>
+</li>
+<li>ALLOC_HEADER_SIZE
+: <a class="el" href="d0/d31/abtd__affinity__parser_8c.html#a0af94d6779384d2e1d77f680a3ef6bad">abtd_affinity_parser.c</a>
+</li>
 <li>apply_cpuset()
 : <a class="el" href="d2/d45/abtd__affinity_8c.html#ad381daf10a4a5d22a6358b81c31ac974">abtd_affinity.c</a>
 </li>
@@ -3692,7 +3742,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 12 2021 11:09:41 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 15 2021 09:36:51 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
