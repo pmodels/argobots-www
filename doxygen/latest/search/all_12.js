@@ -24,7 +24,8 @@ var searchData=
   ['sizeof_5fvoid_5fp_863',['SIZEOF_VOID_P',['../dd/d6e/abt__config_8h.html#a92616c6df51185d4cf143d10fe85739c',1,'abt_config.h']]],
   ['so_864',['so',['../d6/d5b/LICENSE__1__0_8txt.html#a45dcdfe4df5baa1d8c3683eb8705c61a',1,'LICENSE_1_0.txt']]],
   ['software_865',['Software',['../d6/d5b/LICENSE__1__0_8txt.html#ace9c60d08acfe96bcb75cdf43fa5e678',1,'LICENSE_1_0.txt']]],
-  ['stdc_5fheaders_866',['STDC_HEADERS',['../dd/d6e/abt__config_8h.html#a550e5c272cc3cf3814651721167dcd23',1,'abt_config.h']]],
-  ['stream_2ec_867',['stream.c',['../d8/d4d/stream_8c.html',1,'']]],
-  ['stream_5fbarrier_2ec_868',['stream_barrier.c',['../d0/db8/stream__barrier_8c.html',1,'']]]
+  ['spinlock_5facquire_5fif_5fnot_5fempty_866',['spinlock_acquire_if_not_empty',['../da/d6b/fifo_8c.html#afcb625400d235ebdf89308dfb7726b91',1,'fifo.c']]],
+  ['stdc_5fheaders_867',['STDC_HEADERS',['../dd/d6e/abt__config_8h.html#a550e5c272cc3cf3814651721167dcd23',1,'abt_config.h']]],
+  ['stream_2ec_868',['stream.c',['../d8/d4d/stream_8c.html',1,'']]],
+  ['stream_5fbarrier_2ec_869',['stream_barrier.c',['../d0/db8/stream__barrier_8c.html',1,'']]]
 ];
