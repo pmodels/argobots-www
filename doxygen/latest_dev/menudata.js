@@ -136,7 +136,8 @@ var menudata={children:[
 {text:"a",url:"globals_type.html#index_a"},
 {text:"d",url:"globals_type.html#index_d"},
 {text:"f",url:"globals_type.html#index_f"},
-{text:"p",url:"globals_type.html#index_p"}]},
+{text:"p",url:"globals_type.html#index_p"},
+{text:"u",url:"globals_type.html#index_u"}]},
 {text:"Enumerations",url:"globals_enum.html"},
 {text:"Enumerator",url:"globals_eval.html",children:[
 {text:"a",url:"globals_eval.html#index_a"}]},

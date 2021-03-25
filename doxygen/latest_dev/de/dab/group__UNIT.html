@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">8779a089204c07a9d00035eabab371e5203cce0a</span>
+   &#160;<span id="projectnumber">1e2761d682a1627f28cafc58e561ce6e65c5002f</span>
    </div>
   </td>
  </tr>
@@ -99,7 +99,7 @@ Enumerations</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:gac1e38da11bb526632d7dc34808932394"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dab/group__UNIT.html#gac1e38da11bb526632d7dc34808932394">ABT_unit_set_associated_pool</a> (<a class="el" href="../../de/dab/group__UNIT.html#ga2766d98ace73a538d42ff64a8b999baf">ABT_unit</a> unit, <a class="el" href="../../d9/d52/group__POOL.html#ga6bbc8a95dbe08348262228f3355652b2">ABT_pool</a> pool)</td></tr>
-<tr class="memdesc:gac1e38da11bb526632d7dc34808932394"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the associated pool for a work unit.  <a href="../../de/dab/group__UNIT.html#gac1e38da11bb526632d7dc34808932394">More...</a><br /></td></tr>
+<tr class="memdesc:gac1e38da11bb526632d7dc34808932394"><td class="mdescLeft">&#160;</td><td class="mdescRight">No operation.  <a href="../../de/dab/group__UNIT.html#gac1e38da11bb526632d7dc34808932394">More...</a><br /></td></tr>
 <tr class="separator:gac1e38da11bb526632d7dc34808932394"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -218,16 +218,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the associated pool for a work unit. </p>
-<p><code><a class="el" href="../../de/dab/group__UNIT.html#gac1e38da11bb526632d7dc34808932394" title="Set the associated pool for a work unit.">ABT_unit_set_associated_pool()</a></code> changes the associated pool of the target work unit <code>unit</code> to the pool <code>pool</code>. This routine must be called after <code>unit</code> is popped from its original associated pool (i.e., <code>unit</code> must not be inside any pool).</p>
+<p>No operation. </p>
+<p><code><a class="el" href="../../de/dab/group__UNIT.html#gac1e38da11bb526632d7dc34808932394" title="No operation.">ABT_unit_set_associated_pool()</a></code> does nothing. This routine was originally provided for setting the associated pool for a work unit, but Argobots 1.1 manages this mapping when <code><a class="el" href="../../d9/d52/group__POOL.html#ga8f37f5da3f8c2d8a0eb349063e31f3fa" title="Push a unit to a pool.">ABT_pool_push()</a></code> or <code><a class="el" href="../../d3/def/group__ES.html#gab6ef8abe585d935384f0133482c5ef1f" title="Execute a work unit.">ABT_xstream_run_unit()</a></code> is called. This routine is for the backward compatibility.</p>
+<dl class="section attention">
+<dt>Changes from Argobots 1.0 to Argobots 1.1</dt>
+<dd><b>[Argobots 1.0]</b> The user must explicitly call this routine to change the associated pool of <code>ABT_unit</code>.<br  />
+ <b>[Argobots 1.1]</b> The Argobots runtime automatically changes the associated pool of <code>ABT_unit</code> if needed. This routine is therefore unnecessary. <dl class="section user">
+<dt>Rationale</dt>
+<dd>The unit-pool association management is hard for the user who does not know the internal implementation of Argobots. This change not only eases programming with Argobots but also addresses some issues without breaking the backward compatibility. See <a href="https://github.com/pmodels/argobots/issues/317">https://github.com/pmodels/argobots/issues/317</a> for details. </dd>
+</dl>
+</dd>
+</dl>
 <dl class="section user"><dt>Execution context</dt><dd>This routine can be called in any execution context. Argobots must be initialized. This routine does not switch the context of the calling ULT unless any user-defined function that is involved in this routine switch the context of the calling ULT.</dd></dl>
 <dl class="section user"><dt>Errors</dt><dd><code>ABT_SUCCESS</code> is returned if this routine succeeds.<br  />
 <code>ABT_ERR_INV_UNIT</code> is returned if <code>unit</code> is <code>ABT_UNIT_NULL</code>.<br  />
 <code>ABT_ERR_INV_POOL</code> is returned if <code>pool</code> is <code>ABT_POOL_NULL</code>.<br  />
  </dd></dl>
 <dl class="section user"><dt>Undefined behavior</dt><dd>If Argobots is not initialized, the results are undefined.<br  />
-If <code>unit</code> is in a pool, the results are undefined.<br  />
-If <code>unit</code> is accessed concurrently, the results are undefined.<br  />
  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -238,14 +245,14 @@ If <code>unit</code> is accessed concurrently, the results are undefined.<br  />
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d1d/unit_8c_source.html#l00038">38</a> of file <a class="el" href="../../da/d1d/unit_8c_source.html">unit.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d1d/unit_8c_source.html#l00048">48</a> of file <a class="el" href="../../da/d1d/unit_8c_source.html">unit.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 16 2021 03:10:11 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 25 2021 03:10:05 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

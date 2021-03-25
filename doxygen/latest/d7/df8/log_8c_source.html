@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ARGOBOTS
-   &#160;<span id="projectnumber">8779a089204c07a9d00035eabab371e5203cce0a</span>
+   &#160;<span id="projectnumber">1e2761d682a1627f28cafc58e561ce6e65c5002f</span>
    </div>
   </td>
  </tr>
@@ -165,7 +165,7 @@ $(function() {
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (unit == <a class="code" href="../../d5/d7d/abt_8h.html#ad6965c86292ec2b77ca0dd2797b3f4e7">ABT_UNIT_NULL</a>)</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    ABTI_thread *p_thread = ABTI_thread_get_ptr(p_pool-&gt;u_get_thread(unit));</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    ABTI_thread *p_thread = ABTI_unit_get_thread(p_global, unit);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">char</span> unit_type = (p_thread-&gt;type &amp; ABTI_THREAD_TYPE_YIELDABLE) ? <span class="charliteral">&#39;U&#39;</span> : <span class="charliteral">&#39;T&#39;</span>;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span> (p_thread-&gt;p_last_xstream) {</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[%c%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] pushed to P%&quot;</span> PRIu64 <span class="stringliteral">&quot;\n&quot;</span>, unit_type,</div>
@@ -185,7 +185,7 @@ $(function() {
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">if</span> (unit == <a class="code" href="../../d5/d7d/abt_8h.html#ad6965c86292ec2b77ca0dd2797b3f4e7">ABT_UNIT_NULL</a>)</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    ABTI_thread *p_thread = ABTI_thread_get_ptr(p_pool-&gt;u_get_thread(unit));</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    ABTI_thread *p_thread = ABTI_unit_get_thread(p_global, unit);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">char</span> unit_type = (p_thread-&gt;type &amp; ABTI_THREAD_TYPE_YIELDABLE) ? <span class="charliteral">&#39;U&#39;</span> : <span class="charliteral">&#39;T&#39;</span>;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">if</span> (p_thread-&gt;p_last_xstream) {</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[%c%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] removed from P%&quot;</span> PRIu64 <span class="stringliteral">&quot;\n&quot;</span>, unit_type,</div>
@@ -205,7 +205,7 @@ $(function() {
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">if</span> (unit == <a class="code" href="../../d5/d7d/abt_8h.html#ad6965c86292ec2b77ca0dd2797b3f4e7">ABT_UNIT_NULL</a>)</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    ABTI_thread *p_thread = ABTI_thread_get_ptr(p_pool-&gt;u_get_thread(unit));</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    ABTI_thread *p_thread = ABTI_unit_get_thread(p_global, unit);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">char</span> unit_type = (p_thread-&gt;type &amp; ABTI_THREAD_TYPE_YIELDABLE) ? <span class="charliteral">&#39;U&#39;</span> : <span class="charliteral">&#39;T&#39;</span>;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">if</span> (p_thread-&gt;p_last_xstream) {</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <a class="code" href="../../d4/d5e/abti__log_8h.html#ac06cfc686322558f590c50eab8622ebd">LOG_DEBUG</a>(<span class="stringliteral">&quot;[%c%&quot;</span> PRIu64 <span class="stringliteral">&quot;:E%d] popped from P%&quot;</span> PRIu64 <span class="stringliteral">&quot;\n&quot;</span>, unit_type,</div>
@@ -229,7 +229,7 @@ $(function() {
 <div class="ttc" id="aabt_8h_html_ad6965c86292ec2b77ca0dd2797b3f4e7"><div class="ttname"><a href="../../d5/d7d/abt_8h.html#ad6965c86292ec2b77ca0dd2797b3f4e7">ABT_UNIT_NULL</a></div><div class="ttdeci">#define ABT_UNIT_NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7d/abt_8h_source.html#l01061">abt.h:1061</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 16 2021 03:10:14 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Mar 25 2021 03:10:08 for ARGOBOTS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
